@@ -48,8 +48,6 @@ loras/
 secrets.json
 
 # Distribution
-#dist/
-#build/
 *.egg-info/
 
 # Logs
