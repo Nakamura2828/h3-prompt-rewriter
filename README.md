@@ -43,6 +43,14 @@ python scripts/validate.py runs/run-*.txt --strip-alignment
 and writes results to `runs/`. `validate.py` checks the output format (field labels,
 ordering, timestamps, tag balance, banned words) — it checks structure, not semantics.
 
+```bash
+python scripts/archive_run.py rename FL2VA/Describer-Comparison --clean
+```
+
+`archive_run.py` archives a `runs/run-*.txt` into `reference/test_archive/` and cleans up
+the per-case files left behind in `runs/`; see its `--help` for the `rename`/`clean`
+subcommands.
+
 ## Adding a mode
 
 1. Add `modes/<mode>/` prose files.
