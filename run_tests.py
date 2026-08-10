@@ -14,7 +14,7 @@ Case files are JSON:
   "defaults": {
     "server": "http://localhost:8080/v1/chat/completions",
     "model": "local",
-    "system_file": "prompts/describer_frame_v7.txt",
+    "system_file": "prompts/describer_frame.txt",
     "temperature": 0, "top_p": 0.9, "top_k": 40, "max_tokens": 2048
   },
   "cases": [

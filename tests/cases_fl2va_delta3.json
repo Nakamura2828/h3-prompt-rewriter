@@ -2,7 +2,7 @@
   "defaults": {
     "server": "http://localhost:8080/v1/chat/completions",
     "model": "qwen3.6-35b-a3b",
-    "system_file": "prompts/describer_frame_v7.txt",
+    "system_file": "prompts/describer_frame.txt",
     "temperature": 0,
     "top_p": 0.9,
     "top_k": 40,
@@ -24,7 +24,7 @@
     {
       "group": "1 lamp-zoom-gun",
       "id": "p1_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p1_last.png",
       "user": "[[FIRST_FRAME]]\n{{p1_first}}"
     },
@@ -43,7 +43,7 @@
     {
       "group": "2 gun",
       "id": "p2_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p2_last.png",
       "user": "[[FIRST_FRAME]]\n{{p2_first}}"
     },
@@ -62,7 +62,7 @@
     {
       "group": "3 talk",
       "id": "p3_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p3_last.png",
       "user": "[[FIRST_FRAME]]\n{{p3_first}}"
     },
@@ -81,7 +81,7 @@
     {
       "group": "4 turn",
       "id": "p4_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p4_last.png",
       "user": "[[FIRST_FRAME]]\n{{p4_first}}"
     },
@@ -100,7 +100,7 @@
     {
       "group": "5 skate",
       "id": "p5_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p5_last.png",
       "user": "[[FIRST_FRAME]]\n{{p5_first}}"
     },
@@ -119,7 +119,7 @@
     {
       "group": "6 zoom",
       "id": "p6_delta",
-      "system_file": "prompts/fl2va_delta_v3.txt",
+      "system_file": "prompts/fl2va_delta.txt",
       "image": "images/p6_last.png",
       "user": "[[FIRST_FRAME]]\n{{p6_first}}"
     }
