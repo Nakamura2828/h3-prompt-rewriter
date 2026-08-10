@@ -33,10 +33,23 @@ which is how a composer consumes two describer passes. Cases run in file order.
 Output is written in the concatenated format validate.py already parses, and each
 case is also saved individually under <outdir>/<id>.txt for inspection.
 """
-import argparse, base64, json, mimetypes, pathlib, re, sys, time
+import argparse, base64, json, pathlib, re, sys, time
 import urllib.request, urllib.error
 
 THINK = re.compile(r'^\s*<think>.*?</think>\s*', re.S)
+
+# Deliberately not using mimetypes.guess_type(): on Windows it consults the
+# registry, which can be wrong for well-known extensions (e.g. .jpg guessing
+# as 'application/jpg' rather than 'image/jpeg' if some installer clobbered
+# that association). A fixed map keeps this independent of OS/machine state.
+IMAGE_MIME = {
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.webp': 'image/webp',
+    '.gif': 'image/gif',
+    '.bmp': 'image/bmp',
+}
 
 
 LADDER = ['extreme wide', 'wide', 'medium-wide', 'medium', 'medium close-up',
@@ -80,7 +93,10 @@ def image_payload(path):
     p = pathlib.Path(path)
     if not p.is_file():
         raise SystemExit(f'ERROR: image not found: {p}')
-    mime = mimetypes.guess_type(p.name)[0] or 'image/png'
+    mime = IMAGE_MIME.get(p.suffix.lower())
+    if not mime:
+        raise SystemExit(f'ERROR: unsupported image extension {p.suffix!r} for {p} '
+                          f'(supported: {", ".join(sorted(IMAGE_MIME))})')
     b64 = base64.b64encode(p.read_bytes()).decode('ascii')
     return {'type': 'image_url', 'image_url': {'url': f'data:{mime};base64,{b64}'}}
 
