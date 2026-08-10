@@ -3,10 +3,10 @@
 
 Stdlib only. Windows-friendly. No ComfyUI required.
 
-  python run_tests.py cases.json
-  python run_tests.py cases.json --only p1_first p1_last
-  python run_tests.py cases.json --out runs/describer_v8.txt
-  python run_tests.py cases.json --dry-run
+  python scripts/run_tests.py cases.json
+  python scripts/run_tests.py cases.json --only p1_first p1_last
+  python scripts/run_tests.py cases.json --out runs/describer_v8.txt
+  python scripts/run_tests.py cases.json --dry-run
 
 Case files are JSON:
 

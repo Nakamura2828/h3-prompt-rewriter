@@ -17,8 +17,8 @@ H3 video-generation node.
 | `modes/<mode>/` | mode-specific prose (preamble, reference-image, examples, closing) |
 | `manifests/` | per-mode JSON: block order, variant choices, slot values, rationale notes |
 | `prompts/` | current, ready-to-use system prompts — this is what goes into the LLM node's system prompt field. Includes both `build.py`'s output (t2va/i2va/l2va) and standalone hand-maintained prompts (image describer, FL2VA delta, FL2VA composer) |
-| `scripts/` | `build.py`, `validate.py` |
-| `tests/` | JSON case files run by `run_tests.py` against a local OpenAI-compatible server |
+| `scripts/` | `build.py`, `validate.py`, `run_tests.py`, `archive_run.py` |
+| `tests/` | JSON case files run by `scripts/run_tests.py` against a local OpenAI-compatible server |
 
 ## Build
 
@@ -35,7 +35,7 @@ alignment-suppression bullet) drop out cleanly.
 ## Testing
 
 ```bash
-python run_tests.py tests/cases_fl2va_full.json
+python scripts/run_tests.py tests/cases_fl2va_full.json
 python scripts/validate.py runs/run-*.txt --strip-alignment
 ```
 
