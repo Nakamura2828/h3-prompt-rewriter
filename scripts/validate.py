@@ -15,9 +15,9 @@ Record format (as produced by the existing loop):
     ----------
 
 Usage:
-  python3 build/validate.py runs.txt
-  python3 build/validate.py runs.txt --strip-alignment   # graph injects the alignment line
-  python3 build/validate.py runs.txt -v                  # also print passing cases
+  python3 scripts/validate.py runs.txt
+  python3 scripts/validate.py runs.txt --strip-alignment   # graph injects the alignment line
+  python3 scripts/validate.py runs.txt -v                  # also print passing cases
 """
 import argparse, re, sys, pathlib
 
