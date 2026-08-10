@@ -16,15 +16,14 @@ H3 video-generation node.
 | `blocks/` | shared prompt blocks with `{{SLOT}}` placeholders |
 | `modes/<mode>/` | mode-specific prose (preamble, reference-image, examples, closing) |
 | `manifests/` | per-mode JSON: block order, variant choices, slot values, rationale notes |
-| `prompts/` | standalone prompts not yet folded into the block system (image describer, FL2VA delta) |
-| `dist/` | build output — this is what goes into the LLM node's system prompt field |
+| `prompts/` | current, ready-to-use system prompts — this is what goes into the LLM node's system prompt field. Includes both `build.py`'s output (t2va/i2va/l2va) and standalone hand-maintained prompts (image describer, FL2VA delta, FL2VA composer) |
 | `scripts/` | `build.py`, `validate.py` |
 | `tests/` | JSON case files run by `run_tests.py` against a local OpenAI-compatible server |
 
 ## Build
 
 ```bash
-python3 scripts/build.py            # all modes -> dist/
+python3 scripts/build.py            # all modes -> prompts/
 python3 scripts/build.py --verify   # build + diff against reference/
 python3 scripts/build.py l2va       # one mode
 ```

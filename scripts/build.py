@@ -2,7 +2,7 @@
 """Assemble H3 rewriter system prompts from shared blocks + per-mode manifests.
 
 Usage:
-  python3 scripts/build.py              # build all modes into dist/
+  python3 scripts/build.py              # build all modes into prompts/
   python3 scripts/build.py --verify     # build, then diff against reference/pre_build_env_canonical_prompts
   python3 scripts/build.py t2va i2va    # build selected modes
 
@@ -55,12 +55,12 @@ def main():
     ap.add_argument('--verify', action='store_true')
     a = ap.parse_args()
     modes = a.modes or MODES
-    (ROOT / 'dist').mkdir(exist_ok=True)
+    (ROOT / 'prompts').mkdir(exist_ok=True)
     rc = 0
     for m in modes:
         out = build(m)
-        (ROOT / 'dist' / f'{m}.txt').write_bytes(out.encode('utf-8'))
-        print(f'built dist/{m}.txt  ({len(out)} bytes)')
+        (ROOT / 'prompts' / f'{m}.txt').write_bytes(out.encode('utf-8'))
+        print(f'built prompts/{m}.txt  ({len(out)} bytes)')
         if a.verify:
             ref = (ROOT / 'reference/pre_build_env_canonical_prompts' / f'{m}.txt').read_text(encoding='utf-8')
             new = out.replace('\r\n', '\n')

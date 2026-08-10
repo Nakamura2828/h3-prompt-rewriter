@@ -31,7 +31,7 @@
     {
       "group": "1 lamp-zoom-gun",
       "id": "p1_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p1_first.png",
       "user": "USER: A man sits in a dark room. He turns on the lamp beside him and picks up the gun from the table. 8 seconds.\n\n[[CAMERA]] {{CAMERA:p1_first:p1_last}}\n[[LIGHTING_FIRST]] {{p1_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p1_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p1_first}}\n\n[[DELTA]]\n{{p1_delta}}"
     },
@@ -57,7 +57,7 @@
     {
       "group": "2 gun",
       "id": "p2_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p2_first.png",
       "user": "USER: She finishes cleaning the handgun and sets it down on the table. 6 seconds.\n\n[[CAMERA]] {{CAMERA:p2_first:p2_last}}\n[[LIGHTING_FIRST]] {{p2_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p2_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p2_first}}\n\n[[DELTA]]\n{{p2_delta}}"
     },
@@ -83,7 +83,7 @@
     {
       "group": "3 talk",
       "id": "p3_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p3_first.png",
       "user": "USER: She sits at the table talking. \"I already told you.\" 5 seconds.\n\n[[CAMERA]] {{CAMERA:p3_first:p3_last}}\n[[LIGHTING_FIRST]] {{p3_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p3_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p3_first}}\n\n[[DELTA]]\n{{p3_delta}}"
     },
@@ -109,7 +109,7 @@
     {
       "group": "4 turn",
       "id": "p4_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p4_first.png",
       "user": "USER: She walks along the street beside him, then stops and turns to look up at him. 6 seconds.\n\n[[CAMERA]] {{CAMERA:p4_first:p4_last}}\n[[LIGHTING_FIRST]] {{p4_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p4_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p4_first}}\n\n[[DELTA]]\n{{p4_delta}}"
     },
@@ -135,7 +135,7 @@
     {
       "group": "5 skate",
       "id": "p5_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p5_first.png",
       "user": "USER: A man in a suit races down the sidewalk on roller skates. 7 seconds.\n\n[[CAMERA]] {{CAMERA:p5_first:p5_last}}\n[[LIGHTING_FIRST]] {{p5_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p5_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p5_first}}\n\n[[DELTA]]\n{{p5_delta}}"
     },
@@ -161,7 +161,7 @@
     {
       "group": "6 zoom",
       "id": "p6_compose",
-      "system_file": "dist/fl2va.txt",
+      "system_file": "prompts/fl2va.txt",
       "image": "images/p6_first.png",
       "user": "USER: A girl sits hugging her stuffed rabbit by a window. The camera moves in slowly. 6 seconds.\n\n[[CAMERA]] {{CAMERA:p6_first:p6_last}}\n[[LIGHTING_FIRST]] {{p6_first:LIGHTING}}\n[[LIGHTING_LAST]] {{p6_last:LIGHTING}}\n\n[[FIRST_FRAME]]\n{{p6_first}}\n\n[[DELTA]]\n{{p6_delta}}"
     }
