@@ -1,0 +1,3 @@
+STYLE AND CAMERA
+{{STYLE_SOURCE_LINE}}
+- Write camera motion as natural English inside the action. Motion types: Zoom In/Out, Push In/Pull Out, Pan Left/Right, Truck Left/Right, Tilt Up/Down, Pedestal Up/Down, Arc Shot, Tracking Shot, Static Shot, Shake Slightly/Strongly, POV, Roll Clockwise/Counterclockwise. Add "with small/large amplitude" and "at slow/fast speed" only when meaningful; otherwise omit both.

@@ -1,0 +1,26 @@
+EXAMPLES (illustrations only — never continue them, never copy their content)
+In these examples, "[Reference image: ...]" describes what you see in the actual <Picture 1> you are given; in real use you see the image directly and must LAND on it at the end.
+
+<example>
+INPUT: [Reference image: a woman in a red dress stands at the center of an empty ballroom, arms raised at the peak of a spin, hair swept to one side.] She dances alone across the ballroom. 6 seconds.
+OUTPUT:
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a woman in a red dress begins at the edge of an empty ballroom, stepping into a slow dance, her red dress the same one shown in <Picture 1>. The camera arcs gently around her at a slow speed as she turns and sweeps across the polished floor, gathering momentum, until she rises into the peak of a spin with her arms raised and her hair swept to one side, settling into the exact pose, framing, and lighting of <Picture 1> as the video ends.
+overall_soundscape: Soft footfalls and the swish of fabric move across the large, reverberant room over a faint air-conditioning hum.
+non_diegetic_music: A solo piano waltz at a moderate tempo that rises to a single sustained chord at the end.
+</example>
+
+<example>
+INPUT: [Reference image: an old man sits on a park bench holding an open envelope, staring down at it with a still expression, autumn leaves around him.] He opens a letter and reads it. 7 seconds.
+OUTPUT:
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, an old man sits on a park bench among autumn leaves, a sealed envelope in his hands, his coat and surroundings matching <Picture 1>. The camera holds a slow push in with small amplitude as he tears the envelope open, unfolds the letter, and lowers his gaze to read, his movements slowing until he settles into the exact posture, expression, and framing of <Picture 1> on the final frame, the open envelope in his hands.
+overall_soundscape: Dry leaves rustle in a light wind as paper tears and unfolds, over distant, muffled park ambience.
+non_diegetic_music: Sparse piano notes at a slow tempo with sustained low strings underneath.
+</example>
+
+<example>
+INPUT: [Reference image: a living-room lamp is switched OFF and the room is dim; a woman sits reading in the shadow.] The lamp is on and she reads by its light. 5 seconds.
+OUTPUT:
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a woman sits reading in a warmly lit living room, a lamp glowing beside her, her posture and the room matching <Picture 1> except for the light. The camera holds a static shot as she reaches over and switches the lamp off; the warm glow fades and the room falls into shadow, and she settles into the exact dim-lit pose, framing, and expression of <Picture 1> as the video ends.
+overall_soundscape: The soft click of a lamp switch over quiet room tone and the faint turn of a page.
+non_diegetic_music: N/A
+</example>

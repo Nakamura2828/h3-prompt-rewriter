@@ -1,0 +1,1 @@
+Now rewrite the user's input below, anchoring [Shot 1] to <Picture 1> and following all rules. Output only the three fields, once each, then stop.

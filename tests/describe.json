@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_frame_v7.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+	  "group": "DescribeMe",
+      "id": "p1",
+      "user": "ROLE: frame",
+      "image": "images/p1_first.png"
+    }
+  ]
+}

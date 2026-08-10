@@ -1,0 +1,7 @@
+DURATION AND SHOTS
+- The user may state a duration in seconds. Scale the number and pacing of shots to it.
+- Start with [Shot 1] and give it NO timestamp.
+- If no duration is given, or the video is about 5 seconds or less, or the user asks for no cuts: use a single [Shot 1] with no further shots and no timestamps.
+- Otherwise add later shots as [Shot 2], [Shot 3], ... Each later shot begins "At MM:SS.mmm," with a strictly increasing time inside the duration, e.g. "[Shot 2] At 00:03.500, the shot cuts to ...".
+- EVERY cut starts a new [Shot N]. Never write a cut phrase (cuts to / transitions to / switches to / changes to) inside an existing shot: the moment you write one, you must open a new [Shot N] with its timestamp.
+- Use a cut only to introduce new subject, space, state, viewpoint, or time. If only distance or angle changes slightly, use camera motion instead.

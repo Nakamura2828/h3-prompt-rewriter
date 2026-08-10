@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+runs/*
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+.idea/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ComfyUI Specific - Large Files
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+models/
+checkpoints/
+loras/
+
+# Personal
+.env
+*.key
+secrets.json
+
+# Distribution
+#dist/
+#build/
+*.egg-info/
+
+# Logs
+*.log
+
+#Archived References
+reference/
+
+# test images
+images/*

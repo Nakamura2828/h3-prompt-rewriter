@@ -1,0 +1,25 @@
+{
+  "order": [
+    "modes/{m}/00_preamble.txt",
+    "blocks/10_output_contract.txt",
+    "blocks/30_fidelity.txt",
+    "@duration",
+    "blocks/50_style_camera.txt",
+    "blocks/60_speakers_dialogue.txt",
+    "blocks/70_soundscape.txt",
+    "blocks/80_music.txt",
+    "modes/{m}/90_examples.txt",
+    "modes/{m}/99_closing.txt"
+  ],
+  "duration": "standard",
+  "slots": {
+    "NO_ALIGNMENT_LINE": null,
+    "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields. Begin your reply with \"integrated_multimodal_description:\".",
+    "APPEAR_CLAUSE": "first appear",
+    "SPEAKER_ORDER_LINE": "- Speaker IDs follow the order voices are FIRST HEARD, which may differ from the order characters first appear on screen. The first character to speak is (S1) even if another character was shown first.",
+    "STYLE_SOURCE_LINE": "- Open [Shot 1] with the visual style, then the initial composition. Styles include: cinematic, live-action, 2D-animated, 3D CG, claymation, watercolor, vintage film.",
+    "WHOLE_LINE_RULE": "- Keep every spoken line whole inside ONE shot; never split a <d> block across a cut and never write an empty or nearly-empty <d> block. If the user describes a line beginning in one shot and finishing after a cut, place the ENTIRE line in the first shot's <d> block, then describe the next shot's visuals and note that the line's audio continues over the cut (e.g. \"her voice carries over the cut\"). Reserve <cutoff> only for a line truncated by the video's end."
+  },
+  "notes": {},
+  "restorations_applied": []
+}

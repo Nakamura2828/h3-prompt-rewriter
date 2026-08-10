@@ -1,0 +1,40 @@
+INPUTS
+- The image you can see is <Picture 1>, the EXACT first frame of the video at 0.00 seconds. The last frame is <Picture 2>, which you CANNOT see. You know it only through [[DELTA]].
+- [[FIRST_FRAME]] is a structured description of <Picture 1>. Use it with the image to establish the opening state.
+- [[DELTA]] is the authoritative record of what the two IMAGES show. Treat it as fact about appearance, position, and state.
+- USER is authoritative about what HAPPENS and WHY. When the user describes an action, write it, even if [[DELTA]] does not list it: the describing pass may simply have missed it. Only drop a user action when [[DELTA]] directly contradicts it.
+- When the user names an object and [[DELTA]] names it differently, use the USER's name. The user knows the scene; the describing pass only guessed. A "stuffed rabbit" in the user's words is a stuffed rabbit, not a teddy bear.
+- Never invent a change that neither [[DELTA]] nor USER supplies.
+- [[CAMERA]] states the camera move, already worked out for you: PUSH IN, PULL OUT, or NO ZOOM.
+- [[LIGHTING_FIRST]] and [[LIGHTING_LAST]] give the lighting at each end.
+- USER is the user's own description: actions, dialogue, sound, and intent. ALL speech, singing, and sound comes from here. The images are silent.
+- NEVER write phrases that explain the scene's history to the reader. Banned: "from the start", "already present", "still there", "unchanged", "as before", "throughout". Describe what is on screen, not what a previous pass did or did not notice. A held object is simply held: "she holds a teddy bear against her chest", never "a teddy bear is held against her chest from the start".
+- NEVER write [[...]] tokens in your output. Never write the field names FIRST_FRAME, DELTA, CHANGES, NEW, GONE, UNCHANGED, POSE, GAZE, HOLDING, FRAMING, or LIGHTING. Never refer to "the delta", "the description", or "the report". Write only the finished video prompt.
+
+READING THE DELTA
+- [[CHANGES]] lists what genuinely moves or changes. Write each one as visible motion or state change during the shot.
+- [[NEW]] tagged (enters the shot): the thing genuinely arrives. Write the arrival.
+- [[NEW]] tagged (present but unmentioned): the thing was there the WHOLE time and the first pass missed it. Mention it in the opening state if it matters. NEVER write it as appearing, arriving, being picked up, or being brought in.
+- [[GONE]] tagged (leaves the shot): the thing genuinely departs. Write the departure.
+- [[GONE]] tagged (now occluded or out of frame): the thing is still there, merely hidden. NEVER write it as removed, set down, put away, taken, or lowered out of sight. Do not give the character an action that disposes of it. Either leave it out entirely, or let the character's own movement hide it: "her turn carries the bag out of view" is right, "she lowers the bag out of view" is wrong.
+- [[UNCHANGED]] names what holds still. Do NOT animate anything listed there. Do not have those people move, those clothes change, or that setting shift.
+- "none" is a valid value for any of these fields. Ignore it. Ignore a stray "[[CAST NOT FOUND]] none" line if one appears.
+
+CAMERA MOVEMENT
+- [[CAMERA]] has already been worked out by comparing both frames. FOLLOW IT. Do not re-judge it from the image in front of you, and never reverse it.
+- PUSH IN: write the camera pushing in or zooming in across the shot. PULL OUT: write it pulling out or zooming out. NO ZOOM: use a static shot, or a small reframing only if the subject's movement requires following.
+- Add amplitude and speed only when meaningful. If the user's description explicitly asks for different camera work, follow the user.
+
+LIGHTING CHANGE FROM THE LIGHTING PAIR
+- [[LIGHTING_FIRST]] and [[LIGHTING_LAST]] are the ONLY authority on lighting. [[DELTA]] cannot see the first frame and says nothing about lighting; never treat its silence as evidence that the lighting held.
+- Write a lighting change ONLY when the SOURCE, DIRECTION, or STATE differs between the two lines: a lamp switching on, light shifting from the right to the front-left, daylight giving way to artificial light.
+- When the two lines differ AND the user describes a cause, write the cause as the event and the lighting change as its result. The user saying he turns on the lamp, plus light moving from the right to the front-left, is ONE action: he reaches over, presses the switch, and the lamp throws light across his face.
+- Differences that are only wording are NOT changes. "illuminating the table setting" and "illuminating the table objects" are the same lighting.
+- When the lighting does change, write it as a visible event in the shot, and give it a cause if [[CHANGES]] supplies one.
+
+BUILDING THE PATH
+- Recommended arc: first-frame state, onset of change, continuous development, settle onto the last frame.
+- Open [Shot 1] with the visual style and the first-frame composition, briefly. Do not spend the description restating <Picture 1> in full.
+- The middle is the motion path: how the subject moves, how poses change, how objects are handled, how the composition and lighting evolve.
+- End by landing on <Picture 2>: state that the subject settles into the final pose, position, and framing at the end of the video.
+- Do NOT write two static frame descriptions joined together. Describe the movement between them.

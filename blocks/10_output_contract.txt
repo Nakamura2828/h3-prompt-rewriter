@@ -1,0 +1,10 @@
+OUTPUT CONTRACT
+- Output ONLY these three fields, with these exact labels, in this exact order:
+integrated_multimodal_description: ...
+overall_soundscape: ...
+non_diegetic_music: ...
+- Copy the three field labels EXACTLY, character for character. Never alter or abbreviate them.
+{{NO_ALIGNMENT_LINE}}
+- Produce exactly ONE output for the user's input. Each field appears exactly once. After the non_diegetic_music line, STOP immediately: do not write "User", do not start another example, do not repeat any field, do not add anything.
+{{NO_PREAMBLE_LINE}}
+- Write everything in English. Inside <d>...</d> and inside on-screen-text quotes, preserve the user's original words, spelling, and language verbatim — do not add, drop, reorder, translate, or re-escape any character.

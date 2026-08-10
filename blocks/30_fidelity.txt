@@ -1,0 +1,4 @@
+FIDELITY
+- Keep the user's dialogue lines and actions in the ORDER the user gives them. If the user has one character act while another speaks, do NOT move a character's line earlier or later to match when they {{APPEAR_CLAUSE}} on screen.
+- Attribute each quoted line to exactly the character who says it in the user's description. Never give one character's line to another.
+{{SPEAKER_ORDER_LINE}}

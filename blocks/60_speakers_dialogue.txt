@@ -1,0 +1,8 @@
+SPEAKERS AND DIALOGUE
+- Give each voice a stable ID: (S1), (S2), ... A speaker keeps its ID across shots. Silent characters get no ID.
+- Voices speaking together use ONE compound ID covering all of them, e.g. (S1,S2,S3). A line spoken, shouted, or chanted in unison is STILL a spoken line: attach the compound ID immediately before the verb — "the three children (S1,S2,S3) shout together:" — never describe a group line without an ID.
+- When a speaker first appears, describe voice identity (type, age, gender, on/off-screen, pitch, timbre, rate, accent) OUTSIDE the <d> tag.
+- Put only the spoken words inside <d>[Language] ...</d>, verbatim. Do not translate, rewrite, or change person/tense.
+- Voiceover: use the exact phrase "says in an off-screen voiceover", and IMMEDIATELY after the <d> block state that the on-screen character's lips remain closed.
+{{WHOLE_LINE_RULE}}
+- On-screen text (signs, banners, subtitles): put it in double quotes, verbatim and untranslated, e.g. a neon sign reading "OPEN".

@@ -1,0 +1,127 @@
+{
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_frame_v7.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "1 lamp-zoom-gun",
+      "id": "p1_first",
+      "user": "CAST: the man | ROLE: frame",
+      "image": "images/p1_first.png"
+    },
+    {
+      "group": "1 lamp-zoom-gun",
+      "id": "p1_last",
+      "user": "CAST: the man | ROLE: frame",
+      "image": "images/p1_last.png"
+    },
+    {
+      "group": "1 lamp-zoom-gun",
+      "id": "p1_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p1_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p1_first}}"
+    },
+    {
+      "group": "2 gun",
+      "id": "p2_first",
+      "user": "CAST: the girl | ROLE: frame",
+      "image": "images/p2_first.png"
+    },
+    {
+      "group": "2 gun",
+      "id": "p2_last",
+      "user": "CAST: the girl | ROLE: frame",
+      "image": "images/p2_last.png"
+    },
+    {
+      "group": "2 gun",
+      "id": "p2_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p2_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p2_first}}"
+    },
+    {
+      "group": "3 talk",
+      "id": "p3_first",
+      "user": "CAST: the girl | ROLE: frame",
+      "image": "images/p3_first.png"
+    },
+    {
+      "group": "3 talk",
+      "id": "p3_last",
+      "user": "CAST: the girl | ROLE: frame",
+      "image": "images/p3_last.png"
+    },
+    {
+      "group": "3 talk",
+      "id": "p3_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p3_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p3_first}}"
+    },
+    {
+      "group": "4 turn",
+      "id": "p4_first",
+      "user": "CAST: the girl; the man | ROLE: frame",
+      "image": "images/p4_first.png"
+    },
+    {
+      "group": "4 turn",
+      "id": "p4_last",
+      "user": "CAST: the girl; the man | ROLE: frame",
+      "image": "images/p4_last.png"
+    },
+    {
+      "group": "4 turn",
+      "id": "p4_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p4_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p4_first}}"
+    },
+    {
+      "group": "5 skate",
+      "id": "p5_first",
+      "user": "CAST: the man on roller skates | ROLE: frame",
+      "image": "images/p5_first.png"
+    },
+    {
+      "group": "5 skate",
+      "id": "p5_last",
+      "user": "CAST: the man on roller skates | ROLE: frame",
+      "image": "images/p5_last.png"
+    },
+    {
+      "group": "5 skate",
+      "id": "p5_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p5_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p5_first}}"
+    },
+    {
+      "group": "6 zoom",
+      "id": "p6_first",
+      "user": "CAST: the girl in the window | ROLE: frame",
+      "image": "images/p6_first.png"
+    },
+    {
+      "group": "6 zoom",
+      "id": "p6_last",
+      "user": "CAST: the girl in the window | ROLE: frame",
+      "image": "images/p6_last.png"
+    },
+    {
+      "group": "6 zoom",
+      "id": "p6_delta",
+      "system_file": "prompts/fl2va_delta_v3.txt",
+      "image": "images/p6_last.png",
+      "user": "[[FIRST_FRAME]]\n{{p6_first}}"
+    }
+  ]
+}

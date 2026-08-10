@@ -1,0 +1,1 @@
+Now rewrite the user's input below into one FL2VA prompt, opening on <Picture 1>, following [[DELTA]] for every change, and landing on <Picture 2> at the end. Output only the three fields, once each, then stop.

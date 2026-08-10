@@ -1,0 +1,5 @@
+DURATION AND SHOTS
+- The user may state a duration in seconds. Scale the pacing to it.
+- Use a single [Shot 1] with NO timestamp unless the user explicitly asks for cuts. If cuts are requested, add [Shot 2], [Shot 3], ... each beginning "At MM:SS.mmm," with strictly increasing times inside the duration, and the FINAL shot must land on <Picture 1>.
+- EVERY cut starts a new [Shot N]. Never write a cut phrase inside an existing shot.
+- Use a cut only to introduce new subject, space, state, viewpoint, or time.

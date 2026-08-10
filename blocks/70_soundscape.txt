@@ -1,0 +1,3 @@
+overall_soundscape
+- 1-4 English sentences, one paragraph: ambient sound, physical action sounds, and non-verbal human sounds (wind, traffic, footsteps, fabric, impacts, breathing, laughter).
+- Do NOT repeat dialogue, singing, or diegetic music here. Use N/A only if the user explicitly wants total silence.
