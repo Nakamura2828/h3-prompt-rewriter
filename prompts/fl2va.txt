@@ -7,6 +7,7 @@ overall_soundscape: ...
 non_diegetic_music: ...
 - Copy the three field labels EXACTLY, character for character. Never alter or abbreviate them.
 - Do NOT output any alignment, reference, or "aligns with" line. Begin your reply directly with "integrated_multimodal_description:".
+- Do NOT write your own closing sentence stating that the subject "settles into", "arrives at", or otherwise lands on the final pose, position, or framing of <Picture 2>. End on the last real action or gesture instead; a fixed landing line is appended after your output separately.
 - Produce exactly ONE output for the user's input. Each field appears exactly once. After the non_diegetic_music line, STOP immediately: do not write "User", do not start another example, do not repeat any field, do not add anything.
 - No preamble, no explanation, no markdown fences, no extra fields.
 - Write everything in English. Inside <d>...</d> and inside on-screen-text quotes, preserve the user's original words, spelling, and language verbatim — do not add, drop, reorder, translate, or re-escape any character.
@@ -49,7 +50,7 @@ BUILDING THE PATH
 - Recommended arc: first-frame state, onset of change, continuous development, settle onto the last frame.
 - Open [Shot 1] with the visual style and the first-frame composition, briefly. Do not spend the description restating <Picture 1> in full.
 - The middle is the motion path: how the subject moves, how poses change, how objects are handled, how the composition and lighting evolve.
-- End by landing on <Picture 2>: state that the subject settles into the final pose, position, and framing at the end of the video.
+- End on the last real action that carries the subject toward <Picture 2>'s state — the actual gesture, movement, or contact, not a summary sentence about arriving there. See OUTPUT CONTRACT: do not write "settles into", "arrives at", or any similar closing statement yourself.
 - Do NOT write two static frame descriptions joined together. Describe the movement between them.
 
 FIDELITY
@@ -103,7 +104,7 @@ DURATION: 7 seconds
 [[GONE]] none
 [[UNCHANGED]] the people present are the woman in a grey apron alone, her apron and shirt are the same, the greenhouse and its benches are the same
 OUTPUT:
-integrated_multimodal_description: [Shot 1] Live-action, cinematic, a woman in a grey apron stands at a potting bench in a bright greenhouse, a small trowel and a row of empty pots already laid out in front of her. The camera pushes in with small amplitude at slow speed as she lifts a seedling, lowers it into a pot, and leans over the bench, pressing the soil down with both hands until she settles into the final posture and closer framing at the end of the video.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a woman in a grey apron stands at a potting bench in a bright greenhouse, a small trowel and a row of empty pots already laid out in front of her. The camera pushes in with small amplitude at slow speed as she lifts a seedling, lowers it into a pot, and leans over the bench, pressing the soil down with both hands.
 overall_soundscape: Loose soil shifts and crumbles between her hands, over the faint tick of water dripping from the glass roof and a low outdoor wind.
 non_diegetic_music: A sparse acoustic guitar figure at a slow tempo with sustained low notes.
 </example>
@@ -122,7 +123,7 @@ DURATION: 6 seconds
 [[GONE]] a coffee mug on the bench (now occluded or out of frame)
 [[UNCHANGED]] the people present are the man in a leather jacket and the man in a canvas coat, the leather jacket is the same, the workshop and its benches are the same
 OUTPUT:
-integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a leather jacket sits alone on a stool in a dim workshop beside a closed roller door. The camera holds a static shot as the roller door rattles upward and daylight spills across the floor from screen-left. A man in a canvas coat steps into the opening and stops there; the man in the canvas coat, with a dry, unhurried voice (S1), says: <d>[English] You started without me.</d> The seated man turns his head toward the doorway as the two settle into their final positions at the end of the video.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a leather jacket sits alone on a stool in a dim workshop beside a closed roller door. The camera holds a static shot as the roller door rattles upward and daylight spills across the floor from screen-left. A man in a canvas coat steps into the opening and stops there; the man in the canvas coat, with a dry, unhurried voice (S1), says: <d>[English] You started without me.</d> The seated man turns his head toward the doorway.
 overall_soundscape: A metal roller door rattles upward and stops with a dull clang, over a low compressor hum and the scuff of boots on concrete.
 non_diegetic_music: N/A
 </example>

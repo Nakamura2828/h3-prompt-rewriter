@@ -23,12 +23,31 @@ Case files are JSON:
     {"id": "p1_last",  "user": "CAST: the man in the grey coat | ROLE: frame",
      "image": "images/p1_last.png"},
     {"id": "p1_compose", "system_file": "prompts/fl2va_composer.txt",
-     "user": "[[FIRST_FRAME]]\\n{{p1_first}}\\n\\n[[LAST_FRAME]]\\n{{p1_last}}\\n\\nDURATION: 6 seconds"}
+     "user": "[[FIRST_FRAME]]\\n{{p1_first}}\\n\\n[[LAST_FRAME]]\\n{{p1_last}}\\n\\nDURATION: 6 seconds"},
+    {"id": "p1_final", "system_file": "prompts/l2va.txt", "align": "l2va", "duration": 6,
+     "user": "..."}
   ]
 }
 
 Any {{case_id}} in a user prompt is replaced by that case's output from this run,
 which is how a composer consumes two describer passes. Cases run in file order.
+
+Every call sends "seed": 0 by default (override per case with "seed": N). Discovered
+2026-08-10: temperature 0 alone is NOT reproducible run-to-run against this server --
+identical inputs produced outputs differing in length across repeated invocations,
+contradicting this project's earlier assumption (see CLAUDE.md). An explicit seed is
+required for genuine determinism, matching what the old ComfyUI graph already did.
+
+A case with "align" set to "i2va", "fl2va", or "l2va" gets the spec's graph-injected
+alignment line (official_VIDEO_PROMPT_WRITING_GUIDE_base_en.md SS2.1) prepended to its
+OUTPUT ONLY, as the first line of the final prompt plus one blank line -- this never
+touches the model's own generation, which stays what {{case_id}} substitution and
+validate.py --strip-alignment both expect. "fl2va" and "l2va" also require "duration"
+(seconds, formatted to exactly two decimal places); the final shot number is read from
+the model's own last "[Shot N]" line, not user-supplied, since that's what the model
+actually produced. "align": "fl2va" additionally splices a fixed landing sentence onto
+the end of integrated_multimodal_description's own paragraph, before overall_soundscape:
+-- prompts/fl2va.txt's model is told not to write this sentence itself.
 
 Output is written in the concatenated format validate.py already parses, and each
 case is also saved individually under <outdir>/<id>.txt for inspection.
@@ -83,6 +102,51 @@ def camera_move(out_a, out_b):
     return f'NO ZOOM, framing holds at {LADDER[ra]}'
 
 
+SHOT = re.compile(r'\[Shot (\d+)\]')
+
+
+def last_shot_number(text):
+    nums = [int(n) for n in SHOT.findall(text)]
+    return max(nums) if nums else 1
+
+
+def alignment_line(kind, text, duration):
+    """Build the graph-injected alignment line for a finished i2va/fl2va/l2va output.
+    Verbatim from official_VIDEO_PROMPT_WRITING_GUIDE_base_en.md SS2.1 -- FL2VA's own
+    wording drops the <>/[] brackets that I2VA and L2VA use; that's the spec, not a typo."""
+    if kind == 'i2va':
+        return ('For the target video, at 0.00 seconds into the target video, '
+                '<Picture 1> (from [Shot 1]) is fully referenced.')
+    n = last_shot_number(text)
+    s = f'{duration:.2f}'
+    if kind == 'l2va':
+        return (f'How the reference pictures align with the target video — '
+                 f'<Picture 1> (from [Shot {n}]) aligns with the {s}-second mark '
+                 f'of the target video.')
+    if kind == 'fl2va':
+        return (f'How the reference pictures align with the target video — '
+                 f'Picture 1 (from Shot 1) aligns with the 0.00-second mark of the '
+                 f'target video; Picture 2 (from Shot {n}) aligns with the {s}-second '
+                 f'mark of the target video.')
+    raise SystemExit(f'ERROR: unknown align kind {kind!r} (expected i2va, fl2va, or l2va)')
+
+
+FL2VA_LANDING = 'The shot lands exactly on <Picture 2>.'
+
+
+def insert_fl2va_landing(text):
+    """Splice the deterministic landing sentence onto the end of
+    integrated_multimodal_description's own paragraph, before overall_soundscape: --
+    mirrors prompts/fl2va.txt's OUTPUT CONTRACT bullet telling the model not to write
+    this sentence itself. Text is otherwise untouched if the label isn't found."""
+    idx = text.find('overall_soundscape:')
+    if idx == -1:
+        return text
+    before = text[:idx].rstrip()
+    after = text[idx:]
+    return f'{before} {FL2VA_LANDING}\n\n{after}'
+
+
 def load_system(path, cache={}):
     if path not in cache:
         cache[path] = pathlib.Path(path).read_text(encoding='utf-8')
@@ -112,6 +176,7 @@ def call(cfg, system, user, image, timeout):
         'temperature': cfg.get('temperature', 0),
         'top_p': cfg.get('top_p', 0.9),
         'max_tokens': cfg.get('max_tokens', 2048),
+        'seed': cfg.get('seed', 0),
         'stream': False,
     }
     if cfg.get('top_k') is not None:
@@ -197,9 +262,14 @@ def main():
                                  f'which has not run yet in this invocation. '
                                  f'Run it in the same invocation, or drop --only.')
 
+        align = cfg.get('align')
+        if align and align in ('l2va', 'fl2va') and cfg.get('duration') is None:
+            raise SystemExit(f'ERROR: case {c["id"]!r} has align={align!r} but no duration')
+
         label = f'[{n}/{len(cases)}] {c["id"]}'
         if a.dry_run:
-            print(f'{label}  system={sys_path}  image={c.get("image", "-")}')
+            print(f'{label}  system={sys_path}  image={c.get("image", "-")}'
+                  + (f'  align={align}' if align else ''))
             print('    ' + user.replace('\n', '\n    ')[:400])
             continue
 
@@ -209,11 +279,17 @@ def main():
         print(f'{time.time() - t0:.1f}s  {len(text)} chars')
 
         results[c['id']] = text
-        (outdir / f'{c["id"]}.txt').write_text(text, encoding='utf-8')
+        output_text = text
+        if align == 'fl2va':
+            output_text = insert_fl2va_landing(output_text)
+        if align:
+            output_text = alignment_line(align, text, cfg.get('duration')) + '\n\n' + output_text
+
+        (outdir / f'{c["id"]}.txt').write_text(output_text, encoding='utf-8')
         head = f"{cfg.get('model', 'local')}  [{c['id']}]"
         if c.get('group'):
             head = f"{cfg.get('model', 'local')}  [{c['group']} :: {c['id']}]"
-        records.append(f"{head}\n---\n{user}\n---\n{text}")
+        records.append(f"{head}\n---\n{user}\n---\n{output_text}")
 
     if not a.dry_run:
         body = []
