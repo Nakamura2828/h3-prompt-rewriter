@@ -168,7 +168,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `kaypro_ii` | photograph | colour | — | none | none | — | s7a | text |
 | `kiki` | 2D cel | anime | — | none | 1 girl + 1 black cat | — | s6 | franchise |
 | `lincoln_photo` | photograph | archival | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
-| `lincon_money` | print | engraving | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
+| `lincoln_money` | print | engraving | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
 | `marker` | drawing | marker | — | int | 1 young woman | — | s7b | text |
 | `miya` | 2D cel | anime | — | ext | 1 teenage girl | — | s6 | text, franchise |
 | `miyu` | pixel art | — | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
@@ -274,7 +274,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `kaypro_ii` | no environment, white | **vintage portable computer**: blue/grey metal case, green CRT showing text, 2 floppy drives, detached keyboard w/ blue keypad · **brand name on case AND on screen** | — |
 | `kiki` | no environment; floating props | **6–7 breads/pastries** (loaf, baguette, rolls, filled bun) | navy long-sleeve top, red bow headband |
 | `lincoln_photo` | no environment, plain studio backdrop | (none) | dark frock coat, white shirt, black bow tie |
-| `lincon_money` | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — |
+| `lincoln_money` | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — |
 | `marker` | window with blue sky and clouds behind her; drawn board border | window | off-shoulder cable-knit top, dark high-waisted pleated skirt, black ribbon choker, hoop earrings, hair ribbons |
 | `miya` | winter hillside road/lookout above a valley town; guardrail, bare trees, snow | guardrail, small trash bin, power pylons | cream double-breasted coat, black fur collar, grey pleated skirt, brown backpack, **cream headphones** |
 | `miyu` | no environment, black void; ground litter only | **wheelie bin** (recycling pictograms, lid open), scattered leaves | not readable (occluded) |
@@ -346,7 +346,7 @@ you are running before scoring anything.
 | forest-daynight | `forest_day` / `forest_night` | one vector scene, relit, **signage-free** | setting | tight, but *easier* than `city-*` — see below |
 | sanfran-daynight | `sanfran_day` / `_evening` / `_night` | one scene, **three** lighting states | setting | tight; the only series rather than pair |
 | supergirl | `supergirl1` / `supergirl2` | same character, costume, near-identical flying pose; marker board vs rough pencil | style | very tight |
-| lincoln | `lincoln_photo` / `lincon_money` | same face, same era; albumen photograph vs line engraving | style, character | tight — an object *containing* a portrait, so `[[SUBJECT_KIND]]` is a live question |
+| lincoln | `lincoln_photo` / `lincoln_money` | same face, same era; albumen photograph vs line engraving | style, character | tight — an object *containing* a portrait, so `[[SUBJECT_KIND]]` is a live question |
 | destroyer | `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | style, object | tight, and **the only media pair with no person in it** |
 | p6-window | `window` + `p6_first` + `p6_last` | one window, **three** framings and exposures | setting | tight — the widest same-place spread. **Reframing costs more than relighting**; this pair agrees less well than `city-*` |
 | p1 | `p1_first` / `p1_last` | same room, very different exposure | setting | secondary atmosphere probe (exposure, not time of day) |
@@ -423,7 +423,7 @@ well-formed and passes every structural check.
 | kasia headband hue | `kasia.png` treated as the reference, the renders as drifting | `kasia.png` is the **outlier** — three files agree on yellow, only the original is orange (hue 28–34°) | measured, then re-framed in 7b | a describer saying "orange" for `kasia.png` is right about *that image* while wrong about *the character* |
 | session-6 medium tally | "16 live-action photographic" | 17 — the list under it named 17 | arithmetic, session 7a | it is what makes the session-6 total 37 |
 | medium tallies vs crops | the 74-file tally excluded comic-panel crops from "comic page" but **included** `annie2_cropped` in "watercolour" | crops are files and count everywhere | recount, session 8 | the reason the tally is now generated rather than hand-maintained |
-| "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincon_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
+| "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincoln_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
 | `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
 
 **The general lesson is `L-CLAIM-ROWS-ARE-UNRELIABLE`, and it is about the inventory rather than
@@ -539,7 +539,7 @@ a sequence.
 
 ## Printed text and real-identity pressure
 
-**Printed text, hardest first**: `lincon_money` (almost nothing but text) · `destroyer_drawing`
+**Printed text, hardest first**: `lincoln_money` (almost nothing but text) · `destroyer_drawing`
 (class name, dimensions, tonnage, date) · `kaypro_ii` (brand on the case *and* rendered on the
 screen) · `chips_hotdog_dr_pepper_painting` (**three** brands, hand-painted, so the text is part of
 the brushwork) · `comic` / `annie3` / `comic_panel2` / `annie3_panel1` (dialogue balloons **plus a
@@ -549,7 +549,7 @@ character's name**) · `supergirl2` (hand-lettered title) · `car_interior_photo
 Weibo watermark) · `kasia_swimsuit_worn` (a commission credit) · `cloud` (artist signature and a
 repeating watermark) · `miya` (printed title) · `p2`/`p3` (brand text on a box).
 
-**Real identifiable people**: `lincoln_photo` + `lincon_money` (the same man twice across two media
+**Real identifiable people**: `lincoln_photo` + `lincoln_money` (the same man twice across two media
 — the strongest identity probe we have), `teddy_taft` (two at once), `girl_painting_reference` (a
 well-known actor, and the source of `girl_painting`). **Real place**: `fuji` — the first real test
 of the no-real-place-names rule.
@@ -690,7 +690,7 @@ change to the master table.
 | `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
 | `pixel art` | — | **4** | fish_pixel, miyu, ramen_pixel, van_pixel |
 | `print` | | **2** | |
-| | engraving | 1 | lincon_money |
+| | engraving | 1 | lincoln_money |
 | | technical plate | 1 | destroyer_drawing |
 
 **Total 100.** Live-action (`photograph` + `live-action film`) is **43 of 100, 43%** — down from 29/37, 78% at the start of session 7. 3 of those 43 are `amb`, so the honest range is 40–43.
