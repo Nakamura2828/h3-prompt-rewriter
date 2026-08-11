@@ -14,6 +14,7 @@
   "duration": "standard",
   "slots": {
     "NO_ALIGNMENT_LINE": null,
+    "NO_LANDING_CLAUSE": null,
     "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields. Begin your reply with \"integrated_multimodal_description:\".",
     "APPEAR_CLAUSE": "first appear",
     "SPEAKER_ORDER_LINE": "- Speaker IDs follow the order voices are FIRST HEARD, which may differ from the order characters first appear on screen. The first character to speak is (S1) even if another character was shown first.",

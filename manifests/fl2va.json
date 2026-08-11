@@ -16,6 +16,7 @@
   "duration": "fl2va",
   "slots": {
     "NO_ALIGNMENT_LINE": "- Do NOT output any alignment, reference, or \"aligns with\" line. Begin your reply directly with \"integrated_multimodal_description:\".",
+    "NO_LANDING_CLAUSE": "- Do NOT write your own closing sentence stating that the subject \"settles into\", \"arrives at\", or otherwise lands on the final pose, position, or framing of <Picture 2>. End on the last real action or gesture instead; a fixed landing line is appended after your output separately.",
     "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields.",
     "APPEAR_CLAUSE": "first appear",
     "SPEAKER_ORDER_LINE": "- Speaker IDs follow the order voices are FIRST HEARD, which may differ from the order characters first appear on screen (including the character shown in <Picture 1>). The first character to speak is (S1) even if another character was shown first.",
@@ -26,7 +27,7 @@
     "duration": "fl2va variant: single-shot default so H3 interpolates first->last; final shot must land on <Picture 2>.",
     "inputs": "composer is blind to the last frame; [[DELTA]] is its only source for it.",
     "user_action_rule": "v4 added an 'every user action must appear' checklist rule and it REGRESSED: p1 lost the lamp event, p1/p6 lost the landing clause, p6 shed a third of its length. v3 already wrote user actions correctly. Reverted. Do not re-add.",
-    "landing_clause": "Model writes the landing on <Picture 2> only ~50% of the time. Accepted: H3 has the real last frame and reaches it regardless. Candidate for deterministic graph-side append (see handoff)."
+    "landing_clause": "DONE session 4: model previously wrote the landing on <Picture 2> only ~50% of the time. Now suppressed via NO_LANDING_CLAUSE (model must end on the last real action instead) and appended deterministically by scripts/run_tests.py's insert_fl2va_landing() whenever a case sets align: fl2va. See CLAUDE.md."
   },
   "restorations_applied": []
 }

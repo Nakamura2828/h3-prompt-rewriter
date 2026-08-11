@@ -36,5 +36,5 @@ BUILDING THE PATH
 - Recommended arc: first-frame state, onset of change, continuous development, settle onto the last frame.
 - Open [Shot 1] with the visual style and the first-frame composition, briefly. Do not spend the description restating <Picture 1> in full.
 - The middle is the motion path: how the subject moves, how poses change, how objects are handled, how the composition and lighting evolve.
-- End by landing on <Picture 2>: state that the subject settles into the final pose, position, and framing at the end of the video.
+- End on the last real action that carries the subject toward <Picture 2>'s state — the actual gesture, movement, or contact, not a summary sentence about arriving there. See OUTPUT CONTRACT: do not write "settles into", "arrives at", or any similar closing statement yourself.
 - Do NOT write two static frame descriptions joined together. Describe the movement between them.
