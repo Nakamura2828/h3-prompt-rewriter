@@ -1,5 +1,28 @@
 # Validator — `scripts/validate.py`
 
+> **There are two failure pipelines and they must not be conflated.**
+>
+> | script | answers | needs an answer key? |
+> |---|---|---|
+> | `scripts/validate.py` | *Is the record well formed?* Fields present, ordered, once each; no reserved characters; closed vocabularies hold. | no |
+> | `scripts/score.py` | *Did the model say the right thing?* Compares fields against the test file's `_expected` map. | yes |
+>
+> `validate.py` **cannot see content** — a record naming the wrong medium, the wrong person or the
+> wrong place is perfectly well formed and passes every check here. That is what `score.py` and
+> `docs/image_inventory.md` are for.
+>
+> Only `score.py`'s counts feed the adjudication thresholds in `.claude/CLAUDE.md`; format failures
+> are reported separately and are never part of `F`. `score.py` also honours the `CONTESTED` /
+> `UNSCORABLE` markers, so an adjudicated case drops out of the denominator instead of being
+> re-litigated every round — and it prints the contested rate, because a rising one means the
+> vocabulary is asking for a distinction the images don't support. **`CONTESTED` rulings are
+> provisional and expire when the vocabulary changes; `UNSCORABLE` ones don't.**
+>
+> ```bash
+> python scripts/score.py tests/describer_style.json runs/run-*.txt
+> python scripts/score.py tests/describer_style_sweep.json <run> --fields MEDIUM   # coarse only
+> ```
+
 Format subcommands and what each one checks. Moved out of `.claude/CLAUDE.md` in session 8.
 
 ## Validator (`scripts/validate.py`) — format subcommands
