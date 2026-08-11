@@ -196,3 +196,7 @@ is `[[SETTING_KIND]]`, which is only interior/exterior, so all six `same:` group
 every round while `[[DEFINITION]]` drifted badly in v1. The real signal is `[[DEFINITION]]`
 stability across a `same:` group and **nothing automated checks it** — read those lines by eye.
 Recorded in `tests/describer_setting.json` itself so it cannot get lost.
+
+**It generalises, and applies to every role still to come:** where a role's closed drift field is
+coarse, the automated drift check is a formality and the eye is doing the work. Weigh that when
+choosing the drift field for `object` and `style` — a two-value field buys nothing.

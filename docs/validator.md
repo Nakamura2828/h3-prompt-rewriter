@@ -38,6 +38,12 @@ the role bans them · `[[SUBJECT NOT FOUND]]` only with a SUBJECT line, never `n
 always last · (warn) rendering-style words · (warn, setting) a transient condition in
 `[[DEFINITION]]`. `--role` selects everything; add a role by adding a row to `DESCRIBER_ROLES`.
 
+**Gotcha when adding a role.** `DESCRIBER_ROLES` is no longer `role -> [field names]`; it is
+`role -> {…}`. Adding a role is still one row, but it is a **dict**, and `drift` is a
+`(field, callable)` pair where the callable takes the record text and returns the vocabulary to
+read that field with. (Carried over from the session-6 handoff, which was the only place this
+was written down.)
+
 **Cross-case drift check**: cases in a group named `same: ...` must produce the same age
 bracket. That is the REF2VA identity-drift check, driven entirely by the group name — no new
 harness field.
