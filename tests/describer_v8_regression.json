@@ -1,0 +1,91 @@
+{
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_frame.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "current_v7",
+      "id": "cur_1",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "current_v7",
+      "id": "cur_2",
+      "user": "CAST: the girl with red hair | ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "current_v7",
+      "id": "cur_3",
+      "user": "ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "current_v7",
+      "id": "cur_4",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "current_v7",
+      "id": "cur_5",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame (the pancakes in the pan)",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "current_v7",
+      "id": "cur_6",
+      "user": "CAST: the man in the white t-shirt; the woman in the red dress | ROLE: frame",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_1",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_2",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "CAST: the girl with red hair | ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_3",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_4",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_5",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame (the pancakes in the pan)",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_6",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "CAST: the man in the white t-shirt; the woman in the red dress | ROLE: frame",
+      "image": "images/pancakes.png"
+    }
+  ]
+}

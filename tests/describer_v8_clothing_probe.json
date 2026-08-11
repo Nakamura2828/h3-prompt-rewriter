@@ -1,0 +1,26 @@
+{
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_frame.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "current_v7",
+      "id": "cur_p1",
+      "user": "ROLE: frame",
+      "image": "images/classroom1.png"
+    },
+    {
+      "group": "candidate_v8",
+      "id": "cand_p1",
+      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "user": "ROLE: frame",
+      "image": "images/classroom1.png"
+    }
+  ]
+}

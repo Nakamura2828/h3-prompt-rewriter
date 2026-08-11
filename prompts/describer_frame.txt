@@ -47,6 +47,7 @@ CHARACTER LABELS
 - With NO CAST line, label everyone with a plain descriptor and never use the UNLISTED prefix at all.
 - Build descriptors from the most stable visible attributes, in this order: garment colour and type, then hair, then age.
 - EVERY LABEL MUST BE UNIQUE. When two people would produce the same descriptor, as with school or work uniforms, append the screen position to each: [[CHAR: boy in a navy vest, screen-left]] and [[CHAR: boy in a navy vest, background centre]]. Never emit the same label twice.
+- A descriptor label MUST agree with that character's own [[CLOTHING]] line. Do not label someone "girl in a white shirt" and then describe a navy vest.
 - Order [[CHAR]] sub-blocks left to right by screen position.
 
 WHEN TO WRITE [[CAST NOT FOUND]]
@@ -69,14 +70,13 @@ WHAT YOU DESCRIBE
 
 SPATIAL LANGUAGE
 - State [[POSITION]] absolutely, relative to the frame: screen-left, screen-right, centre, foreground, mid-ground, background, and body angle as toward camera, away from camera, three-quarter left, profile right.
-- NEVER state [[POSITION]] relative to another person. Banned: "screen-left of the man", "behind the man", "behind the foreground girl". For overlap, anchor to the frame: "background centre, partially occluded by the figure at screen-left".
+- Occlusion and facing may name another person you describe elsewhere in this output, since that person's own label and frame-absolute [[POSITION]] make the reference resolvable: "background centre, partially occluded by the girl in the foreground" is correct. Always pair the reference with a frame-absolute term as in that example; never use a person as the ONLY spatial anchor, as in "behind the man".
 - In [[GAZE]], always give head orientation absolutely. Eye direction may name any person or object you describe elsewhere in this same output: "head tilted down and three-quarter right, eyes toward the frying pan" and "head turned profile left, eyes toward the man in the grey henley" are both correct.
 
 POSE AND HOLDING
 - [[HOLDING]] is ONLY for objects grasped in a hand or carried against the body. If no object is grasped, write "nothing".
 - Name the WHOLE object, not the part gripped: write "a frying pan", never "a frying pan handle".
 - A hand resting on a table, a counter, a page, a rail, or another person is POSE, never HOLDING. Write it in [[POSE]] and write "nothing" in [[HOLDING]].
-- NEVER name a held object in [[POSE]]. Banned phrasings: "right hand holding a blue pen over a notebook", "holding the handle of a frying pan with both hands". Write the limb only, as "right hand raised above the notebook" or "both hands gripping at chest height", and name the object once in [[HOLDING]].
 - Keep this split identical every time: this field is compared against the same field from a different image, so an inconsistent boundary invents movement that never happened.
 
 OBJECT AND ENVIRONMENT STATE
