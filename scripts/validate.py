@@ -210,6 +210,31 @@ FRAME_FIELDS = ['STYLE', 'FRAMING', 'CHAR', 'CROWD', 'OBJECTS', 'ENVIRONMENT', '
 
 NOT_FOUND = '[[SUBJECT NOT FOUND]]'
 
+# The closed two-level medium vocabulary (docs/image_inventory.md, "Medium vocabulary").
+# coarse -> its permitted sub-terms; an empty tuple means the coarse term has no sub-level
+# and [[SUB_MEDIUM]] must say 'none'. Kept in sync with the master table by hand -- the
+# same list drives scripts/inventory.py's own validation of that table.
+MEDIUM_VOCAB = {
+    'photograph': ('colour', 'archival'),
+    'live-action film': ('modern', 'vintage technicolor'),
+    '3d cg': ('product render', 'character render', 'feature animation'),
+    'stop-motion': (),
+    '2d cel': ('anime', 'western toon', 'flat illustration'),
+    'comic': (),
+    'painting': ('oil', 'watercolour', 'gouache', 'digital'),
+    'drawing': ('marker', 'sketch', 'ink'),
+    'vector': (),
+    'pixel art': (),
+    'print': ('engraving', 'technical plate'),
+}
+
+
+def _medium_vocab(out):
+    """Drift is read on the COARSE term only. The sub-term legitimately differs between
+    two records of one medium (supergirl1 marker / supergirl2 sketch), so folding it into
+    the drift check would flag a correct discrimination as drift."""
+    return list(MEDIUM_VOCAB)
+
 
 def _character_age_vocab(out):
     """Which closed list applies depends on what the record says it is describing."""
@@ -238,6 +263,7 @@ DESCRIBER_ROLES = {
         'style_warn': True,
         'style_allow': (),
         'atmos_field': None,
+        'coarse_sub': None,
     },
     'setting': {
         'fields': ['SETTING_KIND', 'STRUCTURE', 'CONTENTS', 'DISTINGUISHING', 'PLACE',
@@ -255,6 +281,27 @@ DESCRIBER_ROLES = {
         # 'rendered' is a building term here ('a rendered plaster column'), not a style claim
         'style_allow': ('rendered',),
         'atmos_field': 'ATMOSPHERE',
+        'coarse_sub': None,
+    },
+    'style': {
+        'fields': ['EXECUTION', 'PALETTE', 'LIGHTING', 'DISTINGUISHING',
+                   'MEDIUM', 'SUB_MEDIUM', 'LABEL', 'DEFINITION'],
+        'closed': {'MEDIUM': tuple(MEDIUM_VOCAB)},
+        # 11 coarse terms, so unlike setting's two-value [[SETTING_KIND]] this drift check
+        # can actually fail. 'same:' groups here are same-medium groups, NOT the
+        # cross-media probe pairs -- those are supposed to differ.
+        'drift': ('MEDIUM', _medium_vocab),
+        'no_digits': (),          # '16-colour', '1990s' and 'four-panel' are all legitimate
+        # Same reasoning as setting: one image has one look, so there is nothing to
+        # disambiguate and no judgement worth risking (L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY).
+        'not_found': False,
+        # This is the one role whose whole job is naming the rendering style.
+        'style_warn': False,
+        'style_allow': (),
+        # [[LIGHTING]] here is the lighting TREATMENT, which is durable, so there is no
+        # transient field to quarantine. The prompt bans time-of-day wording instead.
+        'atmos_field': None,
+        'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
     },
 }
 
@@ -337,6 +384,20 @@ def check_describer(out, inp, role):
                         f'list ({", ".join(vocab)})')
         elif len(found) > 1:
             errs.append(f'[[APPEARANCE]] hedges between age brackets: {found}')
+
+    # --- a two-level closed vocabulary: the sub-term must belong to the coarse term
+    if spec['coarse_sub']:
+        cf, sf, vocab = spec['coarse_sub']
+        coarse = field_text(cf).lower().strip(' .')
+        sub = field_text(sf).lower().strip(' .')
+        if coarse in vocab:
+            allowed = vocab[coarse]
+            if allowed and sub not in allowed and sub != 'not determinable':
+                errs.append(f'[[{sf}]] is {sub!r}, which is not a sub-term of '
+                            f'[[{cf}]] {coarse!r} ({", ".join(allowed)}, or not determinable)')
+            elif not allowed and sub != 'none':
+                errs.append(f'[[{sf}]] is {sub!r}, but [[{cf}]] {coarse!r} has no '
+                            f'sub-terms -- it must say none')
 
     for fname in spec['no_digits']:
         if re.search(r'\d', field_text(fname)):

@@ -91,6 +91,33 @@ These exist so that two records of one image cannot legitimately disagree — th
    The distinction is look — grain, grade, aspect, lighting — and "cinematic" is a real signal for
    a *video* prompt. Judged on presentation, not on provenance.
 
+### The sub-lists inherit the axis problem the coarse list was built to fix (session 9)
+
+Found by the style v1 round. `L-ONE-AXIS-PER-VOCABULARY` was applied to the **coarse** list and
+never to the sub-lists, and three of them mix axes exactly the way the old flat list did:
+
+| sub-list | the mixed axes |
+|---|---|
+| `drawing` — marker · sketch · ink | `marker` and `ink` are **instruments**; `sketch` is a **degree of finish**. A marker-coloured, un-inked pencil sketch is both |
+| `painting` — oil · watercolour · gouache · digital | the first three are **media**; `digital` is a **substrate**. Anything smooth can be called digital, so it acts as a sink |
+| `photograph` — colour · archival | `colour` is a **property**; `archival` is an **era/treatment**. Mildest of the three, and it has not misfired yet |
+
+`supergirl1`/`supergirl2` is the case that exposed it. Both are **marker-coloured**; they differ
+only in that one is inked and one keeps its pencil under-drawing. Filed as `marker` and `sketch`,
+they are described as differing in instrument when they actually differ in finish. Under a
+"what laid down the colour" reading `supergirl2` is `marker`; under an "overall character" reading
+it is `sketch`. **The vocabulary does not say which question the sub-term answers**, so both
+readings are defensible — which is precisely the failure `L-ONE-AXIS-PER-VOCABULARY` describes.
+
+Two model results that look like defects are probably this instead: `woman_oil` → `digital`
+(a smooth photorealist oil, and `digital` is the sink) and `supergirl2` → `marker` under v2.
+
+**Not fixed, deliberately.** Splitting these lists means reclassifying the corpus a second time
+and would change what several probe pairs test. It is recorded here and on `.claude/TODO.md` as a
+decision to take before `describer_object` hardens the same conventions. Until then, **score the
+coarse term with confidence and treat a lone sub-term miss in `drawing` or `painting` as
+contested rather than wrong.**
+
 ### What the reclassification changed
 
 - **`annie2` moved from watercolour to `photograph`** under rule 2. That is a deliberate
@@ -139,7 +166,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `comic_panel2` | comic | — | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
 | `comic_panel3` | comic | — | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
 | `comic_panel4` | comic | — | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
-| `coraline1` | stop-motion | — | puppet cut out on white | none | 1 girl (puppet) | coraline | s7a | franchise |
+| `coraline1` | stop-motion | — | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
 | `coraline2` | stop-motion | — | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
 | `destroyer_drawing` | print | technical plate | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
 | `destroyer_photo` | photograph | archival | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
@@ -157,9 +184,9 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `ivy_toon` | 2D cel | western toon | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
 | `jacket` | photograph | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
 | `jacket2` | photograph | colour | — | ext | same woman | jacket | s6 | — |
-| `kasia` | 2D cel | flat illustration | the original drawing | none | 1 girl | kasia | s6 | corr |
-| `kasia_bag` | 3D CG | product render | — | none | none | kasia, bag-angle | s7a | — |
-| `kasia_bag_2` | 3D CG | product render | second angle, re-render | none | none | kasia, bag-angle | s7b | — |
+| `kasia` | 2D cel | flat illustration | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
+| `kasia_bag` | 3D CG | product render | user: AI-rendered to look realistic. Render vs photo **not visually determinable** | none | none | kasia, bag-angle | s7a | amb |
+| `kasia_bag_2` | 3D CG | product render | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | amb |
 | `kasia_outfit` | 3D CG | product render | **flat-lay**, derived from `kasia` | none | none | kasia | s7a | — |
 | `kasia_render` | 3D CG | character render | stylised anime character render | none | 1 girl | kasia | s7a | — |
 | `kasia_swimsuit` | 3D CG | product render | **flat-lay**, derived from `kasia_swimsuit_worn` | none | none | kasia | s7a | corr |
@@ -199,7 +226,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `sleeping` | photograph | colour | — | int | 1 young-adult woman | — | s6 | — |
 | `stage` | photograph | colour | — | int | 1 woman + ~100 audience | — | s6 | — |
 | `supergirl1` | drawing | marker | copic-style on board | ext-ish (drawn panel) | 1 young woman | supergirl | s7a | text, franchise |
-| `supergirl2` | drawing | sketch | coloured pencil / colour sketch | none | same character | supergirl | s7a | text, franchise |
+| `supergirl2` | drawing | sketch | **marker colour over an un-inked pencil sketch** — the colour medium is the same as `supergirl1`; only the linework differs. **Sub-term contested**, see the axis note under "Medium vocabulary" | none | same character | supergirl | s7a | text, franchise, corr |
 | `teddy_taft` | photograph | archival | — | ext | 2 adult men | — | s7a | real |
 | `temple_day` | painting | digital | high-key, painterly | ext | 1 young woman | temple | s7a | text |
 | `temple_night` | painting | digital | low-key, same hand | ext | 1 young man | temple | s7a | text |
@@ -246,7 +273,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `comic_panel2` | close-up, classroom behind | (none) | school uniform |
 | `comic_panel3` | **same room as `comic_panel4`**; whiteboard | dialogue balloon | grey blazer |
 | `comic_panel4` | classroom interior; desks, windows, planter boxes | desks, papers | school uniforms w/ ties |
-| `coraline1` | no environment, white | forked twig | yellow raincoat, blue jeans, yellow wellingtons, dragonfly hair clip |
+| `coraline1` | no environment — **transparent ground**, which the model receives as black, not white | forked twig | yellow raincoat, blue jeans, yellow wellingtons, dragonfly hair clip |
 | `coraline2` | dim kitchen; sash window, panelled cabinets, deep sink, tiled splashback, round table | open laptop, **mug reading "I love Mulch"**, notebook, pen, a doll | yellow raincoat; grey knitted cardigan |
 | `destroyer_drawing` | no environment | side elevation + plan view of a warship, range scale, rising-sun emblem | — |
 | `destroyer_photo` | warship at anchor, calm water, blank pale sky, distant masts | twin funnels making smoke, turrets, torpedo tubes, bridge tower, ensign; **kana + "19" on the hull** | — |
@@ -425,6 +452,10 @@ well-formed and passes every structural check.
 | medium tallies vs crops | the 74-file tally excluded comic-panel crops from "comic page" but **included** `annie2_cropped` in "watercolour" | crops are files and count everywhere | recount, session 8 | the reason the tally is now generated rather than hand-maintained |
 | "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincoln_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
 | `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
+| `supergirl2` medium | `drawing / sketch`, described as "coloured pencil / colour sketch" | the **colour is marker, the same as `supergirl1`**; what differs is the linework, which is an un-inked pencil under-drawing. The pair differs in *finish*, not in *instrument* | user, session 9, reading both images against the style v1 and v2 rounds | the `supergirl` pair was set up as a `marker` vs `sketch` discrimination and is not one. It also exposed that the `drawing` and `painting` sub-lists mix axes — see "Medium vocabulary" |
+| `kasia_bag` / `kasia_bag_2` medium | classified `3D CG / product render` with no caveat | still filed there, but **not visually determinable** — both were AI-rendered to look realistic, on the same seamless white studio ground as `chair` and the two cars | user, session 9, after the style v1 round split the pair `3D CG` / `photograph` | **grows the `amb` category from 3 files to 5.** The pair's `[[MEDIUM]]` disagreement is not a medium error; the fact that two views of one object disagreed *with each other* still is |
+| `kasia` sub-term | `flat illustration`, stated flatly | the coarse term `2D cel` is solid; the **sub-term is contested** — an anime-inspired toon idiom leaning slightly western | user, session 9, after style v1 answered `anime` | a sub-term miss here is not clearly a miss. Score the coarse term only |
+| `coraline1` ground | "puppet cut out on white" | the file is a **palette PNG with a transparency key, 83.5% fully transparent**. It has no white ground; it has no ground at all. What reaches the model composites to **black** | the session-9 style round reported "pure black background" twice and was scored as a hallucination; the user identified transparency as the cause, confirmed by an alpha scan of the whole corpus | **a wrong ground truth was about to be recorded as a model defect.** It is the only genuinely transparent file in the corpus — six other files carry an alpha channel that is fully opaque, so they are inert |
 
 **The general lesson is `L-CLAIM-ROWS-ARE-UNRELIABLE`, and it is about the inventory rather than
 about kasia: a "these are
@@ -486,7 +517,20 @@ tie-break rules under "Medium vocabulary":
   `photograph`, with `annie2_cropped` as the clean watercolour sample. The rule generalises to
   `tv`'s CRT and to any poster, phone screen or television in frame, which is ordinary in real use.
 
-### The three `amb` images — a category, not a defect
+### The `amb` images — a category, not a defect
+
+**Five members as of session 9**: `chair`, `car_1`, `car_2`, and — added after the style v1 round —
+`kasia_bag` and `kasia_bag_2`, which the user confirms were AI-rendered to look realistic on the
+same seamless white ground. The category grew for the same reason it was created: the corpus keeps
+turning up images whose classification rests on provenance rather than on pixels, and a clean
+studio shot on white is exactly where photograph, product render and AI render converge.
+
+Note the asymmetry the bag pair exposes. `[[MEDIUM]]` on either file is unscorable, **but the two
+files disagreeing with each other is still a real failure** — two views of one object on one ground
+must land in the same place whatever that place is. The `amb` flag suspends the answer key, not the
+consistency requirement. `car_1`/`car_2` are the same shape and passed it; the bags did not.
+
+The original three, and the reasoning that built the category:
 
 `chair`, `car_1` and `car_2` are studio product shots on white. The user knows their provenance —
 `chair` came from an Amazon listing, `car_1`/`car_2` direct from an automaker — so they are filed
@@ -648,6 +692,35 @@ that would otherwise contaminate a character record.
   4320x3240, 6.3 MB (~8.4 MB base64, 5× the pixel count of anything else). Frame 0 extracted,
   Lanczos-resized to 2000x1500, saved as JPEG q90 → `cannon.jpg`, 0.99 MB. Visually identical. The
   original was marked read-only, which had to be cleared first.
+- **`coraline1.png` is transparent, and transparency is not a neutral background.** It is a
+  palette PNG carrying a `tRNS` transparency key, **83.5% fully transparent**. Viewed in most
+  image tools it appears cut out on white; `run_tests.py` base64-encodes the **raw file bytes**
+  and lets the server-side decoder flatten it, and that composites to **black**. A naive
+  `Image.open(...).convert('RGB')` gives `(0, 0, 0)` at the corner, which is what the model
+  reported.
+
+  Two consequences worth carrying:
+
+  1. **What we see in a viewer is not necessarily what the model receives.** Any ground-truth
+     claim about a background on a transparent file is a claim about our viewer, not about the
+     input. This is `L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS` arriving from an unexpected direction —
+     the mismatch was in the pipeline rather than in the provenance.
+  2. **The corpus was scanned and `coraline1` is the only offender.** `azumanga_anime`,
+     `car_interior_mecha_driver`, `car_interior_sketch`, `kiki`, `miyu` and `peter_griffin_toon`
+     all carry an alpha channel whose minimum value is 255 — fully opaque, so they flatten
+     identically whatever the decoder does. No earlier round is affected: no transparent file
+     was in the `setting` or `character` test sets.
+
+  Re-run the scan if images arrive from sources that ship cut-outs (product shots, sprite
+  sheets, wiki renders):
+
+  ```bash
+  python -c "from PIL import Image; import pathlib; [print(p.name, Image.open(p).convert('RGBA').getchannel('A').getextrema()) for p in pathlib.Path('images').iterdir()]"
+  ```
+
+  **Left as-is rather than flattened**, pending a decision: flattening onto white would match how
+  we read it, but the black ground is a legitimate input and `coraline1` is a `style` and
+  `character` fixture where the ground barely matters. See `.claude/TODO.md`.
 - **`teddy_taft.JPG` had an uppercase extension** — Harmless today
   (`image_payload()` should lowercase before mapping) but worth normalising.
 
@@ -669,7 +742,7 @@ change to the master table.
 | | modern | 14 | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, window |
 | | vintage Technicolor | 2 | p5_first, p5_last |
 | `3D CG` | | **9** | |
-| | product render | 5 | fruitbowl, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit |
+| | product render | 5 | fruitbowl, kasia_bag\*, kasia_bag_2\*, kasia_outfit, kasia_swimsuit |
 | | character render | 2 | kasia_render, kasia_swimsuit_render |
 | | feature animation | 2 | shrek_cg, woody_cg |
 | `stop-motion` | — | **2** | coraline1, coraline2 |
@@ -695,9 +768,13 @@ change to the master table.
 
 **Total 100.** Live-action (`photograph` + `live-action film`) is **43 of 100, 43%** — down from 29/37, 78% at the start of session 7. 3 of those 43 are `amb`, so the honest range is 40–43.
 
-\* `chair`, `car_1`, `car_2` are filed as `photograph` on the user's provenance knowledge (an
-Amazon listing and an automaker press shot respectively) and are flagged `amb` — the pixels do not
-settle photo vs render. See "Coverage by role → style".
+\* The five `amb` files, whose classification rests on provenance the describer cannot see.
+`chair`, `car_1` and `car_2` are filed as `photograph` (an Amazon listing and an automaker press
+shot); `kasia_bag` and `kasia_bag_2` are filed as `3D CG / product render` (AI-rendered to look
+realistic). In both directions the pixels do not settle it, and all five sit on a seamless white
+studio ground — the case where photograph, product render and AI render converge. Do not score
+`[[MEDIUM]]` on any of them; two files of one object must still agree with each other. See
+"Coverage by role → style".
 \*\* `annie2` is a photograph *of* a watercolour, filed by the outer medium per tie-break 2. Its
 content is a drawing, so it inflates the live-action share by one.
 

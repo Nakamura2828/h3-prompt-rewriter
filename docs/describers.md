@@ -200,3 +200,77 @@ Recorded in `tests/describer_setting.json` itself so it cannot get lost.
 **It generalises, and applies to every role still to come:** where a role's closed drift field is
 coarse, the automated drift check is a formality and the eye is doing the work. Weigh that when
 choosing the drift field for `object` and `style` — a two-value field buys nothing.
+
+**`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
+failures on its first round. See below.
+
+## Style describer (v1, session 9)
+
+`prompts/describer_style.txt` — the third REF2VA describer role, and **the inverse of the other
+three**: it records how an image is rendered and never what it depicts. The other roles all ban
+style words; this one bans everything else, which is the harder direction, because an image invites
+you to say what is in it. Eight fields, condensations last:
+
+```
+[[EXECUTION]] [[PALETTE]] [[LIGHTING]] [[DISTINGUISHING]] [[MEDIUM]] [[SUB_MEDIUM]] [[LABEL]] [[DEFINITION]]
+```
+
+`[[LABEL]]` + `[[DEFINITION]]` splice as the other roles' do:
+`<Subject 1> is the flat anime cel style of <Picture 1>, with thick uniform black outlines, ...`.
+The record also feeds the §5.2 style opening, the one or two sentences that precede `[Shot 1]` in
+`detailed_description`.
+
+**`[[MEDIUM]]` sits seventh, not first**, unlike `[[SUBJECT_KIND]]` and `[[SETTING_KIND]]`. Those
+are binary discriminators; `[[MEDIUM]]` is an 11-value *condensation of the look*, so it behaves
+like `[[PLACE]]` and `L-JUDGMENTS-LAST` applies. Naming "2D cel / anime" first invites generic anime
+descriptors instead of a reading of this image.
+
+**`[[SUB_MEDIUM]]` is its own always-emitted field** with `none` and `not determinable` as
+permitted values. This is `L-DECLARED-FIELD-IS-AN-OBLIGATION` used deliberately *for* us: a listed
+field gets filled, so the sub-term cannot quietly go missing the way an optional element would.
+It worked — **39/39 records emitted it**, `none` was correct for all four sub-less coarse terms,
+and no record invented or borrowed a sub-term. `validate.py` checks the pairing mechanically
+(`coarse_sub`), the strongest content check any role has.
+
+### Version history
+
+| round | result |
+|---|---|
+| v1 | **36/39 format-clean, 27/33 exact on scorable cases** (6 unscorable — 5 `amb` plus contested `kasia`). Zero franchise or real-place names across the whole round. 6/39 leaked a garment or body part. Tie-breaks: 1 ✓, 2 ✗, 3 half, 4 ✓ |
+| v2 | **REVERTED. 23/33** — two added tie-break rules fixed **none** of their four targets and broke three unrelated cases. See `L-KNOW-WHEN-TO-STOP` and the note below |
+| v1 repeat | **27/33, identical `[[MEDIUM]]`/`[[SUB_MEDIUM]]` on all 39 cases.** Confirms the revert and proves the v2 regressions were the prompt, not sampling |
+
+**Locked at v1.**
+
+### Why v2 failed — the most instructive result of the session
+
+v2 added a drawing-vs-painting tie-break and a nested-image instruction, targeting `supergirl1`,
+`annie1`, `annie2` and `woman_oil`. All four still failed. Three unrelated cases broke, each toward
+a word the new rules introduced: `supergirl2` `sketch`→`marker`, `azumanga_toon` and
+`peter_griffin_toon` `western toon`→`anime`, `girl_painting_reference` `live-action film`→
+`photograph`.
+
+The drawing-vs-painting rule quoted the offending record verbatim as banned, per `L-NAME-THE-CASE`.
+The next round reproduced **near-verbatim the banned `[[EXECUTION]]` line** and kept the wrong
+verdict. That produced the new limit now recorded on `L-NAME-THE-CASE`: **quote a bad output, never
+a bad judgement.** A banned quote is still an example.
+
+### Known limitations, not chased
+
+- **Tie-break 2 (nested images) does not fire, and may not be fixable by wording.** `annie2` is a
+  photograph of a watercolour held in a hand in a defocused hall; across v1 and v2 the model
+  described only the inner artwork and never mentioned the hand or the hall. The nesting is not
+  being weighed and rejected — it is not being *perceived*. Treat as a capability ceiling.
+- **`painting / digital` is a sink.** Anything smooth lands there, including `woman_oil`
+  (a photorealist oil) and `supergirl1` (marker). The cause is structural, not a wording problem —
+  see the sub-list axis note below.
+- **The `drawing` and `painting` sub-lists mix axes**, exactly the defect the two-level coarse
+  vocabulary was designed to remove. `marker`/`ink` are instruments while `sketch` is a degree of
+  finish; `oil`/`watercolour`/`gouache` are media while `digital` is a substrate. Documented in
+  `docs/image_inventory.md` § "The sub-lists inherit the axis problem the coarse list was built to
+  fix", with a decision pending on `.claude/TODO.md`. **Until it is settled, score the coarse term
+  with confidence and treat a lone `drawing`/`painting` sub-term miss as contested.**
+- **`2D cel`'s sub-list is the weakest in practice** — `anime` acts as the default. `ivy_toon` is a
+  real miss; `kasia` is contested by the user's own read.
+- Content leak is real but minor: 6 of 39 records named a garment or body part. Generic reference
+  is used correctly in the majority ("the figure" ×19, "the background" ×13).

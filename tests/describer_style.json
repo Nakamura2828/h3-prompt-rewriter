@@ -1,0 +1,307 @@
+{
+  "_role": "describer_style v1 (session 9). The first test of the closed two-level [[MEDIUM]] vocabulary adopted in session 8 -- it was derived from the corpus and reclassified the whole master table, but had never been put in front of the model. 39 targeted cases; a full 100-image sweep follows once the prompt is locked.",
+
+  "_drift_check": "UNLIKE setting, this role's automated drift check is worth running. Its drift field is coarse [[MEDIUM]] (11 values), not a two-value discriminator, so a 'same:' group can actually fail. Groups named 'same: ...' are SAME-COARSE-MEDIUM groups: every case in one must produce the same [[MEDIUM]]. The SUB_MEDIUM may legitimately differ inside several of them (supergirl marker/sketch, azumanga anime/western toon, oil-idiom digital/oil) -- that difference is the point of those pairs, so nothing automated checks it. Read the SUB_MEDIUM lines of every 'same:' group by eye.",
+
+  "_cross_media": "Groups named 'cross-media: ...' are the opposite -- the two cases MUST produce different [[MEDIUM]] values. They are deliberately NOT 'same:' groups, or the drift check would flag a correct discrimination as drift. A collapse (both records reporting one medium) is the failure to watch for.",
+
+  "_content_leak": "THE EXPECTED FAILURE MODE, and validate.py cannot see it. Every other describer bans style words; this one bans everything else, which is the harder direction -- an image invites you to say what is in it. Read [[EXECUTION]] and [[PALETTE]] by eye for named subject matter. Generic reference ('the figures', 'the background') is permitted and expected; identification ('three schoolgirls in coral uniforms') is the defect.",
+
+  "_franchise": "ivy_toon, shrek_cg and woody_cg carry NO text anywhere in frame, so naming the source requires recognition rather than reading a label. peter_griffin_painting is the nastiest: instantly recognisable but rendered in a medium the source never uses. The prompt's answer is a positive instruction -- describe the period and technique ('a 1990s television cel-animation look'), never the studio or series.",
+
+  "_amb": "FIVE cases are flagged amb in docs/image_inventory.md: chair, car_1, car_2, kasia_bag and kasia_bag_2. Their classification rests on the user's provenance knowledge, not on the pixels -- the first three are studio photographs that look like renders, the bags are AI renders made to look realistic, and all five sit on a seamless white studio ground, which is exactly where photograph, product render and AI render converge. [[MEDIUM]] is UNSCORABLE on all five in either direction (L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS). The two PAIRS are still 'same:' groups, and that part IS scorable: whatever the model decides, two views of one object on one ground must agree with each other. The amb flag suspends the answer key, not the consistency requirement. In v1 car_1/car_2 agreed and kasia_bag/kasia_bag_2 did not.",
+
+  "_no_multipanel_rule": "sty_comic is a 5-panel page and sty_annie3_panel1 is one panel of a 4-panel page. The prompt has NO multi-panel rule, deliberately: docs/image_inventory.md records the agreement to keep full pages for style and run them as a diagnostic that is recorded and never patched. Adding an 'if the image contains multiple panels' rule is L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY in a new costume, and it will cost something elsewhere.",
+
+  "_tie_breaks": "Each tie-break rule has at least one case. 1 stop-motion beats photograph: sty_coraline1 (a puppet cut out on white, defensibly a photograph) and sty_coraline2. 2 report the outer medium: sty_annie2 (a photograph OF a watercolour) against sty_annie2_cropped (the clean watercolour). 3 report the idiom not the substrate: sty_ayanami_oil (digital) vs sty_woman_oil (traditional). 4 photograph vs live-action film: sty_fuji and sty_girl_painting_reference sit either side of it, and that boundary carries 43 of the corpus's 100 files.",
+
+  "_expected": {
+    "sty_coraline1": "stop-motion / none",
+    "sty_coraline2": "stop-motion / none",
+    "sty_ivy_toon": "2D cel / western toon",
+    "sty_peter_griffin_toon": "2D cel / western toon",
+    "sty_supergirl1": "drawing / marker",
+    "sty_supergirl2": "drawing / sketch",
+    "sty_ayanami_oil": "painting / digital",
+    "sty_woman_oil": "painting / oil",
+    "sty_azumanga_anime": "2D cel / anime",
+    "sty_azumanga_toon": "2D cel / western toon",
+    "sty_kasia_bag": "UNSCORABLE (amb) -- must merely agree with sty_kasia_bag_2",
+    "sty_kasia_bag_2": "UNSCORABLE (amb) -- must merely agree with sty_kasia_bag",
+    "sty_ramen_pixel": "pixel art / none",
+    "sty_van_pixel": "pixel art / none",
+    "sty_sanfran_day": "vector / none",
+    "sty_sanfran_night": "vector / none",
+    "sty_car_1": "UNSCORABLE (amb) -- must merely agree with sty_car_2",
+    "sty_car_2": "UNSCORABLE (amb) -- must merely agree with sty_car_1",
+    "sty_chair": "UNSCORABLE (amb)",
+    "sty_lincoln_photo": "photograph / archival",
+    "sty_lincoln_money": "print / engraving",
+    "sty_destroyer_photo": "photograph / archival",
+    "sty_destroyer_drawing": "print / technical plate",
+    "sty_peter_griffin_painting": "painting / digital",
+    "sty_girl_painting_reference": "live-action film / modern",
+    "sty_girl_painting": "painting / digital",
+    "sty_bird_vector": "vector / none",
+    "sty_bird_watercolor": "painting / watercolour",
+    "sty_annie1": "drawing / marker",
+    "sty_annie2_cropped": "painting / watercolour",
+    "sty_annie3_panel1": "comic / none",
+    "sty_annie2": "photograph / colour  (tie-break 2: a photograph OF a watercolour)",
+    "sty_comic": "comic / none",
+    "sty_shrek_cg": "3D CG / feature animation",
+    "sty_woody_cg": "3D CG / feature animation",
+    "sty_kasia_render": "3D CG / character render",
+    "sty_kasia": "2D cel / (sub-term CONTESTED -- an anime-inspired toon idiom leaning slightly western; score the coarse term only)",
+    "sty_p5_first": "live-action film / vintage Technicolor",
+    "sty_fuji": "photograph / colour"
+  },
+
+  "_coverage": "All 11 coarse terms appear. 19 of the 23 defined (coarse, sub) pairs are exercised; painting/gouache and drawing/ink have no sample in the corpus at all, and 3D CG/product render and photograph/colour appear more than once. print/engraving and print/technical plate are single-sample by nature -- a result on either is unreplicated.",
+
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_style.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "sty_coraline1",
+      "user": "ROLE: style",
+      "image": "images/coraline1.png"
+    },
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "sty_coraline2",
+      "user": "ROLE: style",
+      "image": "images/coraline2.png"
+    },
+    {
+      "group": "same: 2D cel western toon (90s vs modern)",
+      "id": "sty_ivy_toon",
+      "user": "ROLE: style",
+      "image": "images/ivy_toon.jpg"
+    },
+    {
+      "group": "same: 2D cel western toon (90s vs modern)",
+      "id": "sty_peter_griffin_toon",
+      "user": "ROLE: style",
+      "image": "images/peter_griffin_toon.png"
+    },
+    {
+      "group": "same: drawing (marker vs sketch)",
+      "id": "sty_supergirl1",
+      "user": "ROLE: style",
+      "image": "images/supergirl1.jpg"
+    },
+    {
+      "group": "same: drawing (marker vs sketch)",
+      "id": "sty_supergirl2",
+      "user": "ROLE: style",
+      "image": "images/supergirl2.jpg"
+    },
+    {
+      "group": "same: painting, oil idiom (tie-break 3)",
+      "id": "sty_ayanami_oil",
+      "user": "ROLE: style",
+      "image": "images/ayanami_oil.jpg"
+    },
+    {
+      "group": "same: painting, oil idiom (tie-break 3)",
+      "id": "sty_woman_oil",
+      "user": "ROLE: style",
+      "image": "images/woman_oil.jpg"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "sty_azumanga_anime",
+      "user": "ROLE: style",
+      "image": "images/azumanga_anime.png"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "sty_azumanga_toon",
+      "user": "ROLE: style",
+      "image": "images/azumanga_toon.jpg"
+    },
+    {
+      "group": "same: one product render, two angles",
+      "id": "sty_kasia_bag",
+      "user": "ROLE: style",
+      "image": "images/kasia_bag.png"
+    },
+    {
+      "group": "same: one product render, two angles",
+      "id": "sty_kasia_bag_2",
+      "user": "ROLE: style",
+      "image": "images/kasia_bag_2.png"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "sty_ramen_pixel",
+      "user": "ROLE: style",
+      "image": "images/ramen_pixel.jpg"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "sty_van_pixel",
+      "user": "ROLE: style",
+      "image": "images/van_pixel.png"
+    },
+    {
+      "group": "same: vector scene, relit",
+      "id": "sty_sanfran_day",
+      "user": "ROLE: style",
+      "image": "images/sanfran_day.png"
+    },
+    {
+      "group": "same: vector scene, relit",
+      "id": "sty_sanfran_night",
+      "user": "ROLE: style",
+      "image": "images/sanfran_night.png"
+    },
+    {
+      "group": "same: studio shot, two angles (amb, agreement only)",
+      "id": "sty_car_1",
+      "user": "ROLE: style",
+      "image": "images/car_1.png"
+    },
+    {
+      "group": "same: studio shot, two angles (amb, agreement only)",
+      "id": "sty_car_2",
+      "user": "ROLE: style",
+      "image": "images/car_2.png"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "sty_lincoln_photo",
+      "user": "ROLE: style",
+      "image": "images/lincoln_photo.jpg"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "sty_lincoln_money",
+      "user": "ROLE: style",
+      "image": "images/lincoln_money.jpg"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "sty_destroyer_photo",
+      "user": "ROLE: style",
+      "image": "images/destroyer_photo.jpg"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "sty_destroyer_drawing",
+      "user": "ROLE: style",
+      "image": "images/destroyer_drawing.jpg"
+    },
+    {
+      "group": "cross-media: one character, painterly vs canonical toon",
+      "id": "sty_peter_griffin_painting",
+      "user": "ROLE: style",
+      "image": "images/peter_griffin_painting.jpg"
+    },
+    {
+      "group": "cross-media: the exact control (film still vs painting made from it)",
+      "id": "sty_girl_painting_reference",
+      "user": "ROLE: style",
+      "image": "images/girl_painting_reference.jpg"
+    },
+    {
+      "group": "cross-media: the exact control (film still vs painting made from it)",
+      "id": "sty_girl_painting",
+      "user": "ROLE: style",
+      "image": "images/girl_painting.jpg"
+    },
+    {
+      "group": "cross-media: one bird, vector vs watercolour",
+      "id": "sty_bird_vector",
+      "user": "ROLE: style",
+      "image": "images/bird_vector.jpg"
+    },
+    {
+      "group": "cross-media: one bird, vector vs watercolour",
+      "id": "sty_bird_watercolor",
+      "user": "ROLE: style",
+      "image": "images/bird_watercolor.jpg"
+    },
+    {
+      "group": "cross-media: the annie ladder (marker, watercolour, comic)",
+      "id": "sty_annie1",
+      "user": "ROLE: style",
+      "image": "images/annie1.jpg"
+    },
+    {
+      "group": "cross-media: the annie ladder (marker, watercolour, comic)",
+      "id": "sty_annie2_cropped",
+      "user": "ROLE: style",
+      "image": "images/annie2_cropped.jpg"
+    },
+    {
+      "group": "cross-media: the annie ladder (marker, watercolour, comic)",
+      "id": "sty_annie3_panel1",
+      "user": "ROLE: style",
+      "image": "images/annie3_panel1.jpg"
+    },
+    {
+      "group": "nested medium (tie-break 2)",
+      "id": "sty_annie2",
+      "user": "ROLE: style",
+      "image": "images/annie2.jpg"
+    },
+    {
+      "group": "multi-panel diagnostic (recorded, never patched)",
+      "id": "sty_comic",
+      "user": "ROLE: style",
+      "image": "images/comic.jpg"
+    },
+    {
+      "group": "3D CG breadth",
+      "id": "sty_shrek_cg",
+      "user": "ROLE: style",
+      "image": "images/shrek_cg.jpg"
+    },
+    {
+      "group": "3D CG breadth",
+      "id": "sty_woody_cg",
+      "user": "ROLE: style",
+      "image": "images/woody_cg.jpg"
+    },
+    {
+      "group": "3D CG breadth",
+      "id": "sty_kasia_render",
+      "user": "ROLE: style",
+      "image": "images/kasia_render.png"
+    },
+    {
+      "group": "coarse coverage",
+      "id": "sty_kasia",
+      "user": "ROLE: style",
+      "image": "images/kasia.png"
+    },
+    {
+      "group": "coarse coverage",
+      "id": "sty_p5_first",
+      "user": "ROLE: style",
+      "image": "images/p5_first.png"
+    },
+    {
+      "group": "coarse coverage",
+      "id": "sty_fuji",
+      "user": "ROLE: style",
+      "image": "images/fuji.jpg"
+    },
+    {
+      "group": "coarse coverage (amb)",
+      "id": "sty_chair",
+      "user": "ROLE: style",
+      "image": "images/chair.jpg"
+    }
+  ]
+}
