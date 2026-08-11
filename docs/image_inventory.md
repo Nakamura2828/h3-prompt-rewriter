@@ -1,709 +1,687 @@
 # Image inventory — `images/`
 
-Built session 6 (2026-08-11) by reading every file directly, not by running a describer over
-them. This is ground truth for casting test cases and for judging describer *content*, which
-`validate.py` cannot see.
+Ground truth for the test corpus, built by **reading every file directly**, not by running a
+describer over them. `validate.py` checks format and cannot see content; this document is what
+lets us judge whether a describer said something *true*.
 
-**98 active files** as of session 7, built in three passes, each with its own table and probe-pair
-list further down:
+**98 active files.** `p1_first.old.png` and `p1_last.old.png` are superseded duplicates and are
+excluded throughout (100 files on disk, 98 active).
 
-| pass | files | section |
-|---|---|---|
-| session 6 | 37 | this one, immediately below |
-| session 7, first batch | 37 supplied + 5 crops | "Session 7 additions" |
-| session 7, second batch | 14 supplied + 5 crops | "Session 7, second batch" — **every remaining gap closed** |
+## How to maintain this document
 
-`p1_first.old.png` / `p1_last.old.png` are superseded duplicates and are excluded throughout.
+Reorganised in session 8. It had previously grown one section per pass — three image tables, two
+pair tables, two medium tallies, three gap lists — so answering "what do we have with vehicles in
+it" meant reading the whole file. The rules below exist to stop that recurring.
 
-**Later sections correct earlier ones.** Two claims in the first-batch section were reversed by
-what arrived in the second, and one row in the session-6 table was reversed by the first batch.
-Where they conflict, the later section wins; each says so at the point of conflict.
+- **New images append rows to the master table and the contents table.** Never open a new
+  per-session table; the `added` column carries that information.
+- **A correction edits the master/contents row in place *and* adds a row to
+  "Corrections & superseded findings".** The tables are always current-truth; the corrections
+  table is the audit trail. Do not leave struck-through prose behind.
+- **`docs/` is git-tracked**, so superseded content can be *deleted* rather than carried — git
+  has it. Keep only what still changes a decision.
+- **The medium tally is generated**, not hand-edited. Run `scripts/inventory.py` (see TODO —
+  not built yet) to regenerate it and to cross-check `images/` against the master table.
+- The `medium` and `sub` columns use the **closed two-level vocabulary** defined below — the
+  draft for `describer_style`'s `[[MEDIUM]]` field. Free-text nuance goes in `detail`, never in
+  `medium` or `sub`, or the tally stops grouping.
 
-The session-6 medium tally below said "16" live-action photographic against a list of 17 names;
-17 is correct and is what makes the total 37. Corrected in place.
+**Flags:** `text` printed/legible text in frame · `real` real identifiable person or place ·
+`franchise` recognisable licensed fictional character · `derived` derived from another corpus
+file · `corr` has a row in the corrections table · `amb` **medium is not visually determinable** —
+the classification rests on provenance the describer cannot see, so **do not score `[[MEDIUM]]`
+on this image either way**.
 
-Corrections and additions from the user after the first pass, all folded in below:
-
-- **`cloud`, `forest_autumn`, `fuji`, `mountain_rain`, `vector_city` added** — five exteriors,
-  four of them nature-dominant, closing the "no pure-nature exterior" gap the first pass raised
-  and adding fog and rain to a corpus that previously had only snow. Three also bring new
-  rendering media (digital painting ×2, flat vector ×1).
-
-- **`p6_first`/`p6_last` show a window, not a doorway** — and it is the *same window* as
-  `window.png`, which had been double-counted as an unrelated location. That makes
-  `window` + `p6_first` + `p6_last` a **three-image same-place set**, the largest we have.
-- **`city_day` / `city_night` added** — the same-place/different-time-of-day pair the first
-  pass listed as the one blocking gap for the atmosphere quarantine.
-
-The **medium** column uses the closed vocabulary proposed for `describer_style`'s `[[MEDIUM]]`
-field — the same axis as the frame describer's `[[STYLE]]`.
-
-## Table
-
-| image | medium | int/ext | setting | prominent objects | notable garments | people |
-|---|---|---|---|---|---|---|
-| `bookshop` | live-action photographic | **ext (int visible)** | Paris-style bookshop frontage from the pavement; shop interior through the open door | tiered book displays, ceiling strip lights (on), downpipe, vent grille, doormat | black sweater, dark jeans | 1 adult man |
-| `captain` | live-action photographic | ext | deck of a sailing yacht at sea, clear sky | **ship's wheel** (large, varnished), boom, furled sail, rigging, blocks, guardrail | **captain's uniform**: white peaked cap w/ gold emblem, navy double-breasted jacket, 4 cuff stripes, ribbon bar | 1 adult man |
-| `castle` | live-action photographic | ext | castle grounds; round crenellated tower, curtain wall, cloudy sky | pennant flag, arrow-slit, partial wooden shield edge | **plate armour**: pauldrons, engraved cuirass, gorget, mail sleeves, gauntlets, brown belt | 1 young-adult woman |
-| `classroom1` | live-action photographic | int | bright modern classroom; cream walls, curtained window | light-wood desks, storage cabinet, world-map bulletin board, open books, orange pencils | blue/white striped shirts, red neckties, navy pleated skirts | 5 children |
-| `classroom2` | live-action photographic | int | older classroom; orange-yellow walls, tall windows | wooden desks, potted plant on sill, blue hardback, blue pencils, framed poster | navy waistcoats, white shirts, striped ties; houndstooth shirt-dress | 6+ children |
-| `cloud` | **digital painting** (painterly, deckle border) | ext | grassy plain under towering cumulus; dirt track, distant blue hills, contrail | wooden fence, small white utility building | — | none |
-| `forest_autumn` | live-action photographic | ext | **beech forest in fog**, autumn; grey trunks, rust foliage, deep leaf litter, exposed roots, dirt path | (none) | — | **1 tiny distant figure** on the path |
-| `fuji` | live-action photographic | ext | **thatched village by a pond, snow-capped volcano behind**; topiary, azaleas, clipped hedge, conifers, deep blue sky | thatched roofs, **water wheel**, stone lantern | — | none |
-| `mountain_rain` | **digital painting** (matte-painting style) | ext | **alpine panorama in driving rain**; snow-capped range, mossy rock ledge, conifers, alpine flowers, snow patches, dead trunk | (none) | — | none |
-| `vector_city` | **flat vector illustration** | ext | stylised skyline of angular towers in coral and grey, reflected in water; teal sky, stylised clouds, sun flare | foreground rocks | — | none |
-| `city_day` | live-action photographic | ext | **downtown skyline from above**, daylight, blue sky w/ cirrus; glass and masonry towers, a gold curtain-wall tower, a stepped-crown tower, low-rise grid, distant treeline | rooftop antennas, **rooftop brand signage**, construction scaffolding | — | **none** |
-| `city_night` | live-action photographic | ext | **same skyline, same camera position**, blue hour; orange horizon glow, lit windows throughout | same towers; **illuminated signs and a lit crown** now readable, low-rise detail lost | — | **none** |
-| `jacket` | live-action photographic | ext | **snowy park** — bare trees, falling snow, snow-covered ground | (none) | **grey quilted puffer jacket** w/ hood | 1 young-adult woman |
-| `jacket2` | live-action photographic | ext | **same snowy park**, seated on a bench; near-featureless snow field behind | **wrought-iron bench** (scrollwork), brown leather handbag | same grey puffer jacket, **fur-trimmed mittens** | 1 young-adult woman (same person) |
-| `kasia` | 2D illustration (flat cel) | **none** — plain pale-grey backdrop | no environment at all | **orange shoulder bag** w/ blue strap + 3 pin badges | black tank, denim cuffed shorts, fingerless gloves, striped knee socks, blue sneakers, orange headband | 1 girl |
-| `kiki` | 2D anime | **none** — plain white ground | no environment; floating props | **6–7 breads/pastries** (loaf, baguette, rolls, filled bun) | navy long-sleeve top, red bow headband | 1 girl + 1 black cat |
-| `miya` | 2D anime | ext | winter hillside road/lookout above a valley town; guardrail, bare trees, snow | guardrail, small trash bin, power pylons | cream double-breasted coat, black fur collar, grey pleated skirt, brown backpack, **cream headphones** | 1 teenage girl |
-| `miyu` | **pixel art** | none — black void | no environment; ground litter only | **wheelie bin** (recycling pictograms, lid open), scattered leaves | not readable (occluded) | 1 girl (heavily occluded) + 1 shadow figure |
-| `newspaper` | live-action photographic | int | bright minimal living room; cream walls, built-in white shelving | **folded broadsheet newspaper**, books, oatmeal armchair | navy shirt, dark trousers, black belt | 1 adult man |
-| `p1_first` | live-action film (modern) | int | shabby apartment room, ochre distempered walls, very dim | **transistor radio**, handgun, corduroy couch, leather armchair, pole-mounted shelf + lamp, folding side table, tin ashtray | black top, shoulder-holster straps, round sunglasses | 1 adult man |
-| `p1_last` | live-action film (modern) | int | **same room, far brighter and closer** | same radio, shelf, framed item | same | 1 adult man |
-| `p2_first` | live-action film (modern) | int | shabby kitchen; yellow cabinets, maroon splashback, lace-curtained window | disassembled handguns, cloth, 2 solvent bottles, green dish rack, sink+tap, paper-towel roll, **box w/ brand text** | sage sleeveless waistcoat over white vest | 1 girl |
-| `p2_last` | live-action film (modern) | int | **same kitchen, near-identical light** | same | same | 1 girl |
-| `p3_first` | live-action film (modern) | int | dining room; ivory raised-panel wainscot, dark polished table | **cereal box w/ large brand text**, milk carton, pink milkshake glass, cut-glass fruit bowl, floral bowl + spoon, woven placemat | grey/white striped pyjama shirt | 1 girl |
-| `p3_last` | live-action film (modern) | int | **same room, near-identical** | same | same | 1 girl |
-| `p4_first` | live-action film (modern) | ext | city street, **background almost entirely defocused**, blown white sky | **leather case w/ brass latches**, second black case, potted houseplant, paper bag, blurred bus | olive bomber jacket, green/striped dress, choker; long dark overcoat | 1 girl + 1 adult man |
-| `p4_last` | live-action film (modern) | ext | same street, same bokeh | same | same | 1 girl + 1 adult man |
-| `p5_first` | **live-action film (vintage Technicolor)** | ext | studio-backlot city street **at night**; granite building corner, masonry apartments, lit windows | **1950s cars** (black sedan, red/white taxi), terracotta potted shrub, wooden double doors, stone kerb | black suit, white shirt, black tie, pocket square, **fedora**, **roller skates** | 1 adult man |
-| `p5_last` | live-action film (vintage Technicolor) | ext | same corner, tighter, **heavy dissolve/superimposition** of a second figure | same | same | 1 adult man (+1 ghosted) |
-| `p6_first` | live-action film (modern) | int | room with a **window** (not a doorway); peeling green-cream window frames, **exposed red brick** and a blue panel seen outside through it | 2 framed pictures, curtain, wooden floor | striped knit top, black choker w/ sun pendant, knee socks | 1 girl |
-| `p6_last` | live-action film (modern) | int | **same window, tighter** | same brick, frames | same | 1 girl |
-| `pancakes` | live-action photographic | int | modern kitchen; white tiled splashback, gas hob, extractor | **frying pan + pancakes**, spatula, grey plate of pancakes, whisk, wall control panel | white t-shirt, blue trousers; white floral pyjamas | 1 adult man + 1 child girl |
-| `phone` | live-action photographic | **none** — cut out on pure white | studio white, no environment | **smartphone w/ teal bumper** | sleeveless blue knit top | 1 adult woman |
-| `sleeping` | live-action photographic | int | bedroom; grey tweed upholstered bed frame, white linen, light-wood bedside table | **black-framed eyeglasses**, pillows, duvet | navy top | 1 young-adult woman |
-| `stage` | live-action photographic | int | **grand theatre auditorium** — two gilded balcony tiers, plaster cartouches, globe lights, red velvet seating, red aisle, stage floor | stage lighting units, recessed downlights, tiered seating | blue sleeveless dress, blue heels | 1 woman + ~100 audience |
-| `tv` | live-action photographic | int | domestic living room; damask wallpaper, dark wood TV stand | **CRT television** (off), DVD/VCR player, cables | navy botanical-print blouse, dark trousers | 1 older-adult woman |
-| `window` | live-action film (modern) | int | **the same window as `p6`**, shot tighter and blown out — environment essentially unreadable | (none legible) | striped knit top, choker w/ pendant, knee socks, stuffed toy | 1 teenage girl |
-
-## What this gives us per role
-
-### `setting` — usable now
-
-**10 distinct interiors**: 2 classrooms, 2 kitchens, 3 living/dining rooms, bedroom, theatre
-auditorium, window room, bookshop interior. (`window` and `p6` are one location, not two.)
-**13 exteriors**: shop street, ship deck, castle grounds, snowy park, snowy hillside road, modern
-city street, 1950s backlot street at night, downtown skyline from above, **beech forest in fog**,
-**alpine range in rain**, **volcano and thatched village**, **grass plain under cumulus**,
-**stylised vector skyline**.
-
-Weather now covered: snow (×3), **fog**, **rain**, overcast, clear. Terrain now covered:
-forest, alpine rock, grass plain, water, and four flavours of built-up.
-**4 no-/low-setting cases** for the "not visible" behaviour: `kasia`, `kiki`, `phone` (all plain
-studio grounds), `miyu` (black void). `window` is low-information but is now known to be `p6`.
-
-Probe pairs available:
-
-| pair | what it holds constant | use |
-|---|---|---|
-| `city_day`/`city_night` | same skyline, same camera, **day vs blue hour** | **the direct atmosphere-quarantine test** |
-| `p2_first`/`p2_last` | same kitchen, near-identical light and framing | **the clean control** |
-| `p3_first`/`p3_last` | same dining room, near-identical | second clean control |
-| `window` + `p6_first` + `p6_last` | one window, **three** framings and exposures | the widest same-place spread we have |
-| `p1_first`/`p1_last` | same room, very different exposure | secondary atmosphere probe (exposure, not time of day) |
-| `p4_first`/`p4_last` | same street, both heavy bokeh | low-information stress case |
-| `jacket`/`jacket2` | same snowy park, different spots in it | **weak** — the snow is near-featureless, so the durable content is thin by nature. Already the character-role garment pair; treat any setting agreement here as a bonus, not a bar |
-| `classroom1` vs `classroom2` | *different* rooms of the same type | **negative control** — must NOT collapse into one record |
-| `bookshop` | camera outside, interior visible through the glass | `[[SETTING_KIND]]` boundary case |
-
-**Confound on `city_day`/`city_night`**: the skyline carries rooftop bank logos and a large neon
-hotel sign. Night lights those up and hides low-rise detail, so a `[[DEFINITION]]` disagreement
-across this pair has two possible causes — atmosphere leaking into the durable fields, or the
-model naming an illuminated sign it could not read by day. Check which before scoring it. This
-is also the strictest printed-text/brand probe in the set.
-
-### `object` — usable now, thin on isolated shots
-
-Good in-scene targets: the CRT television (`tv`), ship's wheel (`captain`), transistor radio
-(`p1`), cereal box (`p3`), frying pan (`pancakes`), leather case (`p4`), wheelie bin (`miyu`),
-wrought-iron bench (`jacket2`), shoulder bag (`kasia`), breads (`kiki`), newspaper (`newspaper`),
-eyeglasses (`sleeping`), 1950s cars (`p5`).
-
-Garments: plate armour (`castle`), captain's uniform (`captain`), puffer jacket
-(`jacket`/`jacket2` — **an existing same-garment pair**, the natural drift probe), fedora and
-roller skates (`p5`), school uniforms (`classroom1`/`classroom2`).
-
-Only genuinely isolated object: the smartphone in `phone`, and even that is held.
-
-### `style` — blocked, as expected
-
-| medium | count | images |
-|---|---|---|
-| live-action photographic | 17 | bookshop, captain, castle, city_day, city_night, classroom1/2, forest_autumn, fuji, jacket, jacket2, newspaper, pancakes, phone, sleeping, stage, tv |
-| live-action film (modern cinematic) | 11 | p1×2, p2×2, p3×2, p4×2, p6×2, window |
-| live-action film (vintage Technicolor) | 2 | p5×2 |
-| **digital painting** | 2 | cloud, mountain_rain |
-| 2D anime | 2 | kiki, miya |
-| 2D illustration (flat cel) | 1 | kasia |
-| **flat vector** | 1 | vector_city |
-| pixel art | 1 | miyu |
-
-29 of 37 are live-action. Five non-live-action media now, but three of them still have a
-single image each — the `style` shopping list below is unchanged apart from digital painting,
-which is now covered.
-
-## Gap list
-
-> **Superseded by session 7.** Every item below was filled by the session-7 additions, most of
-> them more than once. Kept as written because the *reasoning* about what each gap was for still
-> applies, and because the session-7 section refers back to it. The live gap list is
-> "Remaining gaps after session 7" at the very bottom.
-
-### Blocking `style` (session 7)
-
-Missing entirely, in rough priority order:
-
-1. **3D CG / CGI animation** — the most common non-live-action medium in real use
-2. **watercolour or traditional painting** — `cloud` and `mountain_rain` are digital painting,
-   which is close but is its own term; a real watercolour or oil would separate them
-3. **comic / graphic-novel / inked line art**
-4. **stop-motion or claymation**
-5. **archival black-and-white film or photography** — also our only B&W of any kind
-6. a second **flat vector** and **pixel art** so those aren't single-sample
-
-A same-subject-across-two-media pair would be the strongest possible style probe (the same
-scene as a photo and as a painting), but two unrelated images per medium is enough to start.
-
-### Would help `setting`
-
-Mostly filled. Remaining:
-
-1. **a vehicle interior** (car, train, plane) — the only major setting type with no example
-2. a second day/night pair **without signage**, to isolate atmosphere from the brand-text
-   confound noted above
-
-~~a natural landscape with no built structures~~ — **filled** by `forest_autumn`,
-`mountain_rain`, `cloud`, `fuji`.
-~~weather other than snow~~ — **filled**: fog (`forest_autumn`), rain (`mountain_rain`).
-~~one place at two different times of day~~ — **filled** by `city_day`/`city_night`.
-
-Probe value the new images add beyond terrain:
-
-- `forest_autumn` holds a **tiny distant human figure** on the path — the person-exclusion rule
-  at its hardest, since the figure is easy to miss and easy to mention
-- `fuji` is a **famous real landmark** — the first real test of the no-real-place-names rule
-- `cloud` carries an **artist signature and a repeating watermark** — printed-text probe
-- `mountain_rain`, `cloud`, `vector_city` are stylised **landscapes**, so style leakage is
-  tested on images whose content is nothing but environment
-
-### Would help `object`
-
-1. **two or three clean isolated product shots** — an object on a plain ground, nothing else
-2. **a garment photographed flat or on a hanger**, and ideally the same garment worn by someone
-3. a second view of one object from a different angle (the object equivalent of
-   `jacket`/`jacket2`)
+**`added`:** `s6` session 6 · `s7a` session 7 first batch · `s7b` session 7 second batch ·
+`-crop` suffix for files derived in that session.
 
 ---
 
-# Session 7 additions (2026-08-11)
+## Medium vocabulary — closed, two-level
 
-37 files supplied by the user in `images/new/`, read one by one the same way, then moved into
-`images/` and `new/` deleted. Five crops were then derived from three of them — four comic panels
-and `annie2_cropped` (see "Panels cropped") — giving **79 active files** in `images/`:
-74 supplied, 5 derived.
+Adopted session 8. This is the **draft `[[MEDIUM]]` vocabulary for `describer_style`**, not just
+an inventory convention — reclassifying the corpus and designing that field are the same job.
 
-The user chose these deliberately against the session-6 gap list, and against the stretch goal
-that list called out as probably out of reach — a same-subject-across-two-media pair. There are
-now **nine** such pairs, one of them exact. That is the single most consequential thing about
-this batch and it changes what `describer_style` can be tested for (see "What the media pairs
-buy us").
+The previous list had grown to 20 ad-hoc terms one image at a time, and it mixed three unrelated
+axes: **how it was made** (oil, vector, pixel), **colour/era treatment** ("archival B&W", "vintage
+Technicolor"), and **what was rendered** ("product render" vs "feature animation" — both are 3D
+CG). That is the age-drift failure mode in a worse form: with age, two describers could disagree
+on where a boundary sits; here they could disagree on *which axis they were answering*.
+`destroyer_photo` is truthfully archival, monochrome **and** photographic, and every one of those
+was a top-level term.
 
-## Housekeeping found while reading
+A flat list would have fixed the drift and **broken the corpus on purpose** — `azumanga_anime`/
+`azumanga_toon`, `ayanami_oil`/`woman_oil` and `ivy_toon`/`peter_griffin_toon` exist specifically
+as fine-discrimination probes, and a vocabulary that cannot express their difference does not make
+them pass, it makes them meaningless. So: **coarse term always emitted, sub-term where the coarse
+term has one.** The coarse level is drift-proof; the sub level carries what the probe pairs test.
 
-- **`coraline2.jpg` was not a JPEG.** It was an AVIF file with a `.jpg` extension.
-  `run_tests.py`'s `image_payload()` maps extension to MIME with no sniffing, so it would have
-  sent AVIF bytes labelled `image/jpeg`. Converted to **`coraline2.png`** (PIL, lossless
-  re-encode of the decoded pixels) and the bad `.jpg` deleted. **If more images arrive from image
-  hosts that serve AVIF/WebP behind a `.jpg` URL, check the magic bytes before casting them.** A
-  one-line guard in `image_payload()` would be cheap insurance.
-- **`cannon.JPG` was an MPO**, not a plain JPEG — a 2-frame stereo pair from a 3D camera,
-  4320x3240, 6.3 MB (~8.4 MB base64, 5x the pixel count of anything else here). **Fixed**: frame
-  0 extracted, Lanczos-resized to 2000x1500, saved as plain JPEG q90 → **`cannon.jpg`, 0.99 MB**
-  (~1.32 MB base64). Visually identical; the original was also marked read-only, which had to be
-  cleared first. Note the extension is now lowercase.
-- No filename collided with the existing corpus.
-
-## Table
-
-| image | medium | int/ext | setting | prominent objects | notable garments | people |
-|---|---|---|---|---|---|---|
-| `annie1` | ink-and-marker digital sketch | none — cream paper ground | no environment | (none) | **girl**: coral open jacket, yellow tank, black skirt, black knee boots, choker · **hero (a different person)**: black/red tunic w/ yellow bar fasteners, black cape, black glove, domino mask | **2 distinct characters** on one sheet — a girl (full figure, right) and a masked male hero (head-and-shoulders, left). **They are not the same person** — see the correction note below |
-| `annie2` | **watercolour + ink in a sketchbook, photographed in someone's hand** | int (the photo's) / none (the drawing's) | **nested**: inside the drawing, a giant reptilian creature looming over a small girl; outside it, a defocused convention hall w/ black grid shelving | the sketchbook itself | same coral jacket, pale top, black shorts, choker, white socks | 1 girl (drawn) + **1 hand** (real, holding it) |
-| `annie3` | **comic page, 4 panels** | ext | alley between buildings; rooftop/street | (none) | **girl**: coral coat, tan top, black skirt, choker · **masked boy hero**: red/black tunic w/ yellow bars, black cape · **masked woman hero**: black/purple suit, yellow gloves and boots · **man**: tan shirt, striped trousers | **4 distinct characters**: 1 girl + 2 costumed heroes (a boy and a woman, both recurring across panels) + 1 man. The heroes are **not** the girl in costume |
-| `azumanga_anime` | 2D anime (flat cel, thick outline, sticker border) | none — white ground | no environment | (none) | coral sailor-style school jumpers, white collars, dark red pleated skirts, orange socks / white socks + brown loafers | 3 schoolgirls |
-| `azumanga_toon` | **western TV-cartoon (flat toon over textured paint)** | ext | school grounds; chain-link fence, clipped hedges, trees, grass, concrete path, brick edging, outline clouds | (none) | same coral uniforms; one w/ black over-knee socks | same 3 schoolgirls |
-| `bird_vector` | flat vector illustration | none — white | no environment | (none) | — | none (1 bird) |
-| `bird_watercolor` | **watercolour on textured paper (traditional)** | none — paper ground | no environment | branch | — | none (1 bird) |
-| `cannon` | live-action photographic | ext | stone-walled terrace/battery over woodland; limestone rubble walls, pale flagstones | **muzzle-loading cannon on a four-wheeled wooden carriage** | — | none |
-| `car_interior_mecha_driver` | 2D anime (painted, desaturated green-grey) | **int — vehicle** | van/MPV cabin; city skyline through the windows | steering wheel, headrests, roof vent, **magazine w/ Japanese cover text** | school sailor uniform w/ blue neckerchief | 1 teenage girl + **1 humanoid robot driving** |
-| `car_interior_photo` | live-action photographic (press/product shot) | **int — vehicle** | front cabin of a modern electric car | steering wheel w/ **maker emblem**, large landscape touchscreen showing a map, wood dash trim, centre console | — | none |
-| `car_interior_sketch` | **rough digital sketch** (construction lines visible) | **int — vehicle** | car cabin, windows blown out white | steering wheel, headrest, seatbelt | olive short-sleeve shirt; pink tee | 2 young women (driver + passenger) |
-| `chair` | **ambiguous — photographic or product render** | none — pure white | no environment | **executive office chair**: black ribbed leather, gold-tone arms and five-star base, castors | — | none |
-| `chips_hotdog_dr_pepper_painting` | **oil painting (alla prima, visible brushwork)** | int-ish | painted backdrop and tabletop | **chip bag, glass soda bottle, hot dog in a bun, loose chips** — all w/ **painted brand text** | — | none |
-| `comic` | **comic page, 5 panels** | int | classroom; desks, whiteboard w/ geometry diagram, windows, planter boxes | pencil, spider, papers, backpack | black/red/white school uniforms w/ ties; grey blazer; red/black armoured super-suit | 6+ children, 1 adult teacher, 1 costumed figure |
-| `coraline1` | **stop-motion puppet, cut out on white** | none — white | no environment | forked twig | yellow raincoat, blue jeans, yellow wellingtons, dragonfly hair clip | 1 girl (puppet) |
-| `coraline2` | **stop-motion film still** | int | dim kitchen; sash window, panelled cabinets, deep sink, tiled splashback, round table | open laptop, **mug reading "I love Mulch"**, notebook, pen, a doll | yellow raincoat; grey knitted cardigan | 2 puppets (girl + adult woman w/ **button eyes**) |
-| `destroyer_drawing` | **B&W technical recognition plate (halftone, line and wash)** | none | no environment | side elevation + plan view of a warship, range scale, rising-sun emblem | — | none |
-| `destroyer_photo` | **archival B&W photograph** | ext | warship at anchor, calm water, blank pale sky, distant masts | twin funnels making smoke, turrets, torpedo tubes, bridge tower, ensign; **kana + "19" on the hull** | — | a few tiny indistinct crew |
-| `fish_pixel` | pixel art (flat sprite) | none — dark banded ground | no environment | side-on fish, teal-green back, white belly | — | none |
-| `fruitbowl` | **3D render / synthetic still life** | int | plain warm backdrop, wood tabletop | dark ceramic bowl of fruit (green apple, 2 red apples, grapes, 2 bananas), **2 wine bottles w/ illegible script labels**, 1 loose apple | — | none |
-| `girl_painting` | **digital painting (oil-style, soft edges)** | none — grey painterly ground | no environment | (none) | black choker, pale knit | 1 girl · **watermark: a Weibo handle** |
-| `girl_painting_reference` | live-action film still | int | plain grey-green wall | (none) | black velvet choker, lilac knit | 1 girl — **the exact still `girl_painting` was painted from**; an identifiable real actor |
-| `kasia_bag` | product render | none — white | no environment | **yellow shoulder bag, blue flap w/ pale-blue circular emblem, navy webbing strap, gold slider** | — | none |
-| `kasia_outfit` | product render, **flat-lay** | none — white | no environment | — | **black vest top, cuffed blue denim shorts, black/blue fingerless gloves, black-and-grey striped knee socks, blue lace-up sneakers** | none |
-| `kasia_render` | **3D CG character render (stylised anime)** | none — white studio ground | no environment | (none) | black vest top, cuffed denim shorts, black fingerless gloves, grey striped knee socks, navy/white sneakers, **gold-yellow headband** | 1 girl |
-| `kasia_swimsuit` | product render, **flat-lay** | none — white | no environment | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** | none · **part of the kasia set** — derived from `kasia_swimsuit_worn`, and worn by the character there and in `kasia_swimsuit_render` (second batch) |
-| `kaypro_ii` | live-action photographic | none — white | no environment | **vintage portable computer**: blue/grey metal case, green CRT showing text, 2 floppy drives, detached keyboard w/ blue keypad · **brand name on case AND on screen** | — | none |
-| `lincoln_photo` | **archival B&W albumen portrait** | none — plain studio backdrop | no environment | (none) | dark frock coat, white shirt, black bow tie | 1 older adult man · **real historical figure** |
-| `lincon_money` | **engraved intaglio print (banknote)** | none | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — | a portrait *within an object*, not a depicted person |
-| `peter_griffin_painting` | **digital painting of a flat-cartoon character** | none — dark olive gradient | no environment | (none) | white collared shirt | 1 adult man (cartoon character rendered painterly) |
-| `ramen_pixel` | pixel art (hi-fi, shaded, anti-aliased) | none — dark ground w/ drop shadow | no environment | **bowl of ramen**: noodles, sliced pork, halved soft egg, spring onion, bamboo shoot, steam | — | none |
-| `supergirl1` | **marker and ink on board (copic-style)** | ext-ish | sky and stylised clouds inside a drawn panel on white board | (none) | white crop tee w/ red-and-yellow chest emblem, blue skirt, red cape, white gloves, red boots, blue headband | 1 young woman · signed |
-| `supergirl2` | **rough coloured-pencil / colour sketch** | none — white | no environment | (none) | same costume | same character, **near-identical flying pose** · hand-lettered title text |
-| `teddy_taft` | **archival B&W photograph** | ext | portico/doorway; wet stone step, glazed door, fluted column | (none) | dark overcoats, waistcoat, watch chain, boutonniere, pince-nez | 2 adult men · **real historical figures** |
-| `temple_day` | digital painting (high-key, painterly) | ext | gothic ecclesiastical exterior in bright sun; twin-lancet traceried window, columns, balustraded stair rising, spire beyond, potted agaves, trailing greenery, doves | (none) | strapless cream gown, pale green sash, hair ribbon | 1 young woman · date inscription |
-| `temple_night` | digital painting (low-key, same hand) | ext | **the same architecture, ruined and dark**: same window and tracery, same stair now broken, rubble, fallen beams, torn red banner, dim violet sky | (none) | cream tunic, brown trousers, tall boots, red cape w/ fur collar, belt; **holding a sword** | 1 young man · signed |
-| `van_pixel` | pixel art (PC-98 style, dithered, 16-colour) | ext | roadside; trees, orange-red sky | **blue MPV/van**, front three-quarter, roof rack + luggage, **licence plate** | blue and white outfit, cap | 1 girl at the driver's window |
-
-## What the media pairs buy us
-
-The session-6 list called a same-subject-across-two-media pair "the strongest possible style
-probe" and treated it as aspirational. There are now nine, and they are not all equal — they
-form a ladder from "identical content, medium is the only variable" down to "same character,
-everything else redrawn". **Use the top of the ladder for regression, the bottom for coverage.**
-
-| pair | what is held constant | tier |
-|---|---|---|
-| `girl_painting_reference` to `girl_painting` | **everything** — the painting was made *from* that still: same subject, pose, crop, framing, expression | **exact.** The only true control. Any content difference between the two records is a defect |
-| `supergirl1` / `supergirl2` | same character, same costume, near-identical flying pose; marker board art vs rough pencil | very tight |
-| `lincoln_photo` / `lincon_money` | same face, same era; albumen photograph vs line engraving | tight (an object *containing* a portrait, so `[[SUBJECT_KIND]]` is a live question) |
-| `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | tight, and **the only pair with no person in it** |
-| `bird_vector` / `bird_watercolor` | a blue-and-orange bird; flat vector vs traditional watercolour | loose — not the same bird, same *idea* of one |
-| `coraline1` / `coraline2` | same character; puppet on white vs film still | loose, and doubles as an isolated-subject vs in-scene pair |
-| `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic page. **Use the cropped/panelled versions for content roles** — the raw `annie2` drags in a convention hall and the raw `annie3` is four scenes at once. **Requires a `SUBJECT:` line**: only `annie2_cropped` has the girl alone; the other two also contain costumed heroes who are different people, so without disambiguation the describer may legitimately record the wrong subject | loose, widest spread |
-| `azumanga_anime` / `azumanga_toon` | same three characters, same uniforms; flat anime cel vs western TV-toon | loose, and **a fine `[[MEDIUM]]` discrimination** — both are flat 2D, and telling them apart is exactly the hard case |
-| `car_interior_photo` / `_sketch` / `_mecha_driver` | one setting *type* across three media | loosest — different vehicles, useful for `setting` more than `style` |
-
-## Notes recorded against specific images
-
-### The kasia set — authorial intent vs what is in the pixels
-
-The set is **four files, not five**, and every one of them derives from the same drawing:
-
-| file | how it links to `kasia.png` |
+| coarse (11) | sub-terms |
 |---|---|
-| `kasia.png` | the original 2D illustration — the character, her outfit and her bag, all in one image |
-| `kasia_render` | a 3D render **based on** the drawing; same character, same outfit. **No bag** |
-| `kasia_outfit` | a flat-lay of **the clothes she wears in the drawing**, produced by Qwen Image Edit extracting the garments *from* `kasia.png` — a derived asset, not independent evidence |
-| `kasia_bag` | an isolated render of **the bag she carries in the drawing** |
+| `photograph` | `colour` · `archival` |
+| `live-action film` | `modern` · `vintage Technicolor` |
+| `3D CG` | `product render` · `character render` · `feature animation` |
+| `stop-motion` | — |
+| `2D cel` | `anime` · `western toon` · `flat illustration` |
+| `comic` | — |
+| `painting` | `oil` · `watercolour` · `gouache` · `digital` |
+| `drawing` | `marker` · `sketch` · `ink` |
+| `vector` | — |
+| `pixel art` | — |
+| `print` | `engraving` · `technical plate` |
 
-> **SUPERSEDED by the second batch.** `kasia_swimsuit` **is** part of the set. When this was
-> written nothing in the corpus linked them; `kasia_swimsuit_worn` (the original 2D commission the
-> flat-lay derives from) and `kasia_swimsuit_render` now do. See "The swimsuit is now linked after
-> all". The paragraph below is kept only to show what the evidence looked like at the time.
+### Tie-break rules
 
-~~**`kasia_swimsuit` is not part of this set.** It is a different outfit, nobody is wearing it, and
-**nothing visual ties it to the character** — only the filename does. Treat it purely as an
-isolated flat-garment case (see below), and do not cast it in any kasia identity probe.~~
+These exist so that two records of one image cannot legitimately disagree — the same job the
+"no environment → interior" tie-break does for `[[SETTING_KIND]]`.
 
-Two probe pairs fall out of the four linked files, and they are different in kind:
+1. **`stop-motion` beats `photograph`.** A stop-motion frame is literally a photograph of physical
+   objects, so without this rule `coraline1`/`coraline2` are defensibly photographic and will
+   drift. What is photographed is a constructed miniature; that wins.
+2. **Nested images report the OUTER medium.** `annie2` is a photograph *of* a watercolour, so it
+   is `photograph / colour`, with `annie2_cropped` serving as the clean watercolour sample. Same
+   rule `tv` needs for its CRT and any poster, phone screen or television in frame.
+3. **Digital imitation reports the idiom, not the substrate.** `ayanami_oil` is a digital file in
+   an oil/gouache idiom → `painting / digital`; `woman_oil` is paint on a surface →
+   `painting / oil`. The pair therefore **agrees at coarse level and differs at sub level**,
+   which is a scorable result rather than a collapse. This is the design working as intended.
+4. **`photograph` and `live-action film` stay separate** even though a film still is a photograph.
+   The distinction is look — grain, grade, aspect, lighting — and "cinematic" is a real signal for
+   a *video* prompt. Judged on presentation, not on provenance.
 
-- **flat ↔ worn garment**: `kasia_outfit` → `kasia_render` / `kasia.png`. The corpus's only one.
-- **isolated ↔ in-scene object**: `kasia_bag` → `kasia.png`, where the same bag is carried. This is
-  the *object* analogue of the flat↔worn pair, and the corpus's only one of those too. It is
-  imperfect evidence, though — the drawing's bag has **three pin badges** the isolated render
-  lacks, on top of the colour difference below. Expect real disagreement and read it as source
-  drift, not describer failure.
+### What the reclassification changed
 
-The headband/bag colour is worth recording precisely, because session 6 wrote "orange" into the
-table above and the user reads it as yellow, as does the character's original owner. Sampling the
-saturated warm pixels settles what is actually there:
+- **`annie2` moved from watercolour to `photograph`** under rule 2. That is a deliberate
+  consequence of the nesting rule, not a re-reading of the image. It nudges the live-action share
+  up by one with a file whose *content* is a drawing — worth remembering before quoting that
+  percentage.
+- **`chair` is a coarse-level ambiguity** (`photograph` vs `3D CG`), the worst kind. It is filed
+  as `photograph` and stays deliberately ambiguous — that is what makes it a good hard case.
+- The five old era/treatment terms (`archival B&W photograph`, `live-action film (vintage
+  Technicolor)`, `western TV-cartoon`, `3D CG feature animation`, `2D illustration (flat cel)`)
+  are all now sub-terms, which is where they belonged.
 
-| file | dominant hue | reads as |
-|---|---|---|
-| `kasia.png` (the original 2D illustration) | **28-34 deg** (`#f8b050`) | orange |
-| `kasia_render.png` | **41 deg** (`#e8b850`) | amber, borderline |
-| `kasia_bag.png` | **45-47 deg** (`#f8d040`) | yellow |
+---
 
-So this is **not** a shared Claude/Qwen misperception — `kasia.png` really is orange by any
-standard hue boundary (yellow starts around 50-60 deg), and the newly generated assets drift
-toward the intended yellow. The consequence for testing: **a describer that says "orange" for
-`kasia.png` and "yellow" for `kasia_bag.png` is right both times.** A cross-image identity probe
-on kasia will show a colour disagreement that originates in the source material, exactly like the
-`p4` borderline-age caveat. Do not chase it as a prompt defect. Same applies to the sneakers
-(navy/white in `kasia_render`, brighter blue in `kasia_outfit`) — generation drift between
-derived assets.
+## Master table — classification
 
-### The temple pair — a split diptych, not two photographs
+| image | medium | sub | detail | int/ext | people | sets | added | flags |
+|---|---|---|---|---|---|---|---|---|
+| `annie1` | drawing | marker | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | annie | s7a | text, franchise, corr |
+| `annie2` | photograph | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise |
+| `annie2_cropped` | painting | watercolour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
+| `annie3` | comic | — | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
+| `annie3_panel1` | comic | — | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
+| `ayanami_oil` | painting | digital | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
+| `azumanga_anime` | 2D cel | anime | flat cel, thick outline, sticker border | none | 3 schoolgirls | azumanga | s7a | franchise |
+| `azumanga_toon` | 2D cel | western toon | flat toon over textured paint | ext | same 3 schoolgirls | azumanga | s7a | franchise |
+| `bird_vector` | vector | — | — | none | none (1 bird) | bird | s7a | — |
+| `bird_watercolor` | painting | watercolour | on textured paper | none | none (1 bird) | bird | s7a | — |
+| `bookshop` | photograph | colour | — | **ext (int visible)** | 1 adult man | setting-boundary | s6 | — |
+| `cannon` | photograph | colour | — | ext | none | — | s7a | — |
+| `captain` | photograph | colour | — | ext | 1 adult man | — | s6 | — |
+| `car_1` | photograph | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | car-angle | s7b | text, amb |
+| `car_2` | photograph | colour | as `car_1` | none | none | car-angle | s7b | text, amb |
+| `car_interior_mecha_driver` | 2D cel | anime | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
+| `car_interior_photo` | photograph | colour | press/product shot | **int (vehicle)** | none | car-interior | s7a | text |
+| `car_interior_sketch` | drawing | sketch | digital, construction lines visible | **int (vehicle)** | 2 young women | car-interior | s7a | — |
+| `castle` | photograph | colour | — | ext | 1 young-adult woman | — | s6 | — |
+| `chair` | photograph | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | s7a | amb |
+| `chips_hotdog_dr_pepper_painting` | painting | oil | traditional, alla prima | int-ish | none | — | s7a | text |
+| `city_day` | photograph | colour | — | ext | none | city-daynight | s6 | text |
+| `city_night` | photograph | colour | blue hour | ext | none | city-daynight | s6 | text |
+| `classroom1` | photograph | colour | — | int | 5 children | classroom | s6 | — |
+| `classroom2` | photograph | colour | — | int | 6+ children | classroom | s6 | — |
+| `cloud` | painting | digital | painterly, deckle border | ext | none | — | s6 | text |
+| `comic` | comic | — | 5 panels | int | 6+ children, 1 adult teacher, 1 costumed figure | comic-page | s7a | text |
+| `comic_panel2` | comic | — | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
+| `comic_panel3` | comic | — | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
+| `comic_panel4` | comic | — | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
+| `coraline1` | stop-motion | — | puppet cut out on white | none | 1 girl (puppet) | coraline | s7a | franchise |
+| `coraline2` | stop-motion | — | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
+| `destroyer_drawing` | print | technical plate | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
+| `destroyer_photo` | photograph | archival | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
+| `fish_pixel` | pixel art | — | flat sprite | none | none | — | s7a | — |
+| `forest_autumn` | photograph | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
+| `forest_day` | vector | — | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
+| `forest_day_night` | vector | — | **composite**, 2 stacked panels | ext | none | forest-daynight | s7b | — |
+| `forest_night` | vector | — | lower panel, 947x738 | ext | none | forest-daynight | s7b-crop | derived |
+| `fruitbowl` | 3D CG | product render | synthetic still life | int | none | — | s7a | text |
+| `fuji` | photograph | colour | — | ext | none | — | s6 | real |
+| `girl_painting` | painting | digital | oil-style, soft edges | none | 1 girl | girl-painting | s7a | text |
+| `girl_painting_reference` | live-action film | modern | film still | int | 1 girl | girl-painting | s7a | real |
+| `ivy_toon` | 2D cel | western toon | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
+| `jacket` | photograph | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
+| `jacket2` | photograph | colour | — | ext | same woman | jacket | s6 | — |
+| `kasia` | 2D cel | flat illustration | the original drawing | none | 1 girl | kasia | s6 | corr |
+| `kasia_bag` | 3D CG | product render | — | none | none | kasia, bag-angle | s7a | — |
+| `kasia_bag_2` | 3D CG | product render | second angle, re-render | none | none | kasia, bag-angle | s7b | — |
+| `kasia_outfit` | 3D CG | product render | **flat-lay**, derived from `kasia` | none | none | kasia | s7a | — |
+| `kasia_render` | 3D CG | character render | stylised anime character render | none | 1 girl | kasia | s7a | — |
+| `kasia_swimsuit` | 3D CG | product render | **flat-lay**, derived from `kasia_swimsuit_worn` | none | none | kasia | s7a | corr |
+| `kasia_swimsuit_render` | 3D CG | character render | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
+| `kasia_swimsuit_worn` | 2D cel | flat illustration | the original commission | none | 1 girl (same character) | kasia | s7b | text |
+| `kaypro_ii` | photograph | colour | — | none | none | — | s7a | text |
+| `kiki` | 2D cel | anime | — | none | 1 girl + 1 black cat | — | s6 | franchise |
+| `lincoln_photo` | photograph | archival | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
+| `lincon_money` | print | engraving | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
+| `marker` | drawing | marker | — | int | 1 young woman | — | s7b | text |
+| `miya` | 2D cel | anime | — | ext | 1 teenage girl | — | s6 | text, franchise |
+| `miyu` | pixel art | — | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
+| `mountain_rain` | painting | digital | matte-painting style | ext | none | — | s6 | — |
+| `newspaper` | photograph | colour | — | int | 1 adult man | — | s6 | — |
+| `p1_first` | live-action film | modern | very dim | int | 1 adult man | p1 | s6 | — |
+| `p1_last` | live-action film | modern | far brighter and closer | int | 1 adult man | p1 | s6 | — |
+| `p2_first` | live-action film | modern | — | int | 1 girl | p2 | s6 | text |
+| `p2_last` | live-action film | modern | near-identical light | int | 1 girl | p2 | s6 | text |
+| `p3_first` | live-action film | modern | — | int | 1 girl | p3 | s6 | text |
+| `p3_last` | live-action film | modern | near-identical | int | 1 girl | p3 | s6 | text |
+| `p4_first` | live-action film | modern | heavy bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
+| `p4_last` | live-action film | modern | same bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
+| `p5_first` | live-action film | vintage Technicolor | night | ext | 1 adult man | p5 | s6 | — |
+| `p5_last` | live-action film | vintage Technicolor | tighter, heavy dissolve | ext | 1 adult man (+1 ghosted) | p5 | s6 | — |
+| `p6_first` | live-action film | modern | — | int | 1 girl | p6-window | s6 | corr |
+| `p6_last` | live-action film | modern | same window, tighter | int | 1 girl | p6-window | s6 | corr |
+| `pancakes` | photograph | colour | — | int | 1 adult man + 1 child girl | char-drift | s6 | — |
+| `peter_griffin_painting` | painting | digital | flat-cartoon character rendered painterly | none | 1 adult man | peter-griffin | s7a | franchise |
+| `peter_griffin_toon` | 2D cel | western toon | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
+| `phone` | photograph | colour | cut out on pure white | none | 1 adult woman | — | s6 | — |
+| `ramen_pixel` | pixel art | — | hi-fi, shaded, anti-aliased | none | none | — | s7a | — |
+| `san_fransisco_day_evening_night` | vector | — | **composite**, 3 stacked panels | ext | none | sanfran-daynight | s7b | — |
+| `sanfran_day` | vector | — | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
+| `sanfran_evening` | vector | — | 1039x487, golden sky | ext | none | sanfran-daynight | s7b-crop | derived |
+| `sanfran_night` | vector | — | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
+| `shrek_cg` | 3D CG | feature animation | — | ext | 1 green ogre, close-up | — | s7b | franchise |
+| `sleeping` | photograph | colour | — | int | 1 young-adult woman | — | s6 | — |
+| `stage` | photograph | colour | — | int | 1 woman + ~100 audience | — | s6 | — |
+| `supergirl1` | drawing | marker | copic-style on board | ext-ish (drawn panel) | 1 young woman | supergirl | s7a | text, franchise |
+| `supergirl2` | drawing | sketch | coloured pencil / colour sketch | none | same character | supergirl | s7a | text, franchise |
+| `teddy_taft` | photograph | archival | — | ext | 2 adult men | — | s7a | real |
+| `temple_day` | painting | digital | high-key, painterly | ext | 1 young woman | temple | s7a | text |
+| `temple_night` | painting | digital | low-key, same hand | ext | 1 young man | temple | s7a | text |
+| `tv` | photograph | colour | — | int | 1 older-adult woman | — | s6 | — |
+| `van_pixel` | pixel art | — | PC-98 style, dithered, 16-colour | ext | 1 girl | — | s7a | text |
+| `vector_city` | vector | — | — | ext | none | — | s6 | — |
+| `window` | live-action film | modern | tighter and blown out | int | 1 teenage girl | p6-window | s6 | corr |
+| `woman_oil` | painting | oil | **traditional**, photorealist | int | 1 young woman, asleep | oil-idiom | s7b | — |
+| `woody_cg` | 3D CG | feature animation | early CG | int | 1 male doll/figure | — | s7b | franchise |
 
-The user found a single artwork with the ruined/night/male half on the left and the
-intact/day/female half on the right, **split it down the middle and mirrored one half** so the
-architecture aligns. That has three consequences:
+---
 
-1. It is genuinely **signage-free**, which is what the session-6 gap asked for — the
-   `city_day`/`city_night` brand-text confound is absent.
-2. It is **not a clean atmosphere control.** The building is intact in one and ruined in the
-   other. Ruin is *structural*, not transient, so `[[DEFINITION]]` divergence here is partly
-   legitimate and cannot be scored the way `city_day`/`city_night` is. **The clean signage-free
-   relight pair is still missing.**
-3. Because one half was mirrored, any left/right language in `[[STRUCTURE]]` will conflict across
-   the pair. `setting` has no POSITION field so this is mostly harmless, but do not read
-   "stair rising to the right" vs "to the left" as drift.
+## Contents table — what is in the frame
 
-What it *is* good for, and it is not a consolation prize: a **"same place, different condition"**
-probe where the durable record *should* partly disagree. We have no other pair like it, and it is
-the natural negative control for the day-and-night test — a place that really did change.
+| image | setting | prominent objects | notable garments |
+|---|---|---|---|
+| `annie1` | no environment, cream paper ground | (none) | **girl**: coral open jacket, yellow tank, black skirt, black knee boots, choker · **hero**: black/red tunic w/ yellow bar fasteners, black cape, black glove, domino mask |
+| `annie2` | **nested** — inside the drawing, a giant reptilian creature looming over a small girl; outside it, a defocused convention hall w/ black grid shelving | the sketchbook itself | coral jacket, pale yellow top, black shorts, choker, white socks |
+| `annie2_cropped` | the painted page only — the creature and the girl, ink line over watercolour wash on textured paper | (none) | as `annie2` |
+| `annie3` | alley between buildings; rooftop/street | (none) | **girl**: coral coat, tan top, black skirt, choker · **boy hero**: red/black tunic w/ yellow bars, black cape · **woman hero**: black/purple suit, yellow gloves and boots · **man**: tan shirt, striped trousers |
+| `annie3_panel1` | alley, girl near-full-figure | (none) | as `annie3` |
+| `ayanami_oil` | tiled washroom or pool edge; pale green tiles, dark floor tiles, green ledge | (none) | pale school swimsuit |
+| `azumanga_anime` | no environment, white ground | (none) | coral sailor-style school jumpers, white collars, dark red pleated skirts, orange socks / white socks + brown loafers |
+| `azumanga_toon` | school grounds; chain-link fence, clipped hedges, trees, grass, concrete path, brick edging, outline clouds | (none) | same coral uniforms; one w/ black over-knee socks |
+| `bird_vector` | no environment, white | (none) | — |
+| `bird_watercolor` | no environment, paper ground | branch | — |
+| `bookshop` | Paris-style bookshop frontage from the pavement; shop interior through the open door | tiered book displays, ceiling strip lights (on), downpipe, vent grille, doormat | black sweater, dark jeans |
+| `cannon` | stone-walled terrace/battery over woodland; limestone rubble walls, pale flagstones | **muzzle-loading cannon on a four-wheeled wooden carriage** | — |
+| `captain` | deck of a sailing yacht at sea, clear sky | **ship's wheel** (large, varnished), boom, furled sail, rigging, blocks, guardrail | **captain's uniform**: white peaked cap w/ gold emblem, navy double-breasted jacket, 4 cuff stripes, ribbon bar |
+| `car_1` | no environment, white | **white crossover SUV, front three-quarter**; roof rails, black wheel arches, maker emblem | — |
+| `car_2` | no environment, white | **the same SUV, pure side view** — identical vehicle, lighting, ground and background | — |
+| `car_interior_mecha_driver` | van/MPV cabin; city skyline through the windows | steering wheel, headrests, roof vent, **magazine w/ Japanese cover text** | school sailor uniform w/ blue neckerchief |
+| `car_interior_photo` | front cabin of a modern electric car | steering wheel w/ **maker emblem**, large landscape touchscreen showing a map, wood dash trim, centre console | — |
+| `car_interior_sketch` | car cabin, windows blown out white | steering wheel, headrest, seatbelt | olive short-sleeve shirt; pink tee |
+| `castle` | castle grounds; round crenellated tower, curtain wall, cloudy sky | pennant flag, arrow-slit, partial wooden shield edge | **plate armour**: pauldrons, engraved cuirass, gorget, mail sleeves, gauntlets, brown belt |
+| `chair` | no environment, pure white | **executive office chair**: black ribbed leather, gold-tone arms and five-star base, castors | — |
+| `chips_hotdog_dr_pepper_painting` | painted backdrop and tabletop | **chip bag, glass soda bottle, hot dog in a bun, loose chips** — all w/ **painted brand text** | — |
+| `city_day` | **downtown skyline from above**, daylight, blue sky w/ cirrus; glass and masonry towers, a gold curtain-wall tower, a stepped-crown tower, low-rise grid, distant treeline | rooftop antennas, **rooftop brand signage**, construction scaffolding | — |
+| `city_night` | **same skyline, same camera position**, blue hour; orange horizon glow, lit windows throughout | same towers; **illuminated signs and a lit crown** now readable, low-rise detail lost | — |
+| `classroom1` | bright modern classroom; cream walls, curtained window | light-wood desks, storage cabinet, world-map bulletin board, open books, orange pencils | blue/white striped shirts, red neckties, navy pleated skirts |
+| `classroom2` | older classroom; orange-yellow walls, tall windows | wooden desks, potted plant on sill, blue hardback, blue pencils, framed poster | navy waistcoats, white shirts, striped ties; houndstooth shirt-dress |
+| `cloud` | grassy plain under towering cumulus; dirt track, distant blue hills, contrail | wooden fence, small white utility building | — |
+| `comic` | classroom; desks, whiteboard w/ geometry diagram, windows, planter boxes | pencil, spider, papers, backpack | black/red/white school uniforms w/ ties; grey blazer; red/black armoured super-suit |
+| `comic_panel2` | close-up, classroom behind | (none) | school uniform |
+| `comic_panel3` | **same room as `comic_panel4`**; whiteboard | dialogue balloon | grey blazer |
+| `comic_panel4` | classroom interior; desks, windows, planter boxes | desks, papers | school uniforms w/ ties |
+| `coraline1` | no environment, white | forked twig | yellow raincoat, blue jeans, yellow wellingtons, dragonfly hair clip |
+| `coraline2` | dim kitchen; sash window, panelled cabinets, deep sink, tiled splashback, round table | open laptop, **mug reading "I love Mulch"**, notebook, pen, a doll | yellow raincoat; grey knitted cardigan |
+| `destroyer_drawing` | no environment | side elevation + plan view of a warship, range scale, rising-sun emblem | — |
+| `destroyer_photo` | warship at anchor, calm water, blank pale sky, distant masts | twin funnels making smoke, turrets, torpedo tubes, bridge tower, ensign; **kana + "19" on the hull** | — |
+| `fish_pixel` | no environment, dark banded ground | side-on fish, teal-green back, white belly | — |
+| `forest_autumn` | **beech forest in fog**, autumn; grey trunks, rust foliage, deep leaf litter, exposed roots, dirt path | (none) | — |
+| `forest_day` / `forest_night` | one forest clearing backed by broadleaf trees and low scrub; grass foreground, distant hills | (none) | — |
+| `forest_day_night` | the two panels above, stacked | (none) | — |
+| `fruitbowl` | plain warm backdrop, wood tabletop | dark ceramic bowl of fruit (green apple, 2 red apples, grapes, 2 bananas), **2 wine bottles w/ illegible script labels**, 1 loose apple | — |
+| `fuji` | **thatched village by a pond, snow-capped volcano behind**; topiary, azaleas, clipped hedge, conifers, deep blue sky | thatched roofs, **water wheel**, stone lantern | — |
+| `girl_painting` | no environment, grey painterly ground | (none) | black choker, pale knit |
+| `girl_painting_reference` | plain grey-green wall | (none) | black velvet choker, lilac knit |
+| `ivy_toon` | blue technological interior; circuit-trace wall panels, yellow door frame | **a white and grey handheld device on a chain** | brown leather jacket, white top, khaki trousers |
+| `jacket` | **snowy park** — bare trees, falling snow, snow-covered ground | (none) | **grey quilted puffer jacket** w/ hood |
+| `jacket2` | **same snowy park**, seated on a bench; near-featureless snow field behind | **wrought-iron bench** (scrollwork), brown leather handbag | same grey puffer jacket, **fur-trimmed mittens** |
+| `kasia` | no environment, plain pale-grey backdrop | **orange shoulder bag** w/ blue strap + **3 pin badges** | black tank, denim cuffed shorts, fingerless gloves, striped knee socks, blue sneakers, **orange** headband |
+| `kasia_bag` | no environment, white | **yellow shoulder bag, blue flap w/ pale-blue circular emblem, navy webbing strap, gold slider** — no pin badges | — |
+| `kasia_bag_2` | no environment, white | **the same bag upright, three-quarter front**; strap looped over the top | — |
+| `kasia_outfit` | no environment, white | — | **black vest top, cuffed blue denim shorts, black/blue fingerless gloves, black-and-grey striped knee socks, blue lace-up sneakers** |
+| `kasia_render` | no environment, white studio ground | (none) | black vest top, cuffed denim shorts, black fingerless gloves, grey striped knee socks, navy/white sneakers, **gold-yellow headband** |
+| `kasia_swimsuit` | no environment, white | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** |
+| `kasia_swimsuit_render` | poolside; clipped hedge, handrails, pale coping, blue water | handrails | **the same swimsuit**, worn |
+| `kasia_swimsuit_worn` | no environment, stylised water-pattern band on white | (none) | **the same swimsuit**, worn (character: black bob, **yellow** headband, green eyes, freckles) |
+| `kaypro_ii` | no environment, white | **vintage portable computer**: blue/grey metal case, green CRT showing text, 2 floppy drives, detached keyboard w/ blue keypad · **brand name on case AND on screen** | — |
+| `kiki` | no environment; floating props | **6–7 breads/pastries** (loaf, baguette, rolls, filled bun) | navy long-sleeve top, red bow headband |
+| `lincoln_photo` | no environment, plain studio backdrop | (none) | dark frock coat, white shirt, black bow tie |
+| `lincon_money` | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — |
+| `marker` | window with blue sky and clouds behind her; drawn board border | window | off-shoulder cable-knit top, dark high-waisted pleated skirt, black ribbon choker, hoop earrings, hair ribbons |
+| `miya` | winter hillside road/lookout above a valley town; guardrail, bare trees, snow | guardrail, small trash bin, power pylons | cream double-breasted coat, black fur collar, grey pleated skirt, brown backpack, **cream headphones** |
+| `miyu` | no environment, black void; ground litter only | **wheelie bin** (recycling pictograms, lid open), scattered leaves | not readable (occluded) |
+| `mountain_rain` | **alpine panorama in driving rain**; snow-capped range, mossy rock ledge, conifers, alpine flowers, snow patches, dead trunk | (none) | — |
+| `newspaper` | bright minimal living room; cream walls, built-in white shelving | **folded broadsheet newspaper**, books, oatmeal armchair | navy shirt, dark trousers, black belt |
+| `p1_first` | shabby apartment room, ochre distempered walls, very dim | **transistor radio**, handgun, corduroy couch, leather armchair, pole-mounted shelf + lamp, folding side table, tin ashtray | black top, shoulder-holster straps, round sunglasses |
+| `p1_last` | same room, far brighter and closer | same radio, shelf, framed item | same |
+| `p2_first` | shabby kitchen; yellow cabinets, maroon splashback, lace-curtained window | disassembled handguns, cloth, 2 solvent bottles, green dish rack, sink+tap, paper-towel roll, **box w/ brand text** | sage sleeveless waistcoat over white vest |
+| `p2_last` | same kitchen, near-identical light | same | same |
+| `p3_first` | dining room; ivory raised-panel wainscot, dark polished table | **cereal box w/ large brand text** (green lettering), milk carton, pink milkshake glass, cut-glass fruit bowl, floral bowl + spoon, woven placemat | grey/white striped pyjama shirt |
+| `p3_last` | same room, near-identical | same | same |
+| `p4_first` | city street, **background almost entirely defocused**, blown white sky | **leather case w/ brass latches**, second black case, potted houseplant, paper bag, blurred bus | olive bomber jacket, green/striped dress, choker; long dark overcoat |
+| `p4_last` | same street, same bokeh | same | same |
+| `p5_first` | studio-backlot city street **at night**; granite building corner, masonry apartments, lit windows | **1950s cars** (black sedan, red/white taxi), terracotta potted shrub, wooden double doors, stone kerb | black suit, white shirt, black tie, pocket square, **fedora**, **roller skates** |
+| `p5_last` | same corner, tighter, heavy dissolve/superimposition of a second figure | same | same |
+| `p6_first` | room with a **window** (not a doorway); peeling green-cream window frames, **exposed red brick** and a blue panel seen outside through it | 2 framed pictures, curtain, wooden floor | striped knit top, black choker w/ sun pendant, knee socks |
+| `p6_last` | same window, tighter | same brick, frames | same |
+| `pancakes` | modern kitchen; white tiled splashback, gas hob, extractor | **frying pan + pancakes**, spatula, grey plate of pancakes, whisk, wall control panel | white t-shirt, blue trousers; white floral pyjamas |
+| `peter_griffin_painting` | no environment, dark olive gradient | (none) | white collared shirt |
+| `peter_griffin_toon` | office; desk, wall poster, framed wall chart, dark carpet | desktop monitor, keyboard, mouse, phone | white shirt w/ black belt, green trousers, brown shoes; blue polo |
+| `phone` | studio white, no environment | **smartphone w/ teal bumper** | sleeveless blue knit top |
+| `ramen_pixel` | no environment, dark ground w/ drop shadow | **bowl of ramen**: noodles, sliced pork, halved soft egg, spring onion, bamboo shoot, steam | — |
+| `sanfran_day` / `_evening` / `_night` | grass bank and conifers, a red suspension bridge at left, a white high-rise cluster at right, water across the foreground | (none) | — |
+| `san_fransisco_day_evening_night` | the three panels above, stacked | (none) | — |
+| `shrek_cg` | open sky, wispy cloud, dry grass at right | (none) | brown leather-look tunic, cream undershirt w/ lacing |
+| `sleeping` | bedroom; grey tweed upholstered bed frame, white linen, light-wood bedside table | **black-framed eyeglasses**, pillows, duvet | navy top |
+| `stage` | **grand theatre auditorium** — two gilded balcony tiers, plaster cartouches, globe lights, red velvet seating, red aisle, stage floor | stage lighting units, recessed downlights, tiered seating | blue sleeveless dress, blue heels |
+| `supergirl1` | sky and stylised clouds inside a drawn panel on white board | (none) | white crop tee w/ red-and-yellow chest emblem, blue skirt, red cape, white gloves, red boots, blue headband |
+| `supergirl2` | no environment, white | (none) | same costume |
+| `teddy_taft` | portico/doorway; wet stone step, glazed door, fluted column | (none) | dark overcoats, waistcoat, watch chain, boutonniere, pince-nez |
+| `temple_day` | gothic ecclesiastical exterior in bright sun; twin-lancet traceried window, columns, balustraded stair rising, spire beyond, potted agaves, trailing greenery, doves | (none) | strapless cream gown, pale green sash, hair ribbon |
+| `temple_night` | **the same architecture, ruined and dark**: same window and tracery, same stair now broken, rubble, fallen beams, torn red banner, dim violet sky | (none) | cream tunic, brown trousers, tall boots, red cape w/ fur collar, belt; **holding a sword** |
+| `tv` | domestic living room; damask wallpaper, dark wood TV stand | **CRT television** (off), DVD/VCR player, cables | navy botanical-print blouse, dark trousers |
+| `van_pixel` | roadside; trees, orange-red sky | **blue MPV/van**, front three-quarter, roof rack + luggage, **licence plate** | blue and white outfit, cap |
+| `vector_city` | stylised skyline of angular towers in coral and grey, reflected in water; teal sky, stylised clouds, sun flare | foreground rocks | — |
+| `window` | **the same window as `p6`**, shot tighter and blown out — environment essentially unreadable | (none legible) | striped knit top, choker w/ pendant, knee socks, stuffed toy |
+| `woman_oil` | dark room; black wall, dark bench or piano stool, white drape at right | dark bench/stool w/ visible hinge, crumpled white cloth | cream puff-sleeved blouse, dark skirt |
+| `woody_cg` | dim room, brown/ochre ground, indistinct | **holster on the belt**, sheriff badge | yellow check shirt, cow-print waistcoat, blue jeans, brown boots w/ spurs, brown hat |
 
-### The annie sheets contain two characters, not one in two guises — corrected
+---
 
-**Correction to the first session-7 pass.** `annie1` was originally catalogued as "1 girl, drawn
-twice — as herself and as a masked hero". That is **wrong**, and the user caught it. The masked
-figure is a **separate, recurring character** (a well-known costumed boy hero), not the girl in a
-costume. `annie3` likewise has four distinct people — the girl, two costumed heroes (a boy and a
-woman), and a man — not one girl plus her alter ego.
+## Probe pairs & sets
 
-It matters in three ways, which is why it is recorded rather than quietly fixed:
+Merged from the three per-session pair lists. **Tier** says how much of a control it is:
+`exact` = nothing varies but the one thing under test · `tight` · `loose` = same idea, much
+else redrawn. Use the top for regression, the bottom for coverage.
 
-1. **It would have inverted a test verdict.** Under the wrong reading, a describer that produced
-   one record covering "a girl who is also a masked hero" would have looked correct, and a
-   describer that correctly kept them as two people would have looked like a failure. We would
-   have scored a right answer wrong.
-2. **The identity ladder needs a `SUBJECT:` line.** `annie1` and `annie3_panel1` each contain the
-   girl *and* at least one costumed hero; only `annie2_cropped` has her alone. Cast across the
-   three media without disambiguation and the describer may legitimately record a different person
-   in each, which would read as catastrophic identity drift and would be nothing of the kind.
-3. **It is a genuine `character` disambiguation case**, in the same family as picking one child out
-   of six in a classroom — and unlike the classroom, the candidates here differ by *costume*
-   rather than by position, which is a different kind of hard.
+| set | files | holds constant | role | tier |
+|---|---|---|---|---|
+| girl-painting | `girl_painting_reference` → `girl_painting` | **everything** — the painting was made *from* that still: same subject, pose, crop, framing, expression | style | **exact.** The only true control; any content difference is a defect |
+| car-angle | `car_1` / `car_2` | one object, two angles — same medium, lighting, ground, background. **Nothing varies but viewpoint** | object | **exact.** The object-viewpoint control |
+| city-daynight | `city_day` / `city_night` | same skyline, same camera, **day vs blue hour** | setting | **the atmosphere-quarantine bar.** See the confound note below |
+| p2 | `p2_first` / `p2_last` | same kitchen, near-identical light and framing | setting | tight — the clean control |
+| p3 | `p3_first` / `p3_last` | same dining room, near-identical | setting | tight — second clean control |
+| forest-daynight | `forest_day` / `forest_night` | one vector scene, relit, **signage-free** | setting | tight, but *easier* than `city-*` — see below |
+| sanfran-daynight | `sanfran_day` / `_evening` / `_night` | one scene, **three** lighting states | setting | tight; the only series rather than pair |
+| supergirl | `supergirl1` / `supergirl2` | same character, costume, near-identical flying pose; marker board vs rough pencil | style | very tight |
+| lincoln | `lincoln_photo` / `lincon_money` | same face, same era; albumen photograph vs line engraving | style, character | tight — an object *containing* a portrait, so `[[SUBJECT_KIND]]` is a live question |
+| destroyer | `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | style, object | tight, and **the only media pair with no person in it** |
+| p6-window | `window` + `p6_first` + `p6_last` | one window, **three** framings and exposures | setting | tight — the widest same-place spread. **Reframing costs more than relighting**; this pair agrees less well than `city-*` |
+| p1 | `p1_first` / `p1_last` | same room, very different exposure | setting | secondary atmosphere probe (exposure, not time of day) |
+| kasia (swimsuit) | `kasia_swimsuit` → `_worn` / `_render` | one garment: flat, worn in 2D, worn in 3D | object, character | flat-to-worn; the flat-lay is *derived* from the 2D image, so not independent evidence |
+| kasia (everyday) | `kasia_outfit` → `kasia_render` / `kasia` | flat-lay garments ↔ worn | object | same derivation caveat |
+| bag-angle | `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object | harder than `car-angle` — an AI re-render, strap arranged differently |
+| peter-griffin | `peter_griffin_painting` / `peter_griffin_toon` | one character: canonical flat toon vs painterly | style | tests franchise recognition **without a label** |
+| oil-idiom | `ayanami_oil` / `woman_oil` | oil idiom, **digital vs traditional** | style | fine `[[MEDIUM]]` discrimination |
+| toon-era | `ivy_toon` / `peter_griffin_toon` | `2D cel / western toon`, **90s cel vs modern flat digital** | style | fine discrimination *below* the sub-term — nothing in the vocabulary separates these two |
+| azumanga | `azumanga_anime` / `azumanga_toon` | same 3 characters, same uniforms; flat anime cel vs western TV-toon | style | loose, and a **fine** discrimination — both are flat 2D |
+| coraline | `coraline1` / `coraline2` | same character; puppet on white vs film still | style, character | loose; doubles as isolated-subject vs in-scene |
+| bird | `bird_vector` / `bird_watercolor` | a blue-and-orange bird | style | loose — not the same bird, the same *idea* of one |
+| annie | `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic | style, character | loose, widest spread. **Requires a `SUBJECT:` line** — see below |
+| car-interior | `car_interior_photo` / `_sketch` / `_mecha_driver` | one setting *type* across three media | setting | loosest — different vehicles |
+| p4 | `p4_first` / `p4_last` | same street, both heavy bokeh | setting | low-information stress case |
+| jacket | `jacket` / `jacket2` | same snowy park, same woman, same puffer jacket | character, object, setting | **weak for setting** — the snow is near-featureless, so durable content is thin by nature. Solid as the garment/identity pair |
+| temple | `temple_day` / `temple_night` | same architecture, signage-free, **but ruined in one** | setting | **negative control** — the place really did change; see below |
+| classroom | `classroom1` vs `classroom2` (+ `comic_panel4`) | *different* rooms of the same type | setting | **negative control** — must NOT collapse into one record. `comic_panel4` is a third, in a non-photographic medium |
+| comic-page | `comic_panel3` / `comic_panel4` | same room, two panels, one comic medium | setting | the only same-place pair inside a drawn medium |
+| comic-page | `comic_panel2` / `comic_panel4` | same girl, two framings, one medium | character | the comic analogue of the `p6` wide/close pair. **Her name is printed in the balloon** — the harshest no-name probe we have |
+| char-drift | `pancakes` × several `SUBJECT:` wordings | **the image itself** — isolates prompt-side instability with image variation removed | character | produced byte-identical `[[APPEARANCE]]` lines; read this before any cross-image probe |
+| setting-boundary | `bookshop` | camera outside, interior visible through the glass | setting | `[[SETTING_KIND]]` boundary case — correct in every round so far |
 
-The general point, and the reason this file exists: **`validate.py` cannot see any of this.** A
-record naming the wrong person is perfectly well-formed and will pass every structural check.
-Content errors need eyes, and eyes get things wrong too — this row was wrong for a full pass
-before the user corrected it.
+### Notes attached to specific pairs
 
-### Comic pages and the nested-medium case
+**`city_day`/`city_night` carries a signage confound.** The skyline has rooftop bank logos and a
+large neon hotel sign. Night lights those up and hides low-rise detail, so a `[[DEFINITION]]`
+disagreement has two possible causes — atmosphere leaking into the durable fields, or the model
+naming an illuminated sign it could not read by day. Check which before scoring. It is also the
+strictest printed-text/brand probe in the corpus.
 
-`comic` and `annie3` are single files containing 4-5 separate scenes; `annie2` is a photograph of
-a watercolour held in a hand in front of an exhibition hall. Every describer built so far assumes
-one frame, one place, one moment, so `[[SETTING_KIND]]` has no correct answer for any of them.
+**The vector day/night pairs close the gap but are an *easier* test.** `forest_*` and `sanfran_*`
+deliver "same camera, same place, same structure, relit only" perfectly — one piece of vector
+artwork recoloured, zero photographic variation, zero signage. But the failure mode session 6
+diagnosed was that **by day the model describes forms and by night it describes lights**, and that
+happens because a real night photograph genuinely destroys information: the low-rise detail in
+`city_night` is simply gone. **In a vector illustration nothing is destroyed.** A describer can
+pass these comfortably while still failing `city_*`. Use them as the *diagnostic* (a failure is
+unambiguous); keep `city_*` as the *bar*.
 
-**Agreed approach**: crop panels for the content roles, keep the full pages for `style`, and run
-an uncropped page through `setting` **once, as a diagnostic that is recorded and never patched**.
-The reasoning is this project's own most expensive lesson — `[[SUBJECT NOT FOUND]]` cost three
-rounds and caused every format failure in setting v1–v3 before it was deleted, and the conclusion
-written down was that *an optional behaviour that fires on judgement is a liability unless the
-role genuinely needs the judgement*. Multi-panel handling is that trap in a new costume: if a
-comic page produces mush, the reflex is to add an "if the image contains multiple panels…" rule,
-and that rule will cost us elsewhere the way the setting-v2 paragraph did. Know the failure mode;
-do not defend against it.
+**`temple_day`/`temple_night` is a split diptych, not two photographs.** The user found one
+artwork with the ruined/night/male half on the left and the intact/day/female half on the right,
+split it down the middle and **mirrored one half** so the architecture aligns. Three consequences:
+it is genuinely signage-free, which is what the gap asked for; it is **not** a clean atmosphere
+control, because the building is intact in one and ruined in the other and ruin is *structural*,
+so `[[DEFINITION]]` divergence is partly legitimate; and because one half was mirrored, any
+left/right language in `[[STRUCTURE]]` will conflict across the pair — `setting` has no POSITION
+field so this is mostly harmless, but do not read "stair rising to the right" vs "to the left" as
+drift. What it *is* good for, and this is not a consolation prize: a **"same place, different
+condition"** probe where the durable record *should* partly disagree. The natural negative control
+for the day-and-night test.
 
-#### Panels cropped (session 7)
+**The annie ladder needs a `SUBJECT:` line.** `annie1` and `annie3_panel1` each contain the girl
+*and* at least one costumed hero; only `annie2_cropped` has her alone. Cast across the three media
+without disambiguation and the describer may legitimately record a different person in each, which
+would read as catastrophic identity drift and would be nothing of the kind. Use the cropped and
+panelled versions for content roles — raw `annie2` drags in a convention hall, raw `annie3` is four
+scenes at once.
 
-Gutters were detected programmatically (row/column runs of ≥97%-white pixels, then per-band
-column analysis), not estimated by eye; all four crops exclude the panel border rules with no
-bleed from neighbours. Kept deliberately few — these are the panels that earn a place, not all
-nine.
+---
 
-| crop | source | why it was kept |
-|---|---|---|
-| `comic_panel4.jpg` (1249x904) | `comic` bottom panel | **classroom interior, 6+ people, desks, windows, planter boxes.** A *third* classroom for the `classroom1` vs `classroom2` negative control — and the first one in a non-photographic medium, so it tests that the negative control survives a medium change. Also a multi-person `character` disambiguation case |
-| `comic_panel3.jpg` (1161x460) | `comic` middle panel | two adults at a whiteboard, **same room as `comic_panel4`** — so the two crops are a *same-place pair inside one comic medium*, which nothing else in the corpus provides. Carries a dialogue balloon |
-| `comic_panel2.jpg` (335x429) | `comic` top-right panel | close-up of the **same girl as `comic_panel4`** → a same-character/two-framings drift probe in one medium (the comic analogue of the `p6` wide/close pair). **Her name is printed in the speech balloon**, making it the harshest no-name probe we have: the answer is literally written in the image |
-| `annie3_panel1.jpg` (428x1434) | `annie3` leftmost panel | the girl near-full-figure in an alley — **completes the three-media identity ladder for the content roles**, not just for `style`: `annie1` (marker sketch) / `annie2_cropped` (watercolour) / `annie3_panel1` (comic). Also has her name in a balloon. **Two costumed heroes share the panel**, so cast it with a `SUBJECT:` line |
+## Corrections & superseded findings
 
-Not kept: `comic` panels 1 (a hand and a spider, no usable setting or subject) and `annie3`
-panels 2–4 (costumed figures on flat grounds — the corpus already has plenty and they add no new
-probe). The crop boxes are recorded in the session-7 handoff if any of them are wanted later.
+Every content error found so far, kept because each one would have changed a test verdict.
+**`validate.py` cannot see any of this** — a record naming the wrong person is perfectly
+well-formed and passes every structural check.
 
-**`annie2` is kept whole *and* cropped — both, deliberately.** The user added
-**`annie2_cropped.jpg`** (722x1273), which removes the hand, the sketchbook edge and the
-defocused convention hall, leaving only the painted page. This is better than cropping *or*
-keeping alone, because the two files now serve two different jobs and cannot confound each other:
+| claim | what we first recorded | what is actually true | how it surfaced | why it matters |
+|---|---|---|---|---|
+| `window` is its own location | catalogued as an unrelated room; `p6` described as showing a *doorway* | `p6` shows a **window**, and it is the **same window** as `window.png` | user correction, session 6 | turns two unrelated images into the corpus's largest same-place set (three framings) |
+| `annie1` / `annie3` cast | "1 girl, drawn twice — as herself and as a masked hero" | the masked figure is a **separate recurring character**; `annie3` has **four** distinct people | user correction, session 7a | **would have inverted a test verdict** — a describer correctly keeping them as two people would have scored as a failure |
+| `kasia_swimsuit` set membership | "not part of the kasia set — nothing visual ties it to the character, only the filename" | it **is** — `kasia_swimsuit_worn` is the original commission the flat-lay derives from | second batch arrived, session 7b | closes the second-flat-to-worn-garment gap; also the source of the general lesson below |
+| kasia headband hue | `kasia.png` treated as the reference, the renders as drifting | `kasia.png` is the **outlier** — three files agree on yellow, only the original is orange (hue 28–34°) | measured, then re-framed in 7b | a describer saying "orange" for `kasia.png` is right about *that image* while wrong about *the character* |
+| session-6 medium tally | "16 live-action photographic" | 17 — the list under it named 17 | arithmetic, session 7a | it is what makes the session-6 total 37 |
+| medium tallies vs crops | the 74-file tally excluded comic-panel crops from "comic page" but **included** `annie2_cropped` in "watercolour" | crops are files and count everywhere | recount, session 8 | the reason the tally is now generated rather than hand-maintained |
+| "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincon_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
+| `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
 
-- **`annie2`** (uncropped) is the corpus's only **nested-medium** case — a photograph of a
-  painting. "The reference image contains another image" is ordinary in real use (posters, phone
-  screens, TVs — `tv.png` already has a CRT), and it argues for `describer_style` stating up front
-  whether it reports the medium of the photograph or the medium of the thing photographed. That
-  is a rule worth having *before* the prompt exists, unlike multi-panel handling, which would be
-  a patch after the fact.
-- **`annie2_cropped`** is a clean **traditional watercolour** sample with no photographic
-  contamination — which matters because watercolour was one of the thinnest media in the corpus.
-  It is also the Annie identity ladder's watercolour rung, and being free of the hand and the
-  hall it can be compared against `annie1` and `annie3_panel1` without the character record
-  picking up an exhibition hall that has nothing to do with her.
+**The general lesson, and it is about the inventory rather than about kasia: a "these are
+unrelated" judgement is only ever true of the corpus *as it stands*.** Two of the three content
+errors caught in session 7 were of this shape — an inferred *relationship*, not a described
+object. **Description rows have been reliable; claim rows have not**, and claim rows are the ones
+that change a verdict.
 
-Content of the page itself: the girl in her coral jacket, pale yellow top, black shorts, choker
-and white socks, standing small in the clawed hand of a huge tan reptilian creature whose head
-looms above her. Ink line over watercolour wash on textured paper.
+---
 
-`annie2` is the exception worth a real rule: "the reference image contains another image" is
-common in ordinary use (posters, phone screens, TVs — `tv.png` already has a CRT), and
-`describer_style` will need to say up front whether it reports the medium of the photograph or
-the medium of the thing photographed.
+## Coverage by role
 
-## Medium tally — full corpus (74)
+### `setting`
 
-| medium | count | images |
-|---|---|---|
-| live-action photographic | 21 | the session-6 17 + cannon, car_interior_photo, kaypro_ii, chair* |
-| live-action film (modern cinematic) | 12 | p1x2, p2x2, p3x2, p4x2, p6x2, window, girl_painting_reference |
-| live-action film (vintage Technicolor) | 2 | p5x2 |
-| **archival B&W photograph** | 3 | destroyer_photo, lincoln_photo, teddy_taft |
-| **3D CG / product render** | 5 | kasia_render, fruitbowl, kasia_bag, kasia_outfit, kasia_swimsuit |
-| digital painting | 6 | cloud, mountain_rain, girl_painting, peter_griffin_painting, temple_day, temple_night |
-| **oil painting** | 1 | chips_hotdog_dr_pepper_painting |
-| **watercolour (traditional)** | 3 | bird_watercolor, annie2 (nested in a photograph), **annie2_cropped** (clean) |
-| 2D anime | 4 | kiki, miya, azumanga_anime, car_interior_mecha_driver |
-| 2D illustration (flat cel) | 1 | kasia |
-| **western TV-cartoon** | 1 | azumanga_toon |
-| **comic page (inked line art)** | 2 | comic, annie3 |
-| **marker/copic board art** | 1 | supergirl1 |
-| **rough sketch** | 3 | annie1, supergirl2, car_interior_sketch |
-| **stop-motion** | 2 | coraline1, coraline2 |
-| flat vector | 2 | vector_city, bird_vector |
-| pixel art | 4 | miyu, fish_pixel, ramen_pixel, van_pixel |
-| **B&W technical print** | 1 | destroyer_drawing |
-| **engraved intaglio** | 1 | lincon_money |
+**11 distinct interiors**: 2 classrooms (+ a third in `comic_panel4`), 2 kitchens, 3 living/dining
+rooms, bedroom, theatre auditorium, window room, bookshop interior, office, tiled washroom.
+**Plus 3 vehicle interiors** — the setting type that was entirely missing at session 6.
 
-\* `chair` is deliberately left ambiguous — it may be a photograph or a product render, and
-neither reading is obviously wrong. That makes it a useful `describer_style` hard case rather
-than a mislabelled row.
+**Exteriors** cover shop street, ship deck, castle grounds, snowy park, snowy hillside road, modern
+city street, 1950s backlot street at night, downtown skyline from above, beech forest in fog,
+alpine range in rain, volcano and thatched village, grass plain under cumulus, stylised vector
+skyline, school grounds, alley, stone battery, poolside, portico, gothic temple.
 
-Live-action share has fallen from 29/37 (78%) to 38/74 (51%), and **every** medium now has at
-least two images except five singletons (oil, western toon, marker board, technical print,
-intaglio) — which are singletons because they are genuinely rare in practice, not because of
-sampling.
+Weather: snow (×3), fog, rain, overcast, clear. Terrain: forest, alpine rock, grass plain, water,
+and several flavours of built-up.
+
+**No-/low-setting cases** for "not visible" behaviour: `kasia`, `kiki`, `phone`, `chair`,
+`kaypro_ii`, `car_1`/`car_2` and most product renders (plain studio grounds), `miyu` (black void).
+
+### `object`
+
+**In-scene targets**: CRT television (`tv`), ship's wheel (`captain`), transistor radio (`p1`),
+cereal box (`p3`), frying pan (`pancakes`), leather case (`p4`), wheelie bin (`miyu`), wrought-iron
+bench (`jacket2`), shoulder bag (`kasia`), breads (`kiki`), newspaper (`newspaper`), eyeglasses
+(`sleeping`), 1950s cars (`p5`), cannon (`cannon`), handheld device (`ivy_toon`), holster and badge
+(`woody_cg`).
+
+**Isolated shots** — the thing session 6 was short of, now well covered: `phone`, `chair`,
+`kaypro_ii`, `fruitbowl`, `ramen_pixel`, `fish_pixel`, `kasia_bag`, `kasia_bag_2`, `car_1`,
+`car_2`.
+
+**Garments**: plate armour (`castle`), captain's uniform (`captain`), puffer jacket
+(`jacket`/`jacket2`), fedora and roller skates (`p5`), school uniforms (`classroom1`/`classroom2`,
+`azumanga`), and **two flat-to-worn pairs** (`kasia_outfit`, `kasia_swimsuit`).
+
+### `style`
+
+**No longer blocked.** 11 coarse media across 98 files, **21 of 23 defined (coarse, sub)
+combinations populated**; live-action down to 42% from 78%. Nine same-subject-across-media pairs,
+one of them exact. See the tally and the pairs table.
+
+The two vocabulary decisions this section used to flag as open are **now settled** by the
+tie-break rules under "Medium vocabulary":
+
+- **The oil case** — resolved by rule 3 (report the idiom, not the substrate). `woman_oil` is
+  `painting / oil`, `ayanami_oil` is `painting / digital`. They agree at coarse level and differ
+  at sub level, which is exactly what that probe pair should produce.
+- **The nested-medium case** — resolved by rule 2 (report the outer medium). `annie2` is
+  `photograph`, with `annie2_cropped` as the clean watercolour sample. The rule generalises to
+  `tv`'s CRT and to any poster, phone screen or television in frame, which is ordinary in real use.
+
+### The three `amb` images — a category, not a defect
+
+`chair`, `car_1` and `car_2` are studio product shots on white. The user knows their provenance —
+`chair` came from an Amazon listing, `car_1`/`car_2` direct from an automaker — so they are filed
+as `photograph`. **But the pixels do not settle it.** Contemporary automaker press imagery is
+routinely CGI, and a clean e-commerce shot on a seamless white ground is exactly the case where a
+photograph and a good product render converge. The user's own read is "probably photographs, but I
+could be wrong", and that is the correct confidence level.
+
+The consequence for testing is the point: **`[[MEDIUM]]` is unscorable on these three, in either
+direction.** A describer saying `3D CG` is not wrong; a describer saying `photograph` is not right
+for a reason it could have known. Scoring them either way manufactures a signal that isn't there.
+
+That is worth having as a standing category rather than a footnote. Ground truth in this document
+comes from two different places — **what is visible** and **what we happen to know** — and only the
+first is a fair test. The `amb` flag marks where they diverge. `chair` and the two cars are the
+current members; anything whose classification rests on provenance rather than appearance belongs
+there too.
+
+Still genuinely open, and a *prompt* question rather than a vocabulary one: whether
+`describer_style` emits the sub-term unconditionally or only when confident. An optional element
+that fires on judgement is the exact shape that cost `setting` three rounds — so the default
+should be "always emit, with an explicit `not determinable` value available" rather than "omit
+when unsure". The `amb` images are the natural test of that value.
+
+---
+
+## Multi-panel images — a trap to know, not to defend against
+
+`comic` (5 panels), `annie3` (4 panels), and the two day/night composites are single files
+containing several scenes; `annie2` is a photograph of a painting held in a hand. Every describer
+built so far assumes one frame, one place, one moment, so `[[SETTING_KIND]]` has no correct answer
+for any of them.
+
+**Agreed approach**: crop panels for the content roles, keep the full pages for `style`, and run an
+uncropped page through `setting` **once, as a diagnostic that is recorded and never patched.**
+
+The reasoning is this project's own most expensive lesson. `[[SUBJECT NOT FOUND]]` cost three
+rounds and caused *every* format failure in setting v1–v3 before it was deleted, and the conclusion
+was that **an optional behaviour that fires on judgement is a liability unless the role genuinely
+needs the judgement**. Multi-panel handling is that trap in a new costume: if a comic page produces
+mush, the reflex is to add an "if the image contains multiple panels…" rule, and that rule will
+cost us elsewhere the way the setting-v2 paragraph did.
+
+Both composites are kept alongside their crops — they cost nothing, they are the provenance, and
+they are a second kind of multi-panel diagnostic where the panels are the *same* scene rather than
+a sequence.
+
+---
 
 ## Printed text and real-identity pressure
 
-Both no-name rules are now testable at far higher pressure than the two film stills of session 6.
-
-**Printed text**, hardest first: `lincon_money` (almost nothing but text) · `destroyer_drawing`
+**Printed text, hardest first**: `lincon_money` (almost nothing but text) · `destroyer_drawing`
 (class name, dimensions, tonnage, date) · `kaypro_ii` (brand on the case *and* rendered on the
-screen) · `chips_hotdog_dr_pepper_painting` (**three** brands, hand-painted, so the text is part
-of the brushwork) · `comic` and `annie3` (dialogue balloons + a character name) · `supergirl2`
-(hand-lettered title) · `car_interior_photo` (maker emblem) · `car_interior_mecha_driver`
-(Japanese cover text) · `coraline2` (a mug slogan) · `van_pixel` (licence plate) · `annie1`
-(signature, seal, name in two scripts) · `girl_painting` (a Weibo watermark).
+screen) · `chips_hotdog_dr_pepper_painting` (**three** brands, hand-painted, so the text is part of
+the brushwork) · `comic` / `annie3` / `comic_panel2` / `annie3_panel1` (dialogue balloons **plus a
+character's name**) · `supergirl2` (hand-lettered title) · `car_interior_photo`, `car_1`, `car_2`
+(maker emblem) · `car_interior_mecha_driver` (Japanese cover text) · `coraline2` (a mug slogan) ·
+`van_pixel` (licence plate) · `annie1` (signature, seal, name in two scripts) · `girl_painting` (a
+Weibo watermark) · `kasia_swimsuit_worn` (a commission credit) · `cloud` (artist signature and a
+repeating watermark) · `miya` (printed title) · `p2`/`p3` (brand text on a box).
 
-**Real identifiable people**: `lincoln_photo` and `lincon_money` (the same man twice, across two
-media — the strongest identity probe we have), `teddy_taft` (two at once),
-`girl_painting_reference` (a well-known actor, and the source of `girl_painting`).
+**Real identifiable people**: `lincoln_photo` + `lincon_money` (the same man twice across two media
+— the strongest identity probe we have), `teddy_taft` (two at once), `girl_painting_reference` (a
+well-known actor, and the source of `girl_painting`). **Real place**: `fuji` — the first real test
+of the no-real-place-names rule.
 
-**Recognisable fictional characters**: coraline x2, supergirl x2, azumanga x2, annie x3 (+ the two
-panel crops), comic, peter_griffin, kasia, kiki, miya. Two cases are nastier than the rest:
+**Recognisable fictional characters**: coraline ×2, supergirl ×2, azumanga ×2, annie ×3 + 2 crops,
+`comic`, peter_griffin ×2, `kasia`, `kiki`, `miya`, `miyu`, `ivy_toon`, `shrek_cg`, `woody_cg`,
+`ayanami_oil`. Three cases are nastier than the rest:
 
-- `peter_griffin_painting` — instantly recognisable but rendered in a medium the source never
-  uses, so naming the franchise requires *recognition* rather than *reading a label*.
-- **`annie1` and `annie3` mix an original character with two famous licensed ones.** The girl is
-  the artist's own; the masked hero beside her is not. A describer can therefore fail *partially*
-  here — correct and neutral about the girl, franchise-naming about the figure next to her — which
-  is a more realistic failure than an image where everything is licensed or nothing is.
-
-## Remaining gaps after session 7
-
-> **SUPERSEDED — all four items below were closed by the second batch.** Kept because the
-> reasoning about *what each gap was for* still applies, and the second-batch section refers back
-> to it. See "Remaining gaps after the second batch" at the very end for the live list.
-
-This replaces the session-6 gap list above.
-
-1. **A clean signage-free day/night pair** — same camera, same place, same structure, relit only.
-   `temple_day`/`temple_night` is signage-free but changes the building (see above);
-   `city_day`/`city_night` is a clean relight but carries brand signage. **No single pair is
-   both**, and this is the one thing the atmosphere quarantine still cannot be tested against
-   cleanly.
-2. **A clean second view of one object** — the object equivalent of `jacket`/`jacket2`.
-   **Partly covered now**: `kasia_bag` (isolated render) and `kasia.png` (the same bag carried on
-   her shoulder) are two views of one object, which is more than we had. But it is confounded
-   three ways at once — different angle *and* different medium *and* the drawing's bag has three
-   pin badges the render lacks and reads a different hue. `destroyer_photo`/`destroyer_drawing`
-   and `lincoln_photo`/`lincon_money` have the same problem: two *media*, not two *viewpoints*.
-   `chair`, `kaypro_ii` and `cannon` are each a single angle. **What is still wanted is one
-   object, two angles, same medium, nothing else changing** — the control that isolates viewpoint.
-3. **A second flat-to-worn garment pair** — one garment photographed flat *and* worn by someone.
-   `kasia_outfit` → `kasia_render` is the only one we have, and a single sample is thin.
-   `kasia_swimsuit` does **not** help here despite the filename: nobody wears it anywhere in the
-   corpus, and it isn't visually tied to the character (see "The kasia set"). Any garment would
-   do — it does not have to involve kasia.
-4. Nice-to-have, not blocking: a second oil painting, a second western TV-cartoon, and a second
-   piece of marker/board art, so those three stop being singletons.
+- **`peter_griffin_painting`** — instantly recognisable but rendered in a medium the source never
+  uses, so naming the franchise requires *recognition* rather than *reading a label*. With
+  `peter_griffin_toon` now present, the canonical version is there for comparison.
+- **`ivy_toon`, `shrek_cg`, `woody_cg`** — instantly recognisable licensed characters with **no
+  text anywhere in frame**, across three more media. The no-franchise-name rule is now testable
+  purely on recognition.
+- **`annie1` and `annie3` mix an original character with licensed ones.** The girl is the artist's
+  own; the masked hero beside her is not. A describer can therefore fail *partially* — correct and
+  neutral about the girl, franchise-naming about the figure next to her — which is more realistic
+  than an image where everything is licensed or nothing is.
 
 ---
 
-# Session 7, second batch — every remaining gap closed
+## Known describer limitations this corpus exercises
 
-14 more files supplied by the user in `images/new/`, plus **5 crops** derived from two of them.
-Corpus is now **98 active files** (93 supplied, 5 derived here, plus the 5 derived earlier).
-`images/new/` removed again.
+- **Dim and occluded scenes degrade object-state reading.** `miyu` (pixel art, heavily occluded)
+  produced invention where "not visible" was wanted.
+- **Reframing costs more than relighting.** The `p6` wide/close set agrees less well than the
+  `city` day/night pair. A tighter shot simply contains less place — worth knowing before trusting
+  any single frame as an environment reference.
+- **Some disagreement is in the source, not the describer.** The `p4` girl is genuinely borderline
+  (~12–13, on the child/pre-teen/teenager boundaries); the kasia bag differs in hue *and* pin
+  badges between files. Do not chase these as prompt defects.
+- **The city day/night gap may be irreducible.** The day record names gold cladding and a copper
+  roof the night image genuinely does not show. That is a limit of the photograph.
+- **Residual leaks accepted, not chased**: a cereal carton in `p3` survives the movable-clutter ban
+  and is still described as having "green lettering" — the brand name is suppressed, the fact of
+  text is not.
 
-These were chosen against the four-item gap list at the end of the first batch. **All four are now
-closed**, and one of them reverses a correction made earlier the same session (see "The swimsuit
-is now linked after all").
+---
 
-## Table
+## Derived files & provenance
 
-| image | medium | int/ext | setting | prominent objects | notable garments | people |
-|---|---|---|---|---|---|---|
-| `car_1` | product render (or studio photo — same ambiguity as `chair`) | none — white | no environment | **white crossover SUV, front three-quarter**; roof rails, black wheel arches, maker emblem | — | none |
-| `car_2` | product render | none — white | no environment | **the same SUV, pure side view** — identical vehicle, lighting, ground and background | — | none |
-| `kasia_bag_2` | product render | none — white | no environment | **the kasia bag upright, three-quarter front** — yellow body, navy flap, pale-blue circular emblem, navy strap looped over the top | — | none |
-| `kasia_swimsuit_worn` | **2D illustration (flat cel / anime)** | none — stylised water-pattern band on white | no environment | (none) | **the black high-neck swimsuit w/ yellow collar and yellow chevron** — worn | 1 girl (**the kasia character**: black bob, yellow headband, green eyes, freckles) · **watermark: a commission credit** |
-| `kasia_swimsuit_render` | AI 3D-ish render (anime idiom) | ext | poolside; clipped hedge, handrails, pale coping, blue water | handrails | **the same swimsuit**, worn | 1 girl (same character) |
-| `ayanami_oil` | **digital painting in an oil/gouache idiom** | int | tiled washroom or pool edge; pale green tiles, dark floor tiles, green ledge | (none) | pale school swimsuit | 1 girl, blue hair, red eyes |
-| `woman_oil` | **traditional oil painting (photorealist)** | int | dark room; black wall, dark bench or piano stool, white drape at right | dark bench/stool w/ visible hinge, crumpled white cloth | cream puff-sleeved blouse, dark skirt | 1 young woman, asleep on her arms |
-| `marker` | **marker and ink on board** | int | window with blue sky and clouds behind her; drawn board border | window | off-shoulder cable-knit top, dark high-waisted pleated skirt, black ribbon choker, hoop earrings, hair ribbons | 1 young woman · signed |
-| `ivy_toon` | **western TV-cartoon (90s cel animation still)** | int | blue technological interior; circuit-trace wall panels, yellow door frame | **a white and grey handheld device on a chain** | brown leather jacket, white top, khaki trousers | 1 young woman, red bob |
-| `peter_griffin_toon` | **western TV-cartoon (modern flat digital)** | int | office; desk, wall poster, framed wall chart, dark carpet | desktop monitor, keyboard, mouse, phone | white shirt w/ black belt, green trousers, brown shoes; blue polo | 2 adult men |
-| `shrek_cg` | **3D CG feature animation** | ext | open sky, wispy cloud, dry grass at right | (none) | brown leather-look tunic, cream undershirt w/ lacing | 1 green ogre, close-up, hand raised |
-| `woody_cg` | **3D CG feature animation (early)** | int | dim room, brown/ochre ground, indistinct | **holster on the belt**, sheriff badge | yellow check shirt, cow-print waistcoat, blue jeans, brown boots w/ spurs, brown hat | 1 male doll/figure |
-| `forest_day_night` | flat vector illustration | ext | **composite** — two stacked panels, day above and night below, of one forest clearing | — | — | none |
-| `san_fransisco_day_evening_night` | flat vector illustration | ext | **composite** — three stacked panels, day / evening / night, of one park-and-skyline view | — | — | none |
+Gutters were detected **programmatically** (row/column runs of ≥97%-white pixels, then per-band
+column analysis), not estimated by eye. All comic crops exclude the panel border rules with no
+bleed from neighbours.
 
-### The five crops
-
-| crop | source | size |
-|---|---|---|
-| `forest_day` | `forest_day_night` rows 0–739 | 947x739 |
-| `forest_night` | `forest_day_night` rows 742–1480 | 947x738 |
-| `sanfran_day` | `san_fransisco_day_evening_night` rows 0–487 | 1039x487 |
-| `sanfran_evening` | rows 495–982 | 1039x487 |
-| `sanfran_night` | rows 993–1480 | 1039x487 |
-
-The San Francisco composite has clean white gutters (rows 487–495 and 982–993, found the same way
-as the comic panels). **The forest composite has none** — the two panels butt directly, and the
-seam had to be found from the row-to-row brightness discontinuity, which is unambiguous at row 741
-(mean brightness 102.8 → 24.7). One or two seam rows are trimmed from each side; both crops were
-checked visually and carry no edge artefact.
-
-Both composites are **kept** alongside their crops. They cost nothing, they are the provenance,
-and they are a second kind of multi-panel diagnostic — a non-comic one, where the panels are the
-*same* scene rather than a sequence.
-
-Crop content by common sense: `forest_*` is a clearing backed by broadleaf trees and low scrub,
-grass foreground, distant hills. `sanfran_*` is a grass bank and conifers with a red suspension
-bridge at left and a white high-rise cluster at right, water across the foreground.
-
-## The swimsuit is now linked after all — reversing an earlier correction
-
-Earlier this session `kasia_swimsuit` was removed from the kasia set on the grounds that "nothing
-in our inventory links them except the filename". **That was true when it was written and is no
-longer true.** `kasia_swimsuit_worn` is the **original 2D commission the flat-lay was derived
-from**, and `kasia_swimsuit_render` is an AI render of the same character wearing it. The
-character is unmistakably the same in both — black bob, **yellow** headband, green eyes, freckles.
-
-So the kasia set is now **eight files, one character, two outfits**:
-
-| outfit | worn | flat / isolated |
-|---|---|---|
-| everyday | `kasia.png` (2D drawing), `kasia_render` (3D) | `kasia_outfit` (flat-lay, derived from `kasia.png`), `kasia_bag` + `kasia_bag_2` (the bag she carries) |
-| swimsuit | `kasia_swimsuit_worn` (2D commission), `kasia_swimsuit_render` (AI render) | `kasia_swimsuit` (flat-lay, derived from `kasia_swimsuit_worn`) |
-
-Corrections to what the earlier section says:
-
-- `kasia_swimsuit` **is** part of the set. Its table row and the "not part of this set" warning are
-  superseded by this section.
-- It is a **second** flat-to-worn garment pair, which was gap 3. That gap is closed.
-- The colour finding still stands and is now better evidenced: the headband is **yellow** in
-  `kasia_swimsuit_worn`, `kasia_swimsuit_render` and `kasia_render`, and **orange** only in
-  `kasia.png`. That makes `kasia.png` the outlier rather than the reference, which is the opposite
-  of how the first pass framed it. The measurement is unchanged — `kasia.png` really is hue 28–34°
-  — but with three files now agreeing on yellow, a describer that says "orange" for `kasia.png`
-  is still right about that image while being wrong about the character.
-
-**The general lesson is about the inventory, not about kasia.** A "these are unrelated" judgement
-is only ever true of the corpus *as it stands*. Two of the three content errors caught this session
-were of this shape — an inferred relationship, not a described object. Description rows have been
-reliable; **claim rows have not**, and they are the ones that change a test verdict.
-
-## Every gap from the first batch is now closed
-
-| gap | closed by | caveat |
-|---|---|---|
-| **1. A clean signage-free day/night pair** | `forest_day`/`forest_night` and `sanfran_day`/`_evening`/`_night` | **they are flat vector illustrations, not photographs** — see below |
-| **2. A clean second view of one object, same medium** | **`car_1`/`car_2`** — the same SUV, front three-quarter and pure side, with identical lighting, ground and background. **Nothing changes but the viewpoint**, which is exactly the control that was missing | none. This is the clean one |
-| | `kasia_bag`/`kasia_bag_2` as a second sample | an AI re-render, so not pixel-faithful; the strap is arranged differently. Use `car_*` as the control and this as the harder case |
-| **3. A second flat-to-worn garment pair** | `kasia_swimsuit` → `kasia_swimsuit_worn` / `kasia_swimsuit_render` | the flat-lay is derived from the 2D image, so it is not independent evidence — same caveat as `kasia_outfit` |
-| **4. Singleton media** | oil 1→3, western TV-cartoon 1→3, marker board art 1→2 | `ayanami_oil` is digital-emulating-oil rather than traditional oil; see the tally note |
-
-### The day/night pairs close the gap, but they are an *easier* test than `city_day`/`city_night`
-
-Worth being explicit, because it would be easy to over-read a pass here.
-
-The gap asked for "same camera, same place, same structure, relit only", and these deliver that
-perfectly — they are literally one piece of vector artwork recoloured, so there is **zero**
-photographic variation and **zero** signage. As a control for the atmosphere quarantine that is
-ideal.
-
-But the failure mode session 6 diagnosed was that **by day the model describes forms and by night
-it describes lights**, and that happens because a real night photograph genuinely destroys
-information — the low-rise detail in `city_night` is simply gone. **In a vector illustration
-nothing is destroyed.** The night forest still shows every tree, every shrub and the grass. So a
-describer can pass these pairs comfortably while still failing `city_day`/`city_night`.
-
-Use them as the *diagnostic* — they isolate atmosphere from signage and from information loss, so
-a failure here is unambiguous. Keep `city_day`/`city_night` as the *bar*.
-
-`sanfran_*` adds something no other pair has: **three time points**, so drift can be checked across
-a series rather than a pair. Its evening panel is the interesting one — golden sky, everything else
-identical.
-
-## New probe pairs from this batch
-
-| pair | holds constant | use |
-|---|---|---|
-| `car_1` / `car_2` | one object, two angles, **same medium, same lighting, same ground** | the object-viewpoint control. The cleanest pair in the whole corpus after `girl_painting_reference` |
-| `peter_griffin_painting` / `peter_griffin_toon` | **one character, canonical flat toon vs painterly rendering** | directly tests the case flagged in the first batch — recognising a franchise character *without a label*, now with the canonical version present for comparison |
-| `forest_day` / `forest_night` | one scene, relit | atmosphere quarantine, signage-free |
-| `sanfran_day` / `_evening` / `_night` | one scene, **three** lighting states | atmosphere drift across a series |
-| `kasia_swimsuit` / `_worn` / `_render` | one garment: flat, worn in 2D, worn in 3D | flat-to-worn, and a second kasia identity rung |
-| `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object viewpoint, harder than `car_*` |
-| `ayanami_oil` / `woman_oil` | oil idiom, **digital vs traditional** | a fine `[[MEDIUM]]` discrimination, like `azumanga_anime`/`azumanga_toon` |
-| `ivy_toon` / `peter_griffin_toon` | western TV-cartoon, **90s cel vs modern flat digital** | another fine discrimination inside one coarse category |
-
-## Updated medium tally — 98 active files
-
-Only the rows that changed are listed; everything else is as in the first-batch tally.
-
-| medium | was | now | added |
+| crop | source | geometry | size |
 |---|---|---|---|
-| flat vector | 2 | **9** | forest_day_night + 2 crops, san_fransisco composite + 3 crops |
-| 3D CG / product render | 5 | **9** | car_1, car_2, kasia_bag_2, kasia_swimsuit_render |
-| **3D CG feature animation** | — | **2** | shrek_cg, woody_cg — *a new category, and distinct from product render: character animation, not object rendering* |
-| oil / oil-idiom painting | 1 | **3** | woman_oil (**traditional**), ayanami_oil (**digital, emulating oil**) |
-| western TV-cartoon | 1 | **3** | ivy_toon (90s cel), peter_griffin_toon (modern flat digital) |
-| marker/copic board art | 1 | **2** | marker |
-| 2D illustration (flat cel) | 1 | **2** | kasia_swimsuit_worn |
+| `comic_panel2` | `comic` top-right panel | — | 335x429 |
+| `comic_panel3` | `comic` middle panel | — | 1161x460 |
+| `comic_panel4` | `comic` bottom panel | — | 1249x904 |
+| `annie3_panel1` | `annie3` leftmost panel | — | 428x1434 |
+| `annie2_cropped` | `annie2`, hand + sketchbook edge + hall removed | — | 722x1273 |
+| `forest_day` | `forest_day_night` | rows 0–739 | 947x739 |
+| `forest_night` | `forest_day_night` | rows 742–1480 | 947x738 |
+| `sanfran_day` | `san_fransisco_day_evening_night` | rows 0–487 | 1039x487 |
+| `sanfran_evening` | same | rows 495–982 | 1039x487 |
+| `sanfran_night` | same | rows 993–1480 | 1039x487 |
 
-**No medium is a singleton any more.** Live-action is now roughly 38 of 98 (39%), down from 78% at
-the start of session 7.
+**The San Francisco composite has clean white gutters** (rows 487–495, 982–993). **The forest
+composite has none** — the two panels butt directly and the seam was found from the row-to-row
+brightness discontinuity, unambiguous at row 741 (mean brightness 102.8 → 24.7). One or two seam
+rows are trimmed from each side; both crops were checked visually and carry no edge artefact.
 
-The oil row deserves care when the `[[MEDIUM]]` vocabulary is designed: `woman_oil` is paint on a
-surface, `ayanami_oil` is a digital file imitating it, and `chips_hotdog_dr_pepper_painting` is
-traditional oil of a photographic subject. If the vocabulary has one "oil painting" term, all three
-collapse into it — which may be the right answer, but it should be a decision rather than an
-accident.
+**Panels deliberately not kept**: `comic` panel 1 (a hand and a spider — no usable setting or
+subject) and `annie3` panels 2–4 (costumed figures on flat grounds; the corpus already has plenty
+and they add no new probe). The crop boxes are in the session-7 handoff if any are wanted later.
 
-## Printed text and identity — additions
+**`annie2` is kept whole *and* cropped, deliberately** — the two files serve different jobs and
+cannot confound each other. Uncropped is the corpus's only nested-medium case; cropped is a clean
+traditional watercolour sample and the annie ladder's watercolour rung, free of the hand and hall
+that would otherwise contaminate a character record.
 
-- `kasia_swimsuit_worn` carries a **commission watermark** — a credit line, not a brand.
-- `car_1`/`car_2` carry a **maker emblem** on the grille and wheels, like `car_interior_photo`.
-- `ivy_toon`, `peter_griffin_toon`, `shrek_cg`, `woody_cg` are all **instantly recognisable
-  licensed characters with no text anywhere in frame**. Combined with `peter_griffin_painting`
-  they make the no-franchise-name rule testable purely on recognition, across four different media.
+### File-format gotchas found while reading
 
-## Remaining gaps after the second batch
+- **`coraline2.jpg` was not a JPEG** — an AVIF file with a `.jpg` extension. `run_tests.py`'s
+  `image_payload()` maps extension to MIME with **no sniffing**, so it would have sent AVIF bytes
+  labelled `image/jpeg`. Converted to `coraline2.png` (PIL, lossless re-encode of the decoded
+  pixels) and the bad `.jpg` deleted. **If more images arrive from hosts that serve AVIF/WebP
+  behind a `.jpg` URL, check the magic bytes before casting them.** A one-line guard in
+  `image_payload()` is cheap insurance — on the TODO.
+- **`cannon.JPG` was an MPO**, not a plain JPEG — a 2-frame stereo pair from a 3D camera,
+  4320x3240, 6.3 MB (~8.4 MB base64, 5× the pixel count of anything else). Frame 0 extracted,
+  Lanczos-resized to 2000x1500, saved as JPEG q90 → `cannon.jpg`, 0.99 MB. Visually identical. The
+  original was marked read-only, which had to be cleared first.
+- **`teddy_taft.JPG` still has an uppercase extension** — the only one left. Harmless today
+  (`image_payload()` should lowercase before mapping) but worth normalising.
 
-**None outstanding.** Every item on the previous list is closed. What is left is not a gap so much
-as a standing preference:
+---
 
-1. **More live-action breadth**, if `style` turns out to need it — 39% is healthy, but the
+## Medium tally
+
+**Regenerate with `scripts/inventory.py`** — do not hand-edit. Counted over all 98 active files,
+crops included.
+
+| medium | sub | count | images |
+|---|---|---|---|
+| `photograph` | | **27** | |
+| | colour | 24 | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, forest_autumn, fuji, jacket, jacket2, kaypro_ii, newspaper, pancakes, phone, sleeping, stage, tv |
+| | archival | 3 | destroyer_photo, lincoln_photo, teddy_taft |
+| `live-action film` | | **14** | |
+| | modern | 12 | girl_painting_reference, p1×2, p2×2, p3×2, p4×2, p6×2, window |
+| | vintage Technicolor | 2 | p5×2 |
+| `3D CG` | | **9** | |
+| | product render | 5 | fruitbowl, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit |
+| | character render | 2 | kasia_render, kasia_swimsuit_render |
+| | feature animation | 2 | shrek_cg, woody_cg |
+| `painting` | | **11** | |
+| | digital | 7 | ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
+| | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
+| | watercolour | 2 | annie2_cropped, bird_watercolor |
+| | *gouache* | *0* | *no sample* |
+| `2D cel` | | **9** | |
+| | anime | 4 | azumanga_anime, car_interior_mecha_driver, kiki, miya |
+| | western toon | 3 | azumanga_toon, ivy_toon, peter_griffin_toon |
+| | flat illustration | 2 | kasia, kasia_swimsuit_worn |
+| `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
+| `comic` | — | **6** | annie3, annie3_panel1, comic, comic_panel2, comic_panel3, comic_panel4 |
+| `drawing` | | **5** | |
+| | marker | 3 | annie1, marker, supergirl1 |
+| | sketch | 2 | car_interior_sketch, supergirl2 |
+| | *ink* | *0* | *no sample* |
+| `pixel art` | — | **4** | fish_pixel, miyu, ramen_pixel, van_pixel |
+| `stop-motion` | — | **2** | coraline1, coraline2 |
+| `print` | | **2** | |
+| | engraving | 1 | lincon_money |
+| | technical plate | 1 | destroyer_drawing |
+
+**Total 98.** Live-action (`photograph` + `live-action film`) is **41 of 98, 42%** — down from
+29/37, 78% at the start of session 7. Three of those 41 are `amb`, so the honest range is 38–41.
+
+\* `chair`, `car_1`, `car_2` are filed as `photograph` on the user's provenance knowledge (an
+Amazon listing and an automaker press shot respectively) and are flagged `amb` — the pixels do not
+settle photo vs render. See "Coverage by role → style".
+\*\* `annie2` is a photograph *of* a watercolour, filed by the outer medium per tie-break 2. Its
+content is a drawing, so it inflates the live-action share by one.
+
+**No coarse term is a singleton.** Two *sub*-terms are — `print / engraving` and
+`print / technical plate` — and both are single-sample because those media are genuinely rare in
+practice, not because of sampling. A `style` result on either is unreplicated.
+
+**Two defined sub-terms have no sample at all**: `painting / gouache` and `drawing / ink`. Same
+situation as the character describer's untested age brackets — the vocabulary offers a term the
+corpus cannot exercise, which is fine, but a describer emitting one of them cannot be checked
+against anything.
+
+---
+
+## Standing gaps
+
+**Nothing blocking.** Every gap raised in sessions 6 and 7 has been closed. What remains is
+preference rather than obstruction:
+
+1. **A day/night pair that is both photographic *and* signage-free.** `city_*` is photographic
+   with signage; `forest_*`/`sanfran_*` are signage-free without photography. Between them the two
+   isolate every variable — just not in one image. This is a refinement, not a blocker.
+2. **More live-action breadth**, if `style` turns out to need it. 39% is healthy, but the
    photographic images skew heavily toward people and rooms.
-2. **A day/night pair that is both photographic *and* signage-free** would still be the ideal, and
-   remains unfilled — `city_*` is photographic with signage, `forest_*`/`sanfran_*` are
-   signage-free without photography. This is now a refinement rather than a blocker: between them
-   the two pairs isolate every variable, just not in one image.
+3. **A second sample for the two singleton media**, if either ever matters to a `style` verdict.
