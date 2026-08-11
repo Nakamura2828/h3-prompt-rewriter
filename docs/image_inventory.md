@@ -4,10 +4,20 @@ Built session 6 (2026-08-11) by reading every file directly, not by running a de
 them. This is ground truth for casting test cases and for judging describer *content*, which
 `validate.py` cannot see.
 
-**79 active files** as of session 7 — the original 37 below, plus 37 added in session 7 and 5
-crops derived from them (see "Session 7 additions" near the bottom, which has its own table and
-its own probe-pair list).
+**98 active files** as of session 7, built in three passes, each with its own table and probe-pair
+list further down:
+
+| pass | files | section |
+|---|---|---|
+| session 6 | 37 | this one, immediately below |
+| session 7, first batch | 37 supplied + 5 crops | "Session 7 additions" |
+| session 7, second batch | 14 supplied + 5 crops | "Session 7, second batch" — **every remaining gap closed** |
+
 `p1_first.old.png` / `p1_last.old.png` are superseded duplicates and are excluded throughout.
+
+**Later sections correct earlier ones.** Two claims in the first-batch section were reversed by
+what arrived in the second, and one row in the session-6 table was reversed by the first batch.
+Where they conflict, the later section wins; each says so at the point of conflict.
 
 The session-6 medium tally below said "16" live-action photographic against a list of 17 names;
 17 is correct and is what makes the total 37. Corrected in place.
@@ -246,7 +256,7 @@ buy us").
 | `kasia_bag` | product render | none — white | no environment | **yellow shoulder bag, blue flap w/ pale-blue circular emblem, navy webbing strap, gold slider** | — | none |
 | `kasia_outfit` | product render, **flat-lay** | none — white | no environment | — | **black vest top, cuffed blue denim shorts, black/blue fingerless gloves, black-and-grey striped knee socks, blue lace-up sneakers** | none |
 | `kasia_render` | **3D CG character render (stylised anime)** | none — white studio ground | no environment | (none) | black vest top, cuffed denim shorts, black fingerless gloves, grey striped knee socks, navy/white sneakers, **gold-yellow headband** | 1 girl |
-| `kasia_swimsuit` | product render, **flat-lay** | none — white | no environment | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** | none · **despite the filename this is NOT part of the kasia set** — a different outfit, worn by nobody, linked to the character only by its name. A standalone isolated-garment case |
+| `kasia_swimsuit` | product render, **flat-lay** | none — white | no environment | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** | none · **part of the kasia set** — derived from `kasia_swimsuit_worn`, and worn by the character there and in `kasia_swimsuit_render` (second batch) |
 | `kaypro_ii` | live-action photographic | none — white | no environment | **vintage portable computer**: blue/grey metal case, green CRT showing text, 2 floppy drives, detached keyboard w/ blue keypad · **brand name on case AND on screen** | — | none |
 | `lincoln_photo` | **archival B&W albumen portrait** | none — plain studio backdrop | no environment | (none) | dark frock coat, white shirt, black bow tie | 1 older adult man · **real historical figure** |
 | `lincon_money` | **engraved intaglio print (banknote)** | none | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — | a portrait *within an object*, not a depicted person |
@@ -291,9 +301,14 @@ The set is **four files, not five**, and every one of them derives from the same
 | `kasia_outfit` | a flat-lay of **the clothes she wears in the drawing**, produced by Qwen Image Edit extracting the garments *from* `kasia.png` — a derived asset, not independent evidence |
 | `kasia_bag` | an isolated render of **the bag she carries in the drawing** |
 
-**`kasia_swimsuit` is not part of this set.** It is a different outfit, nobody is wearing it, and
+> **SUPERSEDED by the second batch.** `kasia_swimsuit` **is** part of the set. When this was
+> written nothing in the corpus linked them; `kasia_swimsuit_worn` (the original 2D commission the
+> flat-lay derives from) and `kasia_swimsuit_render` now do. See "The swimsuit is now linked after
+> all". The paragraph below is kept only to show what the evidence looked like at the time.
+
+~~**`kasia_swimsuit` is not part of this set.** It is a different outfit, nobody is wearing it, and
 **nothing visual ties it to the character** — only the filename does. Treat it purely as an
-isolated flat-garment case (see below), and do not cast it in any kasia identity probe.
+isolated flat-garment case (see below), and do not cast it in any kasia identity probe.~~
 
 Two probe pairs fall out of the four linked files, and they are different in kind:
 
@@ -491,6 +506,10 @@ panel crops), comic, peter_griffin, kasia, kiki, miya. Two cases are nastier tha
 
 ## Remaining gaps after session 7
 
+> **SUPERSEDED — all four items below were closed by the second batch.** Kept because the
+> reasoning about *what each gap was for* still applies, and the second-batch section refers back
+> to it. See "Remaining gaps after the second batch" at the very end for the live list.
+
 This replaces the session-6 gap list above.
 
 1. **A clean signage-free day/night pair** — same camera, same place, same structure, relit only.
@@ -513,3 +532,178 @@ This replaces the session-6 gap list above.
    do — it does not have to involve kasia.
 4. Nice-to-have, not blocking: a second oil painting, a second western TV-cartoon, and a second
    piece of marker/board art, so those three stop being singletons.
+
+---
+
+# Session 7, second batch — every remaining gap closed
+
+14 more files supplied by the user in `images/new/`, plus **5 crops** derived from two of them.
+Corpus is now **98 active files** (93 supplied, 5 derived here, plus the 5 derived earlier).
+`images/new/` removed again.
+
+These were chosen against the four-item gap list at the end of the first batch. **All four are now
+closed**, and one of them reverses a correction made earlier the same session (see "The swimsuit
+is now linked after all").
+
+## Table
+
+| image | medium | int/ext | setting | prominent objects | notable garments | people |
+|---|---|---|---|---|---|---|
+| `car_1` | product render (or studio photo — same ambiguity as `chair`) | none — white | no environment | **white crossover SUV, front three-quarter**; roof rails, black wheel arches, maker emblem | — | none |
+| `car_2` | product render | none — white | no environment | **the same SUV, pure side view** — identical vehicle, lighting, ground and background | — | none |
+| `kasia_bag_2` | product render | none — white | no environment | **the kasia bag upright, three-quarter front** — yellow body, navy flap, pale-blue circular emblem, navy strap looped over the top | — | none |
+| `kasia_swimsuit_worn` | **2D illustration (flat cel / anime)** | none — stylised water-pattern band on white | no environment | (none) | **the black high-neck swimsuit w/ yellow collar and yellow chevron** — worn | 1 girl (**the kasia character**: black bob, yellow headband, green eyes, freckles) · **watermark: a commission credit** |
+| `kasia_swimsuit_render` | AI 3D-ish render (anime idiom) | ext | poolside; clipped hedge, handrails, pale coping, blue water | handrails | **the same swimsuit**, worn | 1 girl (same character) |
+| `ayanami_oil` | **digital painting in an oil/gouache idiom** | int | tiled washroom or pool edge; pale green tiles, dark floor tiles, green ledge | (none) | pale school swimsuit | 1 girl, blue hair, red eyes |
+| `woman_oil` | **traditional oil painting (photorealist)** | int | dark room; black wall, dark bench or piano stool, white drape at right | dark bench/stool w/ visible hinge, crumpled white cloth | cream puff-sleeved blouse, dark skirt | 1 young woman, asleep on her arms |
+| `marker` | **marker and ink on board** | int | window with blue sky and clouds behind her; drawn board border | window | off-shoulder cable-knit top, dark high-waisted pleated skirt, black ribbon choker, hoop earrings, hair ribbons | 1 young woman · signed |
+| `ivy_toon` | **western TV-cartoon (90s cel animation still)** | int | blue technological interior; circuit-trace wall panels, yellow door frame | **a white and grey handheld device on a chain** | brown leather jacket, white top, khaki trousers | 1 young woman, red bob |
+| `peter_griffin_toon` | **western TV-cartoon (modern flat digital)** | int | office; desk, wall poster, framed wall chart, dark carpet | desktop monitor, keyboard, mouse, phone | white shirt w/ black belt, green trousers, brown shoes; blue polo | 2 adult men |
+| `shrek_cg` | **3D CG feature animation** | ext | open sky, wispy cloud, dry grass at right | (none) | brown leather-look tunic, cream undershirt w/ lacing | 1 green ogre, close-up, hand raised |
+| `woody_cg` | **3D CG feature animation (early)** | int | dim room, brown/ochre ground, indistinct | **holster on the belt**, sheriff badge | yellow check shirt, cow-print waistcoat, blue jeans, brown boots w/ spurs, brown hat | 1 male doll/figure |
+| `forest_day_night` | flat vector illustration | ext | **composite** — two stacked panels, day above and night below, of one forest clearing | — | — | none |
+| `san_fransisco_day_evening_night` | flat vector illustration | ext | **composite** — three stacked panels, day / evening / night, of one park-and-skyline view | — | — | none |
+
+### The five crops
+
+| crop | source | size |
+|---|---|---|
+| `forest_day` | `forest_day_night` rows 0–739 | 947x739 |
+| `forest_night` | `forest_day_night` rows 742–1480 | 947x738 |
+| `sanfran_day` | `san_fransisco_day_evening_night` rows 0–487 | 1039x487 |
+| `sanfran_evening` | rows 495–982 | 1039x487 |
+| `sanfran_night` | rows 993–1480 | 1039x487 |
+
+The San Francisco composite has clean white gutters (rows 487–495 and 982–993, found the same way
+as the comic panels). **The forest composite has none** — the two panels butt directly, and the
+seam had to be found from the row-to-row brightness discontinuity, which is unambiguous at row 741
+(mean brightness 102.8 → 24.7). One or two seam rows are trimmed from each side; both crops were
+checked visually and carry no edge artefact.
+
+Both composites are **kept** alongside their crops. They cost nothing, they are the provenance,
+and they are a second kind of multi-panel diagnostic — a non-comic one, where the panels are the
+*same* scene rather than a sequence.
+
+Crop content by common sense: `forest_*` is a clearing backed by broadleaf trees and low scrub,
+grass foreground, distant hills. `sanfran_*` is a grass bank and conifers with a red suspension
+bridge at left and a white high-rise cluster at right, water across the foreground.
+
+## The swimsuit is now linked after all — reversing an earlier correction
+
+Earlier this session `kasia_swimsuit` was removed from the kasia set on the grounds that "nothing
+in our inventory links them except the filename". **That was true when it was written and is no
+longer true.** `kasia_swimsuit_worn` is the **original 2D commission the flat-lay was derived
+from**, and `kasia_swimsuit_render` is an AI render of the same character wearing it. The
+character is unmistakably the same in both — black bob, **yellow** headband, green eyes, freckles.
+
+So the kasia set is now **eight files, one character, two outfits**:
+
+| outfit | worn | flat / isolated |
+|---|---|---|
+| everyday | `kasia.png` (2D drawing), `kasia_render` (3D) | `kasia_outfit` (flat-lay, derived from `kasia.png`), `kasia_bag` + `kasia_bag_2` (the bag she carries) |
+| swimsuit | `kasia_swimsuit_worn` (2D commission), `kasia_swimsuit_render` (AI render) | `kasia_swimsuit` (flat-lay, derived from `kasia_swimsuit_worn`) |
+
+Corrections to what the earlier section says:
+
+- `kasia_swimsuit` **is** part of the set. Its table row and the "not part of this set" warning are
+  superseded by this section.
+- It is a **second** flat-to-worn garment pair, which was gap 3. That gap is closed.
+- The colour finding still stands and is now better evidenced: the headband is **yellow** in
+  `kasia_swimsuit_worn`, `kasia_swimsuit_render` and `kasia_render`, and **orange** only in
+  `kasia.png`. That makes `kasia.png` the outlier rather than the reference, which is the opposite
+  of how the first pass framed it. The measurement is unchanged — `kasia.png` really is hue 28–34°
+  — but with three files now agreeing on yellow, a describer that says "orange" for `kasia.png`
+  is still right about that image while being wrong about the character.
+
+**The general lesson is about the inventory, not about kasia.** A "these are unrelated" judgement
+is only ever true of the corpus *as it stands*. Two of the three content errors caught this session
+were of this shape — an inferred relationship, not a described object. Description rows have been
+reliable; **claim rows have not**, and they are the ones that change a test verdict.
+
+## Every gap from the first batch is now closed
+
+| gap | closed by | caveat |
+|---|---|---|
+| **1. A clean signage-free day/night pair** | `forest_day`/`forest_night` and `sanfran_day`/`_evening`/`_night` | **they are flat vector illustrations, not photographs** — see below |
+| **2. A clean second view of one object, same medium** | **`car_1`/`car_2`** — the same SUV, front three-quarter and pure side, with identical lighting, ground and background. **Nothing changes but the viewpoint**, which is exactly the control that was missing | none. This is the clean one |
+| | `kasia_bag`/`kasia_bag_2` as a second sample | an AI re-render, so not pixel-faithful; the strap is arranged differently. Use `car_*` as the control and this as the harder case |
+| **3. A second flat-to-worn garment pair** | `kasia_swimsuit` → `kasia_swimsuit_worn` / `kasia_swimsuit_render` | the flat-lay is derived from the 2D image, so it is not independent evidence — same caveat as `kasia_outfit` |
+| **4. Singleton media** | oil 1→3, western TV-cartoon 1→3, marker board art 1→2 | `ayanami_oil` is digital-emulating-oil rather than traditional oil; see the tally note |
+
+### The day/night pairs close the gap, but they are an *easier* test than `city_day`/`city_night`
+
+Worth being explicit, because it would be easy to over-read a pass here.
+
+The gap asked for "same camera, same place, same structure, relit only", and these deliver that
+perfectly — they are literally one piece of vector artwork recoloured, so there is **zero**
+photographic variation and **zero** signage. As a control for the atmosphere quarantine that is
+ideal.
+
+But the failure mode session 6 diagnosed was that **by day the model describes forms and by night
+it describes lights**, and that happens because a real night photograph genuinely destroys
+information — the low-rise detail in `city_night` is simply gone. **In a vector illustration
+nothing is destroyed.** The night forest still shows every tree, every shrub and the grass. So a
+describer can pass these pairs comfortably while still failing `city_day`/`city_night`.
+
+Use them as the *diagnostic* — they isolate atmosphere from signage and from information loss, so
+a failure here is unambiguous. Keep `city_day`/`city_night` as the *bar*.
+
+`sanfran_*` adds something no other pair has: **three time points**, so drift can be checked across
+a series rather than a pair. Its evening panel is the interesting one — golden sky, everything else
+identical.
+
+## New probe pairs from this batch
+
+| pair | holds constant | use |
+|---|---|---|
+| `car_1` / `car_2` | one object, two angles, **same medium, same lighting, same ground** | the object-viewpoint control. The cleanest pair in the whole corpus after `girl_painting_reference` |
+| `peter_griffin_painting` / `peter_griffin_toon` | **one character, canonical flat toon vs painterly rendering** | directly tests the case flagged in the first batch — recognising a franchise character *without a label*, now with the canonical version present for comparison |
+| `forest_day` / `forest_night` | one scene, relit | atmosphere quarantine, signage-free |
+| `sanfran_day` / `_evening` / `_night` | one scene, **three** lighting states | atmosphere drift across a series |
+| `kasia_swimsuit` / `_worn` / `_render` | one garment: flat, worn in 2D, worn in 3D | flat-to-worn, and a second kasia identity rung |
+| `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object viewpoint, harder than `car_*` |
+| `ayanami_oil` / `woman_oil` | oil idiom, **digital vs traditional** | a fine `[[MEDIUM]]` discrimination, like `azumanga_anime`/`azumanga_toon` |
+| `ivy_toon` / `peter_griffin_toon` | western TV-cartoon, **90s cel vs modern flat digital** | another fine discrimination inside one coarse category |
+
+## Updated medium tally — 98 active files
+
+Only the rows that changed are listed; everything else is as in the first-batch tally.
+
+| medium | was | now | added |
+|---|---|---|---|
+| flat vector | 2 | **9** | forest_day_night + 2 crops, san_fransisco composite + 3 crops |
+| 3D CG / product render | 5 | **9** | car_1, car_2, kasia_bag_2, kasia_swimsuit_render |
+| **3D CG feature animation** | — | **2** | shrek_cg, woody_cg — *a new category, and distinct from product render: character animation, not object rendering* |
+| oil / oil-idiom painting | 1 | **3** | woman_oil (**traditional**), ayanami_oil (**digital, emulating oil**) |
+| western TV-cartoon | 1 | **3** | ivy_toon (90s cel), peter_griffin_toon (modern flat digital) |
+| marker/copic board art | 1 | **2** | marker |
+| 2D illustration (flat cel) | 1 | **2** | kasia_swimsuit_worn |
+
+**No medium is a singleton any more.** Live-action is now roughly 38 of 98 (39%), down from 78% at
+the start of session 7.
+
+The oil row deserves care when the `[[MEDIUM]]` vocabulary is designed: `woman_oil` is paint on a
+surface, `ayanami_oil` is a digital file imitating it, and `chips_hotdog_dr_pepper_painting` is
+traditional oil of a photographic subject. If the vocabulary has one "oil painting" term, all three
+collapse into it — which may be the right answer, but it should be a decision rather than an
+accident.
+
+## Printed text and identity — additions
+
+- `kasia_swimsuit_worn` carries a **commission watermark** — a credit line, not a brand.
+- `car_1`/`car_2` carry a **maker emblem** on the grille and wheels, like `car_interior_photo`.
+- `ivy_toon`, `peter_griffin_toon`, `shrek_cg`, `woody_cg` are all **instantly recognisable
+  licensed characters with no text anywhere in frame**. Combined with `peter_griffin_painting`
+  they make the no-franchise-name rule testable purely on recognition, across four different media.
+
+## Remaining gaps after the second batch
+
+**None outstanding.** Every item on the previous list is closed. What is left is not a gap so much
+as a standing preference:
+
+1. **More live-action breadth**, if `style` turns out to need it — 39% is healthy, but the
+   photographic images skew heavily toward people and rooms.
+2. **A day/night pair that is both photographic *and* signage-free** would still be the ideal, and
+   remains unfilled — `city_*` is photographic with signage, `forest_*`/`sanfran_*` are
+   signage-free without photography. This is now a refinement rather than a blocker: between them
+   the two pairs isolate every variable, just not in one image.
