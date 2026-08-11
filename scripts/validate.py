@@ -176,31 +176,87 @@ def check_h3(out, inp, strip_alignment):
 
 # ---------------------------------------------------------------- describer records
 
-# One entry per describer role. Add a role by adding a row, not by branching below.
-DESCRIBER_ROLES = {
-    'character': ['SUBJECT_KIND', 'APPEARANCE', 'CLOTHING', 'DISTINGUISHING',
-                  'LABEL', 'DEFINITION'],
-}
-
 # Closed age vocabularies from prompts/describer_character.txt. Longest match wins, so
 # 'young adult' is one term rather than 'young' plus 'adult'.
 AGE_PERSON = ['infant', 'toddler', 'child', 'pre-teen', 'teenager', 'young adult',
               'adult', 'middle-aged', 'older adult']
 AGE_ANIMAL = ['young', 'adult', 'old', 'not visible']
 
-# Rendering-style words the identity-only record is not supposed to name. A warn, not an
-# error: 'a T-shirt with a cartoon print' is a legitimate garment description.
+# Rendering-style words a describer record is not supposed to name (describer_style, when
+# it exists, will be the exception). A warn, not an error: 'a T-shirt with a cartoon print'
+# is a legitimate garment description.
 STYLE_WORDS = ['anime', 'manga', 'pixel art', 'pixelated', '2d-animated', '3d cg',
                'photographic', 'photorealistic', 'live-action', 'illustrated',
                'illustration', 'cartoon', 'claymation', 'watercolor', 'watercolour',
                'cel-shaded', 'rendered', 'digital painting']
 
-# Field tokens belonging to describer_frame.txt, never to an identity-only record.
-FOREIGN_FIELDS = ['POSE', 'POSITION', 'GAZE', 'EXPRESSION', 'HOLDING', 'FRAMING',
-                  'ENVIRONMENT', 'LIGHTING', 'PALETTE', 'TEXT', 'STYLE', 'OBJECTS',
-                  'CHAR', 'CROWD', 'CAST NOT FOUND']
+# Transient conditions that must not reach a setting record's [[DEFINITION]] -- the whole
+# point of quarantining them in [[ATMOSPHERE]] is that the subject-definition sentence has
+# to hold by day and by night. A warn: some of these are judgement calls (a snow-covered
+# park is arguably structural), so a human decides.
+ATMOSPHERE_WORDS = ['daylight', 'sunlight', 'sunlit', 'moonlight', 'overcast', 'cloudy',
+                    'night', 'nighttime', 'dusk', 'dawn', 'twilight', 'sunset', 'sunrise',
+                    'shadow', 'shadows', 'glare', 'backlit', 'rain', 'rainy', 'fog',
+                    'foggy', 'mist', 'misty', 'snowfall', 'dimly lit', 'brightly lit',
+                    'warm light', 'cool light', 'golden hour', 'blue hour']
+
+# Field tokens belonging to describer_frame.txt. Combined with every role's own field list
+# below to derive what counts as foreign for a given role -- hardcoding the foreign list
+# breaks as soon as a role legitimately owns one of these names (describer_style will own
+# PALETTE and LIGHTING).
+FRAME_FIELDS = ['STYLE', 'FRAMING', 'CHAR', 'CROWD', 'OBJECTS', 'ENVIRONMENT', 'LIGHTING',
+                'PALETTE', 'TEXT', 'APPEARANCE', 'CLOTHING', 'POSE', 'GAZE', 'POSITION',
+                'EXPRESSION', 'HOLDING', 'CAST NOT FOUND']
 
 NOT_FOUND = '[[SUBJECT NOT FOUND]]'
+
+
+def _character_age_vocab(out):
+    """Which closed list applies depends on what the record says it is describing."""
+    return AGE_ANIMAL if '[[SUBJECT_KIND]] animal' in out else AGE_PERSON
+
+
+# One entry per describer role. Add a role by adding a row, not by branching below.
+#
+#   fields       required [[FIELD]] tokens, in required order
+#   closed       field -> the only permitted values for it
+#   drift        field whose value must agree across a 'same: ...' test group, plus the
+#                vocabulary to read it with; None disables the cross-case check
+#   no_digits    fields where a numeral is an error
+#   not_found    whether this role may emit the [[SUBJECT NOT FOUND]] tail line
+#   style_warn   whether naming a rendering style is worth flagging
+#   style_allow  style words that are legitimate for this role anyway
+#   atmos_field  the field holding transient conditions, which [[DEFINITION]] must not reuse
+DESCRIBER_ROLES = {
+    'character': {
+        'fields': ['SUBJECT_KIND', 'APPEARANCE', 'CLOTHING', 'DISTINGUISHING',
+                   'LABEL', 'DEFINITION'],
+        'closed': {'SUBJECT_KIND': ('person', 'animal')},
+        'drift': ('APPEARANCE', _character_age_vocab),
+        'no_digits': ('APPEARANCE',),
+        'not_found': True,
+        'style_warn': True,
+        'style_allow': (),
+        'atmos_field': None,
+    },
+    'setting': {
+        'fields': ['SETTING_KIND', 'STRUCTURE', 'CONTENTS', 'DISTINGUISHING', 'PLACE',
+                   'ATMOSPHERE', 'LABEL', 'DEFINITION'],
+        'closed': {'SETTING_KIND': ('interior', 'exterior')},
+        'drift': ('SETTING_KIND', lambda out: ['interior', 'exterior']),
+        'no_digits': (),          # counting windows or pews is durable and useful
+        # No conditional tail line for this role. Across three rounds it caused EVERY format
+        # failure (1, then 5, then 3 cases) and was 0-for-2 on the cases it existed to serve --
+        # firing where the named place was visible, staying silent where it was absent. Unlike
+        # character, a setting image has one place the camera is in, so there is nothing to
+        # disambiguate. Emitting the line at all is now an error.
+        'not_found': False,
+        'style_warn': True,
+        # 'rendered' is a building term here ('a rendered plaster column'), not a style claim
+        'style_allow': ('rendered',),
+        'atmos_field': 'ATMOSPHERE',
+    },
+}
 
 
 def age_terms(line, vocab):
@@ -214,11 +270,22 @@ def age_terms(line, vocab):
                 yield t
 
 
+def foreign_fields(role):
+    """Every field token that is not this role's own: the other roles' fields plus the
+    frame describer's. Derived rather than listed so adding a role cannot silently leave
+    a stale entry that rejects one of its own legitimate fields."""
+    known = set(FRAME_FIELDS)
+    for spec in DESCRIBER_ROLES.values():
+        known.update(spec['fields'])
+    return sorted(known - set(DESCRIBER_ROLES[role]['fields']))
+
+
 def check_describer(out, inp, role):
     """A structured [[FIELD]] describer record. Format only -- this cannot tell whether
     the right subject was picked or whether the description is accurate."""
     errs, warns = [], []
-    fields = DESCRIBER_ROLES[role]
+    spec = DESCRIBER_ROLES[role]
+    fields = spec['fields']
     out = out.strip()
 
     # --- field labels: present, once each, in order, and first thing in the reply
@@ -245,20 +312,24 @@ def check_describer(out, inp, role):
         errs.append('contains a markdown fence')
     if re.search(r'^\s*(User|INPUT|OUTPUT)\s*:', out, re.M):
         errs.append('continues into another turn or example (User:/INPUT:/OUTPUT:)')
-    for f in FOREIGN_FIELDS:
+    for f in foreign_fields(role):
         if f'[[{f}]]' in out or f'[[{f}:' in out:
-            errs.append(f'foreign field [[{f}]] -- that belongs to the frame describer')
+            errs.append(f'foreign field [[{f}]] -- not part of the {role} record')
 
     def field_text(name):
         m = re.search(r'\[\[' + re.escape(name) + r'\]\](.*)', out)
         return m.group(1).strip() if m else ''
 
-    # --- role-specific
+    # --- closed vocabularies for whole fields (SUBJECT_KIND, SETTING_KIND, ...)
+    for fname, allowed in spec['closed'].items():
+        val = field_text(fname).lower().strip(' .')
+        if val not in allowed:
+            errs.append(f'[[{fname}]] is {val!r}, expected one of {", ".join(allowed)}')
+
+    # --- the one closed vocabulary that sits inside a longer field
     if role == 'character':
         kind = field_text('SUBJECT_KIND').lower()
         app = field_text('APPEARANCE')
-        if kind not in ('person', 'animal'):
-            errs.append(f'[[SUBJECT_KIND]] is {kind!r}, expected "person" or "animal"')
         vocab = AGE_ANIMAL if kind == 'animal' else AGE_PERSON
         found = list(age_terms(app.lower(), vocab))
         if not found:
@@ -266,14 +337,29 @@ def check_describer(out, inp, role):
                         f'list ({", ".join(vocab)})')
         elif len(found) > 1:
             errs.append(f'[[APPEARANCE]] hedges between age brackets: {found}')
-        if re.search(r'\d', app):
-            errs.append('[[APPEARANCE]] contains a digit -- numeric ages are banned')
-        if field_text('DEFINITION').endswith('.'):
+
+    for fname in spec['no_digits']:
+        if re.search(r'\d', field_text(fname)):
+            errs.append(f'[[{fname}]] contains a digit -- numerals are banned there')
+
+    if 'DEFINITION' in fields:
+        definition = field_text('DEFINITION')
+        if definition.endswith('.'):
             warns.append('[[DEFINITION]] ends with a full stop; it is spliced mid-sentence')
+        # The atmosphere quarantine: a place is the same place by day and by night, so the
+        # spliced subject-definition sentence must not carry the hour or the weather.
+        if spec['atmos_field']:
+            low_def = definition.lower()
+            for w in ATMOSPHERE_WORDS:
+                if re.search(r'(?<![\w-])' + re.escape(w) + r'(?![\w-])', low_def):
+                    warns.append(f'[[DEFINITION]] carries a transient condition: {w!r} '
+                                 f'(belongs in [[{spec["atmos_field"]}]] only)')
 
     # --- the conditional tail line
     nf = out.find(NOT_FOUND)
     if nf != -1:
+        if not spec['not_found']:
+            errs.append(f'{NOT_FOUND} emitted by the {role} role, which has no such line')
         tail = out[nf + len(NOT_FOUND):].strip().lower()
         if tail in ('none', 'n/a', ''):
             errs.append(f'{NOT_FOUND} {tail!r} -- emit nothing when the subject was found')
@@ -282,10 +368,13 @@ def check_describer(out, inp, role):
         if positions and nf < max(positions.values()):
             errs.append(f'{NOT_FOUND} is not last; it must follow [[{fields[-1]}]]')
 
-    low = out.lower()
-    for w in STYLE_WORDS:
-        if re.search(r'(?<![\w-])' + re.escape(w) + r'(?![\w-])', low):
-            warns.append(f'names a rendering style: {w!r} (another pass covers style)')
+    if spec['style_warn']:
+        low = out.lower()
+        for w in STYLE_WORDS:
+            if w in spec['style_allow']:
+                continue
+            if re.search(r'(?<![\w-])' + re.escape(w) + r'(?![\w-])', low):
+                warns.append(f'names a rendering style: {w!r} (another pass covers style)')
     return errs, warns
 
 
@@ -348,28 +437,30 @@ def main():
             errs, warns = check_h3(r['output'], r['input'], a.strip_alignment)
         else:
             errs, warns = check_describer(r['output'], r['input'], a.role)
-            # Cases in a group named 'same: ...' describe the same subject, so their age
-            # brackets must agree. This is the drift check REF2VA needs (CLAUDE.md).
-            if group and group.startswith('same:'):
-                m = re.search(r'\[\[APPEARANCE\]\](.*)', r['output'])
-                kind = 'animal' if '[[SUBJECT_KIND]] animal' in r['output'] else 'person'
-                vocab = AGE_ANIMAL if kind == 'animal' else AGE_PERSON
-                terms = list(age_terms(m.group(1).lower(), vocab)) if m else []
+            # Cases in a group named 'same: ...' describe the same subject or the same
+            # place, so the role's drift field must agree across them. This is the drift
+            # check REF2VA needs (CLAUDE.md).
+            drift = DESCRIBER_ROLES[a.role]['drift']
+            if drift and group and group.startswith('same:'):
+                dfield, vocab_of = drift
+                m = re.search(r'\[\[' + re.escape(dfield) + r'\]\](.*)', r['output'])
+                terms = list(age_terms(m.group(1).lower(), vocab_of(r['output']))) if m else []
                 brackets.setdefault(group, []).append((case_id, terms[0] if terms else None))
         label = case_id or (r['input'].strip().split('\n')[0])[:64] or f'record {i}'
         results.append((label, errs, warns))
 
     ok = report(results, a.verbose)
 
+    dname = (DESCRIBER_ROLES[a.role]['drift'] or (None,))[0] if a.format == 'describer' else None
     for group, entries in sorted(brackets.items()):
         seen = {b for _, b in entries if b}
         if len(seen) > 1:
             ok = False
-            print(f'\nFAIL  {group}: age bracket drifted across the same subject')
+            print(f'\nFAIL  {group}: [[{dname}]] drifted across the same subject')
             for cid, b in entries:
                 print(f'        {cid}: {b}')
         elif len(entries) > 1:
-            print(f'\nOK    {group}: {seen.pop() if seen else "no bracket"} '
+            print(f'\nOK    {group}: [[{dname}]] is {seen.pop() if seen else "unset"} '
                   f'in all {len(entries)} cases')
 
     sys.exit(0 if ok else 1)
