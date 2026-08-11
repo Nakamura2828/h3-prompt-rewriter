@@ -163,10 +163,10 @@ REF2VA cases.
 ## Build order
 
 1. **`describer_character.txt`** — session 5. Identity-only (no POSE/POSITION/FRAMING); see
-   `CLAUDE.md` for the field list and the age-bracket vocabulary.
-2. **`describer_setting.txt`** — session 6. Eight fields, with everything transient quarantined
-   in `[[ATMOSPHERE]]` and barred from `[[DEFINITION]]`, so the spliced subject-definition
-   sentence holds by day and by night. See `CLAUDE.md`.
+   `docs/describers.md` for the field list and the age-bracket vocabulary.
+2. **`describer_setting.txt`** — session 6, locked at v5. Eight fields, with everything transient
+   quarantined in `[[ATMOSPHERE]]` and barred from `[[DEFINITION]]`, so the spliced
+   subject-definition sentence holds by day and by night. See `docs/describers.md`.
    `describer_object.txt` and `describer_style.txt` remain; **`style` is blocked on input
    variety** — see `docs/image_inventory.md` for the corpus and the shopping list.
 3. Composer pass A as a fifth build-system mode; pass B standalone.
