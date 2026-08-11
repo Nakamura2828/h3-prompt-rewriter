@@ -1,0 +1,135 @@
+{
+  "_note": "Groups named 'same: ...' mark cases that describe the SAME subject; validate.py's describer checker compares their age brackets against each other. Other group names are plain banners.",
+  "_drift_probes": "Two kinds. 'same: pancakes ...' holds the IMAGE constant and varies the SUBJECT wording, isolating prompt-side instability -- these should never drift. 'same: p4 ...' varies the image for one person, the real-world stress case. NOTE: the p4 girl is genuinely borderline (roughly 12-13, sitting on the child/pre-teen/teenager boundaries), so a disagreement there is ambiguity in the subject as much as a defect in the prompt. Read the pancakes pairs first.",
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_character.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "same: jacket girl",
+      "id": "char_jacket",
+      "user": "ROLE: character",
+      "image": "images/jacket.jpg"
+    },
+    {
+      "group": "same: jacket girl",
+      "id": "char_jacket2",
+      "user": "ROLE: character",
+      "image": "images/jacket2.jpg"
+    },
+    {
+      "group": "baseline live-action",
+      "id": "char_captain",
+      "user": "ROLE: character",
+      "image": "images/captain.png"
+    },
+    {
+      "group": "baseline live-action",
+      "id": "char_tv",
+      "user": "ROLE: character",
+      "image": "images/tv.png"
+    },
+    {
+      "group": "selection among several people",
+      "id": "char_class_a",
+      "user": "SUBJECT: the girl with red hair | ROLE: character",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "selection among several people",
+      "id": "char_class_b",
+      "user": "SUBJECT: the girl with braids at the right-hand desk | ROLE: character",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "same: pancakes girl",
+      "id": "char_pan_girl_a",
+      "user": "SUBJECT: the girl | ROLE: character",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "same: pancakes girl",
+      "id": "char_pan_girl_b",
+      "user": "SUBJECT: the child in the pyjamas | ROLE: character",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "same: pancakes man",
+      "id": "char_pan_man_a",
+      "user": "SUBJECT: the man | ROLE: character",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "same: pancakes man",
+      "id": "char_pan_man_b",
+      "user": "SUBJECT: the man in the white t-shirt | ROLE: character",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "same: p4 girl",
+      "id": "char_p4f_girl",
+      "user": "SUBJECT: the girl | ROLE: character",
+      "image": "images/p4_first.png"
+    },
+    {
+      "group": "same: p4 girl",
+      "id": "char_p4l_girl",
+      "user": "SUBJECT: the girl | ROLE: character",
+      "image": "images/p4_last.png"
+    },
+    {
+      "group": "same: p4 man",
+      "id": "char_p4f_man",
+      "user": "SUBJECT: the man | ROLE: character",
+      "image": "images/p4_first.png"
+    },
+    {
+      "group": "same: p4 man",
+      "id": "char_p4l_man",
+      "user": "SUBJECT: the man | ROLE: character",
+      "image": "images/p4_last.png"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "char_kasia",
+      "user": "ROLE: character",
+      "image": "images/kasia.png"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "char_miya",
+      "user": "ROLE: character",
+      "image": "images/miya.jpg"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "char_kiki_girl",
+      "user": "SUBJECT: the girl | ROLE: character",
+      "image": "images/kiki.png"
+    },
+    {
+      "group": "animal subject",
+      "id": "char_kiki_cat",
+      "user": "SUBJECT: the black cat | ROLE: character",
+      "image": "images/kiki.png"
+    },
+    {
+      "group": "occluded subject",
+      "id": "char_miyu",
+      "user": "SUBJECT: the girl in the bin | ROLE: character",
+      "image": "images/miyu.png"
+    },
+    {
+      "group": "unmatched subject line",
+      "id": "char_notfound",
+      "user": "SUBJECT: the man in the red hoodie | ROLE: character",
+      "image": "images/jacket.jpg"
+    }
+  ]
+}

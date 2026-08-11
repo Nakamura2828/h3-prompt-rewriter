@@ -1,11 +1,24 @@
 #!/usr/bin/env python3
 """Offline validator for H3 prompt-rewriter outputs.
 
-Reads the concatenated test-run files produced by the ComfyUI loop and reports
+Reads the concatenated test-run files produced by scripts/run_tests.py and reports
 per-case PASS/FAIL so a review pass only has to read the failures.
 
-Record format (as produced by the existing loop):
-    <model>
+The FORMAT is always named explicitly, because this project produces several output
+shapes that share nothing but the record wrapper -- the three-field H3 prompt contract,
+the [[FIELD]] describer records, and (later) REF2VA's six sections. Checking one against
+another's rules is meaningless, so there is no default:
+
+  python3 scripts/validate.py h3        runs.txt
+  python3 scripts/validate.py h3        runs.txt --strip-alignment  # graph injects it
+  python3 scripts/validate.py describer runs.txt --role character
+  python3 scripts/validate.py h3        runs.txt -v                 # also print passes
+
+Every checker here validates FORMAT, not semantics. A case can pass with a completely
+wrong description in it.
+
+Record format (as produced by run_tests.py):
+    <model>  [<group> :: <id>]
     ---
     <input>
     ---
@@ -13,11 +26,6 @@ Record format (as produced by the existing loop):
     [---
     Analysis: ...]
     ----------
-
-Usage:
-  python3 scripts/validate.py runs.txt
-  python3 scripts/validate.py runs.txt --strip-alignment   # graph injects the alignment line
-  python3 scripts/validate.py runs.txt -v                  # also print passing cases
 """
 import argparse, re, sys, pathlib
 
@@ -32,6 +40,12 @@ SHOT = re.compile(r'\[Shot (\d+)\]')
 DBLOCK = re.compile(r'<d>(.*?)</d>', re.S)
 
 
+# run_tests.py writes '##### <group> #####' banners as their own chunk between record
+# separators. They are section headers, not cases, and were previously validated as
+# malformed records -- one guaranteed spurious FAIL per group.
+BANNER = re.compile(r'^#{3,}.*#{3,}$')
+
+
 def parse_records(text):
     text = text.replace('\r\n', '\n')
     chunks = [c for c in re.split(r'\n-{8,}\n', text) if c.strip()]
@@ -40,7 +54,7 @@ def parse_records(text):
         parts = [p.strip('\n') for p in re.split(r'\n-{3}\n', c)]
         if len(parts) >= 3:
             recs.append({'model': parts[0].strip(), 'input': parts[1], 'output': parts[2]})
-        elif len(parts) == 1:
+        elif len(parts) == 1 and not BANNER.match(parts[0].strip()):
             recs.append({'model': '', 'input': '', 'output': parts[0]})
     return recs
 
@@ -50,7 +64,8 @@ def duration_of(inp):
     return float(m.group(1)) if m else None
 
 
-def check(out, inp, strip_alignment):
+def check_h3(out, inp, strip_alignment):
+    """The three-field contract: t2va / i2va / l2va / fl2va composer output."""
     errs, warns = [], []
     if strip_alignment:
         hits = ALIGNMENT.findall(out)
@@ -159,31 +174,205 @@ def check(out, inp, strip_alignment):
     return errs, warns
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('path')
-    ap.add_argument('--strip-alignment', action='store_true')
-    ap.add_argument('-v', '--verbose', action='store_true')
-    a = ap.parse_args()
-    recs = parse_records(pathlib.Path(a.path).read_text(encoding='utf-8'))
+# ---------------------------------------------------------------- describer records
+
+# One entry per describer role. Add a role by adding a row, not by branching below.
+DESCRIBER_ROLES = {
+    'character': ['SUBJECT_KIND', 'APPEARANCE', 'CLOTHING', 'DISTINGUISHING',
+                  'LABEL', 'DEFINITION'],
+}
+
+# Closed age vocabularies from prompts/describer_character.txt. Longest match wins, so
+# 'young adult' is one term rather than 'young' plus 'adult'.
+AGE_PERSON = ['infant', 'toddler', 'child', 'pre-teen', 'teenager', 'young adult',
+              'adult', 'middle-aged', 'older adult']
+AGE_ANIMAL = ['young', 'adult', 'old', 'not visible']
+
+# Rendering-style words the identity-only record is not supposed to name. A warn, not an
+# error: 'a T-shirt with a cartoon print' is a legitimate garment description.
+STYLE_WORDS = ['anime', 'manga', 'pixel art', 'pixelated', '2d-animated', '3d cg',
+               'photographic', 'photorealistic', 'live-action', 'illustrated',
+               'illustration', 'cartoon', 'claymation', 'watercolor', 'watercolour',
+               'cel-shaded', 'rendered', 'digital painting']
+
+# Field tokens belonging to describer_frame.txt, never to an identity-only record.
+FOREIGN_FIELDS = ['POSE', 'POSITION', 'GAZE', 'EXPRESSION', 'HOLDING', 'FRAMING',
+                  'ENVIRONMENT', 'LIGHTING', 'PALETTE', 'TEXT', 'STYLE', 'OBJECTS',
+                  'CHAR', 'CROWD', 'CAST NOT FOUND']
+
+NOT_FOUND = '[[SUBJECT NOT FOUND]]'
+
+
+def age_terms(line, vocab):
+    """Every vocabulary term present in a line, dropping any that is merely a substring
+    of a longer term already matched ('adult' inside 'young adult')."""
+    spans = []
+    for t in sorted(vocab, key=len, reverse=True):
+        for m in re.finditer(r'(?<![\w-])' + re.escape(t) + r'(?![\w-])', line):
+            if not any(s <= m.start() and m.end() <= e for s, e in spans):
+                spans.append((m.start(), m.end()))
+                yield t
+
+
+def check_describer(out, inp, role):
+    """A structured [[FIELD]] describer record. Format only -- this cannot tell whether
+    the right subject was picked or whether the description is accurate."""
+    errs, warns = [], []
+    fields = DESCRIBER_ROLES[role]
+    out = out.strip()
+
+    # --- field labels: present, once each, in order, and first thing in the reply
+    if not out.startswith(f'[[{fields[0]}]]'):
+        errs.append(f'reply does not begin with [[{fields[0]}]]')
+    positions = {}
+    for f in fields:
+        hits = [m.start() for m in re.finditer(r'\[\[' + re.escape(f) + r'\]\]', out)]
+        if not hits:
+            errs.append(f'missing field [[{f}]]')
+        elif len(hits) > 1:
+            errs.append(f'field [[{f}]] appears {len(hits)} times '
+                        f'(a second one usually means a second record)')
+        else:
+            positions[f] = hits[0]
+    ordered = [f for f in fields if f in positions]
+    if ordered != sorted(ordered, key=lambda f: positions[f]):
+        errs.append('fields are out of order')
+
+    # --- reserved characters and stray output
+    if '<' in out or '>' in out:
+        errs.append('contains < or > (reserved for downstream H3 tags)')
+    if '```' in out:
+        errs.append('contains a markdown fence')
+    if re.search(r'^\s*(User|INPUT|OUTPUT)\s*:', out, re.M):
+        errs.append('continues into another turn or example (User:/INPUT:/OUTPUT:)')
+    for f in FOREIGN_FIELDS:
+        if f'[[{f}]]' in out or f'[[{f}:' in out:
+            errs.append(f'foreign field [[{f}]] -- that belongs to the frame describer')
+
+    def field_text(name):
+        m = re.search(r'\[\[' + re.escape(name) + r'\]\](.*)', out)
+        return m.group(1).strip() if m else ''
+
+    # --- role-specific
+    if role == 'character':
+        kind = field_text('SUBJECT_KIND').lower()
+        app = field_text('APPEARANCE')
+        if kind not in ('person', 'animal'):
+            errs.append(f'[[SUBJECT_KIND]] is {kind!r}, expected "person" or "animal"')
+        vocab = AGE_ANIMAL if kind == 'animal' else AGE_PERSON
+        found = list(age_terms(app.lower(), vocab))
+        if not found:
+            errs.append(f'[[APPEARANCE]] states no age bracket from the {kind or "person"} '
+                        f'list ({", ".join(vocab)})')
+        elif len(found) > 1:
+            errs.append(f'[[APPEARANCE]] hedges between age brackets: {found}')
+        if re.search(r'\d', app):
+            errs.append('[[APPEARANCE]] contains a digit -- numeric ages are banned')
+        if field_text('DEFINITION').endswith('.'):
+            warns.append('[[DEFINITION]] ends with a full stop; it is spliced mid-sentence')
+
+    # --- the conditional tail line
+    nf = out.find(NOT_FOUND)
+    if nf != -1:
+        tail = out[nf + len(NOT_FOUND):].strip().lower()
+        if tail in ('none', 'n/a', ''):
+            errs.append(f'{NOT_FOUND} {tail!r} -- emit nothing when the subject was found')
+        if 'SUBJECT:' not in inp:
+            errs.append(f'{NOT_FOUND} emitted with no SUBJECT line in the input')
+        if positions and nf < max(positions.values()):
+            errs.append(f'{NOT_FOUND} is not last; it must follow [[{fields[-1]}]]')
+
+    low = out.lower()
+    for w in STYLE_WORDS:
+        if re.search(r'(?<![\w-])' + re.escape(w) + r'(?![\w-])', low):
+            warns.append(f'names a rendering style: {w!r} (another pass covers style)')
+    return errs, warns
+
+
+# ------------------------------------------------------------------------- reporting
+
+HEAD = re.compile(r'\[(?:(.*?)\s*::\s*)?([^\[\]]*?)\]\s*$')
+
+
+def head_parts(model_line):
+    """Pull (group, id) out of run_tests.py's '<model>  [<group> :: <id>]' header."""
+    m = HEAD.search(model_line.strip())
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
+def report(results, verbose):
     npass = 0
-    for i, r in enumerate(recs, 1):
-        errs, warns = check(r['output'], r['input'], a.strip_alignment)
-        label = (r['input'].strip().split('\n')[0])[:64] or f'record {i}'
+    for i, (label, errs, warns) in enumerate(results, 1):
         if errs:
             print(f'[{i}] FAIL  {label}')
-            for e in errs:
-                print(f'        ERROR  {e}')
-            for w in warns:
-                print(f'        warn   {w}')
         else:
             npass += 1
-            if warns or a.verbose:
-                print(f'[{i}] PASS  {label}')
-                for w in warns:
-                    print(f'        warn   {w}')
-    print(f'\n{npass}/{len(recs)} passed')
-    sys.exit(0 if npass == len(recs) else 1)
+            if not (warns or verbose):
+                continue
+            print(f'[{i}] PASS  {label}')
+        for e in errs:
+            print(f'        ERROR  {e}')
+        for w in warns:
+            print(f'        warn   {w}')
+    print(f'\n{npass}/{len(results)} passed')
+    return npass == len(results)
+
+
+def main():
+    ap = argparse.ArgumentParser(
+        description='Validate H3 prompt-rewriter run output. The format is always named '
+                    'explicitly -- these output shapes share no rules.')
+    sub = ap.add_subparsers(dest='format', required=True, metavar='FORMAT')
+
+    p_h3 = sub.add_parser('h3', help='three-field contract (t2va/i2va/l2va/fl2va)')
+    p_h3.add_argument('path')
+    p_h3.add_argument('--strip-alignment', action='store_true',
+                      help='the graph injects the alignment line; ignore it')
+
+    p_d = sub.add_parser('describer', help='structured [[FIELD]] describer records')
+    p_d.add_argument('path')
+    p_d.add_argument('--role', default='character', choices=sorted(DESCRIBER_ROLES),
+                     help='which describer role wrote these records')
+
+    for p in (p_h3, p_d):
+        p.add_argument('-v', '--verbose', action='store_true',
+                       help='also print passing cases')
+
+    a = ap.parse_args()
+    recs = parse_records(pathlib.Path(a.path).read_text(encoding='utf-8'))
+
+    results, brackets = [], {}
+    for i, r in enumerate(recs, 1):
+        group, case_id = head_parts(r['model'])
+        if a.format == 'h3':
+            errs, warns = check_h3(r['output'], r['input'], a.strip_alignment)
+        else:
+            errs, warns = check_describer(r['output'], r['input'], a.role)
+            # Cases in a group named 'same: ...' describe the same subject, so their age
+            # brackets must agree. This is the drift check REF2VA needs (CLAUDE.md).
+            if group and group.startswith('same:'):
+                m = re.search(r'\[\[APPEARANCE\]\](.*)', r['output'])
+                kind = 'animal' if '[[SUBJECT_KIND]] animal' in r['output'] else 'person'
+                vocab = AGE_ANIMAL if kind == 'animal' else AGE_PERSON
+                terms = list(age_terms(m.group(1).lower(), vocab)) if m else []
+                brackets.setdefault(group, []).append((case_id, terms[0] if terms else None))
+        label = case_id or (r['input'].strip().split('\n')[0])[:64] or f'record {i}'
+        results.append((label, errs, warns))
+
+    ok = report(results, a.verbose)
+
+    for group, entries in sorted(brackets.items()):
+        seen = {b for _, b in entries if b}
+        if len(seen) > 1:
+            ok = False
+            print(f'\nFAIL  {group}: age bracket drifted across the same subject')
+            for cid, b in entries:
+                print(f'        {cid}: {b}')
+        elif len(entries) > 1:
+            print(f'\nOK    {group}: {seen.pop() if seen else "no bracket"} '
+                  f'in all {len(entries)} cases')
+
+    sys.exit(0 if ok else 1)
 
 
 if __name__ == '__main__':
