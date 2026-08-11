@@ -221,9 +221,9 @@ buy us").
 
 | image | medium | int/ext | setting | prominent objects | notable garments | people |
 |---|---|---|---|---|---|---|
-| `annie1` | ink-and-marker digital sketch | none — cream paper ground | no environment | (none) | coral open jacket, yellow tank, black skirt, black knee boots, choker; hero: black/red tunic w/ 3 yellow bars, cape, domino mask | 1 girl, **drawn twice** — as herself and as a masked hero |
+| `annie1` | ink-and-marker digital sketch | none — cream paper ground | no environment | (none) | **girl**: coral open jacket, yellow tank, black skirt, black knee boots, choker · **hero (a different person)**: black/red tunic w/ yellow bar fasteners, black cape, black glove, domino mask | **2 distinct characters** on one sheet — a girl (full figure, right) and a masked male hero (head-and-shoulders, left). **They are not the same person** — see the correction note below |
 | `annie2` | **watercolour + ink in a sketchbook, photographed in someone's hand** | int (the photo's) / none (the drawing's) | **nested**: inside the drawing, a giant reptilian creature looming over a small girl; outside it, a defocused convention hall w/ black grid shelving | the sketchbook itself | same coral jacket, pale top, black shorts, choker, white socks | 1 girl (drawn) + **1 hand** (real, holding it) |
-| `annie3` | **comic page, 4 panels** | ext | alley between buildings; rooftop/street | (none) | coral coat, tan top, black skirt; red/black hero tunic w/ cape and domino mask; black/purple suit w/ yellow gloves and boots | 1 girl + 3 costumed figures + 1 man |
+| `annie3` | **comic page, 4 panels** | ext | alley between buildings; rooftop/street | (none) | **girl**: coral coat, tan top, black skirt, choker · **masked boy hero**: red/black tunic w/ yellow bars, black cape · **masked woman hero**: black/purple suit, yellow gloves and boots · **man**: tan shirt, striped trousers | **4 distinct characters**: 1 girl + 2 costumed heroes (a boy and a woman, both recurring across panels) + 1 man. The heroes are **not** the girl in costume |
 | `azumanga_anime` | 2D anime (flat cel, thick outline, sticker border) | none — white ground | no environment | (none) | coral sailor-style school jumpers, white collars, dark red pleated skirts, orange socks / white socks + brown loafers | 3 schoolgirls |
 | `azumanga_toon` | **western TV-cartoon (flat toon over textured paint)** | ext | school grounds; chain-link fence, clipped hedges, trees, grass, concrete path, brick edging, outline clouds | (none) | same coral uniforms; one w/ black over-knee socks | same 3 schoolgirls |
 | `bird_vector` | flat vector illustration | none — white | no environment | (none) | — | none (1 bird) |
@@ -246,7 +246,7 @@ buy us").
 | `kasia_bag` | product render | none — white | no environment | **yellow shoulder bag, blue flap w/ pale-blue circular emblem, navy webbing strap, gold slider** | — | none |
 | `kasia_outfit` | product render, **flat-lay** | none — white | no environment | — | **black vest top, cuffed blue denim shorts, black/blue fingerless gloves, black-and-grey striped knee socks, blue lace-up sneakers** | none |
 | `kasia_render` | **3D CG character render (stylised anime)** | none — white studio ground | no environment | (none) | black vest top, cuffed denim shorts, black fingerless gloves, grey striped knee socks, navy/white sneakers, **gold-yellow headband** | 1 girl |
-| `kasia_swimsuit` | product render, **flat-lay** | none — white | no environment | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** | none |
+| `kasia_swimsuit` | product render, **flat-lay** | none — white | no environment | — | **black high-neck one-piece swimsuit, yellow collar and yellow chevron** | none · **despite the filename this is NOT part of the kasia set** — a different outfit, worn by nobody, linked to the character only by its name. A standalone isolated-garment case |
 | `kaypro_ii` | live-action photographic | none — white | no environment | **vintage portable computer**: blue/grey metal case, green CRT showing text, 2 floppy drives, detached keyboard w/ blue keypad · **brand name on case AND on screen** | — | none |
 | `lincoln_photo` | **archival B&W albumen portrait** | none — plain studio backdrop | no environment | (none) | dark frock coat, white shirt, black bow tie | 1 older adult man · **real historical figure** |
 | `lincon_money` | **engraved intaglio print (banknote)** | none | no environment | five-dollar certificate: portrait vignette, guilloche borders, blue treasury seal, serials, signatures — **almost entirely printed text** | — | a portrait *within an object*, not a depicted person |
@@ -274,7 +274,7 @@ everything else redrawn". **Use the top of the ladder for regression, the bottom
 | `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | tight, and **the only pair with no person in it** |
 | `bird_vector` / `bird_watercolor` | a blue-and-orange bird; flat vector vs traditional watercolour | loose — not the same bird, same *idea* of one |
 | `coraline1` / `coraline2` | same character; puppet on white vs film still | loose, and doubles as an isolated-subject vs in-scene pair |
-| `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic page. **Use the cropped/panelled versions for content roles** — the raw `annie2` drags in a convention hall and the raw `annie3` is four scenes at once | loose, widest spread |
+| `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic page. **Use the cropped/panelled versions for content roles** — the raw `annie2` drags in a convention hall and the raw `annie3` is four scenes at once. **Requires a `SUBJECT:` line**: only `annie2_cropped` has the girl alone; the other two also contain costumed heroes who are different people, so without disambiguation the describer may legitimately record the wrong subject | loose, widest spread |
 | `azumanga_anime` / `azumanga_toon` | same three characters, same uniforms; flat anime cel vs western TV-toon | loose, and **a fine `[[MEDIUM]]` discrimination** — both are flat 2D, and telling them apart is exactly the hard case |
 | `car_interior_photo` / `_sketch` / `_mecha_driver` | one setting *type* across three media | loosest — different vehicles, useful for `setting` more than `style` |
 
@@ -282,10 +282,27 @@ everything else redrawn". **Use the top of the ladder for regression, the bottom
 
 ### The kasia set — authorial intent vs what is in the pixels
 
-The user confirms `kasia_render`, `kasia_outfit`, `kasia_bag`, `kasia_swimsuit` and the existing
-`kasia.png` are **one character in one outfit**, and that `kasia_outfit` was produced by Qwen
-Image Edit extracting the garments *from* `kasia.png` — so the flat-lay is a derived asset, not
-independent evidence.
+The set is **four files, not five**, and every one of them derives from the same drawing:
+
+| file | how it links to `kasia.png` |
+|---|---|
+| `kasia.png` | the original 2D illustration — the character, her outfit and her bag, all in one image |
+| `kasia_render` | a 3D render **based on** the drawing; same character, same outfit. **No bag** |
+| `kasia_outfit` | a flat-lay of **the clothes she wears in the drawing**, produced by Qwen Image Edit extracting the garments *from* `kasia.png` — a derived asset, not independent evidence |
+| `kasia_bag` | an isolated render of **the bag she carries in the drawing** |
+
+**`kasia_swimsuit` is not part of this set.** It is a different outfit, nobody is wearing it, and
+**nothing visual ties it to the character** — only the filename does. Treat it purely as an
+isolated flat-garment case (see below), and do not cast it in any kasia identity probe.
+
+Two probe pairs fall out of the four linked files, and they are different in kind:
+
+- **flat ↔ worn garment**: `kasia_outfit` → `kasia_render` / `kasia.png`. The corpus's only one.
+- **isolated ↔ in-scene object**: `kasia_bag` → `kasia.png`, where the same bag is carried. This is
+  the *object* analogue of the flat↔worn pair, and the corpus's only one of those too. It is
+  imperfect evidence, though — the drawing's bag has **three pin badges** the isolated render
+  lacks, on top of the colour difference below. Expect real disagreement and read it as source
+  drift, not describer failure.
 
 The headband/bag colour is worth recording precisely, because session 6 wrote "orange" into the
 table above and the user reads it as yellow, as does the character's original owner. Sampling the
@@ -326,6 +343,33 @@ What it *is* good for, and it is not a consolation prize: a **"same place, diffe
 probe where the durable record *should* partly disagree. We have no other pair like it, and it is
 the natural negative control for the day-and-night test — a place that really did change.
 
+### The annie sheets contain two characters, not one in two guises — corrected
+
+**Correction to the first session-7 pass.** `annie1` was originally catalogued as "1 girl, drawn
+twice — as herself and as a masked hero". That is **wrong**, and the user caught it. The masked
+figure is a **separate, recurring character** (a well-known costumed boy hero), not the girl in a
+costume. `annie3` likewise has four distinct people — the girl, two costumed heroes (a boy and a
+woman), and a man — not one girl plus her alter ego.
+
+It matters in three ways, which is why it is recorded rather than quietly fixed:
+
+1. **It would have inverted a test verdict.** Under the wrong reading, a describer that produced
+   one record covering "a girl who is also a masked hero" would have looked correct, and a
+   describer that correctly kept them as two people would have looked like a failure. We would
+   have scored a right answer wrong.
+2. **The identity ladder needs a `SUBJECT:` line.** `annie1` and `annie3_panel1` each contain the
+   girl *and* at least one costumed hero; only `annie2_cropped` has her alone. Cast across the
+   three media without disambiguation and the describer may legitimately record a different person
+   in each, which would read as catastrophic identity drift and would be nothing of the kind.
+3. **It is a genuine `character` disambiguation case**, in the same family as picking one child out
+   of six in a classroom — and unlike the classroom, the candidates here differ by *costume*
+   rather than by position, which is a different kind of hard.
+
+The general point, and the reason this file exists: **`validate.py` cannot see any of this.** A
+record naming the wrong person is perfectly well-formed and will pass every structural check.
+Content errors need eyes, and eyes get things wrong too — this row was wrong for a full pass
+before the user corrected it.
+
 ### Comic pages and the nested-medium case
 
 `comic` and `annie3` are single files containing 4-5 separate scenes; `annie2` is a photograph of
@@ -354,7 +398,7 @@ nine.
 | `comic_panel4.jpg` (1249x904) | `comic` bottom panel | **classroom interior, 6+ people, desks, windows, planter boxes.** A *third* classroom for the `classroom1` vs `classroom2` negative control — and the first one in a non-photographic medium, so it tests that the negative control survives a medium change. Also a multi-person `character` disambiguation case |
 | `comic_panel3.jpg` (1161x460) | `comic` middle panel | two adults at a whiteboard, **same room as `comic_panel4`** — so the two crops are a *same-place pair inside one comic medium*, which nothing else in the corpus provides. Carries a dialogue balloon |
 | `comic_panel2.jpg` (335x429) | `comic` top-right panel | close-up of the **same girl as `comic_panel4`** → a same-character/two-framings drift probe in one medium (the comic analogue of the `p6` wide/close pair). **Her name is printed in the speech balloon**, making it the harshest no-name probe we have: the answer is literally written in the image |
-| `annie3_panel1.jpg` (428x1434) | `annie3` leftmost panel | Annie near-full-figure in an alley — **completes the three-media identity ladder for the content roles**, not just for `style`: `annie1` (marker sketch) / `annie2` (watercolour) / `annie3_panel1` (comic). Also has her name in a balloon |
+| `annie3_panel1.jpg` (428x1434) | `annie3` leftmost panel | the girl near-full-figure in an alley — **completes the three-media identity ladder for the content roles**, not just for `style`: `annie1` (marker sketch) / `annie2_cropped` (watercolour) / `annie3_panel1` (comic). Also has her name in a balloon. **Two costumed heroes share the panel**, so cast it with a `SUBJECT:` line |
 
 Not kept: `comic` panels 1 (a hand and a spider, no usable setting or subject) and `annie3`
 panels 2–4 (costumed figures on flat grounds — the corpus already has plenty and they add no new
@@ -435,10 +479,15 @@ of the brushwork) · `comic` and `annie3` (dialogue balloons + a character name)
 media — the strongest identity probe we have), `teddy_taft` (two at once),
 `girl_painting_reference` (a well-known actor, and the source of `girl_painting`).
 
-**Recognisable fictional characters**: coraline x2, supergirl x2, azumanga x2, annie x3, comic,
-peter_griffin, kasia, kiki, miya. `peter_griffin_painting` is a nasty case — the character is
-instantly recognisable but rendered in a medium the source never uses, so naming the franchise
-requires *recognition* rather than *reading a label*.
+**Recognisable fictional characters**: coraline x2, supergirl x2, azumanga x2, annie x3 (+ the two
+panel crops), comic, peter_griffin, kasia, kiki, miya. Two cases are nastier than the rest:
+
+- `peter_griffin_painting` — instantly recognisable but rendered in a medium the source never
+  uses, so naming the franchise requires *recognition* rather than *reading a label*.
+- **`annie1` and `annie3` mix an original character with two famous licensed ones.** The girl is
+  the artist's own; the masked hero beside her is not. A describer can therefore fail *partially*
+  here — correct and neutral about the girl, franchise-naming about the figure next to her — which
+  is a more realistic failure than an image where everything is licensed or nothing is.
 
 ## Remaining gaps after session 7
 
@@ -449,11 +498,18 @@ This replaces the session-6 gap list above.
    `city_day`/`city_night` is a clean relight but carries brand signage. **No single pair is
    both**, and this is the one thing the atmosphere quarantine still cannot be tested against
    cleanly.
-2. **A second view of one object from a different angle** — the object equivalent of
-   `jacket`/`jacket2`. `destroyer_photo`/`destroyer_drawing` and `lincoln_photo`/`lincon_money`
-   are two *media*, not two *viewpoints*; `chair`, `kaypro_ii`, `cannon` and `kasia_bag` are each
-   a single angle. This is the last real hole for `object`.
-3. **A worn version of `kasia_swimsuit`** — the other three kasia assets have a worn counterpart
-   in `kasia_render`; the swimsuit does not, so the flat-to-worn probe only runs on one garment.
+2. **A clean second view of one object** — the object equivalent of `jacket`/`jacket2`.
+   **Partly covered now**: `kasia_bag` (isolated render) and `kasia.png` (the same bag carried on
+   her shoulder) are two views of one object, which is more than we had. But it is confounded
+   three ways at once — different angle *and* different medium *and* the drawing's bag has three
+   pin badges the render lacks and reads a different hue. `destroyer_photo`/`destroyer_drawing`
+   and `lincoln_photo`/`lincon_money` have the same problem: two *media*, not two *viewpoints*.
+   `chair`, `kaypro_ii` and `cannon` are each a single angle. **What is still wanted is one
+   object, two angles, same medium, nothing else changing** — the control that isolates viewpoint.
+3. **A second flat-to-worn garment pair** — one garment photographed flat *and* worn by someone.
+   `kasia_outfit` → `kasia_render` is the only one we have, and a single sample is thin.
+   `kasia_swimsuit` does **not** help here despite the filename: nobody wears it anywhere in the
+   corpus, and it isn't visually tied to the character (see "The kasia set"). Any garment would
+   do — it does not have to involve kasia.
 4. Nice-to-have, not blocking: a second oil painting, a second western TV-cartoon, and a second
    piece of marker/board art, so those three stop being singletons.
