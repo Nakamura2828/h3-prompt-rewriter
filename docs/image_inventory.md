@@ -648,7 +648,7 @@ that would otherwise contaminate a character record.
   4320x3240, 6.3 MB (~8.4 MB base64, 5× the pixel count of anything else). Frame 0 extracted,
   Lanczos-resized to 2000x1500, saved as JPEG q90 → `cannon.jpg`, 0.99 MB. Visually identical. The
   original was marked read-only, which had to be cleared first.
-- **`teddy_taft.JPG` still has an uppercase extension** — the only one left. Harmless today
+- **`teddy_taft.JPG` had an uppercase extension** — Harmless today
   (`image_payload()` should lowercase before mapping) but worth normalising.
 
 ---
