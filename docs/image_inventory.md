@@ -405,7 +405,8 @@ well-formed and passes every structural check.
 | "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincon_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
 | `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
 
-**The general lesson, and it is about the inventory rather than about kasia: a "these are
+**The general lesson is `L-CLAIM-ROWS-ARE-UNRELIABLE`, and it is about the inventory rather than
+about kasia: a "these are
 unrelated" judgement is only ever true of the corpus *as it stands*.** Two of the three content
 errors caught in session 7 were of this shape — an inferred *relationship*, not a described
 object. **Description rows have been reliable; claim rows have not**, and claim rows are the ones
@@ -501,7 +502,8 @@ for any of them.
 **Agreed approach**: crop panels for the content roles, keep the full pages for `style`, and run an
 uncropped page through `setting` **once, as a diagnostic that is recorded and never patched.**
 
-The reasoning is this project's own most expensive lesson. `[[SUBJECT NOT FOUND]]` cost three
+The reasoning is this project's own most expensive lesson, `L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY`
+(see `.claude/lessons_learned.md`). `[[SUBJECT NOT FOUND]]` cost three
 rounds and caused *every* format failure in setting v1–v3 before it was deleted, and the conclusion
 was that **an optional behaviour that fires on judgement is a liability unless the role genuinely
 needs the judgement**. Multi-panel handling is that trap in a new costume: if a comic page produces

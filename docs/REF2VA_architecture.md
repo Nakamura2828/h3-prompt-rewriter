@@ -20,11 +20,11 @@ non_diegetic_music
 Two things make it unlike T2VA/I2VA/L2VA/FL2VA:
 
 1. **It carries a label system.** `<Subject N>` / `<Picture N>` / `<Audio N>` must keep the same
-   meaning across all six sections (§2). That is bookkeeping, and lesson 6 says bookkeeping
+   meaning across all six sections (§2). That is bookkeeping, and `L-OFFLOAD-BOOKKEEPING` says bookkeeping
    belongs in code.
 2. **The guide's own section order puts a whole-output judgment third.** `retention_analysis`
    summarises how each reference fared, but sits *before* the description it judges — exactly
-   the failure that forced `[[CAST NOT FOUND]]` to the end of the frame describer (lesson 4).
+   the failure that forced `[[CAST NOT FOUND]]` to the end of the frame describer (`L-JUDGMENTS-LAST`).
 
 ## Pipeline
 
@@ -41,7 +41,7 @@ code                    assemble                -> six sections in guide order
 ```
 
 The local LLM node accepts one image per call, so per-image describer passes were forced
-anyway. The two-pass composer split is the lesson-4 fix: pass A writes the description, pass B
+anyway. The two-pass composer split is the `L-JUDGMENTS-LAST` fix: pass A writes the description, pass B
 judges it, and code puts the sections back into guide order.
 
 Pass A's three fields are the existing three-field contract with `integrated_multimodal_
@@ -75,7 +75,7 @@ through `<Picture 4>` all appear only inside `<Subject N>` lines.
 
 A selector maps the ~12 user-facing role labels onto these ~5 describer prompts. Separate
 per-role prompts, not one role-table prompt: this model reads a field list as an obligation
-(lesson 3) and will not reliably suppress listed fields.
+(`L-DECLARED-FIELD-IS-AN-OBLIGATION`) and will not reliably suppress listed fields.
 
 **v1 constraint — one asset produces at most one subject.** The guide permits one asset to
 supply several subjects, and one subject to draw on several assets (§2.1). If the user wants
