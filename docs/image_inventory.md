@@ -4,8 +4,10 @@ Ground truth for the test corpus, built by **reading every file directly**, not 
 describer over them. `validate.py` checks format and cannot see content; this document is what
 lets us judge whether a describer said something *true*.
 
-**98 active files.** `p1_first.old.png` and `p1_last.old.png` are superseded duplicates and are
-excluded throughout (100 files on disk, 98 active).
+**100 active files.** The two files formerly excluded as `p1_first.old.png` / `p1_last.old.png`
+were renamed to `door_first` / `door_last` in session 8 and read properly for the first time —
+they are not duplicates of `p1`, they are a different shot, and one of them is the most useful
+failure case in the corpus (see "Known describer limitations").
 
 ## How to maintain this document
 
@@ -108,7 +110,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | image | medium | sub | detail | int/ext | people | sets | added | flags |
 |---|---|---|---|---|---|---|---|---|
 | `annie1` | drawing | marker | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | annie | s7a | text, franchise, corr |
-| `annie2` | photograph | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise |
+| `annie2` | photograph | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise, nested |
 | `annie2_cropped` | painting | watercolour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
 | `annie3` | comic | — | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
 | `annie3_panel1` | comic | — | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
@@ -141,6 +143,8 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `coraline2` | stop-motion | — | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
 | `destroyer_drawing` | print | technical plate | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
 | `destroyer_photo` | photograph | archival | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
+| `door_first` | live-action film | modern | **first frame** — door shut, corridor empty | int | **none** | door, first-last | s8 | text |
+| `door_last` | live-action film | modern | **last frame** — same door open, room and man revealed | int | 1 adult man | door, first-last | s8 | text |
 | `fish_pixel` | pixel art | — | flat sprite | none | none | — | s7a | — |
 | `forest_autumn` | photograph | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
 | `forest_day` | vector | — | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
@@ -246,6 +250,8 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `coraline2` | dim kitchen; sash window, panelled cabinets, deep sink, tiled splashback, round table | open laptop, **mug reading "I love Mulch"**, notebook, pen, a doll | yellow raincoat; grey knitted cardigan |
 | `destroyer_drawing` | no environment | side elevation + plan view of a warship, range scale, rising-sun emblem | — |
 | `destroyer_photo` | warship at anchor, calm water, blank pale sky, distant masts | twin funnels making smoke, turrets, torpedo tubes, bridge tower, ensign; **kana + "19" on the hull** | — |
+| `door_first` | dim tenement corridor; vertically striped patterned wallpaper, painted timber frames; a green panelled door **numbered 410**, shut but standing a hand's width proud of its frame with a lit gap at the hinge side | brass doorknob, a small placard on the left wall, a glazed inner door at right with dirty glass and a diagonal strap across it, partial lettering low right | — |
+| `door_last` | **the same corridor, the 410 door now standing open** onto the room beyond: arched window with pale curtains, wooden chair, papers on a low table | dark travelling case being lifted, same brass knob, same glazed door and lettering at right | black overcoat, dark knit cap, white t-shirt |
 | `fish_pixel` | no environment, dark banded ground | side-on fish, teal-green back, white belly | — |
 | `forest_autumn` | **beech forest in fog**, autumn; grey trunks, rust foliage, deep leaf litter, exposed roots, dirt path | (none) | — |
 | `forest_day` / `forest_night` | one forest clearing backed by broadleaf trees and low scrub; grass foreground, distant hills | (none) | — |
@@ -291,7 +297,7 @@ These exist so that two records of one image cannot legitimately disagree — th
 | `peter_griffin_toon` | office; desk, wall poster, framed wall chart, dark carpet | desktop monitor, keyboard, mouse, phone | white shirt w/ black belt, green trousers, brown shoes; blue polo |
 | `phone` | studio white, no environment | **smartphone w/ teal bumper** | sleeveless blue knit top |
 | `ramen_pixel` | no environment, dark ground w/ drop shadow | **bowl of ramen**: noodles, sliced pork, halved soft egg, spring onion, bamboo shoot, steam | — |
-| `sanfran_day` / `_evening` / `_night` | grass bank and conifers, a red suspension bridge at left, a white high-rise cluster at right, water across the foreground | (none) | — |
+| `sanfran_day` / `sanfran_evening` / `sanfran_night` | grass bank and conifers, a red suspension bridge at left, a white high-rise cluster at right, water across the foreground | (none) | — |
 | `san_fransisco_day_evening_night` | the three panels above, stacked | (none) | — |
 | `shrek_cg` | open sky, wispy cloud, dry grass at right | (none) | brown leather-look tunic, cream undershirt w/ lacing |
 | `sleeping` | bedroom; grey tweed upholstered bed frame, white linen, light-wood bedside table | **black-framed eyeglasses**, pillows, duvet | navy top |
@@ -316,6 +322,20 @@ Merged from the three per-session pair lists. **Tier** says how much of a contro
 `exact` = nothing varies but the one thing under test · `tight` · `loose` = same idea, much
 else redrawn. Use the top for regression, the bottom for coverage.
 
+**`p1`–`p6` and `door` are first-and-last frames of a single shot** — `*_first` is the opening
+frame and `*_last` the closing frame of the same continuous take. That is why they exist: they
+were sourced as **FL2VA fixtures**, not as same-place pairs. It was never written down before
+session 8, and it changes how they should be read:
+
+- **`setting` and `character` use them as same-place / same-person pairs**, which ignores the
+  ordering. A disagreement is drift.
+- **The frame describer and the FL2VA delta use them as before/after**, which depends on it
+  entirely. A disagreement may be the *content* of the shot rather than a defect — that is the
+  whole point of a delta.
+
+So the same pair is a stability probe for one role and a change probe for another. Check which
+you are running before scoring anything.
+
 | set | files | holds constant | role | tier |
 |---|---|---|---|---|
 | girl-painting | `girl_painting_reference` → `girl_painting` | **everything** — the painting was made *from* that still: same subject, pose, crop, framing, expression | style | **exact.** The only true control; any content difference is a defect |
@@ -330,6 +350,7 @@ else redrawn. Use the top for regression, the bottom for coverage.
 | destroyer | `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | style, object | tight, and **the only media pair with no person in it** |
 | p6-window | `window` + `p6_first` + `p6_last` | one window, **three** framings and exposures | setting | tight — the widest same-place spread. **Reframing costs more than relighting**; this pair agrees less well than `city-*` |
 | p1 | `p1_first` / `p1_last` | same room, very different exposure | setting | secondary atmosphere probe (exposure, not time of day) |
+| door | `door_first` / `door_last` | same corridor and door; **shut and empty → open, with a room and a man revealed** | frame describer, FL2VA delta | **the corpus's largest single-shot change**, and its most useful failure case — see below |
 | kasia (swimsuit) | `kasia_swimsuit` → `_worn` / `_render` | one garment: flat, worn in 2D, worn in 3D | object, character | flat-to-worn; the flat-lay is *derived* from the 2D image, so not independent evidence |
 | kasia (everyday) | `kasia_outfit` → `kasia_render` / `kasia` | flat-lay garments ↔ worn | object | same derivation caveat |
 | bag-angle | `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object | harder than `car-angle` — an AI re-render, strap arranged differently |
@@ -451,8 +472,8 @@ bench (`jacket2`), shoulder bag (`kasia`), breads (`kiki`), newspaper (`newspape
 
 ### `style`
 
-**No longer blocked.** 11 coarse media across 98 files, **21 of 23 defined (coarse, sub)
-combinations populated**; live-action down to 42% from 78%. Nine same-subject-across-media pairs,
+**No longer blocked.** 11 coarse media, **21 of 23 defined (coarse, sub) combinations
+populated**; live-action down to 43% from 78%. Nine same-subject-across-media pairs,
 one of them exact. See the tally and the pairs table.
 
 The two vocabulary decisions this section used to flag as open are **now settled** by the
@@ -552,6 +573,20 @@ of the no-real-place-names rule.
 
 ## Known describer limitations this corpus exercises
 
+- **An empty space that is about to be occupied invites invention — and `door_first` triggers it
+  reliably.** That frame contains no person at all: a corridor, a shut door, a lit gap at the
+  hinge. It has repeatedly produced a described person who is not there. It is the opening frame
+  of a shot whose closing frame *does* contain a man, and the composition carries that prior.
+
+  This is `L-CAPABILITY-CEILINGS`' "compound environmental reversal (empty → occupied space)"
+  seen from the other side, and **`door_first` is the only reliable trigger for it in the
+  corpus.** The pair was nearly deleted in session 8 as a superseded duplicate; it is kept
+  precisely *because* it fails consistently. A reproducible failure is worth more than a clean
+  pass — see `L-NAME-THE-CASE`, and note that `L-ONE-RUN-IS-A-SAMPLE` makes reproducible
+  failures rare and valuable here.
+
+  **Not yet run under the current describers.** The hallucination was observed during earlier
+  FL2VA work, before the frame describer reached v8. Re-running it is on the TODO.
 - **Dim and occluded scenes degrade object-state reading.** `miyu` (pixel art, heavily occluded)
   produced invention where "not visible" was wanted.
 - **Reframing costs more than relighting.** The `p6` wide/close set agrees less well than the
@@ -620,44 +655,45 @@ that would otherwise contaminate a character record.
 
 ## Medium tally
 
-**Regenerate with `scripts/inventory.py`** — do not hand-edit. Counted over all 98 active files,
-crops included.
+**Generated by `scripts/inventory.py` — do not hand-edit.** Counted over every active file,
+crops included; the footnote markers below are driven by the master table's `flags` column, so
+they stay attached to the right rows automatically. Run `python scripts/inventory.py` after any
+change to the master table.
 
 | medium | sub | count | images |
 |---|---|---|---|
 | `photograph` | | **27** | |
 | | colour | 24 | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, forest_autumn, fuji, jacket, jacket2, kaypro_ii, newspaper, pancakes, phone, sleeping, stage, tv |
 | | archival | 3 | destroyer_photo, lincoln_photo, teddy_taft |
-| `live-action film` | | **14** | |
-| | modern | 12 | girl_painting_reference, p1×2, p2×2, p3×2, p4×2, p6×2, window |
-| | vintage Technicolor | 2 | p5×2 |
+| `live-action film` | | **16** | |
+| | modern | 14 | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, window |
+| | vintage Technicolor | 2 | p5_first, p5_last |
 | `3D CG` | | **9** | |
 | | product render | 5 | fruitbowl, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit |
 | | character render | 2 | kasia_render, kasia_swimsuit_render |
 | | feature animation | 2 | shrek_cg, woody_cg |
+| `stop-motion` | — | **2** | coraline1, coraline2 |
+| `2D cel` | | **9** | |
+| | anime | 4 | azumanga_anime, car_interior_mecha_driver, kiki, miya |
+| | western toon | 3 | azumanga_toon, ivy_toon, peter_griffin_toon |
+| | flat illustration | 2 | kasia, kasia_swimsuit_worn |
+| `comic` | — | **6** | annie3, annie3_panel1, comic, comic_panel2, comic_panel3, comic_panel4 |
 | `painting` | | **11** | |
 | | digital | 7 | ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
 | | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
 | | watercolour | 2 | annie2_cropped, bird_watercolor |
 | | *gouache* | *0* | *no sample* |
-| `2D cel` | | **9** | |
-| | anime | 4 | azumanga_anime, car_interior_mecha_driver, kiki, miya |
-| | western toon | 3 | azumanga_toon, ivy_toon, peter_griffin_toon |
-| | flat illustration | 2 | kasia, kasia_swimsuit_worn |
-| `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
-| `comic` | — | **6** | annie3, annie3_panel1, comic, comic_panel2, comic_panel3, comic_panel4 |
 | `drawing` | | **5** | |
 | | marker | 3 | annie1, marker, supergirl1 |
 | | sketch | 2 | car_interior_sketch, supergirl2 |
 | | *ink* | *0* | *no sample* |
+| `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
 | `pixel art` | — | **4** | fish_pixel, miyu, ramen_pixel, van_pixel |
-| `stop-motion` | — | **2** | coraline1, coraline2 |
 | `print` | | **2** | |
 | | engraving | 1 | lincon_money |
 | | technical plate | 1 | destroyer_drawing |
 
-**Total 98.** Live-action (`photograph` + `live-action film`) is **41 of 98, 42%** — down from
-29/37, 78% at the start of session 7. Three of those 41 are `amb`, so the honest range is 38–41.
+**Total 100.** Live-action (`photograph` + `live-action film`) is **43 of 100, 43%** — down from 29/37, 78% at the start of session 7. 3 of those 43 are `amb`, so the honest range is 40–43.
 
 \* `chair`, `car_1`, `car_2` are filed as `photograph` on the user's provenance knowledge (an
 Amazon listing and an automaker press shot respectively) and are flagged `amb` — the pixels do not
@@ -684,6 +720,6 @@ preference rather than obstruction:
 1. **A day/night pair that is both photographic *and* signage-free.** `city_*` is photographic
    with signage; `forest_*`/`sanfran_*` are signage-free without photography. Between them the two
    isolate every variable — just not in one image. This is a refinement, not a blocker.
-2. **More live-action breadth**, if `style` turns out to need it. 39% is healthy, but the
+2. **More live-action breadth**, if `style` turns out to need it. 43% is healthy, but the
    photographic images skew heavily toward people and rooms.
 3. **A second sample for the two singleton media**, if either ever matters to a `style` verdict.
