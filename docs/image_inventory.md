@@ -91,32 +91,74 @@ These exist so that two records of one image cannot legitimately disagree — th
    The distinction is look — grain, grade, aspect, lighting — and "cinematic" is a real signal for
    a *video* prompt. Judged on presentation, not on provenance.
 
-### The sub-lists inherit the axis problem the coarse list was built to fix (session 9)
+### The sub level needs a third axis — the session-9 finding, to be executed next session
 
-Found by the style v1 round. `L-ONE-AXIS-PER-VOCABULARY` was applied to the **coarse** list and
-never to the sub-lists, and three of them mix axes exactly the way the old flat list did:
+`L-ONE-AXIS-PER-VOCABULARY` was applied to the **coarse** list in session 8 and never to the
+sub-lists. The full-corpus sweep made the cost measurable, and the user's diagnosis reframed it
+from a labelling annoyance into the **cause of the biggest failure in the round**.
 
-| sub-list | the mixed axes |
+#### The sub level is a grab-bag of at least five axes
+
+| sub-list | what it actually mixes |
 |---|---|
-| `drawing` — marker · sketch · ink | `marker` and `ink` are **instruments**; `sketch` is a **degree of finish**. A marker-coloured, un-inked pencil sketch is both |
-| `painting` — oil · watercolour · gouache · digital | the first three are **media**; `digital` is a **substrate**. Anything smooth can be called digital, so it acts as a sink |
-| `photograph` — colour · archival | `colour` is a **property**; `archival` is an **era/treatment**. Mildest of the three, and it has not misfired yet |
+| `2D cel` — anime · western toon · flat illustration | **idiom / tradition** |
+| `drawing` — marker · sketch · ink | **instrument** (marker, ink) vs **degree of finish** (sketch) |
+| `painting` — oil · watercolour · gouache · digital | **medium** (first three) vs **substrate** (digital) |
+| `photograph` — colour · archival | **property** vs **era/treatment** |
+| `live-action film` — modern · vintage Technicolor | **era** vs **a specific process** |
+| `3D CG` — product render · character render · feature animation | **purpose / what is depicted** |
+| `print` — engraving · technical plate | **process** vs **purpose** |
 
-`supergirl1`/`supergirl2` is the case that exposed it. Both are **marker-coloured**; they differ
-only in that one is inked and one keeps its pencil under-drawing. Filed as `marker` and `sketch`,
-they are described as differing in instrument when they actually differ in finish. Under a
-"what laid down the colour" reading `supergirl2` is `marker`; under an "overall character" reading
-it is `sketch`. **The vocabulary does not say which question the sub-term answers**, so both
-readings are defensible — which is precisely the failure `L-ONE-AXIS-PER-VOCABULARY` describes.
+#### The coupling causes the coarse misclassification — this is the important part
 
-Two model results that look like defects are probably this instead: `woman_oil` → `digital`
-(a smooth photorealist oil, and `digital` is the sink) and `supergirl2` → `marker` under v2.
+**`drawing` was emitted once in 100 images**, against five true `drawing` files. Every one of the
+four misses is explained by the *sub*-term, not the coarse term:
 
-**Not fixed, deliberately.** Splitting these lists means reclassifying the corpus a second time
-and would change what several probe pairs test. It is recorded here and on `.claude/TODO.md` as a
-decision to take before `describer_object` hardens the same conventions. Until then, **score the
-coarse term with confidence and treat a lone sub-term miss in `drawing` or `painting` as
-contested rather than wrong.**
+| image | idiom the model saw | the only coarse term that owns it | what it emitted |
+|---|---|---|---|
+| `car_interior_sketch` | anime | `2D cel` | `2D cel / anime` |
+| `marker`, `supergirl1` | digital | `painting` | `painting / digital` |
+| `annie1` | watercolour | `painting` | `painting / watercolour` |
+
+The model is not failing to see a drawing. **It sees the idiom correctly, and the vocabulary gives
+it nowhere to put that idiom except under a different coarse term.** The sub-term drags the coarse
+term with it. That also explains `painting / digital` being a sink (10 emitted, 7 true): `digital`
+is the only place a digitally-made image can go, so everything digital lands in `painting`.
+
+#### The agreed fix: a third field
+
+Proposed by the user, session 9. `anime` and `western toon` are **traditions**, orthogonal to how
+an image was made — you can have anime in cel, in pixel art, in a drawing, in a painting, in 3D CG.
+So separate the axes properly rather than widening sub-terms case by case:
+
+```
+[[MEDIUM]]     how it was made      photograph · live-action film · 3D CG · stop-motion ·
+                                    2D cel · comic · painting · drawing · vector · pixel art · print
+[[IDIOM]]      what tradition       anime · western toon · realist · ... · none
+[[TREATMENT]]  colour / era         archival · vintage Technicolor · monochrome · ... · none
+```
+
+The user's own examples become natural and currently cannot be expressed at all:
+`car_interior_sketch` → **drawing / anime**, `miyu` → **pixel art / anime**,
+`peter_griffin_painting` → **painting / western toon**.
+
+**This is not a restart.** The coarse column is unchanged and it is the column that scored 86/95.
+What changes is re-deriving the sub column, and `scripts/inventory.py` already parses and validates
+the master table, so most of it is mechanical rather than a re-reading of 100 images.
+
+Open questions to settle when executing:
+
+- Do `product render` / `character render` / `feature animation` belong on a fourth axis (purpose),
+  or do they collapse into `[[IDIOM]] realist` plus nothing?
+- Does `sketch` become a `[[TREATMENT]]` (degree of finish), leaving `[[MEDIUM]] drawing` with
+  `[[IDIOM]]` carrying the tradition?
+- Whether three emitted fields is worth it versus widening sub-terms across coarse terms — the
+  lighter option, which fixes the named cases but leaves `drawing` and `painting` still mixing.
+- Whether `chair` / `car_1` / `car_2` leave `amb` under a consistent presentation rule (see
+  "The `amb` images").
+
+**Until it is executed**: score the coarse term with confidence, and treat a lone sub-term miss in
+`drawing`, `painting`, `2D cel` or `live-action film` as **contested rather than wrong**.
 
 ### What the reclassification changed
 
@@ -185,11 +227,11 @@ contested rather than wrong.**
 | `jacket` | photograph | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
 | `jacket2` | photograph | colour | — | ext | same woman | jacket | s6 | — |
 | `kasia` | 2D cel | flat illustration | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
-| `kasia_bag` | 3D CG | product render | user: AI-rendered to look realistic. Render vs photo **not visually determinable** | none | none | kasia, bag-angle | s7a | amb |
-| `kasia_bag_2` | 3D CG | product render | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | amb |
-| `kasia_outfit` | 3D CG | product render | **flat-lay**, derived from `kasia` | none | none | kasia | s7a | — |
+| `kasia_bag` | photograph | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | kasia, bag-angle | s7a | corr |
+| `kasia_bag_2` | photograph | colour | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | corr |
+| `kasia_outfit` | photograph | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
 | `kasia_render` | 3D CG | character render | stylised anime character render | none | 1 girl | kasia | s7a | — |
-| `kasia_swimsuit` | 3D CG | product render | **flat-lay**, derived from `kasia_swimsuit_worn` | none | none | kasia | s7a | corr |
+| `kasia_swimsuit` | photograph | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
 | `kasia_swimsuit_render` | 3D CG | character render | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
 | `kasia_swimsuit_worn` | 2D cel | flat illustration | the original commission | none | 1 girl (same character) | kasia | s7b | text |
 | `kaypro_ii` | photograph | colour | — | none | none | — | s7a | text |
@@ -453,7 +495,7 @@ well-formed and passes every structural check.
 | "no medium is a singleton any more" (7b) | asserted after oil / western toon / marker board each reached 2+ | **false** — `destroyer_drawing` and `lincoln_money` were singletons before that batch and still are | recount, session 8 | under the two-level vocabulary these are `print / technical plate` and `print / engraving`, one sample each. No *coarse* term is a singleton; those two *sub*-terms are. Do not treat a `style` result on either as replicated |
 | `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
 | `supergirl2` medium | `drawing / sketch`, described as "coloured pencil / colour sketch" | the **colour is marker, the same as `supergirl1`**; what differs is the linework, which is an un-inked pencil under-drawing. The pair differs in *finish*, not in *instrument* | user, session 9, reading both images against the style v1 and v2 rounds | the `supergirl` pair was set up as a `marker` vs `sketch` discrimination and is not one. It also exposed that the `drawing` and `painting` sub-lists mix axes — see "Medium vocabulary" |
-| `kasia_bag` / `kasia_bag_2` medium | classified `3D CG / product render` with no caveat | still filed there, but **not visually determinable** — both were AI-rendered to look realistic, on the same seamless white studio ground as `chair` and the two cars | user, session 9, after the style v1 round split the pair `3D CG` / `photograph` | **grows the `amb` category from 3 files to 5.** The pair's `[[MEDIUM]]` disagreement is not a medium error; the fact that two views of one object disagreed *with each other* still is |
+| the four kasia flat-lay / bag files | `3D CG / product render`; briefly flagged `amb` mid-session 9 on the grounds that AI origin made photo-vs-render undeterminable | **`photograph / colour`.** All four are AI-rendered, and the user classifies them by **presentation** anyway, which is photographic | user, session 9, ruling on the full-corpus sweep | **the `amb` flag was the wrong tool here.** `amb` exists for images whose *provenance* we know and whose pixels do not match it; tie-break 4 already says to judge on presentation rather than provenance, and once that rule is applied consistently the ambiguity dissolves. It also raises whether `chair`/`car_1`/`car_2` should move the other way — the model calls all three `3D CG / product render`, which *is* the presentation read. **Unresolved, deliberately** — see the vocabulary redesign note |
 | `kasia` sub-term | `flat illustration`, stated flatly | the coarse term `2D cel` is solid; the **sub-term is contested** — an anime-inspired toon idiom leaning slightly western | user, session 9, after style v1 answered `anime` | a sub-term miss here is not clearly a miss. Score the coarse term only |
 | `coraline1` ground | "puppet cut out on white" | the file is a **palette PNG with a transparency key, 83.5% fully transparent**. It has no white ground; it has no ground at all. What reaches the model composites to **black** | the session-9 style round reported "pure black background" twice and was scored as a hallucination; the user identified transparency as the cause, confirmed by an alpha scan of the whole corpus | **a wrong ground truth was about to be recorded as a model defect.** It is the only genuinely transparent file in the corpus — six other files carry an alpha channel that is fully opaque, so they are inert |
 
@@ -519,16 +561,24 @@ tie-break rules under "Medium vocabulary":
 
 ### The `amb` images — a category, not a defect
 
-**Five members as of session 9**: `chair`, `car_1`, `car_2`, and — added after the style v1 round —
-`kasia_bag` and `kasia_bag_2`, which the user confirms were AI-rendered to look realistic on the
-same seamless white ground. The category grew for the same reason it was created: the corpus keeps
-turning up images whose classification rests on provenance rather than on pixels, and a clean
-studio shot on white is exactly where photograph, product render and AI render converge.
+**Three members: `chair`, `car_1`, `car_2`** — and the category is **under review**, because
+session 9 nearly doubled it and then reversed course, which is informative in itself.
 
-Note the asymmetry the bag pair exposes. `[[MEDIUM]]` on either file is unscorable, **but the two
-files disagreeing with each other is still a real failure** — two views of one object on one ground
-must land in the same place whatever that place is. The `amb` flag suspends the answer key, not the
-consistency requirement. `car_1`/`car_2` are the same shape and passed it; the bags did not.
+The four kasia flat-lay/bag files were flagged `amb` mid-session on the grounds that their AI origin
+made photo-vs-render undeterminable, then reclassified to `photograph / colour` when the user ruled
+on them: **tie-break 4 already says to judge on presentation rather than provenance**, and applying
+that consistently dissolves the ambiguity rather than cataloguing it.
+
+That cuts at the remaining three too. The model called `chair`, `car_1` and `car_2`
+`3D CG / product render` in every round — which *is* the presentation read. If presentation decides,
+the model is right and the master table is wrong; the `amb` flag is preserving a provenance-based
+answer that our own tie-break says not to use. **Unresolved deliberately** — it interacts with the
+vocabulary redesign, so both get settled together rather than piecemeal. See `.claude/TODO.md`.
+
+Note the one thing that survives regardless. `[[MEDIUM]]` may be unscorable on a file, **but two
+views of one object disagreeing with each other is still a real failure** — they must land in the
+same place whatever that place is. The flag suspends the answer key, not the consistency
+requirement. `car_1`/`car_2` passed that; the kasia bags did not.
 
 The original three, and the reasoning that built the category:
 
@@ -735,16 +785,16 @@ change to the master table.
 
 | medium | sub | count | images |
 |---|---|---|---|
-| `photograph` | | **27** | |
-| | colour | 24 | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, forest_autumn, fuji, jacket, jacket2, kaypro_ii, newspaper, pancakes, phone, sleeping, stage, tv |
+| `photograph` | | **31** | |
+| | colour | 28 | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, forest_autumn, fuji, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, newspaper, pancakes, phone, sleeping, stage, tv |
 | | archival | 3 | destroyer_photo, lincoln_photo, teddy_taft |
 | `live-action film` | | **16** | |
 | | modern | 14 | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, window |
 | | vintage Technicolor | 2 | p5_first, p5_last |
-| `3D CG` | | **9** | |
-| | product render | 5 | fruitbowl, kasia_bag\*, kasia_bag_2\*, kasia_outfit, kasia_swimsuit |
+| `3D CG` | | **5** | |
 | | character render | 2 | kasia_render, kasia_swimsuit_render |
 | | feature animation | 2 | shrek_cg, woody_cg |
+| | product render | 1 | fruitbowl |
 | `stop-motion` | — | **2** | coraline1, coraline2 |
 | `2D cel` | | **9** | |
 | | anime | 4 | azumanga_anime, car_interior_mecha_driver, kiki, miya |
@@ -766,21 +816,24 @@ change to the master table.
 | | engraving | 1 | lincoln_money |
 | | technical plate | 1 | destroyer_drawing |
 
-**Total 100.** Live-action (`photograph` + `live-action film`) is **43 of 100, 43%** — down from 29/37, 78% at the start of session 7. 3 of those 43 are `amb`, so the honest range is 40–43.
+**Total 100.** Live-action (`photograph` + `live-action film`) is **47 of 100, 47%** — down from 29/37, 78% at the start of session 7. 3 of those 47 are `amb`, so the honest range is 44–47.
 
-\* The five `amb` files, whose classification rests on provenance the describer cannot see.
-`chair`, `car_1` and `car_2` are filed as `photograph` (an Amazon listing and an automaker press
-shot); `kasia_bag` and `kasia_bag_2` are filed as `3D CG / product render` (AI-rendered to look
-realistic). In both directions the pixels do not settle it, and all five sit on a seamless white
-studio ground — the case where photograph, product render and AI render converge. Do not score
-`[[MEDIUM]]` on any of them; two files of one object must still agree with each other. See
-"Coverage by role → style".
+\* The three `amb` files — `chair`, `car_1`, `car_2` — filed as `photograph` on provenance the
+describer cannot see (an Amazon listing and an automaker press shot). The pixels do not settle it:
+all three sit on a seamless white studio ground, the case where photograph, product render and AI
+render converge. Do not score `[[MEDIUM]]` on them; two files of one object must still agree with
+each other. **The category is under review** — the four kasia flat-lay/bag files were briefly
+flagged `amb` and then reclassified `photograph` by presentation, and the same rule arguably moves
+these three the other way. See "Coverage by role → style".
 \*\* `annie2` is a photograph *of* a watercolour, filed by the outer medium per tie-break 2. Its
 content is a drawing, so it inflates the live-action share by one.
 
-**No coarse term is a singleton.** Two *sub*-terms are — `print / engraving` and
-`print / technical plate` — and both are single-sample because those media are genuinely rare in
-practice, not because of sampling. A `style` result on either is unreplicated.
+**No coarse term is a singleton.** Three *sub*-terms are: `print / engraving`,
+`print / technical plate`, and — new in session 9 — `3D CG / product render`, which dropped from
+five samples to one (`fruitbowl`) when the four kasia flat-lay/bag files were reclassified as
+`photograph`. The two `print` terms are single-sample because those media are genuinely rare in
+practice; `product render` is single-sample because our examples of it turned out to be something
+else. A `style` result on any of the three is unreplicated.
 
 **Two defined sub-terms have no sample at all**: `painting / gouache` and `drawing / ink`. Same
 situation as the character describer's untested age brackets — the vocabulary offers a term the

@@ -3,8 +3,10 @@
 Design and version history for the standalone describer prompts — the per-image passes that
 produce structured `[[FIELD]]` records for FL2VA and REF2VA composition.
 
-Roles built so far: **frame** (v8), **character** (v1), **setting** (v5). `object` and `style`
-are not built yet; see `.claude/TODO.md`. Lessons cited by slug (`L-...`) are defined in
+Roles built so far: **frame** (v8), **character** (v1), **setting** (v5, locked), and **style**
+(v1, validated but **not** locked — a vocabulary redesign is queued that changes its field list).
+`object` is not built yet, and is deliberately blocked on that redesign so it does not harden the
+same conventions. See `.claude/TODO.md`. Lessons cited by slug (`L-...`) are defined in
 `.claude/lessons_learned.md`. The test corpus these were validated against is documented in
 `docs/image_inventory.md`.
 
@@ -239,8 +241,27 @@ and no record invented or borrowed a sub-term. `validate.py` checks the pairing 
 | v1 | **36/39 format-clean, 27/33 exact on scorable cases** (6 unscorable — 5 `amb` plus contested `kasia`). Zero franchise or real-place names across the whole round. 6/39 leaked a garment or body part. Tie-breaks: 1 ✓, 2 ✗, 3 half, 4 ✓ |
 | v2 | **REVERTED. 23/33** — two added tie-break rules fixed **none** of their four targets and broke three unrelated cases. See `L-KNOW-WHEN-TO-STOP` and the note below |
 | v1 repeat | **27/33, identical `[[MEDIUM]]`/`[[SUB_MEDIUM]]` on all 39 cases.** Confirms the revert and proves the v2 regressions were the prompt, not sampling |
+| v1 full sweep | All 100 images, `tests/describer_style_sweep.json` (generated from the master table). **95/100 format-clean · coarse 86/95 · sub 77/84 where coarse was right.** Higher than the targeted round because that one was deliberately loaded with hard probe pairs |
 
-**Locked at v1.**
+**v1 is the current working version — deliberately NOT locked.** `setting` v5 and `character` v1
+are locked because nothing is queued that would change their output shape. `style` has the
+three-axis vocabulary redesign queued, which changes its field list, so locking it now would only
+mean unlocking it again. Treat v1 as validated and usable, not final.
+
+### What the sweep found — the vocabulary, not the prompt
+
+**`drawing` was emitted once in 100 images** against five true `drawing` files, and all four misses
+trace to the *sub*-term rather than the coarse term: the model correctly identified an idiom
+(`anime` on `car_interior_sketch`, `digital` on `marker` and `supergirl1`, `watercolour` on
+`annie1`) that only exists under a *different* coarse term, and the sub-term dragged the coarse term
+with it. `painting / digital` is a sink for the same reason — 10 emitted against 7 true, because
+`digital` is the only home for a digitally-made image.
+
+**So the fix is a third vocabulary axis, not a prompt rule.** Full design note in
+`docs/image_inventory.md` § "The sub level needs a third axis"; execution is the top item on
+`.claude/TODO.md`. This conclusion came out of the adjudication pass (`L-CONTESTED-IS-A-VERDICT`) —
+scoring those four as plain misses had already produced v2, which hammered rules at fixed
+categories and made things worse.
 
 ### Why v2 failed — the most instructive result of the session
 
