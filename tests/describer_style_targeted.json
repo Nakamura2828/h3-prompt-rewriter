@@ -1,0 +1,333 @@
+{
+  "_role": "describer_style TARGETED test, three-axis vocabulary (session 10). The fast iteration loop -- run ONE prompt change against this, not three.",
+  "_generated": "Curated case list, generated answer key. Edit SELECTION in scripts/gen_style_targeted.py and re-run; never hand-edit _expected.",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). Roughly half these cases are known failures, carried in deliberately so a fix is measurable, so the score here is EXPECTED to sit well below the sweep. Do not compare the two numbers -- compare this test to itself, round over round.",
+  "_expected": {
+    "st_ivy_toon": "2D cel / traditional cel / western toon / colour",
+    "st_peter_griffin_toon": "2D cel / digital / western toon / colour",
+    "st_azumanga_anime": "2D cel / digital / anime / colour",
+    "st_azumanga_toon": "2D cel / digital / western toon / colour",
+    "st_ayanami_oil": "painting / digital / anime / colour",
+    "st_woman_oil": "painting / oil / realist / colour",
+    "st_annie3": "comic / digital / western toon / colour",
+    "st_comic": "comic / ink / anime / colour",
+    "st_coraline1": "stop-motion / puppet / dimensional toon / colour",
+    "st_coraline2": "stop-motion / puppet / dimensional toon / colour",
+    "st_kasia_render": "3D CG / none / anime / colour",
+    "st_kasia_swimsuit_render": "3D CG / none / anime / colour",
+    "st_supergirl1": "drawing / marker / western toon / colour",
+    "st_supergirl2": "drawing / marker / western toon / colour",
+    "st_fish_pixel": "pixel art / none / (CONTESTED -- a shaded but heavily simplified sprite on a flat ground) / colour",
+    "st_ramen_pixel": "pixel art / none / realist / colour",
+    "st_p5_first": "live-action film / none / realist / vintage Technicolor",
+    "st_p5_last": "live-action film / none / realist / vintage Technicolor",
+    "st_peter_griffin_painting": "painting / digital / dimensional toon / colour",
+    "st_destroyer_photo": "photograph / none / realist / monochrome",
+    "st_destroyer_drawing": "print / halftone / realist / monochrome",
+    "st_lincoln_photo": "photograph / none / realist / monochrome",
+    "st_lincoln_money": "print / engraving / (CONTESTED -- flat guilloche border and ground dominate; the engraved portrait is a small share of the frame) / monochrome",
+    "st_annie2": "photograph / none / realist / colour",
+    "st_annie2_cropped": "painting / watercolour / western toon / colour",
+    "st_annie1": "drawing / ink / anime / colour",
+    "st_marker": "drawing / marker / anime / colour",
+    "st_car_interior_sketch": "drawing / digital / anime / colour",
+    "st_kasia_bag": "photograph / none / realist / colour",
+    "st_kasia_swimsuit": "photograph / none / realist / colour",
+    "st_mountain_rain": "painting / digital / (CONTESTED -- painterly and dimensional, but posterised into flat bands) / colour",
+    "st_phone": "photograph / none / realist / colour",
+    "st_car_interior_mecha_driver": "2D cel / digital / anime / colour",
+    "st_window": "live-action film / none / realist / colour",
+    "st_shrek_cg": "3D CG / none / dimensional toon / colour",
+    "st_woody_cg": "3D CG / none / dimensional toon / colour",
+    "st_miyu": "pixel art / none / anime / colour",
+    "st_van_pixel": "pixel art / none / anime / colour",
+    "st_bird_vector": "vector / none / flat graphic / colour",
+    "st_teddy_taft": "photograph / none / realist / monochrome",
+    "st_bird_watercolor": "painting / watercolour / realist / colour",
+    "st_chips_hotdog_dr_pepper_painting": "painting / oil / realist / colour",
+    "st_kiki": "2D cel / digital / anime / colour",
+    "st_door_first": "live-action film / none / realist / colour",
+    "st_fruitbowl": "3D CG / none / realist / colour"
+  },
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_style.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "same: 2D cel (traditional cel vs digital)",
+      "id": "st_ivy_toon",
+      "image": "images/ivy_toon.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 2D cel (traditional cel vs digital)",
+      "id": "st_peter_griffin_toon",
+      "image": "images/peter_griffin_toon.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "st_azumanga_anime",
+      "image": "images/azumanga_anime.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "st_azumanga_toon",
+      "image": "images/azumanga_toon.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: painting (digital vs oil; tie-break 4)",
+      "id": "st_ayanami_oil",
+      "image": "images/ayanami_oil.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: painting (digital vs oil; tie-break 4)",
+      "id": "st_woman_oil",
+      "image": "images/woman_oil.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: comic (ink vs digital, anime vs toon)",
+      "id": "st_annie3",
+      "image": "images/annie3.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: comic (ink vs digital, anime vs toon)",
+      "id": "st_comic",
+      "image": "images/comic.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "st_coraline1",
+      "image": "images/coraline1.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "st_coraline2",
+      "image": "images/coraline2.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 3D CG (anime character render)",
+      "id": "st_kasia_render",
+      "image": "images/kasia_render.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 3D CG (anime character render)",
+      "id": "st_kasia_swimsuit_render",
+      "image": "images/kasia_swimsuit_render.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: drawing (both marker; finish is NOT scored)",
+      "id": "st_supergirl1",
+      "image": "images/supergirl1.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: drawing (both marker; finish is NOT scored)",
+      "id": "st_supergirl2",
+      "image": "images/supergirl2.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "st_fish_pixel",
+      "image": "images/fish_pixel.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "st_ramen_pixel",
+      "image": "images/ramen_pixel.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: live-action film (vintage Technicolor)",
+      "id": "st_p5_first",
+      "image": "images/p5_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: live-action film (vintage Technicolor)",
+      "id": "st_p5_last",
+      "image": "images/p5_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cross-media: one character, flat toon vs painted dimensional",
+      "id": "st_peter_griffin_painting",
+      "image": "images/peter_griffin_painting.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "st_destroyer_photo",
+      "image": "images/destroyer_photo.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "st_destroyer_drawing",
+      "image": "images/destroyer_drawing.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "st_lincoln_photo",
+      "image": "images/lincoln_photo.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "st_lincoln_money",
+      "image": "images/lincoln_money.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "nested medium (tie-break 2)",
+      "id": "st_annie2",
+      "image": "images/annie2.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "nested medium (tie-break 2)",
+      "id": "st_annie2_cropped",
+      "image": "images/annie2_cropped.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: drawing read as painting",
+      "id": "st_annie1",
+      "image": "images/annie1.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: drawing read as painting",
+      "id": "st_marker",
+      "image": "images/marker.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: drawing, already fixed (regression control)",
+      "id": "st_car_interior_sketch",
+      "image": "images/car_interior_sketch.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "st_kasia_bag",
+      "image": "images/kasia_bag.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "st_kasia_swimsuit",
+      "image": "images/kasia_swimsuit.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "st_mountain_rain",
+      "image": "images/mountain_rain.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "st_phone",
+      "image": "images/phone.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: 2D cel read as painting",
+      "id": "st_car_interior_mecha_driver",
+      "image": "images/car_interior_mecha_driver.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "cluster: live-action read as photograph",
+      "id": "st_window",
+      "image": "images/window.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: idiom dimensional toon",
+      "id": "st_shrek_cg",
+      "image": "images/shrek_cg.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: idiom dimensional toon",
+      "id": "st_woody_cg",
+      "image": "images/woody_cg.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: idiom anime, pixel art",
+      "id": "st_miyu",
+      "image": "images/miyu.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: idiom anime, pixel art",
+      "id": "st_van_pixel",
+      "image": "images/van_pixel.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: idiom flat graphic (true)",
+      "id": "st_bird_vector",
+      "image": "images/bird_vector.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "coverage: treatment monochrome",
+      "id": "st_teddy_taft",
+      "image": "images/teddy_taft.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "st_bird_watercolor",
+      "image": "images/bird_watercolor.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "st_chips_hotdog_dr_pepper_painting",
+      "image": "images/chips_hotdog_dr_pepper_painting.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "st_kiki",
+      "image": "images/kiki.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "st_door_first",
+      "image": "images/door_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "st_fruitbowl",
+      "image": "images/fruitbowl.png",
+      "user": "ROLE: style"
+    }
+  ]
+}

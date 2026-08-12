@@ -1,108 +1,108 @@
 {
-  "_role": "describer_style FULL CORPUS SWEEP (session 9). Every active image in images/, scored against the master table in docs/image_inventory.md. Generated, not hand-written -- regenerate rather than edit if the master table changes.",
-  "_generated": "Built by parsing the master table so the answer key cannot drift from the corpus. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are, so the drift check is inert for this file by design.",
-  "_scoring": "Score the COARSE term with confidence. Treat a lone sub-term miss in drawing or painting as CONTESTED, not wrong -- those two sub-lists mix axes (see docs/image_inventory.md). Do not score [[MEDIUM]] at all on the five amb files.",
+  "_role": "describer_style FULL CORPUS SWEEP, three-axis vocabulary (session 10). Every active image in images/, scored against the master table in docs/image_inventory.md.",
+  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
   "_expected": {
-    "sw_annie1": "drawing / marker",
-    "sw_annie2": "photograph / colour",
-    "sw_annie2_cropped": "painting / watercolour",
-    "sw_annie3": "comic / none",
-    "sw_annie3_panel1": "comic / none",
-    "sw_ayanami_oil": "painting / digital",
-    "sw_azumanga_anime": "2D cel / anime",
-    "sw_azumanga_toon": "2D cel / western toon",
-    "sw_bird_vector": "vector / none",
-    "sw_bird_watercolor": "painting / watercolour",
-    "sw_bookshop": "photograph / colour",
-    "sw_cannon": "photograph / colour",
-    "sw_captain": "photograph / colour",
-    "sw_car_1": "UNSCORABLE (amb)",
-    "sw_car_2": "UNSCORABLE (amb)",
-    "sw_car_interior_mecha_driver": "2D cel / anime",
-    "sw_car_interior_photo": "photograph / colour",
-    "sw_car_interior_sketch": "drawing / sketch",
-    "sw_castle": "photograph / colour",
-    "sw_chair": "UNSCORABLE (amb)",
-    "sw_chips_hotdog_dr_pepper_painting": "painting / oil",
-    "sw_city_day": "photograph / colour",
-    "sw_city_night": "photograph / colour",
-    "sw_classroom1": "photograph / colour",
-    "sw_classroom2": "photograph / colour",
-    "sw_cloud": "painting / digital",
-    "sw_comic": "comic / none",
-    "sw_comic_panel2": "comic / none",
-    "sw_comic_panel3": "comic / none",
-    "sw_comic_panel4": "comic / none",
-    "sw_coraline1": "stop-motion / none",
-    "sw_coraline2": "stop-motion / none",
-    "sw_destroyer_drawing": "print / technical plate",
-    "sw_destroyer_photo": "photograph / archival",
-    "sw_door_first": "live-action film / modern",
-    "sw_door_last": "live-action film / modern",
-    "sw_fish_pixel": "pixel art / none",
-    "sw_forest_autumn": "photograph / colour",
-    "sw_forest_day": "vector / none",
-    "sw_forest_day_night": "vector / none",
-    "sw_forest_night": "vector / none",
-    "sw_fruitbowl": "3D CG / product render",
-    "sw_fuji": "photograph / colour",
-    "sw_girl_painting": "painting / digital",
-    "sw_girl_painting_reference": "live-action film / modern",
-    "sw_ivy_toon": "2D cel / western toon",
-    "sw_jacket": "photograph / colour",
-    "sw_jacket2": "photograph / colour",
-    "sw_kasia": "2D cel / (sub CONTESTED)",
-    "sw_kasia_bag": "UNSCORABLE (amb)",
-    "sw_kasia_bag_2": "UNSCORABLE (amb)",
-    "sw_kasia_outfit": "3D CG / product render",
-    "sw_kasia_render": "3D CG / character render",
-    "sw_kasia_swimsuit": "3D CG / product render",
-    "sw_kasia_swimsuit_render": "3D CG / character render",
-    "sw_kasia_swimsuit_worn": "2D cel / flat illustration",
-    "sw_kaypro_ii": "photograph / colour",
-    "sw_kiki": "2D cel / anime",
-    "sw_lincoln_photo": "photograph / archival",
-    "sw_lincoln_money": "print / engraving",
-    "sw_marker": "drawing / marker",
-    "sw_miya": "2D cel / anime",
-    "sw_miyu": "pixel art / none",
-    "sw_mountain_rain": "painting / digital",
-    "sw_newspaper": "photograph / colour",
-    "sw_p1_first": "live-action film / modern",
-    "sw_p1_last": "live-action film / modern",
-    "sw_p2_first": "live-action film / modern",
-    "sw_p2_last": "live-action film / modern",
-    "sw_p3_first": "live-action film / modern",
-    "sw_p3_last": "live-action film / modern",
-    "sw_p4_first": "live-action film / modern",
-    "sw_p4_last": "live-action film / modern",
-    "sw_p5_first": "live-action film / vintage Technicolor",
-    "sw_p5_last": "live-action film / vintage Technicolor",
-    "sw_p6_first": "live-action film / modern",
-    "sw_p6_last": "live-action film / modern",
-    "sw_pancakes": "photograph / colour",
-    "sw_peter_griffin_painting": "painting / digital",
-    "sw_peter_griffin_toon": "2D cel / western toon",
-    "sw_phone": "photograph / colour",
-    "sw_ramen_pixel": "pixel art / none",
-    "sw_san_fransisco_day_evening_night": "vector / none",
-    "sw_sanfran_day": "vector / none",
-    "sw_sanfran_evening": "vector / none",
-    "sw_sanfran_night": "vector / none",
-    "sw_shrek_cg": "3D CG / feature animation",
-    "sw_sleeping": "photograph / colour",
-    "sw_stage": "photograph / colour",
-    "sw_supergirl1": "drawing / marker",
-    "sw_supergirl2": "drawing / (sub CONTESTED)",
-    "sw_teddy_taft": "photograph / archival",
-    "sw_temple_day": "painting / digital",
-    "sw_temple_night": "painting / digital",
-    "sw_tv": "photograph / colour",
-    "sw_van_pixel": "pixel art / none",
-    "sw_vector_city": "vector / none",
-    "sw_window": "live-action film / modern",
-    "sw_woman_oil": "painting / oil",
-    "sw_woody_cg": "3D CG / feature animation"
+    "sw_annie1": "drawing / ink / anime / colour",
+    "sw_annie2": "photograph / none / realist / colour",
+    "sw_annie2_cropped": "painting / watercolour / western toon / colour",
+    "sw_annie3": "comic / digital / western toon / colour",
+    "sw_annie3_panel1": "comic / digital / western toon / colour",
+    "sw_ayanami_oil": "painting / digital / anime / colour",
+    "sw_azumanga_anime": "2D cel / digital / anime / colour",
+    "sw_azumanga_toon": "2D cel / digital / western toon / colour",
+    "sw_bird_vector": "vector / none / flat graphic / colour",
+    "sw_bird_watercolor": "painting / watercolour / realist / colour",
+    "sw_bookshop": "photograph / none / realist / colour",
+    "sw_cannon": "photograph / none / realist / colour",
+    "sw_captain": "photograph / none / realist / colour",
+    "sw_car_1": "UNSCORABLE (amb) -- the pixels do not settle photo vs render; table says photograph / none / realist / colour",
+    "sw_car_2": "UNSCORABLE (amb) -- the pixels do not settle photo vs render; table says photograph / none / realist / colour",
+    "sw_car_interior_mecha_driver": "2D cel / digital / anime / colour",
+    "sw_car_interior_photo": "photograph / none / realist / colour",
+    "sw_car_interior_sketch": "drawing / digital / anime / colour",
+    "sw_castle": "photograph / none / realist / colour",
+    "sw_chair": "UNSCORABLE (amb) -- the pixels do not settle photo vs render; table says photograph / none / realist / colour",
+    "sw_chips_hotdog_dr_pepper_painting": "painting / oil / realist / colour",
+    "sw_city_day": "photograph / none / realist / colour",
+    "sw_city_night": "photograph / none / realist / colour",
+    "sw_classroom1": "photograph / none / realist / colour",
+    "sw_classroom2": "photograph / none / realist / colour",
+    "sw_cloud": "painting / digital / anime / colour",
+    "sw_comic": "comic / ink / anime / colour",
+    "sw_comic_panel2": "comic / ink / anime / colour",
+    "sw_comic_panel3": "comic / ink / anime / colour",
+    "sw_comic_panel4": "comic / ink / anime / colour",
+    "sw_coraline1": "stop-motion / puppet / dimensional toon / colour",
+    "sw_coraline2": "stop-motion / puppet / dimensional toon / colour",
+    "sw_destroyer_drawing": "print / halftone / realist / monochrome",
+    "sw_destroyer_photo": "photograph / none / realist / monochrome",
+    "sw_door_first": "live-action film / none / realist / colour",
+    "sw_door_last": "live-action film / none / realist / colour",
+    "sw_fish_pixel": "pixel art / none / (CONTESTED -- a shaded but heavily simplified sprite on a flat ground) / colour",
+    "sw_forest_autumn": "photograph / none / realist / colour",
+    "sw_forest_day": "vector / none / flat graphic / colour",
+    "sw_forest_day_night": "vector / none / flat graphic / colour",
+    "sw_forest_night": "vector / none / flat graphic / colour",
+    "sw_fruitbowl": "3D CG / none / realist / colour",
+    "sw_fuji": "photograph / none / realist / colour",
+    "sw_girl_painting": "painting / digital / realist / colour",
+    "sw_girl_painting_reference": "live-action film / none / realist / colour",
+    "sw_ivy_toon": "2D cel / traditional cel / western toon / colour",
+    "sw_jacket": "photograph / none / realist / colour",
+    "sw_jacket2": "photograph / none / realist / colour",
+    "sw_kasia": "2D cel / digital / anime / colour",
+    "sw_kasia_bag": "photograph / none / realist / colour",
+    "sw_kasia_bag_2": "photograph / none / realist / colour",
+    "sw_kasia_outfit": "photograph / none / realist / colour",
+    "sw_kasia_render": "3D CG / none / anime / colour",
+    "sw_kasia_swimsuit": "photograph / none / realist / colour",
+    "sw_kasia_swimsuit_render": "3D CG / none / anime / colour",
+    "sw_kasia_swimsuit_worn": "2D cel / digital / anime / colour",
+    "sw_kaypro_ii": "photograph / none / realist / colour",
+    "sw_kiki": "2D cel / digital / anime / colour",
+    "sw_lincoln_photo": "photograph / none / realist / monochrome",
+    "sw_lincoln_money": "print / engraving / (CONTESTED -- flat guilloche border and ground dominate; the engraved portrait is a small share of the frame) / monochrome",
+    "sw_marker": "drawing / marker / anime / colour",
+    "sw_miya": "2D cel / digital / anime / colour",
+    "sw_miyu": "pixel art / none / anime / colour",
+    "sw_mountain_rain": "painting / digital / (CONTESTED -- painterly and dimensional, but posterised into flat bands) / colour",
+    "sw_newspaper": "photograph / none / realist / colour",
+    "sw_p1_first": "live-action film / none / realist / colour",
+    "sw_p1_last": "live-action film / none / realist / colour",
+    "sw_p2_first": "live-action film / none / realist / colour",
+    "sw_p2_last": "live-action film / none / realist / colour",
+    "sw_p3_first": "live-action film / none / realist / colour",
+    "sw_p3_last": "live-action film / none / realist / colour",
+    "sw_p4_first": "live-action film / none / realist / colour",
+    "sw_p4_last": "live-action film / none / realist / colour",
+    "sw_p5_first": "live-action film / none / realist / vintage Technicolor",
+    "sw_p5_last": "live-action film / none / realist / vintage Technicolor",
+    "sw_p6_first": "live-action film / none / realist / colour",
+    "sw_p6_last": "live-action film / none / realist / colour",
+    "sw_pancakes": "photograph / none / realist / colour",
+    "sw_peter_griffin_painting": "painting / digital / dimensional toon / colour",
+    "sw_peter_griffin_toon": "2D cel / digital / western toon / colour",
+    "sw_phone": "photograph / none / realist / colour",
+    "sw_ramen_pixel": "pixel art / none / realist / colour",
+    "sw_san_fransisco_day_evening_night": "vector / none / flat graphic / colour",
+    "sw_sanfran_day": "vector / none / flat graphic / colour",
+    "sw_sanfran_evening": "vector / none / flat graphic / colour",
+    "sw_sanfran_night": "vector / none / flat graphic / colour",
+    "sw_shrek_cg": "3D CG / none / dimensional toon / colour",
+    "sw_sleeping": "photograph / none / realist / colour",
+    "sw_stage": "photograph / none / realist / colour",
+    "sw_supergirl1": "drawing / marker / western toon / colour",
+    "sw_supergirl2": "drawing / marker / western toon / colour",
+    "sw_teddy_taft": "photograph / none / realist / monochrome",
+    "sw_temple_day": "painting / digital / anime / colour",
+    "sw_temple_night": "painting / digital / anime / colour",
+    "sw_tv": "photograph / none / realist / colour",
+    "sw_van_pixel": "pixel art / none / anime / colour",
+    "sw_vector_city": "vector / none / flat graphic / colour",
+    "sw_window": "live-action film / none / realist / colour",
+    "sw_woman_oil": "painting / oil / realist / colour",
+    "sw_woody_cg": "3D CG / none / dimensional toon / colour"
   },
   "defaults": {
     "server": "http://localhost:8080/v1/chat/completions",
@@ -115,604 +115,604 @@
   },
   "cases": [
     {
-      "group": "drawing",
       "id": "sw_annie1",
-      "user": "ROLE: style",
-      "image": "images/annie1.jpg"
+      "group": "drawing",
+      "image": "images/annie1.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_annie2",
-      "user": "ROLE: style",
-      "image": "images/annie2.jpg"
+      "group": "photograph",
+      "image": "images/annie2.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
       "id": "sw_annie2_cropped",
-      "user": "ROLE: style",
-      "image": "images/annie2_cropped.jpg"
+      "group": "painting",
+      "image": "images/annie2_cropped.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "comic",
       "id": "sw_annie3",
-      "user": "ROLE: style",
-      "image": "images/annie3.jpg"
+      "group": "comic",
+      "image": "images/annie3.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "comic",
       "id": "sw_annie3_panel1",
-      "user": "ROLE: style",
-      "image": "images/annie3_panel1.jpg"
+      "group": "comic",
+      "image": "images/annie3_panel1.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
       "id": "sw_ayanami_oil",
-      "user": "ROLE: style",
-      "image": "images/ayanami_oil.jpg"
+      "group": "painting",
+      "image": "images/ayanami_oil.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "2D cel",
       "id": "sw_azumanga_anime",
-      "user": "ROLE: style",
-      "image": "images/azumanga_anime.png"
+      "group": "2D cel",
+      "image": "images/azumanga_anime.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "2D cel",
       "id": "sw_azumanga_toon",
-      "user": "ROLE: style",
-      "image": "images/azumanga_toon.jpg"
+      "group": "2D cel",
+      "image": "images/azumanga_toon.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "vector",
       "id": "sw_bird_vector",
-      "user": "ROLE: style",
-      "image": "images/bird_vector.jpg"
+      "group": "vector",
+      "image": "images/bird_vector.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
       "id": "sw_bird_watercolor",
-      "user": "ROLE: style",
-      "image": "images/bird_watercolor.jpg"
+      "group": "painting",
+      "image": "images/bird_watercolor.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_bookshop",
-      "user": "ROLE: style",
-      "image": "images/bookshop.png"
+      "group": "photograph",
+      "image": "images/bookshop.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_cannon",
-      "user": "ROLE: style",
-      "image": "images/cannon.jpg"
+      "group": "photograph",
+      "image": "images/cannon.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_captain",
-      "user": "ROLE: style",
-      "image": "images/captain.png"
+      "group": "photograph",
+      "image": "images/captain.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_car_1",
-      "user": "ROLE: style",
-      "image": "images/car_1.png"
+      "group": "photograph",
+      "image": "images/car_1.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_car_2",
-      "user": "ROLE: style",
-      "image": "images/car_2.png"
+      "group": "photograph",
+      "image": "images/car_2.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "2D cel",
       "id": "sw_car_interior_mecha_driver",
-      "user": "ROLE: style",
-      "image": "images/car_interior_mecha_driver.png"
+      "group": "2D cel",
+      "image": "images/car_interior_mecha_driver.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_car_interior_photo",
-      "user": "ROLE: style",
-      "image": "images/car_interior_photo.jpg"
+      "group": "photograph",
+      "image": "images/car_interior_photo.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "drawing",
       "id": "sw_car_interior_sketch",
-      "user": "ROLE: style",
-      "image": "images/car_interior_sketch.png"
+      "group": "drawing",
+      "image": "images/car_interior_sketch.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_castle",
-      "user": "ROLE: style",
-      "image": "images/castle.png"
+      "group": "photograph",
+      "image": "images/castle.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_chair",
-      "user": "ROLE: style",
-      "image": "images/chair.jpg"
+      "group": "photograph",
+      "image": "images/chair.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
       "id": "sw_chips_hotdog_dr_pepper_painting",
-      "user": "ROLE: style",
-      "image": "images/chips_hotdog_dr_pepper_painting.jpg"
+      "group": "painting",
+      "image": "images/chips_hotdog_dr_pepper_painting.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_city_day",
-      "user": "ROLE: style",
-      "image": "images/city_day.jpg"
+      "group": "photograph",
+      "image": "images/city_day.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_city_night",
-      "user": "ROLE: style",
-      "image": "images/city_night.jpg"
+      "group": "photograph",
+      "image": "images/city_night.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_classroom1",
-      "user": "ROLE: style",
-      "image": "images/classroom1.png"
+      "group": "photograph",
+      "image": "images/classroom1.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
       "id": "sw_classroom2",
-      "user": "ROLE: style",
-      "image": "images/classroom2.png"
+      "group": "photograph",
+      "image": "images/classroom2.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
       "id": "sw_cloud",
-      "user": "ROLE: style",
-      "image": "images/cloud.png"
+      "group": "painting",
+      "image": "images/cloud.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "comic",
       "id": "sw_comic",
-      "user": "ROLE: style",
-      "image": "images/comic.jpg"
+      "group": "comic",
+      "image": "images/comic.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "comic",
       "id": "sw_comic_panel2",
-      "user": "ROLE: style",
-      "image": "images/comic_panel2.jpg"
+      "group": "comic",
+      "image": "images/comic_panel2.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "comic",
       "id": "sw_comic_panel3",
-      "user": "ROLE: style",
-      "image": "images/comic_panel3.jpg"
-    },
-    {
       "group": "comic",
+      "image": "images/comic_panel3.jpg",
+      "user": "ROLE: style"
+    },
+    {
       "id": "sw_comic_panel4",
-      "user": "ROLE: style",
-      "image": "images/comic_panel4.jpg"
+      "group": "comic",
+      "image": "images/comic_panel4.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "stop-motion",
       "id": "sw_coraline1",
-      "user": "ROLE: style",
-      "image": "images/coraline1.png"
-    },
-    {
       "group": "stop-motion",
+      "image": "images/coraline1.png",
+      "user": "ROLE: style"
+    },
+    {
       "id": "sw_coraline2",
-      "user": "ROLE: style",
-      "image": "images/coraline2.png"
+      "group": "stop-motion",
+      "image": "images/coraline2.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "print",
       "id": "sw_destroyer_drawing",
-      "user": "ROLE: style",
-      "image": "images/destroyer_drawing.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_destroyer_photo",
-      "user": "ROLE: style",
-      "image": "images/destroyer_photo.jpg"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_door_first",
-      "user": "ROLE: style",
-      "image": "images/door_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_door_last",
-      "user": "ROLE: style",
-      "image": "images/door_last.png"
-    },
-    {
-      "group": "pixel art",
-      "id": "sw_fish_pixel",
-      "user": "ROLE: style",
-      "image": "images/fish_pixel.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_forest_autumn",
-      "user": "ROLE: style",
-      "image": "images/forest_autumn.jpg"
-    },
-    {
-      "group": "vector",
-      "id": "sw_forest_day",
-      "user": "ROLE: style",
-      "image": "images/forest_day.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_forest_day_night",
-      "user": "ROLE: style",
-      "image": "images/forest_day_night.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_forest_night",
-      "user": "ROLE: style",
-      "image": "images/forest_night.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_fruitbowl",
-      "user": "ROLE: style",
-      "image": "images/fruitbowl.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_fuji",
-      "user": "ROLE: style",
-      "image": "images/fuji.jpg"
-    },
-    {
-      "group": "painting",
-      "id": "sw_girl_painting",
-      "user": "ROLE: style",
-      "image": "images/girl_painting.jpg"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_girl_painting_reference",
-      "user": "ROLE: style",
-      "image": "images/girl_painting_reference.jpg"
-    },
-    {
-      "group": "2D cel",
-      "id": "sw_ivy_toon",
-      "user": "ROLE: style",
-      "image": "images/ivy_toon.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_jacket",
-      "user": "ROLE: style",
-      "image": "images/jacket.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_jacket2",
-      "user": "ROLE: style",
-      "image": "images/jacket2.jpg"
-    },
-    {
-      "group": "2D cel",
-      "id": "sw_kasia",
-      "user": "ROLE: style",
-      "image": "images/kasia.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_bag",
-      "user": "ROLE: style",
-      "image": "images/kasia_bag.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_bag_2",
-      "user": "ROLE: style",
-      "image": "images/kasia_bag_2.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_outfit",
-      "user": "ROLE: style",
-      "image": "images/kasia_outfit.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_render",
-      "user": "ROLE: style",
-      "image": "images/kasia_render.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_swimsuit",
-      "user": "ROLE: style",
-      "image": "images/kasia_swimsuit.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_kasia_swimsuit_render",
-      "user": "ROLE: style",
-      "image": "images/kasia_swimsuit_render.jpg"
-    },
-    {
-      "group": "2D cel",
-      "id": "sw_kasia_swimsuit_worn",
-      "user": "ROLE: style",
-      "image": "images/kasia_swimsuit_worn.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_kaypro_ii",
-      "user": "ROLE: style",
-      "image": "images/kaypro_ii.jpg"
-    },
-    {
-      "group": "2D cel",
-      "id": "sw_kiki",
-      "user": "ROLE: style",
-      "image": "images/kiki.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_lincoln_photo",
-      "user": "ROLE: style",
-      "image": "images/lincoln_photo.jpg"
-    },
-    {
       "group": "print",
+      "image": "images/destroyer_drawing.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_destroyer_photo",
+      "group": "photograph",
+      "image": "images/destroyer_photo.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_door_first",
+      "group": "live-action film",
+      "image": "images/door_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_door_last",
+      "group": "live-action film",
+      "image": "images/door_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fish_pixel",
+      "group": "pixel art",
+      "image": "images/fish_pixel.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_forest_autumn",
+      "group": "photograph",
+      "image": "images/forest_autumn.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_forest_day",
+      "group": "vector",
+      "image": "images/forest_day.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_forest_day_night",
+      "group": "vector",
+      "image": "images/forest_day_night.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_forest_night",
+      "group": "vector",
+      "image": "images/forest_night.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fruitbowl",
+      "group": "3D CG",
+      "image": "images/fruitbowl.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fuji",
+      "group": "photograph",
+      "image": "images/fuji.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_girl_painting",
+      "group": "painting",
+      "image": "images/girl_painting.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_girl_painting_reference",
+      "group": "live-action film",
+      "image": "images/girl_painting_reference.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ivy_toon",
+      "group": "2D cel",
+      "image": "images/ivy_toon.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_jacket",
+      "group": "photograph",
+      "image": "images/jacket.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_jacket2",
+      "group": "photograph",
+      "image": "images/jacket2.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia",
+      "group": "2D cel",
+      "image": "images/kasia.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_bag",
+      "group": "photograph",
+      "image": "images/kasia_bag.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_bag_2",
+      "group": "photograph",
+      "image": "images/kasia_bag_2.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_outfit",
+      "group": "photograph",
+      "image": "images/kasia_outfit.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_render",
+      "group": "3D CG",
+      "image": "images/kasia_render.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_swimsuit",
+      "group": "photograph",
+      "image": "images/kasia_swimsuit.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_swimsuit_render",
+      "group": "3D CG",
+      "image": "images/kasia_swimsuit_render.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kasia_swimsuit_worn",
+      "group": "2D cel",
+      "image": "images/kasia_swimsuit_worn.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kaypro_ii",
+      "group": "photograph",
+      "image": "images/kaypro_ii.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_kiki",
+      "group": "2D cel",
+      "image": "images/kiki.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_lincoln_photo",
+      "group": "photograph",
+      "image": "images/lincoln_photo.jpg",
+      "user": "ROLE: style"
+    },
+    {
       "id": "sw_lincoln_money",
-      "user": "ROLE: style",
-      "image": "images/lincoln_money.jpg"
+      "group": "print",
+      "image": "images/lincoln_money.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "drawing",
       "id": "sw_marker",
-      "user": "ROLE: style",
-      "image": "images/marker.png"
+      "group": "drawing",
+      "image": "images/marker.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "2D cel",
       "id": "sw_miya",
-      "user": "ROLE: style",
-      "image": "images/miya.jpg"
-    },
-    {
-      "group": "pixel art",
-      "id": "sw_miyu",
-      "user": "ROLE: style",
-      "image": "images/miyu.png"
-    },
-    {
-      "group": "painting",
-      "id": "sw_mountain_rain",
-      "user": "ROLE: style",
-      "image": "images/mountain_rain.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_newspaper",
-      "user": "ROLE: style",
-      "image": "images/newspaper.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p1_first",
-      "user": "ROLE: style",
-      "image": "images/p1_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p1_last",
-      "user": "ROLE: style",
-      "image": "images/p1_last.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p2_first",
-      "user": "ROLE: style",
-      "image": "images/p2_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p2_last",
-      "user": "ROLE: style",
-      "image": "images/p2_last.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p3_first",
-      "user": "ROLE: style",
-      "image": "images/p3_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p3_last",
-      "user": "ROLE: style",
-      "image": "images/p3_last.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p4_first",
-      "user": "ROLE: style",
-      "image": "images/p4_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p4_last",
-      "user": "ROLE: style",
-      "image": "images/p4_last.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p5_first",
-      "user": "ROLE: style",
-      "image": "images/p5_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p5_last",
-      "user": "ROLE: style",
-      "image": "images/p5_last.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p6_first",
-      "user": "ROLE: style",
-      "image": "images/p6_first.png"
-    },
-    {
-      "group": "live-action film",
-      "id": "sw_p6_last",
-      "user": "ROLE: style",
-      "image": "images/p6_last.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_pancakes",
-      "user": "ROLE: style",
-      "image": "images/pancakes.png"
-    },
-    {
-      "group": "painting",
-      "id": "sw_peter_griffin_painting",
-      "user": "ROLE: style",
-      "image": "images/peter_griffin_painting.jpg"
-    },
-    {
       "group": "2D cel",
-      "id": "sw_peter_griffin_toon",
-      "user": "ROLE: style",
-      "image": "images/peter_griffin_toon.png"
+      "image": "images/miya.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "photograph",
-      "id": "sw_phone",
-      "user": "ROLE: style",
-      "image": "images/phone.png"
-    },
-    {
+      "id": "sw_miyu",
       "group": "pixel art",
-      "id": "sw_ramen_pixel",
-      "user": "ROLE: style",
-      "image": "images/ramen_pixel.jpg"
+      "image": "images/miyu.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "vector",
-      "id": "sw_san_fransisco_day_evening_night",
-      "user": "ROLE: style",
-      "image": "images/san_fransisco_day_evening_night.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_sanfran_day",
-      "user": "ROLE: style",
-      "image": "images/sanfran_day.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_sanfran_evening",
-      "user": "ROLE: style",
-      "image": "images/sanfran_evening.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_sanfran_night",
-      "user": "ROLE: style",
-      "image": "images/sanfran_night.png"
-    },
-    {
-      "group": "3D CG",
-      "id": "sw_shrek_cg",
-      "user": "ROLE: style",
-      "image": "images/shrek_cg.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_sleeping",
-      "user": "ROLE: style",
-      "image": "images/sleeping.png"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_stage",
-      "user": "ROLE: style",
-      "image": "images/stage.png"
-    },
-    {
-      "group": "drawing",
-      "id": "sw_supergirl1",
-      "user": "ROLE: style",
-      "image": "images/supergirl1.jpg"
-    },
-    {
-      "group": "drawing",
-      "id": "sw_supergirl2",
-      "user": "ROLE: style",
-      "image": "images/supergirl2.jpg"
-    },
-    {
-      "group": "photograph",
-      "id": "sw_teddy_taft",
-      "user": "ROLE: style",
-      "image": "images/teddy_taft.jpg"
-    },
-    {
+      "id": "sw_mountain_rain",
       "group": "painting",
-      "id": "sw_temple_day",
-      "user": "ROLE: style",
-      "image": "images/temple_day.jpg"
+      "image": "images/mountain_rain.jpg",
+      "user": "ROLE: style"
     },
     {
-      "group": "painting",
-      "id": "sw_temple_night",
-      "user": "ROLE: style",
-      "image": "images/temple_night.jpg"
-    },
-    {
+      "id": "sw_newspaper",
       "group": "photograph",
-      "id": "sw_tv",
-      "user": "ROLE: style",
-      "image": "images/tv.png"
+      "image": "images/newspaper.png",
+      "user": "ROLE: style"
     },
     {
-      "group": "pixel art",
-      "id": "sw_van_pixel",
-      "user": "ROLE: style",
-      "image": "images/van_pixel.png"
-    },
-    {
-      "group": "vector",
-      "id": "sw_vector_city",
-      "user": "ROLE: style",
-      "image": "images/vector_city.jpg"
-    },
-    {
+      "id": "sw_p1_first",
       "group": "live-action film",
-      "id": "sw_window",
-      "user": "ROLE: style",
-      "image": "images/window.png"
+      "image": "images/p1_first.png",
+      "user": "ROLE: style"
     },
     {
+      "id": "sw_p1_last",
+      "group": "live-action film",
+      "image": "images/p1_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p2_first",
+      "group": "live-action film",
+      "image": "images/p2_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p2_last",
+      "group": "live-action film",
+      "image": "images/p2_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p3_first",
+      "group": "live-action film",
+      "image": "images/p3_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p3_last",
+      "group": "live-action film",
+      "image": "images/p3_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p4_first",
+      "group": "live-action film",
+      "image": "images/p4_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p4_last",
+      "group": "live-action film",
+      "image": "images/p4_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p5_first",
+      "group": "live-action film",
+      "image": "images/p5_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p5_last",
+      "group": "live-action film",
+      "image": "images/p5_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p6_first",
+      "group": "live-action film",
+      "image": "images/p6_first.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_p6_last",
+      "group": "live-action film",
+      "image": "images/p6_last.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pancakes",
+      "group": "photograph",
+      "image": "images/pancakes.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_peter_griffin_painting",
       "group": "painting",
-      "id": "sw_woman_oil",
-      "user": "ROLE: style",
-      "image": "images/woman_oil.jpg"
+      "image": "images/peter_griffin_painting.jpg",
+      "user": "ROLE: style"
     },
     {
+      "id": "sw_peter_griffin_toon",
+      "group": "2D cel",
+      "image": "images/peter_griffin_toon.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_phone",
+      "group": "photograph",
+      "image": "images/phone.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ramen_pixel",
+      "group": "pixel art",
+      "image": "images/ramen_pixel.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_san_fransisco_day_evening_night",
+      "group": "vector",
+      "image": "images/san_fransisco_day_evening_night.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sanfran_day",
+      "group": "vector",
+      "image": "images/sanfran_day.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sanfran_evening",
+      "group": "vector",
+      "image": "images/sanfran_evening.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sanfran_night",
+      "group": "vector",
+      "image": "images/sanfran_night.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shrek_cg",
       "group": "3D CG",
+      "image": "images/shrek_cg.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sleeping",
+      "group": "photograph",
+      "image": "images/sleeping.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_stage",
+      "group": "photograph",
+      "image": "images/stage.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_supergirl1",
+      "group": "drawing",
+      "image": "images/supergirl1.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_supergirl2",
+      "group": "drawing",
+      "image": "images/supergirl2.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_teddy_taft",
+      "group": "photograph",
+      "image": "images/teddy_taft.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_temple_day",
+      "group": "painting",
+      "image": "images/temple_day.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_temple_night",
+      "group": "painting",
+      "image": "images/temple_night.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_tv",
+      "group": "photograph",
+      "image": "images/tv.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_van_pixel",
+      "group": "pixel art",
+      "image": "images/van_pixel.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_vector_city",
+      "group": "vector",
+      "image": "images/vector_city.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_window",
+      "group": "live-action film",
+      "image": "images/window.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_woman_oil",
+      "group": "painting",
+      "image": "images/woman_oil.jpg",
+      "user": "ROLE: style"
+    },
+    {
       "id": "sw_woody_cg",
-      "user": "ROLE: style",
-      "image": "images/woody_cg.jpg"
+      "group": "3D CG",
+      "image": "images/woody_cg.jpg",
+      "user": "ROLE: style"
     }
   ]
 }

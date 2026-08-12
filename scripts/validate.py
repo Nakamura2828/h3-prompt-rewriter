@@ -210,29 +210,42 @@ FRAME_FIELDS = ['STYLE', 'FRAMING', 'CHAR', 'CROWD', 'OBJECTS', 'ENVIRONMENT', '
 
 NOT_FOUND = '[[SUBJECT NOT FOUND]]'
 
-# The closed two-level medium vocabulary (docs/image_inventory.md, "Medium vocabulary").
-# coarse -> its permitted sub-terms; an empty tuple means the coarse term has no sub-level
-# and [[SUB_MEDIUM]] must say 'none'. Kept in sync with the master table by hand -- the
-# same list drives scripts/inventory.py's own validation of that table.
+# The closed three-axis style vocabulary (docs/image_inventory.md, "Style vocabulary").
+# Rebuilt session 10: the old sub-lists mixed five axes, and that coupling was dragging the
+# COARSE term to the wrong value -- 'drawing' was emitted once in 100 images because every
+# idiom it could carry lived under some other coarse term. Split into three independent axes.
+#
+# MEDIUM_VOCAB is the medium axis at two levels: coarse -> its permitted sub-terms, where an
+# empty tuple means the coarse term has no sub-level and [[SUB_MEDIUM]] must say 'none'.
+# Kept in sync with the master table by hand -- the same lists drive scripts/inventory.py's
+# own validation of that table.
 MEDIUM_VOCAB = {
-    'photograph': ('colour', 'archival'),
-    'live-action film': ('modern', 'vintage technicolor'),
-    '3d cg': ('product render', 'character render', 'feature animation'),
-    'stop-motion': (),
-    '2d cel': ('anime', 'western toon', 'flat illustration'),
-    'comic': (),
-    'painting': ('oil', 'watercolour', 'gouache', 'digital'),
-    'drawing': ('marker', 'sketch', 'ink'),
+    'photograph': (),
+    'live-action film': (),
+    '3d cg': (),
+    'stop-motion': ('clay', 'puppet', 'figure', 'model'),
+    '2d cel': ('traditional cel', 'digital'),
+    'comic': ('ink', 'screentone', 'digital'),
+    'painting': ('oil', 'watercolour', 'digital'),
+    'drawing': ('marker', 'pencil', 'ink', 'digital'),
     'vector': (),
     'pixel art': (),
-    'print': ('engraving', 'technical plate'),
+    'print': ('engraving', 'halftone'),
 }
+
+# The other two axes are FLAT and MEDIUM-INDEPENDENT: any idiom may pair with any medium.
+# That is the point of the rebuild, so these are deliberately not nested under MEDIUM_VOCAB
+# and must never be validated against the coarse term.
+IDIOM_VOCAB = ('anime', 'western toon', 'flat graphic', 'dimensional toon', 'realist')
+TREATMENT_VOCAB = ('colour', 'monochrome', 'vintage technicolor')
 
 
 def _medium_vocab(out):
-    """Drift is read on the COARSE term only. The sub-term legitimately differs between
-    two records of one medium (supergirl1 marker / supergirl2 sketch), so folding it into
-    the drift check would flag a correct discrimination as drift."""
+    """Drift is read on the COARSE term only. The sub-term legitimately differs between two
+    records of one medium (ivy_toon traditional cel / peter_griffin_toon digital), so folding
+    it into the drift check would flag a correct discrimination as drift. The same applies to
+    [[IDIOM]] and [[TREATMENT]], which are independent axes -- two images can share a medium
+    and differ on either."""
     return list(MEDIUM_VOCAB)
 
 
@@ -285,8 +298,10 @@ DESCRIBER_ROLES = {
     },
     'style': {
         'fields': ['EXECUTION', 'PALETTE', 'LIGHTING', 'DISTINGUISHING',
-                   'MEDIUM', 'SUB_MEDIUM', 'LABEL', 'DEFINITION'],
-        'closed': {'MEDIUM': tuple(MEDIUM_VOCAB)},
+                   'MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT', 'LABEL', 'DEFINITION'],
+        'closed': {'MEDIUM': tuple(MEDIUM_VOCAB),
+                   'IDIOM': IDIOM_VOCAB,
+                   'TREATMENT': TREATMENT_VOCAB},
         # 11 coarse terms, so unlike setting's two-value [[SETTING_KIND]] this drift check
         # can actually fail. 'same:' groups here are same-medium groups, NOT the
         # cross-media probe pairs -- those are supposed to differ.

@@ -1,0 +1,44 @@
+{
+  "_role": "session-10 three-axis smoke test -- format check before the full round",
+  "_expected": {
+    "sm_car_interior_sketch": "drawing / pencil / anime / colour",
+    "sm_coraline2": "stop-motion / puppet / dimensional toon / colour",
+    "sm_destroyer_photo": "photograph / none / realist / monochrome",
+    "sm_peter_griffin_painting": "painting / digital / dimensional toon / colour"
+  },
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": "prompts/describer_style.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "id": "sm_car_interior_sketch",
+      "group": "drawing",
+      "image": "images/car_interior_sketch.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sm_coraline2",
+      "group": "stop-motion",
+      "image": "images/coraline2.png",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sm_destroyer_photo",
+      "group": "photograph",
+      "image": "images/destroyer_photo.jpg",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sm_peter_griffin_painting",
+      "group": "painting",
+      "image": "images/peter_griffin_painting.jpg",
+      "user": "ROLE: style"
+    }
+  ]
+}

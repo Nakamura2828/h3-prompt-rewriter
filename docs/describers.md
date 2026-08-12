@@ -206,16 +206,22 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Style describer (v1, session 9)
+## Style describer (v2, session 10 — three-axis vocabulary)
 
 `prompts/describer_style.txt` — the third REF2VA describer role, and **the inverse of the other
 three**: it records how an image is rendered and never what it depicts. The other roles all ban
 style words; this one bans everything else, which is the harder direction, because an image invites
-you to say what is in it. Eight fields, condensations last:
+you to say what is in it. **Ten** fields, condensations last:
 
 ```
-[[EXECUTION]] [[PALETTE]] [[LIGHTING]] [[DISTINGUISHING]] [[MEDIUM]] [[SUB_MEDIUM]] [[LABEL]] [[DEFINITION]]
+[[EXECUTION]] [[PALETTE]] [[LIGHTING]] [[DISTINGUISHING]]
+[[MEDIUM]] [[SUB_MEDIUM]] [[IDIOM]] [[TREATMENT]] [[LABEL]] [[DEFINITION]]
 ```
+
+The four classification fields carry **three independent axes** — `[[MEDIUM]]`+`[[SUB_MEDIUM]]`
+are one axis at two levels. Full vocabulary and rationale in `docs/image_inventory.md`
+§ "Style vocabulary"; the short version is that the session-9 two-level vocabulary mixed five
+axes inside its sub-lists, and that coupling was dragging the *coarse* term to the wrong value.
 
 `[[LABEL]]` + `[[DEFINITION]]` splice as the other roles' do:
 `<Subject 1> is the flat anime cel style of <Picture 1>, with thick uniform black outlines, ...`.
@@ -227,8 +233,8 @@ are binary discriminators; `[[MEDIUM]]` is an 11-value *condensation of the look
 like `[[PLACE]]` and `L-JUDGMENTS-LAST` applies. Naming "2D cel / anime" first invites generic anime
 descriptors instead of a reading of this image.
 
-**`[[SUB_MEDIUM]]` is its own always-emitted field** with `none` and `not determinable` as
-permitted values. This is `L-DECLARED-FIELD-IS-AN-OBLIGATION` used deliberately *for* us: a listed
+**All four classification fields are always emitted**, with `none` and `not determinable` as
+permitted `[[SUB_MEDIUM]]` values. This is `L-DECLARED-FIELD-IS-AN-OBLIGATION` used deliberately *for* us: a listed
 field gets filled, so the sub-term cannot quietly go missing the way an optional element would.
 It worked — **39/39 records emitted it**, `none` was correct for all four sub-less coarse terms,
 and no record invented or borrowed a sub-term. `validate.py` checks the pairing mechanically
@@ -243,10 +249,46 @@ and no record invented or borrowed a sub-term. `validate.py` checks the pairing 
 | v1 repeat | **27/33, identical `[[MEDIUM]]`/`[[SUB_MEDIUM]]` on all 39 cases.** Confirms the revert and proves the v2 regressions were the prompt, not sampling |
 | v1 full sweep | All 100 images, `tests/describer_style_sweep.json` (generated from the master table). **95/100 format-clean · coarse 86/95 · sub 77/84 where coarse was right.** Higher than the targeted round because that one was deliberately loaded with hard probe pairs |
 
-**v1 is the current working version — deliberately NOT locked.** `setting` v5 and `character` v1
-are locked because nothing is queued that would change their output shape. `style` has the
-three-axis vocabulary redesign queued, which changes its field list, so locking it now would only
-mean unlocking it again. Treat v1 as validated and usable, not final.
+**v2 is the current working version — still NOT locked.** The three-axis rebuild that was
+blocking the lock is done, but v2 has only had a 4-case smoke test and one full sweep behind it.
+Lock after the sweep result is adjudicated and any wording follow-up is measured.
+
+### v2 — the three-axis rebuild (session 10)
+
+The vocabulary work is documented in `docs/image_inventory.md`. What changed in the *prompt*:
+
+- Field list 8 → 10; `[[IDIOM]]` and `[[TREATMENT]]` added between `[[SUB_MEDIUM]]` and
+  `[[LABEL]]`, keeping `L-JUDGMENTS-LAST` intact — every condensation still follows the
+  descriptive fields.
+- A new vocabulary preamble stating the axes are **independent**, with the concrete claim the
+  old vocabulary could not express: *"There is anime drawn in pencil, anime built from pixels,
+  anime rendered in 3D."*
+- Old tie-break 3 (idiom vs substrate) was **absorbed into tie-break 4**, which now reads as one
+  general rule — judge on presentation, not provenance, *on every axis* — rather than two rules
+  that happened to point the same way.
+- Two new tie-breaks: **5** archival needs age visible on the surface, and **6** visible drawing
+  process beats flat colour when choosing between `drawing` and `2D cel`.
+- `2D cel` and `drawing` **definitions tightened**. `2D cel` had read "areas of flat colour
+  bounded by outlines", which admits any flat-filled art; it now requires *finished* animation
+  artwork. `drawing` now names the evidence — varying line weight, contours that do not close,
+  construction lines.
+
+#### Two results worth carrying forward
+
+**The headline prediction was wrong, and the fix still worked.** Session 9 concluded that
+`car_interior_sketch` was forced to `2D cel` *because* `anime` lived only there. Given
+`[[IDIOM]]` as its own field, it said `2D cel` anyway — its own `[[DISTINGUISHING]]` named "the
+rough, hand-drawn quality of the outlines and the visible construction lines" and it still chose
+`2D cel`, weighing flat colour over linework. **The coupling was not the cause.** What fixed it
+was tightening the `2D cel` definition. Worth remembering before trusting a single-round causal
+story about *why* a model chose a term: the diagnosis was wrong even though the round it came
+from was real.
+
+**`L-NAME-THE-CASE` bit again, in its documented form.** A rewritten tie-break 5 named the case
+as a *negative* example — "an old warship … is monochrome" — and the next run flipped
+`destroyer_photo` from correct `monochrome` to `archival`. Naming a judgement you do not want
+makes it more available, not less. Reverted to wording closer to the version that measured
+correctly.
 
 ### What the sweep found — the vocabulary, not the prompt
 

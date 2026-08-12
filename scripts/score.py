@@ -90,7 +90,8 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('test', help='test JSON carrying the _expected map')
     ap.add_argument('run', help='a concatenated runs/run-*.txt')
-    ap.add_argument('--fields', nargs='+', default=['MEDIUM', 'SUB_MEDIUM'],
+    ap.add_argument('--fields', nargs='+',
+                    default=['MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT'],
                     help='fields the _expected value describes, in "a / b" order')
     ap.add_argument('--misses-only', action='store_true',
                     help='omit the passing rows')

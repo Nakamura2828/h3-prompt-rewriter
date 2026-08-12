@@ -28,27 +28,38 @@ DOC = "docs/image_inventory.md"
 IMG_DIR = "images"
 EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp"}
 
-# The closed two-level vocabulary. Mirrors "Medium vocabulary" in the document; a coarse term
-# mapping to an empty set takes no sub-term and must be written as an em dash.
+# The closed three-axis vocabulary. Mirrors "Style vocabulary" in the document.
+#
+# VOCAB is the medium axis at two levels: coarse -> its permitted sub-terms, where a coarse
+# term mapping to an empty set takes no sub-term and must be written as `none`. IDIOM and
+# TREATMENT are the other two axes and are flat -- every image takes exactly one value of
+# each, with no dependence on the medium. That independence is the whole point of the
+# session-10 rebuild: the old sub-lists mixed all three axes, and the coupling was dragging
+# the coarse term to the wrong value (see "Why the rebuild happened" in the document).
 VOCAB = {
-    "photograph":       {"colour", "archival"},
-    "live-action film": {"modern", "vintage Technicolor"},
-    "3D CG":            {"product render", "character render", "feature animation"},
-    "stop-motion":      set(),
-    "2D cel":           {"anime", "western toon", "flat illustration"},
-    "comic":            set(),
-    "painting":         {"oil", "watercolour", "gouache", "digital"},
-    "drawing":          {"marker", "sketch", "ink"},
+    "photograph":       set(),
+    "live-action film": set(),
+    "3D CG":            set(),
+    "stop-motion":      {"clay", "puppet", "figure", "model"},
+    "2D cel":           {"traditional cel", "digital"},
+    "comic":            {"ink", "screentone", "digital"},
+    "painting":         {"oil", "watercolour", "digital"},
+    "drawing":          {"marker", "pencil", "ink", "digital"},
     "vector":           set(),
     "pixel art":        set(),
-    "print":            {"engraving", "technical plate"},
+    "print":            {"engraving", "halftone"},
 }
+IDIOM = {"anime", "western toon", "flat graphic", "dimensional toon", "realist"}
+TREATMENT = {"colour", "monochrome", "vintage Technicolor"}
+
 # Tally order: coarse terms largest-first is unstable as the corpus grows, so fix it explicitly.
 ORDER = list(VOCAB)
+IDIOM_ORDER = ["realist", "anime", "flat graphic", "western toon", "dimensional toon"]
+TREATMENT_ORDER = ["colour", "monochrome", "vintage Technicolor"]
 
 FLAGS = {"text", "real", "franchise", "derived", "corr", "amb", "nested"}
 LIVE_ACTION = {"photograph", "live-action film"}
-NONE = {"—", "-", ""}
+NONE = {"none", "—", "-", ""}
 
 # Footnote markers in the generated tally, driven by flags rather than hand-annotation.
 MARKERS = [("amb", r"\*"), ("nested", r"\*\*")]
@@ -110,6 +121,26 @@ def build_tally(master):
         for sub in sorted(VOCAB[coarse] - set(used)):
             out.append(f"| | *{sub}* | *0* | *no sample* |")
 
+    # The other two axes are flat, so they tally as plain one-per-value tables rather than
+    # nested under the medium. Keeping them separate is the visible form of the claim that
+    # they are independent axes.
+    for title, vocab, order, col in (
+        ("idiom", IDIOM, IDIOM_ORDER, "idiom"),
+        ("treatment", TREATMENT, TREATMENT_ORDER, "treatment"),
+    ):
+        by_val = defaultdict(list)
+        for r in master:
+            by_val[r[col]].append(r)
+        out += ["", f"### `[[{col.upper()}]]` tally", "",
+                f"| {title} | count | images |", "|---|---|---|"]
+        for val in order:
+            rows = by_val.get(val)
+            if not rows:
+                out.append(f"| *{val}* | *0* | *no sample* |")
+                continue
+            names = sorted(label(r) for r in rows)
+            out.append(f"| `{val}` | **{len(names)}** | {', '.join(names)} |")
+
     n = len(master)
     la = [r for r in master if r["medium"] in LIVE_ACTION]
     amb = [r for r in la if "amb" in r["flags"]]
@@ -164,6 +195,13 @@ def main():
             problems.append(f"`{name}`: sub {sub!r} is not a sub-term of {coarse!r}")
         elif not VOCAB[coarse] and sub not in NONE:
             problems.append(f"`{name}`: {coarse!r} takes no sub-term, found {sub!r}")
+        # idiom and treatment are flat and medium-independent -- checked against the whole
+        # list, never against the coarse term, or we would re-create the coupling the
+        # session-10 rebuild removed.
+        if r["idiom"] not in IDIOM:
+            problems.append(f"`{name}`: idiom {r['idiom']!r} not in the vocabulary")
+        if r["treatment"] not in TREATMENT:
+            problems.append(f"`{name}`: treatment {r['treatment']!r} not in the vocabulary")
         for f in (x.strip() for x in r["flags"].split(",")):
             if f and f not in NONE and f not in FLAGS:
                 problems.append(f"`{name}`: unknown flag {f!r}")

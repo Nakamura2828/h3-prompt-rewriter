@@ -24,9 +24,9 @@ it" meant reading the whole file. The rules below exist to stop that recurring.
   has it. Keep only what still changes a decision.
 - **The medium tally is generated**, not hand-edited. Run `scripts/inventory.py` (see TODO —
   not built yet) to regenerate it and to cross-check `images/` against the master table.
-- The `medium` and `sub` columns use the **closed two-level vocabulary** defined below — the
-  draft for `describer_style`'s `[[MEDIUM]]` field. Free-text nuance goes in `detail`, never in
-  `medium` or `sub`, or the tally stops grouping.
+- The `medium`, `sub`, `idiom` and `treatment` columns use the **closed three-axis vocabulary**
+  defined below — the vocabulary for `describer_style`'s four classification fields. Free-text
+  nuance goes in `detail`, never in a vocabulary column, or the tally stops grouping.
 
 **Flags:** `text` printed/legible text in frame · `real` real identifiable person or place ·
 `franchise` recognisable licensed fictional character · `derived` derived from another corpus
@@ -39,38 +39,91 @@ on this image either way**.
 
 ---
 
-## Medium vocabulary — closed, two-level
+## Style vocabulary — closed, three axes
 
-Adopted session 8. This is the **draft `[[MEDIUM]]` vocabulary for `describer_style`**, not just
-an inventory convention — reclassifying the corpus and designing that field are the same job.
+Adopted session 8 as a two-level medium list; **rebuilt on three axes in session 10** after the
+full-corpus sweep showed the two-level version was itself causing coarse misclassification. This is
+the vocabulary for `describer_style`'s four classification fields, not just an inventory
+convention — classifying the corpus and designing those fields are the same job.
 
-The previous list had grown to 20 ad-hoc terms one image at a time, and it mixed three unrelated
-axes: **how it was made** (oil, vector, pixel), **colour/era treatment** ("archival B&W", "vintage
-Technicolor"), and **what was rendered** ("product render" vs "feature animation" — both are 3D
-CG). That is the age-drift failure mode in a worse form: with age, two describers could disagree
-on where a boundary sits; here they could disagree on *which axis they were answering*.
-`destroyer_photo` is truthfully archival, monochrome **and** photographic, and every one of those
-was a top-level term.
+### The three axes
 
-A flat list would have fixed the drift and **broken the corpus on purpose** — `azumanga_anime`/
-`azumanga_toon`, `ayanami_oil`/`woman_oil` and `ivy_toon`/`peter_griffin_toon` exist specifically
-as fine-discrimination probes, and a vocabulary that cannot express their difference does not make
-them pass, it makes them meaningless. So: **coarse term always emitted, sub-term where the coarse
-term has one.** The coarse level is drift-proof; the sub level carries what the probe pairs test.
+Every list below answers exactly one question. That is the whole design, and the reason the
+previous version failed is that its sub-lists answered five.
 
-| coarse (11) | sub-terms |
+| field | question it answers |
 |---|---|
-| `photograph` | `colour` · `archival` |
-| `live-action film` | `modern` · `vintage Technicolor` |
-| `3D CG` | `product render` · `character render` · `feature animation` |
-| `stop-motion` | — |
-| `2D cel` | `anime` · `western toon` · `flat illustration` |
-| `comic` | — |
-| `painting` | `oil` · `watercolour` · `gouache` · `digital` |
-| `drawing` | `marker` · `sketch` · `ink` |
-| `vector` | — |
-| `pixel art` | — |
-| `print` | `engraving` · `technical plate` |
+| `[[MEDIUM]]` | **how was it made**, coarsely |
+| `[[SUB_MEDIUM]]` | **what do the marks read as being made with** — same axis, finer grain |
+| `[[IDIOM]]` | **which tradition does the stylisation descend from** |
+| `[[TREATMENT]]` | **which colour system / era does it present in** |
+
+`[[MEDIUM]]` and `[[SUB_MEDIUM]]` are one axis at two levels, so there are three axes across four
+emitted fields. All four are **always emitted**; `[[SUB_MEDIUM]]` takes `none` where its coarse
+term has no sub-list.
+
+### `[[MEDIUM]]` — 11 coarse terms, unchanged since session 8
+
+`photograph` · `live-action film` · `3D CG` · `stop-motion` · `2D cel` · `comic` · `painting` ·
+`drawing` · `vector` · `pixel art` · `print`
+
+This column was **not** touched by the session-10 rebuild. It is the column that scored 86/95 on
+the full sweep, and leaving it fixed is what makes the rebuild a re-derivation rather than a
+restart.
+
+### `[[SUB_MEDIUM]]` — what the marks read as made with
+
+| coarse term | sub-terms |
+|---|---|
+| `stop-motion` | `clay` · `puppet` · `figure` · `model` |
+| `2D cel` | `traditional cel` · `digital` |
+| `comic` | `ink` · `screentone` · `digital` |
+| `painting` | `oil` · `watercolour` · `digital` |
+| `drawing` | `marker` · `pencil` · `ink` · `digital` |
+| `print` | `engraving` · `halftone` |
+| `photograph`, `live-action film`, `3D CG`, `vector`, `pixel art` | *(none)* |
+
+**`digital` is an instrument here, not a provenance claim.** It means the marks read as made with
+digital brushes or fills — no medium physics, no wet edges, no canvas weave, uniform fills, even
+line weight. An image that convincingly imitates a physical medium takes that medium's term
+regardless of how the file was really produced, per tie-break 4. This is what stops `digital`
+being the sink it was in session 9: it now has to win on marks, because tradition has its own field.
+
+Terms defined by material rather than by origin, so they stay decidable from pixels:
+
+- `puppet` — fabricated character figures: fabric, fibre hair, sculpted and painted matte surfaces,
+  visible replacement-face seams.
+- `figure` — rigid moulded plastic toys: glossy injection-moulded surfaces, mould seams,
+  articulated joints, printed or fixed facial features.
+- `model` — built miniature objects and sets with no character figure at all.
+
+### `[[IDIOM]]` — which tradition the stylisation descends from
+
+`anime` · `western toon` · `flat graphic` · `dimensional toon` · `realist`
+
+- `dimensional toon` — caricatured, unrealistically proportioned character design rendered with
+  **real dimension, material and light** rather than flat fills. Added session 10. It is what
+  connects `coraline1`/`coraline2` to `shrek_cg`/`woody_cg`: the same tradition, one built as a
+  puppet and one rendered digitally. That it survives a change of medium is precisely what makes
+  it an idiom rather than a medium.
+- `realist` is the default and will be roughly half the corpus. That is a large bucket but a
+  *correct* one, unlike the old `painting / digital`, which was large because it was the only
+  available answer.
+
+### `[[TREATMENT]]` — which colour system
+
+`colour` · `monochrome` · `vintage Technicolor`
+
+**`archival` was dropped after the first three-axis sweep.** It named an aged photographic
+surface — sepia, foxing, scratches — and it looked reasonable on paper, but it never scored:
+one wording over-fired it onto a clean well-preserved print (`destroyer_photo`), and the
+correction under-fired it off the two images that genuinely are aged (`lincoln_photo`,
+`teddy_taft`). A term that inverts on each rewording is under-specified, not nearly-right.
+
+The decisive argument was the user's and it is about *purpose*, not accuracy: `monochrome` is
+not wrong for an aged black-and-white photograph, only less precise, and a prompter who wants
+grain and age can ask for it in words. `[[EXECUTION]]` already records grain and surface
+damage in prose. Three images did not justify a fourth value on this axis.
 
 ### Tie-break rules
 
@@ -81,203 +134,218 @@ These exist so that two records of one image cannot legitimately disagree — th
    objects, so without this rule `coraline1`/`coraline2` are defensibly photographic and will
    drift. What is photographed is a constructed miniature; that wins.
 2. **Nested images report the OUTER medium.** `annie2` is a photograph *of* a watercolour, so it
-   is `photograph / colour`, with `annie2_cropped` serving as the clean watercolour sample. Same
-   rule `tv` needs for its CRT and any poster, phone screen or television in frame.
-3. **Digital imitation reports the idiom, not the substrate.** `ayanami_oil` is a digital file in
-   an oil/gouache idiom → `painting / digital`; `woman_oil` is paint on a surface →
-   `painting / oil`. The pair therefore **agrees at coarse level and differs at sub level**,
-   which is a scorable result rather than a collapse. This is the design working as intended.
-4. **`photograph` and `live-action film` stay separate** even though a film still is a photograph.
-   The distinction is look — grain, grade, aspect, lighting — and "cinematic" is a real signal for
-   a *video* prompt. Judged on presentation, not on provenance.
+   is `photograph`, with `annie2_cropped` serving as the clean watercolour sample. Same rule `tv`
+   needs for its CRT and any poster, phone screen or television in frame.
+3. **Flat beats dimensional on `[[IDIOM]]`.** `anime` and `western toon` are for flat,
+   outline-bounded, non-dimensional rendering. `dimensional toon` is for caricatured forms carrying
+   real dimension and material. This is what keeps `shrek_cg` off `western toon` and
+   `peter_griffin_toon` off `dimensional toon`.
+4. **Judge on presentation, not provenance — on every axis.** Grain, a graded palette, shaped
+   cinematic lighting and aspect bars point to `live-action film`; a clean, evenly lit, ungraded
+   camera image is `photograph`. The same rule governs `digital` on `[[SUB_MEDIUM]]` and the
+   `[[IDIOM]]` call. Where presentation genuinely cannot settle `[[MEDIUM]]`, the image is flagged
+   `amb` and `[[MEDIUM]]` is not scored — see "The `amb` images".
+5. **Visible drawing process beats flat colour.** Flat colour alone does not make an image
+   animation artwork. Where construction lines, unclosed contours or stroke-to-stroke weight
+   variation are still on the surface, the medium is `drawing`, however flat the colour under it
+   and however strongly the character design reads as anime or cartoon. Added session 10; it is
+   what finally moved `car_interior_sketch` off `2D cel`, which the axis split alone did not do.
 
-### The sub level needs a third axis — the session-9 finding, to be executed next session
+### Adding a term the corpus cannot exercise
 
-`L-ONE-AXIS-PER-VOCABULARY` was applied to the **coarse** list in session 8 and never to the
-sub-lists. The full-corpus sweep made the cost measurable, and the user's diagnosis reframed it
-from a labelling annoyance into the **cause of the biggest failure in the round**.
+Settled session 10, because that session both dropped `painting / gouache` for having no sample
+and added four terms that have none either. The rule that reconciles those:
 
-#### The sub level is a grab-bag of at least five axes
+> **Add an untestable term when the discrimination is coarse and unmistakable. Drop it when the
+> discrimination is fine and confusable.**
 
-| sub-list | what it actually mixes |
-|---|---|
-| `2D cel` — anime · western toon · flat illustration | **idiom / tradition** |
-| `drawing` — marker · sketch · ink | **instrument** (marker, ink) vs **degree of finish** (sketch) |
-| `painting` — oil · watercolour · gouache · digital | **medium** (first three) vs **substrate** (digital) |
-| `photograph` — colour · archival | **property** vs **era/treatment** |
-| `live-action film` — modern · vintage Technicolor | **era** vs **a specific process** |
-| `3D CG` — product render · character render · feature animation | **purpose / what is depicted** |
-| `print` — engraving · technical plate | **process** vs **purpose** |
+`clay` vs `puppet` vs `figure`, and `screentone` vs `ink`, are unmistakable on sight — a term we
+cannot test is still one a model can apply correctly, and these are common real-world inputs once
+this reaches ComfyUI. `gouache` vs `watercolour` is not: it is a fine call between similar-looking
+media, so an untestable term there is an invitation to guess. `drawing / ink` has no sample either
+and is kept for the same reason `screentone` is.
 
-#### The coupling causes the coarse misclassification — this is the important part
+### Why the rebuild happened — the session-9 finding
 
-**`drawing` was emitted once in 100 images**, against five true `drawing` files. Every one of the
-four misses is explained by the *sub*-term, not the coarse term:
+Kept because it is the evidence for the design, and because it is the cleanest example the project
+has of a *vocabulary* defect masquerading as a *prompt* defect.
 
-| image | idiom the model saw | the only coarse term that owns it | what it emitted |
+`L-ONE-AXIS-PER-VOCABULARY` was applied to the coarse list in session 8 and never to the sub-lists.
+The full-corpus sweep made the cost measurable: **`drawing` was emitted once in 100 images**,
+against five true `drawing` files, and every one of the four misses is explained by the sub-term
+rather than the coarse term.
+
+| image | idiom the model saw | the only coarse term that owned it | what it emitted |
 |---|---|---|---|
 | `car_interior_sketch` | anime | `2D cel` | `2D cel / anime` |
 | `marker`, `supergirl1` | digital | `painting` | `painting / digital` |
 | `annie1` | watercolour | `painting` | `painting / watercolour` |
 
-The model is not failing to see a drawing. **It sees the idiom correctly, and the vocabulary gives
-it nowhere to put that idiom except under a different coarse term.** The sub-term drags the coarse
-term with it. That also explains `painting / digital` being a sink (10 emitted, 7 true): `digital`
-is the only place a digitally-made image can go, so everything digital lands in `painting`.
+The model was not failing to see a drawing. **It saw the idiom correctly, and the vocabulary gave
+it nowhere to put that idiom except under a different coarse term** — the sub-term dragged the
+coarse term with it. The same coupling explains `painting / digital` being a sink at 10 emitted
+against 7 true: `digital` was the only place a digitally-made image could go, so everything digital
+landed in `painting`.
 
-#### The agreed fix: a third field
+The old sub-lists mixed at least five axes:
 
-Proposed by the user, session 9. `anime` and `western toon` are **traditions**, orthogonal to how
-an image was made — you can have anime in cel, in pixel art, in a drawing, in a painting, in 3D CG.
-So separate the axes properly rather than widening sub-terms case by case:
+| old sub-list | what it mixed |
+|---|---|
+| `2D cel` — anime · western toon · flat illustration | idiom / tradition |
+| `drawing` — marker · sketch · ink | instrument vs degree of finish |
+| `painting` — oil · watercolour · gouache · digital | medium vs substrate |
+| `photograph` — colour · archival | property vs era |
+| `live-action film` — modern · vintage Technicolor | era vs a specific process |
+| `3D CG` — product render · character render · feature animation | purpose / what is depicted |
+| `print` — engraving · technical plate | process vs purpose |
 
-```
-[[MEDIUM]]     how it was made      photograph · live-action film · 3D CG · stop-motion ·
-                                    2D cel · comic · painting · drawing · vector · pixel art · print
-[[IDIOM]]      what tradition       anime · western toon · realist · ... · none
-[[TREATMENT]]  colour / era         archival · vintage Technicolor · monochrome · ... · none
-```
+### What session 10 changed, and what it gave up
 
-The user's own examples become natural and currently cannot be expressed at all:
-`car_interior_sketch` → **drawing / anime**, `miyu` → **pixel art / anime**,
-`peter_griffin_painting` → **painting / western toon**.
+| old | new | why |
+|---|---|---|
+| `2D cel / anime`, `/ western toon`, `/ flat illustration` | `[[IDIOM]]` values | tradition, not instrument |
+| `3D CG / product render`, `/ character render` | `[[IDIOM]] realist` / `anime` | purpose was a fourth axis |
+| `3D CG / feature animation` | `[[IDIOM]] dimensional toon` | production tier renamed onto the tradition axis |
+| `photograph / colour`, `/ archival` | `[[TREATMENT]] colour` / `monochrome` | era and colour, not instrument; `archival` itself was then dropped after the first sweep |
+| `live-action film / modern`, `/ vintage Technicolor` | `[[TREATMENT]] colour` / `vintage Technicolor` | same |
+| `print / technical plate` | `print / halftone` | purpose replaced by process |
+| `painting / gouache` | **dropped** | no sample and a fine, confusable call |
+| `drawing / sketch` | **dropped** | degree of finish; `[[EXECUTION]]` prose already covers it |
+| — | `2D cel / traditional cel` · `digital` | closes the `ivy_toon`/`peter_griffin_toon` gap |
+| — | `comic / ink` · `screentone` · `digital` | `annie3` and `comic` were undifferentiated before |
+| — | `stop-motion / clay` · `puppet` · `figure` · `model` | real-use coverage |
+| — | `drawing / pencil` | absorbs what `sketch` was doing for `car_interior_sketch` |
 
-**This is not a restart.** The coarse column is unchanged and it is the column that scored 86/95.
-What changes is re-deriving the sub column, and `scripts/inventory.py` already parses and validates
-the master table, so most of it is mechanical rather than a re-reading of 100 images.
+**Deliberately given up: `supergirl1` vs `supergirl2` as a scorable pair.** They differ in *finish*,
+not instrument — session 9 established that — and finish is not one of the three axes. Both are now
+`drawing / marker`, agreeing on all four classification fields and differing only in
+`[[EXECUTION]]` prose, which is unscored. That is the honest reading of the pair rather than a
+distinction the vocabulary was inventing.
 
-Open questions to settle when executing:
+**Deliberately given up: a 2D-theatrical-feature versus 2D-TV-cartoon distinction.** `feature
+animation` would have carried it, but it names a production tier rather than a tradition, and for
+every image the corpus actually holds `[[MEDIUM]]` already separates the cases (`shrek_cg` is
+`3D CG`, `peter_griffin_toon` is `2D cel`). Revisit only if a 2D theatrical feature enters the
+corpus — that is the one case this vocabulary cannot express.
 
-- Do `product render` / `character render` / `feature animation` belong on a fourth axis (purpose),
-  or do they collapse into `[[IDIOM]] realist` plus nothing?
-- Does `sketch` become a `[[TREATMENT]]` (degree of finish), leaving `[[MEDIUM]] drawing` with
-  `[[IDIOM]]` carrying the tradition?
-- Whether three emitted fields is worth it versus widening sub-terms across coarse terms — the
-  lighter option, which fixes the named cases but leaves `drawing` and `painting` still mixing.
-- Whether `chair` / `car_1` / `car_2` leave `amb` under a consistent presentation rule (see
-  "The `amb` images").
+### Contested rulings that expire here
 
-**Until it is executed**: score the coarse term with confidence, and treat a lone sub-term miss in
-`drawing`, `painting`, `2D cel` or `live-action film` as **contested rather than wrong**.
+Per `.claude/CLAUDE.md`, `CONTESTED` is provisional and expires when the vocabulary that caused it
+changes. These re-enter scoring in session 10 and must not stay excluded:
 
-### What the reclassification changed
+- **`car_interior_sketch`** — now expressible as `drawing` + `anime`.
+- **`supergirl2`** — resolved by dropping `sketch`; it is `drawing / marker` like its pair.
+- **`kasia`** — the anime-vs-western-toon question moves to `[[IDIOM]]`, which is where it belongs.
+  It may well still be contested, but now on the right axis.
 
-- **`annie2` moved from watercolour to `photograph`** under rule 2. That is a deliberate
-  consequence of the nesting rule, not a re-reading of the image. It nudges the live-action share
-  up by one with a file whose *content* is a drawing — worth remembering before quoting that
-  percentage.
-- **`chair` is a coarse-level ambiguity** (`photograph` vs `3D CG`), the worst kind. It is filed
-  as `photograph` and stays deliberately ambiguous — that is what makes it a good hard case.
-- The five old era/treatment terms (`archival B&W photograph`, `live-action film (vintage
-  Technicolor)`, `western TV-cartoon`, `3D CG feature animation`, `2D illustration (flat cel)`)
-  are all now sub-terms, which is where they belonged.
+`UNSCORABLE` rulings do **not** expire. `chair`, `car_1` and `car_2` stay `amb`.
 
 ---
 
 ## Master table — classification
 
-| image | medium | sub | detail | int/ext | people | sets | added | flags |
-|---|---|---|---|---|---|---|---|---|
-| `annie1` | drawing | marker | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | annie | s7a | text, franchise, corr |
-| `annie2` | photograph | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise, nested |
-| `annie2_cropped` | painting | watercolour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
-| `annie3` | comic | — | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
-| `annie3_panel1` | comic | — | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
-| `ayanami_oil` | painting | digital | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
-| `azumanga_anime` | 2D cel | anime | flat cel, thick outline, sticker border | none | 3 schoolgirls | azumanga | s7a | franchise |
-| `azumanga_toon` | 2D cel | western toon | flat toon over textured paint | ext | same 3 schoolgirls | azumanga | s7a | franchise |
-| `bird_vector` | vector | — | — | none | none (1 bird) | bird | s7a | — |
-| `bird_watercolor` | painting | watercolour | on textured paper | none | none (1 bird) | bird | s7a | — |
-| `bookshop` | photograph | colour | — | **ext (int visible)** | 1 adult man | setting-boundary | s6 | — |
-| `cannon` | photograph | colour | — | ext | none | — | s7a | — |
-| `captain` | photograph | colour | — | ext | 1 adult man | — | s6 | — |
-| `car_1` | photograph | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | car-angle | s7b | text, amb |
-| `car_2` | photograph | colour | as `car_1` | none | none | car-angle | s7b | text, amb |
-| `car_interior_mecha_driver` | 2D cel | anime | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
-| `car_interior_photo` | photograph | colour | press/product shot | **int (vehicle)** | none | car-interior | s7a | text |
-| `car_interior_sketch` | drawing | sketch | digital, construction lines visible | **int (vehicle)** | 2 young women | car-interior | s7a | — |
-| `castle` | photograph | colour | — | ext | 1 young-adult woman | — | s6 | — |
-| `chair` | photograph | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | s7a | amb |
-| `chips_hotdog_dr_pepper_painting` | painting | oil | traditional, alla prima | int-ish | none | — | s7a | text |
-| `city_day` | photograph | colour | — | ext | none | city-daynight | s6 | text |
-| `city_night` | photograph | colour | blue hour | ext | none | city-daynight | s6 | text |
-| `classroom1` | photograph | colour | — | int | 5 children | classroom | s6 | — |
-| `classroom2` | photograph | colour | — | int | 6+ children | classroom | s6 | — |
-| `cloud` | painting | digital | painterly, deckle border | ext | none | — | s6 | text |
-| `comic` | comic | — | 5 panels | int | 6+ children, 1 adult teacher, 1 costumed figure | comic-page | s7a | text |
-| `comic_panel2` | comic | — | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
-| `comic_panel3` | comic | — | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
-| `comic_panel4` | comic | — | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
-| `coraline1` | stop-motion | — | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
-| `coraline2` | stop-motion | — | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
-| `destroyer_drawing` | print | technical plate | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
-| `destroyer_photo` | photograph | archival | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
-| `door_first` | live-action film | modern | **first frame** — door shut, corridor empty | int | **none** | door, first-last | s8 | text |
-| `door_last` | live-action film | modern | **last frame** — same door open, room and man revealed | int | 1 adult man | door, first-last | s8 | text |
-| `fish_pixel` | pixel art | — | flat sprite | none | none | — | s7a | — |
-| `forest_autumn` | photograph | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
-| `forest_day` | vector | — | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
-| `forest_day_night` | vector | — | **composite**, 2 stacked panels | ext | none | forest-daynight | s7b | — |
-| `forest_night` | vector | — | lower panel, 947x738 | ext | none | forest-daynight | s7b-crop | derived |
-| `fruitbowl` | 3D CG | product render | synthetic still life | int | none | — | s7a | text |
-| `fuji` | photograph | colour | — | ext | none | — | s6 | real |
-| `girl_painting` | painting | digital | oil-style, soft edges | none | 1 girl | girl-painting | s7a | text |
-| `girl_painting_reference` | live-action film | modern | film still | int | 1 girl | girl-painting | s7a | real |
-| `ivy_toon` | 2D cel | western toon | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
-| `jacket` | photograph | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
-| `jacket2` | photograph | colour | — | ext | same woman | jacket | s6 | — |
-| `kasia` | 2D cel | flat illustration | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
-| `kasia_bag` | photograph | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | kasia, bag-angle | s7a | corr |
-| `kasia_bag_2` | photograph | colour | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | corr |
-| `kasia_outfit` | photograph | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
-| `kasia_render` | 3D CG | character render | stylised anime character render | none | 1 girl | kasia | s7a | — |
-| `kasia_swimsuit` | photograph | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
-| `kasia_swimsuit_render` | 3D CG | character render | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
-| `kasia_swimsuit_worn` | 2D cel | flat illustration | the original commission | none | 1 girl (same character) | kasia | s7b | text |
-| `kaypro_ii` | photograph | colour | — | none | none | — | s7a | text |
-| `kiki` | 2D cel | anime | — | none | 1 girl + 1 black cat | — | s6 | franchise |
-| `lincoln_photo` | photograph | archival | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
-| `lincoln_money` | print | engraving | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
-| `marker` | drawing | marker | — | int | 1 young woman | — | s7b | text |
-| `miya` | 2D cel | anime | — | ext | 1 teenage girl | — | s6 | text, franchise |
-| `miyu` | pixel art | — | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
-| `mountain_rain` | painting | digital | matte-painting style | ext | none | — | s6 | — |
-| `newspaper` | photograph | colour | — | int | 1 adult man | — | s6 | — |
-| `p1_first` | live-action film | modern | very dim | int | 1 adult man | p1 | s6 | — |
-| `p1_last` | live-action film | modern | far brighter and closer | int | 1 adult man | p1 | s6 | — |
-| `p2_first` | live-action film | modern | — | int | 1 girl | p2 | s6 | text |
-| `p2_last` | live-action film | modern | near-identical light | int | 1 girl | p2 | s6 | text |
-| `p3_first` | live-action film | modern | — | int | 1 girl | p3 | s6 | text |
-| `p3_last` | live-action film | modern | near-identical | int | 1 girl | p3 | s6 | text |
-| `p4_first` | live-action film | modern | heavy bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
-| `p4_last` | live-action film | modern | same bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
-| `p5_first` | live-action film | vintage Technicolor | night | ext | 1 adult man | p5 | s6 | — |
-| `p5_last` | live-action film | vintage Technicolor | tighter, heavy dissolve | ext | 1 adult man (+1 ghosted) | p5 | s6 | — |
-| `p6_first` | live-action film | modern | — | int | 1 girl | p6-window | s6 | corr |
-| `p6_last` | live-action film | modern | same window, tighter | int | 1 girl | p6-window | s6 | corr |
-| `pancakes` | photograph | colour | — | int | 1 adult man + 1 child girl | char-drift | s6 | — |
-| `peter_griffin_painting` | painting | digital | flat-cartoon character rendered painterly | none | 1 adult man | peter-griffin | s7a | franchise |
-| `peter_griffin_toon` | 2D cel | western toon | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
-| `phone` | photograph | colour | cut out on pure white | none | 1 adult woman | — | s6 | — |
-| `ramen_pixel` | pixel art | — | hi-fi, shaded, anti-aliased | none | none | — | s7a | — |
-| `san_fransisco_day_evening_night` | vector | — | **composite**, 3 stacked panels | ext | none | sanfran-daynight | s7b | — |
-| `sanfran_day` | vector | — | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
-| `sanfran_evening` | vector | — | 1039x487, golden sky | ext | none | sanfran-daynight | s7b-crop | derived |
-| `sanfran_night` | vector | — | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
-| `shrek_cg` | 3D CG | feature animation | — | ext | 1 green ogre, close-up | — | s7b | franchise |
-| `sleeping` | photograph | colour | — | int | 1 young-adult woman | — | s6 | — |
-| `stage` | photograph | colour | — | int | 1 woman + ~100 audience | — | s6 | — |
-| `supergirl1` | drawing | marker | copic-style on board | ext-ish (drawn panel) | 1 young woman | supergirl | s7a | text, franchise |
-| `supergirl2` | drawing | sketch | **marker colour over an un-inked pencil sketch** — the colour medium is the same as `supergirl1`; only the linework differs. **Sub-term contested**, see the axis note under "Medium vocabulary" | none | same character | supergirl | s7a | text, franchise, corr |
-| `teddy_taft` | photograph | archival | — | ext | 2 adult men | — | s7a | real |
-| `temple_day` | painting | digital | high-key, painterly | ext | 1 young woman | temple | s7a | text |
-| `temple_night` | painting | digital | low-key, same hand | ext | 1 young man | temple | s7a | text |
-| `tv` | photograph | colour | — | int | 1 older-adult woman | — | s6 | — |
-| `van_pixel` | pixel art | — | PC-98 style, dithered, 16-colour | ext | 1 girl | — | s7a | text |
-| `vector_city` | vector | — | — | ext | none | — | s6 | — |
-| `window` | live-action film | modern | tighter and blown out | int | 1 teenage girl | p6-window | s6 | corr |
-| `woman_oil` | painting | oil | **traditional**, photorealist | int | 1 young woman, asleep | oil-idiom | s7b | — |
-| `woody_cg` | 3D CG | feature animation | early CG | int | 1 male doll/figure | — | s7b | franchise |
+| image | medium | sub | idiom | treatment | detail | int/ext | people | sets | added | flags |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `annie1` | drawing | ink | anime | colour | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | annie | s7a | text, franchise, corr |
+| `annie2` | photograph | none | realist | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise, nested |
+| `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
+| `annie3` | comic | digital | western toon | colour | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
+| `annie3_panel1` | comic | digital | western toon | colour | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
+| `ayanami_oil` | painting | digital | anime | colour | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
+| `azumanga_anime` | 2D cel | digital | anime | colour | flat cel, thick outline, sticker border | none | 3 schoolgirls | azumanga | s7a | franchise |
+| `azumanga_toon` | 2D cel | digital | western toon | colour | flat toon over textured paint | ext | same 3 schoolgirls | azumanga | s7a | franchise |
+| `bird_vector` | vector | none | flat graphic | colour | — | none | none (1 bird) | bird | s7a | — |
+| `bird_watercolor` | painting | watercolour | realist | colour | on textured paper | none | none (1 bird) | bird | s7a | — |
+| `bookshop` | photograph | none | realist | colour | — | **ext (int visible)** | 1 adult man | setting-boundary | s6 | — |
+| `cannon` | photograph | none | realist | colour | — | ext | none | — | s7a | — |
+| `captain` | photograph | none | realist | colour | — | ext | 1 adult man | — | s6 | — |
+| `car_1` | photograph | none | realist | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | car-angle | s7b | text, amb |
+| `car_2` | photograph | none | realist | colour | as `car_1` | none | none | car-angle | s7b | text, amb |
+| `car_interior_mecha_driver` | 2D cel | digital | anime | colour | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
+| `car_interior_photo` | photograph | none | realist | colour | press/product shot | **int (vehicle)** | none | car-interior | s7a | text |
+| `car_interior_sketch` | drawing | digital | anime | colour | digital, construction lines visible | **int (vehicle)** | 2 young women | car-interior | s7a | — |
+| `castle` | photograph | none | realist | colour | — | ext | 1 young-adult woman | — | s6 | — |
+| `chair` | photograph | none | realist | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | s7a | amb |
+| `chips_hotdog_dr_pepper_painting` | painting | oil | realist | colour | traditional, alla prima | int-ish | none | — | s7a | text |
+| `city_day` | photograph | none | realist | colour | — | ext | none | city-daynight | s6 | text |
+| `city_night` | photograph | none | realist | colour | blue hour | ext | none | city-daynight | s6 | text |
+| `classroom1` | photograph | none | realist | colour | — | int | 5 children | classroom | s6 | — |
+| `classroom2` | photograph | none | realist | colour | — | int | 6+ children | classroom | s6 | — |
+| `cloud` | painting | digital | anime | colour | painterly, deckle border | ext | none | — | s6 | text |
+| `comic` | comic | ink | anime | colour | 5 panels | int | 6+ children, 1 adult teacher, 1 costumed figure | comic-page | s7a | text |
+| `comic_panel2` | comic | ink | anime | colour | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
+| `comic_panel3` | comic | ink | anime | colour | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
+| `comic_panel4` | comic | ink | anime | colour | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
+| `coraline1` | stop-motion | puppet | dimensional toon | colour | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
+| `coraline2` | stop-motion | puppet | dimensional toon | colour | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
+| `destroyer_drawing` | print | halftone | realist | monochrome | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
+| `destroyer_photo` | photograph | none | realist | monochrome | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
+| `door_first` | live-action film | none | realist | colour | **first frame** — door shut, corridor empty | int | **none** | door, first-last | s8 | text |
+| `door_last` | live-action film | none | realist | colour | **last frame** — same door open, room and man revealed | int | 1 adult man | door, first-last | s8 | text |
+| `fish_pixel` | pixel art | none | realist | colour | flat sprite | none | none | — | s7a | — |
+| `forest_autumn` | photograph | none | realist | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
+| `forest_day` | vector | none | flat graphic | colour | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
+| `forest_day_night` | vector | none | flat graphic | colour | **composite**, 2 stacked panels | ext | none | forest-daynight | s7b | — |
+| `forest_night` | vector | none | flat graphic | colour | lower panel, 947x738 | ext | none | forest-daynight | s7b-crop | derived |
+| `fruitbowl` | 3D CG | none | realist | colour | synthetic still life | int | none | — | s7a | text |
+| `fuji` | photograph | none | realist | colour | — | ext | none | — | s6 | real |
+| `girl_painting` | painting | digital | realist | colour | oil-style, soft edges | none | 1 girl | girl-painting | s7a | text |
+| `girl_painting_reference` | live-action film | none | realist | colour | film still | int | 1 girl | girl-painting | s7a | real |
+| `ivy_toon` | 2D cel | traditional cel | western toon | colour | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
+| `jacket` | photograph | none | realist | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
+| `jacket2` | photograph | none | realist | colour | — | ext | same woman | jacket | s6 | — |
+| `kasia` | 2D cel | digital | anime | colour | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
+| `kasia_bag` | photograph | none | realist | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | kasia, bag-angle | s7a | corr |
+| `kasia_bag_2` | photograph | none | realist | colour | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | corr |
+| `kasia_outfit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
+| `kasia_render` | 3D CG | none | anime | colour | stylised anime character render | none | 1 girl | kasia | s7a | — |
+| `kasia_swimsuit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
+| `kasia_swimsuit_render` | 3D CG | none | anime | colour | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
+| `kasia_swimsuit_worn` | 2D cel | digital | anime | colour | the original commission | none | 1 girl (same character) | kasia | s7b | text |
+| `kaypro_ii` | photograph | none | realist | colour | — | none | none | — | s7a | text |
+| `kiki` | 2D cel | digital | anime | colour | — | none | 1 girl + 1 black cat | — | s6 | franchise |
+| `lincoln_photo` | photograph | none | realist | monochrome | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
+| `lincoln_money` | print | engraving | realist | monochrome | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
+| `marker` | drawing | marker | anime | colour | — | int | 1 young woman | — | s7b | text |
+| `miya` | 2D cel | digital | anime | colour | — | ext | 1 teenage girl | — | s6 | text, franchise |
+| `miyu` | pixel art | none | anime | colour | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
+| `mountain_rain` | painting | digital | realist | colour | matte-painting style | ext | none | — | s6 | — |
+| `newspaper` | photograph | none | realist | colour | — | int | 1 adult man | — | s6 | — |
+| `p1_first` | live-action film | none | realist | colour | very dim | int | 1 adult man | p1 | s6 | — |
+| `p1_last` | live-action film | none | realist | colour | far brighter and closer | int | 1 adult man | p1 | s6 | — |
+| `p2_first` | live-action film | none | realist | colour | — | int | 1 girl | p2 | s6 | text |
+| `p2_last` | live-action film | none | realist | colour | near-identical light | int | 1 girl | p2 | s6 | text |
+| `p3_first` | live-action film | none | realist | colour | — | int | 1 girl | p3 | s6 | text |
+| `p3_last` | live-action film | none | realist | colour | near-identical | int | 1 girl | p3 | s6 | text |
+| `p4_first` | live-action film | none | realist | colour | heavy bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
+| `p4_last` | live-action film | none | realist | colour | same bokeh | ext | 1 girl + 1 adult man | p4 | s6 | — |
+| `p5_first` | live-action film | none | realist | vintage Technicolor | night | ext | 1 adult man | p5 | s6 | — |
+| `p5_last` | live-action film | none | realist | vintage Technicolor | tighter, heavy dissolve | ext | 1 adult man (+1 ghosted) | p5 | s6 | — |
+| `p6_first` | live-action film | none | realist | colour | — | int | 1 girl | p6-window | s6 | corr |
+| `p6_last` | live-action film | none | realist | colour | same window, tighter | int | 1 girl | p6-window | s6 | corr |
+| `pancakes` | photograph | none | realist | colour | — | int | 1 adult man + 1 child girl | char-drift | s6 | — |
+| `peter_griffin_painting` | painting | digital | dimensional toon | colour | flat-cartoon character rendered painterly | none | 1 adult man | peter-griffin | s7a | franchise |
+| `peter_griffin_toon` | 2D cel | digital | western toon | colour | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
+| `phone` | photograph | none | realist | colour | cut out on pure white | none | 1 adult woman | — | s6 | — |
+| `ramen_pixel` | pixel art | none | realist | colour | hi-fi, shaded, anti-aliased | none | none | — | s7a | — |
+| `san_fransisco_day_evening_night` | vector | none | flat graphic | colour | **composite**, 3 stacked panels | ext | none | sanfran-daynight | s7b | — |
+| `sanfran_day` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
+| `sanfran_evening` | vector | none | flat graphic | colour | 1039x487, golden sky | ext | none | sanfran-daynight | s7b-crop | derived |
+| `sanfran_night` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
+| `shrek_cg` | 3D CG | none | dimensional toon | colour | — | ext | 1 green ogre, close-up | — | s7b | franchise |
+| `sleeping` | photograph | none | realist | colour | — | int | 1 young-adult woman | — | s6 | — |
+| `stage` | photograph | none | realist | colour | — | int | 1 woman + ~100 audience | — | s6 | — |
+| `supergirl1` | drawing | marker | western toon | colour | copic-style on board | ext-ish (drawn panel) | 1 young woman | supergirl | s7a | text, franchise |
+| `supergirl2` | drawing | marker | western toon | colour | **marker colour over an un-inked pencil sketch** — the colour medium is the same as `supergirl1`; only the linework differs. **Sub-term contested**, see the axis note under "Medium vocabulary" | none | same character | supergirl | s7a | text, franchise, corr |
+| `teddy_taft` | photograph | none | realist | monochrome | — | ext | 2 adult men | — | s7a | real |
+| `temple_day` | painting | digital | anime | colour | high-key, painterly | ext | 1 young woman | temple | s7a | text |
+| `temple_night` | painting | digital | anime | colour | low-key, same hand | ext | 1 young man | temple | s7a | text |
+| `tv` | photograph | none | realist | colour | — | int | 1 older-adult woman | — | s6 | — |
+| `van_pixel` | pixel art | none | anime | colour | PC-98 style, dithered, 16-colour | ext | 1 girl | — | s7a | text |
+| `vector_city` | vector | none | flat graphic | colour | — | ext | none | — | s6 | — |
+| `window` | live-action film | none | realist | colour | tighter and blown out | int | 1 teenage girl | p6-window | s6 | corr |
+| `woman_oil` | painting | oil | realist | colour | **traditional**, photorealist | int | 1 young woman, asleep | oil-idiom | s7b | — |
+| `woody_cg` | 3D CG | none | dimensional toon | colour | early CG | int | 1 male doll/figure | — | s7b | franchise |
 
 ---
 
@@ -496,6 +564,9 @@ well-formed and passes every structural check.
 | `car_1` / `car_2` medium | classified `3D CG / product render` from appearance | `photograph` — automaker press shots, per the user's provenance. **But not visually determinable** | user correction, session 8 | shifted live-action 39%→42%, and established the **`amb` category**: ground truth taken from provenance rather than appearance is not a fair test of a describer |
 | `supergirl2` medium | `drawing / sketch`, described as "coloured pencil / colour sketch" | the **colour is marker, the same as `supergirl1`**; what differs is the linework, which is an un-inked pencil under-drawing. The pair differs in *finish*, not in *instrument* | user, session 9, reading both images against the style v1 and v2 rounds | the `supergirl` pair was set up as a `marker` vs `sketch` discrimination and is not one. It also exposed that the `drawing` and `painting` sub-lists mix axes — see "Medium vocabulary" |
 | the four kasia flat-lay / bag files | `3D CG / product render`; briefly flagged `amb` mid-session 9 on the grounds that AI origin made photo-vs-render undeterminable | **`photograph / colour`.** All four are AI-rendered, and the user classifies them by **presentation** anyway, which is photographic | user, session 9, ruling on the full-corpus sweep | **the `amb` flag was the wrong tool here.** `amb` exists for images whose *provenance* we know and whose pixels do not match it; tie-break 4 already says to judge on presentation rather than provenance, and once that rule is applied consistently the ambiguity dissolves. It also raises whether `chair`/`car_1`/`car_2` should move the other way — the model calls all three `3D CG / product render`, which *is* the presentation read. **Unresolved, deliberately** — see the vocabulary redesign note |
+| `annie1` sub-medium | `drawing / marker` | **`drawing / ink`** — the dominant, most identifying mark is brush-and-ink: thick tapering black strokes, with the colour laid in as soft wash underneath | re-read image by image during the session-10 three-axis re-derivation | it is the corpus's **only** `drawing / ink` sample. The term had zero samples and was on the TODO to "find a sample or drop"; this closes it, and `drawing / digital` takes its place as the empty term |
+| `destroyer_photo` treatment | `photograph / archival`, carried over as `[[TREATMENT]] archival` | **`monochrome`** — the print is clean, well preserved or restored, and shows essentially no age: neutral grey, no sepia, no foxing, no scratches | model emitted `monochrome` in the session-10 smoke test; user ruled it defensible and the table wrong | `archival` is defined by **visible** age, so an aged-but-undamaged photograph is `monochrome`. Tie-break 5 is unchanged — it only fires when age actually shows. `archival` drops to two samples (`lincoln_photo`, `teddy_taft`) |
+| `car_interior_sketch` sub-medium | `drawing / sketch` under the old vocabulary, re-derived to `drawing / pencil` in session 10 | **`drawing / digital`** — the construction lines are thin and uniform with no graphite tooth or grain; nothing on the surface imitates a physical instrument | model emitted `digital` in the session-10 smoke test; user agreed on re-inspection | the session-10 re-derivation got this one wrong and the model got it right. Tie-break 4 asks whether the *marks* read as digital, and here they do. Leaves `drawing / pencil` as an empty term, kept because graphite tooth is an unmistakable discrimination when it is present |
 | `kasia` sub-term | `flat illustration`, stated flatly | the coarse term `2D cel` is solid; the **sub-term is contested** — an anime-inspired toon idiom leaning slightly western | user, session 9, after style v1 answered `anime` | a sub-term miss here is not clearly a miss. Score the coarse term only |
 | `coraline1` ground | "puppet cut out on white" | the file is a **palette PNG with a transparency key, 83.5% fully transparent**. It has no white ground; it has no ground at all. What reaches the model composites to **black** | the session-9 style round reported "pure black background" twice and was scored as a hallucination; the user identified transparency as the cause, confirmed by an alpha scan of the whole corpus | **a wrong ground truth was about to be recorded as a model defect.** It is the only genuinely transparent file in the corpus — six other files carry an alpha channel that is fully opaque, so they are inert |
 
@@ -785,36 +856,53 @@ change to the master table.
 
 | medium | sub | count | images |
 |---|---|---|---|
-| `photograph` | | **31** | |
-| | colour | 28 | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, forest_autumn, fuji, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, newspaper, pancakes, phone, sleeping, stage, tv |
-| | archival | 3 | destroyer_photo, lincoln_photo, teddy_taft |
-| `live-action film` | | **16** | |
-| | modern | 14 | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, window |
-| | vintage Technicolor | 2 | p5_first, p5_last |
-| `3D CG` | | **5** | |
-| | character render | 2 | kasia_render, kasia_swimsuit_render |
-| | feature animation | 2 | shrek_cg, woody_cg |
-| | product render | 1 | fruitbowl |
-| `stop-motion` | — | **2** | coraline1, coraline2 |
+| `photograph` | — | **31** | annie2\*\*, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, destroyer_photo, forest_autumn, fuji, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_photo, newspaper, pancakes, phone, sleeping, stage, teddy_taft, tv |
+| `live-action film` | — | **16** | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, window |
+| `3D CG` | — | **5** | fruitbowl, kasia_render, kasia_swimsuit_render, shrek_cg, woody_cg |
+| `stop-motion` | | **2** | |
+| | puppet | 2 | coraline1, coraline2 |
+| | *clay* | *0* | *no sample* |
+| | *figure* | *0* | *no sample* |
+| | *model* | *0* | *no sample* |
 | `2D cel` | | **9** | |
-| | anime | 4 | azumanga_anime, car_interior_mecha_driver, kiki, miya |
-| | western toon | 3 | azumanga_toon, ivy_toon, peter_griffin_toon |
-| | flat illustration | 2 | kasia, kasia_swimsuit_worn |
-| `comic` | — | **6** | annie3, annie3_panel1, comic, comic_panel2, comic_panel3, comic_panel4 |
+| | digital | 8 | azumanga_anime, azumanga_toon, car_interior_mecha_driver, kasia, kasia_swimsuit_worn, kiki, miya, peter_griffin_toon |
+| | traditional cel | 1 | ivy_toon |
+| `comic` | | **6** | |
+| | ink | 4 | comic, comic_panel2, comic_panel3, comic_panel4 |
+| | digital | 2 | annie3, annie3_panel1 |
+| | *screentone* | *0* | *no sample* |
 | `painting` | | **11** | |
 | | digital | 7 | ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
 | | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
 | | watercolour | 2 | annie2_cropped, bird_watercolor |
-| | *gouache* | *0* | *no sample* |
 | `drawing` | | **5** | |
-| | marker | 3 | annie1, marker, supergirl1 |
-| | sketch | 2 | car_interior_sketch, supergirl2 |
-| | *ink* | *0* | *no sample* |
+| | marker | 3 | marker, supergirl1, supergirl2 |
+| | digital | 1 | car_interior_sketch |
+| | ink | 1 | annie1 |
+| | *pencil* | *0* | *no sample* |
 | `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
 | `pixel art` | — | **4** | fish_pixel, miyu, ramen_pixel, van_pixel |
 | `print` | | **2** | |
 | | engraving | 1 | lincoln_money |
-| | technical plate | 1 | destroyer_drawing |
+| | halftone | 1 | destroyer_drawing |
+
+### `[[IDIOM]]` tally
+
+| idiom | count | images |
+|---|---|---|
+| `realist` | **57** | annie2\*\*, bird_watercolor, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, destroyer_drawing, destroyer_photo, door_first, door_last, fish_pixel, forest_autumn, fruitbowl, fuji, girl_painting, girl_painting_reference, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_money, lincoln_photo, mountain_rain, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, pancakes, phone, ramen_pixel, sleeping, stage, teddy_taft, tv, window, woman_oil |
+| `anime` | **21** | annie1, ayanami_oil, azumanga_anime, car_interior_mecha_driver, car_interior_sketch, cloud, comic, comic_panel2, comic_panel3, comic_panel4, kasia, kasia_render, kasia_swimsuit_render, kasia_swimsuit_worn, kiki, marker, miya, miyu, temple_day, temple_night, van_pixel |
+| `flat graphic` | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
+| `western toon` | **8** | annie2_cropped, annie3, annie3_panel1, azumanga_toon, ivy_toon, peter_griffin_toon, supergirl1, supergirl2 |
+| `dimensional toon` | **5** | coraline1, coraline2, peter_griffin_painting, shrek_cg, woody_cg |
+
+### `[[TREATMENT]]` tally
+
+| treatment | count | images |
+|---|---|---|
+| `colour` | **93** | annie1, annie2\*\*, annie2_cropped, annie3, annie3_panel1, ayanami_oil, azumanga_anime, azumanga_toon, bird_vector, bird_watercolor, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_mecha_driver, car_interior_photo, car_interior_sketch, castle, chair\*, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, cloud, comic, comic_panel2, comic_panel3, comic_panel4, coraline1, coraline2, door_first, door_last, fish_pixel, forest_autumn, forest_day, forest_day_night, forest_night, fruitbowl, fuji, girl_painting, girl_painting_reference, ivy_toon, jacket, jacket2, kasia, kasia_bag, kasia_bag_2, kasia_outfit, kasia_render, kasia_swimsuit, kasia_swimsuit_render, kasia_swimsuit_worn, kaypro_ii, kiki, marker, miya, miyu, mountain_rain, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, pancakes, peter_griffin_painting, peter_griffin_toon, phone, ramen_pixel, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, shrek_cg, sleeping, stage, supergirl1, supergirl2, temple_day, temple_night, tv, van_pixel, vector_city, window, woman_oil, woody_cg |
+| `monochrome` | **5** | destroyer_drawing, destroyer_photo, lincoln_money, lincoln_photo, teddy_taft |
+| `vintage Technicolor` | **2** | p5_first, p5_last |
 
 **Total 100.** Live-action (`photograph` + `live-action film`) is **47 of 100, 47%** — down from 29/37, 78% at the start of session 7. 3 of those 47 are `amb`, so the honest range is 44–47.
 
