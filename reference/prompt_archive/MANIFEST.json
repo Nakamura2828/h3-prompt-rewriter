@@ -22,7 +22,7 @@
       "lines": 98,
       "md5_lf": "99206cb96cad12553d3efc76b62ecc22",
       "first_seen": "2026-08-10 c6c1c73",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_character.txt"
       ],
@@ -40,7 +40,7 @@
       "lines": 121,
       "md5_lf": "900b383fa14c5259cf8a80ed8b76fd8d",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame.txt",
         "reference/retired/prompts/describer_frame_v1.txt"
@@ -59,7 +59,7 @@
       "lines": 131,
       "md5_lf": "af06ee66c3e361f7eccf918206bd09cd",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame_v2.txt",
         "reference/retired/prompts/describer_frame_v2.txt"
@@ -78,7 +78,7 @@
       "lines": 137,
       "md5_lf": "684acc768be80473970e77ab26d71a60",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame_v3.txt",
         "reference/retired/prompts/describer_frame_v3.txt"
@@ -97,7 +97,7 @@
       "lines": 152,
       "md5_lf": "ee78489105e3cf468c7769b06d9dec99",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame_v4.txt",
         "reference/retired/prompts/describer_frame_v4.txt"
@@ -116,7 +116,7 @@
       "lines": 152,
       "md5_lf": "87ab10504f8829ed0f8569fe52af14a5",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame_v5.txt",
         "reference/retired/prompts/describer_frame_v5.txt"
@@ -135,7 +135,7 @@
       "lines": 167,
       "md5_lf": "95a4c7ab1830a1b1b7691af6fd53d502",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame_v6.txt",
         "reference/retired/prompts/describer_frame_v6.txt"
@@ -154,7 +154,7 @@
       "lines": 169,
       "md5_lf": "8e9b2e991b83f2942c65bef2f0f7c0e8",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "dist/frame_describer.txt",
         "prompts/describer_frame.txt",
@@ -175,7 +175,7 @@
       "lines": 169,
       "md5_lf": "a9613d8d0addc35a442b476fb6449c52",
       "first_seen": "2026-08-10 c843e49",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_frame.txt"
       ],
@@ -193,7 +193,7 @@
       "lines": 101,
       "md5_lf": "047eb3d74a238cab4d5249a6835cfd27",
       "first_seen": "2026-08-11 24a5eb7",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_setting.txt"
       ],
@@ -247,7 +247,7 @@
       "lines": 138,
       "md5_lf": "ee43018093d89c57606367d1547032c3",
       "first_seen": "2026-08-11 4166902",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_style.txt"
       ],
@@ -265,7 +265,7 @@
       "lines": 107,
       "md5_lf": "0927364a3093ffd92ebe91e5d2727ba7",
       "first_seen": "2026-08-12 e68be08",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_style_class.txt"
       ],
@@ -283,7 +283,7 @@
       "lines": 68,
       "md5_lf": "91808c4a25f8c9886342052bfed13af5",
       "first_seen": "2026-08-12 e68be08",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/describer_style_look.txt"
       ],
@@ -362,7 +362,7 @@
       "lines": 131,
       "md5_lf": "f7559d7716b59cb19e3a59028a606d15",
       "first_seen": "2026-08-12 7b68815",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         ".claude/experiments/bloat/logs/v4n.txt",
         "reference/retired/prompts/fl2va_v4.txt"
@@ -381,7 +381,7 @@
       "lines": 131,
       "md5_lf": "54eaecfd473c5479ab11a6289e7e9d6b",
       "first_seen": "2026-08-10 68909d9",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         ".claude/experiments/bloat/logs/curn.txt",
         ".claude/experiments/bloat/logs/fl2va_68909d9.txt",
@@ -401,7 +401,7 @@
       "lines": 96,
       "md5_lf": "dc458d9a46d5d2b5a9f8120cf265fe67",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "prompts/fl2va_delta.txt",
         "prompts/fl2va_delta_v1.txt"
@@ -474,7 +474,7 @@
       "lines": 96,
       "md5_lf": "d5b3cdb21004b26cec0411afb48a29ad",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "dist/i2va.txt",
         "prompts/i2va.txt"
@@ -493,7 +493,7 @@
       "lines": 97,
       "md5_lf": "d0fa731f45c2d06cc4576edc7ebc7cea",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/i2va.txt"
       ],
@@ -511,7 +511,7 @@
       "lines": 87,
       "md5_lf": "622aa43837ead303507d32c024e86d03",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "dist/l2va.txt",
         "prompts/l2va.txt"
@@ -530,7 +530,7 @@
       "lines": 82,
       "md5_lf": "b3c8f88991a723b53ec424ae12a08306",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/l2va.txt"
       ],
@@ -548,7 +548,7 @@
       "lines": 82,
       "md5_lf": "cc48c247216227c14a23447587b1e230",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 e942d73",
       "git_paths": [
         "dist/t2va.txt",
         "prompts/t2va.txt",

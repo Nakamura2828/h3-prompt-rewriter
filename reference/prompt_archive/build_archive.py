@@ -32,14 +32,11 @@ import subprocess
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+sys.path.insert(0, str(HERE))
+from _paths import find_root                            # noqa: E402
 
-# Build into reference/prompt_archive/ once the archive lives there, otherwise into the staging
-# copy next to this script. Without this, re-running after the move would silently rebuild the
-# staging directory and leave the real archive untouched -- and ARCHIVE.md tells future sessions
-# to re-run this script.
-OUT = (ROOT / 'reference' / 'prompt_archive' if (ROOT / 'reference' / 'prompt_archive').is_dir()
-       else HERE / 'prompt_archive')
+ROOT = find_root(HERE)
+OUT = HERE                                              # this script lives in the archive it builds
 
 # ---------------------------------------------------------------------------------------------
 # CURATED: md5 prefix -> (archive label, status, parent label or None, note)

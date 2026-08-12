@@ -18,7 +18,10 @@ import subprocess
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+sys.path.insert(0, str(HERE))
+from _paths import find_root                            # noqa: E402
+
+ROOT = find_root(HERE)
 sys.path.insert(0, str(ROOT / 'scripts'))
 from token_budget import count, band                   # noqa: E402
 

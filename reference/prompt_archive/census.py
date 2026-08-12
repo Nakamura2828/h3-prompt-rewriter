@@ -34,7 +34,10 @@ import subprocess
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+sys.path.insert(0, str(HERE))
+from _paths import find_root                            # noqa: E402
+
+ROOT = find_root(HERE)
 
 # Paths that have ever held a finished system prompt. Deliberately NOT blocks/ or modes/:
 # those are build inputs, and a fragment is not a prompt. See ARCHIVE.md on the gap this

@@ -184,25 +184,25 @@ test round.** Concretely, a state earns a slot if any of these is true:
    is the most informative thing in the history: it is the only direct evidence of what made
    things worse.
 
-The mechanics are already here: add the file, extend `CURATED` in
-`.claude/experiments/prompt_archive/build_archive.py`, re-run it, and run `verify.py`. The
+The mechanics are already here: add the file, extend `CURATED` in `build_archive.py`, re-run it,
+and run `verify.py`. The
 `CURATED` gate fails loudly on any state it does not recognise, so a new prompt state cannot be
 archived without someone deciding what it is called and what it descends from.
 
-One `.gitignore` addition is still needed for this to be durable:
-
-```
-!reference/prompt_archive/
-```
-
-Without it, `reference/*` swallows this directory and the archive shares the exact exposure it was
-built to fix. (`!reference/pre_build_env_canonical_prompts` was added in `b4191f4`.)
+`.gitignore` ignores `reference/*` by exception list, so this directory needs
+`!reference/prompt_archive/` on it to be tracked at all — added at `.gitignore:62`. Without that
+line the archive would share the exact exposure it was built to fix.
 
 ## Maintenance
 
-Regenerate with `census.py` → `measure.py` → `build_archive.py` (in
-`.claude/experiments/prompt_archive/`). Everything mechanical is derived; only `CURATED` and
+Regenerate with `census.py` → `measure.py` → `build_archive.py`, all of which live here beside the
+files they produce, then `verify.py`. Everything mechanical is derived; only `CURATED` and
 `MISSING` in `build_archive.py` hold decisions, and they are commented with the reasoning.
+
+`_paths.py` finds the repo root by walking up rather than counting levels, because these scripts
+were written one directory deeper and a hardcoded depth resolved *above* the repo once they moved.
+`verify.py` keeps its own copy of that logic so the archive's own check never depends on the
+generators being present.
 
 **Line endings:** every archived file is LF and `md5_lf` is over those bytes. `core.autocrlf=true`
 here with no `.gitattributes`, so a *fresh checkout* yields CRLF copies whose MD5 will not match
