@@ -4,9 +4,9 @@ Design and version history for the standalone describer prompts — the per-imag
 produce structured `[[FIELD]]` records for FL2VA and REF2VA composition.
 
 Roles built so far: **frame** (v8), **character** (v1), **setting** (v5, locked), and **style**
-(v1, validated but **not** locked — a vocabulary redesign is queued that changes its field list).
-`object` is not built yet, and is deliberately blocked on that redesign so it does not harden the
-same conventions. See `.claude/TODO.md`. Lessons cited by slug (`L-...`) are defined in
+(v3, split into look + class, **not** locked). `object` is not built yet, and is deliberately
+blocked behind `style` so it does not harden conventions that are still moving. See
+`.claude/TODO.md`. Lessons cited by slug (`L-...`) are defined in
 `.claude/lessons_learned.md`. The test corpus these were validated against is documented in
 `docs/image_inventory.md`.
 
@@ -146,6 +146,9 @@ human decides.
 
 ### Version history
 
+Prompt text for these versions: `reference/prompt_archive/`, except where `ARCHIVE.md` records it
+as lost — which for `setting` is **v1–v4**, so only v5 can be read back.
+
 | round | result |
 |---|---|
 | v1 | 25/26 format-clean. Five atmosphere leaks; city probe failed; example-bleed emitted `[[SUBJECT NOT FOUND]] the ringing chamber` (a SUBJECT line from the prompt's own example 2); "corn flakes" printed text leaked; movable clutter (gun oil, ammunition) in `CONTENTS`; `set_notfound` silently failed to emit its line; no-place `SETTING_KIND` inconsistent |
@@ -277,6 +280,10 @@ and no record invented or borrowed a sub-term. `validate.py` checks the pairing 
 (`coarse_sub`), the strongest content check any role has.
 
 ### Version history
+
+Prompt text for these versions: `reference/prompt_archive/`, except where `ARCHIVE.md` records it
+as lost — which for `style` is the **derivation-rule round** (4,054 tokens, 39/45), the one point
+of real degradation behind `L-PROMPT-TOKEN-BUDGET` and now unrecoverable.
 
 | round | result |
 |---|---|
