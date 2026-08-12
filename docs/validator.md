@@ -38,13 +38,39 @@ python scripts/validate.py ref2va    runs/run-*.txt        # not built yet
 ```
 
 **Roles are data, not branches (session 6).** `DESCRIBER_ROLES` maps a role to
-`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field}`, and the
-foreign-field list is **derived** — (every role's fields ∪ the frame describer's) minus this
-role's own — rather than hardcoded. That matters for the roles still to come: the old hardcoded
-list contained `PALETTE` and `LIGHTING`, both of which `describer_style` will legitimately own,
-so it would have rejected that role's own fields. Refactor verified by re-running the character
-checker over `reference/test_archive/REF2VA/Describer-Character-v1.txt`: identical except the
-drift line now names its field.
+`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field}`, and what
+counts as a wrong field is **derived** from that table rather than hardcoded. That matters for the
+roles still to come: the old hardcoded list contained `PALETTE` and `LIGHTING`, both of which
+`describer_style` legitimately owns, so it would have rejected that role's own fields. Refactor
+verified by re-running the character checker over
+`reference/test_archive/REF2VA/Describer-Character-v1.txt`: identical except the drift line now
+names its field.
+
+### Wrong fields: an allow-list, not a deny-list (session 13)
+
+`classify_tokens()` enumerates every `[[...]]` token actually present and sorts the ones this role
+does not own into three buckets, because they mean different things:
+
+| bucket | meaning | example |
+|---|---|---|
+| `foreign` | a real field of **another** role — the record is bleeding across passes | `[[MEDIUM]]` in a `setting` record |
+| `corrupted` | nothing owns it, but it is one edit from one of ours | `[[DISTINGISHING]]` → `[[DISTINGUISHING]]` |
+| `invented` | made up outright | `[[CONTINGENCY]]` |
+
+**This replaced a deny-list, and the distinction is the whole point.** `foreign_fields()` returned
+(every role's fields ∪ the frame describer's) minus this role's, so it could only reject a name
+some *other* role owned. An invented token is in no role's list, so it was never compared against
+anything and **passed silently** — which is how `[[CONTINGENCY]]` got through the session-13 bloat
+run. Enumerating what is present subsumes the old check rather than sitting beside it.
+
+The `corrupted` bucket is the valuable one: emitting the right *content* under a near-miss token is
+the silent failure signature described in `L-PROMPT-TOKEN-BUDGET`. Re-running the archived
+4,054-token derivation round now names `[[DISTINGISHING]]` ×3 and `[[DEFINING]]` ×1 directly,
+where before they surfaced only as the *absence* of the real field. Pass/fail counts on every
+archived run are unchanged — the new errors land on records that were already failing.
+
+`[[SUBJECT NOT FOUND]]` is exempt here and validated by its own rules below, so a role that may not
+emit it still reports that once rather than twice.
 
 `h3` — the three-field contract (t2va/i2va/l2va/fl2va). Field labels exact / ordered / once
 each · reply begins with the first field · no fences, `User:`, or `<think>` · `[Shot 1]`
@@ -54,7 +80,8 @@ split across a cut · voiceover phrase followed by a lips-closed statement · ba
 `non_diegetic_music` · (warn) cut phrase mid-shot.
 
 `describer` — structured `[[FIELD]]` records. Fields present/ordered/once each · reply begins
-with the first field · no `<` or `>` · no fences or `User:` · no fields foreign to this role ·
+with the first field · no `<` or `>` · no fences or `User:` · no foreign, corrupted or invented
+`[[...]]` tokens ·
 closed-vocabulary fields hold a permitted value (`SUBJECT_KIND`, `SETTING_KIND`) · exactly one
 term from the closed age vocabulary, human or animal per `[[SUBJECT_KIND]]` · no digits where
 the role bans them · `[[SUBJECT NOT FOUND]]` only with a SUBJECT line, never `none`/`N/A`,

@@ -16,12 +16,16 @@ standalone. See `docs/graph_mechanics.md` for that reasoning.
 | l2va | identical except the four approved restorations (below) |
 | fl2va | not in the pre-build-env reference set (didn't exist then); folded into the block/manifest system session 4 — rebuilding produces zero diff against the committed `prompts/fl2va.txt` |
 
-**`--verify` currently crashes, so the table above is a record and not something the flag will
-reproduce for you.** `build.py` iterates every mode in `MODES` and reads
-`reference/pre_build_env_canonical_prompts/<mode>.txt` unconditionally, but there is no
-`fl2va.txt` there and never was — by construction, per the last row. The `FileNotFoundError` kills
-the run, and because `fl2va` is last in `MODES` the three earlier verdicts are printed before it
-dies. The fix is a guard that skips modes with no canonical baseline; tracked in `.claude/TODO.md`.
+**`--verify` reproduces this table as of session 13.** It previously died on `fl2va`:
+`build.py` read `reference/pre_build_env_canonical_prompts/<mode>.txt` unconditionally, but there
+is no `fl2va.txt` there and never was — by construction, per the last row — so a
+`FileNotFoundError` killed the run and left the check effectively dead. It now skips modes with no
+canonical baseline and reports all four.
+
+**It still exits 1, and that is expected rather than a second bug.** Only `l2va` is exempted from
+setting the failure code, so `i2va`'s single normalised blank line — approved, and recorded in the
+table above — makes the run non-zero every time. `--verify` is therefore a report to read, not a
+gate to wire into anything, unless that exemption is widened deliberately.
 
 L2VA restorations applied — and **only** these:
 

@@ -27,7 +27,7 @@ Record format (as produced by run_tests.py):
     Analysis: ...]
     ----------
 """
-import argparse, re, sys, pathlib
+import argparse, difflib, re, sys, pathlib
 
 FIELDS = ['integrated_multimodal_description:', 'overall_soundscape:', 'non_diegetic_music:']
 BANNED = ['tense', 'melancholic', 'mysterious', 'mystery', 'ominous', 'haunting', 'uplifting',
@@ -209,6 +209,7 @@ FRAME_FIELDS = ['STYLE', 'FRAMING', 'CHAR', 'CROWD', 'OBJECTS', 'ENVIRONMENT', '
                 'EXPRESSION', 'HOLDING', 'CAST NOT FOUND']
 
 NOT_FOUND = '[[SUBJECT NOT FOUND]]'
+NOT_FOUND_NAME = NOT_FOUND[2:-2]        # the bare token name, for the [[...]] sweep below
 
 # The closed three-axis style vocabulary (docs/image_inventory.md, "Style vocabulary").
 # Rebuilt session 10: the old sub-lists mixed five axes, and that coupling was dragging the
@@ -325,7 +326,7 @@ DESCRIBER_ROLES = {
     # ten fields into a describing pass and a classifying pass halves each prompt and makes
     # "classify from what you described" architectural rather than a rule to remember.
     #
-    # Note what foreign_fields() derives for free once both rows exist: a stray [[MEDIUM]] in a
+    # Note what classify_tokens() derives for free once both rows exist: a stray [[MEDIUM]] in a
     # pass-A record (leaking classification) and a stray [[EXECUTION]] in a pass-B record
     # (echoing its input instead of classifying) are both errors, with no new code.
     #
@@ -373,14 +374,45 @@ def age_terms(line, vocab):
                 yield t
 
 
-def foreign_fields(role):
-    """Every field token that is not this role's own: the other roles' fields plus the
-    frame describer's. Derived rather than listed so adding a role cannot silently leave
-    a stale entry that rejects one of its own legitimate fields."""
-    known = set(FRAME_FIELDS)
+# Any [[...]] token, however wrong. The length cap keeps a runaway '[[' in prose from
+# swallowing the rest of the output as one enormous "field name".
+TOKEN = re.compile(r'\[\[([^\[\]]{1,40})\]\]')
+NEAR_MISS_RATIO = 0.75
+
+
+def classify_tokens(out, role):
+    """(foreign, near, unknown) -- every [[...]] token present that is not this role's own.
+
+    An ALLOW-list over the tokens actually emitted. The deny-list this replaced could only
+    reject a name some *other* role owned, so an invented token like [[CONTINGENCY]] -- in
+    no role's field list at all -- was never checked against anything and passed silently.
+
+    Three buckets, because they mean different things:
+      foreign  a real field belonging to another role: the record is bleeding across passes
+      near     nothing owns it but it is one edit away from one of ours ([[DISTINGISHING]]):
+               the corrupted-field signature of L-PROMPT-TOKEN-BUDGET
+      unknown  invented outright
+
+    Derived from the role table rather than listed, so adding a role cannot leave a stale
+    entry that rejects one of its own legitimate fields.
+    """
+    own = set(DESCRIBER_ROLES[role]['fields'])
+    other = set(FRAME_FIELDS)
     for spec in DESCRIBER_ROLES.values():
-        known.update(spec['fields'])
-    return sorted(known - set(DESCRIBER_ROLES[role]['fields']))
+        other.update(spec['fields'])
+    other -= own
+
+    foreign, near, unknown = {}, {}, {}
+    for name in TOKEN.findall(out):
+        base = name.split(':')[0].strip()        # [[CHAR: label]] -> CHAR
+        if base in own or base == NOT_FOUND_NAME:
+            continue                             # NOT_FOUND has its own checks below
+        if base in other:
+            foreign[base] = None
+            continue
+        close = difflib.get_close_matches(base, own, n=1, cutoff=NEAR_MISS_RATIO)
+        (near if close else unknown)[base] = close[0] if close else None
+    return foreign, near, unknown
 
 
 def check_describer(out, inp, role):
@@ -415,9 +447,13 @@ def check_describer(out, inp, role):
         errs.append('contains a markdown fence')
     if re.search(r'^\s*(User|INPUT|OUTPUT)\s*:', out, re.M):
         errs.append('continues into another turn or example (User:/INPUT:/OUTPUT:)')
-    for f in foreign_fields(role):
-        if f'[[{f}]]' in out or f'[[{f}:' in out:
-            errs.append(f'foreign field [[{f}]] -- not part of the {role} record')
+    foreign, near, unknown = classify_tokens(out, role)
+    for f in foreign:
+        errs.append(f'foreign field [[{f}]] -- not part of the {role} record')
+    for f, closest in near.items():
+        errs.append(f'corrupted field [[{f}]] -- no role owns it; looks like [[{closest}]]')
+    for f in unknown:
+        errs.append(f'invented field [[{f}]] -- not a field of any role')
 
     def field_text(name):
         m = re.search(r'\[\[' + re.escape(name) + r'\]\](.*)', out)

@@ -62,7 +62,15 @@ def main():
         (ROOT / 'prompts' / f'{m}.txt').write_bytes(out.encode('utf-8'))
         print(f'built prompts/{m}.txt  ({len(out)} bytes)')
         if a.verify:
-            ref = (ROOT / 'reference/pre_build_env_canonical_prompts' / f'{m}.txt').read_text(encoding='utf-8')
+            # Not every mode has a canonical baseline: fl2va postdates the pre-build-env set
+            # and never had one. Skipping is correct, not a failure -- reading it
+            # unconditionally raised FileNotFoundError and killed the whole --verify run,
+            # which left the check dead for ALL modes because fl2va is last in MODES.
+            refp = ROOT / 'reference/pre_build_env_canonical_prompts' / f'{m}.txt'
+            if not refp.exists():
+                print(f'  VERIFY {m}: skipped -- no canonical baseline (postdates the build system)')
+                continue
+            ref = refp.read_text(encoding='utf-8')
             new = out.replace('\r\n', '\n')
             if ref.replace('\r\n', '\n') == new:
                 print(f'  VERIFY {m}: byte-identical to reference')
