@@ -19,11 +19,12 @@ Two v4-era bans the model never actually obeyed are now permitted: naming a held
 `[[POSE]]`, and stating `[[POSITION]]` purely relative to another described person (must still
 pair with a frame-absolute term, e.g. "background centre, partially occluded by the girl in
 the foreground"). Added: a `[[CHAR]]` label must agree with its own `[[CLOTHING]]` line.
-Rationale reconstructed from `reference/old_describer_versions/` (pre-repo v1–v7, kept in the
-repo) and a discussion transcript the user dropped in mid-session (not kept — its content is
-now captured here) since neither session memory nor the handoff had the actual reasoning. Both
-relaxed bans were confirmed **already violated 6/6 in the unpatched v7 output** before this
-change — legalizing them changed nothing in model behavior. Regression-tested across 8 cases
+Rationale reconstructed from the pre-repo v1–v7 version history (now at
+`reference/retired/prompts/`) and a discussion transcript the user dropped in mid-session (not
+kept — its content is now captured here) since neither session memory nor the handoff had the
+actual reasoning. Both relaxed bans were confirmed **already violated 6/6 in the unpatched v7
+output** before this change — legalizing them changed nothing in model behavior.
+Regression-tested across 8 cases
 reconstructed from a one-off prior test-result file (also not kept, absorbed into the
 git-tracked `tests/describer_v8_regression.json`), archived at
 `reference/test_archive/Describer/DescriberTest8-v8-regression.txt` and
