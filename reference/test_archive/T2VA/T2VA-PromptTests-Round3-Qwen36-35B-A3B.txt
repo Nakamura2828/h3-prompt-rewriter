@@ -1,0 +1,136 @@
+Qwen3.6-35B-A3B
+---
+A 7 second video of a woman sitting at a small table in a coffee shop, waiting. Her friend rushes in, out of breath, and sits down across from her. "Sorry I'm so late, traffic was awful." The woman smiles and says it's fine, she just got here too. You can hear the espresso machine hissing and cups clinking in the background. Upbeat indie music plays over the scene.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a woman sitting alone at a small wooden table in a cozy coffee shop, her hands wrapped around a warm mug as she gazes toward the entrance. The camera holds a static position with small amplitude as the door bursts open and her friend rushes in, out of breath, and sits down across from her. The friend, a young woman with a breathless, slightly high-pitched voice (S1), says: <d>[English] Sorry I'm so late, traffic was awful.</d> The woman smiles and says it's fine, she just got here too. The woman, with a calm, warm voice (S2), answers: <d>[English] It's fine, I just got here too.</d>
+overall_soundscape: The steady hiss of an espresso machine and the clinking of ceramic cups fill the background, layered with the ambient murmur of the coffee shop and the soft thud of the friend's chair scraping against the floor.
+non_diegetic_music: An upbeat indie track featuring bright acoustic guitar strumming and a lively drum rhythm at a fast tempo.
+----------
+Qwen3.6-35B-A3B
+---
+A dad is making pancakes in the kitchen in the morning. His little daughter comes in still wearing pajamas and rubbing her eyes. "Are those chocolate chip?" she asks hopefully. He grins and flips a pancake. "Only the best for you." She cheers and climbs up onto a stool at the counter. Video is 10 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a bright kitchen in the morning where a dad stands at the stove, flipping a pancake with a confident grin. His little daughter, wearing pajamas and rubbing her eyes, shuffles into the frame from the left. The daughter, a young girl with a sleepy, hopeful voice (S1), asks: <d>[English] Are those chocolate chip?</d> The dad, with a warm, cheerful voice (S2), answers: <d>[English] Only the best for you.</d> [Shot 2] At 00:05.000, the shot cuts to the daughter cheering and climbing onto a stool at the counter, her eyes now wide with excitement.
+overall_soundscape: The sizzle of batter hitting the hot pan and the clatter of the spatula mix with the soft shuffle of small feet on the floor and the creak of the stool legs as she climbs up.
+non_diegetic_music: A light, acoustic guitar melody at a moderate tempo with a bright, rhythmic strumming pattern.
+----------
+Qwen3.6-35B-A3B
+---
+Duration: 12 seconds. An old detective sits alone in a dim office at night. Rain taps against the window and a clock ticks somewhere in the room. There's a knock at the door and a young woman steps in, nervous, clutching an envelope. "I think someone's following me," she says quietly. He leans back in his chair and studies her for a moment before speaking. "You'd better sit down and start from the beginning." A tense, low string score runs underneath the whole thing.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a dimly lit detective office at night, where an old detective sits alone at a cluttered desk, rain streaking the window behind him. The detective, a weathered man with a deep, gravelly voice (S1), leans back in his chair and studies the room. [Shot 2] At 00:04.000, the shot cuts to the doorway as a young woman steps in, nervous and clutching an envelope. The woman, with a breathy, anxious voice (S2), says quietly: <d>[English] I think someone's following me.</d> [Shot 3] At 00:08.000, the shot cuts back to the detective, who gestures slightly with his head. The detective (S1) responds: <d>[English] You'd better sit down and start from the beginning.</d>
+overall_soundscape: Rain taps steadily against the windowpane, accompanied by the rhythmic ticking of a clock and the soft creak of the detective's chair as he leans back.
+non_diegetic_music: A tense, low string score at a slow tempo with sustained notes and subtle vibrato.
+----------
+Qwen3.6-35B-A3B
+---
+Two astronauts float inside a spaceship cockpit, staring out at a strange glowing planet below them. One of them checks a screen and frowns. "These readings don't make any sense." The other keeps looking out the window and says, almost to herself, "I don't think we're the first ones here." (9 seconds total)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, 3D CG, a wide shot of two astronauts floating in zero-gravity inside a high-tech spaceship cockpit, with a large viewport revealing a strange, glowing planet below. The first astronaut, a man with a deep, concerned voice (S1), checks a holographic screen and frowns, saying: <d>[English] These readings don't make any sense.</d> [Shot 2] At 00:04.500, the shot cuts to the second astronaut, a woman with a soft, contemplative voice (S2), who keeps her gaze fixed on the window, saying, almost to herself: <d>[English] I don't think we're the first ones here.</d>
+overall_soundscape: The low, steady hum of the spaceship's life support systems and the faint electronic beeps of the console.
+non_diegetic_music: A sparse, ambient electronic score at a slow tempo with sustained synth pads.
+----------
+Qwen3.6-35B-A3B
+---
+This is an 11 second video. A couple walks along an empty beach at sunset, holding hands, not saying much. Waves roll in and gulls cry overhead. The man stops and turns to the woman. "Can I ask you something?" She looks at him and nods, a little curious. He takes a breath and starts to kneel down in the sand. Soft romantic piano swells as he does.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a couple walking along an empty beach at sunset, holding hands, with waves rolling in and gulls crying overhead. The camera tracks alongside them at a slow speed as the man stops and turns to the woman, who looks at him and nods with a curious expression. [Shot 2] At 00:06.000, the shot cuts to a medium close-up of the man as he takes a breath and begins to kneel down in the sand. The man, with a soft, intimate voice (S1), asks: <d>[English] Can I ask you something?</d>
+overall_soundscape: The rhythmic crash of waves rolling onto the shore and the distant cries of gulls overhead.
+non_diegetic_music: Soft romantic piano swells at a moderate tempo with gentle dynamics.
+----------
+Qwen3.6-35B-A3B
+---
+A cat leaps onto a kitchen counter and knocks a glass off the edge. 3 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a kitchen counter where a cat leaps into frame and knocks a glass off the edge.
+overall_soundscape: The sharp thud of the cat landing and the glass shattering on the floor.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A single continuous shot, no cuts: a paper boat drifts down a rain-filled gutter and slowly sinks. 8 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a low-angle tracking shot follows a small white paper boat as it navigates the turbulent, rain-filled gutter. The camera tracks alongside the boat at a slow speed, capturing the rhythmic splashing of raindrops hitting the water's surface and the gentle rocking of the vessel as it drifts forward. As the boat moves further into the frame, the water level rises around it, causing the paper to darken and soften, until the boat slowly tilts and sinks beneath the murky surface, leaving only ripples behind.
+overall_soundscape: The steady, rhythmic patter of rain hitting the water and surrounding concrete, accompanied by the soft lapping of water against the gutter walls and the subtle splash as the boat finally submerges.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A lighthouse beam sweeps across dark, choppy water while fog rolls past the lamp.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a rugged lighthouse perched on a cliff edge, its powerful beam rotating steadily across the dark, choppy sea below. Thick fog rolls past the lantern room, partially obscuring the structure as the light cuts through the mist in sweeping arcs.
+overall_soundscape: The rhythmic crash of waves against the rocks below, the low mechanical hum of the rotating lamp mechanism, and the muffled howl of wind through the fog.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A late-night diner exterior. A neon sign in the window reads "OPEN 24 HRS" and a smaller handwritten card says "Cash Only". A man pauses on the sidewalk, then pushes the door open. 6 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a late-night diner exterior with rain-slicked pavement reflecting the streetlights. A neon sign in the window reads "OPEN 24 HRS" and a smaller handwritten card says "Cash Only". A man pauses on the sidewalk, then pushes the door open.
+overall_soundscape: The low hum of the neon sign and the distant murmur of city traffic. The metallic clack of the door opening and the rush of ambient street noise as the entrance is breached.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A woman at a train platform waves and calls out to a departing friend. She says, in Spanish, "¡Buen viaje, cuídate mucho!" 5 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a woman standing on a busy train platform, her arm raised in a wave as a train begins to pull away in the background. The woman, with a warm, clear voice (S1), calls out: <d>[Spanish] ¡Buen viaje, cuídate mucho!</d>
+overall_soundscape: The low rumble and rhythmic clatter of the departing train wheels on tracks, mixed with the distant murmur of platform passengers and the wind of the moving train.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A blacksmith hammers a glowing blade on an anvil, sparks flying, then plunges it hissing into a barrel of water. Nobody speaks. 7 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a blacksmith in a dimly lit forge, his muscular arms raised as he hammers a glowing orange blade on a heavy anvil. Sparks fly in a bright arc as the hammer strikes, illuminating the soot on his face. [Shot 2] At 00:04.000, the shot cuts to the blacksmith lifting the red-hot blade and plunging it into a wooden barrel of water. A thick cloud of white steam erupts violently, hissing loudly and obscuring the blade as the glow fades beneath the surface.
+overall_soundscape: The rhythmic, heavy clang of metal on metal echoes in the forge, accompanied by the sharp crackle of flying sparks. This is followed by a loud, aggressive hiss and the bubbling roar of steam as the blade hits the water.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+Two hikers reach a ridge and catch their breath, looking out over the valley. One points into the distance. "There it is." No background music, just the wind. 6 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of two hikers standing on a rocky ridge, silhouetted against a vast valley below. The wind whips through their hair and clothing as they catch their breath. One hiker, a tall man with a rugged appearance (S1), points toward the horizon. The man, with a breathless, strained voice (S1), says: <d>[English] There it is.</d>
+overall_soundscape: A constant, strong wind howls across the ridge, rustling the hikers' jackets and whipping loose gravel.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+22 seconds. A courier bikes through a busy city, weaves between cars, brakes hard at a crosswalk, hops off, jogs into an office lobby, and hands a package to the receptionist. "Sign here, please." She signs and smiles. Fast electronic music throughout.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a dynamic tracking shot follows a courier on a bicycle weaving through dense city traffic. The camera tracks alongside at a fast speed as the courier navigates between moving cars, the urban environment blurring slightly with motion. [Shot 2] At 00:06.000, the shot cuts to a close-up of the courier's feet hitting the brakes hard at a crosswalk, followed by a quick pan as the courier hops off the bike and jogs toward the camera. [Shot 3] At 00:10.000, the shot cuts to the interior of a bright office lobby. The courier jogs into frame and hands a package to a receptionist standing behind a desk. The receptionist, a woman with a polite, clear voice (S1), says: <d>[English] Sign here, please.</d> [Shot 4] At 00:15.000, the shot cuts to a medium close-up of the receptionist signing the document. She looks up and smiles warmly at the courier.
+overall_soundscape: The rhythmic whir of bicycle chains and tires on asphalt, the sharp squeal of brakes, the thud of feet on pavement, and the ambient hum of city traffic and office HVAC systems.
+non_diegetic_music: A fast-tempo electronic track with driving synthesizer beats and sharp percussive elements.
+----------
+Qwen3.6-35B-A3B
+---
+woman walks in room sits on bed looking sad no one else there rain outside window quiet piano no talking like 5 sec
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a woman walking into a dimly lit bedroom and sinking onto the edge of the bed, her shoulders slumped in sadness. Rain streaks against the window behind her, and the camera holds a slow push in with small amplitude as she stares blankly ahead.
+overall_soundscape: The steady patter of rain against the windowpane and the soft rustle of fabric as she settles onto the mattress.
+non_diegetic_music: A sparse piano melody at a slow tempo with sustained low notes.
+----------
+Qwen3.6-35B-A3B
+---
+A man stands at a window watching traffic below, saying nothing aloud, while his voice narrates over the scene: "I never meant to stay this long." 6 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a man standing still at a large window, his silhouette framed against the city lights below as traffic flows in the distance. The camera holds a static position with a slow push in with small amplitude as the man (S1) says in an off-screen voiceover: <d>[English] I never meant to stay this long.</d> His lips remain completely closed.
+overall_soundscape: The low, continuous hum of city traffic and distant sirens drifts up from the street, mixed with the faint creak of the building's structure.
+non_diegetic_music: A slow, ambient electronic pad at a moderate tempo with a steady, minimal rhythm.
+----------
+Qwen3.6-35B-A3B
+---
+8 seconds. A teacher starts a sentence in the classroom, then we cut to students taking notes as she finishes it. She says: "The exam next week will cover everything from chapter one to chapter nine."
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a teacher standing at the front of a sunlit classroom, holding a stack of papers. The teacher, a woman with a clear, authoritative voice (S1), begins: <d>[English] The exam next week will cover everything from chapter one to chapter nine,</d> <scenetrans> [Shot 2] At 00:04.000, the shot cuts to a close-up of students' hands rapidly writing in notebooks with pens, the sound of scratching paper filling the air, and the teacher's voice (S1) continues across the cut: <scenetrans> <d>[English] </d>
+overall_soundscape: The scratch of pens on paper, the rustle of pages turning, and the low hum of classroom ventilation.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A birthday scene: three kids around a cake shout together, "Happy birthday!" then blow out the candles. 4 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of three children gathered closely around a birthday cake with lit candles, their faces illuminated by the warm glow as they shout together: <d>[English] Happy birthday!</d> and then lean in to blow out the candles.
+overall_soundscape: The children's voices rise in unison, followed by the collective exhale and the faint hiss of extinguished candle wicks.
+non_diegetic_music: N/A
+----------

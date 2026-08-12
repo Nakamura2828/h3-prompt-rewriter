@@ -1,0 +1,142 @@
+##### 1 lamp-zoom-gun #####
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_first]
+---
+CAST: the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, desaturated and moody grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, visible stubble
+  [[CLOTHING]] black long-sleeved shirt, dark trousers, dark sunglasses
+  [[POSE]] seated in a chair, legs spread apart, torso upright, hands resting loosely between his knees
+  [[GAZE]] head facing forward, eyes directed toward camera behind the sunglasses
+  [[POSITION]] centre frame, mid-ground, body angled slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] nothing
+[[OBJECTS]] a black leather armchair, occupied; a tall wooden stand, upright with a small shelf; a portable radio, resting on the stand's shelf; a framed photograph, standing on the stand's shelf; a dark sofa, partially visible at screen-left; a small side table, standing at screen-right; a red ashtray, sitting on the floor near the side table
+[[ENVIRONMENT]] interior room with textured, beige walls showing signs of wear and peeling paint; dimly lit domestic setting
+[[LIGHTING]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[PALETTE]] dark browns, blacks, and muted beige
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_last]
+---
+CAST: the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film grain visible
+[[FRAMING]] medium close-up, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, thirties to forties, slim build, short dark hair with a receding hairline, stubble on the face
+  [[CLOTHING]] black long-sleeved shirt, grey suspenders with metal clasps, wire-rimmed glasses
+  [[POSE]] seated, leaning forward slightly, head tilted down and three-quarter left, shoulders hunched
+  [[GAZE]] head tilted down and three-quarter left, eyes directed downward toward the lap area
+  [[POSITION]] centre frame, foreground, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows slightly furrowed
+  [[HOLDING]] nothing
+[[OBJECTS]] a wooden shelving unit, upright on screen-left; a portable radio, resting on the shelf with its telescopic antenna extended; a small rectangular object, leaning against the vertical support of the shelf
+[[ENVIRONMENT]] interior room, plain beige walls with a visible corner seam behind the subject, dark chair back visible behind the man's right shoulder
+[[LIGHTING]] warm artificial light from the front-left, casting soft shadows on the right side of the face and background
+[[PALETTE]] warm earth tones, dominated by beige, brown, and black
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_delta]
+---
+[[FIRST_FRAME]]
+[[STYLE]] live-action, cinematic, desaturated and moody grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, visible stubble
+  [[CLOTHING]] black long-sleeved shirt, dark trousers, dark sunglasses
+  [[POSE]] seated in a chair, legs spread apart, torso upright, hands resting loosely between his knees
+  [[GAZE]] head facing forward, eyes directed toward camera behind the sunglasses
+  [[POSITION]] centre frame, mid-ground, body angled slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] nothing
+[[OBJECTS]] a black leather armchair, occupied; a tall wooden stand, upright with a small shelf; a portable radio, resting on the stand's shelf; a framed photograph, standing on the stand's shelf; a dark sofa, partially visible at screen-left; a small side table, standing at screen-right; a red ashtray, sitting on the floor near the side table
+[[ENVIRONMENT]] interior room with textured, beige walls showing signs of wear and peeling paint; dimly lit domestic setting
+[[LIGHTING]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[PALETTE]] dark browns, blacks, and muted beige
+[[TEXT]] none
+---
+[[SHOT]] framing unchanged, medium shot at eye level, camera appears static
+[[CHANGES]] the man, POSE: seated with legs spread apart and torso upright, now leaning forward with his head bowed; the man, GAZE: eyes directed toward camera behind sunglasses, now looking down toward the floor; the man, EXPRESSION: mouth closed with lips pressed together, now mouth slightly open with a cigarette held between his lips
+[[NEW]] none
+[[GONE]] none
+[[UNCHANGED]] the man is the only person present, wearing a black long-sleeved shirt and dark trousers, the black leather armchair he sits in is the same, the tall wooden stand with the portable radio and framed photograph is the same, the textured beige walls with peeling paint are the same, the low-key warm artificial lighting from the right casting deep shadows is the same
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_compose_OLD]
+---
+USER: A man sits in a dark room. He turns on the lamp beside him and picks up the gun from the table. 8 seconds.
+
+[[CAMERA]] PUSH IN (medium to medium close-up)
+[[LIGHTING_FIRST]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[LIGHTING_LAST]] warm artificial light from the front-left, casting soft shadows on the right side of the face and background
+
+[[FIRST_FRAME]]
+[[STYLE]] live-action, cinematic, desaturated and moody grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, visible stubble
+  [[CLOTHING]] black long-sleeved shirt, dark trousers, dark sunglasses
+  [[POSE]] seated in a chair, legs spread apart, torso upright, hands resting loosely between his knees
+  [[GAZE]] head facing forward, eyes directed toward camera behind the sunglasses
+  [[POSITION]] centre frame, mid-ground, body angled slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] nothing
+[[OBJECTS]] a black leather armchair, occupied; a tall wooden stand, upright with a small shelf; a portable radio, resting on the stand's shelf; a framed photograph, standing on the stand's shelf; a dark sofa, partially visible at screen-left; a small side table, standing at screen-right; a red ashtray, sitting on the floor near the side table
+[[ENVIRONMENT]] interior room with textured, beige walls showing signs of wear and peeling paint; dimly lit domestic setting
+[[LIGHTING]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[PALETTE]] dark browns, blacks, and muted beige
+[[TEXT]] none
+
+[[DELTA]]
+[[SHOT]] framing unchanged, medium shot at eye level, camera appears static
+[[CHANGES]] the man, POSE: seated with legs spread apart and torso upright, now leaning forward with his head bowed; the man, GAZE: eyes directed toward camera behind sunglasses, now looking down toward the floor; the man, EXPRESSION: mouth closed with lips pressed together, now mouth slightly open with a cigarette held between his lips
+[[NEW]] none
+[[GONE]] none
+[[UNCHANGED]] the man is the only person present, wearing a black long-sleeved shirt and dark trousers, the black leather armchair he sits in is the same, the tall wooden stand with the portable radio and framed photograph is the same, the textured beige walls with peeling paint are the same, the low-key warm artificial lighting from the right casting deep shadows is the same
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a black long-sleeved shirt and dark trousers sits in a black leather armchair in a dimly lit room with textured beige walls. He wears dark sunglasses, his legs spread apart and hands resting loosely between his knees. The camera pushes in with small amplitude at slow speed as he leans forward, bowing his head toward the floor. A warm artificial light source from the front-left illuminates him, casting soft shadows on the right side of his face and background. He picks up a gun from the table beside him and settles into the final posture and closer framing at the end of the video.
+overall_soundscape: The creak of leather as he shifts his weight, the scuff of fabric against the chair, and the metallic clink of a gun being lifted from a surface.
+non_diegetic_music: A slow, deep bass drone with sparse, resonant piano notes.
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_compose_NEW]
+---
+USER: A man sits in a dark room. He turns on the lamp beside him and picks up the gun from the table. 8 seconds.
+
+[[CAMERA]] PUSH IN (medium to medium close-up)
+[[LIGHTING_FIRST]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[LIGHTING_LAST]] warm artificial light from the front-left, casting soft shadows on the right side of the face and background
+
+[[FIRST_FRAME]]
+[[STYLE]] live-action, cinematic, desaturated and moody grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, visible stubble
+  [[CLOTHING]] black long-sleeved shirt, dark trousers, dark sunglasses
+  [[POSE]] seated in a chair, legs spread apart, torso upright, hands resting loosely between his knees
+  [[GAZE]] head facing forward, eyes directed toward camera behind the sunglasses
+  [[POSITION]] centre frame, mid-ground, body angled slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] nothing
+[[OBJECTS]] a black leather armchair, occupied; a tall wooden stand, upright with a small shelf; a portable radio, resting on the stand's shelf; a framed photograph, standing on the stand's shelf; a dark sofa, partially visible at screen-left; a small side table, standing at screen-right; a red ashtray, sitting on the floor near the side table
+[[ENVIRONMENT]] interior room with textured, beige walls showing signs of wear and peeling paint; dimly lit domestic setting
+[[LIGHTING]] low-key lighting, warm artificial source from the right casting deep shadows across the left side of the frame and the man's face
+[[PALETTE]] dark browns, blacks, and muted beige
+[[TEXT]] none
+
+[[DELTA]]
+[[SHOT]] framing unchanged, medium shot at eye level, camera appears static
+[[CHANGES]] the man, POSE: seated with legs spread apart and torso upright, now leaning forward with his head bowed; the man, GAZE: eyes directed toward camera behind sunglasses, now looking down toward the floor; the man, EXPRESSION: mouth closed with lips pressed together, now mouth slightly open with a cigarette held between his lips
+[[NEW]] none
+[[GONE]] none
+[[UNCHANGED]] the man is the only person present, wearing a black long-sleeved shirt and dark trousers, the black leather armchair he sits in is the same, the tall wooden stand with the portable radio and framed photograph is the same, the textured beige walls with peeling paint are the same, the low-key warm artificial lighting from the right casting deep shadows is the same
+---
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a black long-sleeved shirt and dark trousers sits in a black leather armchair in a dimly lit room with textured beige walls. He wears dark sunglasses, his legs spread apart and hands resting loosely between his knees. A tall wooden stand with a portable radio and framed photograph stands to his left; a small side table and red ashtray are visible at screen-right. The camera pushes in slowly from a medium shot to a medium close-up as the man leans forward, bowing his head and looking down toward the floor. He reaches over to the side table, picks up a gun, and brings it to his mouth, holding a cigarette between his lips with his mouth slightly open. The shot lands exactly on <Picture 2>.
+
+overall_soundscape: The low hum of the room's ventilation, the soft rustle of fabric as he shifts his weight, and the faint clink of metal as he lifts the gun from the table.
+non_diegetic_music: A slow, deep cello drone at a steady tempo with minimal vibrato.
+----------

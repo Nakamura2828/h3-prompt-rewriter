@@ -1,0 +1,362 @@
+##### same: city skyline (day vs night) #####
+----------
+qwen3.6-35b-a3b  [same: city skyline (day vs night) :: set_city_day]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a dense urban skyline composed of numerous high-rise buildings of varying heights and architectural styles, extending to a flat horizon line under a sky filled with scattered white clouds
+[[CONTENTS]] a tall rectangular tower with a central antenna mast and horizontal banding, a stepped grey tower with a green-topped spire, a gold-toned glass tower with vertical lines, a dark rectangular tower, a building with a pale stone facade and a green copper roof, a modern glass-fronted building with projecting balconies, and a cluster of lower-rise structures in the foreground
+[[DISTINGUISHING]] the stepped grey tower with a green-topped spire, and the gold-toned glass tower
+[[PLACE]] a high-angle view of a city skyline
+[[ATMOSPHERE]] bright daylight with scattered white clouds against a blue sky, clear visibility across the urban landscape
+[[LABEL]] the city skyline
+[[DEFINITION]] a dense cluster of high-rise buildings, a stepped grey tower with a green-topped spire, a gold-toned glass tower, a tall rectangular tower with a central antenna mast, and a building with a pale stone facade and a green copper roof
+----------
+qwen3.6-35b-a3b  [same: city skyline (day vs night) :: set_city_night]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a dense urban skyline composed of numerous high-rise buildings of varying heights and architectural styles, stretching to a flat horizon line under a wide sky
+[[CONTENTS]] a tall rectangular skyscraper with a central spire and antenna array, a stepped tower topped by a bright cyan illuminated cross-shaped structure, a building with a projecting red rooftop sign panel, a glass-clad tower with a grid of windows, and a foreground building with a curved glass facade
+[[DISTINGUISHING]] the stepped tower with the cyan cross-shaped structure on its roof, and the red projecting rooftop sign panel
+[[PLACE]] a city skyline at twilight
+[[ATMOSPHERE]] deep blue sky fading to orange at the horizon, artificial lights glowing from windows and rooftop signs, long exposure light trails visible on streets below, dusk transitioning to night
+[[LABEL]] the twilight city skyline
+[[DEFINITION]] a dense cluster of high-rise buildings, a stepped tower with a cyan cross-shaped structure on its roof, a building with a red projecting rooftop sign panel, and a glass-clad tower with a grid of windows
+----------
+##### same: kitchen p2 (clean control) #####
+----------
+qwen3.6-35b-a3b  [same: kitchen p2 (clean control) :: set_p2_first]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a kitchen with walls covered in textured reddish-brown paneling, a window on the far wall covered by sheer white curtains, and a wooden structural post in the foreground right
+[[CONTENTS]] a set of yellow upper cabinets with silver handles, a green dish rack on the counter, a built-in sink with a curved faucet, a black-edged table with a white top, a white chair with a metal frame, a wall-mounted fan with a green housing, and a wooden shelf bracket
+[[DISTINGUISHING]] the yellow kitchen cabinets, and the reddish-brown textured walls
+[[PLACE]] a residential kitchen
+[[ATMOSPHERE]] bright daylight filtering through sheer curtains, creating a soft ambient light in the room
+[[LABEL]] the yellow kitchen
+[[DEFINITION]] yellow upper cabinets, reddish-brown textured walls, a black-edged table with a white top, a wall-mounted fan, and a wooden structural post
+----------
+qwen3.6-35b-a3b  [same: kitchen p2 (clean control) :: set_p2_last]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a kitchen with walls covered in faded red textured wallpaper, a window on the far wall covered by sheer white curtains, and a wooden partition wall on the right side
+[[CONTENTS]] a set of yellow upper cabinets with silver handles, a matching yellow lower cabinet unit with a chrome faucet, a green plastic dish drainer on the counter, a black-topped table with a white cloth surface, a white chair back, a dark wooden shelving unit holding a glass display case containing a handgun, and two bottles on the table
+[[DISTINGUISHING]] the yellow kitchen cabinetry, and the glass display case on the shelving unit
+[[PLACE]] a kitchen with yellow cabinets
+[[ATMOSPHERE]] bright daylight filtering through the sheer curtains, creating a soft ambient light in the room
+[[LABEL]] the yellow-cabinet kitchen
+[[DEFINITION]] faded red textured wallpaper, yellow upper and lower cabinets, a green plastic dish drainer, a black-topped table, a white chair back, and a dark wooden shelving unit with a glass display case
+----------
+##### same: dining room p3 (clean control) #####
+----------
+qwen3.6-35b-a3b  [same: dining room p3 (clean control) :: set_p3_first]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with cream-painted wall paneling featuring rectangular recessed panels, a wooden dining table with a smooth finish, and a window in the background revealing a glimpse of an outdoor area
+[[CONTENTS]] a tall orange cardboard cereal box with green lettering, a clear glass bowl on a pedestal stand, a white ceramic bowl with a floral pattern, a tall glass containing pink liquid, a carton of milk with red and white coloring, wooden dining chairs with vertical slats, a woven placemat, and a shelf holding several clear glass bottles
+[[DISTINGUISHING]] the cream-painted wall paneling, and the orange cereal box with green lettering
+[[PLACE]] a kitchen or dining room
+[[ATMOSPHERE]] warm, soft daylight entering from the side, casting gentle shadows across the table and walls, daytime
+[[LABEL]] the paneled dining room
+[[DEFINITION]] cream-painted wall paneling, a wooden dining table, an orange cereal box with green lettering, a clear glass pedestal bowl, a white ceramic floral bowl, and wooden dining chairs
+----------
+qwen3.6-35b-a3b  [same: dining room p3 (clean control) :: set_p3_last]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with cream-painted wood paneling covering the walls, featuring rectangular recessed panels separated by raised stiles and rails, and a decorative cornice molding along the top edge
+[[CONTENTS]] a wooden dining table with a dark finish, a wooden chair with a solid backrest, a glass pedestal fruit bowl, a white ceramic bowl with a floral pattern, a tall orange cardboard carton, a red and white carton, a clear drinking glass, and a shelf holding several clear glass bottles
+[[DISTINGUISHING]] the cream-painted wall paneling, and the orange cereal carton on the table
+[[PLACE]] a kitchen dining area
+[[ATMOSPHERE]] warm, directional sunlight casting long shadows across the table and walls, indicating late afternoon or early morning
+[[LABEL]] the paneled dining room
+[[DEFINITION]] cream-painted wood wall paneling, a wooden dining table, a wooden chair, a glass pedestal fruit bowl, an orange cardboard carton, and a floral-patterned ceramic bowl
+----------
+##### same: window room (three framings) #####
+----------
+qwen3.6-35b-a3b  [same: window room (three framings) :: set_p6_first]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a narrow interior corridor with peeling pale green painted walls, a rough red brick pillar at the corner of an opening, and a doorway leading to a brighter exterior space visible through the opening
+[[CONTENTS]] a large framed picture with a light-coloured frame on the left wall, a smaller framed picture on the right wall, a sheer white curtain hanging in the doorway
+[[DISTINGUISHING]] the rough red brick pillar at the corner of the opening, and the peeling pale green paint on the walls
+[[PLACE]] a narrow corridor or hallway
+[[ATMOSPHERE]] warm directional sunlight entering from the open doorway, casting strong highlights on the brickwork and the figure, with the interior remaining in deep shadow, daytime
+[[LABEL]] the narrow corridor
+[[DEFINITION]] peeling pale green painted walls, a rough red brick pillar at the corner of an opening, a large framed picture on the left wall, a smaller framed picture on the right wall, and a sheer white curtain in the doorway
+----------
+qwen3.6-35b-a3b  [same: window room (three framings) :: set_p6_last]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a corner formed by an exposed red brick wall on one side and a rough plastered wall on the other, with a window opening to the left covered by a sheer curtain
+[[CONTENTS]] a heavy beige curtain hanging at the window
+[[DISTINGUISHING]] the exposed red brick wall, and the rough plastered wall
+[[PLACE]] an interior corner by a window
+[[ATMOSPHERE]] warm directional sunlight from the left casting strong highlights and shadows, daytime
+[[LABEL]] the brick-walled room
+[[DEFINITION]] an exposed red brick wall, a rough plastered wall, and a window with a heavy beige curtain
+----------
+qwen3.6-35b-a3b  [same: window room (three framings) :: set_window]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a plain, light-coloured wall surface filling the background, with vertical dark shapes visible in the out-of-focus distance
+[[CONTENTS]] none
+[[DISTINGUISHING]] none
+[[PLACE]] a plain studio backdrop
+[[ATMOSPHERE]] warm, golden directional light from the side, soft focus background, daytime
+[[LABEL]] the plain studio backdrop
+[[DEFINITION]] a plain, light-coloured wall surface and vertical dark shapes in the out-of-focus distance
+----------
+##### same: apartment room p1 (exposure change) #####
+----------
+qwen3.6-35b-a3b  [same: apartment room p1 (exposure change) :: set_p1_first]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with stained beige walls showing peeling paint near the corners, a dark floor, and a corner where two walls meet
+[[CONTENTS]] a tall wooden stand with a small shelf holding a black radio, a dark armchair, a striped sofa to the left, a small side table with a lamp base to the right
+[[DISTINGUISHING]] the tall wooden stand with the attached shelf, and the stained beige walls
+[[PLACE]] a dimly lit room
+[[ATMOSPHERE]] warm artificial light from a low source casting long shadows, dark and moody, evening or night
+[[LABEL]] the dimly lit room
+[[DEFINITION]] stained beige walls, a tall wooden stand with an attached shelf, a black radio, a dark armchair, a striped sofa, and a small side table
+----------
+qwen3.6-35b-a3b  [same: apartment room p1 (exposure change) :: set_p1_last]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with textured beige walls meeting at a corner, the wall surface showing signs of wear and uneven plaster
+[[CONTENTS]] a tall wooden shelving unit with a horizontal shelf holding a black portable radio with a silver speaker grille and control knobs, and a small rectangular object leaning against the vertical support
+[[DISTINGUISHING]] the textured beige walls, and the black portable radio on the wooden shelf
+[[PLACE]] a room with a wooden shelf and a radio
+[[ATMOSPHERE]] warm, dim artificial light casting soft shadows in the corner, evening or night
+[[LABEL]] the room with the radio
+[[DEFINITION]] textured beige walls, a tall wooden shelving unit, and a black portable radio with a silver speaker grille
+----------
+##### negative control: two different classrooms #####
+----------
+qwen3.6-35b-a3b  [negative control: two different classrooms :: set_classroom1]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with plain off-white walls, a light-coloured floor, and a large window on the right wall covered by a sheer curtain
+[[CONTENTS]] rows of wooden student desks with grey metal frames, a large rectangular display screen mounted on the front wall, a low shelving unit against the back wall
+[[DISTINGUISHING]] the large rectangular display screen on the front wall, and the rows of wooden student desks
+[[PLACE]] a primary school classroom
+[[ATMOSPHERE]] bright daylight from the window, soft and even, daytime
+[[LABEL]] the classroom environment
+[[DEFINITION]] a large rectangular display screen, rows of wooden student desks with grey metal frames, a low shelving unit, and a window with a sheer curtain
+----------
+qwen3.6-35b-a3b  [negative control: two different classrooms :: set_classroom2]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with pale yellow walls, a large multi-pane window on the far wall, and a light-coloured floor
+[[CONTENTS]] rows of wooden school desks with metal legs, matching wooden chairs, a white window sill, a potted green plant in a terracotta pot on the sill, a framed picture with a blue border hanging on the left wall
+[[DISTINGUISHING]] the rows of wooden school desks and chairs, and the large multi-pane window
+[[PLACE]] a school classroom
+[[ATMOSPHERE]] bright natural daylight from the large window, even illumination, daytime
+[[LABEL]] the school classroom
+[[DEFINITION]] pale yellow walls, a large multi-pane window, a white window sill with a potted plant, rows of wooden desks and chairs, and a framed picture on the wall
+----------
+##### natural exteriors #####
+----------
+qwen3.6-35b-a3b  [natural exteriors :: set_forest]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a sloping woodland floor covered in loose brown leaf litter, rising from left to right, with exposed tree roots crossing the surface, enclosed by numerous tall, straight tree trunks with smooth grey bark and dark fissured bark, extending into a dense stand of similar trees
+[[CONTINGENTS]] a large tree with prominent buttress roots and moss at its base in the foreground, a network of exposed roots traversing the ground, a narrow dirt path winding through the trees
+[[DISTINGUISHING]] the smooth grey bark on the majority of the trunks, and the dense fog obscuring the background
+[[PLACE]] a foggy deciduous forest
+[[ATMOSPHERE]] thick white fog diffusing the light, soft and even illumination, no direct sun, daytime with the hour not readable
+[[LABEL]] the foggy forest
+[[DEFINITION]] a sloping woodland floor covered in brown leaf litter, numerous tall tree trunks with smooth grey bark, exposed roots crossing the ground, and dense fog obscuring the background
+----------
+qwen3.6-35b-a3b  [natural exteriors :: set_mountain_rain]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a high-altitude mountain basin with a foreground of moss-covered boulders and scree, a central valley floor occupied by a calm lake, and a backdrop of jagged snow-capped peaks rising into the sky
+[[CONTENTS]] patches of green moss on dark rocks, low-lying reddish alpine shrubs, scattered coniferous trees on the slopes, a tall dead tree trunk standing on the left bank, and a single conifer on the right slope
+[[DISTINGUISHING]] the jagged snow-capped peaks in the background, and the moss-covered boulders in the foreground
+[[PLACE]] a mountain lake basin
+[[ATMOSPHERE]] cool blue ambient light under heavy cloud cover, steady rain falling across the scene, mist obscuring the base of the mountains, daytime with the hour not readable
+[[LABEL]] the mountain lake basin
+[[DEFINITION]] moss-covered boulders, low-lying alpine shrubs, scattered coniferous trees, a calm central lake, and jagged snow-capped peaks
+----------
+qwen3.6-35b-a3b  [natural exteriors :: set_fuji]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a calm pond in the foreground with a grassy bank, a cluster of traditional buildings with thick thatched roofs and dark timber framing set among manicured greenery, a dense forest line behind the buildings, and a large snow-capped conical mountain rising in the distance against a clear sky
+[[CONTENTS]] a wooden water wheel attached to a small thatched-roof structure on the near bank, a tall rectangular hedge, several sculpted evergreen trees, a small shrine-like structure with a dark roof beside the hedge, and a row of red-leafed shrubs behind the main buildings
+[[DISTINGUISHING]] the large snow-capped conical mountain dominating the background, and the cluster of thatched-roof buildings
+[[PLACE]] a traditional Japanese garden with a mountain backdrop
+[[ATMOSPHERE]] bright clear daylight under a cloudless blue sky, vivid colours, daytime
+[[LABEL]] the thatched-roof garden
+[[DEFINITION]] a calm pond, a wooden water wheel, a cluster of thatched-roof buildings, manicured greenery, and a large snow-capped conical mountain
+----------
+##### stylised rendering #####
+----------
+qwen3.6-35b-a3b  [stylised rendering :: set_cloud]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a wide grassy plain with a dirt track curving through it, backed by layers of blue forested hills fading into the distance under a vast sky
+[[CONTENTS]] a small rectangular building with a flat roof on the right side of the track, a wooden post-and-rail fence running along the left side, and a single utility pole near the fence line
+[[DISTINGUISHING]] the massive cumulus cloud formation dominating the upper half of the view, and the layered blue hills receding into the background
+[[PLACE]] a rural landscape with distant mountains
+[[ATMOSPHERE]] bright daylight under a clear blue sky with a large white cumulus cloud and a faint contrail, warm and sunny conditions
+[[LABEL]] the mountain valley landscape
+[[DEFINITION]] a grassy plain with a curving dirt track, a small flat-roofed building, a wooden fence line, layered blue forested hills, and a massive cumulus cloud formation
+----------
+qwen3.6-35b-a3b  [stylised rendering :: set_vector_city]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a dense skyline of stylized skyscrapers with geometric facades in shades of orange, pink, and purple rising from a flat waterfront edge, fronted by a calm body of blue water reflecting the buildings, and a foreground of dark reddish-brown rocky terrain
+[[CONTENTS]] a tall central tower with a spire and antenna array, a building with a distinctive triangular roofline, multiple rectangular towers with vertical lines, and a cluster of angular low-rise structures along the base
+[[DISTINGUISHING]] the central tower with its spire and antenna array, and the sharp geometric forms of the orange and pink skyscrapers
+[[PLACE]] a stylized city skyline across water
+[[ATMOSPHERE]] bright clear daylight with streaks of white clouds in a blue sky, warm sunlight casting highlights on the eastern faces of the buildings, calm water surface
+[[LABEL]] the stylized waterfront skyline
+[[DEFINITION]] a dense cluster of geometric skyscrapers in orange and pink tones, a central tower with a spire and antenna array, a triangular-roofed building, and a calm blue waterfront reflecting the structures
+----------
+qwen3.6-35b-a3b  [stylised rendering :: set_miya]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a concrete parapet wall with a flat top surface and vertical support pillars, overlooking a valley of residential rooftops and distant hills, bare deciduous trees with thin branching patterns, evergreen shrubs at the base of the wall
+[[CONTENTS]] a weathered concrete barrier with dark circular bolt heads, climbing vines with small green leaves growing along the parapet, a cylindrical metal vent cap on the wall surface
+[[DISTINGUISHING]] the bare deciduous trees framing the view, and the concrete parapet with climbing vines
+[[PLACE]] a hillside overlook with a concrete barrier
+[[ATMOSPHERE]] soft diffuse daylight under an overcast sky, cool tones, daytime with light snowfall visible
+[[LABEL]] the hillside overlook
+[[DEFINITION]] a concrete parapet wall with climbing vines, bare deciduous trees, evergreen shrubs, and a view of residential rooftops
+----------
+##### no environment at all #####
+----------
+qwen3.6-35b-a3b  [no environment at all :: set_kasia]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a flat white ground extending to the edges of the frame with no visible horizon line or wall junctions
+[[CONTENTS]] none
+[[DISTINGUISHING]] none
+[[PLACE]] a plain studio backdrop
+[[ATMOSPHERE]] even, shadowless illumination on a white surface, daytime
+[[LABEL]] the plain white studio ground
+[[DEFINITION]] a flat white ground extending to the edges of the frame
+----------
+qwen3.6-35b-a3b  [no environment at all :: set_phone]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a seamless white ground extending to the edges of the frame with no visible horizon or wall line
+[[CONTENTS]] none
+[[DISTINGUISHING]] none
+[[PLACE]] a plain white studio ground
+[[ATMOSPHERE]] bright, shadowless daylight from above, even and diffuse, daytime
+[[LABEL]] the plain white studio ground
+[[DEFINITION]] a seamless white ground extending to the edges of the frame
+----------
+qwen3.6-35b-a3b  [no environment at all :: set_miyu]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a flat black ground plane extending to the edges of the frame
+[[CONTENTS]] none
+[[DISTINGUISHING]] none
+[[PLACE]] a plain black studio ground
+[[ATMOSPHERE]] uniform black background, no light source visible, daytime
+[[LABEL]] the plain black studio ground
+[[DEFINITION]] a flat black ground plane
+----------
+##### interior/exterior boundary #####
+----------
+qwen3.6-35b-a3b  [interior/exterior boundary :: set_bookshop]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a shopfront with a wide opening for the door and a large display window, framed in dark green painted wood showing signs of wear and chipping paint at the base, set into a light-coloured stone building facade with a vertical drainpipe on the right side
+[[CONTENTS]] a glass display window with multiple wooden shelves stocked with books facing outward, a glass door to the left of the window, a projecting rooftop sign panel above the frame, a blue circular sticker adhered to the window glass, and a rectangular ventilation grille set into the lower panel beneath the window
+[[DISTINGUISHING]] the wide display window filled with outward-facing books, and the dark green painted wooden shopfront frame
+[[PLACE]] a bookshop storefront
+[[ATMOSPHERE]] diffuse daylight, overcast sky, no direct shadows, daytime
+[[LABEL]] the bookshop storefront
+[[DEFINITION]] a wide display window filled with outward-facing books, a dark green painted wooden shopfront frame, and a blue circular sticker on the glass
+----------
+##### crowded architectural interior #####
+----------
+qwen3.6-35b-a3b  [crowded architectural interior :: set_stage]
+---
+ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a tiered auditorium with a main floor and two curved balconies rising above it, walls finished in deep red fabric or velvet, a wide central aisle covered in red carpet leading from the seating area to the stage edge, and a flat stage floor made of worn grey wood planks
+[[CONTENTS]] rows of fixed red upholstered seats arranged in a fan shape on the main floor, two balcony levels with ornate gold-painted plaster balustrades and decorative friezes, wall-mounted sconce light fixtures with multiple globes along the balcony fronts, and black rectangular stage lighting fixtures mounted on the balcony undersides
+[[DISTINGUISHING]] the two curved balconies with gold-painted plaster balustrades, and the wide red-carpeted central aisle
+[[PLACE]] a formal auditorium or theatre
+[[ATMOSPHERE]] warm ambient light from wall sconces and overhead fixtures, bright illumination on the stage area, evening performance lighting, daytime hour not readable
+[[LABEL]] the formal auditorium
+[[DEFINITION]] curved balconies with gold-painted plaster balustrades, a wide red-carpeted central aisle, rows of fixed red upholstered seats, and wall-mounted sconce light fixtures
+----------
+##### subject selection #####
+----------
+qwen3.6-35b-a3b  [subject selection :: set_p6_outside]
+---
+SUBJECT: the view through the window | ROLE: setting
+---
+[[SETTING_KIND]] exterior
+[[STRUCTURE]] a narrow urban alleyway or courtyard enclosed by tall brick walls, with a section of exposed red brickwork visible in the foreground and a blue-painted door recessed into the wall further back
+[[CONTENTS]] a vertical strip of weathered red brick, a blue painted wooden door set within a stone or concrete frame
+[[DISTINGUISHING]] the exposed red brickwork in the foreground, and the blue door set into the wall
+[[PLACE]] an urban alleyway or courtyard
+[[ATMOSPHERE]] warm directional sunlight striking the brickwork and casting deep shadows, daytime with the hour not readable
+[[LABEL]] the alleyway view
+[[DEFINITION]] a narrow passage enclosed by tall walls, exposed red brickwork in the foreground, and a blue painted door set into the wall
+----------
+qwen3.6-35b-a3b  [subject selection :: set_notfound]
+---
+SUBJECT: the beach | ROLE: setting
+---
+[[SETTING_KIND]] interior
+[[STRUCTURE]] a room with plain off-white walls, a light-coloured floor, and a large window on the right wall covered by a sheer curtain
+[[CONTENTS]] rows of wooden student desks with grey metal frames, a large rectangular display screen mounted on the front wall showing a map, a low shelving unit against the back wall
+[[DISTINGUISHING]] the large rectangular display screen on the front wall, and the rows of wooden student desks
+[[PLACE]] a school classroom
+[[ATMOSPHERE]] bright daylight from the window on the right, soft and even, daytime with the hour not readable
+[[LABEL]] the classroom environment
+[[DEFINITION]] plain off-white walls, a large rectangular display screen showing a map, rows of wooden student desks with grey metal frames, and a low shelving unit
+----------

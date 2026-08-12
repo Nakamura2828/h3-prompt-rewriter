@@ -1,0 +1,33 @@
+Qwen3.6-35B-A3B
+---
+A wide-shot of a bookshop, the door is closed. (5 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a bookshop with a dark green facade and a large window display filled with colorful books. The door is closed and the shop appears quiet. The camera holds a static wide framing as the scene lingers on the storefront, capturing the stillness of the exterior and the organized display of books inside. The shot ends with the door remaining closed, matching the exact composition and framing of <Picture 1>.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: Muffled street ambience from outside, faint hum of interior lighting, and the quiet stillness of an empty shop.
+non_diegetic_music: N/A
+---
+Analysis: I think this is a fail.  There is a man standing in the open door in the last frame here, there is no mention of it in the prompt.  Instead it says the prompt ends with the door closed.
+----------
+Qwen3.6-35B-A3B
+---
+A close-up of a TV with a news reporter (6 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the camera focuses tightly on a black CRT television set resting on a wooden stand, with a VCR visible on the shelf below. The screen flickers to life, displaying a news broadcast with a reporter speaking. The camera holds a static close-up on the TV screen for the duration, then slowly pulls back to reveal an elderly woman sitting beside the TV, her hands clasped in her lap, wearing a black and white floral blouse, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The low hum of the television set and the muffled audio of a news broadcast playing from the TV speakers.
+non_diegetic_music: N/A
+---
+Analysis: Mixed results here, but not right.  The TV is supposed to start with the TV on showing a news reporter, instead it starts off (as the last frame shows). It gets the zoom out to show the elderly lady correct though.
+----------
+Qwen3.6-35B-A3B
+---
+A man walks across the kitchen, camera panning to the right (7 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a man wearing a white t-shirt and glasses walks from the left side of a bright, modern kitchen toward the stove, his body moving into the foreground as the camera pans right to follow him. He arrives at the counter and lifts a frying pan containing four golden-brown pancakes, his gaze lowering to inspect the food, while a young girl in patterned pajamas stands behind him, laughing and covering one eye with her hand, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The sizzle of pancakes cooking in a pan and the clinking of a spatula against the metal surface.
+non_diegetic_music: N/A
+---
+Analysis: This one is pretty accurate, walking from the left makes sense given the pan to the right and the unmentioned stove and girl being on the right side of the last frame.
+----------

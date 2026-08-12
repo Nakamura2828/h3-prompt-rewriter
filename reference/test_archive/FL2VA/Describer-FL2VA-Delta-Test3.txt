@@ -1,0 +1,454 @@
+##### 1 lamp-zoom-gun #####
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_first]
+---
+CAST: the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, desaturated and moody grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, visible stubble
+  [[CLOTHING]] black long-sleeved shirt, dark trousers, dark sunglasses
+  [[POSE]] seated in a large armchair, legs spread apart, hands resting loosely between his knees
+  [[GAZE]] head tilted slightly down and three-quarter left, eyes behind the sunglasses directed downward
+  [[POSITION]] centre frame, mid-ground, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows relaxed
+  [[HOLDING]] nothing
+[[OBJECTS]] a large black armchair, occupied; a tall wooden stand with a small shelf, holding a radio and a framed photograph; a dark sofa, partially visible at screen-left; a small side table at screen-right with a book or magazine on top; a red ashtray on the floor near the side table
+[[ENVIRONMENT]] interior room with textured, stained walls in a yellowish-brown tone; peeling paint visible on the wall edges; dimly lit domestic setting
+[[LIGHTING]] low-key lighting, warm and yellowish, casting deep shadows across the room and the subject's face
+[[PALETTE]] dark browns, blacks, and muted yellows
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_last]
+---
+CAST: the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film grain visible
+[[FRAMING]] medium close-up, eye level, centred
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, thirties to forties, slim build, short dark hair with a receding hairline, light stubble
+  [[CLOTHING]] black long-sleeved shirt, grey suspenders with metal clips, dark trousers
+  [[POSE]] seated and leaning forward slightly, head tilted down, right arm bent at the elbow
+  [[GAZE]] head tilted down and three-quarter left, eyes directed toward the lower left
+  [[POSITION]] centre frame, mid-ground, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows slightly furrowed
+  [[HOLDING]] a cigarette between the lips
+[[OBJECTS]] a wooden shelving unit, upright; a portable radio, resting on the shelf with its telescopic antenna extended; a small rectangular object, leaning against the vertical support of the shelf
+[[ENVIRONMENT]] interior room, plain beige walls with visible texture and scuff marks, corner of the room visible at screen-right
+[[LIGHTING]] warm artificial light from the front-left, casting soft shadows on the right side of the face and body
+[[PALETTE]] warm earth tones, dominated by beige, brown, and black
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_delta]
+---
+[[FIRST_FRAME]]
+{{p1_first}}
+---
+[[CHANGES]] the man, POSE: seated in a large armchair with legs spread apart and hands resting loosely between his knees, now leaning forward with his head tilted down and mouth open around a cigarette; the man, GAZE: head tilted slightly down and three-quarter left, eyes behind the sunglasses directed downward, now looking down toward the floor; the man, EXPRESSION: mouth closed, lips pressed together, brows relaxed, now mouth open holding a cigarette; the framed photograph on the wooden stand, POSITION: resting against the vertical support, now leaning against the support at an angle
+[[NEW]] a lit cigarette held between the man's lips (present but unmentioned)
+[[GONE]] none
+[[UNCHANGED]] the people present are the man alone, his black long-sleeved shirt, dark trousers, and dark sunglasses are the same, the interior room with textured yellowish-brown walls is the same, the tall wooden stand with the radio is the same, the low-key warm lighting is the same
+----------
+qwen3.6-35b-a3b  [1 lamp-zoom-gun :: p1_compose]
+---
+USER: A man sits in a dark room. He turns on the lamp beside him and picks up the gun from the table. 8 seconds.
+
+[[FRAMING_FIRST]] {{p1_first:FRAMING}}
+[[FRAMING_LAST]] {{p1_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p1_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p1_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p1_first}}
+
+[[DELTA]]
+{{p1_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a black long-sleeved shirt and dark sunglasses sits in a large armchair in a dimly lit room with textured yellowish-brown walls. A tall wooden stand holding a radio and a framed photograph stands to his right, while a small side table sits further right. The camera pushes in with small amplitude at slow speed as the man leans forward slightly, tilting his head down toward the floor. He picks up a gun from the side table beside him and brings it to rest on his lap. As he settles into the final closer framing, the warm artificial light from the front-left illuminates his face and body, casting soft shadows on the right side.
+overall_soundscape: The low hum of the room's ventilation, the rustle of fabric as the man shifts in the armchair, and the dull clink of metal as he sets the gun down.
+non_diegetic_music: A slow, deep cello drone at a steady tempo with minimal vibrato.
+----------
+##### 2 gun #####
+----------
+qwen3.6-35b-a3b  [2 gun :: p2_first]
+---
+CAST: the girl | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, warm naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the girl]]
+  [[APPEARANCE]] young female, pre-teen, slim build, dark hair cut in a short bob with bangs
+  [[CLOTHING]] light green sleeveless knit vest over a white tank top, no visible headwear or eyewear
+  [[POSE]] standing upright at a table, torso facing forward, right arm extended holding a pistol, left hand holding a cloth near the table surface
+  [[GAZE]] head tilted slightly down and three-quarter right, eyes directed toward the pistol in her right hand
+  [[POSITION]] screen-left to centre frame, mid-ground, body angled three-quarter right
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level, eyes open and steady
+  [[HOLDING]] a pistol in the right hand; a white cloth in the left hand
+[[OBJECTS]] a table covered with a white cloth; multiple pistols resting on the table (one black, two silver); a small bottle with a red cap; a tall dark aerosol can; a green dish rack on the counter to the left; a paper towel roll mounted under the upper cabinets; a wooden chair back visible behind the girl
+[[ENVIRONMENT]] kitchen interior, yellow upper and lower cabinets with metal handles, reddish-brown textured wall, window with sheer curtains in the background, wooden structural post at screen-right
+[[LIGHTING]] soft natural daylight from the window at screen-right, illuminating the right side of the scene, warm indoor ambient fill
+[[PALETTE]] warm yellows and reds, muted greens, neutral whites and greys
+[[TEXT]] "NYNE"
+[[CAST NOT FOUND]] none
+----------
+qwen3.6-35b-a3b  [2 gun :: p2_last]
+---
+CAST: the girl | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, warm naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the girl]]
+  [[APPEARANCE]] young female, late teens or early twenties, slim build, dark hair in a short bob cut with bangs
+  [[CLOTHING]] sage green sleeveless vest over a white tank top, no visible headwear
+  [[POSE]] standing upright at a counter, torso facing forward, both hands holding a white cloth and wiping an object
+  [[GAZE]] head tilted down and three-quarter right, eyes directed toward the items on the counter
+  [[POSITION]] screen-left to centre frame, mid-ground, body angled slightly toward the counter
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level, eyes open and looking downward
+  [[HOLDING]] a white cloth
+[[OBJECTS]] several handguns, laid out on a white cloth on the counter; a green dish rack, sitting on the sink to the left; a faucet, visible behind the girl; a bottle with a red cap, standing on the counter near the guns; a dark spray can, standing next to the bottle; a wooden cabinet or shelf unit, open and containing more firearms, at screen-right
+[[ENVIRONMENT]] kitchen interior, yellow upper cabinets mounted on a reddish-brown wall, a sink area to the left, a window with sheer curtains in the background centre, wooden structural elements framing the right side
+[[LIGHTING]] soft natural daylight from the window at the back, creating gentle highlights on the girl's face and hair, warm indoor ambient light
+[[PALETTE]] warm yellows and reds from the kitchen walls and cabinets, sage green and white from the girl's clothing, dark metallic greys and blacks from the firearms
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [2 gun :: p2_delta]
+---
+[[FIRST_FRAME]]
+{{p2_first}}
+---
+[[CHANGES]] the girl, POSE: standing upright at a table with right arm extended holding a pistol, now standing with both hands at chest height holding a white cloth; the girl, GAZE: head tilted slightly down and three-quarter right, eyes directed toward the pistol in her right hand, now head level with eyes directed downward toward the cloth in her hands; the table, STATE: covered with a white cloth and multiple pistols resting on it (one black, two silver), now covered with a white cloth and four pistols resting on it (two black, two silver)
+[[NEW]] none
+[[GONE]] none
+[[UNCHANGED]] the people present are the girl alone, her light green sleeveless knit vest over a white tank top is the same, the kitchen interior with yellow cabinets, reddish-brown wall, window with sheer curtains, and wooden structural post are the same, the soft natural daylight from the window at screen-right is the same
+----------
+qwen3.6-35b-a3b  [2 gun :: p2_compose]
+---
+USER: She finishes cleaning the handgun and sets it down on the table. 6 seconds.
+
+[[FRAMING_FIRST]] {{p2_first:FRAMING}}
+[[FRAMING_LAST]] {{p2_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p2_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p2_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p2_first}}
+
+[[DELTA]]
+{{p2_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a young girl with a dark bob stands in a kitchen with yellow cabinets, wearing a light green sleeveless knit vest over a white tank top. She holds a pistol in her right hand and a white cloth in her left, looking down at the gun. The camera holds a static medium shot as she finishes wiping the pistol, lowers her arm, and sets the handgun down on the table among the other weapons. She then brings both hands up to chest height, holding the white cloth with both hands, and looks down at it as the scene settles into the final composition.
+overall_soundscape: The soft rustle of a cloth wiping metal, followed by the dull clink of the pistol being set down on the table surface.
+non_diegetic_music: N/A
+----------
+##### 3 talk #####
+----------
+qwen3.6-35b-a3b  [3 talk :: p3_first]
+---
+CAST: the girl | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, warm filmic grade
+[[FRAMING]] medium shot, eye level, centred on subject
+[[CHAR: the girl]]
+  [[APPEARANCE]] young female, early teens, slim build, dark brown hair cut in a straight bob with bangs
+  [[CLOTHING]] oversized grey patterned button-up shirt worn open over a white undershirt
+  [[POSE]] seated at a table, torso upright, right hand resting against the jawline and chin, elbow on the table surface
+  [[GAZE]] head turned profile left, eyes directed toward the left side of the frame
+  [[POSITION]] screen-right, mid-ground, body angled three-quarter left
+  [[EXPRESSION]] mouth slightly open, lips parted, brows relaxed, eyes wide
+  [[HOLDING]] nothing
+[[OBJECTS]] a tall orange and green cereal box, standing upright; a glass bowl with a pedestal base, containing food remnants; a white ceramic bowl, sitting on the table with a spoon inside; a tall glass filled with pink liquid; a carton of milk, partially visible at screen-left edge; a wooden chair back, visible behind the girl
+[[ENVIRONMENT]] dining room interior, cream-coloured wall paneling in the background, wooden table surface in the foreground
+[[LIGHTING]] soft directional light from the left, illuminating the subject's face and the table objects, warm tone
+[[PALETTE]] warm beige, orange, grey, and pink tones
+[[TEXT]] "CORN FLAKES"
+[[CAST NOT FOUND]] none
+----------
+qwen3.6-35b-a3b  [3 talk :: p3_last]
+---
+CAST: the girl | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, warm naturalistic grade
+[[FRAMING]] medium shot, eye level, centred on subject
+[[CHAR: the girl]]
+  [[APPEARANCE]] young female, early teens, slim build, dark brown hair cut in a straight bob with bangs
+  [[CLOTHING]] oversized grey patterned button-up shirt worn open over a white undershirt, no visible lower garments
+  [[POSE]] seated at a table, torso upright, right elbow resting on the table surface, right hand cupping the chin and jawline
+  [[GAZE]] head turned profile left, eyes directed toward the left side of the frame
+  [[POSITION]] screen-right, mid-ground, body angled three-quarter left
+  [[EXPRESSION]] mouth slightly open, lips parted, brows relaxed, eyes wide and steady
+  [[HOLDING]] nothing
+[[OBJECTS]] a tall orange and green cereal box standing upright on the table; a glass bowl containing pink liquid, positioned to the left of the cereal box; a white ceramic bowl with floral pattern, containing remnants of food and a spoon, in the foreground; a wooden chair back visible behind the girl; a wooden chair back visible to the far left
+[[ENVIRONMENT]] interior dining area, cream-coloured wall paneling with vertical grooves in the background, wooden table surface in the foreground
+[[LIGHTING]] soft directional light from the left, illuminating the girl's face and the table objects, warm tone, creating gentle shadows on the right side of the frame
+[[PALETTE]] warm beige and cream tones, with accents of orange, green, and grey
+[[TEXT]] "CORN FLAKES"
+----------
+qwen3.6-35b-a3b  [3 talk :: p3_delta]
+---
+[[FIRST_FRAME]]
+{{p3_first}}
+---
+[[CHANGES]] none
+[[NEW]] none
+[[GONE]] none
+[[UNCHANGED]] the people present are the girl alone, her oversized grey patterned button-up shirt and white undershirt are the same, the dining room interior with cream-coloured wall paneling and wooden table is the same, the soft directional lighting from the left is the same
+----------
+qwen3.6-35b-a3b  [3 talk :: p3_compose]
+---
+USER: She sits at the table talking. "I already told you." 5 seconds.
+
+[[FRAMING_FIRST]] {{p3_first:FRAMING}}
+[[FRAMING_LAST]] {{p3_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p3_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p3_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p3_first}}
+
+[[DELTA]]
+{{p3_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a young girl with a dark brown bob sits at a wooden dining table in a warmly lit room, her right hand resting against her jawline as she looks toward the left side of the frame. A tall orange and green cereal box reading "CORN FLAKES" stands on the table beside a glass bowl and a white ceramic bowl with a spoon inside. The camera holds a static medium shot as the girl speaks, her expression shifting slightly with her words. The girl (S1), with a youthful, slightly exasperated voice, says: <d>[English] I already told you.</d> She settles back into her seated posture at the end of the video.
+overall_soundscape: The faint rustle of fabric as she shifts in her chair and the soft ambient hum of a quiet dining room.
+non_diegetic_music: N/A
+----------
+##### 4 turn #####
+----------
+qwen3.6-35b-a3b  [4 turn :: p4_first]
+---
+CAST: the girl; the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film grain visible
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the girl]]
+  [[APPEARANCE]] child, female, short dark hair, slim build
+  [[CLOTHING]] olive green bomber jacket, black top underneath, striped shorts with green trim, bare legs
+  [[POSE]] walking forward, left arm cradling a potted plant against her chest, right arm holding a brown paper bag at her side
+  [[GAZE]] head turned slightly toward camera, eyes looking forward and slightly up
+  [[POSITION]] screen-left, foreground
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level, neutral expression
+  [[HOLDING]] a potted plant with broad green leaves in a terracotta pot; a brown paper bag tied at the top
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, receding hairline, light stubble, tall build
+  [[CLOTHING]] long dark coat over a white t-shirt, dark trousers
+  [[POSE]] walking forward, right hand gripping the handle of a large suitcase, left arm at his side
+  [[GAZE]] head tilted down and three-quarter left, eyes looking toward the girl
+  [[POSITION]] screen-right, foreground
+  [[EXPRESSION]] mouth slightly open, brows relaxed, neutral expression
+  [[HOLDING]] a large dark brown leather suitcase with brass latches
+[[OBJECTS]] a potted plant, held upright; a brown paper bag, tied closed; a large leather suitcase, upright and being carried; a white vehicle, blurred in the background
+[[ENVIRONMENT]] urban street setting, blurred buildings in the background, white vehicle (possibly a bus or truck) spanning the mid-ground behind the subjects
+[[LIGHTING]] soft diffuse daylight, overcast sky, even illumination with minimal shadows
+[[PALETTE]] muted earth tones, olive green, dark brown, white, and grey
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [4 turn :: p4_last]
+---
+CAST: the girl; the man | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, soft focus background
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the girl]]
+  [[APPEARANCE]] child, female, short dark hair, slim build
+  [[CLOTHING]] olive green bomber jacket, bright green shorts with horizontal stripes, bare legs
+  [[POSE]] standing upright, facing right toward the man, holding a potted plant against her chest with both hands
+  [[GAZE]] head tilted up and three-quarter right, eyes directed at the man's face
+  [[POSITION]] screen-left, foreground, body angled three-quarter right
+  [[EXPRESSION]] mouth closed, lips slightly parted, brows relaxed, eyes open
+  [[HOLDING]] a potted plant with broad green leaves
+[[CHAR: the man]]
+  [[APPEARANCE]] adult male, short dark hair, beard, tall build
+  [[CLOTHING]] long dark coat, dark trousers
+  [[POSE]] standing upright, facing left toward the girl, right hand resting on the handle of a suitcase
+  [[GAZE]] head tilted down and three-quarter left, eyes directed at the girl's face
+  [[POSITION]] screen-right, foreground, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level, eyes open
+  [[HOLDING]] nothing
+[[OBJECTS]] a large rectangular suitcase, standing upright on the ground with leather straps and brass latches; a potted plant, held by the girl
+[[ENVIRONMENT]] urban street setting, tall buildings visible in the background, blurred, overcast sky
+[[LIGHTING]] soft diffuse daylight from above, low contrast, even illumination
+[[PALETTE]] muted earth tones, olive green, dark brown, grey, with accents of bright green
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [4 turn :: p4_delta]
+---
+[[FIRST_FRAME]]
+{{p4_first}}
+---
+[[CHANGES]] the girl, POSE: walking forward with left arm cradling a potted plant against her chest and right arm holding a brown paper bag at her side, now standing still with both hands holding the plant; the man, POSE: walking forward with right hand gripping the handle of a large suitcase and left arm at his side, now standing still with left hand gripping the handle of the suitcase and right arm at his side
+[[NEW]] none
+[[GONE]] the brown paper bag (now occluded or out of frame)
+[[UNCHANGED]] the people present are the girl and the man, their clothing and appearance are the same, the urban street setting with blurred buildings is the same, the soft diffuse daylight and overcast sky are the same
+----------
+qwen3.6-35b-a3b  [4 turn :: p4_compose]
+---
+USER: She walks along the street beside him, then stops and turns to look up at him. 6 seconds.
+
+[[FRAMING_FIRST]] {{p4_first:FRAMING}}
+[[FRAMING_LAST]] {{p4_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p4_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p4_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p4_first}}
+
+[[DELTA]]
+{{p4_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a girl in an olive green bomber jacket walks alongside a tall man in a long dark coat on a city street, a blurred white vehicle spanning the background. The girl carries a potted plant against her chest and a brown paper bag at her side; the man grips the handle of a large leather suitcase. The camera holds a static medium shot as they walk forward together. The girl slows to a halt, lowering the brown paper bag out of view, and turns her head to look up at the man while holding the plant with both hands. The man stops walking and shifts his weight, turning his gaze down toward her as they settle into their final positions at the end of the video.
+overall_soundscape: The soft scuff of footsteps on pavement fades into stillness, accompanied by the faint rustle of fabric and the low, distant hum of city traffic.
+non_diegetic_music: N/A
+----------
+##### 5 skate #####
+----------
+qwen3.6-35b-a3b  [5 skate :: p5_first]
+---
+CAST: the man on roller skates | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film still
+[[FRAMING]] wide shot, eye level, centred
+[[CHAR: the man on roller skates]]
+  [[APPEARANCE]] adult male, slim build, dark hair visible under hat
+  [[CLOTHING]] black suit jacket, white dress shirt, dark tie, dark trousers, black fedora, light-coloured roller skates
+  [[POSE]] leaning back at a sharp angle, right leg extended forward and down, left leg bent behind, both arms raised with elbows bent and hands open in a gesture
+  [[GAZE]] head tilted up and three-quarter right, eyes looking upward toward the wall
+  [[POSITION]] screen-left, foreground, body angled three-quarter right
+  [[EXPRESSION]] mouth wide open, teeth visible, brows raised
+  [[HOLDING]] nothing
+[[OBJECTS]] a black vintage sedan, parked with headlights off; a white vintage car, partially visible at screen-left edge; a potted plant in a terracotta pot, standing upright against the wall at screen-right
+[[ENVIRONMENT]] paved street or plaza at night, large stone building facade with a wide column base at screen-right, brick building with lit windows in the background at screen-left
+[[LIGHTING]] artificial street lighting from above and screen-left, casting a sharp shadow of the man onto the stone wall at screen-right, high contrast
+[[PALETTE]] desaturated dark tones, black, grey, and brown, with warm yellow highlights on the stone wall and car chrome
+[[TEXT]] none
+[[CAST NOT FOUND]] none
+----------
+qwen3.6-35b-a3b  [5 skate :: p5_last]
+---
+CAST: the man on roller skates | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film grain visible
+[[FRAMING]] medium-wide shot, eye level, centred
+[[CHAR: the man on roller skates]]
+  [[APPEARANCE]] adult male, slim build, dark hair under a hat
+  [[CLOTHING]] black suit jacket, white dress shirt, black tie, dark trousers, black hat, black roller skates
+  [[POSE]] balancing on the left leg with the right leg extended horizontally behind him, both arms spread wide to the sides, torso leaning slightly forward
+  [[GAZE]] head tilted back and facing toward camera, eyes open and looking upward
+  [[POSITION]] screen-left, mid-ground, body angled three-quarter right
+  [[EXPRESSION]] mouth wide open in a shout or song, teeth visible, brows raised
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: man in a grey suit, foreground right]]
+  [[APPEARANCE]] adult male, back to camera, hair not visible
+  [[CLOTHING]] grey suit jacket, dark trousers
+  [[POSE]] standing upright, facing away from the camera toward the left
+  [[GAZE]] head turned slightly toward the man on roller skates
+  [[POSITION]] screen-right, foreground, partially occluding the background
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[OBJECTS]] a dark car, parked in the background at screen-left with headlights reflecting; a large wooden door or wall panel, upright at screen-right
+[[ENVIRONMENT]] outdoor paved area at night, possibly a street or courtyard, with a building facade behind the skater and a large wooden structure to the right
+[[LIGHTING]] artificial street lighting from above and left, casting long shadows on the ground, high contrast with deep shadows
+[[PALETTE]] dark tones of black and grey, warm yellow highlights from the light source, muted background colours
+[[TEXT]] none
+[[CAST NOT FOUND]] none
+----------
+qwen3.6-35b-a3b  [5 skate :: p5_delta]
+---
+[[FIRST_FRAME]]
+{{p5_first}}
+---
+[[CHANGES]] the man on roller skates, POSE: leaning back at a sharp angle with right leg extended forward and down, left leg bent behind, both arms raised with elbows bent and hands open in a gesture, now leaning back with both legs extended (right leg forward, left leg back) and both arms outstretched wide; the man on roller skates, GAZE: head tilted up and three-quarter right, eyes looking upward toward the wall, now head level and facing screen-right toward the foreground figure
+[[NEW]] a blurred figure in a suit standing in the foreground at screen-right (enters the shot)
+[[GONE]] none
+[[UNCHANGED]] the people present are the man on roller skates and the blurred figure in a suit, the man's black suit jacket, white dress shirt, dark tie, dark trousers, black fedora, and light-coloured roller skates are the same, the paved street or plaza at night with the large stone building facade and brick building in the background are the same, the artificial street lighting casting sharp shadows is the same
+----------
+qwen3.6-35b-a3b  [5 skate :: p5_compose]
+---
+USER: A man in a suit and a hat races around the corner down the sidewalk on roller skates on one leg, his arms and the other leg are outstretched. 4 seconds.
+
+[[FRAMING_FIRST]] {{p5_first:FRAMING}}
+[[FRAMING_LAST]] {{p5_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p5_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p5_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p5_first}}
+
+[[DELTA]]
+{{p5_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a man in a black suit and fedora skates on one leg down a paved street at night, his body leaning back with arms outstretched against a backdrop of parked vintage cars and a stone building facade. The camera pulls out slightly to a medium-wide shot as he glides forward, extending both legs and arms wide while turning his gaze level toward the right. A blurred figure in a suit enters the foreground at screen-right, and the man settles into his final pose with long shadows cast across the ground at the end of the video.
+overall_soundscape: The sharp clatter of roller skates on pavement, the rush of wind, and the faint hum of distant city traffic.
+non_diegetic_music: A lively brass-heavy jazz score at a fast tempo with a driving rhythm.
+----------
+##### 6 zoom #####
+----------
+qwen3.6-35b-a3b  [6 zoom :: p6_first]
+---
+CAST: the girl in the window | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film grain visible
+[[FRAMING]] medium shot, eye level, centred on subject
+[[CHAR: the girl in the window]]
+  [[APPEARANCE]] young adult female, slim build, dark hair cut in a short bob with bangs
+  [[CLOTHING]] dark striped short-sleeved top, dark thigh-high socks, black boots, dark choker necklace with pendant
+  [[POSE]] seated on the floor, knees drawn up to chest, arms wrapped around the shins, head resting against the wall
+  [[GAZE]] head tilted down and three-quarter left, eyes looking downward toward the floor
+  [[POSITION]] centre frame, mid-ground, body angled slightly toward screen-left
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] nothing
+[[OBJECTS]] a framed picture, hanging on the wall at screen-left; a framed picture, hanging on the wall at screen-right; a brick column, visible through the window opening
+[[ENVIRONMENT]] interior room with worn, peeling paint on the walls and door frames; a doorway or window opening revealing an exterior brick wall and a glimpse of a blue door in the distance
+[[LIGHTING]] natural sunlight streaming from the right side, illuminating the subject's face and legs while casting the left side of the frame in shadow
+[[PALETTE]] warm earth tones, browns, and muted yellows with high contrast between light and shadow
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [6 zoom :: p6_last]
+---
+CAST: the girl in the window | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, film still
+[[FRAMING]] medium close-up, eye level, centred
+[[CHAR: the girl in the window]]
+  [[APPEARANCE]] young adult female, slim build, dark brown hair cut in a short bob with bangs
+  [[CLOTHING]] short-sleeved top with horizontal stripes in red and black, black choker necklace with a silver sunburst pendant
+  [[POSE]] seated, knees drawn up to chest, arms wrapped around the legs
+  [[GAZE]] head turned profile left, eyes directed toward the window at screen-left
+  [[POSITION]] centre frame, mid-ground, body angled three-quarter left
+  [[EXPRESSION]] mouth closed with corners slightly downturned, brows relaxed, eyes open and steady
+  [[HOLDING]] a beige stuffed animal
+[[OBJECTS]] a beige stuffed animal, held against the chest; a black choker necklace, worn around the neck; a silver pendant, hanging from the choker
+[[ENVIRONMENT]] interior room, exposed brick wall directly behind the subject, vertical wooden paneling to screen-right, window frame and sheer curtain visible at screen-left
+[[LIGHTING]] directional natural light entering from the left, illuminating the left side of the face and body, casting soft shadows on the right side
+[[PALETTE]] warm earth tones, dominated by brick red, wood brown, and skin tones, with black and silver accents
+[[TEXT]] none
+----------
+qwen3.6-35b-a3b  [6 zoom :: p6_delta]
+---
+[[FIRST_FRAME]]
+{{p6_first}}
+---
+[[CHANGES]] the girl in the window, POSE: seated on the floor, knees drawn up to chest, arms wrapped around the shins, now holding a teddy bear against her chest; the girl in the window, GAZE: head tilted down and three-quarter left, eyes looking downward toward the floor, now head level with eyes looking slightly screen-left; the girl in the window, EXPRESSION: mouth closed, lips relaxed, brows level, now mouth slightly open, brows furrowed
+[[NEW]] a teddy bear held against the girl's chest (present but unmentioned)
+[[GONE]] none
+[[UNCHANGED]] the people present are the girl in the window, her dark striped short-sleeved top, dark thigh-high socks, black boots, and dark choker necklace with pendant are the same, the interior room with worn peeling paint and the doorway or window opening revealing an exterior brick wall and a glimpse of a blue door in the distance are the same, the natural sunlight streaming from the right side is the same
+----------
+qwen3.6-35b-a3b  [6 zoom :: p6_compose]
+---
+USER: A girl sits in a window hugging her knees holding a stuffed rabbit. The camera moves in slowly. 6 seconds.
+
+[[FRAMING_FIRST]] {{p6_first:FRAMING}}
+[[FRAMING_LAST]] {{p6_last:FRAMING}}
+[[LIGHTING_FIRST]] {{p6_first:LIGHTING}}
+[[LIGHTING_LAST]] {{p6_last:LIGHTING}}
+
+[[FIRST_FRAME]]
+{{p6_first}}
+
+[[DELTA]]
+{{p6_delta}}
+---
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, film grain visible, a young adult female with a dark bob sits on the floor of a room with worn, peeling paint, knees drawn up to her chest and arms wrapped around her shins. A teddy bear is held against her chest from the start. The camera pushes in slowly at small amplitude as she lifts her head from its resting position, her gaze shifting downward toward the floor to level out and look slightly screen-left. Her expression shifts subtly, her mouth parting slightly and her brows furrowing as she settles into the closer framing at the end of the video.
+overall_soundscape: The faint creak of an old building settling and the soft rustle of fabric as she shifts her weight.
+non_diegetic_music: A slow, sparse piano melody with a minor key.
+----------

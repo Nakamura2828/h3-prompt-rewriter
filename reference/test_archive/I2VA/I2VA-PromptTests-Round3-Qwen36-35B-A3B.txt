@@ -1,0 +1,33 @@
+Qwen3.6-35B-A3B
+---
+A man walks out of a shop onto the sidewalk, 5 seconds.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the man shown in <Picture 1> steps out of the shop doorway onto the sidewalk, his dark sweater, blue jeans, and the bookshop window display preserved from the first frame. The camera holds a static shot as he walks forward, his gaze shifting from the interior to the street ahead.
+overall_soundscape: The soft scrape of shoes on the pavement and the faint hum of the shop's interior fading as he steps outside.
+non_diegetic_music: N/A
+---
+Visual Assessment: This is unfortunately almost unchanged from before.  Visual details are good, but he's still not looking inward initially, he's looking outward from the start.
+----------
+Qwen3.6-35B-A3B
+---
+She looks down from her tower and sees an army. (6 seconds)
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the woman shown in <Picture 1> stands in polished silver plate armor with a brown leather belt and chainmail sleeves, her long blonde hair flowing over her shoulders, with a stone tower topped by a red flag visible in the background. The camera holds a slow push in with small amplitude as she lowers her gaze from the horizon to look down, her expression shifting to one of focused observation.
+overall_soundscape: A steady wind whips across the stone battlements, with the faint, distant rumble of marching boots and clanking metal from the army below.
+non_diegetic_music: A low, rhythmic percussion pattern at a moderate tempo with sustained brass undertones.
+---
+Visual Assessment: Great details on the armor, hair, castle tower.  The gaze direction is good, she's looking upward in the shot, and is directed to look downward.  Unseen army still gets its mention which is good.
+----------
+Qwen3.6-35B-A3B
+---
+The woman stares at the camera with a piercing gaze. (3 seconds)
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Live-action, the woman shown in <Picture 1> with short red hair and a blue sleeveless top stands against a white background, her gaze shifting from the phone to stare directly at the camera with a piercing expression.
+overall_soundscape: The faint, sharp tap of a thumb against a glass screen.
+non_diegetic_music: N/A
+---
+Visual Assessment: Details good regarding hair, outfit, background. The gaze approprately starts from her phone (the image actually has the camera looking down at her looking down at the phone).
+----------

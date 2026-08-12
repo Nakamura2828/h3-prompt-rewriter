@@ -1,0 +1,48 @@
+##### same: p4 girl #####
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4f_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slim build, short dark hair, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket over a black top, striped shorts with green trim, no headwear, no eyewear
+[[DISTINGUISHING]] a black choker necklace
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark hair, an olive green bomber jacket, striped shorts with green trim, and a black choker necklace
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4l_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, short dark brown hair, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket, bright green shorts with horizontal stripes, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark brown hair, an olive green bomber jacket, and bright green striped shorts
+----------
+##### same: p4 man #####
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4f_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, lean build, short dark hair, fair skin, dark eyes, light stubble
+[[CLOTHING]] long black coat over a white t-shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the black coat
+[[DEFINITION]] short dark hair, a long black coat over a white t-shirt, and light stubble
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4l_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short dark hair, fair skin, dark eyes, light facial stubble
+[[CLOTHING]] long dark coat over a dark shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the dark coat
+[[DEFINITION]] short dark hair, a long dark coat, and light facial stubble
+----------

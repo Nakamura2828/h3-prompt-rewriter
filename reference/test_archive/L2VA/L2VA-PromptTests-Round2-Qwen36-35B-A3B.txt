@@ -1,0 +1,55 @@
+Qwen3.6-35B-A3B
+---
+A wide-shot of a bookshop, the door is closed. (5 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a bookshop exterior with a large display window filled with colorful books. The dark green door is closed and the interior lights are on. The camera holds a static wide shot as the door swings open and a man in a black sweater and blue jeans steps out, holding a book, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The ambient hum of the city street and the faint sound of the door opening.
+non_diegetic_music: N/A
+---
+Analysis: This is now fixed, the door starts closed as per the text, ends open with the man in the doorway as per the image.
+----------
+Qwen3.6-35B-A3B
+---
+A close-up of a TV with a news reporter (6 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a close-up of a black CRT television set on a wooden stand, the screen glowing with a news broadcast featuring a reporter speaking. The camera holds a static shot as the image on the screen flickers and fades to black, the reporter's voice cutting out, leaving the screen dark and reflecting the room, settling into the exact framing and composition of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The faint static hum of a television screen turning off, followed by the soft click of the power button and the quiet room tone of a living space.
+non_diegetic_music: N/A
+---
+Analysis: This is also fixed-ish? The TV starts on as it should with the reporter.  No mention of the woman though this time, though she's obviously in the frame.
+----------
+Qwen3.6-35B-A3B
+---
+A man walks across the kitchen, camera panning to the right (7 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a man wearing a white t-shirt and glasses walks from the left side of a bright, modern kitchen toward the stove, his body moving into the foreground as the camera pans right to follow him. He arrives at the counter, holding a frying pan with golden-brown pancakes, and settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The soft clatter of kitchen utensils and the sizzle of pancakes cooking on the stove, accompanied by the faint hum of a refrigerator.
+non_diegetic_music: N/A
+---
+Analysis: This is still good, though the girl is no longer mentioned despite her being in the final frame.
+----------
+Qwen3.6-35B-A3B
+---
+A man stands in a a room giving a thumbs up (8 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a man in a dark button-down shirt sits in a beige armchair holding a newspaper, his posture and the room matching <Picture 1> except for his expression and gaze. The camera holds a static shot as he lowers the newspaper, shifts his weight, and looks up from the page to face the camera directly, his expression settling into a calm, neutral look as he raises his right hand to give a thumbs up, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The rustle of paper as the newspaper is lowered, followed by the soft creak of the armchair and the faint rustle of fabric as he shifts his weight.
+non_diegetic_music: N/A
+---
+Analysis: This is a blatant fail, it starts with a visual description of the end frame, and ends with a description of the text prompt, backwards to what it should be.
+----------
+Qwen3.6-35B-A3B
+---
+A wide-shot of an empty castle (8 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of an empty castle courtyard under a bright sky. The camera slowly pushes in toward a female knight clad in polished steel plate armor over chainmail, her long blonde hair flowing down her back. She stands holding a weapon, her gaze shifting upward toward the castle tower with a red flag fluttering at the top. As the camera continues its slow approach, she turns her head slightly, her expression softening into quiet contemplation, until she settles into the exact pose, framing, and expression of <Picture 1> on the final frame.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: A gentle wind whistles across the stone walls, carrying the faint rustle of the red flag atop the tower. Distant birds call overhead, and the occasional creak of wooden beams echoes through the empty courtyard.
+non_diegetic_music: A low, resonant string drone builds slowly, giving way to a single sustained cello note that fades as the scene ends.
+---
+Analysis: This passes, it starts with the empty castle, and brings in the woman visually apparant in the final frame with camera movement.
+----------

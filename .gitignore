@@ -54,7 +54,7 @@ secrets.json
 *.log
 
 #Archived References
-reference/
+reference/*
 !reference/retired/
 !reference/baselines/
 !reference/test_archive/

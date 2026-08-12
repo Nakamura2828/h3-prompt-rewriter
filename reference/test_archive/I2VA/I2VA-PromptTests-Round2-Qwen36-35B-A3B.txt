@@ -1,0 +1,32 @@
+Qwen3.6-35B-A3B
+---
+A man walks out of a shop onto the sidewalk, 5 seconds.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the man shown in <Picture 1> steps out of the shop doorway onto the sidewalk, his dark sweater, blue jeans, and the bookshop window display preserved from the first frame. The camera holds a static shot as he walks forward, his gaze shifting from the interior to the street ahead.
+overall_soundscape: The soft scrape of shoes on the pavement and the faint, muffled hum of the shop's interior.
+non_diegetic_music: N/A
+---
+Visual Assessment: Visual details are largely good. The outfit matches, identifies the bookshop accurately. Gaze is an issue again though, he's already looking out in the scene, not inward.
+----------Qwen3.6-35B-A3B
+---
+The TV turns on showing a scene with a boat, she looks at the screen. 8 seconds.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Live-action, the elderly woman shown in <Picture 1> sits on a blue stool beside a wooden cabinet, wearing a navy and white floral blouse with her hands clasped in her lap, her posture and the room's setting preserved from the first frame. The camera holds a static medium shot as the CRT television on the cabinet flickers to life, displaying a scene of a boat on the water. The woman slowly turns her head to look at the screen, her expression shifting to one of quiet attention.
+overall_soundscape: The electronic hum and static crackle of the television powering on, followed by the faint sound of water lapping against a hull.
+non_diegetic_music: N/A
+---
+Visual Assessment: Details look good, outfit and furinture match, CRT TV identified instead of flat-screen (flickering and electronic hum also fit the CRT).  The description of the new TV feed and her attention to it are good.
+----------
+Qwen3.6-35B-A3B
+---
+A man sits in a chair, the camera zooms out. His wife walks into the scene and says "Hi Honey!" to him. 10 second scene.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the man shown in <Picture 1> sits in a beige armchair wearing a dark button-down shirt, holding a newspaper with his gaze directed forward, his posture and the surrounding room preserved from the first frame. The camera slowly zooms out with small amplitude as the man lowers his gaze to the newspaper and turns a page. At 00:04.000, [Shot 2] The shot cuts to a wider angle of the room as a woman enters from the left side of the frame. The woman, with a warm, bright voice (S1), walks toward the man and says: <d>[English] Hi Honey!</d>
+overall_soundscape: The soft rustle of newspaper pages turning, the creak of the armchair cushions, and the sound of footsteps approaching on the floor.
+non_diegetic_music: A gentle, acoustic piano melody at a moderate tempo.
+---
+Visual Assessment: Visual details are good outfit and furniture match, unmentioned newspaper now included.  Not sure about gaze again.  He's looking at the viewer again, which I suppose could be "forward", but he's not facing the newspaper or his "front", which almost seems like a mismatch.
+----------

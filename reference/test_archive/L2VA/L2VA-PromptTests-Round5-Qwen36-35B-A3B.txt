@@ -1,0 +1,44 @@
+Qwen3.6-35B-A3B
+---
+A wide-shot of a vacant classroom, the lights are off. (10 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a bright, occupied classroom where a young girl in a blue and white striped school uniform sits at her desk in the foreground, her arms crossed over an open textbook, looking forward with a calm expression. Behind her, other students in similar uniforms are seated at their desks, writing with pencils. The camera slowly pushes in toward the girl as the classroom lights gradually dim and then switch off, the bright daylight from the window remaining but the overhead illumination fading. The students in the background continue their work, their forms becoming slightly more shadowed as the room darkens, until the scene settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The ambient hum of a classroom fades as the overhead lights are switched off, leaving only the faint rustle of pages and the scratch of pencils on paper.
+non_diegetic_music: N/A
+---
+Analysis: This is still backwards.
+----------
+Qwen3.6-35B-A3B
+---
+A captain stands at the rail of his ship looking afar with binoculars (7 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a captain in a dark navy uniform and white cap stands at the rail of a sailing ship, holding a pair of binoculars to his eyes and gazing out at the horizon. The camera slowly pushes in on him as he lowers the binoculars from his face, his gaze shifting from the distance to the camera, and he steps forward to take his position at the ship's wheel, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The creaking of the ship's wooden hull and the snapping of sails in the wind, accompanied by the distant sound of waves lapping against the hull.
+non_diegetic_music: A swelling orchestral score with brass and strings that builds to a steady, resolute tone.
+---
+Analysis: This is actually better now because he's now walking to where he needs to be.
+----------
+Qwen3.6-35B-A3B
+---
+A girl stands next to an open window (8 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a girl with a dark bob haircut, wearing a striped top, black choker, and black socks, stands upright next to an open window, bathed in warm, hazy sunlight. The camera slowly pushes in with small amplitude as she lowers herself down, drawing her knees up to her chest and wrapping her arms around a grey teddy bear. She settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The soft rustle of fabric as she sits down and the faint creak of the window frame, over a quiet, sunlit room tone.
+non_diegetic_music: N/A
+---
+Analysis: This is still very good.
+----------
+Qwen3.6-35B-A3B
+---
+A close-up of a TV with a news reporter (6 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the camera focuses tightly on a black CRT television set resting on a wooden stand, the screen glowing with the static image of a news reporter delivering a broadcast. The camera holds a static close-up on the television for the duration, capturing the flickering light of the screen, before settling into the exact framing and composition of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The low, steady hum of the television set and the faint crackle of audio from the news broadcast.
+non_diegetic_music: N/A
+---
+Analysis: This is fixed again, start with the reporter on an active TV, end with the visual frame (albeit with no detail on that end, which is fine.)
+----------

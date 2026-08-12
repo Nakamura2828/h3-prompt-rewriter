@@ -1,0 +1,44 @@
+Qwen3.6-35B-A3B
+---
+A wide-shot of a vacant classroom, the lights are off. (10 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a bright, occupied classroom where a young girl in a blue and white striped school uniform sits at her desk in the foreground, her arms crossed over an open textbook, looking forward with a calm expression. The camera slowly pushes in toward her as the ambient classroom noise fades and the overhead lights begin to dim, casting the room into shadow until the scene settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The ambient hum of a classroom fades into silence as the lights are switched off.
+non_diegetic_music: N/A
+---
+Analysis: This is still backwards, should start vacant with lights off end with children.
+----------
+Qwen3.6-35B-A3B
+---
+A captain stands at the rail of his ship looking afar with binoculars (7 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a captain in a dark navy uniform and white cap stands at the rail of a sailing ship, holding binoculars to his eyes and scanning the horizon. The camera slowly pushes in with small amplitude as he lowers the binoculars, turns his body toward the ship's wheel, and grips the wooden spokes, settling into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The creak of wooden rigging and the rhythmic slap of waves against the hull, with the faint creak of the ship's movement.
+non_diegetic_music: A steady, low string pulse at a moderate tempo with a single sustained cello note underneath.
+---
+Analysis: This appears fixed now, he changes his body position and grabs the wheel at least, which is good.  Presumably H3 would have him looking towards the railing initially rather than *at* it, but it's better in any case.
+----------
+Qwen3.6-35B-A3B
+---
+A girl stands next to an open window (8 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a girl with a dark bob haircut, wearing a striped top, black choker, and black socks, stands upright next to an open window, bathed in warm, hazy sunlight. The camera holds a static shot as she slowly lowers herself to the floor, drawing her knees up to her chest and wrapping her arms around a grey teddy bear, her gaze drifting downward until she settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The faint rustle of fabric as she sits down and the soft thud of the teddy bear settling against her chest, over the quiet hum of the room.
+non_diegetic_music: N/A
+---
+Analysis: This one worked great.  It is the right direction and ends in the right place with additional details from the image (e.g. the teddy bear).
+----------
+Qwen3.6-35B-A3B
+---
+A close-up of a TV with a news reporter (6 seconds)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, an elderly woman with dark hair pulled back sits on a blue stool in a room with patterned wallpaper, wearing a navy and white floral blouse and black trousers. She sits beside a wooden cabinet holding a large black CRT television and a VCR player below. The camera holds a static medium shot as the woman slowly turns her head from a neutral position to face the camera directly, her hands clasping together in her lap, until she settles into the exact posture, expression, and framing of <Picture 1> on the final frame.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The faint hum of the television set and the rustle of the woman's clothing as she shifts her weight.
+non_diegetic_music: N/A
+---
+Analysis: The end state is right, but the intial textual description with the reporter is completely gone now.  The sound implies the TV is on at least at some point, but there's no description of the TV's state at which is important.
+----------

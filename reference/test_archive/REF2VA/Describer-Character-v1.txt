@@ -1,0 +1,243 @@
+##### same: jacket girl #####
+----------
+qwen3.6-35b-a3b  [same: jacket girl :: char_jacket]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] young adult, female, slender build, shoulder-length dark brown hair with straight bangs, fair skin, dark eyes
+[[CLOTHING]] light grey hooded puffer jacket with visible zipper and snap-button pockets, no headwear, no eyewear
+[[DISTINGUISHING]] small stud earrings in both ears
+[[LABEL]] the young woman in the grey jacket
+[[DEFINITION]] shoulder-length dark brown hair with straight bangs, a light grey hooded puffer jacket, and small stud earrings
+----------
+qwen3.6-35b-a3b  [same: jacket girl :: char_jacket2]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] young adult, female, slim build, shoulder-length dark brown hair with straight bangs, fair skin, dark eyes
+[[CLOTHING]] light grey hooded puffer jacket with fur-lined cuffs, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the young woman in the grey jacket
+[[DEFINITION]] shoulder-length dark brown hair with bangs, a light grey hooded puffer jacket with fur-lined cuffs, and fair skin
+----------
+##### baseline live-action #####
+----------
+qwen3.6-35b-a3b  [baseline live-action :: char_captain]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short brown hair, fair skin, blue eyes, light stubble
+[[CLOTHING]] white peaked captain's hat with gold emblem, dark navy double-breasted jacket with gold buttons and four gold stripes on the cuff, white collared shirt, black necktie
+[[DISTINGUISHING]] a green and gold ribbon bar on the left breast pocket
+[[LABEL]] the man in the captain's uniform
+[[DEFINITION]] short brown hair, a white peaked captain's hat with a gold emblem, a dark navy double-breasted jacket with gold buttons and four gold stripes on the cuff, and a green and gold ribbon bar
+----------
+qwen3.6-35b-a3b  [baseline live-action :: char_tv]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] older adult, female, slender build, short dark hair pulled back, fair skin, dark eyes
+[[CLOTHING]] navy blue and white leaf-patterned short-sleeved blouse, black trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the older woman in the patterned blouse
+[[DEFINITION]] short dark hair pulled back, a navy blue and white leaf-patterned blouse, and black trousers
+----------
+##### selection among several people #####
+----------
+qwen3.6-35b-a3b  [selection among several people :: char_class_a]
+---
+SUBJECT: the girl with red hair | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, long straight red hair, fair skin with visible freckles across the nose and cheeks, brown eyes
+[[CLOTHING]] black and white houndstooth button-up shirt with a collar, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the girl with red hair
+[[DEFINITION]] long straight red hair, fair skin with freckles across the nose and cheeks, and a black and white houndstooth button-up shirt
+----------
+qwen3.6-35b-a3b  [selection among several people :: char_class_b]
+---
+SUBJECT: the girl with braids at the right-hand desk | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, long light brown hair in two braids, fair skin with freckles, dark brown eyes
+[[CLOTHING]] white collared shirt, navy blue vest, striped tie, navy skirt, no headwear, no eyewear
+[[DISTINGUISHING]] small hoop earrings
+[[LABEL]] the girl with braids at the right-hand desk
+[[DEFINITION]] long light brown hair in two braids, a white collared shirt under a navy vest, and a striped tie
+----------
+##### same: pancakes girl #####
+----------
+qwen3.6-35b-a3b  [same: pancakes girl :: char_pan_girl_a]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, shoulder-length black hair with straight bangs, fair skin, dark eyes
+[[CLOTHING]] white pajamas with a red and green fruit pattern and red trim at the cuffs and hem
+[[DISTINGUISHING]] none
+[[LABEL]] the young girl in patterned pajamas
+[[DEFINITION]] shoulder-length black hair with straight bangs, fair skin, and white pajamas with a red and green fruit pattern
+----------
+qwen3.6-35b-a3b  [same: pancakes girl :: char_pan_girl_b]
+---
+SUBJECT: the child in the pyjamas | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, shoulder-length black hair with straight bangs, fair skin, dark eyes
+[[CLOTHING]] white long-sleeved pyjama top and matching trousers with a red and green fruit pattern, red trim at the cuffs and hem, no headwear, no eyewear, no footwear visible
+[[DISTINGUISHING]] none
+[[LABEL]] the child in the pyjamas
+[[DEFINITION]] shoulder-length black hair with straight bangs, a white long-sleeved pyjama set with a red and green fruit pattern, and red trim at the cuffs and hem
+----------
+##### same: pancakes man #####
+----------
+qwen3.6-35b-a3b  [same: pancakes man :: char_pan_man_a]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short black hair, fair skin, dark eyes
+[[CLOTHING]] plain white t-shirt, blue trousers, black-framed eyeglasses
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the white t-shirt
+[[DEFINITION]] short black hair, a plain white t-shirt, blue trousers, and black-framed eyeglasses
+----------
+qwen3.6-35b-a3b  [same: pancakes man :: char_pan_man_b]
+---
+SUBJECT: the man in the white t-shirt | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short black hair, fair skin, dark eyes
+[[CLOTHING]] plain white crew-neck t-shirt, blue trousers, black-framed eyeglasses
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the white t-shirt
+[[DEFINITION]] short black hair, a plain white crew-neck t-shirt, blue trousers, and black-framed eyeglasses
+----------
+##### same: p4 girl #####
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4f_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slim build, short dark hair, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket over a black top, striped shorts with green trim, no headwear, no eyewear
+[[DISTINGUISHING]] a black choker necklace
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark hair, an olive green bomber jacket, striped shorts with green trim, and a black choker necklace
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4l_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, short dark brown hair, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket, bright green shorts with horizontal stripes, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark brown hair, an olive green bomber jacket, and bright green striped shorts
+----------
+##### same: p4 man #####
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4f_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, lean build, short dark hair, fair skin, dark eyes, light stubble
+[[CLOTHING]] long black coat over a white t-shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the black coat
+[[DEFINITION]] short dark hair, a long black coat over a white t-shirt, and light stubble
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4l_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short dark hair, fair skin, dark eyes, light facial stubble
+[[CLOTHING]] long dark coat over a dark shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the dark coat
+[[DEFINITION]] short dark hair, a long dark coat, and light facial stubble
+----------
+##### stylised rendering #####
+----------
+qwen3.6-35b-a3b  [stylised rendering :: char_kasia]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] young adult, female, slim build, short dark blue hair with bangs, fair skin with freckles across the nose and cheeks, bright teal eyes
+[[CLOTHING]] orange headband, black sleeveless crop top, dark blue denim shorts with rolled cuffs, black and grey striped knee-high socks, blue sneakers with white laces, black fingerless gloves, blue wristbands, a blue and yellow shoulder bag with a strap decorated with small green, pink, and yellow pins
+[[DISTINGUISHING]] freckles across the nose and cheeks
+[[LABEL]] the young woman in the orange headband
+[[DEFINITION]] short dark blue hair, bright teal eyes, an orange headband, a black sleeveless crop top, dark blue denim shorts, and striped knee-high socks
+----------
+qwen3.6-35b-a3b  [stylised rendering :: char_miya]
+---
+ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] teenager, female, slender build, short dark brown hair with straight bangs, fair skin, large brown eyes
+[[CLOTHING]] beige double-breasted trench coat, black knitted scarf, dark grey pleated skirt, white over-ear headphones with a thin cable
+[[DISTINGUISHING]] none
+[[LABEL]] the teenage girl in the beige coat
+[[DEFINITION]] short dark brown hair, a beige double-breasted trench coat, a black knitted scarf, and white over-ear headphones
+----------
+qwen3.6-35b-a3b  [stylised rendering :: char_kiki_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, short dark brown hair with bangs, fair skin, large brown eyes
+[[CLOTHING]] a large orange bow headband, a dark blue long-sleeved shirt
+[[DISTINGUISHING]] rosy cheeks
+[[LABEL]] the girl with the orange bow
+[[DEFINITION]] short dark brown hair, a large orange bow headband, and a dark blue long-sleeved shirt
+----------
+##### animal subject #####
+----------
+qwen3.6-35b-a3b  [animal subject :: char_kiki_cat]
+---
+SUBJECT: the black cat | ROLE: character
+---
+[[SUBJECT_KIND]] animal
+[[APPEARANCE]] young, cat, small, short solid black coat, large round white eyes with black pupils
+[[CLOTHING]] none
+[[DISTINGUISHING]] none
+[[LABEL]] the small black cat
+[[DEFINITION]] a short solid black coat and large round white eyes
+----------
+##### occluded subject #####
+----------
+qwen3.6-35b-a3b  [occluded subject :: char_miyu]
+---
+SUBJECT: the girl in the bin | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, small build, shoulder-length dark brown hair, fair skin, red eyes
+[[CLOTHING]] a grey hooded garment with the hood pulled up over the head
+[[DISTINGUISHING]] a white halo floating above the head
+[[LABEL]] the girl in the bin
+[[DEFINITION]] shoulder-length dark brown hair, red eyes, and a white halo
+----------
+##### unmatched subject line #####
+----------
+qwen3.6-35b-a3b  [unmatched subject line :: char_notfound]
+---
+SUBJECT: the man in the red hoodie | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] young adult, female, slim build, shoulder-length dark brown hair with straight bangs, fair skin, light-colored eyes
+[[CLOTHING]] light grey hooded puffer jacket
+[[DISTINGUISHING]] small stud earrings
+[[LABEL]] the young woman in the grey jacket
+[[DEFINITION]] shoulder-length dark brown hair with bangs, a light grey hooded puffer jacket, and small stud earrings
+[[SUBJECT NOT FOUND]] the man in the red hoodie
+----------

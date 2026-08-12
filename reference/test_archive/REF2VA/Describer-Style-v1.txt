@@ -1,0 +1,550 @@
+##### same: stop-motion (tie-break 1) #####
+----------
+qwen3.6-35b-a3b  [same: stop-motion (tie-break 1) :: sty_coraline1]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of a physically constructed figure with visible textile weave on the coat and boots, fine fibre texture on the hair, slight surface irregularities and hand-built seams, sharp focus across the entire figure against a pure black background, no lens distortion or depth of field blur
+[[PALETTE]] high contrast between the bright saturated yellow of the outerwear and the deep blue of the hair and trousers, with neutral skin tones and dark brown accents, full colour range with rich saturation
+[[LIGHTING]] studio key light from the upper left creating soft but defined shadows on the right side of the figure, even illumination across the front surfaces, no ambient fill or background lighting
+[[DISTINGUISHING]] the visible textile weave on the clothing and the fine fibre texture on the hair, and the pure black background isolating the figure
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] none
+[[LABEL]] the detailed textile stop-motion style
+[[DEFINITION]] photographed physical puppets with visible textile weave and fibre texture, sharp focus against a black background, high-contrast saturated colour palette, and soft directional studio lighting
+----------
+qwen3.6-35b-a3b  [same: stop-motion (tie-break 1) :: sty_coraline2]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of physically constructed puppets with visible felt nap on hair and fabric textures, real optical depth of field with background elements softly blurred, fine surface irregularities on the figures' faces, hand-built props with slight asymmetries, and a shallow focus plane isolating the foreground objects
+[[PALETTE]] muted and slightly desaturated with a cool overall cast, dominated by pale yellows, dusty greens, and soft greys, with a single saturated yellow accent on one figure's garment
+[[LIGHTING]] soft diffuse key light from the upper left, gentle falloff into shadow, retained detail in both highlights and shadows without harsh contrast, and subtle specular highlights on smooth surfaces like the laptop screen
+[[DISTINGUISHING]] the visible felt nap on the figures' hair and clothing, and the shallow real depth of field betraying the miniature scale
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] none
+[[LABEL]] the textured felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible felt textures, shallow real depth of field, a muted desaturated palette with saturated accents, and soft diffuse lighting
+----------
+##### same: 2D cel western toon (90s vs modern) #####
+----------
+qwen3.6-35b-a3b  [same: 2D cel western toon (90s vs modern) :: sty_ivy_toon]
+---
+ROLE: style
+---
+[[EXECUTION]] flat cel shading on the figure with no interior modelling, uniform black outlines of medium weight bounding all forms, smooth digital colour fills with sharp edges, minimal hatching for texture, clean vector-like rendering without surface grain or brush marks
+[[PALETTE]] saturated primary and secondary hues including deep blues, bright reds, and earthy browns, high chroma with strong contrast between the warm figure tones and the cool background, full colour range
+[[LIGHTING]] flat directional key from the upper left creating distinct shadow shapes on the right side of forms, hard-edged shadows with no gradient falloff, highlights rendered as unmodulated flat colour areas
+[[DISTINGUISHING]] the uniform black outline weight and the flat unmodulated colour fills characteristic of 1990s television animation
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] anime
+[[LABEL]] the 1990s flat cel animation style
+[[DEFINITION]] flat unmodulated colour fills, uniform black outlines, hard-edged shadow shapes, saturated primary hues, and a cool background contrast
+----------
+qwen3.6-35b-a3b  [same: 2D cel western toon (90s vs modern) :: sty_peter_griffin_toon]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of consistent weight enclosing all forms, flat unmodulated colour fills with no interior shading or gradient, smooth vector-like edges on the figures and props, minimal detail rendering on background elements, clean digital surface without brush texture or grain
+[[PALETTE]] warm and slightly muted, dominant beige and brown tones for the environment, saturated primary colours for clothing (blue and green), pale peach skin tones, high contrast between light and dark areas
+[[LIGHTING]] flat and even, no directional key light, minimal shadow detail with simple solid shapes used for cast shadows, highlights rendered as flat colour patches rather than gradients
+[[DISTINGUISHING]] the thick uniform black outlines around all figures and objects, and the complete absence of interior shading or texture on the characters
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] western toon
+[[LABEL]] the flat western cartoon style
+[[DEFINITION]] thick uniform black outlines, flat unmodulated colour fills, no interior shading, a warm muted environment palette with saturated primary clothing colours, and flat even lighting
+----------
+##### same: drawing (marker vs sketch) #####
+----------
+qwen3.6-35b-a3b  [same: drawing (marker vs sketch) :: sty_supergirl1]
+---
+ROLE: style
+---
+[[EXECUTION]] clean black ink outlines of uniform weight defining the forms, smooth airbrushed shading with soft gradients on the skin and fabric, flat colour fills in the background areas, sharp edges where colour meets outline, no visible paper texture or grain, high finish with glossy highlights on the boots and cape
+[[PALETTE]] bright primary colours: saturated reds for the cape and boots, cyan blue for the shorts and sky, white for the shirt and gloves, warm peach skin tones, and a limited palette overall
+[[LIGHTING]] bright and even key light from the upper left, creating soft shadows on the right side of the figure, highlights rendered as smooth gradients rather than sharp specular points, no cast shadows
+[[DISTINGUISHING]] the clean black ink outlines and the smooth airbrushed shading technique
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] digital
+[[LABEL]] the bright comic-book illustration style
+[[DEFINITION]] clean black ink outlines, smooth airbrushed shading, flat colour fills, a bright primary palette, and even directional lighting
+----------
+qwen3.6-35b-a3b  [same: drawing (marker vs sketch) :: sty_supergirl2]
+---
+ROLE: style
+---
+[[EXECUTION]] visible grainy texture consistent with pastel or colored pencil on paper, soft-edged outlines that are not perfectly uniform, forms built from directional strokes of pigment, smooth blending in the skin areas with visible cross-hatching in the shadowed regions, edges that are slightly fuzzy rather than sharp, no digital smoothing
+[[PALETTE]] warm and saturated, dominated by golden yellows and oranges for the figure against a stark white background, with strong primary accents of red and blue, high contrast between the coloured figure and the empty space
+[[LIGHTING]] bright and even, simulating a studio key light from the upper left, creating soft but distinct shadows on the right side of the forms, highlights rendered as the white of the paper showing through the pigment
+[[DISTINGUISHING]] the visible grainy texture of the pastel strokes, and the soft, slightly fuzzy edges of the figure against the white background
+[[MEDIUM]] drawing
+[[SUB_MEDIUM]] sketch
+[[LABEL]] the warm pastel sketch style
+[[DEFINITION]] visible grainy pastel texture, soft-edged outlines, smooth skin blending with directional strokes, a warm saturated palette on white paper, and bright even lighting
+----------
+##### same: painting, oil idiom (tie-break 3) #####
+----------
+qwen3.6-35b-a3b  [same: painting, oil idiom (tie-break 3) :: sty_ayanami_oil]
+---
+ROLE: style
+---
+[[EXECUTION]] digital painting with visible brushwork and soft blending, forms built from broad strokes rather than fine detail, edges left soft and slightly blurred, no hard outlines anywhere, surface has a smooth matte finish with occasional texture artifacts simulating canvas grain
+[[PALETTE]] cool and desaturated overall, dominated by muted greens and blues, with warm skin tones providing the primary contrast, low saturation in the background and mid-range saturation on the figure
+[[LIGHTING]] soft directional light from the upper right, creating gentle gradients on the figure's face and arms, shadows are rendered with cool tones rather than black, no harsh highlights or deep blacks
+[[DISTINGUISHING]] the soft-edged digital brush texture and the muted, atmospheric colour grading
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] digital
+[[LABEL]] the soft-edged digital painting style
+[[DEFINITION]] soft-edged digital brushwork, muted cool palette, gentle directional lighting, and no hard outlines
+----------
+qwen3.6-35b-a3b  [same: painting, oil idiom (tie-break 3) :: sty_woman_oil]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth matte surface with no visible brushwork or canvas texture, forms built from seamless tonal transitions and soft-edged blending, no drawn outlines anywhere, edges of the figure and objects rendered as soft transitions between tones rather than hard boundaries, high level of detail and finish throughout, a hyper-realistic surface quality
+[[PALETTE]] warm and slightly muted, dominated by creamy off-whites, deep matte blacks, and soft flesh tones, with a narrow range of mid-tone contrast and low overall saturation
+[[LIGHTING]] soft directional key from the upper right, creating gentle gradients on the figure's face and clothing, soft-edged shadows with no hard cast shadows, highlights rendered as smooth tonal shifts rather than specular glints
+[[DISTINGUISHING]] the seamless airbrushed blending of tones, and the complete absence of any visible brushstrokes or surface texture
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] digital
+[[LABEL]] the smooth airbrushed digital painting style
+[[DEFINITION]] seamless tonal blending, soft-edged transitions, a matte smooth surface with no visible brushwork, a warm muted palette, and soft directional lighting
+----------
+##### same: 2D cel (anime vs western toon) #####
+----------
+qwen3.6-35b-a3b  [same: 2D cel (anime vs western toon) :: sty_azumanga_anime]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector-style outlines of uniform medium weight enclosing all forms, flat unmodulated colour fills with no interior gradients or texture, cel shading applied to the figures with a single hard-edged shadow shape per form, sharp crisp edges throughout, no surface grain or brushwork, high level of digital finish
+[[PALETTE]] full colour with moderate saturation, dominant hues of coral pink and deep maroon against pale skin tones and black outlines, clean separation between light and shadow areas without tonal blending
+[[LIGHTING]] flat and even across the surface, a single hard-edged shadow shape applied to each figure to suggest volume, no cast shadows, highlights rendered as solid colour patches rather than gradients
+[[DISTINGUISHING]] the thick uniform black outlines around every element, and the bright yellow die-cut border surrounding the entire composition
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] anime
+[[LABEL]] the flat anime cel style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, hard-edged single-shape cel shading, and a bright yellow die-cut border
+----------
+qwen3.6-35b-a3b  [same: 2D cel (anime vs western toon) :: sty_azumanga_toon]
+---
+ROLE: style
+---
+[[EXECUTION]] flat vector shapes with uniform black outlines of consistent weight, no interior shading or modelling on the figures, clean hard edges throughout, background elements rendered as simplified geometric forms with minimal textural detail, smooth digital fill with no brushwork or grain
+[[PALETTE]] bright and saturated primary colours, dominant pinks and greens against a cyan sky, high contrast between the figures and the background, limited tonal range with no gradients
+[[LIGHTING]] flat and even, no directional key light, shadows rendered as solid black shapes rather than gradated tones, highlights shown as unmodulated white areas
+[[DISTINGUISHING]] the thick uniform black outlines around all forms, and the simplified geometric construction of the background elements
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] western toon
+[[LABEL]] the flat vector cartoon style
+[[DEFINITION]] flat vector shapes with uniform black outlines, saturated primary colours, no interior shading, and simplified geometric backgrounds
+----------
+##### same: one product render, two angles #####
+----------
+qwen3.6-35b-a3b  [same: one product render, two angles :: sty_kasia_bag]
+---
+ROLE: style
+---
+[[EXECUTION]] clean digital rendering with smooth vector-like edges and no visible surface texture or grain, forms defined by flat colour fields separated by precise seams, soft even shading to suggest volume without harsh modelling, a seamless white background with a soft diffuse contact shadow
+[[PALETTE]] high saturation primary colours, a bright yellow base, a deep blue upper section, and a lighter periwinkle accent, with a small gold metallic detail, full colour range against a neutral white field
+[[LIGHTING]] soft studio lighting from the upper left, gentle falloff into shadow, no hard key or sharp highlights, shadow detail retained in the contact area beneath the object
+[[DISTINGUISHING]] the seamless white background and the soft diffuse contact shadow
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] product render
+[[LABEL]] the clean product-render style
+[[DEFINITION]] smooth vector-like edges, flat colour fields separated by precise seams, soft even shading, high saturation primary colours, and a seamless white background with a soft diffuse contact shadow
+----------
+qwen3.6-35b-a3b  [same: one product render, two angles :: sty_kasia_bag_2]
+---
+ROLE: style
+---
+[[EXECUTION]] sharp focus across the entire foreground object with a clean separation from the background, fine woven textile texture visible on all surfaces, soft-edged shadows cast by the object onto the ground plane, no lens distortion or chromatic aberration, high-resolution detail showing individual fabric threads and stitching
+[[PALETTE]] bright primary yellow and deep navy blue with a light grey accent, high saturation and contrast against a pure white background, neutral colour temperature
+[[LIGHTING]] even studio lighting from the upper left, soft but directional key light creating gentle gradients on the curved surfaces, minimal shadow detail in the recessed areas, clean highlight on the upper edges of the object
+[[DISTINGUISHING]] the seamless white background wrapping around the base of the object, and the precise, sharp edge where the object meets the background
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] colour
+[[LABEL]] the commercial product photography style
+[[DEFINITION]] sharp focus on textured surfaces, bright saturated primary colours against a pure white background, even studio lighting with soft directional shadows, and clean edge separation
+----------
+##### same: pixel art (two fidelities) #####
+----------
+qwen3.6-35b-a3b  [same: pixel art (two fidelities) :: sty_ramen_pixel]
+---
+ROLE: style
+---
+[[EXECUTION]] a visible grid of discrete square pixels forming the entire image, with no anti-aliasing or smooth gradients, hard-edged colour blocks defining all forms, and a low-resolution aesthetic where detail is reduced to blocky shapes
+[[PALETTE]] a limited palette dominated by warm browns, yellows, and oranges, with accents of bright green and white, set against a dark neutral background, moderate contrast between the lit foreground and shadowed areas
+[[LIGHTING]] a directional light source from the upper left creating distinct highlights on the top surfaces and casting a solid, blocky shadow to the lower right, with no gradient falloff in the shadows
+[[DISTINGUISHING]] the uniform grid of square pixels across the entire surface, and the hard, stair-stepped edges on all curved forms
+[[MEDIUM]] pixel art
+[[SUB_MEDIUM]] none
+[[LABEL]] the blocky retro pixel-art style
+[[DEFINITION]] a visible grid of discrete square pixels, hard-edged colour blocks with no anti-aliasing, a limited warm palette, and solid blocky shadows
+----------
+qwen3.6-35b-a3b  [same: pixel art (two fidelities) :: sty_van_pixel]
+---
+ROLE: style
+---
+[[EXECUTION]] visible grid of discrete square pixels forming all shapes and tones, hard geometric edges with no anti-aliasing or soft transitions, forms built from stepped colour blocks rather than gradients, uniform resolution across the entire surface
+[[PALETTE]] saturated primary colours with high contrast, dominant blues and oranges, limited palette with distinct banding in shadows and highlights, warm overall temperature
+[[LIGHTING]] flat directional lighting with sharp tonal steps, no smooth gradients between light and shadow areas, highlights rendered as solid blocks of white or light grey pixels
+[[DISTINGUISHING]] the uniform pixel grid structure visible at all scales, and the stepped colour banding characteristic of limited colour depth
+[[MEDIUM]] pixel art
+[[SUB_MEDIUM]] none
+[[LABEL]] the saturated retro pixel-art style
+[[DEFINITION]] a visible grid of discrete square pixels, hard geometric edges with no anti-aliasing, stepped colour banding, and a saturated high-contrast palette
+----------
+##### same: vector scene, relit #####
+----------
+qwen3.6-35b-a3b  [same: vector scene, relit :: sty_sanfran_day]
+---
+ROLE: style
+---
+[[EXECUTION]] flat vector shapes with perfectly clean edges and no surface texture, uniform black outlines of consistent weight defining all forms, smooth gradient fills for shading on the foreground terrain and water, hard-edged geometric construction for the background structures, no brushwork or grain
+[[PALETTE]] bright and saturated primary colours, dominant cyan sky and green ground, high contrast between the red structural elements and the cool blue and green tones, full colour range with clean separation of hues
+[[LIGHTING]] flat and even illumination across the scene, no directional key light, shading achieved through localised gradient fills rather than cast shadows, highlights rendered as solid white shapes
+[[DISTINGUISHING]] the thick uniform black outlines around every element, and the hard-edged geometric construction of the background buildings
+[[MEDIUM]] vector
+[[SUB_MEDIUM]] none
+[[LABEL]] the flat vector illustration style
+[[DEFINITION]] clean vector edges, uniform black outlines, flat gradient shading, saturated primary colours, and hard-edged geometric forms
+----------
+qwen3.6-35b-a3b  [same: vector scene, relit :: sty_sanfran_night]
+---
+ROLE: style
+---
+[[EXECUTION]] flat vector shapes with perfectly smooth edges and no surface texture, uniform colour fills with no interior shading or gradient, forms constructed from simple geometric silhouettes, clean hard boundaries between all elements, no visible brushwork or grain
+[[PALETTE]] high saturation and high contrast, deep navy blue for the sky, bright lime green for the foreground terrain, vivid cyan for the water, and a bold red accent colour, full colour range with distinct separation between light and dark areas
+[[LIGHTING]] flat and even across all surfaces, no directional key or cast shadows, form defined by solid blocks of tone rather than rendered illumination, highlights represented as pure white shapes without falloff
+[[DISTINGUISHING]] the perfectly smooth vector edges on all forms, and the absence of any gradient or texture within the colour fields
+[[MEDIUM]] vector
+[[SUB_MEDIUM]] none
+[[LABEL]] the flat vector illustration style
+[[DEFINITION]] smooth hard-edged vector shapes, uniform solid colour fills, no interior shading or gradients, high saturation with deep navy and bright green tones, and flat even illumination
+----------
+##### same: studio shot, two angles (amb, agreement only) #####
+----------
+qwen3.6-35b-a3b  [same: studio shot, two angles (amb, agreement only) :: sty_car_1]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth matte surface with soft diffuse shading, no visible texture or grain, clean geometric edges, uniform white background, high-key lighting with minimal contrast, digital rendering quality
+[[PALETTE]] monochrome with neutral greys and whites, low saturation, limited tonal range
+[[LIGHTING]] even diffuse illumination from above, soft shadows beneath the figure, no harsh highlights or deep shadows
+[[DISTINGUISHING]] the clean white background isolation and the smooth matte surface finish
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] product render
+[[LABEL]] the clean product render style
+[[DEFINITION]] smooth matte surface, even diffuse lighting, soft shadows, monochrome palette, and clean white background
+----------
+qwen3.6-35b-a3b  [same: studio shot, two angles (amb, agreement only) :: sty_car_2]
+---
+ROLE: style
+---
+[[EXECUTION]] perfectly smooth matte surface with no visible grain or texture, hard-edged geometric forms defined by sharp creases and precise panel gaps, uniform soft shading without directional light sources, clean separation from the background with a faint contact shadow underneath
+[[PALETTE]] high-key monochrome, stark white body panels contrasted with deep black plastic cladding and wheels, neutral grey metallic accents on door handles, zero saturation across the entire image
+[[LIGHTING]] diffuse and directionless studio lighting, soft even illumination across all surfaces, no distinct key light or cast shadows, highlights rendered as broad smooth gradients rather than sharp specular reflections
+[[DISTINGUISHING]] the stark white background isolation and the complete absence of any surface texture or grain on the painted surfaces
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] product render
+[[LABEL]] the clean monochrome product-render style
+[[DEFINITION]] perfectly smooth matte surfaces, hard-edged geometric forms, high-key monochrome palette, diffuse directionless lighting, and stark white background isolation
+----------
+##### cross-media: one man, photograph vs engraving #####
+----------
+qwen3.6-35b-a3b  [cross-media: one man, photograph vs engraving :: sty_lincoln_photo]
+---
+ROLE: style
+---
+[[EXECUTION]] fine silver gelatin grain structure with high micro-contrast, sharp focus across the entire figure with a smooth gradient falloff in the background, no visible outlines or brushwork, edges defined by tonal separation rather than line, surface texture of skin and fabric rendered with extreme clarity and detail
+[[PALETTE]] monochrome, wide dynamic range from deep blacks to bright whites, neutral grey mid-tones, high contrast between light and shadow areas
+[[LIGHTING]] directional key light from the upper left creating strong highlights on the forehead and nose, deep shadows on the right side of the face, dramatic chiaroscuro effect with distinct separation between lit and unlit planes
+[[DISTINGUISHING]] the fine grain texture characteristic of 19th-century photographic plates, and the smooth tonal gradient of the studio backdrop
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] archival
+[[LABEL]] the high-contrast archival photograph style
+[[DEFINITION]] fine silver gelatin grain, sharp focus with background falloff, dramatic directional lighting, wide dynamic range monochrome palette, and smooth tonal gradients
+[[DEFINITION]]
+----------
+qwen3.6-35b-a3b  [cross-media: one man, photograph vs engraving :: sty_lincoln_money]
+---
+ROLE: style
+---
+[[EXECUTION]] fine-line engraved line work with dense parallel hatching and cross-hatching to build form and texture, sharp vector-like edges on all elements, no visible brushwork or grain, high-contrast rendering of the engraved lines against a flat background surface
+[[PALETTE]] monochrome with a single dominant blue ink hue applied over an off-white paper base, high contrast between the dark ink and the light ground
+[[LIGHTING]] flat and even illumination across the surface, no directional key or cast shadows, tonal variation created entirely by line density rather than light falloff
+[[DISTINGUISHING]] the fine engraved cross-hatching texture and the specific blue ink colour on the off-white paper
+[[MEDIUM]] print
+[[SUB_MEDIUM]] engraving
+[[LABEL]] the blue-engraved banknote style
+[[DEFINITION]] dense engraved cross-hatching, sharp line edges, a monochrome blue palette on an off-white ground, and flat even illumination
+----------
+##### cross-media: one warship, photograph vs plate #####
+----------
+qwen3.6-35b-a3b  [cross-media: one warship, photograph vs plate :: sty_destroyer_photo]
+---
+ROLE: style
+---
+[[EXECUTION]] fine silver-halide grain distributed evenly across the frame, sharp focus extending from the foreground water to the distant horizon, high-resolution rendering of metallic surfaces and structural details, smooth tonal transitions in the sky area without posterization, slight vignetting at the extreme corners
+[[PALETTE]] monochrome with a neutral grey balance, extended dynamic range capturing deep blacks in the smoke plume and bright whites in the overcast sky, mid-tones rendered with high fidelity and minimal compression artifacts
+[[LIGHTING]] diffuse overhead illumination characteristic of an overcast day, soft-edged shadows beneath the hull and superstructure, even exposure across the entire subject with no localized hotspots or crushed blacks
+[[DISTINGUISHING]] the presence of a thin black border framing the image on all four sides, and the specific density of the silver grain indicating archival photographic paper
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] archival
+[[LABEL]] the high-contrast archival photograph style
+[[DEFINITION]] fine silver-halide grain, extended dynamic range with deep blacks and bright whites, diffuse overhead illumination, sharp focus across the entire scene, and a thin black border
+[[DEFINITION]]
+----------
+qwen3.6-35b-a3b  [cross-media: one warship, photograph vs plate :: sty_destroyer_drawing]
+---
+ROLE: style
+---
+[[EXECUTION]] fine mechanical line work with uniform ink weight, precise geometric construction, stippled shading for tonal gradation, sharp vector-like edges, high-contrast rendering on a flat paper surface, technical illustration finish
+[[PALETTE]] monochrome, high contrast black and white, neutral grey mid-tones, limited range from pure white to deep black
+[[LIGHTING]] diffuse and even, no directional key light, form defined by line density and stippling rather than cast shadows, consistent illumination across the entire surface
+[[DISTINGUISHING]] the visible stippled shading technique for volume, and the technical diagrammatic layout with measurement scales
+[[MEDIUM]] print
+[[SUB_MEDIUM]] engraving
+[[LABEL]] the stippled technical engraving style
+[[DEFINITION]] fine mechanical line work, stippled tonal shading, sharp geometric edges, high-contrast monochrome palette, and technical diagrammatic layout
+----------
+##### cross-media: one character, painterly vs canonical toon #####
+----------
+qwen3.6-35b-a3b  [cross-media: one character, painterly vs canonical toon :: sty_peter_griffin_painting]
+---
+ROLE: style
+---
+[[EXECUTION]] digital painting with a soft, airbrushed surface texture, forms built from smooth tonal gradients rather than flat colour blocks, visible directional brushwork on the skin and clothing that suggests volume without hard edges, outlines present but soft and integrated into the shading rather than drawn as separate lines
+[[PALETTE]] muted and slightly desaturated, dominated by warm flesh tones, a dark olive-grey background, and a white shirt, with a limited range of mid-tone values and no high-contrast highlights
+[[LIGHTING]] diffuse and directional from the upper left, creating soft, gradual transitions between light and shadow on the figure's face, with no sharp cast shadows or specular highlights
+[[DISTINGUISHING]] the soft, painterly airbrushed finish on the figure's skin, and the integration of outlines into the shading rather than hard black borders
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] digital
+[[LABEL]] the soft digital painting style
+[[DEFINITION]] soft airbrushed digital surface, smooth tonal gradients, integrated soft outlines, muted warm palette, and diffuse directional lighting
+----------
+##### cross-media: the exact control (film still vs painting made from it) #####
+----------
+qwen3.6-35b-a3b  [cross-media: the exact control (film still vs painting made from it) :: sty_girl_painting_reference]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with a shallow depth of field that renders the background as a smooth, featureless blur while keeping the foreground figure in sharp focus, fine skin texture and individual hair strands resolved on the subject, soft-edged transitions between focused and out-of-focus areas, no visible grain or digital noise, clean optical rendering
+[[PALETTE]] desaturated and cool-toned, dominated by muted greys and pale flesh tones with a slight greenish cast in the shadows, low overall saturation and a compressed contrast range
+[[LIGHTING]] soft directional key from the upper left creating gentle modelling on the face, smooth falloff into shadow without harsh edges, highlights on the skin are diffuse rather than specular, no distinct cast shadows
+[[DISTINGUISHING]] the shallow depth of field isolating the figure against a blurred background, and the cool, desaturated colour grading typical of late 1990s cinema
+[[MEDIUM]] live-action film
+[[SUB_MEDIUM]] modern
+[[LABEL]] the desaturated cinematic portrait style
+[[DEFINITION]] shallow depth of field with a blurred background, soft directional lighting, desaturated cool tones, and fine skin texture rendering
+----------
+qwen3.6-35b-a3b  [cross-media: the exact control (film still vs painting made from it) :: sty_girl_painting]
+---
+ROLE: style
+---
+[[EXECUTION]] digital painting with a soft, blended surface texture simulating pastel or chalk on toothed paper, forms built from smooth tonal transitions rather than distinct brushstrokes, no hard outlines, edges of the figure softly diffused into the background, fine grain and subtle noise across the entire surface
+[[PALETTE]] muted and cool overall, dominated by pale greys, dusty blues, and soft flesh tones, with a few small accents of saturated yellow and orange in the hair and eyes, low contrast range
+[[LIGHTING]] diffuse and even, no hard key or sharp shadows, form modelled by gentle gradations of value, highlights rendered as smooth tonal shifts rather than specular points
+[[DISTINGUISHING]] the fine grain texture across the surface, and the soft, smudged edges where the figure meets the background
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] digital
+[[LABEL]] the soft pastel digital style
+[[DEFINITION]] smooth tonal blending, no hard outlines, fine grain texture, muted cool palette with small saturated accents, and soft diffused edges
+----------
+##### cross-media: one bird, vector vs watercolour #####
+----------
+qwen3.6-35b-a3b  [cross-media: one bird, vector vs watercolour :: sty_bird_vector]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector shapes with perfectly smooth curves and sharp corners, no visible brushwork or texture, forms built from solid blocks of colour separated by thin uniform outlines, flat shading with a single darker tone for volume, crisp edges throughout
+[[PALETTE]] bright and saturated primary colours, dominant cyan and blue tones contrasted with warm orange accents, clean white background, high chroma with no desaturation
+[[LIGHTING]] flat and even, no directional key, form defined by colour blocks rather than tonal gradients, a single darker shade used for simplified shading on the wing and tail
+[[DISTINGUISHING]] the perfectly smooth vector curves and the thin uniform black outlines bounding every shape
+[[MEDIUM]] vector
+[[SUB_MEDIUM]] none
+[[LABEL]] the flat vector cartoon style
+[[DEFINITION]] clean vector shapes, thin uniform outlines, flat colour blocks with simplified shading, bright saturated palette, and crisp edges
+----------
+qwen3.6-35b-a3b  [cross-media: one bird, vector vs watercolour :: sty_bird_watercolor]
+---
+ROLE: style
+---
+[[EXECUTION]] fluid pigment washes with soft, bleeding edges where wet-on-wet application allowed colours to merge organically, visible paper tooth and grain texture throughout the background and within lighter washes, sharp dark accents applied with a fine brush for detail, no hard outlines, forms defined by colour saturation and value rather than line
+[[PALETTE]] cool and warm contrast between saturated cerulean blues and warm ochre-golden yellows, set against an off-white paper ground, low to medium overall saturation with high local contrast in the dark accents
+[[LIGHTING]] diffuse and even, no directional key light, form modelled through wet-on-wet colour transitions and value shifts rather than cast shadows or highlights
+[[DISTINGUISHING]] the visible rough paper tooth, and the characteristic soft bleeding edges of wet-on-wet watercolour washes
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] watercolour
+[[LABEL]] the loose wet-on-wet watercolour style
+[[DEFINITION]] fluid wet-on-wet colour merging, soft bleeding edges, visible paper grain texture, and a cool-warm contrast palette on an off-white ground
+----------
+##### cross-media: the annie ladder (marker, watercolour, comic) #####
+----------
+qwen3.6-35b-a3b  [cross-media: the annie ladder (marker, watercolour, comic) :: sty_annie1]
+---
+ROLE: style
+---
+[[EXECUTION]] loose, energetic ink outlines with variable line weight and visible stroke direction, watercolour washes applied over the line work with soft bleeding edges and granulation, dry-brush texture in the darker areas, flat colour application with minimal interior modelling, white paper background showing through the washes
+[[PALETTE]] warm and slightly muted, dominant hues of coral pink and yellow against deep black ink, low saturation overall with a creamy off-white ground
+[[LIGHTING]] flat and even, no directional key or cast shadows, form defined by line density and tonal value rather than rendered light
+[[DISTINGUISHING]] the visible ink stroke texture and the soft bleeding edges of the watercolour washes
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] watercolour
+[[LABEL]] the loose ink-and-watercolour style
+[[DEFINITION]] energetic ink outlines, soft bleeding watercolour washes, flat colour application, a warm muted palette, and no rendered shadows
+----------
+qwen3.6-35b-a3b  [cross-media: the annie ladder (marker, watercolour, comic) :: sty_annie2_cropped]
+---
+ROLE: style
+---
+[[EXECUTION]] visible paper tooth and grain throughout, thin ink outlines with slight irregularity and hand-drawn wobble, watercolour washes applied in flat areas with soft bleeding at the edges, no hatching or stippling, forms built from simple shapes and broad colour fields, clean white background showing through as negative space
+[[PALETTE]] warm and earthy, dominated by ochre and tan washes, with a muted coral accent and solid black for hair and eyes, low saturation overall, limited range of values
+[[LIGHTING]] flat and even, no directional key or cast shadows, form defined by line and colour contrast rather than shading, highlights carried as the white of the paper
+[[DISTINGUISHING]] the visible paper grain, and the soft bleeding edges of the watercolour washes
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] watercolour
+[[LABEL]] the loose watercolour ink style
+[[DEFINITION]] visible paper tooth, thin irregular ink outlines, flat watercolour washes with soft bleeding edges, a warm earthy palette, and flat even lighting
+----------
+qwen3.6-35b-a3b  [cross-media: the annie ladder (marker, watercolour, comic) :: sty_annie3_panel1]
+---
+ROLE: style
+---
+[[EXECUTION]] clean black outlines of uniform weight enclosing flat colour areas, minimal interior line work for facial features and clothing details, smooth digital fill with no visible brush texture or grain, sharp vector-like edges on all forms, simple two-tone shading on the figures using a single darker tone for cast shadows
+[[PALETTE]] saturated primary and secondary hues including reds, blues, and yellows set against neutral background tones of brown and grey, high contrast between the dark outlines and the bright fills
+[[LIGHTING]] flat and graphic with no simulated light source, form defined by solid colour blocks rather than gradient shading, distinct separation between lit areas and shadow areas using hard-edged colour shifts
+[[DISTINGUISHING]] the presence of speech balloons with text, and the tall vertical panel framing
+[[MEDIUM]] comic
+[[SUB_MEDIUM]] none
+[[LABEL]] the modern flat digital comic style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, minimal interior line work, saturated hues against neutral backgrounds, and hard-edged two-tone shading
+----------
+##### nested medium (tie-break 2) #####
+----------
+qwen3.6-35b-a3b  [nested medium (tie-break 2) :: sty_annie2]
+---
+ROLE: style
+---
+[[EXECUTION]] fine ink outlines with variable line weight defining forms, watercolour washes applied in flat planes with visible pigment pooling at edges, soft organic edges where washes meet the paper, no hatching or cross-hatching for shading, smooth matte surface texture of the paper showing through thin washes
+[[PALETTE]] warm and earthy, dominated by sepia and tan washes, with a single saturated coral accent colour on the figure's garment, low overall saturation, high value contrast between the black ink and white paper
+[[LIGHTING]] flat and even, no directional key light, form defined by line and tone rather than rendered illumination, minimal cast shadows
+[[DISTINGUISHING]] the visible tooth of the drawing paper, and the characteristic watercolour blooms where pigment has pooled at the edges of washes
+[[MEDIUM]] painting
+[[SUB_MEDIUM]] watercolour
+[[LABEL]] the sepia ink and watercolour style
+[[DEFINITION]] fine ink outlines, flat watercolour washes with pigment pooling, a warm sepia palette with one saturated accent colour, and visible paper tooth
+[[EXECUTION]]
+----------
+##### multi-panel diagnostic (recorded, never patched) #####
+----------
+qwen3.6-35b-a3b  [multi-panel diagnostic (recorded, never patched) :: sty_comic]
+---
+ROLE: style
+---
+[[EXECUTION]] clean black ink outlines of uniform weight enclosing flat colour fields, with hatching used for texture on surfaces like fabric and wood, smooth digital colour fills with minimal interior shading, sharp hard edges throughout the panel borders, and a visible paper grain texture overlaying the entire surface
+[[PALETTE]] desaturated and slightly muted, dominated by earthy ochres, slate blues, and greys, with specific saturated accents of red on costumes and hair, overall low contrast and a warm, aged tonal cast
+[[LIGHTING]] flat and even across the scene, with no directional key or cast shadows, form defined by line weight and colour value rather than rendered light, soft diffuse ambient tone
+[[DISTINGUISHING]] the visible paper grain texture overlaying the image, and the distinct panel borders separating the frames
+[[MEDIUM]] comic
+[[SUB_MEDIUM]] none
+[[LABEL]] the desaturated modern comic style
+[[DEFINITION]] clean uniform ink outlines, flat colour fills with hatching textures, a desaturated earthy palette, and visible paper grain texture
+----------
+##### 3D CG breadth #####
+----------
+qwen3.6-35b-a3b  [3D CG breadth :: sty_shrek_cg]
+---
+ROLE: style
+---
+[[EXECUTION]] computer-generated three-dimensional rendering with smooth, polished surfaces and soft subsurface scattering on the skin, precise geometric modeling of facial features, sharp focus across the foreground figure with a shallow depth of field blurring the background elements, high level of detail in surface textures such as pores and fabric weave
+[[PALETTE]] vibrant and saturated, dominated by a bright lime green hue for the primary figure, contrasted with earthy browns and off-whites, set against a clear cyan-blue sky, full colour range with high chroma
+[[LIGHTING]] bright and even key light from the upper front, creating soft but distinct shadows under the chin and nose, highlights on the forehead and nose indicating a glossy skin texture, balanced exposure with no crushed blacks or blown-out whites
+[[DISTINGUISHING]] the characteristic smooth plastic-like sheen of early-2000s character models, and the specific exaggerated facial proportions typical of that era's feature animation
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] feature animation
+[[LABEL]] the early 2000s CGI feature animation style
+[[DEFINITION]] smooth computer-generated surfaces with subsurface scattering, vibrant saturated colours, bright even lighting, and exaggerated character proportions
+----------
+qwen3.6-35b-a3b  [3D CG breadth :: sty_woody_cg]
+---
+ROLE: style
+---
+[[EXECUTION]] computer-generated three-dimensional rendering with smooth, slightly soft-edged surfaces, diffuse subsurface scattering on the skin areas, stylized proportions with elongated limbs and exaggerated facial features, clean topology without visible polygonal structure, rendered with a shallow depth of field that blurs the background elements
+[[PALETTE]] warm and saturated, dominated by earthy browns, yellows, and blues, with high contrast between the bright yellow plaid shirt and the darker brown hat and boots, rich colour grading throughout
+[[LIGHTING]] soft, diffused key light from the upper left, gentle falloff into shadow areas, no harsh specular highlights, even illumination across the figure with subtle rim lighting separating it from the background
+[[DISTINGUISHING]] the characteristic stylized character proportions and smooth plastic-like surface texture typical of early feature animation
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] feature animation
+[[LABEL]] the early feature animation 3D style
+[[DEFINITION]] computer-generated three-dimensional rendering, smooth subsurface scattering on skin, stylized elongated proportions, warm saturated earthy palette, and soft diffused lighting
+----------
+qwen3.6-35b-a3b  [3D CG breadth :: sty_kasia_render]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth computer-generated surfaces with a matte finish, soft subsurface scattering on the skin areas, precise geometric construction of clothing folds, clean hard edges on accessories, uniform lighting without visible brushwork or grain, high-resolution digital rendering with no physical medium texture
+[[PALETTE]] neutral and desaturated overall, dominated by cool greys, blacks, and denim blues, with a single accent of bright teal in the eyes and a touch of yellow in the headband, low contrast range with soft transitions between tones
+[[LIGHTING]] diffuse and even from the front, minimal shadowing with only soft contact shadows beneath the feet, no hard key light, highlights are broad and gentle rather than specular, flat illumination that preserves surface detail without dramatic modelling
+[[DISTINGUISHING]] the seamless white background gradient, and the characteristic subsurface scattering glow on the skin edges
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] character render
+[[LABEL]] the smooth digital character render style
+[[DEFINITION]] smooth matte surfaces with subsurface scattering, diffuse even lighting, desaturated cool palette, clean geometric construction, and seamless white background
+----------
+##### coarse coverage #####
+----------
+qwen3.6-35b-a3b  [coarse coverage :: sty_kasia]
+---
+ROLE: style
+---
+[[EXECUTION]] clean digital line art with uniform black outlines of consistent weight, flat colour fills for base tones, smooth gradient shading applied to forms without visible brushwork or texture, sharp vector-like edges on the figure and background elements, no surface grain or canvas texture
+[[PALETTE]] vibrant and saturated primary colours with high contrast between light and dark areas, dominant blues and blacks with accents of orange and yellow, clean separation between colour fields
+[[LIGHTING]] flat directional lighting from the upper left creating distinct shadow areas on the right side of forms, hard-edged shadows with no soft falloff, highlights rendered as smooth gradients rather than specular points
+[[DISTINGUISHING]] the crisp uniform black outlines around all forms and the clean white background with a subtle diagonal gradient shadow behind the figure
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] anime
+[[LABEL]] the modern flat digital anime style
+[[DEFINITION]] uniform black outlines, flat colour fills with smooth gradient shading, vibrant saturated palette, hard-edged directional lighting, and clean vector-like edges
+----------
+qwen3.6-35b-a3b  [coarse coverage :: sty_p5_first]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with a fine, uniform film grain structure across the entire frame, moderate sharpness on the foreground figure with a gradual falloff into background softness, optical lens character evident in the smooth bokeh of distant highlights and slight vignetting at the corners, no digital noise or artificial texture overlays
+[[PALETTE]] warm and amber-toned, rich but slightly muted saturation, high contrast between the deep blacks of the shadows and the warm highlights on the figure and wall, a dominant palette of sepia, ochre, and charcoal
+[[LIGHTING]] dramatic directional key light from the upper right casting long, sharp-edged shadows against the wall, high-contrast chiaroscuro effect with deep, crushed shadow detail in the background and bright specular highlights on the figure's shoes and the car chrome
+[[DISTINGUISHING]] the presence of black aspect-ratio bars at the top and bottom edges, and the characteristic fine grain of vintage film stock
+[[MEDIUM]] live-action film
+[[SUB_MEDIUM]] vintage Technicolor
+[[LABEL]] the warm high-contrast vintage film style
+[[DEFINITION]] fine uniform film grain, warm amber colour cast, dramatic directional key light with long sharp shadows, and black aspect-ratio bars
+----------
+qwen3.6-35b-a3b  [coarse coverage :: sty_fuji]
+---
+ROLE: style
+---
+[[EXECUTION]] high-resolution digital capture with extreme sharpness across the entire frame, no visible film grain or sensor noise, smooth tonal transitions in the sky area, crisp definition on the foreground structures and foliage, high dynamic range preserving detail in both bright highlights and deep shadows, clean optical rendering without painterly texture
+[[PALETTE]] highly saturated and vivid, dominated by intense azure blues in the sky, brilliant white snow, and a wide spectrum of lush greens in the vegetation, with warm earth tones on the thatched roofs, high contrast between the cool sky and the warm foreground elements
+[[LIGHTING]] bright, direct overhead illumination creating strong contrast, sharp distinct shadows cast by the structures and trees, high-key rendering of the snow-capped peak, even lighting across the mid-ground foliage, minimal atmospheric haze
+[[DISTINGUISHING]] the intense saturation of the natural colours and the extreme clarity of detail from foreground to background
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] colour
+[[LABEL]] the highly saturated landscape photography style
+[[DEFINITION]] extreme sharpness across the frame, high dynamic range with preserved highlight and shadow detail, intense vivid saturation of blues and greens, and bright direct overhead lighting
+----------
+##### coarse coverage (amb) #####
+----------
+qwen3.6-35b-a3b  [coarse coverage (amb) :: sty_chair]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth matte rendering of the upholstery with subtle horizontal seam indentations, high-gloss specular highlights on the metallic frame indicating a polished surface, soft diffuse shadow beneath the base, clean edges without visible texture or grain, uniform lighting with no harsh directional shadows
+[[PALETTE]] neutral and desaturated, dominated by black and white with a single accent hue of metallic gold, high contrast between the dark figure and the bright background
+[[LIGHTING]] even and diffuse, soft highlights on curved surfaces, minimal shadow detail, no strong directional key light
+[[DISTINGUISHING]] none
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] product render
+[[LABEL]] the clean product-render style
+[[DEFINITION]] smooth matte surfaces with high-gloss metallic accents, soft diffuse lighting, and a neutral desaturated palette
+----------

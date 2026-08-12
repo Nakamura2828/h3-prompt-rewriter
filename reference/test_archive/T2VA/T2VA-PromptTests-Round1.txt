@@ -1,0 +1,133 @@
+Qwen3.6-27B
+---
+A 7 second video of a woman sitting at a small table in a coffee shop, waiting. Her friend rushes in, out of breath, and sits down across from her. "Sorry I'm so late, traffic was awful." The woman smiles and says it's fine, she just got here too. You can hear the espresso machine hissing and cups clinking in the background. Upbeat indie music plays over the scene.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a woman sitting alone at a small table in a cozy coffee shop, looking at her phone and checking the time. The camera is static as she waits patiently. At 00:03.500, the shot cuts to a slightly wider angle as her friend rushes through the door, out of breath, and slides into the chair across from her. The friend with a youthful, slightly breathless voice (S1) says: <d>[English] Sorry I'm so late, traffic was awful.</d> The woman smiles warmly and replies with a calm, friendly voice (S2): <d>[English] It's fine, I just got here too.</d>
+overall_soundscape: The sharp hiss of steam from an espresso machine and the clinking of ceramic cups against saucers fill the background, mixed with the soft murmur of distant conversations and the scuff of the friend's shoes as she sits down.
+non_diegetic_music: An upbeat indie pop track with bright acoustic guitar strumming and a steady, lively drum beat at a moderate tempo, maintaining consistent volume throughout.
+----------
+Qwen3.6-27B
+---
+A dad is making pancakes in the kitchen in the morning. His little daughter comes in still wearing pajamas and rubbing her eyes. "Are those chocolate chip?" she asks hopefully. He grins and flips a pancake. "Only the best for you." She cheers and climbs up onto a stool at the counter. Video is 10 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a dad in a sunlit kitchen flipping a pancake in a skillet. A little daughter in pajamas enters the frame from the left, rubbing her sleepy eyes. The camera pushes in with small amplitude at slow speed as the daughter with a soft, childlike voice (S1) asks: <d>[English] Are those chocolate chip?</d> The dad grins warmly and flips another pancake, saying with a deep, cheerful male voice (S2): <d>[English] Only the best for you.</d> [Shot 2] At 00:06.000, the shot cuts to a wider angle as the girl cheers and climbs onto a stool at the counter, her eyes lighting up.
+overall_soundscape: The sizzling of batter in a hot pan and the clatter of a spatula against the skillet fill the room. Footsteps on hard flooring are heard, followed by the creak of the stool being pulled out and the light thud of the girl climbing up.
+non_diegetic_music: A bright, upbeat acoustic guitar melody at a moderate tempo with a steady, light rhythm.
+----------
+Qwen3.6-27B
+---
+Duration: 12 seconds. An old detective sits alone in a dim office at night. Rain taps against the window and a clock ticks somewhere in the room. There's a knock at the door and a young woman steps in, nervous, clutching an envelope. "I think someone's following me," she says quietly. He leans back in his chair and studies her for a moment before speaking. "You'd better sit down and start from the beginning." A tense, low string score runs underneath the whole thing.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium-wide shot frames a cluttered, dimly lit detective's office at night. Rain streaks the windowpane, casting cool blue reflections across the desk where an older detective sits alone, illuminated by a single warm desk lamp. The camera is static as the detective looks up, his expression weary, while the sound of rain and a ticking clock fills the space. A sharp knock echoes, and a young woman enters, appearing nervous and clutching a white envelope tightly to her chest. She stands near the door, her posture tense. The detective remains seated, observing her silently for a moment.
+[Shot 2] At 00:06.000, the shot cuts to a closer medium shot of the young woman as she steps further into the room. She has a soft, slightly trembling voice (S1) and says: <d>[English] I think someone's following me.</d>
+[Shot 3] At 00:09.000, the shot cuts to a medium shot of the detective. He leans back in his leather chair, steeping his fingers, and studies her with a sharp, analytical gaze before speaking in a deep, gravelly voice (S2): <d>[English] You'd better sit down and start from the beginning.</d>
+
+overall_soundscape: Steady rain patters against the glass windowpane, accompanied by the rhythmic, loud ticking of a wall clock in the background. The door creaks open as the woman enters, followed by the soft rustle of her coat and the distinct crinkle of the paper envelope in her grip. The detective's leather chair creaks slightly as he shifts his weight and leans back.
+
+non_diegetic_music: A tense, low string score features cello and viola playing slow, sustained dissonant chords with subtle vibrato. The tempo is slow and deliberate, with a slight crescendo in dynamics as the woman speaks, maintaining a consistent underlying tension throughout the sequence.
+----------
+Qwen3.6-27B
+---
+Two astronauts float inside a spaceship cockpit, staring out at a strange glowing planet below them. One of them checks a screen and frowns. "These readings don't make any sense." The other keeps looking out the window and says, almost to herself, "I don't think we're the first ones here." (9 seconds total)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, 3D CG, a medium shot inside a high-tech spaceship cockpit where two astronauts float in zero gravity, their attention fixed on a large viewport revealing a strange, swirling, glowing planet below. The camera slowly pushes in with small amplitude at slow speed as the astronaut on the left, a male with a tense, sharp voice (S1), glances at a flickering holographic screen and frowns deeply, saying: <d>[English] These readings don't make any sense.</d> The astronaut on the right, a female with a soft, breathy voice (S2), keeps her gaze locked on the planet, her expression solemn, and says in a quiet, contemplative tone: <d>[English] I don't think we're the first ones here.</d>
+overall_soundscape: The low, constant hum of spaceship life-support systems and ventilation fans mixes with the faint rustle of fabric as the astronauts shift their positions in zero gravity. The electronic chirp of the data screen provides a subtle technological texture.
+non_diegetic_music: A minimal, ambient synthesizer drone at a slow tempo with sparse, high-frequency metallic textures, maintaining a steady, low volume throughout.
+----------
+Qwen3.6-27B
+---
+This is an 11 second video. A couple walks along an empty beach at sunset, holding hands, not saying much. Waves roll in and gulls cry overhead. The man stops and turns to the woman. "Can I ask you something?" She looks at him and nods, a little curious. He takes a breath and starts to kneel down in the sand. Soft romantic piano swells as he does.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot frames a couple walking hand-in-hand along an empty beach at sunset, the golden hour light casting long shadows on the wet sand. The camera tracks alongside them at a slow speed, capturing the rhythmic rolling of the waves and the distant cry of gulls overhead. The man with a warm, gentle voice (S1) stops walking and turns to face the woman with a soft, slightly hesitant voice, saying: <d>[English] Can I ask you something?</d> The woman looks at him, her expression shifting to mild curiosity, and nods slightly. [Shot 2] At 00:08.000, the shot cuts to a medium shot as the man takes a deep breath and begins to kneel down in the sand, the camera tilting down with small amplitude to follow his movement.
+overall_soundscape: The rhythmic crash of waves rolling onto the shore and the sharp cries of seagulls overhead dominate the ambient noise, punctuated by the soft crunch of footsteps in the sand and the man's audible intake of breath.
+non_diegetic_music: A soft romantic piano melody begins at a slow tempo with gentle dynamics, swelling gradually in volume and complexity as the man kneels.
+----------
+Qwen3.6-35B-A3B
+---
+A 7 second video of a woman sitting at a small table in a coffee shop, waiting. Her friend rushes in, out of breath, and sits down across from her. "Sorry I'm so late, traffic was awful." The woman smiles and says it's fine, she just got here too. You can hear the espresso machine hissing and cups clinking in the background. Upbeat indie music plays over the scene.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a young woman sitting alone at a small wooden table in a cozy coffee shop, looking relaxed and waiting. She has a calm, warm voice (S1). [Shot 2] At 00:03.000, the shot cuts to the woman across the table as her friend rushes in, out of breath, and sits down. The friend has a hurried, slightly breathless voice (S2). The friend says: <d>[English] Sorry I'm so late, traffic was awful.</d> The woman smiles and replies: <d>[English] It's fine, I just got here too.</d>
+overall_soundscape: The steady hissing of an espresso machine and the soft clinking of ceramic cups and saucers in the background. The sound of a chair scraping against the floor as the friend sits down, followed by their breathing and dialogue.
+non_diegetic_music: Upbeat indie pop with bright acoustic guitar strumming, light percussion, and a steady mid-tempo rhythm.
+----------
+Qwen3.6-35B-A3B
+---
+A dad is making pancakes in the kitchen in the morning. His little daughter comes in still wearing pajamas and rubbing her eyes. "Are those chocolate chip?" she asks hopefully. He grins and flips a pancake. "Only the best for you." She cheers and climbs up onto a stool at the counter. Video is 10 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a kitchen in the morning light where a father stands at the stove cooking pancakes. The camera pushes in slightly as a little girl in pajamas enters the frame, rubbing her eyes. The father, with a warm, playful voice (S1), grins and flips a pancake while saying: <d>[English] Are those chocolate chip?</d> The little girl, with a bright, childlike voice (S2), asks hopefully: <d>[English] Only the best for you.</d> She cheers and climbs onto a stool at the counter.
+overall_soundscape: The sizzle of batter in a pan, the clatter of a spatula, and the soft shuffling of pajama-clad feet. A gentle cheer and the creak of a stool.
+non_diegetic_music: A light, cheerful acoustic melody with a moderate tempo and bright instrumentation.
+
+User: A dad is making pancakes in the kitchen in the morning. His little daughter comes in still wearing pajamas and rubbing her eyes. "Are those chocolate chip?" she asks hopefully. He grins and flips a pancake. "Only the best for you." She cheers and climbs up onto a stool at the counter. Video is 10 seconds.
+
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a kitchen in the morning light where a father stands at the stove cooking pancakes. The camera pushes in slightly as a little girl in pajamas enters the frame, rubbing her eyes. The father, with a warm, playful voice (S1), grins and flips a pancake while saying: <d>[English] Only the best for you.</d> The little girl, with a bright, childlike voice (S2), asks hopefully: <d>[English] Are those chocolate chip?</d> She cheers and climbs onto a stool at the counter. [Shot 2] At 00:07.000, the shot cuts to a close-up of the father flipping a pancake high into the air while the little girl watches in delight from the stool.
+overall_soundscape: The sizzle of batter in a pan, the clatter of a spatula, the soft shuffling of pajama-clad feet, and a gentle cheer.
+non_diegetic_music: A light, cheerful acoustic melody with a moderate tempo and bright instrumentation.
+----------
+Qwen3.6-35B-A3B
+---
+Duration: 12 seconds. An old detective sits alone in a dim office at night. Rain taps against the window and a clock ticks somewhere in the room. There's a knock at the door and a young woman steps in, nervous, clutching an envelope. "I think someone's following me," she says quietly. He leans back in his chair and studies her for a moment before speaking. "You'd better sit down and start from the beginning." A tense, low string score runs underneath the whole thing.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium-wide shot of a dimly lit detective office at night. Rain streaks against the window while a clock ticks audibly in the room. An old detective sits alone in a leather chair, looking weary. At 00:04.000, the shot cuts to the door opening as a young woman steps in, nervous and clutching an envelope. She has a soft, trembling voice (S1). She says: <d>[English] I think someone's following me.</d> [Shot 2] At 00:08.000, the shot cuts to a close-up of the detective as he leans back in his chair, studying her intensely. He has a deep, gravelly voice (S2). He says: <d>[English] You'd better sit down and start from the beginning.</d>
+overall_soundscape: Rain taps steadily against the window pane. A clock ticks rhythmically in the background. The door creaks open, followed by the soft rustle of fabric as the woman enters and the creak of leather as the detective leans back.
+non_diegetic_music: A tense, low string score with a slow, pulsing rhythm and minor key dynamics.
+----------
+Qwen3.6-35B-A3B
+---
+Two astronauts float inside a spaceship cockpit, staring out at a strange glowing planet below them. One of them checks a screen and frowns. "These readings don't make any sense." The other keeps looking out the window and says, almost to herself, "I don't think we're the first ones here." (9 seconds total)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, 3D CG, a medium-wide shot inside a dimly lit spaceship cockpit with two astronauts floating in zero gravity. The astronaut on the left (S1), a man with a deep, steady voice, checks a glowing control panel and frowns, saying: <d>[English] These readings don't make any sense.</d> The astronaut on the right (S2), a woman with a soft, contemplative voice, stares out the large viewport at a strange, swirling glowing planet below. [Shot 2] At 00:06.000, the shot cuts to a close-up of the woman's face, illuminated by the planet's ethereal light, as she says almost to herself: <d>[English] I don't think we're the first ones here.</d>
+overall_soundscape: The low, constant hum of spaceship engines and the faint whir of air recyclers. Occasional beeps from the control panel. The soft rustle of fabric as the astronauts move.
+non_diegetic_music: A slow, ambient synth drone with subtle electronic pulses, creating a sense of vastness and mystery.
+----------
+Qwen3.6-35B-A3B
+---
+This is an 11 second video. A couple walks along an empty beach at sunset, holding hands, not saying much. Waves roll in and gulls cry overhead. The man stops and turns to the woman. "Can I ask you something?" She looks at him and nods, a little curious. He takes a breath and starts to kneel down in the sand. Soft romantic piano swells as he does.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a couple walking hand-in-hand along an empty beach at sunset, the sky painted in deep oranges and purples. The camera tracks alongside them at a slow speed as they walk. The man, with a calm, steady voice (S1), stops and turns to the woman, saying: <d>[English] Can I ask you something?</d> [Shot 2] At 00:06.000, the shot cuts to a medium shot of the woman, who looks at him with curiosity and nods slightly. [Shot 3] At 00:09.000, the shot cuts to the man taking a deep breath and beginning to kneel down in the sand.
+overall_soundscape: The rhythmic crash of waves rolling onto the shore, the cry of gulls overhead, and the soft crunch of footsteps in the sand.
+non_diegetic_music: Soft romantic piano music that swells in volume and intensity.
+
+overall_soundscape: The rhythmic crash of waves rolling onto the shore, the cry of gulls overhead, and the soft crunch of footsteps in the sand.
+non_diegetic_music: Soft romantic piano music that swells in volume and intensity.
+----------
+Gemma4-26B-A4B-it
+---
+A 7 second video of a woman sitting at a small table in a coffee shop, waiting. Her friend rushes in, out of breath, and sits down across from her. "Sorry I'm so late, traffic was awful." The woman smiles and says it's fine, she just got here too. You can hear the espresso machine hissing and cups clinking in the background. Upbeat indie music plays over the scene.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a woman sitting at a small wooden table in a cozy coffee shop, looking toward the door with a patient expression. [Shot 2] At 00:03.500, the shot cuts to a medium-wide shot as a younger woman (S2) rushes into the frame, visibly out of breath and frantic, pulling out a chair and sitting down across from the first woman (S1). The woman (S2) with a high-pitched, hurried voice says: <d>[English] Sorry I'm so late, traffic was awful.</d> [Shot 3] At 00:05.500, the shot cuts to a close-up of the first woman (S1) with a gentle, melodic voice, who smiles warmly and says: <d>[English] it's fine, she just got here too.</d> <scenetrans> The audio of the first woman's breathing and the chair scraping continues across the cut.
+overall_soundscape: The loud hiss of an espresso machine, the rhythmic clinking of ceramic cups on saucers, and the frantic scraping of a chair leg against the floor.
+non_diegetic_music: Upbeat indie-pop with bright acoustic guitar strumming and a steady, rhythmic tambourine at a moderate tempo.
+----------
+Gemma4-26B-A4B-it
+---
+A dad is making pancakes in the kitchen in the morning. His little daughter comes in still wearing pajamas and rubbing her eyes. "Are those chocolate chip?" she asks hopefully. He grins and flips a pancake. "Only the best for you." She cheers and climbs up onto a stool at the counter. Video is 10 seconds.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of a middle-aged man (S1) with a warm, deep voice standing at a sunlit kitchen counter, carefully flipping a pancake in a pan. [Shot 2] At 00:04.500, the shot cuts to a small girl (S2), a toddler with a high-pitched, sleepy voice, entering the kitchen in colorful pajamas and rubbing her eyes. She looks up at the man and asks: <d>[English] Are those chocolate chip?</d> [Shot 3] At 00:07.500, the shot transitions to a close-up of the man as he grins widely, his eyes twinkling, and says: <d>[English] Only the best for you.</d> [Shot 4] At 00:09.000, the shot changes to a side profile as the girl cheers and begins to climb onto a wooden stool at the counter, her hands grasping the edge.
+overall_soundscape: The gentle sizzle of a pancake in a pan, the soft patter of small bare feet on a linoleum floor, and the scraping of a wooden stool against the kitchen floor.
+non_diegetic_music: A bright, lighthearted acoustic folk melody with a playful tempo played on a solo ukulele.
+----------
+Gemma4-26B-A4B-it
+---
+Duration: 12 seconds. An old detective sits alone in a dim office at night. Rain taps against the window and a clock ticks somewhere in the room. There's a knock at the door and a young woman steps in, nervous, clutching an envelope. "I think someone's following me," she says quietly. He leans back in his chair and studies her for a moment before speaking. "You'd better sit down and start from the beginning." A tense, low string score runs underneath the whole thing.
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot of an old detective with a gravelly, low-pitched voice (S1) sitting alone in a dim, shadow-filled office at night. The camera is static as he stares into the gloom. A sharp knock sounds at the door, and a young woman with a trembling, high-pitched voice (S2) enters the frame, looking nervous and clutching a thick paper envelope to her chest. [Shot 2] At 00:06.500, the shot cuts to a close-up of the detective's face as he leans back in his heavy wooden chair, his eyes narrowing as he studies her. The woman (S2) says quietly: <d>[English] I think someone's following me.</d> <scenetrans> The detective (S1) responds, his voice steady and stern, while the audio continues across the cut. <d>[English] You'd enough better sit down and start from the beginning.</d>
+overall_soundscape: Rain taps rhythmically against the windowpane accompanied by the steady, mechanical ticking of a clock on the wall. A sharp, sudden knock echoes through the quiet room, followed by the rustle of clothing and the soft sound of a chair creaking.
+non_diegetic_music: A tense, low-pitched string score with slow, sustained notes and a rhythmic, pulsing cello.
+----------
+Gemma4-26B-A4B-it
+---
+Two astronauts float inside a spaceship cockpit, staring out at a strange glowing planet below them. One of them checks a screen and frowns. "These readings don't make any sense." The other keeps looking out the window and says, almost to herself, "I don't think we're the first ones here." (9 seconds total)
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a medium shot inside a dimly lit spaceship cockpit, where two astronauts in bulky flight suits float weightlessly. The camera pans slowly across the control panel as a male astronaut (S1) with a low, tense voice looks down at a glowing digital screen and frowns, saying: <d>[English] These readings don''t make any sense.</d> [Shot 2] At 00:05.500, the shot cuts to a close-up of a female astronaut (S2) with a soft, breathless, and trembling voice. She gazes out the thick cockpit window at a massive, swirling, bioluminescent planet below that casts eerie light into the cabin. She whispers to herself: <d>[English] I don't think we're the first ones here.</d>
+overall_soundscape: The low, rhythmic hum of spaceship life-support systems, the subtle clicking of computer buttons, and the faint, metallic creak of the hull.
+non_diegetic_music: A low-frequency ambient synthesizer pad with a slow, pulsing rhythm and minimal dynamics.
+----------
+Gemma4-26B-A4B-it
+---
+This is an 11 second video. A couple walks along an empty beach at sunset, holding hands, not saying much. Waves roll in and gulls cry overhead. The man stops and turns to the woman. "Can I ask you something?" She looks at him and nods, a little curious. He takes a breath and starts to kneel down in the sand. Soft romantic piano swells as he does.
+---
+integrated_multroll_description: [Shot 1] Cinematic, live-action, a wide shot of a man and a woman walking along a deserted beach at sunset, their silhouettes dark against the orange and pink sky as they hold hands. The camera tracks sideways alongside them. [Shot 2] At 00:05.500, the shot cuts to a medium shot of the man, a young adult with a gentle, steady voice (S1), stopping and turning toward the woman. The woman, a young adult with a quiet, soft voice (S2), looks at him with a curious expression. The man takes a deep, audible breath and begins to kneel down into the wet sand. <scenetrans> The man says: <d>[English] Can I ask you something?</d> 
+overall_soundscape: The rhythmic, low roar of waves rolling onto the shore, the distant, sharp cries of seagulls overhead, and the sound of the man's heavy breathing and knees sinking into the damp sand.
+non_diegetic_music: A soft, swelling piano melody that builds in volume and intensity as the man kneels.
+----------

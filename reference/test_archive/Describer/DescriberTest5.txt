@@ -1,0 +1,106 @@
+Qwen3.6-35B-A3B
+---
+CAST: the woman on stage | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, high production value
+[[FRAMING]] wide shot, eye level, centred
+[[CAST NOT FOUND]] the woman on stage
+[[CHAR: UNLISTED: woman in a blue dress, screen-centre]]
+  [[APPEARANCE]] adult female, twenties to thirties, slim build, red hair cut in a short bob
+  [[CLOTHING]] sleeveless royal blue mini dress with a visible back zipper, matching blue high heels
+  [[POSE]] standing upright with legs spread wide, hands resting on hips
+  [[GAZE]] head facing away from camera, eyes directed toward the audience
+  [[POSITION]] screen-centre, foreground, back to camera
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[OBJECTS]] a stage floor, smooth and grey; a red carpet aisle extending from the stage to the audience; rows of red theatre seats; a balcony railing with gold detailing
+[[ENVIRONMENT]] an ornate theatre interior, featuring multiple tiers of balconies with gold trim and red upholstery, filled with a seated audience
+[[LIGHTING]] bright stage lighting focused on the woman, creating a spotlight effect, with ambient warm lighting illuminating the audience and architecture
+[[PALETTE]] dominant royal blue and red, contrasted with gold accents and neutral skin tones
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the woman with red hair in a blue dress | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, high production value
+[[FRAMING]] wide shot, eye level, centred
+[[CAST NOT FOUND]] the woman with red hair in a blue dress
+[[CHAR: UNLISTED: woman with red hair in a blue dress, screen-centre]]
+  [[APPEARANCE]] adult female, slim build, shoulder-length red hair cut in a bob
+  [[CLOTHING]] sleeveless blue mini dress with a visible back zipper, blue high-heeled shoes
+  [[POSE]] standing upright, back to camera, legs spread wide, hands resting on hips
+  [[GAZE]] head facing forward toward the audience, eyes not visible
+  [[POSITION]] screen-centre, foreground, facing away from camera
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: man in a blue sweater, screen-left foreground]]
+  [[APPEARANCE]] adult male, dark hair, smiling
+  [[CLOTHING]] blue v-neck sweater
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-left, foreground, seated in the front row
+  [[EXPRESSION]] mouth open in a smile, teeth visible
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: man in a dark suit, screen-left mid-ground]]
+  [[APPEARANCE]] adult male, dark hair
+  [[CLOTHING]] dark suit jacket, white shirt
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-left, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, neutral expression
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: woman in a white top, screen-left mid-ground]]
+  [[APPEARANCE]] adult female, long blonde hair
+  [[CLOTHING]] white v-neck top
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-left, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: woman in a pink top, screen-left mid-ground]]
+  [[APPEARANCE]] adult female, blonde hair
+  [[CLOTHING]] pink sleeveless top
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-left, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: man in a dark suit, screen-right foreground]]
+  [[APPEARANCE]] adult male, dark hair
+  [[CLOTHING]] dark suit jacket, light blue shirt
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-right, foreground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: man in a dark suit, screen-right mid-ground]]
+  [[APPEARANCE]] adult male, dark hair
+  [[CLOTHING]] dark suit jacket, white shirt
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-right, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: woman in a white top, screen-right mid-ground]]
+  [[APPEARANCE]] adult female, dark hair
+  [[CLOTHING]] white top
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-right, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: woman in a dark top, screen-right mid-ground]]
+  [[APPEARANCE]] adult female, dark hair
+  [[CLOTHING]] dark v-neck top
+  [[POSE]] seated, facing forward
+  [[GAZE]] head and eyes toward the woman in the blue dress
+  [[POSITION]] screen-right, mid-ground, seated in the front row
+  [[EXPRESSION]] mouth closed, slight smile
+  [[HOLDING]] nothing
+[[OBJECTS]] a red carpet, running down the aisle; rows of red theatre seats; a large audience seated in the stalls and balconies
+[[ENVIRONMENT]] an ornate theatre interior, featuring gold detailing on the balconies, red walls, and a wooden stage floor
+[[LIGHTING]] bright, warm stage lighting focused on the woman in the blue dress, with softer ambient lighting on the audience
+[[PALETTE]] dominant blue and red, with gold accents and neutral skin tones
+[[TEXT]] none
+----------

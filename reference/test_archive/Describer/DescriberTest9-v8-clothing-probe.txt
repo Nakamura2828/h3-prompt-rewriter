@@ -1,0 +1,108 @@
+##### current_v7 #####
+----------
+qwen3.6-35b-a3b  [current_v7 :: cur_p1]
+---
+ROLE: frame
+---
+[[STYLE]] live-action, photographic, bright and clean aesthetic
+[[FRAMING]] medium shot, eye level, centred on the foreground subject
+[[CHAR: girl in a blue striped shirt, screen-left]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair in two braids
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a white collar, red and blue patterned tie, dark skirt
+  [[POSE]] seated at a desk, torso upright, both arms resting on the desk surface with hands crossed over an open book
+  [[GAZE]] head facing toward camera, eyes directed toward camera
+  [[POSITION]] centre frame, foreground
+  [[EXPRESSION]] mouth closed in a slight smile, lips pressed together, brows relaxed, eyes open and bright
+  [[HOLDING]] nothing
+[[CHAR: boy in a light blue shirt, background left]]
+  [[APPEARANCE]] child male, roughly six to eight years old, slim build, short dark hair with bangs
+  [[CLOTHING]] light blue short-sleeved shirt with a white collar, red tie
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a pencil over an open notebook
+  [[GAZE]] head tilted down and three-quarter left, eyes toward the notebook
+  [[POSITION]] mid-ground, screen-left
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] a yellow pencil
+[[CHAR: girl in a light blue shirt, background right]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair tied back in a ponytail
+  [[CLOTHING]] light blue short-sleeved shirt with a white collar, red tie, dark plaid skirt
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a pencil over an open notebook
+  [[GAZE]] head tilted down and three-quarter left, eyes toward the notebook
+  [[POSITION]] mid-ground, screen-right
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] a yellow pencil
+[[CHAR: boy in a light blue shirt, background centre]]
+  [[APPEARANCE]] child male, roughly six to eight years old, slim build, short dark hair
+  [[CLOTHING]] light blue short-sleeved shirt with a white collar, red tie, dark shorts or skirt
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a pencil over an open notebook
+  [[GAZE]] head tilted down and three-quarter left, eyes toward the notebook
+  [[POSITION]] background centre
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] a yellow pencil
+[[CHAR: girl in a light blue shirt, far background left]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair
+  [[CLOTHING]] light blue short-sleeved shirt with a white collar
+  [[POSE]] seated at a desk, facing forward
+  [[GAZE]] head facing toward camera, eyes directed toward camera
+  [[POSITION]] background, screen-left
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] nothing
+[[OBJECTS]] an open textbook, lying flat on the foreground desk; multiple wooden desks with grey metal frames; wooden chairs; yellow pencils held by students in the background; a large wall-mounted display board with a blue map and green foliage decorations; a window with sheer curtains on the right wall
+[[ENVIRONMENT]] bright classroom interior, white walls, light wood flooring, rows of student desks arranged in a grid pattern
+[[LIGHTING]] soft diffuse daylight from the window at screen-right, filling the room evenly, low contrast, cool white balance
+[[PALETTE]] light blue, white, and warm wood tones, with accents of red and yellow
+[[TEXT]] none
+----------
+##### candidate_v8 #####
+----------
+qwen3.6-35b-a3b  [candidate_v8 :: cand_p1]
+---
+ROLE: frame
+---
+[[STYLE]] live-action, photographic, bright and clean aesthetic
+[[FRAMING]] medium shot, eye level, centred on the foreground subject
+[[CHAR: girl in a blue striped shirt, foreground centre]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair styled in two braids hanging over her shoulders
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a large white collar, red and navy striped tie, not visible below the desk
+  [[POSE]] seated upright at a desk, forearms crossed and resting on an open book, hands clasped loosely together
+  [[GAZE]] head facing toward camera, eyes looking directly forward
+  [[POSITION]] foreground centre, body angled slightly three-quarter right
+  [[EXPRESSION]] mouth closed in a gentle smile, lips pressed lightly together, brows relaxed, eyes open and bright
+  [[HOLDING]] nothing
+[[CHAR: girl in a blue striped shirt, screen-left]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair with bangs
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a large white collar, red and navy striped tie
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding an orange pencil over an open notebook
+  [[GAZE]] head tilted down and three-quarter left, eyes directed toward the notebook
+  [[POSITION]] mid-ground screen-left, body angled three-quarter right
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] an orange pencil
+[[CHAR: boy in a blue striped shirt, background centre]]
+  [[APPEARANCE]] child male, roughly six to eight years old, slim build, short dark hair
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a large white collar, red and navy striped tie, dark shorts
+  [[POSE]] seated at a desk, leaning forward over the surface, right hand holding an orange pencil
+  [[GAZE]] head tilted down, eyes directed toward the desk surface
+  [[POSITION]] background centre, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] an orange pencil
+[[CHAR: girl in a blue striped shirt, screen-right]]
+  [[APPEARANCE]] child female, roughly six to eight years old, slim build, dark hair tied back in a ponytail
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a large white collar, red and navy striped tie, dark plaid skirt
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding an orange pencil over a notebook
+  [[GAZE]] head tilted down and three-quarter left, eyes directed toward the notebook
+  [[POSITION]] mid-ground screen-right, body angled three-quarter left
+  [[EXPRESSION]] mouth closed, lips level, brows neutral
+  [[HOLDING]] an orange pencil
+[[CHAR: UNLISTED: child in a blue striped shirt, background far-left]]
+  [[APPEARANCE]] child, roughly six to eight years old, slim build, dark hair
+  [[CLOTHING]] light blue and white vertically striped short-sleeved blouse with a large white collar
+  [[POSE]] seated at a desk, facing slightly toward the right
+  [[GAZE]] head turned profile right, eyes directed toward the girl in the foreground
+  [[POSITION]] background far-left, partially occluded by the girl in the mid-ground screen-left
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[OBJECTS]] a wooden desk, upright and occupied; an open book with white pages lying flat on the desk; several orange pencils, held by students; notebooks, open on desks; a large display board, mounted on the wall in the background, displaying a blue map with green landmasses and yellow shapes; a window, visible at screen-right, letting in daylight; curtains, hanging beside the window.
+[[ENVIRONMENT]] classroom interior, light-coloured walls, wooden desks arranged in rows, a large educational display board on the rear wall, a window on the right wall.
+[[LIGHTING]] bright natural daylight from the window at screen-right, soft and diffused, illuminating the scene evenly with minimal shadows.
+[[PALETTE]] dominant white and light wood tones, accented by the blue and white of the uniforms, red ties, and orange pencils.
+[[TEXT]] none
+----------

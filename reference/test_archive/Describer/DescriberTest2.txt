@@ -1,0 +1,256 @@
+Qwen3.6-35B-A3B
+---
+CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CHAR: the man in the white t-shirt]]
+  [[APPEARANCE]] adult male, short black hair, wearing glasses
+  [[CLOTHING]] white short-sleeved t-shirt, blue trousers
+  [[POSE]] standing upright, torso angled toward the stove, holding a frying pan handle with both hands
+  [[GAZE]] head tilted down, eyes toward the pan
+  [[POSITION]] screen-left, foreground
+  [[EXPRESSION]] mouth closed, brows level, eyes open
+  [[HOLDING]] a frying pan handle
+[[CHAR: the girl in the pajamas]]
+  [[APPEARANCE]] young female, shoulder-length black hair with bangs
+  [[CLOTHING]] white pajamas with a red and orange pattern, red trim at the cuffs
+  [[POSE]] standing upright, right hand raised to the side of her face, left hand resting on the counter
+  [[GAZE]] head turned toward the pan, eyes toward the pan
+  [[POSITION]] screen-right, mid-ground, partially occluded by the man
+  [[EXPRESSION]] mouth open, teeth visible, eyes squinted
+  [[HOLDING]] nothing
+[[OBJECTS]] a black frying pan, containing four golden-brown pancakes; a spatula, resting inside the pan; a grey plate, containing two pancakes, on the counter; a black trivet, on the counter; a white wall-mounted control panel, on the wall
+[[ENVIRONMENT]] kitchen interior, white tiled backsplash, white countertop, black stovetop, white refrigerator visible at screen-left edge
+[[LIGHTING]] bright, diffuse indoor lighting, soft shadows
+[[PALETTE]] white, black, and grey, with accents of golden-brown and red
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the girl with red hair | ROLE: frame
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CAST NOT FOUND]] the girl with red hair
+[[CHAR: UNLISTED: girl in a houndstooth dress, foreground centre]]
+  [[APPEARANCE]] child female, school age, fair skin with visible freckles, long straight red hair parted in the centre
+  [[CLOTHING]] black and white houndstooth long-sleeved dress with a collar and dark buttons down the front
+  [[POSE]] seated at a desk, torso upright, right hand resting on the open page of a book, left hand resting on the desk surface
+  [[GAZE]] head tilted down, eyes directed toward the open book
+  [[POSITION]] foreground centre, facing slightly toward camera
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: boy in a navy vest, screen-left]]
+  [[APPEARANCE]] child male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-left, mid-ground, facing slightly toward camera
+  [[EXPRESSION]] mouth closed, brows level
+  [[HOLDING]] a blue pen
+[[CHAR: UNLISTED: girl in a navy vest, screen-right]]
+  [[APPEARANCE]] child female, school age, light brown hair in two braids
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-right, mid-ground, facing slightly toward camera
+  [[EXPRESSION]] mouth closed, brows level
+  [[HOLDING]] a blue pen
+[[CHAR: UNLISTED: boy in a navy vest, background centre]]
+  [[APPEARANCE]] child male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background centre, facing slightly toward camera
+  [[EXPRESSION]] mouth closed, brows level
+  [[HOLDING]] a blue pen
+[[CHAR: UNLISTED: girl in a navy vest, background left]]
+  [[APPEARANCE]] child female, school age, dark hair
+  [[CLOTHING]] white collared shirt, navy blue vest
+  [[POSE]] seated at a desk, right hand holding a yellow pencil over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background left, facing slightly toward camera
+  [[EXPRESSION]] mouth closed, brows level
+  [[HOLDING]] a yellow pencil
+[[CHAR: UNLISTED: child in background]]
+  [[APPEARANCE]] child, school age, light hair
+  [[CLOTHING]] not visible
+  [[POSE]] seated at a desk
+  [[GAZE]] head tilted down
+  [[POSITION]] background centre, partially occluded by the foreground girl
+  [[EXPRESSION]] not visible
+  [[HOLDING]] not visible
+[[OBJECTS]] a book, open on the foreground desk; a blue hardcover book, closed on the foreground desk; multiple notebooks, open on the desks; multiple pens and pencils, held by students; a potted plant, sitting on the window sill; a framed picture, hanging on the wall at screen-left
+[[ENVIRONMENT]] classroom interior, wooden desks arranged in rows, wooden chairs, large windows along the back wall, beige walls
+[[LIGHTING]] soft natural daylight from the windows at the rear, diffused, cool tone
+[[PALETTE]] warm beige and wood tones, with navy blue, white, and red accents
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+ROLE: frame
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred on foreground subject
+[[CAST NOT FOUND]] the teacher
+[[CAST NOT FOUND]] the boy in the blue tie
+[[CHAR: UNLISTED: girl with red hair in a houndstooth dress, foreground centre]]
+  [[APPEARANCE]] child female, school age, fair skin with visible freckles, long straight red hair parted in the middle
+  [[CLOTHING]] black and white houndstooth patterned long-sleeved dress with a collar and dark buttons down the front
+  [[POSE]] seated at a desk, torso upright, leaning slightly forward, right hand resting on the open page of a book, left hand resting on the desk surface
+  [[GAZE]] head tilted down, eyes directed toward the open book
+  [[POSITION]] foreground centre, closest to the camera
+  [[EXPRESSION]] mouth closed, lips pressed together, brows relaxed
+  [[HOLDING]] nothing
+[[CHAR: UNLISTED: boy in a navy vest, screen-left]]
+  [[APPEARANCE]] child male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, blue and white striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-left, mid-ground
+  [[EXPRESSION]] mouth closed, brows slightly furrowed
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: UNLISTED: girl with braided hair in a navy vest, screen-right]]
+  [[APPEARANCE]] child female, school age, light brown hair in two braids
+  [[CLOTHING]] white collared shirt, navy blue vest, blue and white striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-right, mid-ground
+  [[EXPRESSION]] mouth closed, lips pressed together
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: UNLISTED: boy in a navy vest, background centre]]
+  [[APPEARANCE]] child male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, blue and white striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background centre, behind the foreground girl
+  [[EXPRESSION]] mouth closed
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: UNLISTED: girl in a navy vest, background left]]
+  [[APPEARANCE]] child female, school age, dark hair
+  [[CLOTHING]] white collared shirt, navy blue vest
+  [[POSE]] seated at a desk, right hand holding a yellow pencil over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background left, behind the boy in the navy vest
+  [[EXPRESSION]] mouth closed
+  [[HOLDING]] a yellow pencil in the right hand
+[[OBJECTS]] a book, open and lying flat on the foreground desk; a blue hardcover book, closed and lying flat on the foreground desk to the right; a notebook, open on the desk of the boy at screen-left; a notebook, open on the desk of the girl at screen-right; a notebook, open on the desk of the boy in the background centre; a notebook, open on the desk of the girl in the background left; a blue pen, held by the boy at screen-left; a blue pen, held by the girl at screen-right; a blue pen, held by the boy in the background centre; a yellow pencil, held by the girl in the background left; a potted plant, sitting on the window sill in the background; a framed picture, hanging on the wall at screen-left
+[[ENVIRONMENT]] classroom interior, rows of wooden desks and chairs, large windows along the back wall, beige walls, wooden desk surfaces
+[[LIGHTING]] soft diffuse daylight from the windows at the background, illuminating the scene evenly, no harsh shadows
+[[PALETTE]] warm beige and wood tones, with navy blue, white, and the red of the foreground girl's hair
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CAST NOT FOUND]] the man in the white t-shirt
+[[CAST NOT FOUND]] the girl in the pajamas
+[[CHAR: girl in a houndstooth shirt, foreground centre]]
+  [[APPEARANCE]] young female, school age, fair skin with visible freckles, long straight red hair parted in the middle
+  [[CLOTHING]] black and white houndstooth long-sleeved button-up shirt, no visible headwear
+  [[POSE]] seated at a desk, torso upright, right hand resting on the open page of a book, left hand resting on the desk surface
+  [[GAZE]] head tilted down, eyes directed toward the open book
+  [[POSITION]] foreground centre, facing slightly three-quarter right
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] nothing
+[[CHAR: boy in a navy vest, screen-left]]
+  [[APPEARANCE]] young male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-left, mid-ground, facing slightly three-quarter right
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: girl in a navy vest, screen-right]]
+  [[APPEARANCE]] young female, school age, light brown hair styled in two braids
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook, left hand resting on the desk
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-right, mid-ground, facing slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: boy in a navy vest, background centre]]
+  [[APPEARANCE]] young male, school age, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background centre, facing slightly three-quarter left
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] a blue pen in the right hand
+[[CHAR: girl in a navy vest, background left]]
+  [[APPEARANCE]] young female, school age, dark hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, right hand holding a pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background left, facing slightly three-quarter right
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level
+  [[HOLDING]] a pen in the right hand
+[[OBJECTS]] a book, open and lying flat on the foreground desk; a blue hardcover book, closed and lying flat on the foreground desk; multiple notebooks, open on the desks; multiple blue pens, held by students; a potted plant, sitting on the window sill; a framed picture, hanging on the wall at screen-left
+[[ENVIRONMENT]] classroom interior, wooden desks arranged in rows, wooden chairs, large windows along the back wall, beige walls
+[[LIGHTING]] soft natural daylight from the windows at the background, diffused, cool tone
+[[PALETTE]] warm beige and wood tones, with navy blue, white, and red accents
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the man in the white t-shirt; the girl in the pajamas | ROLE: frame (the pancakes in the pan)
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred
+[[CAST NOT FOUND]] the man in the white t-shirt
+[[CAST NOT FOUND]] the girl in the pajamas
+[[CHAR: UNLISTED: man in a white t-shirt, screen-left]]
+  [[APPEARANCE]] adult male, short dark hair, wearing glasses
+  [[CLOTHING]] white short-sleeved t-shirt, blue trousers
+  [[POSE]] standing upright, torso angled toward the stove, right hand gripping the handle of a frying pan, left hand resting on the right wrist
+  [[GAZE]] head tilted down, eyes toward the pan
+  [[POSITION]] screen-left, foreground, body angled three-quarter right
+  [[EXPRESSION]] mouth closed, lips pressed together, brows level
+  [[HOLDING]] the handle of a frying pan
+[[CHAR: UNLISTED: girl in patterned pajamas, background centre]]
+  [[APPEARANCE]] young female, dark hair with bangs, hair pulled back
+  [[CLOTHING]] white pajamas with a red and orange pattern, red trim at the cuffs
+  [[POSE]] standing upright, right hand raised to the right eye, left hand raised near the chest
+  [[GAZE]] head turned three-quarter left, eyes toward the pan
+  [[POSITION]] background centre, behind the man
+  [[EXPRESSION]] mouth open in a smile, teeth visible, eyes squinted
+  [[HOLDING]] nothing
+[[OBJECTS]] a frying pan, resting on the stove burner; four pancakes, golden-brown and cooking in the pan; a grey bowl, containing two cooked pancakes, on the counter; a black spatula, resting on a white tray; a white tray, holding a black object and the spatula; a white wall-mounted control panel, on the backsplash
+[[ENVIRONMENT]] kitchen interior, white tiled backsplash, white countertop, black stovetop, dark cabinetry at screen-left
+[[LIGHTING]] bright, diffuse indoor lighting, soft shadows, neutral colour temperature
+[[PALETTE]] white and grey dominant, with accents of golden-brown, blue, and red
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the man in the white t-shirt; the woman in the red dress | ROLE: frame
+---
+[[STYLE]] live-action, photographic, natural lighting
+[[FRAMING]] medium shot, eye level, centred
+[[CAST NOT FOUND]] the woman in the red dress
+[[CHAR: the man in the white t-shirt]]
+  [[APPEARANCE]] adult male, short black hair, wearing glasses
+  [[CLOTHING]] white short-sleeved t-shirt, blue trousers
+  [[POSE]] standing upright, leaning slightly forward over the counter, holding a frying pan handle with the right hand and a spatula with the left hand
+  [[GAZE]] head tilted down, eyes directed toward the pan
+  [[POSITION]] screen-left, foreground
+  [[EXPRESSION]] mouth closed, brows slightly lowered, looking down
+  [[HOLDING]] a black frying pan in the right hand and a metal spatula in the left hand
+[[CHAR: UNLISTED: young girl in patterned pajamas]]
+  [[APPEARANCE]] young female, shoulder-length black hair with bangs
+  [[CLOTHING]] white pajamas with a red and orange pattern and red trim
+  [[POSE]] standing behind the counter, right hand raised to the face near the eye, left hand resting on the counter
+  [[GAZE]] head turned toward the pan, eyes directed toward the cooking
+  [[POSITION]] background centre, behind the man
+  [[EXPRESSION]] mouth open in a smile, eyes squinted
+  [[HOLDING]] nothing
+[[OBJECTS]] a black frying pan, containing four golden-brown pancakes; a metal spatula, inserted under one pancake; a grey bowl, containing two pancakes on the counter; a black trivet, resting on the counter; a white wall-mounted control panel, visible on the wall
+[[ENVIRONMENT]] kitchen interior, white tiled backsplash, white countertop, black stovetop, white refrigerator visible at screen-left edge
+[[LIGHTING]] bright, diffuse indoor lighting, soft shadows
+[[PALETTE]] white, black, and grey, with accents of golden brown and blue
+[[TEXT]] none
+----------

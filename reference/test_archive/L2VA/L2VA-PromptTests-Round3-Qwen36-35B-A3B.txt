@@ -1,0 +1,18 @@
+Qwen3.6-35B-A3B
+---
+A wide-shot of a vacant classroom, the lights are off. (10 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a wide shot of a bright, sunlit classroom filled with students in blue uniforms, centered on a young girl with braided hair resting her arms on an open textbook at her desk. The camera slowly pulls back and tilts up slightly as the natural light from the windows begins to fade and the overhead classroom lights switch off, the room dimming into a quiet, empty space with the lights off, settling into the exact framing and composition of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The ambient hum of a classroom fades into silence as the lights switch off, leaving only the quiet stillness of an empty room.
+non_diegetic_music: N/A
+----------
+Qwen3.6-35B-A3B
+---
+A captain stands at the rail of his ship looking afar with binoculars (7 seconds).
+---
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, a captain in a dark navy uniform and white cap stands at the rail of a sailing ship, holding binoculars to his eyes and scanning the horizon. The camera slowly pushes in with small amplitude as he lowers the binoculars, his gaze shifting from the distance to the camera, his posture straightening until he settles into the exact pose, framing, and expression of <Picture 1> as the video ends.
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the S.SS-second mark of the target video.
+overall_soundscape: The creak of wooden rigging and the rhythmic lapping of waves against the hull, with the faint rustle of fabric as the captain lowers his binoculars.
+non_diegetic_music: A steady, orchestral swell with brass and strings at a moderate tempo that resolves into a sustained, calm chord at the end.
+----------

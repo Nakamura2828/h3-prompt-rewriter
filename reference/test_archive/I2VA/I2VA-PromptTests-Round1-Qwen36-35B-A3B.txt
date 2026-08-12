@@ -1,0 +1,33 @@
+Qwen3.6-35B-A3B
+---
+A dad flips a pancake as he fries it. 5 second clip.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Live-action, the dad shown in <Picture 1> stands in a bright kitchen wearing a white t-shirt and glasses, holding a frying pan with golden pancakes, while the little girl in patterned pajamas stands beside him laughing, her expression and the kitchen setting preserved from the first frame. The camera holds a static shot as the dad flips a pancake in the pan.
+overall_soundscape: The sizzle of pancakes cooking in the pan and the girl's bright laughter.
+non_diegetic_music: N/A
+---
+Visual Assessment: Pretty much everything added fits the picture, bright scene, white t-shirt, glasses, golden pancakes, patterned pajamas. I'm not sure she's laughing, but I can see where that'd come from.
+----------
+Qwen3.6-35B-A3B
+---
+A 4 second scene of a girl reading her book.
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, the young girl shown in <Picture 1> sits at a wooden desk in a bright classroom, her arms crossed over an open book, her dark hair in braids and her blue-and-white striped uniform preserved from the first frame. The camera holds a static shot as she looks up from her book with a gentle smile, her expression calm and attentive.
+overall_soundscape: The soft scratching of pencils on paper and the quiet rustle of pages turning in a peaceful classroom.
+non_diegetic_music: N/A
+---
+Visual Assessment: Details match the image well, wooden desk, bright classroom, open book, braided hair, blue & white striped uniform, gentle smile.  The audio details of scratching pencils on paper match background characters.  I'm a bit concerned that the "reading" element seems to be missing entirely though, I guess "looking up from her book" implies it?
+----------
+Qwen3.6-35B-A3B
+---
+A captain runs to the railing and sees a shark (7 seconds).
+---
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Cinematic, live-action, the captain shown in <Picture 1> stands at the wooden helm of a sailing ship, wearing his dark navy uniform with gold stripes and a white peaked cap, with the sea and rigging visible in the background. The camera tracks alongside him as he runs briskly toward the ship's railing. He leans over the edge, his expression shifting to shock as he spots a shark fin cutting through the water below.
+overall_soundscape: The heavy thud of boots on wooden deck, the creaking of the ship's hull, and the rushing sound of wind and waves against the railing.
+non_diegetic_music: A low, rhythmic orchestral pulse at a moderate tempo with rising brass swells.
+---
+Visual Assessment: Visual detail again match well, picks up on the sailing ship, dark navy uniform with hat gold trim, rigging.  Audio details match the wooden deck and hull. Music seems appropriate.
+----------

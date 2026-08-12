@@ -1,0 +1,48 @@
+##### same: p4 girl #####
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4f_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] pre-teen, female, slender build, short dark brown hair with bangs, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket over a black top, striped shorts with green trim, no headwear, no eyewear
+[[DISTINGUISHING]] a black choker necklace
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark brown hair, an olive green bomber jacket, and striped shorts
+----------
+qwen3.6-35b-a3b  [same: p4 girl :: char_p4l_girl]
+---
+SUBJECT: the girl | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] child, female, slender build, short dark brown hair, fair skin, dark eyes
+[[CLOTHING]] olive green bomber jacket, bright green shorts with horizontal stripes, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the young girl in the green jacket
+[[DEFINITION]] short dark brown hair, an olive green bomber jacket, and bright green striped shorts
+----------
+##### same: p4 man #####
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4f_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, lean build, short dark hair with receding hairline, light stubble, fair skin, dark eyes
+[[CLOTHING]] long black coat over a white t-shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the black coat
+[[DEFINITION]] short dark hair with receding hairline, light stubble, and a long black coat over a white t-shirt
+----------
+qwen3.6-35b-a3b  [same: p4 man :: char_p4l_man]
+---
+SUBJECT: the man | ROLE: character
+---
+[[SUBJECT_KIND]] person
+[[APPEARANCE]] adult, male, medium build, short dark hair, fair skin, light stubble
+[[CLOTHING]] long dark coat over a dark shirt, dark trousers, no headwear, no eyewear
+[[DISTINGUISHING]] none
+[[LABEL]] the man in the dark coat
+[[DEFINITION]] short dark hair, a long dark coat, and light stubble
+----------

@@ -1,0 +1,146 @@
+Qwen3.6-35B-A3B
+---
+CAST: the woman on stage | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, high production value
+[[FRAMING]] wide shot, eye level, centred
+[[CAST NOT FOUND]] the woman on stage
+[[CHAR: UNLISTED: woman in a blue dress, screen-centre]]
+  [[APPEARANCE]] adult female, twenties to thirties, slim build, red hair cut in a short bob
+  [[CLOTHING]] sleeveless blue mini dress with a visible back zipper, blue high-heeled shoes
+  [[POSE]] standing upright with legs spread wide, hands resting on hips
+  [[GAZE]] head facing away from camera, eyes directed toward the audience
+  [[POSITION]] screen-centre, foreground, back to camera
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[CROWD: audience members]]
+  [[APPEARANCE]] large group of adults of mixed age and build
+  [[CLOTHING]] formal and semi-formal attire, including suits, blazers, and dresses in various colours
+  [[POSE]] seated in rows, facing the stage
+  [[GAZE]] heads and eyes directed toward the woman on stage
+  [[POSITION]] mid-ground and background, filling the auditorium seating and balconies
+  [[EXPRESSION]] smiling and attentive
+  [[HOLDING]] nothing
+[[OBJECTS]] red theatre seats, arranged in rows; a red carpet aisle; a stage floor with a textured surface
+[[ENVIRONMENT]] interior of a grand theatre or auditorium, featuring ornate gold detailing on the balconies, red walls, and multiple levels of seating
+[[LIGHTING]] bright, warm stage lighting illuminating the woman from the front, with softer ambient light on the audience
+[[PALETTE]] dominant blue and red, with gold accents and neutral skin tones
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+CAST: the woman with red hair in a blue dress | ROLE: frame
+---
+[[STYLE]] live-action, cinematic, high production value
+[[FRAMING]] wide shot, eye level, centred
+[[CAST NOT FOUND]] the woman with red hair in a blue dress
+[[CHAR: UNLISTED: woman with red hair in a blue dress, screen-centre]]
+  [[APPEARANCE]] adult female, slim build, shoulder-length red hair cut in a bob
+  [[CLOTHING]] sleeveless blue mini dress with a visible back zipper, blue high-heeled shoes
+  [[POSE]] standing upright with legs spread wide, hands resting on hips
+  [[GAZE]] head facing away from camera, eyes directed toward the audience
+  [[POSITION]] screen-centre, foreground, back to camera
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[CROWD: audience members]]
+  [[APPEARANCE]] large group of adults of mixed age and build
+  [[CLOTHING]] formal and semi-formal attire, including suits, blazers, and dresses in various colours
+  [[POSE]] seated in rows, facing the stage
+  [[GAZE]] heads and eyes directed toward the woman on stage
+  [[POSITION]] mid-ground and background, filling the auditorium seating and balconies
+  [[EXPRESSION]] visible on front rows, generally smiling or attentive
+  [[HOLDING]] nothing
+[[OBJECTS]] rows of red theatre seats, a red carpet aisle, a stage floor
+[[ENVIRONMENT]] interior of a grand theatre or auditorium, featuring multiple balconies with gold detailing and red walls
+[[LIGHTING]] bright stage lighting illuminating the woman from the front, warm ambient lighting in the audience area
+[[PALETTE]] dominant blue and red, with gold accents and neutral skin tones
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+ROLE: frame
+---
+[[STYLE]] live-action, cinematic, high production value
+[[FRAMING]] wide shot, eye level, centred
+[[CHAR: woman in a blue dress, screen-centre]]
+  [[APPEARANCE]] adult female, twenties to thirties, slim build, red hair cut in a short bob
+  [[CLOTHING]] sleeveless blue mini dress with a visible back zipper, matching blue high heels
+  [[POSE]] standing upright on the stage, legs spread wide, both hands resting on her hips
+  [[GAZE]] head facing away from camera, eyes directed toward the audience
+  [[POSITION]] centre frame, foreground, back to camera
+  [[EXPRESSION]] not visible
+  [[HOLDING]] nothing
+[[CROWD: audience members]]
+  [[APPEARANCE]] large group of adults of mixed age and build
+  [[CLOTHING]] formal and semi-formal attire, including suits, blazers, and dresses in various colours
+  [[POSE]] seated in rows, facing the stage
+  [[GAZE]] heads and eyes directed toward the woman on stage
+  [[POSITION]] mid-ground and background, filling the auditorium seating and balconies
+  [[EXPRESSION]] visible on front rows, generally smiling or attentive
+  [[HOLDING]] nothing
+[[OBJECTS]] rows of red theatre seats, a red carpet aisle, a stage floor with a textured surface
+[[ENVIRONMENT]] interior of a grand theatre or opera house, featuring ornate gold detailing on the balcony railings, red velvet drapes, and multiple tiers of seating
+[[LIGHTING]] bright, warm stage lighting illuminating the woman from the front, with softer ambient lighting on the audience
+[[PALETTE]] dominant blue and red, with gold accents and neutral skin tones
+[[TEXT]] none
+----------
+Qwen3.6-35B-A3B
+---
+ROLE: frame
+---
+[[STYLE]] live-action, photographic, naturalistic grade
+[[FRAMING]] medium shot, eye level, centred on foreground subject
+[[CHAR: girl with red hair in a houndstooth shirt]]
+  [[APPEARANCE]] child female, roughly eight to ten years old, fair skin with visible freckles, long straight red hair parted in the middle
+  [[CLOTHING]] black and white houndstooth long-sleeved button-up shirt, dark trousers or skirt not visible
+  [[POSE]] seated at a desk, torso facing slightly screen-right, head tilted down, left hand resting on the open page of a book, right hand resting near the book spine
+  [[GAZE]] head tilted down and three-quarter right, eyes directed toward the open book on the desk
+  [[POSITION]] centre frame, foreground, seated at a desk
+  [[EXPRESSION]] mouth closed, lips relaxed, brows level, eyes open and looking down
+  [[HOLDING]] nothing
+[[CHAR: boy in a navy vest, screen-left]]
+  [[APPEARANCE]] child male, roughly eight to ten years old, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-left, mid-ground, seated at a desk
+  [[EXPRESSION]] mouth closed, brows slightly furrowed, eyes looking down
+  [[HOLDING]] a blue pen
+[[CHAR: girl in a navy vest, screen-right]]
+  [[APPEARANCE]] child female, roughly eight to ten years old, brown hair in two braids
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] screen-right, mid-ground, seated at a desk
+  [[EXPRESSION]] mouth closed, brows level, eyes looking down
+  [[HOLDING]] a blue pen
+[[CHAR: boy in a navy vest, background centre]]
+  [[APPEARANCE]] child male, roughly eight to ten years old, short brown hair
+  [[CLOTHING]] white collared shirt, navy blue vest, striped tie
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a blue pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background centre, seated at a desk
+  [[EXPRESSION]] mouth closed, brows level, eyes looking down
+  [[HOLDING]] a blue pen
+[[CHAR: girl in a white shirt, background left]]
+  [[APPEARANCE]] child female, roughly eight to ten years old, dark hair
+  [[CLOTHING]] white collared shirt, navy blue vest
+  [[POSE]] seated at a desk, leaning forward slightly, right hand holding a yellow pen over a notebook
+  [[GAZE]] head tilted down, eyes directed toward the notebook
+  [[POSITION]] background left, seated at a desk
+  [[EXPRESSION]] mouth closed, brows level, eyes looking down
+  [[HOLDING]] a yellow pen
+[[CHAR: UNLISTED: child in background, partially visible]]
+  [[APPEARANCE]] child, roughly eight to ten years old, light hair
+  [[CLOTHING]] white shirt
+  [[POSE]] seated at a desk
+  [[GAZE]] not visible
+  [[POSITION]] background centre, partially occluded by the girl with red hair
+  [[EXPRESSION]] not visible
+  [[HOLDING]] not visible
+[[OBJECTS]] a book, open on the foreground desk; a blue hardcover book, closed on the foreground desk; wooden desks and chairs; notebooks; blue and yellow pens; a potted plant on the window sill; a framed picture on the wall
+[[ENVIRONMENT]] classroom interior, light wood desks arranged in rows, large windows along the back wall letting in daylight, beige walls
+[[LIGHTING]] natural daylight from the windows at the rear, soft and diffused, illuminating the scene from behind and the sides
+[[PALETTE]] warm beige and wood tones, with navy blue, white, and the red of the foreground girl's hair
+[[TEXT]] none
+----------
