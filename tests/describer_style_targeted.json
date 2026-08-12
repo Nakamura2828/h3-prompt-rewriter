@@ -2,7 +2,8 @@
   "_role": "describer_style TARGETED test, three-axis vocabulary (session 10). The fast iteration loop -- run ONE prompt change against this, not three.",
   "_generated": "Curated case list, generated answer key. Edit SELECTION in scripts/gen_style_targeted.py and re-run; never hand-edit _expected.",
   "_gate": "enriched",
-  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). Roughly half these cases are known failures, carried in deliberately so a fix is measurable, so the score here is EXPECTED to sit well below the sweep. Do not compare the two numbers -- compare this test to itself, round over round. That is what \"_gate\": \"enriched\" means: the LEVEL is by construction and carries no information, so score.py gates on MOVEMENT against the previous round. Run it with --baseline <previous run of this test>.",
+  "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; st_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the st_ ids on purpose: _expected is unchanged by the split, so --baseline against a pre-split run still lines up case for case. Validate each half against its own role: validate.py describer <run> --role style_look --id-prefix look_ , then --role style_class --id-prefix st_",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default), all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. Roughly half these cases are known failures, carried in deliberately so a fix is measurable, so the score here is EXPECTED to sit well below the sweep. Do not compare the two numbers -- compare this test to itself, round over round. That is what \"_gate\": \"enriched\" means: the LEVEL is by construction and carries no information, so score.py gates on MOVEMENT against the previous round. Run it with --baseline reference/baselines/describer_style_targeted.txt.",
   "_expected": {
     "st_ivy_toon": "2D cel / traditional cel / western toon / colour",
     "st_peter_griffin_toon": "2D cel / digital / western toon / colour",
@@ -12,7 +13,7 @@
     "st_woman_oil": "painting / oil / realist / colour",
     "st_annie3": "comic / digital / western toon / colour",
     "st_comic": "comic / ink / anime / colour",
-    "st_coraline1": "stop-motion / puppet / dimensional toon / colour",
+    "st_coraline1": "stop-motion / (CONTESTED -- puppet and figure are not distinguishable here -- ruled session 12, with the terms themselves proposed for merging (figure being the more general); this ruling expires the moment that vocabulary changes) / dimensional toon / colour",
     "st_coraline2": "stop-motion / puppet / dimensional toon / colour",
     "st_kasia_render": "3D CG / none / anime / colour",
     "st_kasia_swimsuit_render": "3D CG / none / anime / colour",
@@ -53,7 +54,6 @@
   "defaults": {
     "server": "http://localhost:8080/v1/chat/completions",
     "model": "qwen3.6-35b-a3b",
-    "system_file": "prompts/describer_style.txt",
     "temperature": 0,
     "top_p": 0.9,
     "top_k": 40,
@@ -62,273 +62,633 @@
   "cases": [
     {
       "group": "same: 2D cel (traditional cel vs digital)",
+      "id": "look_ivy_toon",
+      "image": "images/ivy_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "group": "same: 2D cel (traditional cel vs digital)",
       "id": "st_ivy_toon",
       "image": "images/ivy_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ivy_toon}}"
+    },
+    {
+      "group": "same: 2D cel (traditional cel vs digital)",
+      "id": "look_peter_griffin_toon",
+      "image": "images/peter_griffin_toon.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: 2D cel (traditional cel vs digital)",
       "id": "st_peter_griffin_toon",
       "image": "images/peter_griffin_toon.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_peter_griffin_toon}}"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "look_azumanga_anime",
+      "image": "images/azumanga_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: 2D cel (anime vs western toon)",
       "id": "st_azumanga_anime",
       "image": "images/azumanga_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_azumanga_anime}}"
+    },
+    {
+      "group": "same: 2D cel (anime vs western toon)",
+      "id": "look_azumanga_toon",
+      "image": "images/azumanga_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: 2D cel (anime vs western toon)",
       "id": "st_azumanga_toon",
       "image": "images/azumanga_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_azumanga_toon}}"
+    },
+    {
+      "group": "same: painting (digital vs oil; tie-break 4)",
+      "id": "look_ayanami_oil",
+      "image": "images/ayanami_oil.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: painting (digital vs oil; tie-break 4)",
       "id": "st_ayanami_oil",
       "image": "images/ayanami_oil.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ayanami_oil}}"
+    },
+    {
+      "group": "same: painting (digital vs oil; tie-break 4)",
+      "id": "look_woman_oil",
+      "image": "images/woman_oil.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: painting (digital vs oil; tie-break 4)",
       "id": "st_woman_oil",
       "image": "images/woman_oil.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woman_oil}}"
+    },
+    {
+      "group": "same: comic (ink vs digital, anime vs toon)",
+      "id": "look_annie3",
+      "image": "images/annie3.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: comic (ink vs digital, anime vs toon)",
       "id": "st_annie3",
       "image": "images/annie3.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_annie3}}"
+    },
+    {
+      "group": "same: comic (ink vs digital, anime vs toon)",
+      "id": "look_comic",
+      "image": "images/comic.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: comic (ink vs digital, anime vs toon)",
       "id": "st_comic",
       "image": "images/comic.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_comic}}"
+    },
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "look_coraline1",
+      "image": "images/coraline1.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: stop-motion (tie-break 1)",
       "id": "st_coraline1",
       "image": "images/coraline1.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_coraline1}}"
+    },
+    {
+      "group": "same: stop-motion (tie-break 1)",
+      "id": "look_coraline2",
+      "image": "images/coraline2.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: stop-motion (tie-break 1)",
       "id": "st_coraline2",
       "image": "images/coraline2.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_coraline2}}"
+    },
+    {
+      "group": "same: 3D CG (anime character render)",
+      "id": "look_kasia_render",
+      "image": "images/kasia_render.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: 3D CG (anime character render)",
       "id": "st_kasia_render",
       "image": "images/kasia_render.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kasia_render}}"
+    },
+    {
+      "group": "same: 3D CG (anime character render)",
+      "id": "look_kasia_swimsuit_render",
+      "image": "images/kasia_swimsuit_render.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: 3D CG (anime character render)",
       "id": "st_kasia_swimsuit_render",
       "image": "images/kasia_swimsuit_render.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kasia_swimsuit_render}}"
+    },
+    {
+      "group": "same: drawing (both marker; finish is NOT scored)",
+      "id": "look_supergirl1",
+      "image": "images/supergirl1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: drawing (both marker; finish is NOT scored)",
       "id": "st_supergirl1",
       "image": "images/supergirl1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_supergirl1}}"
+    },
+    {
+      "group": "same: drawing (both marker; finish is NOT scored)",
+      "id": "look_supergirl2",
+      "image": "images/supergirl2.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: drawing (both marker; finish is NOT scored)",
       "id": "st_supergirl2",
       "image": "images/supergirl2.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_supergirl2}}"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "look_fish_pixel",
+      "image": "images/fish_pixel.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: pixel art (two fidelities)",
       "id": "st_fish_pixel",
       "image": "images/fish_pixel.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fish_pixel}}"
+    },
+    {
+      "group": "same: pixel art (two fidelities)",
+      "id": "look_ramen_pixel",
+      "image": "images/ramen_pixel.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: pixel art (two fidelities)",
       "id": "st_ramen_pixel",
       "image": "images/ramen_pixel.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ramen_pixel}}"
+    },
+    {
+      "group": "same: live-action film (vintage Technicolor)",
+      "id": "look_p5_first",
+      "image": "images/p5_first.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: live-action film (vintage Technicolor)",
       "id": "st_p5_first",
       "image": "images/p5_first.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_p5_first}}"
+    },
+    {
+      "group": "same: live-action film (vintage Technicolor)",
+      "id": "look_p5_last",
+      "image": "images/p5_last.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "same: live-action film (vintage Technicolor)",
       "id": "st_p5_last",
       "image": "images/p5_last.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_p5_last}}"
+    },
+    {
+      "group": "cross-media: one character, flat toon vs painted dimensional",
+      "id": "look_peter_griffin_painting",
+      "image": "images/peter_griffin_painting.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cross-media: one character, flat toon vs painted dimensional",
       "id": "st_peter_griffin_painting",
       "image": "images/peter_griffin_painting.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_peter_griffin_painting}}"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "look_destroyer_photo",
+      "image": "images/destroyer_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cross-media: one warship, photograph vs plate",
       "id": "st_destroyer_photo",
       "image": "images/destroyer_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_destroyer_photo}}"
+    },
+    {
+      "group": "cross-media: one warship, photograph vs plate",
+      "id": "look_destroyer_drawing",
+      "image": "images/destroyer_drawing.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cross-media: one warship, photograph vs plate",
       "id": "st_destroyer_drawing",
       "image": "images/destroyer_drawing.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_destroyer_drawing}}"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "look_lincoln_photo",
+      "image": "images/lincoln_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cross-media: one man, photograph vs engraving",
       "id": "st_lincoln_photo",
       "image": "images/lincoln_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_photo}}"
+    },
+    {
+      "group": "cross-media: one man, photograph vs engraving",
+      "id": "look_lincoln_money",
+      "image": "images/lincoln_money.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cross-media: one man, photograph vs engraving",
       "id": "st_lincoln_money",
       "image": "images/lincoln_money.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_money}}"
+    },
+    {
+      "group": "nested medium (tie-break 2)",
+      "id": "look_annie2",
+      "image": "images/annie2.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "nested medium (tie-break 2)",
       "id": "st_annie2",
       "image": "images/annie2.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_annie2}}"
+    },
+    {
+      "group": "nested medium (tie-break 2)",
+      "id": "look_annie2_cropped",
+      "image": "images/annie2_cropped.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "nested medium (tie-break 2)",
       "id": "st_annie2_cropped",
       "image": "images/annie2_cropped.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_annie2_cropped}}"
+    },
+    {
+      "group": "cluster: drawing read as painting",
+      "id": "look_annie1",
+      "image": "images/annie1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: drawing read as painting",
       "id": "st_annie1",
       "image": "images/annie1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_annie1}}"
+    },
+    {
+      "group": "cluster: drawing read as painting",
+      "id": "look_marker",
+      "image": "images/marker.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: drawing read as painting",
       "id": "st_marker",
       "image": "images/marker.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_marker}}"
+    },
+    {
+      "group": "cluster: drawing, already fixed (regression control)",
+      "id": "look_car_interior_sketch",
+      "image": "images/car_interior_sketch.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: drawing, already fixed (regression control)",
       "id": "st_car_interior_sketch",
       "image": "images/car_interior_sketch.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_car_interior_sketch}}"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "look_kasia_bag",
+      "image": "images/kasia_bag.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: realist subject on a flat ground",
       "id": "st_kasia_bag",
       "image": "images/kasia_bag.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kasia_bag}}"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "look_kasia_swimsuit",
+      "image": "images/kasia_swimsuit.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: realist subject on a flat ground",
       "id": "st_kasia_swimsuit",
       "image": "images/kasia_swimsuit.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kasia_swimsuit}}"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "look_mountain_rain",
+      "image": "images/mountain_rain.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: realist subject on a flat ground",
       "id": "st_mountain_rain",
       "image": "images/mountain_rain.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_mountain_rain}}"
+    },
+    {
+      "group": "cluster: realist subject on a flat ground",
+      "id": "look_phone",
+      "image": "images/phone.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: realist subject on a flat ground",
       "id": "st_phone",
       "image": "images/phone.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_phone}}"
+    },
+    {
+      "group": "cluster: 2D cel read as painting",
+      "id": "look_car_interior_mecha_driver",
+      "image": "images/car_interior_mecha_driver.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: 2D cel read as painting",
       "id": "st_car_interior_mecha_driver",
       "image": "images/car_interior_mecha_driver.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_car_interior_mecha_driver}}"
+    },
+    {
+      "group": "cluster: live-action read as photograph",
+      "id": "look_window",
+      "image": "images/window.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "cluster: live-action read as photograph",
       "id": "st_window",
       "image": "images/window.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_window}}"
+    },
+    {
+      "group": "coverage: idiom dimensional toon",
+      "id": "look_shrek_cg",
+      "image": "images/shrek_cg.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: idiom dimensional toon",
       "id": "st_shrek_cg",
       "image": "images/shrek_cg.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shrek_cg}}"
+    },
+    {
+      "group": "coverage: idiom dimensional toon",
+      "id": "look_woody_cg",
+      "image": "images/woody_cg.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: idiom dimensional toon",
       "id": "st_woody_cg",
       "image": "images/woody_cg.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woody_cg}}"
+    },
+    {
+      "group": "coverage: idiom anime, pixel art",
+      "id": "look_miyu",
+      "image": "images/miyu.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: idiom anime, pixel art",
       "id": "st_miyu",
       "image": "images/miyu.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_miyu}}"
+    },
+    {
+      "group": "coverage: idiom anime, pixel art",
+      "id": "look_van_pixel",
+      "image": "images/van_pixel.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: idiom anime, pixel art",
       "id": "st_van_pixel",
       "image": "images/van_pixel.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_van_pixel}}"
+    },
+    {
+      "group": "coverage: idiom flat graphic (true)",
+      "id": "look_bird_vector",
+      "image": "images/bird_vector.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: idiom flat graphic (true)",
       "id": "st_bird_vector",
       "image": "images/bird_vector.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_bird_vector}}"
+    },
+    {
+      "group": "coverage: treatment monochrome",
+      "id": "look_teddy_taft",
+      "image": "images/teddy_taft.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "coverage: treatment monochrome",
       "id": "st_teddy_taft",
       "image": "images/teddy_taft.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_teddy_taft}}"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "look_bird_watercolor",
+      "image": "images/bird_watercolor.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "control: passing cases across media",
       "id": "st_bird_watercolor",
       "image": "images/bird_watercolor.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_bird_watercolor}}"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "look_chips_hotdog_dr_pepper_painting",
+      "image": "images/chips_hotdog_dr_pepper_painting.jpg",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "control: passing cases across media",
       "id": "st_chips_hotdog_dr_pepper_painting",
       "image": "images/chips_hotdog_dr_pepper_painting.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_chips_hotdog_dr_pepper_painting}}"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "look_kiki",
+      "image": "images/kiki.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "control: passing cases across media",
       "id": "st_kiki",
       "image": "images/kiki.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kiki}}"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "look_door_first",
+      "image": "images/door_first.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "control: passing cases across media",
       "id": "st_door_first",
       "image": "images/door_first.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_door_first}}"
+    },
+    {
+      "group": "control: passing cases across media",
+      "id": "look_fruitbowl",
+      "image": "images/fruitbowl.png",
+      "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "group": "control: passing cases across media",
       "id": "st_fruitbowl",
       "image": "images/fruitbowl.png",
-      "user": "ROLE: style"
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fruitbowl}}"
     }
   ]
 }

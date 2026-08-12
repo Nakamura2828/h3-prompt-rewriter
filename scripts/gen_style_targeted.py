@@ -30,6 +30,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from inventory import parse_table, IMG_DIR, EXTS       # noqa: E402
 
+LOOK = 'prompts/describer_style_look.txt'
+CLASS = 'prompts/describer_style_class.txt'
+
 SELECTION = [
     # ---- surviving probe pairs, one per discrimination the vocabulary claims to make
     ('same: 2D cel (traditional cel vs digital)',         ['ivy_toon', 'peter_griffin_toon']),
@@ -72,6 +75,13 @@ SELECTION = [
 # vocabulary that caused it changes, so each entry records WHY rather than just excluding.
 # All three are images that are not uniform: the realist-vs-flat-graphic reading depends on
 # which region of the frame you weight.
+# Adjudicated CONTESTED sub-term rulings, same provisional status as the idiom ones below.
+CONTESTED_SUB = {
+    'coraline1': 'puppet and figure are not distinguishable here -- ruled session 12, with the '
+                 'terms themselves proposed for merging (figure being the more general); this '
+                 'ruling expires the moment that vocabulary changes',
+}
+
 CONTESTED_IDIOM = {
     'fish_pixel':    'a shaded but heavily simplified sprite on a flat ground',
     'lincoln_money': 'flat guilloche border and ground dominate; the engraved portrait is a '
@@ -92,12 +102,21 @@ def main():
         for name in names:
             r = by[name]
             cid = 'st_' + name
-            cases.append({'group': group, 'id': cid,
-                          'image': IMG_DIR + '/' + ext[name], 'user': 'ROLE: style'})
+            img = IMG_DIR + '/' + ext[name]
+            # Two passes per image, emitted INTERLEAVED so the chain resolves in file order and
+            # so the run file reads description-then-verdict for one image before moving on.
+            cases.append({'group': group, 'id': 'look_' + name, 'image': img,
+                          'system_file': LOOK, 'user': 'ROLE: style'})
+            cases.append({'group': group, 'id': cid, 'image': img,
+                          'system_file': CLASS,
+                          'user': 'ROLE: style\n\n[[STYLE_RECORD]]\n{{look_' + name + '}}'})
             idiom = r['idiom']
             if name in CONTESTED_IDIOM:
                 idiom = '(CONTESTED -- ' + CONTESTED_IDIOM[name] + ')'
-            key = '{} / {} / {} / {}'.format(r['medium'], r['sub'], idiom, r['treatment'])
+            sub = r['sub']
+            if name in CONTESTED_SUB:
+                sub = '(CONTESTED -- ' + CONTESTED_SUB[name] + ')'
+            key = '{} / {} / {} / {}'.format(r['medium'], sub, idiom, r['treatment'])
             if 'amb' in r['flags']:
                 key = 'UNSCORABLE (amb) -- the pixels do not settle it; table says ' + key
             expected[cid] = key
@@ -108,24 +127,35 @@ def main():
         '_generated': ('Curated case list, generated answer key. Edit SELECTION in '
                        'scripts/gen_style_targeted.py and re-run; never hand-edit _expected.'),
         '_gate': 'enriched',
-        '_scoring': ('Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). '
-                     'Roughly half these cases are known failures, carried in deliberately so a '
-                     'fix is measurable, so the score here is EXPECTED to sit well below the '
-                     'sweep. Do not compare the two numbers -- compare this test to itself, '
-                     'round over round. That is what "_gate": "enriched" means: the LEVEL is by '
-                     'construction and carries no information, so score.py gates on MOVEMENT '
-                     'against the previous round. Run it with '
-                     '--baseline <previous run of this test>.'),
+        '_passes': ('TWO PASSES PER IMAGE (session 12). look_<name> runs '
+                    + LOOK + ' and emits the six descriptive fields; st_<name> runs ' + CLASS
+                    + ', receives that record as its user prompt, and emits the four closed-'
+                    'vocabulary fields. The CLASSIFIER keeps the st_ ids on purpose: _expected '
+                    'is unchanged by the split, so --baseline against a pre-split run still '
+                    'lines up case for case. Validate each half against its own role: '
+                    'validate.py describer <run> --role style_look --id-prefix look_ , then '
+                    '--role style_class --id-prefix st_'),
+        '_scoring': ('Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default), '
+                     'all emitted by the classifier pass; look_ records are not in _expected and '
+                     'are ignored by score.py. Roughly half these cases are known failures, '
+                     'carried in deliberately so a fix is measurable, so the score here is '
+                     'EXPECTED to sit well below the sweep. Do not compare the two numbers -- '
+                     'compare this test to itself, round over round. That is what '
+                     '"_gate": "enriched" means: the LEVEL is by construction and carries no '
+                     'information, so score.py gates on MOVEMENT against the previous round. Run '
+                     'it with --baseline reference/baselines/describer_style_targeted.txt.'),
         '_expected': expected,
+        # No system_file here: each case names its own, because the two passes use different
+        # prompts and a default would silently apply to whichever one forgot to override it.
         'defaults': {'server': 'http://localhost:8080/v1/chat/completions',
                      'model': 'qwen3.6-35b-a3b',
-                     'system_file': 'prompts/describer_style.txt',
                      'temperature': 0, 'top_p': 0.9, 'top_k': 40, 'max_tokens': 2048},
         'cases': cases,
     }
     io.open('tests/describer_style_targeted.json', 'w', encoding='utf-8', newline='\n').write(
         json.dumps(doc, indent=2, ensure_ascii=False) + '\n')
-    print('wrote tests/describer_style_targeted.json: {} cases'.format(len(cases)))
+    print('wrote tests/describer_style_targeted.json: {} cases ({} images x 2 passes)'.format(
+        len(cases), len(cases) // 2))
 
 
 if __name__ == '__main__':

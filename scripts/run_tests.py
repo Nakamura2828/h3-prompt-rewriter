@@ -31,6 +31,9 @@ Case files are JSON:
 
 Any {{case_id}} in a user prompt is replaced by that case's output from this run,
 which is how a composer consumes two describer passes. Cases run in file order.
+--only follows those references: asking for a case that substitutes another pulls
+that other case in too, transitively, so a single case in a chained test can be
+spot-checked on its own.
 
 Every call sends "seed": 0 by default (override per case with "seed": N). Discovered
 2026-08-10: temperature 0 alone is NOT reproducible run-to-run against this server --
@@ -147,6 +150,18 @@ def insert_fl2va_landing(text):
     return f'{before} {FL2VA_LANDING}\n\n{after}'
 
 
+TOKEN = re.compile(r'\{\{([^{}]+)\}\}')
+
+
+def refs_in(user):
+    """Case ids a user prompt substitutes from: {{id}}, {{id:FIELD}}, {{CAMERA:idA:idB}}."""
+    out = []
+    for body in TOKEN.findall(user):
+        parts = body.split(':')
+        out.extend(parts[1:3] if parts[0] == 'CAMERA' else parts[:1])
+    return out
+
+
 def load_system(path, cache={}):
     if path not in cache:
         cache[path] = pathlib.Path(path).read_text(encoding='utf-8')
@@ -211,9 +226,27 @@ def main():
     defaults = spec.get('defaults', {})
     cases = spec['cases']
     if a.only:
-        cases = [c for c in cases if c['id'] in a.only]
+        # Pull in whatever the selected cases chain from, transitively. Without this,
+        # --only on a downstream case dies on its own {{...}} token, which made spot-checking
+        # a single case in a two-pass test (describer -> classifier, describer -> composer)
+        # need the whole chain typed out by hand.
+        by_id = {c['id']: c for c in cases}
+        want, frontier = set(a.only), list(a.only)
+        while frontier:
+            c = by_id.get(frontier.pop())
+            if not c:
+                continue
+            for ref in refs_in(c.get('user', '')):
+                if ref in by_id and ref not in want:
+                    want.add(ref)
+                    frontier.append(ref)
+        pulled = want - set(a.only)
+        cases = [c for c in cases if c['id'] in want]     # file order: refs run before users
         if not cases:
             raise SystemExit(f'ERROR: no case ids matched {a.only}')
+        if pulled:
+            print(f'--only: also running {len(pulled)} case(s) depended on: '
+                  f'{", ".join(sorted(pulled))}')
 
     outdir = pathlib.Path(a.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
@@ -286,9 +319,14 @@ def main():
             output_text = alignment_line(align, text, cfg.get('duration')) + '\n\n' + output_text
 
         (outdir / f'{c["id"]}.txt').write_text(output_text, encoding='utf-8')
-        head = f"{cfg.get('model', 'local')}  [{c['id']}]"
-        if c.get('group'):
-            head = f"{cfg.get('model', 'local')}  [{c['group']} :: {c['id']}]"
+        # The system prompt's basename goes in the header because a chained test writes two
+        # kinds of record into one file and nothing else says which prompt made which. It sits
+        # BEFORE the bracket deliberately: validate.py's HEAD, score.py (which imports it) and
+        # archive_run.py's ID_RE all anchor on '[...]' at end of line, so this stays compatible
+        # both ways -- older run files without it still parse.
+        stem = pathlib.Path(sys_path).stem
+        ident = f"{c['group']} :: {c['id']}" if c.get('group') else c['id']
+        head = f"{cfg.get('model', 'local')}  {stem}  [{ident}]"
         records.append(f"{head}\n---\n{user}\n---\n{output_text}")
 
     if not a.dry_run:

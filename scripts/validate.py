@@ -318,6 +318,47 @@ DESCRIBER_ROLES = {
         'atmos_field': None,
         'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
     },
+    # ---- the two halves of the split style describer (session 12).
+    #
+    # 'style' above ran out of room: at 3,740 tokens it sat over this model's ~3,700 adherence
+    # ceiling, so every further fix cost a rule elsewhere (L-PROMPT-TOKEN-BUDGET). Splitting the
+    # ten fields into a describing pass and a classifying pass halves each prompt and makes
+    # "classify from what you described" architectural rather than a rule to remember.
+    #
+    # Note what foreign_fields() derives for free once both rows exist: a stray [[MEDIUM]] in a
+    # pass-A record (leaking classification) and a stray [[EXECUTION]] in a pass-B record
+    # (echoing its input instead of classifying) are both errors, with no new code.
+    #
+    # One run file holds both kinds of record, so each half is validated separately:
+    #   validate.py describer <run> --role style_look  --id-prefix look_
+    #   validate.py describer <run> --role style_class --id-prefix st_
+    'style_look': {
+        'fields': ['EXECUTION', 'PALETTE', 'LIGHTING', 'DISTINGUISHING', 'LABEL', 'DEFINITION'],
+        'closed': {},
+        # Nothing to drift-check: pass A emits no closed vocabulary. The 11-value [[MEDIUM]]
+        # that made 'style' worth drift-checking now belongs to style_class.
+        'drift': None,
+        'no_digits': (),
+        'not_found': False,
+        'style_warn': False,     # naming the rendering style is still the whole job
+        'style_allow': (),
+        'atmos_field': None,
+        'coarse_sub': None,
+    },
+    'style_class': {
+        'fields': ['MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT'],
+        'closed': {'MEDIUM': tuple(MEDIUM_VOCAB),
+                   'IDIOM': IDIOM_VOCAB,
+                   'TREATMENT': TREATMENT_VOCAB},
+        'drift': ('MEDIUM', _medium_vocab),
+        'no_digits': (),
+        'not_found': False,
+        'style_warn': False,
+        'style_allow': (),
+        # No [[DEFINITION]] here, so the full-stop and atmosphere checks simply never fire.
+        'atmos_field': None,
+        'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
+    },
 }
 
 
@@ -498,6 +539,10 @@ def main():
     p_d.add_argument('path')
     p_d.add_argument('--role', default='character', choices=sorted(DESCRIBER_ROLES),
                      help='which describer role wrote these records')
+    p_d.add_argument('--id-prefix', metavar='PREFIX',
+                     help='validate only records whose case id starts with PREFIX. A chained '
+                          'test writes two roles into one run file, and each has to be checked '
+                          "against its own rules -- e.g. --role style_class --id-prefix st_")
 
     for p in (p_h3, p_d):
         p.add_argument('-v', '--verbose', action='store_true',
@@ -509,6 +554,8 @@ def main():
     results, brackets = [], {}
     for i, r in enumerate(recs, 1):
         group, case_id = head_parts(r['model'])
+        if getattr(a, 'id_prefix', None) and not (case_id or '').startswith(a.id_prefix):
+            continue
         if a.format == 'h3':
             errs, warns = check_h3(r['output'], r['input'], a.strip_alignment)
         else:
@@ -524,6 +571,10 @@ def main():
                 brackets.setdefault(group, []).append((case_id, terms[0] if terms else None))
         label = case_id or (r['input'].strip().split('\n')[0])[:64] or f'record {i}'
         results.append((label, errs, warns))
+
+    if getattr(a, 'id_prefix', None) and not results:
+        raise SystemExit(f'ERROR: no records in {a.path} have a case id starting with '
+                         f'{a.id_prefix!r} -- nothing was checked.')
 
     ok = report(results, a.verbose)
 

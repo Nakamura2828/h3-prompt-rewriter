@@ -2,7 +2,8 @@
 """Archive and clean up run_tests.py output.
 
 Usage:
-  python scripts/archive_run.py rename <dest> [--run PATH] [--clean] [--dry-run]
+  python scripts/archive_run.py rename   <dest>      [--run PATH] [--clean] [--dry-run]
+  python scripts/archive_run.py baseline <test-name> [--run PATH] [--dry-run]
   python scripts/archive_run.py clean [--current] [--dry-run]
 
 rename moves the most recently modified runs/run-*.txt (or --run PATH) to
@@ -13,6 +14,21 @@ reference/test_archive/<dest>.txt, e.g.:
 If that destination already exists, -2, -3, ... is appended until a free name
 is found — existing archived rounds are never overwritten.
 
+baseline COPIES that same run to reference/baselines/<test-name>.txt, and is a
+different job from rename. An archived round is history: write-once, grouped by
+phase, never overwritten. A baseline is the single run the NEXT round is scored
+against — read every round, replaced when it advances. Filing it only as history
+means score.py --baseline points at a filename that changes every round; this
+gives it one that doesn't:
+
+  python scripts/archive_run.py baseline describer_style_targeted
+  python scripts/score.py tests/describer_style_targeted.json runs/run-<new>.txt \
+      --baseline reference/baselines/describer_style_targeted.txt
+
+Overwriting is the point here, so unlike rename there is no -2/-3 suffixing. Run
+both when a round becomes the new baseline: baseline first (it copies), then
+rename (it moves).
+
 clean deletes files from runs/:
   (no flag)   delete everything in runs/
   --current   delete only the runs/<id>.txt files for case ids found in the
@@ -21,12 +37,18 @@ clean deletes files from runs/:
 
 rename --clean is shorthand for: archive the run, then delete the
 runs/<id>.txt files for the case ids in the file that was just archived.
+
+Note on cleanup: every clean path here is scoped to runs/, so a baseline copy is
+never at risk from one -- that is part of why baseline copies rather than moves.
+Pruning reference/baselines/ itself has no mechanism yet; a baseline is replaced
+by the next baseline call and is otherwise only stale if its test is retired.
 """
 import argparse, pathlib, re, shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RUNS = ROOT / 'runs'
 ARCHIVE = ROOT / 'reference' / 'test_archive'
+BASELINES = ROOT / 'reference' / 'baselines'
 ID_RE = re.compile(r'\[(?:.+? :: )?([^\]]+)\]\s*$')
 
 
@@ -91,6 +113,21 @@ def cmd_rename(a):
         delete_ids(record_ids(text), a.dry_run)
 
 
+def cmd_baseline(a):
+    """Copy, don't move: the run usually still needs archiving as history afterwards,
+    and a baseline that lives only here would be lost the moment it is superseded."""
+    src = latest_run(a.run)
+    dest = BASELINES / f'{a.test}.txt'
+    verb = 'replace' if dest.exists() else 'create'
+    print(f'{"[dry-run] " if a.dry_run else ""}{src} -> {dest}  ({verb})')
+    if not a.dry_run:
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(str(src), str(dest))
+    print(f'score against it with:\n'
+          f'  python scripts/score.py tests/{a.test}.json runs/run-<new>.txt '
+          f'--baseline reference/baselines/{a.test}.txt')
+
+
 def cmd_clean(a):
     if a.current:
         src = latest_run()
@@ -121,6 +158,16 @@ def main():
                     help="also delete this run's per-case runs/<id>.txt files after archiving")
     r.add_argument('--dry-run', action='store_true')
     r.set_defaults(func=cmd_rename)
+
+    b = sub.add_parser('baseline',
+                        help='copy the latest run-*.txt into reference/baselines/ as the '
+                             'comparison point for the next round')
+    b.add_argument('test', help='the test this baselines, without extension, e.g. '
+                                 'describer_style_targeted -- matches tests/<name>.json')
+    b.add_argument('--run', help='use this specific file instead of the most recently '
+                                  'modified runs/run-*.txt')
+    b.add_argument('--dry-run', action='store_true')
+    b.set_defaults(func=cmd_baseline)
 
     c = sub.add_parser('clean', help='delete files from runs/')
     c.add_argument('--current', action='store_true',

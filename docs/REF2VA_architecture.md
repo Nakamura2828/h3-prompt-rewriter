@@ -67,7 +67,7 @@ through `<Picture 4>` all appear only inside `<Subject N>` lines.
 | character / person | `describer_character.txt` | `<Subject N>` | no — cited in the subject line |
 | setting / environment | `describer_setting.txt` (v2) | `<Subject N>` | no |
 | object / prop / clothing | `describer_object.txt` *(later)* | `<Subject N>` | no |
-| style | `describer_style.txt` *(later)* | `<Subject N>` | no |
+| style | `describer_style_look.txt` **+** `describer_style_class.txt` | `<Subject N>` | no |
 | first frame / keyframe / last frame | `describer_frame.txt` (v8) | `<Picture N>` | **yes** |
 | storyboard | `describer_frame.txt` (v8) | `<Picture N>` | **yes** |
 
@@ -167,8 +167,13 @@ REF2VA cases.
 2. **`describer_setting.txt`** — session 6, locked at v5. Eight fields, with everything transient
    quarantined in `[[ATMOSPHERE]]` and barred from `[[DEFINITION]]`, so the spliced
    subject-definition sentence holds by day and by night. See `docs/describers.md`.
-   `describer_object.txt` and `describer_style.txt` remain; **`style` is blocked on input
-   variety** — see `docs/image_inventory.md` for the corpus and the shopping list.
+   **`describer_style` — session 12, v3, two prompts.** `style` is the one role that does not fit
+   in a single prompt: ten fields put it over this model's token ceiling, so it is a describing
+   pass (`describer_style_look.txt`) feeding a classifying pass (`describer_style_class.txt`) that
+   sees both the image and the record. **The graph must concatenate the two outputs** into one
+   ten-field record before the composer sees it — that is one extra LLM node plus a string join per
+   style slot, and it is the only role whose slot is not one node. Rationale in `docs/describers.md`.
+   `describer_object.txt` remains.
 3. Composer pass A as a fifth build-system mode; pass B standalone.
 4. Roster / task-type / assembly code, and a `ref2va` validator subcommand.
 5. Port the whole thing into the ComfyUI graph, along with the FL2VA alignment/landing logic

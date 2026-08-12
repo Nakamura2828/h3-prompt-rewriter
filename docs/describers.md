@@ -207,17 +207,49 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Style describer (v2, session 10 — three-axis vocabulary)
+## Style describer (v3, session 12 — split into two passes)
 
-`prompts/describer_style.txt` — the third REF2VA describer role, and **the inverse of the other
-three**: it records how an image is rendered and never what it depicts. The other roles all ban
-style words; this one bans everything else, which is the harder direction, because an image invites
-you to say what is in it. **Ten** fields, condensations last:
+The third REF2VA describer role, and **the inverse of the other three**: it records how an image is
+rendered and never what it depicts. The other roles all ban style words; this one bans everything
+else, which is the harder direction, because an image invites you to say what is in it.
+
+**It is the only role that is two prompts.** Ten fields were more than one prompt could hold — see
+"Why it is two passes" below. Condensations still come last, and the ten fields and their order are
+unchanged from v2; only the seam between them is new:
 
 ```
-[[EXECUTION]] [[PALETTE]] [[LIGHTING]] [[DISTINGUISHING]]
-[[MEDIUM]] [[SUB_MEDIUM]] [[IDIOM]] [[TREATMENT]] [[LABEL]] [[DEFINITION]]
+pass A — prompts/describer_style_look.txt      (role style_look,  1,876 tokens)
+  [[EXECUTION]] [[PALETTE]] [[LIGHTING]] [[DISTINGUISHING]] [[LABEL]] [[DEFINITION]]
+
+pass B — prompts/describer_style_class.txt     (role style_class, 2,584 tokens)
+  [[MEDIUM]] [[SUB_MEDIUM]] [[IDIOM]] [[TREATMENT]]
+  input: the image AND pass A's whole record
 ```
+
+The consuming graph concatenates the two into the same ten-field record v2 emitted, so nothing
+downstream changes.
+
+### Why it is two passes
+
+v2 measured **3,740 tokens against this model's ~3,700 adherence ceiling** — over the line, with the
+`L-PROMPT-TOKEN-BUDGET` failure signature to prove it (a 171-token rule took format from 43/45 to
+39/45, emitting `[[DISTINGISHING]]` with correct content underneath). Both remaining fixes needed
+*more* room, so the only move that made room instead of consuming it was to split.
+
+The seam is not arbitrary — each half's bulk is dead weight to the other. The vocabulary is 1,651
+tokens and irrelevant while describing; `CONTENT IS NOT STYLE` (461) and the examples are irrelevant
+while classifying. Two things follow that no amount of prose could buy:
+
+- **Derivation became architectural.** Pass B *receives* the description, so "classify from what you
+  described" is the shape of the task rather than a rule competing for attention. v2 tried to buy
+  this with a rule and paid four format failures for it.
+- **The content ban stops binding the classifier.** Pass B emits four closed-vocabulary terms and
+  cannot leak content, so it can later be licensed to judge facial proportion and caricature —
+  which is what the `western toon` collapse needs and what v2 structurally could not allow.
+
+`[[LABEL]]` and `[[DEFINITION]]` went to **pass A**, which is what keeps that true. The accepted
+cost: in v2 the label was written *after* the four terms and so could not contradict them; now it
+is written without them, and nothing checks the coherence. Two inference calls per image, ~5s → ~10s.
 
 The four classification fields carry **three independent axes** — `[[MEDIUM]]`+`[[SUB_MEDIUM]]`
 are one axis at two levels. Full vocabulary and rationale in `docs/image_inventory.md`
@@ -229,10 +261,13 @@ axes inside its sub-lists, and that coupling was dragging the *coarse* term to t
 The record also feeds the §5.2 style opening, the one or two sentences that precede `[Shot 1]` in
 `detailed_description`.
 
-**`[[MEDIUM]]` sits seventh, not first**, unlike `[[SUBJECT_KIND]]` and `[[SETTING_KIND]]`. Those
-are binary discriminators; `[[MEDIUM]]` is an 11-value *condensation of the look*, so it behaves
-like `[[PLACE]]` and `L-JUDGMENTS-LAST` applies. Naming "2D cel / anime" first invites generic anime
-descriptors instead of a reading of this image.
+**`[[MEDIUM]]` comes after the descriptive fields, never before them**, unlike `[[SUBJECT_KIND]]`
+and `[[SETTING_KIND]]`. Those are binary discriminators; `[[MEDIUM]]` is an 11-value *condensation
+of the look*, so it behaves like `[[PLACE]]` and `L-JUDGMENTS-LAST` applies. Naming "2D cel / anime"
+first invites generic anime descriptors instead of a reading of this image. It sat seventh of ten in
+v2; in v3 it is the first line pass B writes, which is the same thing — the description is already
+finished and on the page in front of it. The split *hardens* this ordering rather than relaxing it:
+the classifier physically cannot run before the describer.
 
 **All four classification fields are always emitted**, with `none` and `not determinable` as
 permitted `[[SUB_MEDIUM]]` values. This is `L-DECLARED-FIELD-IS-AN-OBLIGATION` used deliberately *for* us: a listed
@@ -249,10 +284,55 @@ and no record invented or borrowed a sub-term. `validate.py` checks the pairing 
 | v2 | **REVERTED. 23/33** — two added tie-break rules fixed **none** of their four targets and broke three unrelated cases. See `L-KNOW-WHEN-TO-STOP` and the note below |
 | v1 repeat | **27/33, identical `[[MEDIUM]]`/`[[SUB_MEDIUM]]` on all 39 cases.** Confirms the revert and proves the v2 regressions were the prompt, not sampling |
 | v1 full sweep | All 100 images, `tests/describer_style_sweep.json` (generated from the master table). **95/100 format-clean · coarse 86/95 · sub 77/84 where coarse was right.** Higher than the targeted round because that one was deliberately loaded with hard probe pairs |
+| v2 baseline ×2 (s11) | 45-case targeted test. **27/45 content, 43/45 format — byte-identical across two runs**, on all 45 records. Attribution is clean; a one-case delta is real, not drift |
+| v2 + derivation rule (s11) | 4,054 tokens. Content 29/45 but format **39/45**, with corrupted field tokens over correct content — the budget signature. Reverted |
+| v2 compressed (s11) | Prose tightened, no rule changed. 3,740 tokens, **27/45 content, 45/45 format** — the best format recorded. Kept, and it is the pre-split baseline at `reference/baselines/describer_style_targeted.txt` |
+| **v3 split (s12)** | Pure refactor, same vocabulary and tie-breaks. **Format: look 45/45 · class 44/45. Content 29/45** (30 after the `coraline1` ruling), from 27. Movement: fixed 6 · regressed 4 · changed 4, `R=4` vs threshold 7 → adjudication. **`western toon` 1/7 → 6/7**, see below |
 
-**v2 is the current working version — still NOT locked.** The three-axis rebuild that was
-blocking the lock is done, but v2 has only had a 4-case smoke test and one full sweep behind it.
-Lock after the sweep result is adjudicated and any wording follow-up is measured.
+**Two findings from session 11 outrank any single round above.** First, determinism is not
+stability (`L-DETERMINISM-IS-NOT-STABILITY`): the compression round changed no rule, term or
+tie-break and still moved **10 of 45 cases** — `p5_first` and `p5_last`, two frames of one film,
+*swapped* `vintage Technicolor` with each other. So "this change fixed 3 cases" is weak evidence on
+this prompt; prefer changes with a mechanism behind them over changes with a case count. Second,
+**`western toon` is collapsing at 1/7 (14%)**, losing evenly to `anime` (×3) and `dimensional toon`
+(×3), while every other idiom scores 82–100% and `dimensional toon` is 5/5 when it *is* the answer —
+a pure over-attractor, not a confused term.
+
+**Not locked.** v3 splits the prompt so those fixes become affordable; it was written as a pure
+refactor and expected to be a new baseline rather than an improvement.
+
+### What the split actually did to `western toon` — the session-12 surprise
+
+**It went from 1/7 (14%) to 6/7 (86%) on the same seven images, with no rule changed.** Only
+`supergirl2` still misses, and that is the one the user had already called genuinely blurry. The
+proportion licence that the split existed to make affordable **was never written** — the planned
+anime stylization band is on hold, because the problem it targeted did not survive the refactor.
+
+Per-idiom on that round: realist 88% · western toon 86% · anime 83% · dimensional toon 100% ·
+flat graphic 0/1.
+
+**Do not attach a mechanism to this.** `L-CAUSAL-STORIES-ARE-WEAK` has cost this project three
+rounds, and a plausible story about *why* separating description from classification helps is
+exactly the shape of the ones that were wrong. What stands is the measurement: five cases moved
+one way on an axis that had been stuck across four session-11 rounds and both session-10 sweeps,
+which is well past the ~20% marginal churn `L-DETERMINISM-IS-NOT-STABILITY` documents.
+
+**The caveat that matters:** the targeted test is *enriched* and holds only seven `western toon`
+images, so 86% is measured on the hardest slice of the corpus, not a representative one.
+
+### The largest remaining cluster: `digital` over-attracts
+
+14 emitted against 10 expected, taking one each from `oil`, `ink`, `marker` and `traditional cel`.
+**It is carried over, not caused by the split** — the word "digital" appearing in the description
+predicts a `digital` sub-term in 13/20 split records and 12/18 pre-split records, so the
+association is pre-existing and essentially unchanged. This is the same defect the older
+"`painting / digital` is a sink" note describes.
+
+The user's ruling is that the asymmetry matters: failing *toward* the physical term is acceptable,
+failing toward `digital` is not. Before writing anything, note that **tie-break 4 already says
+exactly that** — so this is an unfollowed rule, not a missing one, and restating it is the
+`L-KNOW-WHEN-TO-STOP` treadmill. `digital` also appears in 5 of the 6 sub-lists, which makes it
+the highest-prior term by construction.
 
 ### v2 — the three-axis rebuild (session 10)
 
