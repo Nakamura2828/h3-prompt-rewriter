@@ -38,7 +38,7 @@ SERVER = 'http://localhost:8080/tokenize'
 #
 # TOLERANCE is set to what the numbers we actually have support:
 #
-#   3,561  fl2va v3            fine, ships
+#   3,561  fl2va v5            fine, ships
 #   3,705  describer_frame     fine across many sessions
 #   3,740  describer_style v2  45/45 format -- the best format score recorded
 #   3,883  describer_style     43/45 format

@@ -55,6 +55,7 @@ secrets.json
 
 #Archived References
 reference/*
+!reference/pre_build_env_canonical_prompts
 !reference/retired/
 !reference/baselines/
 !reference/test_archive/
