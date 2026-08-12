@@ -1,7 +1,8 @@
 {
   "_role": "describer_style TARGETED test, three-axis vocabulary (session 10). The fast iteration loop -- run ONE prompt change against this, not three.",
   "_generated": "Curated case list, generated answer key. Edit SELECTION in scripts/gen_style_targeted.py and re-run; never hand-edit _expected.",
-  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). Roughly half these cases are known failures, carried in deliberately so a fix is measurable, so the score here is EXPECTED to sit well below the sweep. Do not compare the two numbers -- compare this test to itself, round over round.",
+  "_gate": "enriched",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). Roughly half these cases are known failures, carried in deliberately so a fix is measurable, so the score here is EXPECTED to sit well below the sweep. Do not compare the two numbers -- compare this test to itself, round over round. That is what \"_gate\": \"enriched\" means: the LEVEL is by construction and carries no information, so score.py gates on MOVEMENT against the previous round. Run it with --baseline <previous run of this test>.",
   "_expected": {
     "st_ivy_toon": "2D cel / traditional cel / western toon / colour",
     "st_peter_griffin_toon": "2D cel / digital / western toon / colour",

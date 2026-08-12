@@ -107,11 +107,15 @@ def main():
                   'iteration loop -- run ONE prompt change against this, not three.'),
         '_generated': ('Curated case list, generated answer key. Edit SELECTION in '
                        'scripts/gen_style_targeted.py and re-run; never hand-edit _expected.'),
+        '_gate': 'enriched',
         '_scoring': ('Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT (score.py default). '
                      'Roughly half these cases are known failures, carried in deliberately so a '
                      'fix is measurable, so the score here is EXPECTED to sit well below the '
                      'sweep. Do not compare the two numbers -- compare this test to itself, '
-                     'round over round.'),
+                     'round over round. That is what "_gate": "enriched" means: the LEVEL is by '
+                     'construction and carries no information, so score.py gates on MOVEMENT '
+                     'against the previous round. Run it with '
+                     '--baseline <previous run of this test>.'),
         '_expected': expected,
         'defaults': {'server': 'http://localhost:8080/v1/chat/completions',
                      'model': 'qwen3.6-35b-a3b',

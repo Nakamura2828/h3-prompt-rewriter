@@ -85,6 +85,48 @@ def clean(expectation):
     return re.sub(r'\s*\([^()]*\)\s*$', '', expectation).strip()
 
 
+def read_run(path, fields):
+    """{case id: tuple of emitted field values} for one concatenated run file."""
+    got = {}
+    for r in parse_records(pathlib.Path(path).read_text(encoding='utf-8')):
+        _, cid = head_parts(r['model'])
+        if cid:
+            got[cid] = tuple(field(r['output'], f) for f in fields)
+    return got
+
+
+def case_verdict(raw, emitted, nfields):
+    """Score ONE case.
+
+    Returns (state, why, n_field_excluded, field_contested):
+      state True  = pass, False = miss, None = dropped from the denominator
+      why          the exclusion marker when state is None, else None
+
+    Factored out so the baseline run in --baseline is scored by exactly the same
+    logic as the run being reported -- a second implementation would drift and
+    silently mis-report regressions.
+    """
+    marker, want = split_expected(raw, nfields)
+    if marker:
+        return None, marker, 0, False
+
+    verdicts, per_field, contested = [], 0, False
+    for w, g in zip(want, emitted):
+        mk = marker_in(w)
+        if mk or w == '(unspecified)':
+            verdicts.append(None)                        # field excluded
+            per_field += 1
+            if mk == 'CONTESTED':
+                contested = True
+        else:
+            verdicts.append(g.strip().lower() == clean(w).lower())
+
+    scored = [v for v in verdicts if v is not None]
+    if not scored:
+        return None, 'CONTESTED', per_field, contested
+    return all(scored), None, per_field, contested
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -95,6 +137,11 @@ def main():
                     help='fields the _expected value describes, in "a / b" order')
     ap.add_argument('--misses-only', action='store_true',
                     help='omit the passing rows')
+    ap.add_argument('--baseline', metavar='RUN',
+                    help='the previous round of the SAME test. On an enriched test the gate '
+                         'is on movement, not level, so this is what makes it meaningful: it '
+                         'reports regressions (passed then, missing now) and cases that '
+                         'changed to a DIFFERENT wrong answer.')
     a = ap.parse_args()
 
     spec = json.loads(pathlib.Path(a.test).read_text(encoding='utf-8'))
@@ -103,42 +150,26 @@ def main():
         raise SystemExit(f'ERROR: {a.test} has no top-level "_expected" map -- '
                          f'nothing to score against.')
 
-    got = {}
-    for r in parse_records(pathlib.Path(a.run).read_text(encoding='utf-8')):
-        _, cid = head_parts(r['model'])
-        if cid:
-            got[cid] = tuple(field(r['output'], f) for f in a.fields)
+    got = read_run(a.run, a.fields)
 
     rows, excluded = [], []
     field_contested = set()
     n_pass = n_miss = 0
     per_field_excluded = 0
+    state = {}
 
     for cid, raw in expected.items():
         if cid not in got:
             excluded.append((cid, 'NOT RUN', raw))
             continue
-        marker, want = split_expected(raw, len(a.fields))
-        if marker:
-            excluded.append((cid, marker, ' / '.join(got[cid])))
+        ok, why, per_field, contested = case_verdict(raw, got[cid], len(a.fields))
+        per_field_excluded += per_field
+        if contested:
+            field_contested.add(cid)
+        state[cid] = ok
+        if ok is None:
+            excluded.append((cid, why, ' / '.join(got[cid])))
             continue
-
-        verdicts = []
-        for w, g in zip(want, got[cid]):
-            mk = marker_in(w)
-            if mk or w == '(unspecified)':
-                verdicts.append(None)                    # field excluded
-                per_field_excluded += 1
-                if mk == 'CONTESTED':
-                    field_contested.add(cid)
-            else:
-                verdicts.append(g.strip().lower() == clean(w).lower())
-
-        scored = [v for v in verdicts if v is not None]
-        if not scored:
-            excluded.append((cid, 'CONTESTED', ' / '.join(got[cid])))
-            continue
-        ok = all(scored)
         n_pass += ok
         n_miss += not ok
         if not ok or not a.misses_only:
@@ -179,9 +210,52 @@ def main():
         print('  NOTE: contested rulings are PROVISIONAL -- they expire when the '
               'vocabulary changes.')
 
+    # The gate infers "high failure rate -> structural problem", and that inference needs a
+    # REPRESENTATIVE sample. An enriched test (one deliberately stocked with known failures
+    # so a fix is measurable) has a high rate BY CONSTRUCTION, so its level says nothing --
+    # gate it on movement against the previous round instead. See .claude/CLAUDE.md.
     threshold = max(6, round(0.15 * n))
-    verdict = 'ADJUDICATION' if n_miss <= threshold else 'DIAGNOSIS'
-    print(f'\ngate: F={n_miss} vs threshold max(6, 15% of {n})={threshold}  ->  {verdict}')
+    enriched = spec.get('_gate') == 'enriched'
+
+    if not enriched:
+        verdict = 'ADJUDICATION' if n_miss <= threshold else 'DIAGNOSIS'
+        print(f'\ngate: F={n_miss} vs threshold max(6, 15% of {n})={threshold}  ->  {verdict}')
+    elif not a.baseline:
+        verdict = 'ADJUDICATION'
+        print(f'\ngate: ENRICHED test, no --baseline given  ->  {verdict}')
+        print(f'      the level ({n_miss}/{n} misses) is by construction and means nothing '
+              f'on its own.')
+        print('      pass --baseline <previous run of this test> to gate on movement.')
+    else:
+        base = read_run(a.baseline, a.fields)
+        regressed, fixed, changed = [], [], []
+        for cid, now in state.items():
+            if cid not in base or now is None:
+                continue
+            then, *_ = case_verdict(expected[cid], base[cid], len(a.fields))
+            if then is None:
+                continue
+            if then and not now:
+                regressed.append(cid)
+            elif now and not then:
+                fixed.append(cid)
+            elif not now and not then and base[cid] != got[cid]:
+                changed.append(cid)
+
+        verdict = 'ADJUDICATION' if len(regressed) <= threshold else 'DIAGNOSIS'
+        print(f'\ngate: ENRICHED test, gated on movement vs {pathlib.Path(a.baseline).name}')
+        print(f'      fixed {len(fixed)} · regressed {len(regressed)} · '
+              f'still missing but a DIFFERENT wrong answer {len(changed)}')
+        for label, ids in (('fixed', fixed), ('REGRESSED', regressed),
+                           ('changed', changed)):
+            if ids:
+                print(f'        {label:10} {", ".join(sorted(ids))}')
+        print(f'      R={len(regressed)} vs threshold max(6, 15% of {n})={threshold}  '
+              f'->  {verdict}')
+        if changed:
+            print('      NOTE: a "changed" case is a real signal -- a fix moved it sideways. '
+                  'It is worth a slot; an unchanged known failure is not.')
+
     if verdict == 'DIAGNOSIS':
         print('      lead with the systematic finding, and attach 2-3 exemplars')
     else:
