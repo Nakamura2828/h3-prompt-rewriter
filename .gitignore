@@ -55,6 +55,9 @@ secrets.json
 
 #Archived References
 reference/
+!reference/retired/
+!reference/baselines/
+!reference/test_archive/
 
 # test images
 images/*
