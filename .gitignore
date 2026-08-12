@@ -59,6 +59,7 @@ reference/*
 !reference/retired/
 !reference/baselines/
 !reference/test_archive/
+!reference/prompt_archive/
 
 # test images
 images/*

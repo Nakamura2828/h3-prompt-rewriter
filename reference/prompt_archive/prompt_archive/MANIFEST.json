@@ -1,0 +1,688 @@
+{
+  "generated_from": [
+    "census.py",
+    "measure.py",
+    "build_archive.py"
+  ],
+  "tokenizer": "llama-server /tokenize, the model in CLAUDE.md > Model Parameters",
+  "line_endings": "every archived file is LF; md5_lf is over those exact bytes. core.autocrlf=true in this repo, so a FRESH CHECKOUT will hand you CRLF copies whose md5 differs. Normalise to LF before comparing.",
+  "counts": {
+    "archived": 29,
+    "missing": 6
+  },
+  "records": [
+    {
+      "label": "describer_character_v1",
+      "file": "describer_character_v1.txt",
+      "family": "describer_character",
+      "status": "live",
+      "parent": null,
+      "tokens": 2407,
+      "bytes": 10074,
+      "lines": 98,
+      "md5_lf": "99206cb96cad12553d3efc76b62ecc22",
+      "first_seen": "2026-08-10 c6c1c73",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_character.txt"
+      ],
+      "committed": true,
+      "note": "The post-calibration state. The pre-calibration one is MISSING."
+    },
+    {
+      "label": "describer_frame_v1",
+      "file": "describer_frame_v1.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": null,
+      "tokens": 2127,
+      "bytes": 8763,
+      "lines": 121,
+      "md5_lf": "900b383fa14c5259cf8a80ed8b76fd8d",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame.txt",
+        "reference/retired/prompts/describer_frame_v1.txt"
+      ],
+      "committed": true,
+      "note": "Also what prompts/describer_frame.txt actually CONTAINED for commits 4dce882..6546344 -- a wrong-content bug fixed by 3daef42 (\"restore v7 describer content\")."
+    },
+    {
+      "label": "describer_frame_v2",
+      "file": "describer_frame_v2.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v1",
+      "tokens": 2613,
+      "bytes": 10867,
+      "lines": 131,
+      "md5_lf": "af06ee66c3e361f7eccf918206bd09cd",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame_v2.txt",
+        "reference/retired/prompts/describer_frame_v2.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "describer_frame_v3",
+      "file": "describer_frame_v3.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v2",
+      "tokens": 2868,
+      "bytes": 11968,
+      "lines": 137,
+      "md5_lf": "684acc768be80473970e77ab26d71a60",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame_v3.txt",
+        "reference/retired/prompts/describer_frame_v3.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "describer_frame_v4",
+      "file": "describer_frame_v4.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v3",
+      "tokens": 3200,
+      "bytes": 13327,
+      "lines": 152,
+      "md5_lf": "ee78489105e3cf468c7769b06d9dec99",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame_v4.txt",
+        "reference/retired/prompts/describer_frame_v4.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "describer_frame_v5",
+      "file": "describer_frame_v5.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v4",
+      "tokens": 3133,
+      "bytes": 13071,
+      "lines": 152,
+      "md5_lf": "87ab10504f8829ed0f8569fe52af14a5",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame_v5.txt",
+        "reference/retired/prompts/describer_frame_v5.txt"
+      ],
+      "committed": true,
+      "note": "Smaller than v4 (3,133 vs 3,200): v4->v5 was a net cut."
+    },
+    {
+      "label": "describer_frame_v6",
+      "file": "describer_frame_v6.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v5",
+      "tokens": 3634,
+      "bytes": 15217,
+      "lines": 167,
+      "md5_lf": "95a4c7ab1830a1b1b7691af6fd53d502",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame_v6.txt",
+        "reference/retired/prompts/describer_frame_v6.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "describer_frame_v7",
+      "file": "describer_frame_v7.txt",
+      "family": "describer_frame",
+      "status": "superseded",
+      "parent": "describer_frame_v6",
+      "tokens": 3713,
+      "bytes": 15537,
+      "lines": 169,
+      "md5_lf": "8e9b2e991b83f2942c65bef2f0f7c0e8",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "dist/frame_describer.txt",
+        "prompts/describer_frame.txt",
+        "prompts/describer_frame_v7.txt",
+        "reference/retired/prompts/describer_frame_v7.txt"
+      ],
+      "committed": true,
+      "note": "3,713 tokens -- ABOVE the 3,700 line, and it shipped without trouble for several sessions. Also appeared as dist/frame_describer.txt."
+    },
+    {
+      "label": "describer_frame_v8",
+      "file": "describer_frame_v8.txt",
+      "family": "describer_frame",
+      "status": "live",
+      "parent": "describer_frame_v7",
+      "tokens": 3705,
+      "bytes": 15547,
+      "lines": 169,
+      "md5_lf": "a9613d8d0addc35a442b476fb6449c52",
+      "first_seen": "2026-08-10 c843e49",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_frame.txt"
+      ],
+      "committed": true,
+      "note": "v7 + one clothing-agreement rule, MINUS two bans the model never obeyed (position-relative-to-person, held-object-in-POSE). Net 10 bytes and 8 tokens FEWER than v7."
+    },
+    {
+      "label": "describer_setting_v5",
+      "file": "describer_setting_v5.txt",
+      "family": "describer_setting",
+      "status": "live",
+      "parent": null,
+      "tokens": 2939,
+      "bytes": 12565,
+      "lines": 101,
+      "md5_lf": "047eb3d74a238cab4d5249a6835cfd27",
+      "first_seen": "2026-08-11 24a5eb7",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_setting.txt"
+      ],
+      "committed": true,
+      "note": "The ONLY setting state ever committed. v1-v4 are MISSING."
+    },
+    {
+      "label": "describer_style_v1",
+      "file": "describer_style_v1.txt",
+      "family": "describer_style",
+      "status": "superseded",
+      "parent": null,
+      "tokens": 2861,
+      "bytes": 12670,
+      "lines": 113,
+      "md5_lf": "b9bd35c4b33f06fbdb8892347a4045f9",
+      "first_seen": "2026-08-11 07f049d",
+      "last_seen": "2026-08-11 4ba8656",
+      "git_paths": [
+        "prompts/describer_style.txt"
+      ],
+      "committed": true,
+      "note": "Validated, never locked. 2,861 tokens."
+    },
+    {
+      "label": "describer_style_v2",
+      "file": "describer_style_v2.txt",
+      "family": "describer_style",
+      "status": "superseded",
+      "parent": "describer_style_v1",
+      "tokens": 3883,
+      "bytes": 17286,
+      "lines": 141,
+      "md5_lf": "310c10ab09dd167915866e3cb1b29450",
+      "first_seen": "2026-08-11 a70e729",
+      "last_seen": "2026-08-11 a70e729",
+      "git_paths": [
+        "prompts/describer_style.txt"
+      ],
+      "committed": true,
+      "note": "The three-axis rebuild. 3,883 tokens -- the LARGEST prompt state that survives anywhere in this project. 43/45 format."
+    },
+    {
+      "label": "describer_style_v2-compressed",
+      "file": "describer_style_v2-compressed.txt",
+      "family": "describer_style",
+      "status": "superseded",
+      "parent": "describer_style_v2",
+      "tokens": 3740,
+      "bytes": 16673,
+      "lines": 138,
+      "md5_lf": "ee43018093d89c57606367d1547032c3",
+      "first_seen": "2026-08-11 4166902",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_style.txt"
+      ],
+      "committed": true,
+      "note": "Prose tightened, no rule changed. 3,740 tokens, 45/45 format -- the best format score on record. The pre-split baseline; still present in prompts/ alongside the v3 split that replaced it."
+    },
+    {
+      "label": "describer_style_class_v3",
+      "file": "describer_style_class_v3.txt",
+      "family": "describer_style_class",
+      "status": "live",
+      "parent": "describer_style_v2-compressed",
+      "tokens": 2584,
+      "bytes": 11631,
+      "lines": 107,
+      "md5_lf": "0927364a3093ffd92ebe91e5d2727ba7",
+      "first_seen": "2026-08-12 e68be08",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_style_class.txt"
+      ],
+      "committed": true,
+      "note": "Pass B of the v3 split; receives pass A's record."
+    },
+    {
+      "label": "describer_style_look_v3",
+      "file": "describer_style_look_v3.txt",
+      "family": "describer_style_look",
+      "status": "live",
+      "parent": "describer_style_v2-compressed",
+      "tokens": 1876,
+      "bytes": 8471,
+      "lines": 68,
+      "md5_lf": "91808c4a25f8c9886342052bfed13af5",
+      "first_seen": "2026-08-12 e68be08",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/describer_style_look.txt"
+      ],
+      "committed": true,
+      "note": "Pass A of the v3 split. look + class sum to 4,460 tokens, well over any single-prompt budget -- the split buys headroom PER CALL, not in total."
+    },
+    {
+      "label": "fl2va_v1",
+      "file": "fl2va_v1.txt",
+      "family": "fl2va",
+      "status": "superseded",
+      "parent": null,
+      "tokens": 3179,
+      "bytes": 12993,
+      "lines": 128,
+      "md5_lf": "1bbc4fac1a449a85793997dc69468b83",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 4dce882",
+      "git_paths": [
+        ".claude/experiments/bloat/logs/fl2va_v1.txt",
+        "dist/fl2va_v1.txt"
+      ],
+      "committed": true,
+      "note": "Pre-repo; survived only as dist/fl2va_v1.txt."
+    },
+    {
+      "label": "fl2va_v2",
+      "file": "fl2va_v2.txt",
+      "family": "fl2va",
+      "status": "superseded",
+      "parent": "fl2va_v1",
+      "tokens": 3548,
+      "bytes": 14463,
+      "lines": 134,
+      "md5_lf": "866dd46ab31c7a9124fd0be3d8ecd913",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 4dce882",
+      "git_paths": [
+        ".claude/experiments/bloat/logs/fl2va_v2.txt",
+        "dist/fl2va_v2.txt"
+      ],
+      "committed": true,
+      "note": "Larger than v3 (3,548 vs 3,499): v2->v3 was a net cut."
+    },
+    {
+      "label": "fl2va_v3",
+      "file": "fl2va_v3.txt",
+      "family": "fl2va",
+      "status": "superseded",
+      "parent": "fl2va_v2",
+      "tokens": 3499,
+      "bytes": 14458,
+      "lines": 130,
+      "md5_lf": "563fbb9a6aa513fc281e7060432be732",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 c843e49",
+      "git_paths": [
+        ".claude/experiments/bloat/logs/fl2va_3daef42.txt",
+        ".claude/experiments/bloat/logs/fl2va_v3.txt",
+        ".claude/experiments/bloat/logs/v3n.txt",
+        "dist/fl2va.txt",
+        "dist/fl2va_v3.txt",
+        "prompts/fl2va.txt"
+      ],
+      "committed": true,
+      "note": "Shipped for commits 4dce882..c843e49. The common ancestor of BOTH v4 and v5. token_budget.py:41 labels 3,561 tokens \"fl2va v3\" -- stale: v3 is 3,499 and 3,561 is v5."
+    },
+    {
+      "label": "fl2va_v4",
+      "file": "fl2va_v4.txt",
+      "family": "fl2va",
+      "status": "reverted",
+      "parent": "fl2va_v3",
+      "tokens": 3591,
+      "bytes": 14864,
+      "lines": 131,
+      "md5_lf": "f7559d7716b59cb19e3a59028a606d15",
+      "first_seen": "2026-08-12 7b68815",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        ".claude/experiments/bloat/logs/v4n.txt",
+        "reference/retired/prompts/fl2va_v4.txt"
+      ],
+      "committed": true,
+      "note": "DEAD BRANCH. One line added to v3 (+92 tokens) requiring every user action to survive into the output. Reverted in session 3 for shedding content. Session 13 re-ran v3 vs v4 head-to-head and the failure DID NOT REPLICATE -- see .claude/experiments/bloat/REPORT.md sec 6a. Existed only in the user's Downloads until 2026-08-12."
+    },
+    {
+      "label": "fl2va_v5",
+      "file": "fl2va_v5.txt",
+      "family": "fl2va",
+      "status": "live",
+      "parent": "fl2va_v3",
+      "tokens": 3561,
+      "bytes": 14735,
+      "lines": 131,
+      "md5_lf": "54eaecfd473c5479ab11a6289e7e9d6b",
+      "first_seen": "2026-08-10 68909d9",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        ".claude/experiments/bloat/logs/curn.txt",
+        ".claude/experiments/bloat/logs/fl2va_68909d9.txt",
+        "prompts/fl2va.txt"
+      ],
+      "committed": true,
+      "note": "LABEL ASSIGNED BY THIS ARCHIVE -- the project never numbered it. Descends from v3, NOT v4: v4's added rule is absent here. Differs from v3 by the landing-clause rework (commit 68909d9) plus two example edits."
+    },
+    {
+      "label": "fl2va_delta_v1",
+      "file": "fl2va_delta_v1.txt",
+      "family": "fl2va_delta",
+      "status": "live",
+      "parent": null,
+      "tokens": 2015,
+      "bytes": 8416,
+      "lines": 96,
+      "md5_lf": "dc458d9a46d5d2b5a9f8120cf265fe67",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "prompts/fl2va_delta.txt",
+        "prompts/fl2va_delta_v1.txt"
+      ],
+      "committed": true,
+      "note": "Still the shipping prompt. v2, v3 and v4 were all tried and abandoned, so the oldest state is the live one."
+    },
+    {
+      "label": "fl2va_delta_v2",
+      "file": "fl2va_delta_v2.txt",
+      "family": "fl2va_delta",
+      "status": "reverted",
+      "parent": "fl2va_delta_v1",
+      "tokens": 2496,
+      "bytes": 10508,
+      "lines": 106,
+      "md5_lf": "cfd0a5572a63fcdb42e5a47c256c4de0",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 4dce882",
+      "git_paths": [
+        "prompts/fl2va_delta_v2.txt"
+      ],
+      "committed": true,
+      "note": "Pre-repo. Lineage presumed sequential; not verifiable from git."
+    },
+    {
+      "label": "fl2va_delta_v3",
+      "file": "fl2va_delta_v3.txt",
+      "family": "fl2va_delta",
+      "status": "reverted",
+      "parent": "fl2va_delta_v2",
+      "tokens": 2277,
+      "bytes": 9564,
+      "lines": 101,
+      "md5_lf": "6382a47e931ea3fd633da592b905ae64",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 4dce882",
+      "git_paths": [
+        "prompts/fl2va_delta_v3.txt"
+      ],
+      "committed": true,
+      "note": "Pre-repo."
+    },
+    {
+      "label": "fl2va_delta_v4",
+      "file": "fl2va_delta_v4.txt",
+      "family": "fl2va_delta",
+      "status": "reverted",
+      "parent": "fl2va_delta_v3",
+      "tokens": 2364,
+      "bytes": 9929,
+      "lines": 103,
+      "md5_lf": "e987aebd5609545eccd197ec2c857e60",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-10 4dce882",
+      "git_paths": [
+        "prompts/fl2va_delta_v4.txt"
+      ],
+      "committed": true,
+      "note": "Pre-repo."
+    },
+    {
+      "label": "i2va_v1",
+      "file": "i2va_v1.txt",
+      "family": "i2va",
+      "status": "live",
+      "parent": "i2va_pre-build",
+      "tokens": 3007,
+      "bytes": 12359,
+      "lines": 96,
+      "md5_lf": "d5b3cdb21004b26cec0411afb48a29ad",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "dist/i2va.txt",
+        "prompts/i2va.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "i2va_pre-build",
+      "file": "i2va_pre-build.txt",
+      "family": "i2va_pre-build",
+      "status": "pre-build",
+      "parent": null,
+      "tokens": 3007,
+      "bytes": 12360,
+      "lines": 97,
+      "md5_lf": "d0fa731f45c2d06cc4576edc7ebc7cea",
+      "first_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "reference/pre_build_env_canonical_prompts/i2va.txt"
+      ],
+      "committed": true,
+      "note": "Untracked on every ref until 2026-08-12 (b4191f4). Same token count as v1 (3,007) but different content. Read by scripts/build.py --verify."
+    },
+    {
+      "label": "l2va_v1",
+      "file": "l2va_v1.txt",
+      "family": "l2va",
+      "status": "live",
+      "parent": "l2va_pre-build",
+      "tokens": 2657,
+      "bytes": 11003,
+      "lines": 87,
+      "md5_lf": "622aa43837ead303507d32c024e86d03",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "dist/l2va.txt",
+        "prompts/l2va.txt"
+      ],
+      "committed": true,
+      "note": ""
+    },
+    {
+      "label": "l2va_pre-build",
+      "file": "l2va_pre-build.txt",
+      "family": "l2va_pre-build",
+      "status": "pre-build",
+      "parent": null,
+      "tokens": 2555,
+      "bytes": 10598,
+      "lines": 82,
+      "md5_lf": "b3c8f88991a723b53ec424ae12a08306",
+      "first_seen": "2026-08-12 b4191f4",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "reference/pre_build_env_canonical_prompts/l2va.txt"
+      ],
+      "committed": true,
+      "note": "Untracked on every ref until 2026-08-12 (b4191f4). Read by scripts/build.py --verify."
+    },
+    {
+      "label": "t2va_v1",
+      "file": "t2va_v1.txt",
+      "family": "t2va",
+      "status": "live",
+      "parent": null,
+      "tokens": 2165,
+      "bytes": 8687,
+      "lines": 82,
+      "md5_lf": "cc48c247216227c14a23447587b1e230",
+      "first_seen": "2026-08-10 4dce882",
+      "last_seen": "2026-08-12 b4191f4",
+      "git_paths": [
+        "dist/t2va.txt",
+        "prompts/t2va.txt",
+        "reference/pre_build_env_canonical_prompts/t2va.txt"
+      ],
+      "committed": true,
+      "note": "Byte-identical to reference/pre_build_env_canonical_prompts/t2va.txt: the build system reproduced the hand-locked prompt exactly."
+    },
+    {
+      "label": "describer_style_v2-derivation",
+      "family": "describer_style",
+      "parent": "describer_style_v2",
+      "tokens": 4054,
+      "status": "reverted",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Style-v2-targeted-iteration1-derivation-rule.txt",
+        "docs/describers.md:288",
+        "scripts/token_budget.py:45"
+      ],
+      "why_it_matters": "THE MOST COSTLY LOSS IN THE PROJECT. This is the only prompt that ever produced the corrupted-field-token signature (39/45 format, correct content under mangled tokens), and it is the single real degradation underpinning L-PROMPT-TOKEN-BUDGET -- the 3,883 and 3,740 points did not degrade. The session-13 bloat experiment could not test the one prompt its whole question was about. It can never be re-run or re-measured.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    },
+    {
+      "label": "describer_setting_v1",
+      "family": "describer_setting",
+      "parent": null,
+      "tokens": null,
+      "status": "superseded",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Setting-v1.txt",
+        "docs/describers.md:151"
+      ],
+      "why_it_matters": "25/26 format with five atmosphere leaks and example-bleed. The atmosphere quarantine (the role's main design decision) was written against this text.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    },
+    {
+      "label": "describer_setting_v2",
+      "family": "describer_setting",
+      "parent": "describer_setting_v1",
+      "tokens": null,
+      "status": "reverted",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Setting-v2.txt",
+        "docs/describers.md:152"
+      ],
+      "why_it_matters": "The canonical L-KNOW-WHEN-TO-STOP case: one added paragraph dropped format 25/26 -> 21/26. The paragraph itself is gone, so the clearest worked example of a rule costing a rule cannot be inspected.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    },
+    {
+      "label": "describer_setting_v3",
+      "family": "describer_setting",
+      "parent": "describer_setting_v1",
+      "tokens": null,
+      "status": "superseded",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Setting-v3.txt",
+        "docs/describers.md:153"
+      ],
+      "why_it_matters": "The mechanical-gate attempt; 23/26. Called \"diagnostically decisive\" for removing [[SUBJECT NOT FOUND]] from the role.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    },
+    {
+      "label": "describer_setting_v4",
+      "family": "describer_setting",
+      "parent": "describer_setting_v3",
+      "tokens": null,
+      "status": "superseded",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Setting-v4.txt",
+        "docs/describers.md:154"
+      ],
+      "why_it_matters": "25/26, tying v5 while failing a DIFFERENT case -- half of the reproducibility pair that L-ONE-RUN-IS-A-SAMPLE rests on.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    },
+    {
+      "label": "describer_character_v1-precalibration",
+      "family": "describer_character",
+      "parent": null,
+      "tokens": null,
+      "status": "superseded",
+      "evidence": [
+        "reference/test_archive/REF2VA/Describer-Character-AgeDrift-BeforeCalibration.txt",
+        "docs/describers.md:60-63"
+      ],
+      "why_it_matters": "The closed age vocabulary WITHOUT the apparent-age spans. Proved a closed list alone was not enough to stop drift; the before/after pair is now half-missing.",
+      "file": null,
+      "md5_lf": null,
+      "bytes": null,
+      "lines": null,
+      "committed": false,
+      "git_paths": [],
+      "first_seen": null,
+      "last_seen": null,
+      "note": "MISSING -- no copy exists"
+    }
+  ]
+}

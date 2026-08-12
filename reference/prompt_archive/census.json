@@ -1,0 +1,3290 @@
+{
+  "commits": [
+    {
+      "commit": "4dce882",
+      "ct": 1786389313,
+      "date": "2026-08-10",
+      "subject": "initial commit"
+    },
+    {
+      "commit": "fa600e9",
+      "ct": 1786392899,
+      "date": "2026-08-10",
+      "subject": "Retire manual prompt versioning, point tests at current files"
+    },
+    {
+      "commit": "cf7d026",
+      "ct": 1786392919,
+      "date": "2026-08-10",
+      "subject": "Rename build/ to scripts/"
+    },
+    {
+      "commit": "6546344",
+      "ct": 1786392939,
+      "date": "2026-08-10",
+      "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+    },
+    {
+      "commit": "3daef42",
+      "ct": 1786394721,
+      "date": "2026-08-10",
+      "subject": "Fold dist/ into prompts/, restore v7 describer content"
+    },
+    {
+      "commit": "96ec6d7",
+      "ct": 1786394751,
+      "date": "2026-08-10",
+      "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+    },
+    {
+      "commit": "2497e60",
+      "ct": 1786395966,
+      "date": "2026-08-10",
+      "subject": "Move run_tests.py into scripts/"
+    },
+    {
+      "commit": "51b7c27",
+      "ct": 1786396024,
+      "date": "2026-08-10",
+      "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+    },
+    {
+      "commit": "c843e49",
+      "ct": 1786409308,
+      "date": "2026-08-10",
+      "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+    },
+    {
+      "commit": "68909d9",
+      "ct": 1786409320,
+      "date": "2026-08-10",
+      "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+    },
+    {
+      "commit": "a318781",
+      "ct": 1786410230,
+      "date": "2026-08-10",
+      "subject": "Fold fl2va.txt into the block/manifest build system"
+    },
+    {
+      "commit": "c6c1c73",
+      "ct": 1786417832,
+      "date": "2026-08-10",
+      "subject": "Add REF2VA architecture and the character describer role"
+    },
+    {
+      "commit": "ca78e37",
+      "ct": 1786424005,
+      "date": "2026-08-11",
+      "subject": "Rename describer test files to name the frame describer explicitly"
+    },
+    {
+      "commit": "24a5eb7",
+      "ct": 1786429502,
+      "date": "2026-08-11",
+      "subject": "Add the setting describer role and generalise the validator's role table"
+    },
+    {
+      "commit": "7620317",
+      "ct": 1786437703,
+      "date": "2026-08-11",
+      "subject": "Track the image inventory and REF2VA architecture in docs/"
+    },
+    {
+      "commit": "4478495",
+      "ct": 1786439724,
+      "date": "2026-08-11",
+      "subject": "Correct two content errors in the image inventory"
+    },
+    {
+      "commit": "89903d4",
+      "ct": 1786442649,
+      "date": "2026-08-11",
+      "subject": "Record the second image batch; all remaining gaps closed"
+    },
+    {
+      "commit": "ade0c3d",
+      "ct": 1786468203,
+      "date": "2026-08-11",
+      "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+    },
+    {
+      "commit": "6263279",
+      "ct": 1786468762,
+      "date": "2026-08-11",
+      "subject": "Cite lessons by stable slug instead of by number"
+    },
+    {
+      "commit": "5d308f0",
+      "ct": 1786469702,
+      "date": "2026-08-11",
+      "subject": "Move implementation history out of CLAUDE.md into docs/"
+    },
+    {
+      "commit": "f731b6a",
+      "ct": 1786470915,
+      "date": "2026-08-11",
+      "subject": "Add scripts/inventory.py; reactivate the door pair"
+    },
+    {
+      "commit": "e117792",
+      "ct": 1786471745,
+      "date": "2026-08-11",
+      "subject": "Migrate two details that only existed in the session-6 handoff"
+    },
+    {
+      "commit": "eada9dc",
+      "ct": 1786474160,
+      "date": "2026-08-11",
+      "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+    },
+    {
+      "commit": "c2914b3",
+      "ct": 1786475800,
+      "date": "2026-08-11",
+      "subject": "fixed an addressed extension normalization issue and references to it"
+    },
+    {
+      "commit": "07f049d",
+      "ct": 1786480152,
+      "date": "2026-08-11",
+      "subject": "Add the style describer, locked at v1"
+    },
+    {
+      "commit": "eefd2d1",
+      "ct": 1786483295,
+      "date": "2026-08-11",
+      "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+    },
+    {
+      "commit": "1d9dcbb",
+      "ct": 1786491229,
+      "date": "2026-08-11",
+      "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+    },
+    {
+      "commit": "4ba8656",
+      "ct": 1786499628,
+      "date": "2026-08-11",
+      "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+    },
+    {
+      "commit": "a70e729",
+      "ct": 1786500227,
+      "date": "2026-08-11",
+      "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+    },
+    {
+      "commit": "4166902",
+      "ct": 1786505963,
+      "date": "2026-08-11",
+      "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+    },
+    {
+      "commit": "a396cf0",
+      "ct": 1786508415,
+      "date": "2026-08-12",
+      "subject": "Point the describer version history at reference/retired/prompts/"
+    },
+    {
+      "commit": "e68be08",
+      "ct": 1786543782,
+      "date": "2026-08-12",
+      "subject": "Split describer_style into look and classify passes"
+    },
+    {
+      "commit": "41afd12",
+      "ct": 1786559191,
+      "date": "2026-08-12",
+      "subject": "adding certain reference folders to tracking"
+    },
+    {
+      "commit": "7b68815",
+      "ct": 1786559582,
+      "date": "2026-08-12",
+      "subject": "Actually track reference/retired, baselines and test_archive"
+    },
+    {
+      "commit": "b4191f4",
+      "ct": 1786563094,
+      "date": "2026-08-12",
+      "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+    }
+  ],
+  "states": [
+    {
+      "md5_norm": "563fbb9a6aa513fc281e7060432be732",
+      "bytes": 14458,
+      "lines": 130,
+      "md5_exact": [
+        "563fbb9a6aa513fc281e7060432be732"
+      ],
+      "names": [
+        "fl2va",
+        "fl2va_3daef42",
+        "fl2va_v3",
+        "v3n"
+      ],
+      "paths": [
+        ".claude/experiments/bloat/logs/fl2va_3daef42.txt",
+        ".claude/experiments/bloat/logs/fl2va_v3.txt",
+        ".claude/experiments/bloat/logs/v3n.txt",
+        "dist/fl2va.txt",
+        "dist/fl2va_v3.txt",
+        "prompts/fl2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/fl2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/fl2va_v3.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "dist/fl2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "dist/fl2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "dist/fl2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        }
+      ],
+      "families": [
+        "fl2va",
+        "fl2va_3daef42",
+        "v3n"
+      ],
+      "labels": [
+        "fl2va v3"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786558476,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "1bbc4fac1a449a85793997dc69468b83",
+      "bytes": 12993,
+      "lines": 128,
+      "md5_exact": [
+        "1bbc4fac1a449a85793997dc69468b83"
+      ],
+      "names": [
+        "fl2va_v1"
+      ],
+      "paths": [
+        ".claude/experiments/bloat/logs/fl2va_v1.txt",
+        "dist/fl2va_v1.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/fl2va_v1.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        }
+      ],
+      "families": [
+        "fl2va"
+      ],
+      "labels": [
+        "fl2va v1"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786558475,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "866dd46ab31c7a9124fd0be3d8ecd913",
+      "bytes": 14463,
+      "lines": 134,
+      "md5_exact": [
+        "866dd46ab31c7a9124fd0be3d8ecd913"
+      ],
+      "names": [
+        "fl2va_v2"
+      ],
+      "paths": [
+        ".claude/experiments/bloat/logs/fl2va_v2.txt",
+        "dist/fl2va_v2.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/fl2va_v2.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        }
+      ],
+      "families": [
+        "fl2va"
+      ],
+      "labels": [
+        "fl2va v2"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786558476,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "8e9b2e991b83f2942c65bef2f0f7c0e8",
+      "bytes": 15537,
+      "lines": 169,
+      "md5_exact": [
+        "89fec94e7d13ace88f8c416a5a1f0950",
+        "8e9b2e991b83f2942c65bef2f0f7c0e8"
+      ],
+      "names": [
+        "describer_frame",
+        "describer_frame_v7",
+        "frame_describer"
+      ],
+      "paths": [
+        "dist/frame_describer.txt",
+        "prompts/describer_frame.txt",
+        "prompts/describer_frame_v7.txt",
+        "reference/retired/prompts/describer_frame_v7.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/frame_describer.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v7.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "dist/frame_describer.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "dist/frame_describer.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "dist/frame_describer.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame",
+        "frame_describer"
+      ],
+      "labels": [
+        "describer_frame v7"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "d5b3cdb21004b26cec0411afb48a29ad",
+      "bytes": 12359,
+      "lines": 96,
+      "md5_exact": [
+        "4b8108723ecf876f808c357eb6179cfc",
+        "d5b3cdb21004b26cec0411afb48a29ad"
+      ],
+      "names": [
+        "i2va"
+      ],
+      "paths": [
+        "dist/i2va.txt",
+        "prompts/i2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/i2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "dist/i2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "dist/i2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "dist/i2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        },
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/i2va.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/i2va.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "i2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "622aa43837ead303507d32c024e86d03",
+      "bytes": 11003,
+      "lines": 87,
+      "md5_exact": [
+        "622aa43837ead303507d32c024e86d03",
+        "96d6fc420c06e9601ca524d527e3b2c1"
+      ],
+      "names": [
+        "l2va"
+      ],
+      "paths": [
+        "dist/l2va.txt",
+        "prompts/l2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/l2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "dist/l2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "dist/l2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "dist/l2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        },
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/l2va.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/l2va.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "l2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "cc48c247216227c14a23447587b1e230",
+      "bytes": 8687,
+      "lines": 82,
+      "md5_exact": [
+        "9a78f393d24b16664be9398178c6d53a",
+        "cc48c247216227c14a23447587b1e230"
+      ],
+      "names": [
+        "t2va"
+      ],
+      "paths": [
+        "dist/t2va.txt",
+        "prompts/t2va.txt",
+        "reference/pre_build_env_canonical_prompts/t2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "dist/t2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "dist/t2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "dist/t2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "dist/t2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        },
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/t2va.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/t2va.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "t2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "900b383fa14c5259cf8a80ed8b76fd8d",
+      "bytes": 8763,
+      "lines": 121,
+      "md5_exact": [
+        "70b7f5e1c480252ae5b4fa521b5debec",
+        "900b383fa14c5259cf8a80ed8b76fd8d"
+      ],
+      "names": [
+        "describer_frame",
+        "describer_frame_v1"
+      ],
+      "paths": [
+        "prompts/describer_frame.txt",
+        "reference/retired/prompts/describer_frame_v1.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v1"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "af06ee66c3e361f7eccf918206bd09cd",
+      "bytes": 10867,
+      "lines": 131,
+      "md5_exact": [
+        "71c365f340b1893896b305b74bac4708",
+        "af06ee66c3e361f7eccf918206bd09cd"
+      ],
+      "names": [
+        "describer_frame_v2"
+      ],
+      "paths": [
+        "prompts/describer_frame_v2.txt",
+        "reference/retired/prompts/describer_frame_v2.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v2.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v2"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "684acc768be80473970e77ab26d71a60",
+      "bytes": 11968,
+      "lines": 137,
+      "md5_exact": [
+        "684acc768be80473970e77ab26d71a60",
+        "eb59d91fd19c47080bf0f4faff0c8fb8"
+      ],
+      "names": [
+        "describer_frame_v3"
+      ],
+      "paths": [
+        "prompts/describer_frame_v3.txt",
+        "reference/retired/prompts/describer_frame_v3.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v3.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v3"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "ee78489105e3cf468c7769b06d9dec99",
+      "bytes": 13327,
+      "lines": 152,
+      "md5_exact": [
+        "100b15d6f56ac739c6b0f184f1434b84",
+        "ee78489105e3cf468c7769b06d9dec99"
+      ],
+      "names": [
+        "describer_frame_v4"
+      ],
+      "paths": [
+        "prompts/describer_frame_v4.txt",
+        "reference/retired/prompts/describer_frame_v4.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v4.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v4"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "87ab10504f8829ed0f8569fe52af14a5",
+      "bytes": 13071,
+      "lines": 152,
+      "md5_exact": [
+        "87ab10504f8829ed0f8569fe52af14a5",
+        "a876810611346960649e55b8df32d38f"
+      ],
+      "names": [
+        "describer_frame_v5"
+      ],
+      "paths": [
+        "prompts/describer_frame_v5.txt",
+        "reference/retired/prompts/describer_frame_v5.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v5.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v5"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "95a4c7ab1830a1b1b7691af6fd53d502",
+      "bytes": 15217,
+      "lines": 167,
+      "md5_exact": [
+        "44b838fa460ac46a14b931ea82d7ec4d",
+        "95a4c7ab1830a1b1b7691af6fd53d502"
+      ],
+      "names": [
+        "describer_frame_v6"
+      ],
+      "paths": [
+        "prompts/describer_frame_v6.txt",
+        "reference/retired/prompts/describer_frame_v6.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame_v6.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [
+        "describer_frame v6"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "dc458d9a46d5d2b5a9f8120cf265fe67",
+      "bytes": 8416,
+      "lines": 96,
+      "md5_exact": [
+        "94ad601efbfd3bdc67e8d0029dfca392",
+        "dc458d9a46d5d2b5a9f8120cf265fe67"
+      ],
+      "names": [
+        "fl2va_delta",
+        "fl2va_delta_v1"
+      ],
+      "paths": [
+        "prompts/fl2va_delta.txt",
+        "prompts/fl2va_delta_v1.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta_v1.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        },
+        {
+          "commit": "fa600e9",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786392899,
+          "subject": "Retire manual prompt versioning, point tests at current files"
+        },
+        {
+          "commit": "cf7d026",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786392919,
+          "subject": "Rename build/ to scripts/"
+        },
+        {
+          "commit": "6546344",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786392939,
+          "subject": "Rewrite README as a project overview; drop dead gitignore entries"
+        },
+        {
+          "commit": "3daef42",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786394721,
+          "subject": "Fold dist/ into prompts/, restore v7 describer content"
+        },
+        {
+          "commit": "96ec6d7",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786394751,
+          "subject": "Add scripts/archive_run.py to automate test-run archiving/cleanup"
+        },
+        {
+          "commit": "2497e60",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786395966,
+          "subject": "Move run_tests.py into scripts/"
+        },
+        {
+          "commit": "51b7c27",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786396024,
+          "subject": "Support JPG (and other formats) in run_tests.py's image encoding"
+        },
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        },
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "fl2va_delta"
+      ],
+      "labels": [
+        "fl2va_delta v1"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "cfd0a5572a63fcdb42e5a47c256c4de0",
+      "bytes": 10508,
+      "lines": 106,
+      "md5_exact": [
+        "cfd0a5572a63fcdb42e5a47c256c4de0"
+      ],
+      "names": [
+        "fl2va_delta_v2"
+      ],
+      "paths": [
+        "prompts/fl2va_delta_v2.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta_v2.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        }
+      ],
+      "families": [
+        "fl2va_delta"
+      ],
+      "labels": [
+        "fl2va_delta v2"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786389313,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "6382a47e931ea3fd633da592b905ae64",
+      "bytes": 9564,
+      "lines": 101,
+      "md5_exact": [
+        "6382a47e931ea3fd633da592b905ae64"
+      ],
+      "names": [
+        "fl2va_delta_v3"
+      ],
+      "paths": [
+        "prompts/fl2va_delta_v3.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta_v3.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        }
+      ],
+      "families": [
+        "fl2va_delta"
+      ],
+      "labels": [
+        "fl2va_delta v3"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786389313,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "e987aebd5609545eccd197ec2c857e60",
+      "bytes": 9929,
+      "lines": 103,
+      "md5_exact": [
+        "e987aebd5609545eccd197ec2c857e60"
+      ],
+      "names": [
+        "fl2va_delta_v4"
+      ],
+      "paths": [
+        "prompts/fl2va_delta_v4.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4dce882",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va_delta_v4.txt",
+          "ct": 1786389313,
+          "subject": "initial commit"
+        }
+      ],
+      "families": [
+        "fl2va_delta"
+      ],
+      "labels": [
+        "fl2va_delta v4"
+      ],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786389313,
+      "last_ct": 1786389313,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "a9613d8d0addc35a442b476fb6449c52",
+      "bytes": 15547,
+      "lines": 169,
+      "md5_exact": [
+        "633d3f6a5f466473792599256bba450e",
+        "a9613d8d0addc35a442b476fb6449c52"
+      ],
+      "names": [
+        "describer_frame"
+      ],
+      "paths": [
+        "prompts/describer_frame.txt"
+      ],
+      "commits": [
+        {
+          "commit": "c843e49",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786409308,
+          "subject": "Relax describer's position/pose rules; add clothing-label consistency check"
+        },
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_frame"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786404424,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "54eaecfd473c5479ab11a6289e7e9d6b",
+      "bytes": 14735,
+      "lines": 131,
+      "md5_exact": [
+        "12fb25491799281cae65924518bebb41",
+        "54eaecfd473c5479ab11a6289e7e9d6b"
+      ],
+      "names": [
+        "curn",
+        "fl2va",
+        "fl2va_68909d9"
+      ],
+      "paths": [
+        ".claude/experiments/bloat/logs/curn.txt",
+        ".claude/experiments/bloat/logs/fl2va_68909d9.txt",
+        "prompts/fl2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "68909d9",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786409320,
+          "subject": "Add deterministic FL2VA/I2VA/L2VA alignment lines and FL2VA landing clause; default seed=0"
+        },
+        {
+          "commit": "a318781",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786410230,
+          "subject": "Fold fl2va.txt into the block/manifest build system"
+        },
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "curn",
+        "fl2va",
+        "fl2va_68909d9"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786409320,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "99206cb96cad12553d3efc76b62ecc22",
+      "bytes": 10074,
+      "lines": 98,
+      "md5_exact": [
+        "8e48f1cbd7199429ebe085ccea2d7900",
+        "99206cb96cad12553d3efc76b62ecc22"
+      ],
+      "names": [
+        "describer_character"
+      ],
+      "paths": [
+        "prompts/describer_character.txt"
+      ],
+      "commits": [
+        {
+          "commit": "c6c1c73",
+          "date": "2026-08-10",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786417832,
+          "subject": "Add REF2VA architecture and the character describer role"
+        },
+        {
+          "commit": "ca78e37",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786424005,
+          "subject": "Rename describer test files to name the frame describer explicitly"
+        },
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_character"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786416528,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "047eb3d74a238cab4d5249a6835cfd27",
+      "bytes": 12565,
+      "lines": 101,
+      "md5_exact": [
+        "047eb3d74a238cab4d5249a6835cfd27",
+        "e99cdf73f19a819564beeb6d3e8e8a37"
+      ],
+      "names": [
+        "describer_setting"
+      ],
+      "paths": [
+        "prompts/describer_setting.txt"
+      ],
+      "commits": [
+        {
+          "commit": "24a5eb7",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786429502,
+          "subject": "Add the setting describer role and generalise the validator's role table"
+        },
+        {
+          "commit": "7620317",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786437703,
+          "subject": "Track the image inventory and REF2VA architecture in docs/"
+        },
+        {
+          "commit": "4478495",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786439724,
+          "subject": "Correct two content errors in the image inventory"
+        },
+        {
+          "commit": "89903d4",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786442649,
+          "subject": "Record the second image batch; all remaining gaps closed"
+        },
+        {
+          "commit": "ade0c3d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786468203,
+          "subject": "Reorganize the image inventory and adopt a closed medium vocabulary"
+        },
+        {
+          "commit": "6263279",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786468762,
+          "subject": "Cite lessons by stable slug instead of by number"
+        },
+        {
+          "commit": "5d308f0",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786469702,
+          "subject": "Move implementation history out of CLAUDE.md into docs/"
+        },
+        {
+          "commit": "f731b6a",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786470915,
+          "subject": "Add scripts/inventory.py; reactivate the door pair"
+        },
+        {
+          "commit": "e117792",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786471745,
+          "subject": "Migrate two details that only existed in the session-6 handoff"
+        },
+        {
+          "commit": "eada9dc",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786474160,
+          "subject": "fixed a minor filename typo / inconsistancy and all references to it"
+        },
+        {
+          "commit": "c2914b3",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786475800,
+          "subject": "fixed an addressed extension normalization issue and references to it"
+        },
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        },
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        },
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_setting"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786428480,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "b9bd35c4b33f06fbdb8892347a4045f9",
+      "bytes": 12670,
+      "lines": 113,
+      "md5_exact": [
+        "b9bd35c4b33f06fbdb8892347a4045f9"
+      ],
+      "names": [
+        "describer_style"
+      ],
+      "paths": [
+        "prompts/describer_style.txt"
+      ],
+      "commits": [
+        {
+          "commit": "07f049d",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786480152,
+          "subject": "Add the style describer, locked at v1"
+        },
+        {
+          "commit": "eefd2d1",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786483295,
+          "subject": "Sweep the full corpus; the style misses are a vocabulary defect"
+        },
+        {
+          "commit": "1d9dcbb",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786491229,
+          "subject": "Add score.py so the contested/unscorable exclusion is enforced"
+        },
+        {
+          "commit": "4ba8656",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786499628,
+          "subject": "retired superseded describer_style.json, replaced by describer_style_targeted.json"
+        }
+      ],
+      "families": [
+        "describer_style"
+      ],
+      "labels": [],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786480152,
+      "last_ct": 1786499628,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "310c10ab09dd167915866e3cb1b29450",
+      "bytes": 17286,
+      "lines": 141,
+      "md5_exact": [
+        "310c10ab09dd167915866e3cb1b29450"
+      ],
+      "names": [
+        "describer_style"
+      ],
+      "paths": [
+        "prompts/describer_style.txt"
+      ],
+      "commits": [
+        {
+          "commit": "a70e729",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786500227,
+          "subject": "Rebuild the style vocabulary on three axes; describer_style v2"
+        }
+      ],
+      "families": [
+        "describer_style"
+      ],
+      "labels": [],
+      "in_worktree": false,
+      "provenance_only": false,
+      "first_ct": 1786500227,
+      "last_ct": 1786500227,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "ee43018093d89c57606367d1547032c3",
+      "bytes": 16673,
+      "lines": 138,
+      "md5_exact": [
+        "ee43018093d89c57606367d1547032c3"
+      ],
+      "names": [
+        "describer_style"
+      ],
+      "paths": [
+        "prompts/describer_style.txt"
+      ],
+      "commits": [
+        {
+          "commit": "4166902",
+          "date": "2026-08-11",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786505963,
+          "subject": "Compress describer_style under the token budget; gate enriched tests on movement"
+        },
+        {
+          "commit": "a396cf0",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786508415,
+          "subject": "Point the describer version history at reference/retired/prompts/"
+        },
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_style"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786504572,
+      "last_ct": 1786563094,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "0927364a3093ffd92ebe91e5d2727ba7",
+      "bytes": 11631,
+      "lines": 107,
+      "md5_exact": [
+        "0927364a3093ffd92ebe91e5d2727ba7"
+      ],
+      "names": [
+        "describer_style_class"
+      ],
+      "paths": [
+        "prompts/describer_style_class.txt"
+      ],
+      "commits": [
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_style_class"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786536234,
+      "last_ct": 1786563094,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "91808c4a25f8c9886342052bfed13af5",
+      "bytes": 8471,
+      "lines": 68,
+      "md5_exact": [
+        "91808c4a25f8c9886342052bfed13af5"
+      ],
+      "names": [
+        "describer_style_look"
+      ],
+      "paths": [
+        "prompts/describer_style_look.txt"
+      ],
+      "commits": [
+        {
+          "commit": "e68be08",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786543782,
+          "subject": "Split describer_style into look and classify passes"
+        },
+        {
+          "commit": "41afd12",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786559191,
+          "subject": "adding certain reference folders to tracking"
+        },
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "describer_style_look"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786536159,
+      "last_ct": 1786563094,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "f7559d7716b59cb19e3a59028a606d15",
+      "bytes": 14864,
+      "lines": 131,
+      "md5_exact": [
+        "1405734caa969635bb38f5ce06f39c2b",
+        "f7559d7716b59cb19e3a59028a606d15"
+      ],
+      "names": [
+        "fl2va_v4",
+        "v4n"
+      ],
+      "paths": [
+        ".claude/experiments/bloat/logs/v4n.txt",
+        "reference/retired/prompts/fl2va_v4.txt"
+      ],
+      "commits": [
+        {
+          "commit": "7b68815",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786559582,
+          "subject": "Actually track reference/retired, baselines and test_archive"
+        },
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "fl2va",
+        "v4n"
+      ],
+      "labels": [
+        "fl2va v4"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786344981,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "d0fa731f45c2d06cc4576edc7ebc7cea",
+      "bytes": 12360,
+      "lines": 97,
+      "md5_exact": [
+        "d0fa731f45c2d06cc4576edc7ebc7cea",
+        "fb01354c563b6d297e23e3d869fe2284"
+      ],
+      "names": [
+        "i2va"
+      ],
+      "paths": [
+        "reference/pre_build_env_canonical_prompts/i2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "i2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    },
+    {
+      "md5_norm": "b3c8f88991a723b53ec424ae12a08306",
+      "bytes": 10598,
+      "lines": 82,
+      "md5_exact": [
+        "3a60083d1fa71303e8209ddc3feb7591",
+        "b3c8f88991a723b53ec424ae12a08306"
+      ],
+      "names": [
+        "l2va"
+      ],
+      "paths": [
+        "reference/pre_build_env_canonical_prompts/l2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "b4191f4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786563094,
+          "subject": "fixed an innaccurate referene; brought pre-build-env prompts (initial canonical state) into tracking"
+        }
+      ],
+      "families": [
+        "l2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786346263,
+      "last_ct": 1786563094,
+      "crlf_variants": 2
+    }
+  ]
+}
