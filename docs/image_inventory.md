@@ -1708,7 +1708,3 @@ frames. What remains is preference rather than obstruction:
    image is still either animation artwork, vector work, or a still life. There is no figureless
    `3D CG`, `comic` or `stop-motion` frame, so the "does the idiom tie-break survive with no
    figure" question is only answerable inside two media.
-
-**A gap of a different kind, and the most likely next thing to bite:** the corpus has no way to
-express **multiple acceptable answers**, which the session-15 anime-idiom cases need. That is a
-harness limitation rather than a collection gap — see "Multiple acceptable answers" above.
