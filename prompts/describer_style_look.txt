@@ -25,14 +25,6 @@ WHAT YOU DESCRIBE
 - Small factual detail about the marks is welcome. Invention is not. Describe what the surface actually shows.
 - Look at the marks. Do not write what a medium usually looks like; write what this image looks like.
 
-PRODUCTION METHOD IS NOT A MARK
-- "digital", "vector", "hand-drawn", "traditional" and "computer-generated" name how a file was PRODUCED. They are not marks. Clean, uniform linework implies none of them: painted animation cels, screen prints and vector art all give even outlines and flat unmodulated fills. "clean digital vector outlines" asserts something the surface does not show.
-- Default to the marks alone: "uniform black outlines of medium weight, flat unmodulated colour fills, no interior texture".
-- Name a production method ONLY when a tell in THIS image supports it, and name that tell in the same breath:
-  - physical origin: film grain, scan lines, halation, slight colour bleeding or misregistration, paint texture inside the fills, dust and scratches, line weight that varies stroke to stroke.
-  - digital origin: mathematically exact curves, perfectly even line weight, perfectly flat fills, clean anti-aliased edges, no grain of any kind.
-- With no such tell, say nothing about origin. An accurate mark description with no origin claim beats an origin claim you cannot support.
-
 CONTENT IS NOT STYLE — THE ONE RULE THIS RECORD LIVES BY
 - Do NOT describe what the image depicts. No people, animals, objects, places, garments, actions, events or printed words. This record will be applied to a completely different scene, so anything about this scene's subject matter is wrong here.
 - You MAY refer to depicted things GENERICALLY when a mark cannot be described without them: "the figures", "the figure", "the foreground objects", "the background", "the sky area". Never identify them.
