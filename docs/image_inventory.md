@@ -708,10 +708,10 @@ the same cell. `people` already records them; the age axis stays human-only.
 
 | image | medium | sub | idiom | treatment | detail | int/ext | people | age | sets | added | flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `annie1` | drawing | ink | anime | colour | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | teenager, young adult | annie | s7a | text, franchise, corr |
-| `annie2` | photograph | none | realist | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | young adult, n/d | annie | s7a | franchise, nested |
-| `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | young adult | annie | s7a-crop | franchise, derived |
-| `annie3` | comic | digital | western toon | colour | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | teenager, young adult, adult | annie | s7a | text, franchise, corr |
+| `annie1` | drawing | ink | anime | colour | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | teenager | annie | s7a | text, franchise, corr |
+| `annie2` | photograph | none | realist | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | teenager, n/d | annie | s7a | franchise, nested |
+| `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | teenager | annie | s7a-crop | franchise, derived |
+| `annie3` | comic | digital | western toon | colour | 4 panels | ext | **3 distinct**: 1 girl, 2 costumed heroes (a boy, a woman) | teenager, young adult | annie | s7a | text, franchise, corr |
 | `annie3_panel1` | comic | digital | western toon | colour | leftmost panel | ext | 1 girl + 2 costumed heroes | teenager, young adult | annie | s7a-crop | text, franchise, derived |
 | `april_1987` | 2D cel | none | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young adult woman + 1 humanoid turtle | young adult | april | s15 | franchise |
 | `april_1987_figure` | stop-motion | figure | dimensional toon | colour | **a photograph of moulded plastic figures on a shelf**, not an animation frame — classified by the objects, see tie-break 1 | int | 5 figures (1 woman, 4 humanoid turtles) + 1 rat figure behind | n/a | april | s15 | text, franchise |
