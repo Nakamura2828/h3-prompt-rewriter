@@ -23,8 +23,8 @@ equally at every level, so the DIFFERENCE against the control is still meaningfu
 absolute count is not. Character length is reported alongside for exactly that reason -- it is
 biased differently, so agreement between the two is worth something.
 
-  python .claude/experiments/bloat2/items.py <run.txt>
-  python .claude/experiments/bloat2/items.py <run.txt> --baseline <L0.txt> --json
+  python reference/experiments/bloat2/items.py <run.txt>
+  python reference/experiments/bloat2/items.py <run.txt> --baseline <L0.txt> --json
 """
 import argparse
 import json

@@ -3,8 +3,8 @@
 
 Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration.md
 
-  python .claude/experiments/bloat/collect.py               # tables to stdout
-  python .claude/experiments/bloat/collect.py --json        # machine-readable
+  python reference/experiments/bloat/collect.py               # tables to stdout
+  python reference/experiments/bloat/collect.py --json        # machine-readable
 
 Format verdicts come from the repo's own unmodified validate.py, invoked as a subprocess:
 

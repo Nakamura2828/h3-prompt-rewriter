@@ -7,7 +7,7 @@ The whole design rests on two claims -- that TOTAL tokens are constant across ev
 only the live/inert mix moves, and that the noise floor is small enough for movement to mean
 anything. Both are checkable, so they are checked here rather than asserted in the report.
 
-  python .claude/experiments/bloat2/verify2.py
+  python reference/experiments/bloat2/verify2.py
 
 1. PURE INSERTION. Every padded prompt differs from its source by exactly the intended inserted
    blocks and nothing else: no line of the original added, removed, reordered or altered. Two
@@ -40,7 +40,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 assert ROOT.name == 'h3-prompt-rewriter' and (ROOT / '.git').is_dir(), \
     f'ROOT resolved to {ROOT} -- refusing to run outside the project'
-ROUND1 = ROOT / '.claude' / 'experiments' / 'bloat'
+ROUND1 = ROOT / 'reference' / 'experiments' / 'bloat'
 
 sys.path.insert(0, str(ROOT / 'scripts'))
 from token_budget import count                          # noqa: E402

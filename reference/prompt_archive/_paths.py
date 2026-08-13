@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Locate the repo root by walking up, not by counting directory levels.
 
-These scripts were written in `.claude/experiments/prompt_archive/` and now live in
+These scripts were written in `reference/prompt_archive/` and now live in
 `reference/prompt_archive/`, which is one level shallower. A hardcoded `parents[2]` was correct
 in the first location and silently resolved to a directory ABOVE the repo in the second --
 `git ls-tree` then ran outside the repo and the token counts came from nowhere at all.

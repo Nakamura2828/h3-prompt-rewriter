@@ -22,7 +22,7 @@ mechanically and unambiguously are included -- a rule like "write the colour bef
 needs judgement and is left out rather than guessed at. So this UNDERCOUNTS violations, which is
 the safe direction: a violation reported here is real.
 
-  python .claude/experiments/bloat2/compliance.py
+  python reference/experiments/bloat2/compliance.py
 """
 import json
 import pathlib

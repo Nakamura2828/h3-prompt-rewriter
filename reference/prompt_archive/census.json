@@ -232,9 +232,9 @@
         "v3n"
       ],
       "paths": [
-        ".claude/experiments/bloat/logs/fl2va_3daef42.txt",
-        ".claude/experiments/bloat/logs/fl2va_v3.txt",
-        ".claude/experiments/bloat/logs/v3n.txt",
+        "reference/experiments/bloat/logs/fl2va_3daef42.txt",
+        "reference/experiments/bloat/logs/fl2va_v3.txt",
+        "reference/experiments/bloat/logs/v3n.txt",
         "dist/fl2va.txt",
         "dist/fl2va_v3.txt",
         "prompts/fl2va.txt"
@@ -336,7 +336,7 @@
         "fl2va_v1"
       ],
       "paths": [
-        ".claude/experiments/bloat/logs/fl2va_v1.txt",
+        "reference/experiments/bloat/logs/fl2va_v1.txt",
         "dist/fl2va_v1.txt"
       ],
       "commits": [
@@ -371,7 +371,7 @@
         "fl2va_v2"
       ],
       "paths": [
-        ".claude/experiments/bloat/logs/fl2va_v2.txt",
+        "reference/experiments/bloat/logs/fl2va_v2.txt",
         "dist/fl2va_v2.txt"
       ],
       "commits": [
@@ -2440,8 +2440,8 @@
         "fl2va_68909d9"
       ],
       "paths": [
-        ".claude/experiments/bloat/logs/curn.txt",
-        ".claude/experiments/bloat/logs/fl2va_68909d9.txt",
+        "reference/experiments/bloat/logs/curn.txt",
+        "reference/experiments/bloat/logs/fl2va_68909d9.txt",
         "prompts/fl2va.txt"
       ],
       "commits": [
@@ -3327,7 +3327,7 @@
         "v4n"
       ],
       "paths": [
-        ".claude/experiments/bloat/logs/v4n.txt",
+        "reference/experiments/bloat/logs/v4n.txt",
         "reference/retired/prompts/fl2va_v4.txt"
       ],
       "commits": [

@@ -7,7 +7,7 @@ The whole experiment rests on one claim -- that the ONLY thing varying across ru
 system-prompt length -- and on the noise floor being small enough for movement to mean
 anything. Both are checkable, so they are checked here rather than asserted in the report.
 
-  python .claude/experiments/bloat/verify.py
+  python reference/experiments/bloat/verify.py
 
 1. PURE INSERTION. Every padded prompt must differ from its source by exactly one inserted
    block and nothing else: no line of the original added, removed, reordered or altered. If

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Assemble reference/prompt_archive/ from census.json + tokens.json + the curated table below.
 
-  python .claude/experiments/prompt_archive/build_archive.py            # build
-  python .claude/experiments/prompt_archive/build_archive.py --dry-run
+  python reference/prompt_archive/build_archive.py            # build
+  python reference/prompt_archive/build_archive.py --dry-run
 
 Regenerable by design: census.py and measure.py derive every fact mechanically, and this file
 holds only the decisions a script cannot make -- what a state is CALLED, what it descends from,
@@ -72,7 +72,7 @@ CURATED = {
                    'DEAD BRANCH. One line added to v3 (+92 tokens) requiring every user action '
                    'to survive into the output. Reverted in session 3 for shedding content. '
                    'Session 13 re-ran v3 vs v4 head-to-head and the failure DID NOT '
-                   'REPLICATE -- see .claude/experiments/bloat/REPORT.md sec 6a. Existed only '
+                   'REPLICATE -- see reference/experiments/bloat/REPORT.md sec 6a. Existed only '
                    'in the user\'s Downloads until 2026-08-12.'),
     '54eaecfd47': ('fl2va_v5', 'live', 'fl2va_v3',
                    'LABEL ASSIGNED BY THIS ARCHIVE -- the project never numbered it. Descends '

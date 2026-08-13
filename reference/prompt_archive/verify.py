@@ -34,7 +34,7 @@ def find_root(start):
     """Walk up to the repo root, rather than counting directory levels.
 
     Counting levels breaks the moment the archive is moved, which it is designed to be:
-    it is built in .claude/experiments/ and lives in reference/. Both locations must work.
+    it is built in reference/experiments/ and lives in reference/. Both locations must work.
     """
     for d in [start, *start.parents]:
         if (d / 'prompts').is_dir() and (d / 'scripts').is_dir():

@@ -7,15 +7,15 @@ The one question is where format adherence breaks as a function of system-prompt
 the prompt's logic held constant. So the only thing this script is allowed to change is length:
 it inserts filler at an existing section boundary and never edits a line of the original.
 
-  python .claude/experiments/bloat/pad.py            # build everything in PLAN
-  python .claude/experiments/bloat/pad.py --verify   # re-count what is already on disk
+  python reference/experiments/bloat/pad.py            # build everything in PLAN
+  python reference/experiments/bloat/pad.py --verify   # re-count what is already on disk
 
 Counts come from the live tokenizer via scripts/token_budget.py's count(), never estimated
 from characters -- that proxy fails badly on this material (L-PROMPT-TOKEN-BUDGET). Per-unit
 counts are cached in .tokcache.json so a rebuild is a handful of HTTP calls rather than
 thousands; the cache is keyed on the exact text, so it cannot go stale silently.
 
-NOTHING OUTSIDE .claude/experiments/bloat/ IS WRITTEN. Source prompts are read only.
+NOTHING OUTSIDE reference/experiments/bloat/ IS WRITTEN. Source prompts are read only.
 """
 import io
 import json

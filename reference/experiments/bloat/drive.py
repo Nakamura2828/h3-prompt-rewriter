@@ -3,9 +3,9 @@
 
 Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration.md
 
-  python .claude/experiments/bloat/drive.py base_1 base_2
-  python .claude/experiments/bloat/drive.py a_end_3800 a_end_3900 a_end_4000 ...
-  python .claude/experiments/bloat/drive.py img            # secondary, image arm
+  python reference/experiments/bloat/drive.py base_1 base_2
+  python reference/experiments/bloat/drive.py a_end_3800 a_end_3900 a_end_4000 ...
+  python reference/experiments/bloat/drive.py img            # secondary, image arm
 
 The handoff's OVERRIDING RULE is "if it gets weird, stop and wait" -- and it outranks finishing
 the experiment. That rule is unenforceable by good intentions across a 26-run unattended batch,

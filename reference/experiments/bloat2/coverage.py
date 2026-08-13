@@ -27,8 +27,8 @@ lost upstream, since nothing in the composer's input corroborates it -- so it sh
 at every level. If a level makes it appear, that is real signal; if p1 is the only mover, be
 suspicious.
 
-  python .claude/experiments/bloat2/coverage.py <run.txt> --prefix c_L0_
-  python .claude/experiments/bloat2/coverage.py <run.txt> --all --json
+  python reference/experiments/bloat2/coverage.py <run.txt> --prefix c_L0_
+  python reference/experiments/bloat2/coverage.py <run.txt> --all --json
 """
 import argparse
 import json

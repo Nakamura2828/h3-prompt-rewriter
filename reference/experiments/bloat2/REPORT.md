@@ -567,16 +567,16 @@ Everything kept; every number above is re-derivable from the run files.
 throughout, so the repo's `runs/` is untouched. Round 1's directory was read from — `filler_a.txt`,
 `signature.py`, `split_run.py`, and its stored runs — and **never written to**, including its
 `state.json`. `archive_run.py` was not invoked. No commit was made. `git status` should show only
-the untracked `.claude/experiments/bloat2/` tree, since `.claude/` is gitignored.
+the untracked `reference/experiments/bloat2/` tree, since `.claude/` is gitignored.
 
 ## Reproducing
 
 ```bash
-python .claude/experiments/bloat2/pad2.py         # 18 padded prompts, +/-25 on both axes
-python .claude/experiments/bloat2/verify2.py      # six instrument checks
-python .claude/experiments/bloat2/gen_cases2.py   # 12 case files
-python .claude/experiments/bloat2/drive2.py s_L0 s_L0b            # the noise floor first
-python .claude/experiments/bloat2/drive2.py s_R2700 ... f_img     # the ladders
-python .claude/experiments/bloat2/collect2.py     # the tables in § 2
-python .claude/experiments/bloat2/compliance.py   # the table in § 5
+python reference/experiments/bloat2/pad2.py         # 18 padded prompts, +/-25 on both axes
+python reference/experiments/bloat2/verify2.py      # six instrument checks
+python reference/experiments/bloat2/gen_cases2.py   # 12 case files
+python reference/experiments/bloat2/drive2.py s_L0 s_L0b            # the noise floor first
+python reference/experiments/bloat2/drive2.py s_R2700 ... f_img     # the ladders
+python reference/experiments/bloat2/collect2.py     # the tables in § 2
+python reference/experiments/bloat2/compliance.py   # the table in § 5
 ```

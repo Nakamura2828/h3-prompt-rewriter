@@ -3,9 +3,9 @@
 
 Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
 
-  python .claude/experiments/bloat2/drive2.py s_L0 s_L0b
-  python .claude/experiments/bloat2/drive2.py s_R2700 s_R3100 s_R3400 s_R3800
-  python .claude/experiments/bloat2/drive2.py f_img
+  python reference/experiments/bloat2/drive2.py s_L0 s_L0b
+  python reference/experiments/bloat2/drive2.py s_R2700 s_R3100 s_R3400 s_R3800
+  python reference/experiments/bloat2/drive2.py f_img
 
 Round 1's driver, unchanged in substance. The handoff's rule is "if it gets weird, stop and
 wait", and it outranks finishing the experiment. That is unenforceable by good intentions across

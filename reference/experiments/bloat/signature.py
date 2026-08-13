@@ -29,8 +29,8 @@ in this file rather than by editing validate.py:
 Also flagged, because the handoff makes them stop conditions rather than results: empty output,
 and runaway output near max_tokens.
 
-  python .claude/experiments/bloat/signature.py <run.txt> --role setting --baseline <base.txt>
-  python .claude/experiments/bloat/signature.py <run.txt> --h3 --baseline <base.txt> --json
+  python reference/experiments/bloat/signature.py <run.txt> --role setting --baseline <base.txt>
+  python reference/experiments/bloat/signature.py <run.txt> --h3 --baseline <base.txt> --json
 """
 import argparse
 import difflib

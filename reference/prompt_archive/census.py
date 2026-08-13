@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Census every distinct system-prompt state that exists anywhere in this project.
 
-  python .claude/experiments/prompt_archive/census.py            readable report
-  python .claude/experiments/prompt_archive/census.py --json      machine-readable
+  python reference/prompt_archive/census.py            readable report
+  python reference/prompt_archive/census.py --json      machine-readable
 
 Two sources, both inside the project, per the standing scope limit:
 
@@ -49,7 +49,7 @@ PROMPT_PATH = re.compile(
 # Extra working-tree files to hash for provenance matching only -- never archived as states
 # in their own right. These are the copies the bloat experiment pulled out of git history,
 # and the point is to identify what they actually were.
-PROVENANCE_ONLY = ['.claude/experiments/bloat/logs']
+PROVENANCE_ONLY = ['reference/experiments/bloat/logs']
 
 VER = re.compile(r'^(?P<family>.+?)_v(?P<num>\d+)$')
 

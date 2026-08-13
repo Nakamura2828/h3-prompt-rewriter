@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Token-count every distinct prompt state found by census.py.
 
-  python .claude/experiments/prompt_archive/measure.py
+  python reference/prompt_archive/measure.py
 
 Counts come from scripts/token_budget.py's `count` -- the live llama-server tokenizer -- so
 they are directly comparable with every number in L-PROMPT-TOKEN-BUDGET, token_budget.py's

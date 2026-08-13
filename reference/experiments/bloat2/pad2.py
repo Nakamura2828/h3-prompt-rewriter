@@ -17,13 +17,13 @@ At L0 the rules block is EMPTY, so the L0 file is exactly round 1's a_end 5,000 
 asserts that byte-for-byte; if it holds, the L0 run is also directly comparable with round 1's
 stored outputs, which is a free cross-session check on the server.
 
-  python .claude/experiments/bloat2/pad2.py            # build everything in PLAN
-  python .claude/experiments/bloat2/pad2.py --verify   # re-count what is already on disk
+  python reference/experiments/bloat2/pad2.py            # build everything in PLAN
+  python reference/experiments/bloat2/pad2.py --verify   # re-count what is already on disk
 
 Counts come from the live tokenizer via scripts/token_budget.py's count(), never estimated from
 characters. Per-unit costs are cached in .tokcache.json, keyed on the exact text.
 
-NOTHING OUTSIDE .claude/experiments/bloat2/ IS WRITTEN. Source prompts and round 1's directory
+NOTHING OUTSIDE reference/experiments/bloat2/ IS WRITTEN. Source prompts and round 1's directory
 are read only.
 """
 import io
@@ -37,7 +37,7 @@ ROOT = HERE.parents[2]                      # repo root
 # project's PARENT folder. Fail loudly here rather than write somewhere unexpected.
 assert ROOT.name == 'h3-prompt-rewriter' and (ROOT / '.git').is_dir(), \
     f'ROOT resolved to {ROOT} -- refusing to run outside the project'
-ROUND1 = ROOT / '.claude' / 'experiments' / 'bloat'      # READ ONLY
+ROUND1 = ROOT / 'reference' / 'experiments' / 'bloat'      # READ ONLY
 
 sys.path.insert(0, str(ROOT / 'scripts'))
 from token_budget import count, split_sections           # noqa: E402 -- imported, never modified

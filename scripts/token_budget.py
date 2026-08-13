@@ -14,7 +14,7 @@ now failed to reproduce that, at a combined 1,166 model calls:
            The model also OBEYED up to 21 independently checkable added constraints, so it is
            not silently dropping rules either.
 
-  Full reports: .claude/experiments/bloat/REPORT.md and .claude/experiments/bloat2/REPORT.md
+  Full reports: reference/experiments/bloat/REPORT.md and reference/experiments/bloat2/REPORT.md
 
 So the ~3.7k line was not a property of the model, and `--check` was failing prompts at 3,885
 that both rounds show to be fine. It has been RETIRED rather than moved: relocating an invented

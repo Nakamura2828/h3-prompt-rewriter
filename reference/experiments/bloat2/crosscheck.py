@@ -23,7 +23,7 @@ TWO DIFFERENCES ARE KNOWN AND EXPECTED, and are reported separately from real dr
      validate.py errors on it anyway by a different route -- but it would show up here as a
      disagreement, and it is not drift.
 
-  python .claude/experiments/bloat2/crosscheck.py <run.txt> --role setting
+  python reference/experiments/bloat2/crosscheck.py <run.txt> --role setting
 """
 import argparse
 import pathlib
@@ -34,7 +34,7 @@ ROOT = HERE.parents[2]
 assert ROOT.name == 'h3-prompt-rewriter' and (ROOT / '.git').is_dir(), \
     f'ROOT resolved to {ROOT} -- refusing to run outside the project'
 sys.path.insert(0, str(ROOT / 'scripts'))
-sys.path.insert(0, str(ROOT / '.claude' / 'experiments' / 'bloat'))     # round 1, READ ONLY
+sys.path.insert(0, str(ROOT / 'reference' / 'experiments' / 'bloat'))     # round 1, READ ONLY
 
 import validate                                          # noqa: E402 -- imported, never modified
 import signature                                         # noqa: E402 -- round 1's, never modified

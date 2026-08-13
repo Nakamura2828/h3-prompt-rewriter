@@ -832,9 +832,9 @@ since the usual check would not have shown it.
 ## Reproducing
 
 ```bash
-python .claude/experiments/bloat/pad.py           # 30 padded prompts, +/-25 tokens
-python .claude/experiments/bloat/gen_cases.py     # 28 case files
-python .claude/experiments/bloat/verify.py        # instrument checks
-python .claude/experiments/bloat/drive.py base_1 base_2 a_end_3800 ... img noimg
-python .claude/experiments/bloat/collect.py       # the tables in this report
+python reference/experiments/bloat/pad.py           # 30 padded prompts, +/-25 tokens
+python reference/experiments/bloat/gen_cases.py     # 28 case files
+python reference/experiments/bloat/verify.py        # instrument checks
+python reference/experiments/bloat/drive.py base_1 base_2 a_end_3800 ... img noimg
+python reference/experiments/bloat/collect.py       # the tables in this report
 ```

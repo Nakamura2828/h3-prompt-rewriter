@@ -13,8 +13,8 @@ The split is purely mechanical: records are the '\\n----------\\n' chunks run_te
 and the case id is read out of the same '[...]' header that validate.py's own HEAD regex reads,
 by importing that function rather than re-deriving it.
 
-  python .claude/experiments/bloat/split_run.py <run.txt> --prefix c_3800_ --out sub.txt
-  python .claude/experiments/bloat/split_run.py <run.txt> --list
+  python reference/experiments/bloat/split_run.py <run.txt> --prefix c_3800_ --out sub.txt
+  python reference/experiments/bloat/split_run.py <run.txt> --list
 """
 import argparse
 import pathlib

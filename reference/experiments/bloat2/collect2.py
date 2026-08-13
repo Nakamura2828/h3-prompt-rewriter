@@ -3,8 +3,8 @@
 
 Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
 
-  python .claude/experiments/bloat2/collect2.py            # tables to stdout
-  python .claude/experiments/bloat2/collect2.py --json     # machine-readable
+  python reference/experiments/bloat2/collect2.py            # tables to stdout
+  python reference/experiments/bloat2/collect2.py --json     # machine-readable
 
 Format verdicts come from the repo's own UNMODIFIED validate.py, invoked as a subprocess:
 
@@ -36,7 +36,7 @@ assert ROOT.name == 'h3-prompt-rewriter' and (ROOT / '.git').is_dir(), \
     f'ROOT resolved to {ROOT} -- refusing to run outside the project'
 RUNS = HERE / 'runs'
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(ROOT / '.claude' / 'experiments' / 'bloat'))     # round 1, READ ONLY
+sys.path.insert(0, str(ROOT / 'reference' / 'experiments' / 'bloat'))     # round 1, READ ONLY
 import signature                                          # noqa: E402 -- round 1's, unmodified
 from split_run import subset                              # noqa: E402 -- round 1's, unmodified
 import coverage as cov                                    # noqa: E402
