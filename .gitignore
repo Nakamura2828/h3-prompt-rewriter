@@ -53,13 +53,34 @@ secrets.json
 # Logs
 *.log
 
-#Archived References
-reference/*
-!reference/pre_build_env_canonical_prompts
-!reference/retired/
-!reference/baselines/
-!reference/test_archive/
-!reference/prompt_archive/
-
 # test images
 images/*
+
+# Third-party reference documents -- NOT ignored for clutter.
+# reference/official_H3_references/ is MiniMax's published prompting guides verbatim, and the
+# ELIF summary is a community author's writing. This remote is PUBLIC, and git history keeps a
+# file even after it is deleted, so committing them is a redistribution decision rather than a
+# housekeeping one. Held deliberately until that call is made; delete these two lines to publish.
+reference/official_H3_references/
+reference/unofficial_ELIF_summary_of_H3_references/
+
+# Experiment artifacts that are duplicates or regenerable.
+#
+# run_tests.py writes each round TWICE: one concatenated <family>__<tag>.txt, plus a directory
+# of per-case files beside it. The concatenated file is what validate.py, score.py and every
+# collect script actually read, so it is the evidence and it is TRACKED. The per-case directories
+# hold the same text again -- 1,221 files and 5MB across the two bloat rounds -- and are not.
+# (See also L-STALE-PER-CASE-FILES: those directories are a mixture of rounds, not a snapshot of
+# one, so they are actively misleading to read from.)
+reference/experiments/*/runs/*/
+
+# Derived from the run files by collect2.py on demand.
+reference/experiments/*/runs/_split/
+
+# Tokenizer cache. Keyed on the exact text, so it cannot go stale silently -- and it rebuilds
+# from the live tokenizer, which is where the numbers have to come from anyway.
+**/.tokcache.json
+
+# Python build artifacts
+**/__pycache__/
+*.pyc
