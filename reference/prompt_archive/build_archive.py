@@ -121,9 +121,26 @@ CURATED = {
                    'Prose tightened, no rule changed. 3,740 tokens, 45/45 format -- the best '
                    'format score on record. The pre-split baseline; still present in prompts/ '
                    'alongside the v3 split that replaced it.'),
-    '91808c4a25': ('describer_style_look_v3', 'live', 'describer_style_v2-compressed',
+    '91808c4a25': ('describer_style_look_v3', 'superseded', 'describer_style_v2-compressed',
                    'Pass A of the v3 split. look + class sum to 4,460 tokens, well over any '
-                   'single-prompt budget -- the split buys headroom PER CALL, not in total.'),
+                   'single-prompt budget -- the split buys headroom PER CALL, not in total. '
+                   'Superseded in s16 by v4; this is the state that produced the s15 enriched '
+                   'round and the v3 split sweep, so it is the comparison point for the '
+                   '`digital` fix.'),
+    'bf48614103': ('describer_style_look_v4', 'live', 'describer_style_look_v3',
+                   'Adds one block, PRODUCTION METHOD IS NOT A MARK (1,876 -> 2,118 tokens). '
+                   'Aimed at the `digital` over-attractor, which s15 relocated from the '
+                   'classifier to this pass: the describer was emitting "clean digital vector '
+                   'outlines" for any clean-lined 2D image, and the classifier faithfully '
+                   'transcribed it. 4 of 6 traditional-cel images lost that way. The diagnosis '
+                   'that shaped the rule: gordon_1996 (failed) and april_1987 (passed) gave '
+                   'IDENTICAL mark descriptions -- "uniform outlines of medium weight, flat '
+                   'unmodulated colour fills" -- differing only in an ASSERTED leading phrase, '
+                   '"digital vector" vs "traditional hand-drawn". So the marks were seen '
+                   'correctly and a provenance guess was prepended. The rule bans the guess and '
+                   'names the artefacts that actually discriminate (grain, scan lines, halation, '
+                   'colour bleeding, stroke-to-stroke weight variation), which is exactly how '
+                   'april_1987 earned its answer.'),
     '0927364a30': ('describer_style_class_v3', 'live', 'describer_style_v2-compressed',
                    'Pass B of the v3 split; receives pass A\'s record.'),
 }

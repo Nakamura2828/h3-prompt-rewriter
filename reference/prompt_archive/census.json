@@ -215,6 +215,120 @@
       "ct": 1786563650,
       "date": "2026-08-12",
       "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+    },
+    {
+      "commit": "8c33c64",
+      "ct": 1786563982,
+      "date": "2026-08-12",
+      "subject": "Flatten reference/prompt_archive and fix its root detection"
+    },
+    {
+      "commit": "3af0eff",
+      "ct": 1786564471,
+      "date": "2026-08-12",
+      "subject": "Fixed issue with relative references in build_archive and ran"
+    },
+    {
+      "commit": "e34bb97",
+      "ct": 1786567741,
+      "date": "2026-08-12",
+      "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+    },
+    {
+      "commit": "1322269",
+      "ct": 1786568523,
+      "date": "2026-08-12",
+      "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+    },
+    {
+      "commit": "89c8d6a",
+      "ct": 1786581880,
+      "date": "2026-08-12",
+      "subject": "Retire the invented adherence line; enforce the real context budget"
+    },
+    {
+      "commit": "8eee2b5",
+      "ct": 1786583169,
+      "date": "2026-08-12",
+      "subject": "tracking experiment folders"
+    },
+    {
+      "commit": "e789e1c",
+      "ct": 1786583336,
+      "date": "2026-08-12",
+      "subject": "bloat round 1: padding scripts and the two filler corpora"
+    },
+    {
+      "commit": "8904c2e",
+      "ct": 1786583348,
+      "date": "2026-08-12",
+      "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+    },
+    {
+      "commit": "9fa8b9e",
+      "ct": 1786583361,
+      "date": "2026-08-12",
+      "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+    },
+    {
+      "commit": "1b1650b",
+      "ct": 1786583375,
+      "date": "2026-08-12",
+      "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+    },
+    {
+      "commit": "8ca7a82",
+      "ct": 1786583388,
+      "date": "2026-08-12",
+      "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+    },
+    {
+      "commit": "0d3790b",
+      "ct": 1786583400,
+      "date": "2026-08-12",
+      "subject": "bloat round 2: run output and report -- live rules are free too"
+    },
+    {
+      "commit": "3e2de16",
+      "ct": 1786584153,
+      "date": "2026-08-12",
+      "subject": "fixed broken path references"
+    },
+    {
+      "commit": "73236c4",
+      "ct": 1786589794,
+      "date": "2026-08-12",
+      "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+    },
+    {
+      "commit": "797fa26",
+      "ct": 1786596296,
+      "date": "2026-08-13",
+      "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+    },
+    {
+      "commit": "2aacaf8",
+      "ct": 1786596670,
+      "date": "2026-08-13",
+      "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+    },
+    {
+      "commit": "4164cc5",
+      "ct": 1786597425,
+      "date": "2026-08-13",
+      "subject": "archive and baseline the s15 enriched round"
+    },
+    {
+      "commit": "d75734c",
+      "ct": 1786600463,
+      "date": "2026-08-13",
+      "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+    },
+    {
+      "commit": "e5e4088",
+      "ct": 1786600886,
+      "date": "2026-08-13",
+      "subject": "score.py: use only the first sentence of `why` as a miss-group header"
     }
   ],
   "states": [
@@ -232,12 +346,12 @@
         "v3n"
       ],
       "paths": [
-        "reference/experiments/bloat/logs/fl2va_3daef42.txt",
-        "reference/experiments/bloat/logs/fl2va_v3.txt",
-        "reference/experiments/bloat/logs/v3n.txt",
         "dist/fl2va.txt",
         "dist/fl2va_v3.txt",
-        "prompts/fl2va.txt"
+        "prompts/fl2va.txt",
+        "reference/experiments/bloat/logs/fl2va_3daef42.txt",
+        "reference/experiments/bloat/logs/fl2va_v3.txt",
+        "reference/experiments/bloat/logs/v3n.txt"
       ],
       "commits": [
         {
@@ -336,8 +450,8 @@
         "fl2va_v1"
       ],
       "paths": [
-        "reference/experiments/bloat/logs/fl2va_v1.txt",
-        "dist/fl2va_v1.txt"
+        "dist/fl2va_v1.txt",
+        "reference/experiments/bloat/logs/fl2va_v1.txt"
       ],
       "commits": [
         {
@@ -371,8 +485,8 @@
         "fl2va_v2"
       ],
       "paths": [
-        "reference/experiments/bloat/logs/fl2va_v2.txt",
-        "dist/fl2va_v2.txt"
+        "dist/fl2va_v2.txt",
+        "reference/experiments/bloat/logs/fl2va_v2.txt"
       ],
       "commits": [
         {
@@ -498,6 +612,139 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -510,7 +757,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -808,6 +1055,139 @@
           "path": "prompts/i2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/i2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -817,7 +1197,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1115,6 +1495,139 @@
           "path": "prompts/l2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/l2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1124,7 +1637,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1437,6 +1950,272 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/t2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1446,7 +2225,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1514,6 +2293,139 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1525,7 +2437,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1571,6 +2483,139 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1582,7 +2627,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1628,6 +2673,139 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1639,7 +2817,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1685,6 +2863,139 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1696,7 +3007,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1742,6 +3053,139 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1753,7 +3197,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -1799,6 +3243,139 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -1810,7 +3387,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -2088,6 +3665,139 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -2099,7 +3809,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -2414,6 +4124,139 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -2423,7 +4266,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786404424,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -2440,9 +4283,9 @@
         "fl2va_68909d9"
       ],
       "paths": [
+        "prompts/fl2va.txt",
         "reference/experiments/bloat/logs/curn.txt",
-        "reference/experiments/bloat/logs/fl2va_68909d9.txt",
-        "prompts/fl2va.txt"
+        "reference/experiments/bloat/logs/fl2va_68909d9.txt"
       ],
       "commits": [
         {
@@ -2633,6 +4476,139 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -2644,7 +4620,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -2836,6 +4812,139 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -2845,7 +4954,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786416528,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -3023,6 +5132,139 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3032,7 +5274,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786428480,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -3182,6 +5424,139 @@
           "path": "prompts/describer_style.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3191,7 +5566,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 1
     },
     {
@@ -3242,6 +5617,139 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3251,7 +5759,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786536234,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 1
     },
     {
@@ -3302,16 +5810,149 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
         "describer_style_look"
       ],
       "labels": [],
-      "in_worktree": true,
+      "in_worktree": false,
       "provenance_only": false,
-      "first_ct": 1786536159,
-      "last_ct": 1786563650,
+      "first_ct": 1786543782,
+      "last_ct": 1786600886,
       "crlf_variants": 1
     },
     {
@@ -3351,6 +5992,139 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3363,7 +6137,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786344981,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -3394,6 +6168,139 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3403,7 +6310,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
     },
     {
@@ -3434,6 +6341,139 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786563650,
           "subject": "add prompt archive of all recoverable historical prompt versions for review and analysis"
+        },
+        {
+          "commit": "8c33c64",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786563982,
+          "subject": "Flatten reference/prompt_archive and fix its root detection"
+        },
+        {
+          "commit": "3af0eff",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786564471,
+          "subject": "Fixed issue with relative references in build_archive and ran"
+        },
+        {
+          "commit": "e34bb97",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786567741,
+          "subject": "docs: record the --verify crash and point version histories at the prompt archive"
+        },
+        {
+          "commit": "1322269",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786568523,
+          "subject": "fix: catch invented [[FIELD]] tokens, and stop --verify dying on fl2va"
+        },
+        {
+          "commit": "89c8d6a",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786581880,
+          "subject": "Retire the invented adherence line; enforce the real context budget"
+        },
+        {
+          "commit": "8eee2b5",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583169,
+          "subject": "tracking experiment folders"
+        },
+        {
+          "commit": "e789e1c",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583336,
+          "subject": "bloat round 1: padding scripts and the two filler corpora"
+        },
+        {
+          "commit": "8904c2e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583348,
+          "subject": "bloat round 1: the 30 padded prompts and 28 case files"
+        },
+        {
+          "commit": "9fa8b9e",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583361,
+          "subject": "bloat round 1: run output and report -- inert length is free to ~5,000 tokens"
+        },
+        {
+          "commit": "1b1650b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583375,
+          "subject": "bloat round 2: substitution padding, content metrics, and the six rule pools"
+        },
+        {
+          "commit": "8ca7a82",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583388,
+          "subject": "bloat round 2: the 18 padded prompts and 12 case files"
+        },
+        {
+          "commit": "0d3790b",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786583400,
+          "subject": "bloat round 2: run output and report -- live rules are free too"
+        },
+        {
+          "commit": "3e2de16",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786584153,
+          "subject": "fixed broken path references"
+        },
+        {
+          "commit": "73236c4",
+          "date": "2026-08-12",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786589794,
+          "subject": "corpus enrichment: 30 images, 100 -> 130 files"
+        },
+        {
+          "commit": "797fa26",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786596296,
+          "subject": "s15 round: record adjudications, define clay, sharpen dimensional toon and realist"
+        },
+        {
+          "commit": "2aacaf8",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786596670,
+          "subject": "correct april_fanart to drawing/marker; extend tie-break 2 to composites"
+        },
+        {
+          "commit": "4164cc5",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786597425,
+          "subject": "archive and baseline the s15 enriched round"
+        },
+        {
+          "commit": "d75734c",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786600463,
+          "subject": "accept-sets in _expected, with axis-scoped machine-read controls"
+        },
+        {
+          "commit": "e5e4088",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786600886,
+          "subject": "score.py: use only the first sentence of `why` as a miss-group header"
         }
       ],
       "families": [
@@ -3443,8 +6483,32 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786563650,
+      "last_ct": 1786600886,
       "crlf_variants": 2
+    },
+    {
+      "md5_norm": "bf48614103008a47b1975e0c02ce9e90",
+      "bytes": 9570,
+      "lines": 76,
+      "md5_exact": [
+        "bf48614103008a47b1975e0c02ce9e90"
+      ],
+      "names": [
+        "describer_style_look"
+      ],
+      "paths": [
+        "prompts/describer_style_look.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_look"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786600872,
+      "last_ct": 1786600872,
+      "crlf_variants": 1
     }
   ]
 }
