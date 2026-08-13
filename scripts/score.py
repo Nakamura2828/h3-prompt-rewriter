@@ -326,7 +326,13 @@ def report_why_groups(key, label):
     print()
     print('misses grouped by `why`:')
     for why in sorted(groups, key=lambda k: (k is None, k or '')):
-        head = why or '(untagged)'
+        # First sentence only. A `why` written for an accept-set is a full rationale --
+        # controls, reversal conditions, the lot -- and printing all of it as a group
+        # HEADER buries the one thing this section is for, which is seeing the shape of
+        # the miss population at a glance.
+        head = (why or '(untagged)').split('. ')[0].strip()
+        if why and len(head) < len(why.rstrip('.')):
+            head += ' [...]'
         print(wrap(head, '  '))
         print(wrap(', '.join(sorted(groups[why])), '      '))
 
