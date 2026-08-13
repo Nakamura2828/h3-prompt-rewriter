@@ -7,7 +7,7 @@
   "tokenizer": "llama-server /tokenize, the model in CLAUDE.md > Model Parameters",
   "line_endings": "every archived file is LF; md5_lf is over those exact bytes. core.autocrlf=true in this repo, so a FRESH CHECKOUT will hand you CRLF copies whose md5 differs. Normalise to LF before comparing.",
   "counts": {
-    "archived": 30,
+    "archived": 33,
     "missing": 6
   },
   "records": [
@@ -22,7 +22,7 @@
       "lines": 98,
       "md5_lf": "99206cb96cad12553d3efc76b62ecc22",
       "first_seen": "2026-08-10 c6c1c73",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_character.txt"
       ],
@@ -40,7 +40,7 @@
       "lines": 121,
       "md5_lf": "900b383fa14c5259cf8a80ed8b76fd8d",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame.txt",
         "reference/retired/prompts/describer_frame_v1.txt"
@@ -59,7 +59,7 @@
       "lines": 131,
       "md5_lf": "af06ee66c3e361f7eccf918206bd09cd",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame_v2.txt",
         "reference/retired/prompts/describer_frame_v2.txt"
@@ -78,7 +78,7 @@
       "lines": 137,
       "md5_lf": "684acc768be80473970e77ab26d71a60",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame_v3.txt",
         "reference/retired/prompts/describer_frame_v3.txt"
@@ -97,7 +97,7 @@
       "lines": 152,
       "md5_lf": "ee78489105e3cf468c7769b06d9dec99",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame_v4.txt",
         "reference/retired/prompts/describer_frame_v4.txt"
@@ -116,7 +116,7 @@
       "lines": 152,
       "md5_lf": "87ab10504f8829ed0f8569fe52af14a5",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame_v5.txt",
         "reference/retired/prompts/describer_frame_v5.txt"
@@ -135,7 +135,7 @@
       "lines": 167,
       "md5_lf": "95a4c7ab1830a1b1b7691af6fd53d502",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame_v6.txt",
         "reference/retired/prompts/describer_frame_v6.txt"
@@ -154,7 +154,7 @@
       "lines": 169,
       "md5_lf": "8e9b2e991b83f2942c65bef2f0f7c0e8",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "dist/frame_describer.txt",
         "prompts/describer_frame.txt",
@@ -175,7 +175,7 @@
       "lines": 169,
       "md5_lf": "a9613d8d0addc35a442b476fb6449c52",
       "first_seen": "2026-08-10 c843e49",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_frame.txt"
       ],
@@ -193,7 +193,7 @@
       "lines": 101,
       "md5_lf": "047eb3d74a238cab4d5249a6835cfd27",
       "first_seen": "2026-08-11 24a5eb7",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_setting.txt"
       ],
@@ -247,7 +247,7 @@
       "lines": 138,
       "md5_lf": "ee43018093d89c57606367d1547032c3",
       "first_seen": "2026-08-11 4166902",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_style.txt"
       ],
@@ -258,19 +258,73 @@
       "label": "describer_style_class_v3",
       "file": "describer_style_class_v3.txt",
       "family": "describer_style_class",
-      "status": "live",
+      "status": "superseded",
       "parent": "describer_style_v2-compressed",
       "tokens": 2584,
       "bytes": 11631,
       "lines": 107,
       "md5_lf": "0927364a3093ffd92ebe91e5d2727ba7",
       "first_seen": "2026-08-12 e68be08",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_style_class.txt"
       ],
       "committed": true,
-      "note": "Pass B of the v3 split; receives pass A's record."
+      "note": "Pass B of the v3 split; receives pass A's record. 2,584 tokens. Superseded by v4a in session 17. Its last measurement is the ROUND 0 validity pair (Describer-Style-v3-frozenA-sweep-ROUND0 / -s15-ROUND0), which reproduced the live two-pass scores exactly -- 80/100 and 18/30 -- and so also serves as the proof that freezing pass A is faithful."
+    },
+    {
+      "label": "describer_style_class_v4a",
+      "file": "describer_style_class_v4a.txt",
+      "family": "describer_style_class",
+      "status": "superseded",
+      "parent": "describer_style_class_v3",
+      "tokens": 2579,
+      "bytes": 11606,
+      "lines": 106,
+      "md5_lf": "d7e49714aa1a9ae1338b349d95fa69f0",
+      "first_seen": null,
+      "last_seen": null,
+      "git_paths": [
+        "reference/retired/prompts/describer_style_class_v4a.txt"
+      ],
+      "committed": false,
+      "note": "THE VOCABULARY MERGE, AND NOTHING ELSE (2,584 -> 2,530 tokens; it is the only state in the project that got SMALLER). Two user rulings, both taken on their merits rather than on a score: stop-motion `puppet` merged into `figure` (agreed s12, executed here), and `2D cel` lost its sub-list entirely -- it held `traditional cel` and `digital`, and `traditional cel` measured 2/7 with ALL FIVE losses going to `digital`. `none` rather than a one-value list, because a single-value sub-list would make every 2D cel record ASSERT digital production downstream, including of april_1987 and pocahontas, which are hand-drawn. Deliberately carries NO new definitions -- those are v4b -- so that the two rounds are separable. ROUND 1 (Describer-Style-v4a-vocab-merge-ROUND1), 130-image frozen-pass-A sweep: 101/130 exact, format 129/130. THIS IS THE NEW BASELINE; every archived style round before it is scored against a vocabulary that no longer exists. It behaved: 30 SUB_MEDIUM outputs moved and all were the mechanical merge, TREATMENT did not move at all, and only 4 IDIOM cases changed -- two of them (ivy_toon, kasia_bag) already measured as run-to-run noise in Round 0. Per-axis: MEDIUM 124, SUB_MEDIUM 118, IDIOM 110, TREATMENT 129. Two consequences for reading anything after it: the `digital`-correct watch list shrank 30 -> 12 (18 were `2D cel / digital`), isolating the real defect as ink 1/5, marker 1/5, oil 1/2; and IDIOM became the LARGEST defect axis at 20 misses, ahead of SUB_MEDIUM's 12."
+    },
+    {
+      "label": "describer_style_class_v4b",
+      "file": "describer_style_class_v4b.txt",
+      "family": "describer_style_class",
+      "status": "superseded",
+      "parent": "describer_style_class_v4a",
+      "tokens": 3050,
+      "bytes": 13741,
+      "lines": 121,
+      "md5_lf": "e7aa542f835898bc3d2d4fd803dcadcb",
+      "first_seen": null,
+      "last_seen": null,
+      "git_paths": [
+        "reference/retired/prompts/describer_style_class_v4b.txt"
+      ],
+      "committed": false,
+      "note": "THE DEFINITION LAYER (2,530 -> 3,050 tokens). Attacks the `digital` over-attractor in the CLASSIFIER, which session 16 measured as the lever after describer_style_look v4 failed to be one. THE DIAGNOSIS, and it is not \"tie-break 4 is unfollowed\": of the twelve [[SUB_MEDIUM]] terms, the ONLY ones carrying a definition were stop-motion's four. ink, marker, oil, pencil, screentone, engraving, halftone and traditional cel had none at all -- and `digital` DID have one, inside tie-break 4, stated as an ABSENCE (\"no medium physics, no wet edges, no visible tooth or weave\"), which any clean image satisfies vacuously. So the single term with a stated test was the over-attractor, and its test passed on no evidence. That is L-UNDEFINED-TERMS-READ-AS-OBVIOUS, the lesson `clay` cost us in s15, one level up. Direct confirmation it defaults rather than transcribes: in the look-v4 round, fern_gully / gordon_1996 / gordon_2004 / scooby had records containing none of digital, vector, cel or traditional, and the classifier still answered `digital`. THE CHANGE: a positive visual tell for every sub-term, in the shape the stop-motion line already used; `digital` rewritten from a test-by-absence into one needing its own positive tell (even line weight, fills registering exactly to the line, gradients with no instrument behind them); and the session-12 asymmetry made an explicit default -- where no digital tell is present and a physical instrument fits, write the instrument. Plus the s15 boondocks ruling, recorded as data at the time and never written into a prompt: flat two-tone highlight/shadow shading is NOT `dimensional toon`. TWO v4 TRAPS AVOIDED DELIBERATELY. (1) No \"grain\" tell anywhere -- it is a WRONG discriminator, a clean transfer of cel animation has no grain either; grain separates photographic capture, not cel from digital drawing. (2) Tells live in the CLASSIFIER, which emits only four label lines, so there is no prose channel to launder a tell back through as evidence -- which is exactly how look v4 failed. RESULT: 92/130 against v4a's 101/130 (ROUND 2, Describer-Style-v4b-definitions-ROUND2). NOT baselined. Two findings, and the negative one is the more valuable. (1) THE DEFINITION LAYER DID LITERALLY NOTHING. ink 1/5, marker 1/5, oil 1/2, digital 11/12 -- every term identical to v4a, and only 2 of 130 SUB_MEDIUM outputs moved at all. The observation behind it was TRUE (ten of twelve sub-terms genuinely had no definition) and the fix was still inert. That is the second `digital` attempt to produce ~zero movement, after look v4 moved it by one case. Defining the starved terms is NOT the lever. (2) THE dimensional-toon CLAUSE COST 8 IDIOM CASES, all in one direction: western toon 18/25 -> 11/25, with ALL NINE regressions going to `anime`. dimensional toon itself never moved (11/11 both rounds), so the clause did not even do its job. THE CAUSE IS THE WORDING, and it is worth remembering: the clause ended \"the answer is `anime` or `western toon`\" -- naming `anime` FIRST in a two-option list handed to a model that already over-attracts to it. western -> anime was running at 3 cases in v4a and the standing defect since s15; v4b took it to 12. An enumeration inside a rule is a ranking, not a set."
+    },
+    {
+      "label": "describer_style_class_v4c",
+      "file": "describer_style_class_v4c.txt",
+      "family": "describer_style_class",
+      "status": "live",
+      "parent": "describer_style_class_v4b",
+      "tokens": 3432,
+      "bytes": 15446,
+      "lines": 125,
+      "md5_lf": "4839880444aa5d38760d232a4e56afa0",
+      "first_seen": null,
+      "last_seen": null,
+      "git_paths": [
+        "prompts/describer_style_class.txt"
+      ],
+      "committed": false,
+      "note": "THE PROPORTION LICENCE -- the fix the v3 split was BUILT to make possible and which was never written (3,050 -> 3,432 tokens). docs/describers.md:250 records the intent from session 12: \"pass B emits four closed-vocabulary terms and cannot leak content, so it can later be licensed to judge facial proportion and caricature -- which is what the `western toon` collapse needs\". It was shelved because the split appeared to fix the collapse on its own; it did not, and v4b put western toon at 11/25. THE DIAGNOSIS, same shape as `digital` one axis up: `anime` was defined as \"the Japanese animation and manga tradition\" -- PURE PROVENANCE, with no visual tell at all, which tie-break 4 forbids everywhere else. It was a free attractor because nothing in the prompt said what it LOOKS like. THE RULE, the user's, verified against the images before writing: proportion first -- a body pushed away from life (noodle limbs, oversized head/hands/feet, tiny torso) is western toon; otherwise BOTH traditions draw naturally-proportioned figures, so THE EYE decides -- a large iris standing as its own shape apart from the pupil, usually with a glint, is anime; a naturalistic eye or a small flat pupil is western toon. Two guards the user insisted on: naturalistic proportion is NOT by itself evidence of anime, and the BACKGROUND TRACKS THE FIGURE rather than marking the term -- western toon's realistic arm has realistic backgrounds, and that arm is exactly the one that keeps failing to anime. Also fixes v4b's ordering artifact: the dimensional-toon clause no longer ends with a two-option list naming `anime` first. VERIFICATION THAT SHAPED IT: the azumanga pair was first argued to be unfixable by proportion, on the strength of the inventory's claim that it was the \"same 3 schoolgirls differing only in rendering\". Looking at the images falsified that -- two of three characters are shared, and _anime has naturalistic proportions with glinted irises while _toon has noodle limbs and small flat pupils. L-CLAIM-ROWS-ARE-UNRELIABLE, caught mid-design; the inventory carries a corrections row and the pair is promoted from a \"loose\" probe to the sharpest anime-vs-western-toon probe in the corpus."
     },
     {
       "label": "describer_style_look_v3",
@@ -283,7 +337,7 @@
       "lines": 68,
       "md5_lf": "91808c4a25f8c9886342052bfed13af5",
       "first_seen": "2026-08-12 e68be08",
-      "last_seen": "2026-08-13 e5e4088",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/describer_style_look.txt"
       ],
@@ -380,7 +434,7 @@
       "lines": 131,
       "md5_lf": "f7559d7716b59cb19e3a59028a606d15",
       "first_seen": "2026-08-12 7b68815",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "reference/experiments/bloat/logs/v4n.txt",
         "reference/retired/prompts/fl2va_v4.txt"
@@ -399,7 +453,7 @@
       "lines": 131,
       "md5_lf": "54eaecfd473c5479ab11a6289e7e9d6b",
       "first_seen": "2026-08-10 68909d9",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/fl2va.txt",
         "reference/experiments/bloat/logs/curn.txt",
@@ -419,7 +473,7 @@
       "lines": 96,
       "md5_lf": "dc458d9a46d5d2b5a9f8120cf265fe67",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "prompts/fl2va_delta.txt",
         "prompts/fl2va_delta_v1.txt"
@@ -492,7 +546,7 @@
       "lines": 96,
       "md5_lf": "d5b3cdb21004b26cec0411afb48a29ad",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "dist/i2va.txt",
         "prompts/i2va.txt"
@@ -511,7 +565,7 @@
       "lines": 97,
       "md5_lf": "d0fa731f45c2d06cc4576edc7ebc7cea",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/i2va.txt"
       ],
@@ -529,7 +583,7 @@
       "lines": 87,
       "md5_lf": "622aa43837ead303507d32c024e86d03",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "dist/l2va.txt",
         "prompts/l2va.txt"
@@ -548,7 +602,7 @@
       "lines": 82,
       "md5_lf": "b3c8f88991a723b53ec424ae12a08306",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/l2va.txt"
       ],
@@ -566,7 +620,7 @@
       "lines": 82,
       "md5_lf": "cc48c247216227c14a23447587b1e230",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-13 bd02c86",
+      "last_seen": "2026-08-13 6729225",
       "git_paths": [
         "dist/t2va.txt",
         "prompts/t2va.txt",

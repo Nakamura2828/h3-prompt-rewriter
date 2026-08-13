@@ -39,36 +39,17 @@ THE STYLE VOCABULARY — THREE INDEPENDENT AXES
 
 - photograph, live-action film, 3D CG, vector, pixel art and 2D cel have NO sub-terms. For those six write "none". Never invent a sub-term, and never borrow one from another coarse term: "photograph / oil" and "painting / pencil" are both wrong.
 - ALWAYS emit [[SUB_MEDIUM]]. Never leave it out or blank. "not determinable" is only for a genuine tie between two sub-terms of the same coarse term, never a substitute for "none" and never for a merely hard call — prefer committing to the closest term.
-- WHAT EACH SUB-TERM LOOKS LIKE. Pick the term whose marks are actually on this surface, never the one you suppose produced the file.
-  clay — evidence of remodelling: fingerprints, tool marks, contours that squash and bulge rather than holding a fabricated edge.
-  figure — fabricated and rigid: a built puppet with fabric, fibre hair and sculpted painted surfaces, or a moulded plastic toy with glossy surfaces, mould seams and joints. It holds its edge and does not deform.
-  model — a built miniature object or set with no character figure in it.
-  ink — a brush or nib line that swells and tapers along its length, dry-brush breakup where a stroke runs out, solid blacks filled in by hand.
-  screentone — mechanical dot or line patterning standing in for grey.
-  oil — pigment with body: brush or knife ridges standing off the surface, edges pushed wet into wet, canvas weave showing through the thin passages.
-  watercolour — transparent washes with wet edges and pigment pooling, the paper showing through.
-  marker — overlapping translucent strokes that band where passes cross, streaky fills, colour running slightly past the line.
-  pencil — granular graphite sitting in the tooth of the paper, tone built by hatching or smudging.
-  engraving — tone built entirely from ruled or cross-hatched engraved lines.
-  halftone — a regular grid of printed dots.
-  digital — line weight perfectly even along its whole length, fills registering exactly to the line with no overshoot or gap, gradients and soft airbrushed shading with no instrument behind them, the same texture repeating identically.
-
-- "digital" NEEDS A POSITIVE TELL OF ITS OWN. It is not the answer for "nothing decides". Write it only when the marks THEMSELVES show the evenness described above. Where no digital tell is present and a physical instrument fits, write the physical instrument — an image that convincingly imitates a physical medium takes that medium's term, whatever really produced the file.
+- Distinguishing the stop-motion terms: clay is modelled plasticine, matte and deformable with visible thumbprints; figure is any fabricated rigid character — a built puppet with fabric, fibre hair and sculpted painted surfaces, or a moulded plastic toy with glossy surfaces, mould seams and joints; model is a built miniature object or set with no character in it.
 
 - [[IDIOM]] MUST be exactly one of these five terms:
 
-  anime — the Japanese animation and manga tradition. Read it off the DRAWING, never off where you suppose it was made: bodies and faces kept close to real human proportion, with the stylisation concentrated in the EYES — large, with a defined iris that reads as its own shape separate from the pupil, usually carrying a specular glint. Backgrounds, where present, are rendered with real depth and detail.
-  western toon — the Western cartoon tradition. Its stylisation lives in the BODY rather than the eye, and it spans a wide band. At one end, proportions pushed hard away from life — long noodle limbs, oversized heads, hands or feet, tiny torsos. At the other, naturalistic faces and figures with no enlarged-iris eye at all. Eyes are commonly small flat pupils with little or no iris detail. THE BACKGROUND TRACKS THE FIGURE: a stylised figure sits in a background simplified into flat shapes, and a naturalistic figure sits in a background rendered just as naturalistically. Do not read a realistic background as evidence against "western toon".
+  anime — the Japanese animation and manga tradition
+  western toon — the Western cartoon tradition: flat, boldly outlined, caricatured
   flat graphic — deliberate geometric vector-style illustration: forms simplified into clean flat planes and silhouettes, colour laid in as unbroken areas, form never rendered. This names a DESIGN APPROACH, not merely a simple or low-detail image. Anything that renders its subject the way it actually looks is "realist", however few colours it uses and however little detail it carries
   dimensional toon — caricatured, unrealistically proportioned character design rendered with REAL dimension, material and light rather than flat fills
   realist — aims at how things actually look, with no caricature and no stylistic tradition imposed
 
 - ALWAYS emit [[IDIOM]]. "realist" is correct for an ordinary photograph, an ordinary film frame, and any artwork that simply depicts things as they look. It is a common answer, not a fallback to avoid.
-- FLAT TWO-TONE SHADING IS NOT DIMENSION. A shape filled with one flat colour plus one flat shadow tone, or one flat highlight, is still flat rendering — it is how 2D cartoon and anime artwork has always been shaded. "dimensional toon" needs REAL volume: continuous modelling around the form, material that catches light differently across it, light that falls off. Where the shading is a hard-edged patch of a second flat colour, it is not "dimensional toon"; decide between the flat idioms on their own evidence below.
-- ANIME vs WESTERN TOON — DECIDE IT IN THIS ORDER, and do not fall back on which country you suppose made it.
-  1. Are the body proportions pushed away from life — noodle limbs, an oversized head, oversized hands or feet, a tiny torso? If yes, "western toon". Stop.
-  2. Otherwise the figure is naturally proportioned, and BOTH traditions live here, so THE EYE DECIDES. A large eye with a defined iris standing as its own shape apart from the pupil, usually with a specular glint, is "anime". A naturalistic eye, or a small flat pupil with little or no iris, is "western toon".
-  Naturalistic proportion is NOT by itself evidence of anime — most of the Western tradition draws that way too. A big eye alone is not either; ask whether the IRIS is drawn.
 - JUDGE [[IDIOM]] ON THE SUBJECT, NOT ON THE GROUND BEHIND IT. A plain white studio sweep, an empty colour backdrop, a blank margin, a printed border and an undecorated background are all just empty area. None of them is evidence of a flat graphic design approach. A subject rendered with real form and real material sitting on a perfectly flat ground is "realist". Ask how the SUBJECT is drawn, built or photographed, and ignore what is behind it.
 
 - [[TREATMENT]] MUST be exactly one of these three terms:

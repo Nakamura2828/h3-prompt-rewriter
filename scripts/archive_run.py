@@ -21,9 +21,9 @@ against — read every round, replaced when it advances. Filing it only as histo
 means score.py --baseline points at a filename that changes every round; this
 gives it one that doesn't:
 
-  python scripts/archive_run.py baseline describer_style_targeted
-  python scripts/score.py tests/describer_style_targeted.json runs/run-<new>.txt \
-      --baseline reference/baselines/describer_style_targeted.txt
+  python scripts/archive_run.py baseline describer_style_sweep130_frozen
+  python scripts/score.py tests/describer_style_sweep130_frozen.json runs/run-<new>.txt \
+      --baseline reference/baselines/describer_style_sweep130_frozen.txt
 
 Overwriting is the point here, so unlike rename there is no -2/-3 suffixing. Run
 both when a round becomes the new baseline: baseline first (it copies), then
@@ -103,6 +103,21 @@ def delete_ids(ids, dry_run):
 
 def cmd_rename(a):
     src = latest_run(a.run)
+    if a.clean and not (a.adjudicated or a.dry_run):
+        raise SystemExit(
+            'REFUSING to --clean without --adjudicated.\n'
+            '\n'
+            '  --clean deletes the per-case runs/<id>.txt files, and those are where the\n'
+            "  model's own descriptive lines live. .claude/CLAUDE.md requires adjudication\n"
+            '  BEFORE this point precisely because recovering them afterwards means digging\n'
+            '  them back out of the archived concatenated run.\n'
+            '\n'
+            '  Score the run and work the gate first:\n'
+            f'    python scripts/score.py <test>.json {src.as_posix()}\n'
+            '\n'
+            '  Then re-run this with --adjudicated. Pass it straight away only when the run\n'
+            '  needs no adjudication at all -- a validity check, a smoke test, a re-run you\n'
+            '  have already ruled on.')
     dest = resolve_dest(a.dest)
     print(f'{"[dry-run] " if a.dry_run else ""}{src} -> {dest}')
     if not a.dry_run:
@@ -155,7 +170,15 @@ def main():
     r.add_argument('--run', help='archive this specific file instead of the most recently '
                                   'modified runs/run-*.txt')
     r.add_argument('--clean', action='store_true',
-                    help="also delete this run's per-case runs/<id>.txt files after archiving")
+                    help="also delete this run's per-case runs/<id>.txt files after archiving. "
+                         'Requires --adjudicated, because those files are the evidence '
+                         'adjudication reads')
+    r.add_argument('--adjudicated', action='store_true',
+                    help='confirm the run has been scored and its gate verdict worked (or that '
+                         'it needs no adjudication -- a validity check, a smoke test). Required '
+                         'by --clean. The guard exists because the gate was skipped in two '
+                         'consecutive sessions despite score.py printing it correctly every '
+                         'time; a rule missed twice needs a mechanism, not more prose')
     r.add_argument('--dry-run', action='store_true')
     r.set_defaults(func=cmd_rename)
 
@@ -163,7 +186,7 @@ def main():
                         help='copy the latest run-*.txt into reference/baselines/ as the '
                              'comparison point for the next round')
     b.add_argument('test', help='the test this baselines, without extension, e.g. '
-                                 'describer_style_targeted -- matches tests/<name>.json')
+                                 'describer_style_sweep130_frozen -- matches tests/<name>.json')
     b.add_argument('--run', help='use this specific file instead of the most recently '
                                   'modified runs/run-*.txt')
     b.add_argument('--dry-run', action='store_true')

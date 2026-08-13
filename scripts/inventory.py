@@ -40,8 +40,10 @@ VOCAB = {
     "photograph":       set(),
     "live-action film": set(),
     "3D CG":            set(),
-    "stop-motion":      {"clay", "puppet", "figure", "model"},
-    "2D cel":           {"traditional cel", "digital"},
+    # Session 17: `puppet` merged into `figure`, and `2D cel` lost its sub-list entirely.
+    # Kept in sync with scripts/validate.py's MEDIUM_VOCAB by hand -- see the note there.
+    "stop-motion":      {"clay", "figure", "model"},
+    "2D cel":           set(),
     "comic":            {"ink", "screentone", "digital"},
     "painting":         {"oil", "watercolour", "digital"},
     "drawing":          {"marker", "pencil", "ink", "digital"},

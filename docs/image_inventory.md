@@ -77,13 +77,25 @@ restart.
 
 | coarse term | sub-terms |
 |---|---|
-| `stop-motion` | `clay` · `puppet` · `figure` · `model` |
-| `2D cel` | `traditional cel` · `digital` |
+| `stop-motion` | `clay` · `figure` · `model` |
 | `comic` | `ink` · `screentone` · `digital` |
 | `painting` | `oil` · `watercolour` · `digital` |
 | `drawing` | `marker` · `pencil` · `ink` · `digital` |
 | `print` | `engraving` · `halftone` |
-| `photograph`, `live-action film`, `3D CG`, `vector`, `pixel art` | *(none)* |
+| `photograph`, `live-action film`, `3D CG`, `vector`, `pixel art`, **`2D cel`** | *(none)* |
+
+**Two merges landed in session 17**, both ratified by the user on their merits rather than on a
+score. See "Session 17 — the vocabulary merges" for the full reasoning.
+
+- **`puppet` merged into `figure`.** The two were not distinguishable in practice; `figure` is the
+  more general term, covering a sculpted film puppet, an articulated plastic toy and a rigid
+  set-clay sculpt alike. Agreed session 12, executed session 17.
+- **`2D cel` lost its sub-list entirely** — it held `traditional cel` and `digital`. Measured
+  recall on `traditional cel` was **2/7, with all five losses going to `digital`**, and the user
+  ruled the era distinction not worth teaching. Dropping only `traditional cel` would have left a
+  one-value list, which is not a vocabulary; worse, it would have made every `2D cel` record
+  **assert** digital production downstream — including of hand-drawn cel animation like
+  `april_1987` and `pocahontas`. `none` asserts nothing, which is the honest answer.
 
 **`digital` is an instrument here, not a provenance claim.** It means the marks read as made with
 digital brushes or fills — no medium physics, no wet edges, no canvas weave, uniform fills, even
@@ -98,12 +110,17 @@ Terms defined by material rather than by origin, so they stay decidable from pix
   tell is **evidence of remodelling**, and it is present in a single frame — it does not require
   motion. Wallace & Gromit's Newplast and Gumby's plasticine are both non-drying and stay soft, so
   both show it.
-- `puppet` — fabricated character figures: fabric, fibre hair, sculpted and painted matte surfaces,
-  visible replacement-face seams. **Rigid set clay (Fimo and similar) belongs here, not in `clay`**
-  — once baked it is a fabricated rigid sculpt that does not deform, and it reads as a puppet
-  because functionally it is one.
-- `figure` — rigid moulded plastic toys: glossy injection-moulded surfaces, mould seams,
-  articulated joints, printed or fixed facial features.
+- `figure` — **any fabricated character figure that does not deform.** Two families of surface,
+  one term since the session-17 merge:
+  - built film puppets — fabric, fibre hair, sculpted and painted matte surfaces, visible
+    replacement-face seams;
+  - moulded plastic toys — glossy injection-moulded surfaces, mould seams, articulated joints,
+    printed or fixed facial features.
+
+  **Rigid set clay (Fimo and similar) belongs here, not in `clay`** — once baked it is a
+  fabricated rigid sculpt that does not deform. The single test across all of these is
+  *fabricated and rigid*, which is what makes the merged term decidable where `puppet` vs
+  `figure` was not.
 - `model` — built miniature objects and sets with no character figure at all.
 
 > **Why `clay` got a definition in session 15, and what it cost to notice.** It was the *only*
@@ -235,9 +252,19 @@ and added four terms that have none either. The rule that reconciles those:
 > **Add an untestable term when the discrimination is coarse and unmistakable. Drop it when the
 > discrimination is fine and confusable.**
 
-`clay` vs `puppet` vs `figure`, and `screentone` vs `ink`, are unmistakable on sight — a term we
-cannot test is still one a model can apply correctly, and these are common real-world inputs once
-this reaches ComfyUI.
+`clay` vs `figure`, and `screentone` vs `ink`, are unmistakable on sight — a term we cannot test is
+still one a model can apply correctly, and these are common real-world inputs once this reaches
+ComfyUI.
+
+> **This claim has now been wrong twice, in the same direction, and that is the pattern to
+> remember.** It originally read "`clay` vs `puppet` vs `figure`". Session 15 disproved the `clay`
+> half — the describer inverted `gromit` and `pjs`, and the term turned out never to have had a
+> definition at all. Session 17 disproved the `puppet`/`figure` half by merging them: they were not
+> distinguishable in practice either. **Both times, "unmistakable on sight" was asserted about a
+> term nobody had yet written a visual tell for.** The rule above survives, but it needs a
+> precondition: a discrimination is only "coarse and unmistakable" once you can *state the tell*.
+> If you cannot write it down, you do not know that it is coarse — you know that it feels obvious,
+> which is [[L-UNDEFINED-TERMS-READ-AS-OBVIOUS]].
 
 > **Session 15 partly disproved the `clay` half of that.** Once samples arrived, the describer
 > inverted `gromit` and `pjs`, and the user misread `pjs` too. The discrimination is real but it
@@ -295,9 +322,9 @@ The old sub-lists mixed at least five axes:
 | `print / technical plate` | `print / halftone` | purpose replaced by process |
 | `painting / gouache` | **dropped** | no sample and a fine, confusable call |
 | `drawing / sketch` | **dropped** | degree of finish; `[[EXECUTION]]` prose already covers it |
-| — | `2D cel / traditional cel` · `digital` | closes the `ivy_toon`/`peter_griffin_toon` gap |
+| — | `2D cel / traditional cel` · `digital` | closes the `ivy_toon`/`peter_griffin_toon` gap — **both removed session 17; `2D cel` now has no sub-list** |
 | — | `comic / ink` · `screentone` · `digital` | `annie3` and `comic` were undifferentiated before |
-| — | `stop-motion / clay` · `puppet` · `figure` · `model` | real-use coverage |
+| — | `stop-motion / clay` · `puppet` · `figure` · `model` | real-use coverage — **`puppet` merged into `figure` session 17** |
 | — | `drawing / pencil` | absorbs what `sketch` was doing for `car_interior_sketch` |
 
 **Deliberately given up: `supergirl1` vs `supergirl2` as a scorable pair.** They differ in *finish*,
@@ -315,8 +342,14 @@ every image the corpus actually holds `[[MEDIUM]]` already separates the cases (
 features entered the corpus (`beauty_beast`, `pocahontas`, `fern_gully`) and the user ruled that
 `2D cel` is sufficient — *"I'm ok with conflating TV vs Cinema here."* So the distinction is
 given up permanently rather than pending a sample. The three sit alongside `ivy_toon`, a 90s TV
-cartoon, under `2D cel / traditional cel / western toon`, and that collapse is intended. **Do not
-reopen this because a describer fails to distinguish them — it is not being asked to.**
+cartoon, under `2D cel / … / western toon`, and that collapse is intended. **Do not reopen this
+because a describer fails to distinguish them — it is not being asked to.**
+
+**Session 17 went one step further in the same direction**, and it is worth seeing as the same
+decision twice: having conflated TV with cinema, we then conflated *cel with digital production*
+by emptying `2D cel`'s sub-list. Both times the reasoning was that the era/production distinction
+is not what the downstream graph needs, and both times the measured recall said we could not
+deliver it anyway.
 
 ### Contested rulings that expire here
 
@@ -328,7 +361,10 @@ changes. These re-enter scoring in session 10 and must not stay excluded:
 - **`kasia`** — the anime-vs-western-toon question moves to `[[IDIOM]]`, which is where it belongs.
   It may well still be contested, but now on the right axis.
 
-`UNSCORABLE` rulings do **not** expire. `chair`, `car_1` and `car_2` stay `amb`.
+`UNSCORABLE` rulings do **not** expire — the pixels will not change. `chair`, `car_1` and `car_2`
+stay `amb`. **But session 17 changed what `amb` *does*:** the flag now emits an accept-set rather
+than an exclusion, so those three score again. That is not the ruling expiring; it is a different
+verdict about the same permanent ambiguity. See "The `amb` images" below.
 
 ### Rulings that may need revisiting
 
@@ -381,25 +417,125 @@ television cel animation. The user's ruling: *"Definitely no, it's a very wester
 discrimination this vocabulary asks for is not currently working even where we were confident it
 was**, which is a stronger finding than any of the provisional cases.
 
-### Contested from session 15
+### Contested from session 15 — RESOLVED session 17
 
-Both are cases where the vocabulary **has no legal way to state the true answer** — not model
-defects, and not image ambiguity. Recorded as per-field `CONTESTED` on `[[MEDIUM]]` and
-`[[SUB_MEDIUM]]` in `tests/describer_style_added_s15.json`; `[[IDIOM]]` and `[[TREATMENT]]` still
-score, and both images pass there.
+Both were cases where the vocabulary **has no legal way to state the true answer** — not model
+defects, and not image ambiguity:
 
 - **`april_1987_figure`** — the model answered `photograph / none`. The user: *"I can't argue with
   it, it's a `photograph` of a `figure`, which is an invalid pairing."* `figure` is a sub-term of
   `stop-motion`; `photograph` takes `none`. Both halves of the truth are sayable, but not together.
-  **The user named this as the best motivating case for the accept-set mechanism.**
 - **`april_comic`** — the model answered `comic / digital` against an expected `drawing / marker`.
   Notably it *did* look through the photograph as tie-break 2 now requires; it then had to choose
   between the artwork's instrument and its publication form. The user: *"a marker drawing as a
   comic cover… again two things at once."*
 
-**These expire when the vocabulary changes**, per `.claude/CLAUDE.md`. If the accept-set mechanism
-lands, re-examine both — an accept-set may be the wrong tool here, since the issue is that two
-*different fields* each hold half a true answer rather than one field having two acceptable values.
+**Session 17 ruled both, per the user: *"both images' alternatives should be acceptable for each of
+them."*** They are now **pairs of per-field accept-sets** rather than exclusions:
+
+| | `[[MEDIUM]]` | `[[SUB_MEDIUM]]` |
+|---|---|---|
+| `april_1987_figure` | `stop-motion \| photograph` | `figure \| none` |
+| `april_comic` | `drawing \| comic` | **`marker`, strict** |
+
+Two things about that table are load-bearing.
+
+**Session 16 ruled this shape — "two fields each holding half a true answer" — out of accept-set
+scope, and session 17 did not overturn that; it accepted the known limitation instead.** Because
+sets are per-field, the cross terms `stop-motion / none` and `photograph / figure` also pass, and
+the second is the very pairing the user called invalid. That is the same limitation already
+accepted on `annie2_cropped` and `april_fanart`, and it was taken deliberately rather than adding
+cross-field constraints to `score.py`.
+
+**`april_comic`'s `[[SUB_MEDIUM]]` stays strict at `marker` on purpose.** Opening it would forgive
+`digital` on a marker drawing — the project's largest single defect, and the exact direction the
+user ruled unacceptable in session 12 (*"`marker` → `digital` is not so much"*). This mirrors
+`april_fanart`, which likewise has an open `[[MEDIUM]]` and a strict instrument. **An accept-set
+must never be drawn loosely enough to absorb a real defect**, and this is where that rule bites.
+
+**Control gap, recorded rather than papered over:** `tests/describer_style_added_s15.json` contains
+no unambiguous `drawing` case, and `drawing` is the side `april_comic`'s set can erode. Only the
+reverse direction is guarded (`gordon_comic`). Fix that by adding an unambiguous drawing to the
+file, not by loosening the set.
+
+### Session 17 — the vocabulary merges
+
+Two sub-term merges, both ratified by the user **on their merits rather than on a score**. That
+framing is the important part and it changed how the session was run: *"the judgements as to the
+new shape of the output and definition changes we are adopting I feel are valid and should be
+respected anyway… I'm ok with this setting a new baseline."* So neither merge is on trial. If the
+numbers get worse we work from the result as the new base.
+
+| | before | after |
+|---|---|---|
+| `stop-motion` | `clay` · `puppet` · `figure` · `model` | `clay` · **`figure`** · `model` |
+| `2D cel` | `traditional cel` · `digital` | **(no sub-terms — `none`)** |
+
+**`puppet` → `figure`.** Agreed session 12, executed here. The two were not distinguishable in
+practice: `coraline1` was ruled `CONTESTED` on exactly this, and a round emitted `figure` where the
+table said `puppet` with the record supporting either. `figure` survives as the more general term —
+it covers a sculpted film puppet, an articulated plastic toy and a rigid set-clay sculpt alike, and
+the merged term has one statable test (*fabricated and rigid*) where the split pair had none.
+
+**`2D cel` emptied.** `traditional cel` scored **2/7, with all five losses going to `digital`**, and
+the user ruled the era distinction not worth teaching. Two things made `none` the right shape rather
+than "merge `traditional cel` into `digital`":
+
+- A one-value sub-list is not a vocabulary. The field would carry no information and would be
+  correct 100% of the time by construction, which inflates a score while measuring nothing.
+- More importantly, it would make every `2D cel` record **assert digital production** downstream —
+  including for `april_1987` and `pocahontas`, which are hand-drawn cel animation. The record goes
+  to the composer and then to H3; a false claim there is worse than silence. `none` asserts nothing.
+
+**What this costs, stated plainly.** It kills the corpus's tightest era probe (`gordon-era`, 90s cel
+vs 2000s digital), narrows the `gordon` and `april` ladders by a rung, and rewrites 25 master rows
+and both test files. Git holds the history and these rows record the reasoning, but a later reversal
+is a real re-derivation, not a revert. Accepted deliberately.
+
+**And it splits the measurement history.** Every archived `describer_style` round before Round 1 of
+this session is scored against a vocabulary that no longer exists — those runs stay valid as
+*history*, but cross-boundary score comparison is gone. Same trade as a server-config change, taken
+knowingly. `reference/baselines/describer_style_sweep_frozen.txt` and its s15 counterpart are the
+comparison points from here on.
+
+### Session 17 — every outstanding ruling cleared, and what that exposed
+
+Session 17 put **all seven** remaining `CONTESTED` / `UNSCORABLE` cases to the user before touching
+the vocabulary, on the timing rule that a ruling made *after* a prompt change is tuning the answer
+key to the prompt's behaviour. Both test files now have **zero exclusions**: every one of the 130
+images scores.
+
+`april_1987_figure`, `april_comic` and the three `amb` files are covered in their own sections
+above. The remaining three are the interesting ones, because they turned out not to be three cases.
+
+#### The `flat graphic` over-attractor — three exclusions that were one defect
+
+| case | master | v3 answered | had been contested because |
+|---|---|---|---|
+| `fish_pixel` | `realist` | `flat graphic` | a shaded but heavily simplified sprite on a flat ground |
+| `lincoln_money` | `realist` | `flat graphic` | flat guilloche border and ground dominate the frame |
+| `mountain_rain` | `realist` | `flat graphic` | painterly and dimensional, but posterised into flat bands |
+
+**All three are the same miss in the same direction**, and `kasia_bag` and `destroyer_drawing` are
+already-scored misses of exactly that shape — five cases, split across three exclusions and two
+anonymous misses, which is precisely the accumulation effect `.claude/CLAUDE.md` warns about. Each
+one individually looked like image ambiguity; together they are a term over-attracting on images
+that have a flat or banded *ground* behind a *modelled subject*.
+
+The classifier already carries a rule aimed at this — "JUDGE `[[IDIOM]]` ON THE SUBJECT, NOT THE
+GROUND BEHIND IT", and `[[IDIOM]]`'s own definition says *"anything that renders its subject the way
+it actually looks is `realist`, however few colours it uses and however little detail it carries."*
+So this is an **unfollowed** rule, not a missing one — the same shape as the `digital` problem, on a
+different axis.
+
+All three were cleared to the master value and now score as ordinary misses. **Deliberately not
+fixed in session 17**: it is a third defect on a third axis, and folding it into the round that
+measures `[[SUB_MEDIUM]]` would have made the result unreadable. It is on `.claude/TODO.md` as a
+named open defect rather than as three ambiguities.
+
+> **The general lesson, which cost three separate rulings to see:** a `CONTESTED` pile is evidence
+> about the vocabulary, not a tidy-up queue. Cases excluded one at a time never get compared with
+> each other, so a shared failure direction stays invisible for as long as the exclusions stand.
 
 ### Multiple acceptable answers — a gap in the scoring mechanics
 
@@ -426,8 +562,8 @@ alias. Tracked on `.claude/TODO.md`.
 |---|---|---|
 | `stop-motion / clay` | **no sample** | `gromit`, `gumby` |
 | `stop-motion / figure` | **no sample** | `april_1987_figure` (and see the caveat above) |
-| `stop-motion / puppet` | 2, both Coraline | 4, spanning silicone, flocked felt and foam |
-| `2D cel / traditional cel` | **1** (`ivy_toon`) | 7 |
+| `stop-motion / puppet` | 2, both Coraline | 4, spanning silicone, flocked felt and foam — **term merged into `figure` session 17**, so these count toward `figure` now |
+| `2D cel / traditional cel` | **1** (`ivy_toon`) | 7 — **term removed session 17**; all 25 `2D cel` files now take `none`. The enrichment is what made the 2/7 recall measurable, which is what got the term dropped |
 | `western toon` at realistic proportions | the session-12 corpus gap | ~9 realistic-proportion samples; the idiom goes 8 → 25 |
 | a photographic, signage-free day/night set | standing gap 1 | `shed_day` / `shed_dusk` / `shed_night` |
 | `infant`, `middle-aged`, `older adult` age brackets | untested | `baby_middle_aged`, `maggie_grandpa_cat`, `gordon_*`, `pjs` |
@@ -453,29 +589,29 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
 | `annie3` | comic | digital | western toon | colour | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
 | `annie3_panel1` | comic | digital | western toon | colour | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
-| `april_1987` | 2D cel | traditional cel | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young-adult woman + 1 humanoid turtle | april | s15 | franchise |
+| `april_1987` | 2D cel | none | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young-adult woman + 1 humanoid turtle | april | s15 | franchise |
 | `april_1987_figure` | stop-motion | figure | dimensional toon | colour | **a photograph of moulded plastic figures on a shelf**, not an animation frame — classified by the objects, see tie-break 1 | int | 5 figures (1 woman, 4 humanoid turtles) + 1 rat figure behind | april | s15 | text, franchise |
 | `april_comic` | drawing | marker | western toon | colour | original marker art on a blank sketch cover, photographed — **classified by the art, not the capture**, see tie-break 2 | none | 1 young-adult woman | april | s15 | text, franchise |
 | `april_fanart` | drawing | marker | realist | colour | **a composite**: a marker drawing of the figure laid over a separately-sourced manhole cover, on a digital white ground — classified by the figure, which is the subject. Corrected s15, see corrections | none | 1 young-adult woman | april | s15 | franchise |
-| `avatar_1` | 2D cel | digital | western toon | colour | western TV series drawn in an anime idiom — **provisional**, see the convergence note | ext | 2 children | avatar, anime-toon | s15 | franchise |
-| `avatar_2` | 2D cel | digital | western toon | colour | as `avatar_1`; night camp. A foreground pole crosses the lower frame | ext | 5 children and teenagers | avatar, anime-toon | s15 | franchise |
+| `avatar_1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional**, see the convergence note | ext | 2 children | avatar, anime-toon | s15 | franchise |
+| `avatar_2` | 2D cel | none | western toon | colour | as `avatar_1`; night camp. A foreground pole crosses the lower frame | ext | 5 children and teenagers | avatar, anime-toon | s15 | franchise |
 | `ayanami_oil` | painting | digital | anime | colour | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
-| `azumanga_anime` | 2D cel | digital | anime | colour | flat cel, thick outline, sticker border | none | 3 schoolgirls | azumanga | s7a | franchise |
-| `azumanga_toon` | 2D cel | digital | western toon | colour | flat toon over textured paint | ext | same 3 schoolgirls | azumanga | s7a | franchise |
+| `azumanga_anime` | 2D cel | none | anime | colour | flat cel, thick outline, sticker border; **naturalistic head-to-body ratio, large irises with a specular glint, iris distinct from pupil** | none | 3 schoolgirls, **two shared with `azumanga_toon`** | azumanga | s7a | franchise, corr |
+| `azumanga_toon` | 2D cel | none | western toon | colour | flat toon over textured paint; **heavily disproportionate bodies -- noodle limbs, oversized heads, hands and feet -- small flat black pupils with no iris, and a stylised non-realistic background** | ext | 3 schoolgirls, **two shared with `azumanga_anime`; the third differs** | azumanga | s7a | franchise, corr |
 | `baby_middle_aged` | photograph | none | realist | colour | — | int | 1 middle-aged man + 1 infant | age-family | s15 | — |
-| `beauty_beast` | 2D cel | traditional cel | western toon | colour | **2D theatrical feature** — deliberately not distinguished from TV cel | ext | 1 young-adult woman + 1 beast | feature-2d | s15 | text, franchise |
+| `beauty_beast` | 2D cel | none | western toon | colour | **2D theatrical feature** — deliberately not distinguished from TV cel | ext | 1 young-adult woman + 1 beast | feature-2d | s15 | text, franchise |
 | `bird_vector` | vector | none | flat graphic | colour | — | none | none (1 bird) | bird | s7a | — |
 | `bird_watercolor` | painting | watercolour | realist | colour | on textured paper | none | none (1 bird) | bird | s7a | — |
 | `bookshop` | photograph | none | realist | colour | — | **ext (int visible)** | 1 adult man | setting-boundary | s6 | — |
-| `boondocks` | 2D cel | digital | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 2 children + 1 partly visible adult | anime-toon | s15 | franchise |
+| `boondocks` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 2 children + 1 partly visible adult | anime-toon | s15 | franchise |
 | `cannon` | photograph | none | realist | colour | — | ext | none | — | s7a | — |
 | `captain` | photograph | none | realist | colour | — | ext | 1 adult man | — | s6 | — |
 | `car_1` | photograph | none | realist | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | car-angle | s7b | text, amb |
 | `car_2` | photograph | none | realist | colour | as `car_1` | none | none | car-angle | s7b | text, amb |
-| `car_interior_mecha_driver` | 2D cel | digital | anime | colour | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
+| `car_interior_mecha_driver` | 2D cel | none | anime | colour | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
 | `car_interior_photo` | photograph | none | realist | colour | press/product shot | **int (vehicle)** | none | car-interior | s7a | text |
 | `car_interior_sketch` | drawing | digital | anime | colour | digital, construction lines visible | **int (vehicle)** | 2 young women | car-interior | s7a | — |
-| `car_interior_toon` | 2D cel | digital | western toon | colour | night, driver's seat | **int (vehicle)** | 1 adult woman | car-interior | s15 | franchise |
+| `car_interior_toon` | 2D cel | none | western toon | colour | night, driver's seat | **int (vehicle)** | 1 adult woman | car-interior | s15 | franchise |
 | `castle` | photograph | none | realist | colour | — | ext | 1 young-adult woman | — | s6 | — |
 | `chair` | photograph | none | realist | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | s7a | amb |
 | `chips_hotdog_dr_pepper_painting` | painting | oil | realist | colour | traditional, alla prima | int-ish | none | — | s7a | text |
@@ -488,13 +624,13 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `comic_panel2` | comic | ink | anime | colour | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
 | `comic_panel3` | comic | ink | anime | colour | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
 | `comic_panel4` | comic | ink | anime | colour | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
-| `coraline1` | stop-motion | puppet | dimensional toon | colour | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
-| `coraline2` | stop-motion | puppet | dimensional toon | colour | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
+| `coraline1` | stop-motion | figure | dimensional toon | colour | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
+| `coraline2` | stop-motion | figure | dimensional toon | colour | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
 | `destroyer_drawing` | print | halftone | realist | monochrome | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
 | `destroyer_photo` | photograph | none | realist | monochrome | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
 | `door_first` | live-action film | none | realist | colour | **first frame** — door shut, corridor empty | int | **none** | door, first-last | s8 | text |
 | `door_last` | live-action film | none | realist | colour | **last frame** — same door open, room and man revealed | int | 1 adult man | door, first-last | s8 | text |
-| `fern_gully` | 2D cel | traditional cel | western toon | colour | **2D theatrical feature** | ext | 6+ | feature-2d | s15 | franchise |
+| `fern_gully` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 6+ | feature-2d | s15 | franchise |
 | `fish_pixel` | pixel art | none | realist | colour | flat sprite | none | none | — | s7a | — |
 | `forest_autumn` | photograph | none | realist | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
 | `forest_day` | vector | none | flat graphic | colour | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
@@ -504,35 +640,35 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `fuji` | photograph | none | realist | colour | — | ext | none | — | s6 | real |
 | `girl_painting` | painting | digital | realist | colour | oil-style, soft edges | none | 1 girl | girl-painting | s7a | text |
 | `girl_painting_reference` | live-action film | none | realist | colour | film still | int | 1 girl | girl-painting | s7a | real |
-| `gordon_1996` | 2D cel | traditional cel | western toon | colour | 90s TV cel | **int (vehicle)** | 1 older-adult man | gordon, toon-era | s15 | franchise |
-| `gordon_2004` | 2D cel | digital | western toon | colour | digital ink and paint, angular design | ext | 1 middle-aged man | gordon, toon-era | s15 | franchise |
+| `gordon_1996` | 2D cel | none | western toon | colour | 90s TV cel | **int (vehicle)** | 1 older-adult man | gordon, toon-era | s15 | franchise |
+| `gordon_2004` | 2D cel | none | western toon | colour | digital ink and paint, angular design | ext | 1 middle-aged man | gordon, toon-era | s15 | franchise |
 | `gordon_comic` | comic | digital | realist | colour | single panel | ext | 1 middle-aged man | gordon | s15 | text, franchise |
 | `gromit` | stop-motion | clay | dimensional toon | colour | plasticine, thumbprint surfaces; set and vehicle are built models, but character figures are present so `clay` wins | **int (ext visible)** | 1 man + 1 dog, both clay | stopmo-sub | s15 | text, franchise |
 | `gumby` | stop-motion | clay | dimensional toon | colour | classic clay, VHS-grade | int | 3 clay figures — 1 humanoid, 1 **anthropomorphised horse**, 1 in the background | stopmo-sub | s15 | franchise |
-| `gwen` | 2D cel | digital | western toon | colour | — | **int (vehicle)** | 2 girls | gwen | s15 | text, franchise |
+| `gwen` | 2D cel | none | western toon | colour | — | **int (vehicle)** | 2 girls | gwen | s15 | text, franchise |
 | `gwen_cg` | 3D CG | none | dimensional toon | colour | low-resolution render; same character design as `gwen` | int | 1 young woman | gwen | s15 | text, franchise |
-| `ivy_toon` | 2D cel | traditional cel | western toon | colour | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
+| `ivy_toon` | 2D cel | none | western toon | colour | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
 | `jacket` | photograph | none | realist | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
 | `jacket2` | photograph | none | realist | colour | — | ext | same woman | jacket | s6 | — |
-| `kasia` | 2D cel | digital | anime | colour | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
+| `kasia` | 2D cel | none | anime | colour | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
 | `kasia_bag` | photograph | none | realist | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | kasia, bag-angle | s7a | corr |
 | `kasia_bag_2` | photograph | none | realist | colour | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | corr |
 | `kasia_outfit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
 | `kasia_render` | 3D CG | none | anime | colour | stylised anime character render | none | 1 girl | kasia | s7a | — |
 | `kasia_swimsuit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
 | `kasia_swimsuit_render` | 3D CG | none | anime | colour | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
-| `kasia_swimsuit_worn` | 2D cel | digital | anime | colour | the original commission | none | 1 girl (same character) | kasia | s7b | text |
+| `kasia_swimsuit_worn` | 2D cel | none | anime | colour | the original commission | none | 1 girl (same character) | kasia | s7b | text |
 | `kaypro_ii` | photograph | none | realist | colour | — | none | none | — | s7a | text |
 | `kiki` | drawing | digital | anime | colour | a signed digital illustration, **not an animation still** — soft airbrushed shading, gradient blush, tapered stroke-weight in the hair. Corrected s16, see corrections | none | 1 girl + 1 black cat | — | s6 | franchise, corr |
 | `lincoln_photo` | photograph | none | realist | monochrome | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
 | `lincoln_money` | print | engraving | realist | monochrome | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
-| `maggie_grandpa_cat` | 2D cel | digital | western toon | colour | flat, heavy stylisation | int | 1 older-adult man + 1 infant + 1 cat | age-family | s15 | text, franchise |
+| `maggie_grandpa_cat` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 1 older-adult man + 1 infant + 1 cat | age-family | s15 | text, franchise |
 | `marker` | drawing | marker | anime | colour | — | int | 1 young woman | — | s7b | text |
-| `miya` | 2D cel | digital | anime | colour | — | ext | 1 teenage girl | — | s6 | text, franchise |
+| `miya` | 2D cel | none | anime | colour | — | ext | 1 teenage girl | — | s6 | text, franchise |
 | `miyu` | pixel art | none | anime | colour | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
-| `molly` | 2D cel | digital | western toon | colour | flat, heavy stylisation | int | 3 children | — | s15 | franchise |
+| `molly` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 3 children | — | s15 | franchise |
 | `mountain_rain` | painting | digital | realist | colour | matte-painting style | ext | none | — | s6 | — |
-| `nadia` | 2D cel | traditional cel | anime | colour | promotional card with a title overlay | ext | 1 girl + 1 boy + 1 lion cub | — | s15 | text, franchise |
+| `nadia` | 2D cel | none | anime | colour | promotional card with a title overlay | ext | 1 girl + 1 boy + 1 lion cub | — | s15 | text, franchise |
 | `newspaper` | photograph | none | realist | colour | — | int | 1 adult man | — | s6 | — |
 | `p1_first` | live-action film | none | realist | colour | very dim | int | 1 adult man | p1 | s6 | — |
 | `p1_last` | live-action film | none | realist | colour | far brighter and closer | int | 1 adult man | p1 | s6 | — |
@@ -548,17 +684,17 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `p6_last` | live-action film | none | realist | colour | same window, tighter | int | 1 girl | p6-window | s6 | corr |
 | `pancakes` | photograph | none | realist | colour | — | int | 1 adult man + 1 child girl | char-drift | s6 | — |
 | `peter_griffin_painting` | painting | digital | dimensional toon | colour | flat-cartoon character rendered painterly | none | 1 adult man | peter-griffin | s7a | franchise |
-| `peter_griffin_toon` | 2D cel | digital | western toon | colour | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
+| `peter_griffin_toon` | 2D cel | none | western toon | colour | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
 | `phone` | photograph | none | realist | colour | cut out on pure white | none | 1 adult woman | — | s6 | — |
-| `pjs` | stop-motion | puppet | dimensional toon | colour | foam puppets; cast poster with a logo overlay | ext | 11+, including 1 older-adult woman and 3 children | stopmo-sub | s15 | text, franchise |
-| `pocahontas` | 2D cel | traditional cel | western toon | colour | **2D theatrical feature** | ext | 2 adults + 2 animals + 1 bird | feature-2d | s15 | franchise |
+| `pjs` | stop-motion | figure | dimensional toon | colour | foam puppets; cast poster with a logo overlay | ext | 11+, including 1 older-adult woman and 3 children | stopmo-sub | s15 | text, franchise |
+| `pocahontas` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 2 adults + 2 animals + 1 bird | feature-2d | s15 | franchise |
 | `ramen_pixel` | pixel art | none | realist | colour | hi-fi, shaded, anti-aliased | none | none | — | s7a | — |
-| `rudolf` | stop-motion | puppet | dimensional toon | colour | flocked and felt over armature, fibre hair — a very different puppet from `coraline*` | ext | 1 elf figure + 1 reindeer | stopmo-sub | s15 | franchise |
+| `rudolf` | stop-motion | figure | dimensional toon | colour | flocked and felt over armature, fibre hair — a very different puppet from `coraline*` | ext | 1 elf figure + 1 reindeer | stopmo-sub | s15 | franchise |
 | `san_fransisco_day_evening_night` | vector | none | flat graphic | colour | **composite**, 3 stacked panels | ext | none | sanfran-daynight | s7b | — |
 | `sanfran_day` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
 | `sanfran_evening` | vector | none | flat graphic | colour | 1039x487, golden sky | ext | none | sanfran-daynight | s7b-crop | derived |
 | `sanfran_night` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
-| `scooby` | 2D cel | digital | western toon | colour | modern flat promotional art; gradient shading on the background only | ext | 4 adults + 1 dog | — | s15 | text, franchise |
+| `scooby` | 2D cel | none | western toon | colour | modern flat promotional art; gradient shading on the background only | ext | 4 adults + 1 dog | — | s15 | text, franchise |
 | `shed_day` | photograph | none | realist | colour | overcast daylight | ext | none | shed-daynight | s15 | — |
 | `shed_dusk` | photograph | none | realist | colour | the intermediate state | ext | none | shed-daynight | s15 | — |
 | `shed_night` | photograph | none | realist | colour | **night-mode composite** — foliage far brighter than a true night exposure, but far detail genuinely lost | ext | none | shed-daynight | s15 | — |
@@ -570,8 +706,8 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `teddy_taft` | photograph | none | realist | monochrome | — | ext | 2 adult men | — | s7a | real |
 | `temple_day` | painting | digital | anime | colour | high-key, painterly | ext | 1 young woman | temple | s7a | text |
 | `temple_night` | painting | digital | anime | colour | low-key, same hand | ext | 1 young man | temple | s7a | text |
-| `titans1` | 2D cel | digital | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 5 | titans, anime-toon | s15 | franchise |
-| `titans_go` | 2D cel | digital | western toon | colour | chibi proportions, heavy stylisation | ext | 5 | titans | s15 | franchise |
+| `titans1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 5 | titans, anime-toon | s15 | franchise |
+| `titans_go` | 2D cel | none | western toon | colour | chibi proportions, heavy stylisation | ext | 5 | titans | s15 | franchise |
 | `tv` | photograph | none | realist | colour | — | int | 1 older-adult woman | — | s6 | — |
 | `van_pixel` | pixel art | none | anime | colour | PC-98 style, dithered, 16-colour | ext | 1 girl | — | s7a | text |
 | `vector_city` | vector | none | flat graphic | colour | — | ext | none | — | s6 | — |
@@ -598,7 +734,7 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `avatar_2` | grass headland at night; sea and clouded sky behind, a canvas tent | **campfire**, bowls, cups; a foreground pole crosses the lower frame | green tunic, dark red robes, orange-and-yellow robe, blue-grey wrap |
 | `ayanami_oil` | tiled washroom or pool edge; pale green tiles, dark floor tiles, green ledge | (none) | pale school swimsuit |
 | `azumanga_anime` | no environment, white ground | (none) | coral sailor-style school jumpers, white collars, dark red pleated skirts, orange socks / white socks + brown loafers |
-| `azumanga_toon` | school grounds; chain-link fence, clipped hedges, trees, grass, concrete path, brick edging, outline clouds | (none) | same coral uniforms; one w/ black over-knee socks |
+| `azumanga_toon` | school grounds; chain-link fence, clipped hedges, trees, grass, concrete path, brick edging, outline clouds — **all stylised into flat shapes, no real depth** | (none) | same coral uniforms; one w/ black over-knee socks |
 | `baby_middle_aged` | pale room corner; large houseplants on a black metal stand, white wall, light switch | potted yucca and croton, **wristwatch on a green strap** | **man**: dark grey polo w/ a striped placket · **infant**: white long-sleeved bodysuit |
 | `beauty_beast` | stone balcony terrace at night; blue moonlit garden, balustrade, two large urns w/ willow trees | **stone urns**, balustrade; a site watermark at lower left | **woman**: off-shoulder gold ballgown, gold earrings, hair up · **beast**: blue tailcoat w/ gold trim, white cravat, black trousers, blue hair ribbon |
 | `bird_vector` | no environment, white | (none) | — |
@@ -748,7 +884,7 @@ you are running before scoring anything.
 | supergirl | `supergirl1` / `supergirl2` | same character, costume, near-identical flying pose; marker board vs rough pencil | style | very tight |
 | gwen | `gwen` / `gwen_cg` | one character design, same cat-motif top; **2D cel vs 3D CG** | style, character | tight — **the direct test of tie-break 3**: the idiom should move `western toon` → `dimensional toon` while the character holds |
 | titans | `titans1` / `titans_go` | same five characters; **anime-leaning vs chibi-stylised western toon** | style | tight — **the proportion-band probe** the session-12 gap asked for |
-| gordon-era | `gordon_1996` / `gordon_2004` | one character, one idiom; **90s traditional cel vs 2000s digital cel** | style | tight, and **strictly better than `toon-era`** — here the vocabulary CAN separate the two |
+| gordon-era | `gordon_1996` / `gordon_2004` | one character, one idiom; 90s cel vs 2000s digital production | style | **DEAD for `style` as of session 17** — both are now `2D cel / none`, so there is nothing left to separate. It was the corpus's tightest era pair and the vocabulary no longer asks the question. Still live for `character` (one character, two eras of design) |
 | lincoln | `lincoln_photo` / `lincoln_money` | same face, same era; albumen photograph vs line engraving | style, character | tight — an object *containing* a portrait, so `[[SUBJECT_KIND]]` is a live question |
 | destroyer | `destroyer_photo` / `destroyer_drawing` | same warship class; archival photo vs technical plate | style, object | tight, and **the only media pair with no person in it** |
 | p6-window | `window` + `p6_first` + `p6_last` | one window, **three** framings and exposures | setting | tight — the widest same-place spread. **Reframing costs more than relighting**; this pair agrees less well than `city-*` |
@@ -759,16 +895,16 @@ you are running before scoring anything.
 | bag-angle | `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object | harder than `car-angle` — an AI re-render, strap arranged differently |
 | peter-griffin | `peter_griffin_painting` / `peter_griffin_toon` | one character: canonical flat toon vs painterly | style | tests franchise recognition **without a label** |
 | oil-idiom | `ayanami_oil` / `woman_oil` | oil idiom, **digital vs traditional** | style | fine `[[MEDIUM]]` discrimination |
-| stopmo-sub | `gromit`/`gumby` (clay) · `rudolf`/`pjs`/`coraline1`/`coraline2` (puppet) · `april_1987_figure` (figure) | one coarse medium, **three sub-terms** | style | the `[[SUB_MEDIUM]]` discrimination set. **Clay vs puppet is NOT unmistakable** — s15 disproved the earlier claim that it was: the describer inverted `gromit` and `pjs`, and the user misread `pjs` too. It is decidable, but only via the deformation tell now written into the `clay` definition. `figure` has one atypical sample |
+| stopmo-sub | `gromit`/`gumby` (clay) · `rudolf`/`pjs`/`coraline1`/`coraline2`/`april_1987_figure` (figure) | one coarse medium, **two sub-terms** as of session 17 | style | the `[[SUB_MEDIUM]]` discrimination set, and it narrowed twice. **Clay vs puppet is NOT unmistakable** — s15 disproved that: the describer inverted `gromit` and `pjs`, and the user misread `pjs` too. It is decidable, but only via the deformation tell written into the `clay` definition. **`puppet` vs `figure` was not decidable at all**, and session 17 merged them, which is why `figure` went from one atypical sample to five. What remains is a single question — *does the surface show evidence of remodelling, or is it fabricated and rigid?* — and that is the discrimination this set now tests |
 | toon-era | `ivy_toon` / `peter_griffin_toon` | `2D cel / western toon`, **90s cel vs modern flat digital** | style | fine discrimination *below* the sub-term — nothing in the vocabulary separates these two. **Superseded by `gordon-era`**, which the vocabulary can express |
-| azumanga | `azumanga_anime` / `azumanga_toon` | same 3 characters, same uniforms; flat anime cel vs western TV-toon | style | loose, and a **fine** discrimination — both are flat 2D |
+| azumanga | `azumanga_anime` / `azumanga_toon` | **two** shared characters (the third differs), same uniforms; flat anime cel vs western TV-toon | style | **PROMOTED session 17 — it is the sharpest `anime` vs `western toon` probe in the corpus**, not the loose one it was filed as. Both are flat 2D, so medium cannot help; the idiom is carried entirely by proportion, eye construction and background treatment |
 | anime-toon | `avatar_1` / `avatar_2` / `boondocks` / `titans1` | **western production, anime idiom** — the convergence cases | style | not a control but a **test set**: these carry the provisional `western toon` ruling. Read "Rulings that may need revisiting" before scoring |
 | feature-2d | `beauty_beast` / `pocahontas` / `fern_gully` (vs `ivy_toon`) | 2D theatrical features against a 90s TV cartoon | style | **negative control** — these must NOT be distinguished from `ivy_toon`; the conflation is deliberate |
-| coraline | `coraline1` / `coraline2` | same character; puppet on white vs film still | style, character | loose; doubles as isolated-subject vs in-scene |
+| coraline | `coraline1` / `coraline2` | same character; figure on a blank ground vs film still | style, character | loose; doubles as isolated-subject vs in-scene |
 | bird | `bird_vector` / `bird_watercolor` | a blue-and-orange bird | style | loose — not the same bird, the same *idea* of one |
 | annie | `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic | style, character | loose, wide spread. **Requires a `SUBJECT:` line** — see below |
-| april | `april_1987` / `april_1987_figure` / `april_comic` / `april_fanart` | one character across **three** media: traditional cel, photographed plastic figures, and marker twice — `april_comic` on a comic cover, `april_fanart` composited over a manhole cover | style, character | loose. **No longer the widest medium ladder** — `april_fanart` was corrected from `painting / digital` to `drawing / marker` in s15, which collapsed the fourth rung. The pair it created is arguably more useful than the rung it lost: **same instrument, different presentation**, which is a discrimination nothing else in the corpus tests. **Requires a `SUBJECT:` line** — three of the four have other characters in frame |
-| gordon | `gordon_1996` / `gordon_2004` / `gordon_comic` | one character across three media: traditional cel, digital cel, comic | style, character | loose; the tight `gordon-era` pair sits inside it |
+| april | `april_1987` / `april_1987_figure` / `april_comic` / `april_fanart` | one character across **three** media: 2D cel, photographed plastic figures, and marker twice — `april_comic` on a comic cover, `april_fanart` composited over a manhole cover | style, character | loose. **No longer the widest medium ladder** — `april_fanart` was corrected from `painting / digital` to `drawing / marker` in s15, which collapsed the fourth rung. The pair it created is arguably more useful than the rung it lost: **same instrument, different presentation**, which is a discrimination nothing else in the corpus tests. **Requires a `SUBJECT:` line** — three of the four have other characters in frame |
+| gordon | `gordon_1996` / `gordon_2004` / `gordon_comic` | one character across **two** media as of session 17: `2D cel` twice, then `comic` | style, character | loose, and it lost a rung when `2D cel`'s sub-list was emptied — the `gordon-era` pair inside it is now dead for `style` |
 | car-interior | `car_interior_photo` / `_sketch` / `_mecha_driver` / `_toon` | one setting *type* across **four** media; `_toon` is the only night one | setting | loosest — different vehicles |
 | age-family | `baby_middle_aged` / `maggie_grandpa_cat` | an infant and an older adult together, **photograph vs flat toon** | character | the age-bracket probe: `infant` and `older adult` in two media, plus an animal in one |
 | p4 | `p4_first` / `p4_last` | same street, both heavy bokeh | setting | low-information stress case |
@@ -856,6 +992,12 @@ well-formed and passes every structural check.
 | `kasia` sub-term | `flat illustration`, stated flatly | the coarse term `2D cel` is solid; the **sub-term is contested** — an anime-inspired toon idiom leaning slightly western | user, session 9, after style v1 answered `anime` | a sub-term miss here is not clearly a miss. Score the coarse term only |
 | `april_fanart` medium | `painting / digital`, described as "cut out on a white ground" | **`drawing / marker`**, and the image is a **composite**: a marker drawing of the figure laid over a separately-sourced manhole cover on a digital white ground. The user: *"the manhole cover looks like it was probably inserted post facto… The figure looks like a marker drawing, the manhole does not. The clean white background is obviously not a paper scan"* | user, session 15, on being shown the round's `dimensional toon` miss | recorded during the s15 enrichment pass, so it was wrong from the day it was written. It **collapses the april ladder from four media to three** — `april_comic` and `april_fanart` are now both `drawing / marker` — and the ladder's billing as "the corpus's widest" had to be retracted. Also the corpus's first acknowledged **composite**: the classification follows the *subject*, not the assembled whole |
 | `coraline1` ground | "puppet cut out on white" | the file is a **palette PNG with a transparency key, 83.5% fully transparent**. It has no white ground; it has no ground at all. What reaches the model composites to **black** | the session-9 style round reported "pure black background" twice and was scored as a hallucination; the user identified transparency as the cause, confirmed by an alpha scan of the whole corpus | **a wrong ground truth was about to be recorded as a model defect.** It is the only genuinely transparent file in the corpus — six other files carry an alpha channel that is fully opaque, so they are inert |
+| `chair` / `car_1` / `car_2` scorability | `amb` → **`UNSCORABLE`**: excluded from scoring entirely, permanently, because photo-vs-render is not visually determinable | still `amb`, but the flag now emits an **accept-set** `photograph \| 3D CG`. Both readings pass; everything else still fails | user, session 17, clearing every outstanding ruling before the vocabulary change | closes a question open since session 9. The exclusion was over-broad: it dropped the cases from the denominator, so a gross error on them would have registered as nothing. Scoring them against `photograph` was never an option either — that value is **provenance**, and `L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS` forbids it. Deliberately a **weak** test: do not read a pass here as evidence the distinction works |
+| `fish_pixel` / `lincoln_money` / `mountain_rain` idiom | three separate `CONTESTED` rulings on `[[IDIOM]]`, each recorded as its own image ambiguity | all three are `realist`, and all three failed to `flat graphic` — **one over-attractor, not three ambiguities**. `kasia_bag` and `destroyer_drawing` are already-scored misses of the same shape | user, session 17; the pattern was only visible once the three were listed together | **the excluding is what hid it.** Cases dropped one at a time are never compared with each other, so a shared failure direction stays invisible for as long as the exclusions stand. Cleared to the master value and now scoring as ordinary misses; the defect is on `.claude/TODO.md` as one named item |
+| `azumanga_anime` / `azumanga_toon` cast | "same 3 schoolgirls", stated in both master rows, the contents row and the probe-pair row | **two of the three are shared**; the third differs between the images. And the recorded difference -- "flat cel, thick outline, sticker border" vs "flat toon over textured paint" -- describes SURFACE TREATMENT and misses what actually separates them: `_anime` has naturalistic body proportions and large irises with a specular glint distinct from the pupil, `_toon` has noodle limbs, oversized heads/hands/feet, small flat black pupils with no iris, and a background stylised into flat shapes | user, session 17, on being shown both images during the `western toon` vs `anime` work | **it cost a wrong design decision on the spot.** Reading the claim row rather than the pixels, I argued the pair "differs only in rendering, so a proportion rule cannot separate it" and nearly talked the user out of the very rule the corpus supports. Textbook L-CLAIM-ROWS-ARE-UNRELIABLE: a description row was reliable about uniforms and setting, a CLAIM row about cast identity and about what distinguishes the pair was not. The pair is now the corpus's sharpest anime-vs-western-toon probe rather than a "loose" one |
+| `coraline1` sub-medium | `CONTESTED` — `puppet` and `figure` not distinguishable here | an **accept-set** `puppet \| figure`, with `coraline2` as the control — then **moot**, once the merge landed later the same session and both became `figure` | user, session 17 | `CONTESTED` threw away the fact that `clay` and `model` are still flatly wrong on it. Short-lived by design: it existed so the last pre-merge round could be scored against a pre-merge key. `coraline2` is *not* ambiguous the same way — a built kitchen set, fabric knitwear with visible nap, fibre hair, no toy reading available — which is why it was the control |
+| `stop-motion / puppet` (the term) | a sub-term distinct from `figure`: fabric, fibre hair, sculpted painted matte surfaces, replacement-face seams | **merged into `figure`.** 4 master rows moved: `coraline1`, `coraline2`, `pjs`, `rudolf` | agreed session 12 on `coraline1`'s contested ruling; executed session 17 | the split had **no statable test** — every attempt to write one described a property both terms share. The merged term does: *fabricated and rigid*, as against `clay`'s *evidence of remodelling*. Second time this document's "unmistakable on sight" claim was falsified for a stop-motion sub-term |
+| `2D cel / traditional cel` and `/ digital` (the terms) | a two-value sub-list separating hand-drawn cel animation from digital production | **both removed; `2D cel` has no sub-list.** 25 master rows moved to `none` | user, session 17, on a measured `traditional cel` recall of 2/7 with all 5 losses to `digital` | not merely undeliverable but **actively harmful to emit**: a one-value list would have asserted digital production of `april_1987` and `pocahontas` downstream to the composer. Kills the `gordon-era` probe pair and shortens the `gordon` and `april` ladders |
 
 **The general lesson is `L-CLAIM-ROWS-ARE-UNRELIABLE`, and it is about the inventory rather than
 about kasia: a "these are
@@ -980,8 +1122,29 @@ that consistently dissolves the ambiguity rather than cataloguing it.
 That cuts at the remaining three too. The model called `chair`, `car_1` and `car_2`
 `3D CG / product render` in every round — which *is* the presentation read. If presentation decides,
 the model is right and the master table is wrong; the `amb` flag is preserving a provenance-based
-answer that our own tie-break says not to use. **Unresolved deliberately** — it interacts with the
-vocabulary redesign, so both get settled together rather than piecemeal. See `.claude/TODO.md`.
+answer that our own tie-break says not to use.
+
+**RESOLVED session 17, and not in either direction the question was framed in.** The user's ruling
+is that `amb` now emits an **accept-set** — `photograph | 3D CG` on `[[MEDIUM]]` — rather than
+`UNSCORABLE`. Both readings pass; `painting`, `drawing`, `vector` and the rest still fail.
+
+Why that beats both alternatives that had been on the table:
+
+- **Scoring them against `photograph` was never legitimate.** That value came from the user's
+  knowledge of the *source* — an automaker press shot, an Amazon listing — not from the pixels, and
+  `L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS` forbids scoring a describer against information it was never
+  given. This is why "the master table is wrong" is not quite the right diagnosis either: the table
+  is right about the world and wrong about what is *askable*.
+- **`UNSCORABLE` threw away too much.** It removed the cases from the denominator entirely, so a
+  gross error on them — `painting`, say — would have registered as nothing at all.
+
+**It is deliberately a WEAK test, and that must not be forgotten when reading a score.** Both
+plausible answers pass, so a pass here is not evidence the photo-vs-render distinction works. The
+accept-sets name `fruitbowl`, `shrek_cg` and `woody_cg` as controls, guarding the direction they can
+erode: `photograph` is the forgiven side, so unambiguous `3D CG` must still come back `3D CG`.
+
+The mechanism lives in `scripts/gen_style_sweep.py` (`AMB_WHY` / `AMB_CONTROL`), so the flag stays
+the single source of truth and a regenerated sweep keeps the ruling.
 
 Note the one thing that survives regardless. `[[MEDIUM]]` may be unscorable on a file, **but two
 views of one object disagreeing with each other is still a real failure** — they must land in the
@@ -1222,13 +1385,10 @@ change to the master table.
 | `live-action film` | — | **16** | door_first, door_last, girl_painting_reference, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, window |
 | `3D CG` | — | **6** | fruitbowl, gwen_cg, kasia_render, kasia_swimsuit_render, shrek_cg, woody_cg |
 | `stop-motion` | | **7** | |
-| | puppet | 4 | coraline1, coraline2, pjs, rudolf |
+| | figure | 5 | april_1987_figure, coraline1, coraline2, pjs, rudolf |
 | | clay | 2 | gromit, gumby |
-| | figure | 1 | april_1987_figure |
 | | *model* | *0* | *no sample* |
-| `2D cel` | | **25** | |
-| | digital | 18 | avatar_1, avatar_2, azumanga_anime, azumanga_toon, boondocks, car_interior_mecha_driver, car_interior_toon, gordon_2004, gwen, kasia, kasia_swimsuit_worn, maggie_grandpa_cat, miya, molly, peter_griffin_toon, scooby, titans1, titans_go |
-| | traditional cel | 7 | april_1987, beauty_beast, fern_gully, gordon_1996, ivy_toon, nadia, pocahontas |
+| `2D cel` | — | **25** | april_1987, avatar_1, avatar_2, azumanga_anime, azumanga_toon, beauty_beast, boondocks, car_interior_mecha_driver, car_interior_toon, fern_gully, gordon_1996, gordon_2004, gwen, ivy_toon, kasia, kasia_swimsuit_worn, maggie_grandpa_cat, miya, molly, nadia, peter_griffin_toon, pocahontas, scooby, titans1, titans_go |
 | `comic` | | **7** | |
 | | ink | 4 | comic, comic_panel2, comic_panel3, comic_panel4 |
 | | digital | 3 | annie3, annie3_panel1, gordon_comic |

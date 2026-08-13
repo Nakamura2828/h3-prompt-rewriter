@@ -337,6 +337,61 @@ def report_why_groups(key, label):
         print(wrap(', '.join(sorted(groups[why])), '      '))
 
 
+def banner(verdict, n_miss, n, threshold, enriched):
+    """Repeat the gate verdict where it cannot be scrolled past, with the required action.
+
+    It used to print once, as a single line under ~140 lines of per-case output, and was
+    missed in two consecutive sessions despite being emitted correctly every time. A rule
+    that is well-written, machine-emitted and still skipped twice needs a mechanism, not
+    more prose. Suppress with --no-gate when an automated caller does its own handling."""
+    action = ('lead with the SYSTEMATIC FINDING, attach 2-3 exemplars'
+              if verdict == 'DIAGNOSIS' else
+              'bring up to %d case(s), one per distinct pattern' % min(n_miss, 6))
+    body = ['GATE: ' + verdict,
+            '%d content miss(es) of %d scorable - threshold %d%s'
+            % (n_miss, n, threshold, '  (enriched: gated on movement)' if enriched else ''),
+            action,
+            'ask BEFORE designing any fix, and BEFORE archive_run.py --clean']
+    w = max(len(x) for x in body) + 2
+    print()
+    print('+' + '-' * w + '+')
+    for x in body:
+        print('| ' + x.ljust(w - 1) + '|')
+    print('+' + '-' * w + '+')
+
+
+def report_clusters(key, got, perfield, fields):
+    """Group the misses by (field, expected -> got). One cluster is one candidate finding.
+
+    Step 3 of the adjudication protocol says to pick cases for what they TEACH, never the
+    first six in file order -- which requires knowing which failures share a direction.
+    Doing that by hand is how three separately-explained CONTESTED rulings hid a single
+    over-attractor for eight sessions; see L-EXCLUSIONS-HIDE-A-SHARED-DIRECTION."""
+    clusters = {}
+    for cid, per in perfield.items():
+        if not per:
+            continue
+        want = [x.strip() for x in key[cid][0].split('/')]
+        emitted = got.get(cid) or []
+        for i, f in enumerate(fields):
+            if i < len(per) and per[i] is False and i < len(emitted) and i < len(want):
+                primary = want[i].split(ACCEPT_SEP)[0].strip()
+                clusters.setdefault((f, primary, emitted[i].strip()), []).append(cid)
+    if not clusters:
+        return
+    print()
+    print('miss clusters -- one cluster is one candidate finding; take exemplars from '
+          'DIFFERENT rows')
+    rows = sorted(clusters.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+    for (f, want, emitted), ids in rows:
+        names = sorted(i[3:] if i.startswith('sw_') else i for i in ids)
+        head = '%2dx  %s  %s -> %s' % (len(ids), f, want, emitted)
+        print('  %-54s %s%s' % (head, ', '.join(names[:6]),
+                                ' ...' if len(names) > 6 else ''))
+    singles = sum(1 for _, ids in rows if len(ids) == 1)
+    print('  (%d cluster(s), %d of them a single case)' % (len(rows), singles))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -356,6 +411,11 @@ def main():
                     help='honour only the PRIMARY value of every accept-set, i.e. score '
                          'under the pre-session-16 semantics. Run a file both ways to get a '
                          'controlled A/B of the scoring change on identical model output.')
+    ap.add_argument('--no-gate', action='store_true',
+                    help='suppress the gate banner and the miss-cluster report. For an '
+                         'automated caller that does its own handling -- the default is '
+                         'deliberately loud, because this verdict was missed in two '
+                         'consecutive sessions while being printed correctly every time.')
     a = ap.parse_args()
 
     spec = json.loads(pathlib.Path(a.test).read_text(encoding='utf-8'))
@@ -490,6 +550,10 @@ def main():
     else:
         print(f'      bring {min(n_miss, 6)} of them'
               + (' (triage to six, one per pattern)' if n_miss > 6 else ''))
+
+    if not a.no_gate:
+        banner(verdict, n_miss, n, threshold, enriched)
+        report_clusters(key, got, perfield, a.fields)
     print('      format failures are counted separately -- run scripts/validate.py')
 
     sys.exit(0 if n_miss == 0 else 1)

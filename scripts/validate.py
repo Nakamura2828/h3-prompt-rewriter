@@ -224,8 +224,16 @@ MEDIUM_VOCAB = {
     'photograph': (),
     'live-action film': (),
     '3d cg': (),
-    'stop-motion': ('clay', 'puppet', 'figure', 'model'),
-    '2d cel': ('traditional cel', 'digital'),
+    # Session 17 merged `puppet` into `figure` (not distinguishable in practice; `figure` is the
+    # more general term, covering a sculpted puppet, an articulated toy and a rigid set-clay
+    # sculpt alike) and emptied `2D cel` (see below).
+    'stop-motion': ('clay', 'figure', 'model'),
+    # `2D cel` has NO sub-terms as of session 17. It held `traditional cel` and `digital`; the
+    # discrimination was measured at 2/7 with all five losses going to `digital`, and the user
+    # ruled it not worth teaching. Dropping `traditional cel` would have left a one-value list,
+    # which is not a vocabulary -- and worse, it would have made every 2D cel record ASSERT
+    # digital production, including of hand-drawn cel animation, downstream to the composer.
+    '2d cel': (),
     'comic': ('ink', 'screentone', 'digital'),
     'painting': ('oil', 'watercolour', 'digital'),
     'drawing': ('marker', 'pencil', 'ink', 'digital'),
@@ -243,10 +251,13 @@ TREATMENT_VOCAB = ('colour', 'monochrome', 'vintage technicolor')
 
 def _medium_vocab(out):
     """Drift is read on the COARSE term only. The sub-term legitimately differs between two
-    records of one medium (ivy_toon traditional cel / peter_griffin_toon digital), so folding
-    it into the drift check would flag a correct discrimination as drift. The same applies to
-    [[IDIOM]] and [[TREATMENT]], which are independent axes -- two images can share a medium
-    and differ on either."""
+    records of one medium -- `annie1` is `drawing / ink` where `supergirl1` is `drawing /
+    marker` -- so folding it into the drift check would flag a correct discrimination as drift.
+    The same applies to [[IDIOM]] and [[TREATMENT]], which are independent axes: two images can
+    share a medium and differ on either.
+
+    (This used to cite ivy_toon `traditional cel` vs peter_griffin_toon `digital`. Session 17
+    emptied `2D cel`'s sub-list, so that example no longer exists; the rule is unchanged.)"""
     return list(MEDIUM_VOCAB)
 
 

@@ -335,6 +335,18 @@
       "ct": 1786601283,
       "date": "2026-08-13",
       "subject": "describer_style_look v4: production method is not a mark"
+    },
+    {
+      "commit": "c3ec6e1",
+      "ct": 1786603264,
+      "date": "2026-08-13",
+      "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+    },
+    {
+      "commit": "6729225",
+      "ct": 1786603299,
+      "date": "2026-08-13",
+      "subject": "revert describer_style_look to v3; record v4 as a measured regression"
     }
   ],
   "states": [
@@ -758,6 +770,20 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -770,7 +796,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -1208,6 +1234,20 @@
           "path": "prompts/i2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -1217,7 +1257,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -1655,6 +1695,20 @@
           "path": "prompts/l2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -1664,7 +1718,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -2257,6 +2311,34 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -2266,7 +2348,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -2474,6 +2556,20 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -2485,7 +2581,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -2671,6 +2767,20 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -2682,7 +2792,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -2868,6 +2978,20 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -2879,7 +3003,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -3065,6 +3189,20 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -3076,7 +3214,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -3262,6 +3400,20 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -3273,7 +3425,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -3459,6 +3611,20 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -3470,7 +3636,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -3888,6 +4054,20 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -3899,7 +4079,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -4354,6 +4534,20 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -4363,7 +4557,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786404424,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -4713,6 +4907,20 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -4724,7 +4932,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -5056,6 +5264,20 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -5065,7 +5287,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786416528,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -5383,6 +5605,20 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -5392,7 +5628,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786428480,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -5682,6 +5918,20 @@
           "path": "prompts/describer_style.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -5691,7 +5941,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 1
     },
     {
@@ -5882,16 +6132,30 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
         "describer_style_class"
       ],
       "labels": [],
-      "in_worktree": true,
+      "in_worktree": false,
       "provenance_only": false,
-      "first_ct": 1786536234,
-      "last_ct": 1786601283,
+      "first_ct": 1786543782,
+      "last_ct": 1786603299,
       "crlf_variants": 1
     },
     {
@@ -6076,6 +6340,20 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -6085,7 +6363,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786602515,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -6265,6 +6543,20 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -6277,7 +6569,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786344981,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -6448,6 +6740,20 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -6457,7 +6763,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -6628,6 +6934,20 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786601283,
           "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "c3ec6e1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786603264,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "6729225",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786603299,
+          "subject": "revert describer_style_look to v3; record v4 as a measured regression"
         }
       ],
       "families": [
@@ -6637,7 +6957,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786601283,
+      "last_ct": 1786603299,
       "crlf_variants": 2
     },
     {
@@ -6670,6 +6990,78 @@
       "provenance_only": false,
       "first_ct": 1786601283,
       "last_ct": 1786601283,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "4839880444aa5d38760d232a4e56afa0",
+      "bytes": 15446,
+      "lines": 125,
+      "md5_exact": [
+        "4839880444aa5d38760d232a4e56afa0"
+      ],
+      "names": [
+        "describer_style_class"
+      ],
+      "paths": [
+        "prompts/describer_style_class.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786627177,
+      "last_ct": 1786627177,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "d7e49714aa1a9ae1338b349d95fa69f0",
+      "bytes": 11606,
+      "lines": 106,
+      "md5_exact": [
+        "d7e49714aa1a9ae1338b349d95fa69f0"
+      ],
+      "names": [
+        "describer_style_class_v4a"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_style_class_v4a.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class_v4a"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786625176,
+      "last_ct": 1786625176,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "e7aa542f835898bc3d2d4fd803dcadcb",
+      "bytes": 13741,
+      "lines": 121,
+      "md5_exact": [
+        "e7aa542f835898bc3d2d4fd803dcadcb"
+      ],
+      "names": [
+        "describer_style_class_v4b"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_style_class_v4b.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class_v4b"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786627317,
+      "last_ct": 1786627317,
       "crlf_variants": 1
     }
   ]

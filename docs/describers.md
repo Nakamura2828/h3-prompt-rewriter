@@ -293,7 +293,7 @@ of real degradation behind `L-PROMPT-TOKEN-BUDGET` and now unrecoverable.
 | v1 full sweep | All 100 images, `tests/describer_style_sweep.json` (generated from the master table). **95/100 format-clean · coarse 86/95 · sub 77/84 where coarse was right.** Higher than the targeted round because that one was deliberately loaded with hard probe pairs |
 | v2 baseline ×2 (s11) | 45-case targeted test. **27/45 content, 43/45 format — byte-identical across two runs**, on all 45 records. Attribution is clean; a one-case delta is real, not drift |
 | v2 + derivation rule (s11) | 4,054 tokens. Content 29/45 but format **39/45**, with corrupted field tokens over correct content — the budget signature. Reverted |
-| v2 compressed (s11) | Prose tightened, no rule changed. 3,740 tokens, **27/45 content, 45/45 format** — the best format recorded. Kept, and it is the pre-split baseline at `reference/baselines/describer_style_targeted.txt` |
+| v2 compressed (s11) | Prose tightened, no rule changed. 3,740 tokens, **27/45 content, 45/45 format** — the best format recorded. Kept. Its baseline moved to `reference/retired/tests/describer_style_targeted-BASELINE-s12.txt` when the targeted test was retired in session 17 |
 | **v3 split (s12)** | Pure refactor, same vocabulary and tie-breaks. **Format: look 45/45 · class 44/45. Content 29/45** (30 after the `coraline1` ruling), from 27. Movement: fixed 6 · regressed 4 · changed 4, `R=4` vs threshold 7 → adjudication. **`western toon` 1/7 → 6/7**, see below |
 
 **Two findings from session 11 outrank any single round above.** First, determinism is not

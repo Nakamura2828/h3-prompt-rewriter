@@ -54,20 +54,48 @@ ext = {os.path.splitext(f)[0]: f for f in os.listdir(IMG_DIR)
 
 # Adjudicated CONTESTED rulings, per field. CONTESTED is PROVISIONAL -- it expires when the
 # vocabulary that caused it changes, so each entry names why it is contested rather than just
-# excluding the case. All three below are idiom calls on images that are not uniform: the
-# realist-vs-flat-graphic reading depends on which region of the frame you weight.
-# Adjudicated CONTESTED sub-term rulings, same provisional status as the idiom ones below.
-CONTESTED_SUB = {
-    'coraline1': 'puppet and figure are not distinguishable here -- ruled session 12, with the '
-                 'terms themselves to be MERGED into figure; this ruling expires when that lands',
-}
+# excluding the case.
+#
+# SESSION 17 CLEARED ALL OF THESE, by two different routes.
+#
+# The three idiom rulings (fish_pixel, lincoln_money, mountain_rain) were put to the user and
+# cleared to the master value -- they are a single `flat graphic` over-attractor, not three
+# separate ambiguities, and excluding them was hiding a defect rather than recording one.
+#
+# `coraline1` became an ACCEPT-SET rather than being cleared (see ACCEPT_SUB below). That is
+# the better tool for it: CONTESTED threw away the fact that `clay` and `model` would still be
+# flatly wrong there. The ruling is short-lived either way -- the puppet -> figure merge
+# dissolves the distinction -- but the interim matters, because a pre-merge round still has to
+# be scored against a pre-merge key.
+#
+# Both dicts are kept, empty, because the NEXT contested ruling belongs here rather than in a
+# hand-edit -- see L-ADJUDICATION-DEFEATS-REGENERATION for why that distinction matters.
+CONTESTED_SUB = {}
 
-CONTESTED_IDIOM = {
-    'fish_pixel':    'a shaded but heavily simplified sprite on a flat ground',
-    'lincoln_money': 'flat guilloche border and ground dominate; the engraved portrait is a '
-                     'small share of the frame',
-    'mountain_rain': 'painterly and dimensional, but posterised into flat bands',
-}
+CONTESTED_IDIOM = {}
+
+# Per-image accept-sets on [[SUB_MEDIUM]], ruled by the user. An accept-set keeps the case
+# scorable while forgiving a genuinely undecidable call; everything outside the set still fails.
+#
+# EMPTY as of session 17. It briefly held `coraline1`: `puppet | figure`, replacing the session-12
+# CONTESTED ruling. The puppet -> figure merge landed later the same session and dissolved the
+# distinction, so `coraline1` is now plainly `figure`. Kept as the place the next one goes.
+ACCEPT_SUB = {}
+
+# The `amb` accept-set, ruled by the user in session 17. Applied to every master row flagged
+# `amb`; see the comment at the point of use for why UNSCORABLE was the wrong verdict.
+AMB_WHY = (
+    "a clean studio product shot on a pure white sweep, where photo vs render is not visually "
+    "determinable (the `amb` shape, session 7-9; ruled scorable session 17). The master value "
+    "came from the USER'S KNOWLEDGE OF THE SOURCE -- an automaker press shot, an Amazon "
+    "listing -- not from anything in the pixels, and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids "
+    "scoring a describer against that. So BOTH readings pass and neither is punished, while "
+    "painting / drawing / vector still fail. This replaces the old UNSCORABLE ruling: the case "
+    "stays in the denominator and keeps catching gross errors, instead of dropping out "
+    "entirely. NOTE this is a deliberately WEAK test -- do not read a pass here as evidence "
+    "the distinction works. Controls guard the direction it can erode: photograph is the "
+    "forgiven side, so 3D CG cases that are NOT ambiguous must still come back 3D CG.")
+AMB_CONTROL = ['sw_fruitbowl', 'sw_shrek_cg', 'sw_woody_cg']
 
 cases, expected = [], {}
 for r in master:
@@ -85,10 +113,19 @@ for r in master:
     sub = r['sub']
     if name in CONTESTED_SUB:
         sub = f"(CONTESTED -- {CONTESTED_SUB[name]})"
+    if name in ACCEPT_SUB:
+        sub, _why, _ctl = ACCEPT_SUB[name][0], *ACCEPT_SUB[name][1:]
     key = f"{r['medium']} / {sub} / {idiom} / {r['treatment']}"
+    if name in ACCEPT_SUB:
+        key = {'expect': key, 'why': ACCEPT_SUB[name][1], 'control': ACCEPT_SUB[name][2]}
     if 'amb' in r['flags']:
-        key = (f"UNSCORABLE (amb) -- the pixels do not settle photo vs render; "
-               f"table says {key}")
+        # Session 17: `amb` no longer means UNSCORABLE. The master value for these three came
+        # from the user's knowledge of the SOURCE (an automaker press shot, an Amazon listing),
+        # not from the pixels, and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against
+        # that. So the case stays in the denominator as an accept-set that forgives both
+        # readings, while painting / drawing / vector still fail. Deliberately a WEAK test.
+        key = {'expect': key.replace(r['medium'], f"{r['medium']} | 3D CG", 1),
+               'why': AMB_WHY, 'control': AMB_CONTROL}
     expected[cid] = key
 
 doc = {

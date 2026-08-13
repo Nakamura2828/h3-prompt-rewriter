@@ -1,10 +1,8 @@
 {
-  "_role": "describer_style FULL CORPUS SWEEP, three-axis vocabulary (session 10). Every active image in images/, scored against the master table in docs/image_inventory.md.",
-  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. NOTE: the old 'DO NOT HAND-EDIT -- regenerate' instruction here is RETIRED as of session 16 -- see _hand_edited. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
+  "_role": "describer_style FULL CORPUS SWEEP over all 130 images, three-axis vocabulary with the session-17 merges (stop-motion puppet -> figure; 2D cel has no sub-terms). Supersedes the 100-image sweep and the s15 enriched round, which are now history: this is the representative test and the baseline.",
+  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
   "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
-  "_hand_edited": "NO LONGER SAFE TO REGENERATE. As of session 16 this file carries USER RULINGS the master table does not encode: accept-sets (an _expected value that is an OBJECT with expect/why/control, where a field offers `|` alternatives). gen_style_sweep.py would overwrite every one of them with the plain master-table string and silently re-accumulate settled cases against the thresholds -- with no error raised. If you must regenerate, diff the new _expected against this one and carry every object-valued entry forward by hand. Same hazard as L-DONT-REGENERATE-A-BASELINED-TEST, by a different route.",
-  "_accept_sets": "Eight cases carry accept-sets. Session 16: sw_window, sw_kasia_render, sw_kasia_swimsuit_render, sw_supergirl2, sw_annie2_cropped. Session 17 added the three `amb` files -- sw_car_1, sw_car_2, sw_chair -- which were UNSCORABLE until the user ruled them scorable-but-forgiving, because their master value came from provenance rather than from the pixels. Each names strict CONTROLS -- cases where the same distinction is NOT ambiguous and must still be got right. score.py warns when an accept-set fires while its control misses, which is the model collapsing the distinction rather than resolving an ambiguous case. Read that warning before crediting any of these with a pass.",
-  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. As of session 17 NOTHING is excluded: the three amb files became accept-sets and the three CONTESTED IDIOM rulings (fish_pixel, lincoln_money, mountain_rain) were cleared to the master value, so all 100 cases score.",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
   "_expected": {
     "sw_annie1": "drawing / ink / anime / colour",
     "sw_annie2": "photograph / none / realist / colour",
@@ -18,12 +16,69 @@
     },
     "sw_annie3": "comic / digital / western toon / colour",
     "sw_annie3_panel1": "comic / digital / western toon / colour",
+    "sw_april_1987": "2D cel / none / western toon / colour",
+    "sw_april_1987_figure": {
+      "expect": "stop-motion | photograph / figure | none / dimensional toon / colour",
+      "why": "a photograph of moulded plastic figures on a shelf in a real room (user, s15, reaffirmed s17: \"both alternatives should be acceptable\"). Tie-break 1 makes `stop-motion / figure` legal -- the objects win -- but these figures were never animated and the room is not a set, so the model's `photograph / none` is equally true. This is the SHAPE-2 case session 16 ruled out of accept-set scope: two fields each holding half a true answer. Session 17 accepts it as a PAIR of per-field sets instead, with the same known limitation as sw_annie2_cropped -- the cross terms `stop-motion / none` and `photograph / figure` also pass, and `photograph / figure` is the very pairing the user called invalid. Accepted deliberately rather than adding cross-field constraints to score.py. Controls guard the erodable direction: `photograph` is forgiven, so real stop-motion is what can drift, and all four unambiguous stop-motion cases in this file must still come back stop-motion with a real sub-term.",
+      "control": [
+        "sw_gromit",
+        "sw_gumby",
+        "sw_rudolf",
+        "sw_pjs"
+      ]
+    },
+    "sw_april_comic": {
+      "expect": "drawing | comic / marker / western toon / colour",
+      "why": "original marker art on a blank sketch cover, photographed with the publisher's printed trade dress around it (user, s15; MEDIUM opened s17). Tie-break 2's s15 amendment says report the artwork when the outer layer is pure capture, which gives `drawing`; but the contents row records real printed trade dress -- IDW logo, issue number, creator credits -- so the outer layer is NOT pure capture and `comic` is equally defensible. SUB_MEDIUM stays STRICT at `marker`, exactly as on sw_april_fanart: the user's session-12 ruling is that `marker` -> `digital` specifically is not acceptable, so opening the instrument here would forgive the project's largest defect on one of the few images that tests it. CONTROL GAP, stated plainly: this file contains NO unambiguous `drawing` case, and `drawing` is the side that can erode, so the axis is only half guarded. sw_gordon_comic controls the reverse direction (a real comic staying `comic`). Fix by adding an unambiguous drawing to this file, not by loosening the set.",
+      "control": [
+        "sw_gordon_comic"
+      ]
+    },
+    "sw_april_fanart": {
+      "expect": "drawing | comic / marker / realist / colour",
+      "why": "the user accepts `comic` on the coarse term -- it carries the same style as a comic book cover -- while the instrument is still unmistakably marker (user, session 16): \"I can see where painting comes from but it still looks marker to me\". So MEDIUM opens and SUB_MEDIUM does NOT. Same per-field limitation as sw_annie2_cropped: `comic`'s sub-list is ink/screentone/digital, so the accepted pairing comic + marker is not legal in the vocabulary, accepted deliberately rather than stretching the mechanism. NOTE this case also carries the s15 composite correction (marker figure over a pasted manhole on a digital white ground), so a describer that averages the layers lands on `digital` by a route the MEDIUM accept-set does not forgive.",
+      "control": [
+        "sw_gordon_comic"
+      ]
+    },
+    "sw_avatar_1": {
+      "expect": "2D cel / none / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987, sw_car_interior_toon and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_car_interior_toon was added in s16 on a user ruling that is worth more than its own case: it is ITSELF a converging-styles image, and the user placed it \"solidly on the western side\" -- so it tests the distinction under the exact conditions that make it hard, which a easy control cannot. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": [
+        "sw_april_1987",
+        "sw_car_interior_toon",
+        "sw_nadia",
+        "sw_ivy_toon"
+      ]
+    },
+    "sw_avatar_2": {
+      "expect": "2D cel / none / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987, sw_car_interior_toon and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_car_interior_toon was added in s16 on a user ruling that is worth more than its own case: it is ITSELF a converging-styles image, and the user placed it \"solidly on the western side\" -- so it tests the distinction under the exact conditions that make it hard, which a easy control cannot. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": [
+        "sw_april_1987",
+        "sw_car_interior_toon",
+        "sw_nadia",
+        "sw_ivy_toon"
+      ]
+    },
     "sw_ayanami_oil": "painting / digital / anime / colour",
     "sw_azumanga_anime": "2D cel / none / anime / colour",
     "sw_azumanga_toon": "2D cel / none / western toon / colour",
+    "sw_baby_middle_aged": "photograph / none / realist / colour",
+    "sw_beauty_beast": "2D cel / none / western toon / colour",
     "sw_bird_vector": "vector / none / flat graphic / colour",
     "sw_bird_watercolor": "painting / watercolour / realist / colour",
     "sw_bookshop": "photograph / none / realist / colour",
+    "sw_boondocks": {
+      "expect": "2D cel / none / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987, sw_car_interior_toon and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_car_interior_toon was added in s16 on a user ruling that is worth more than its own case: it is ITSELF a converging-styles image, and the user placed it \"solidly on the western side\" -- so it tests the distinction under the exact conditions that make it hard, which a easy control cannot. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": [
+        "sw_april_1987",
+        "sw_car_interior_toon",
+        "sw_nadia",
+        "sw_ivy_toon"
+      ]
+    },
     "sw_cannon": "photograph / none / realist / colour",
     "sw_captain": "photograph / none / realist / colour",
     "sw_car_1": {
@@ -47,6 +102,7 @@
     "sw_car_interior_mecha_driver": "2D cel / none / anime / colour",
     "sw_car_interior_photo": "photograph / none / realist / colour",
     "sw_car_interior_sketch": "drawing / digital / anime / colour",
+    "sw_car_interior_toon": "2D cel / none / western toon / colour",
     "sw_castle": "photograph / none / realist / colour",
     "sw_chair": {
       "expect": "photograph | 3D CG / none / realist / colour",
@@ -73,6 +129,7 @@
     "sw_destroyer_photo": "photograph / none / realist / monochrome",
     "sw_door_first": "live-action film / none / realist / colour",
     "sw_door_last": "live-action film / none / realist / colour",
+    "sw_fern_gully": "2D cel / none / western toon / colour",
     "sw_fish_pixel": "pixel art / none / realist / colour",
     "sw_forest_autumn": "photograph / none / realist / colour",
     "sw_forest_day": "vector / none / flat graphic / colour",
@@ -82,6 +139,13 @@
     "sw_fuji": "photograph / none / realist / colour",
     "sw_girl_painting": "painting / digital / realist / colour",
     "sw_girl_painting_reference": "live-action film / none / realist / colour",
+    "sw_gordon_1996": "2D cel / none / western toon / colour",
+    "sw_gordon_2004": "2D cel / none / western toon / colour",
+    "sw_gordon_comic": "comic / digital / realist / colour",
+    "sw_gromit": "stop-motion / clay / dimensional toon / colour",
+    "sw_gumby": "stop-motion / clay / dimensional toon / colour",
+    "sw_gwen": "2D cel / none / western toon / colour",
+    "sw_gwen_cg": "3D CG / none / dimensional toon / colour",
     "sw_ivy_toon": "2D cel / none / western toon / colour",
     "sw_jacket": "photograph / none / realist / colour",
     "sw_jacket2": "photograph / none / realist / colour",
@@ -115,10 +179,13 @@
     "sw_kiki": "drawing / digital / anime / colour",
     "sw_lincoln_photo": "photograph / none / realist / monochrome",
     "sw_lincoln_money": "print / engraving / realist / monochrome",
+    "sw_maggie_grandpa_cat": "2D cel / none / western toon / colour",
     "sw_marker": "drawing / marker / anime / colour",
     "sw_miya": "2D cel / none / anime / colour",
     "sw_miyu": "pixel art / none / anime / colour",
+    "sw_molly": "2D cel / none / western toon / colour",
     "sw_mountain_rain": "painting / digital / realist / colour",
+    "sw_nadia": "2D cel / none / anime / colour",
     "sw_newspaper": "photograph / none / realist / colour",
     "sw_p1_first": "live-action film / none / realist / colour",
     "sw_p1_last": "live-action film / none / realist / colour",
@@ -136,11 +203,18 @@
     "sw_peter_griffin_painting": "painting / digital / dimensional toon / colour",
     "sw_peter_griffin_toon": "2D cel / none / western toon / colour",
     "sw_phone": "photograph / none / realist / colour",
+    "sw_pjs": "stop-motion / figure / dimensional toon / colour",
+    "sw_pocahontas": "2D cel / none / western toon / colour",
     "sw_ramen_pixel": "pixel art / none / realist / colour",
+    "sw_rudolf": "stop-motion / figure / dimensional toon / colour",
     "sw_san_fransisco_day_evening_night": "vector / none / flat graphic / colour",
     "sw_sanfran_day": "vector / none / flat graphic / colour",
     "sw_sanfran_evening": "vector / none / flat graphic / colour",
     "sw_sanfran_night": "vector / none / flat graphic / colour",
+    "sw_scooby": "2D cel / none / western toon / colour",
+    "sw_shed_day": "photograph / none / realist / colour",
+    "sw_shed_dusk": "photograph / none / realist / colour",
+    "sw_shed_night": "photograph / none / realist / colour",
     "sw_shrek_cg": "3D CG / none / dimensional toon / colour",
     "sw_sleeping": "photograph / none / realist / colour",
     "sw_stage": "photograph / none / realist / colour",
@@ -156,6 +230,17 @@
     "sw_teddy_taft": "photograph / none / realist / monochrome",
     "sw_temple_day": "painting / digital / anime / colour",
     "sw_temple_night": "painting / digital / anime / colour",
+    "sw_titans1": {
+      "expect": "2D cel / none / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987, sw_car_interior_toon and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_car_interior_toon was added in s16 on a user ruling that is worth more than its own case: it is ITSELF a converging-styles image, and the user placed it \"solidly on the western side\" -- so it tests the distinction under the exact conditions that make it hard, which a easy control cannot. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": [
+        "sw_april_1987",
+        "sw_car_interior_toon",
+        "sw_nadia",
+        "sw_ivy_toon"
+      ]
+    },
+    "sw_titans_go": "2D cel / none / western toon / colour",
     "sw_tv": "photograph / none / realist / colour",
     "sw_van_pixel": "pixel art / none / anime / colour",
     "sw_vector_city": "vector / none / flat graphic / colour",
@@ -250,6 +335,90 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_annie3_panel1}}"
     },
     {
+      "id": "look_april_1987",
+      "group": "2D cel",
+      "image": "images/april_1987.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_1987",
+      "group": "2D cel",
+      "image": "images/april_1987.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_1987}}"
+    },
+    {
+      "id": "look_april_1987_figure",
+      "group": "stop-motion",
+      "image": "images/april_1987_figure.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_1987_figure",
+      "group": "stop-motion",
+      "image": "images/april_1987_figure.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_1987_figure}}"
+    },
+    {
+      "id": "look_april_comic",
+      "group": "drawing",
+      "image": "images/april_comic.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_comic",
+      "group": "drawing",
+      "image": "images/april_comic.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_comic}}"
+    },
+    {
+      "id": "look_april_fanart",
+      "group": "drawing",
+      "image": "images/april_fanart.jpeg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_fanart",
+      "group": "drawing",
+      "image": "images/april_fanart.jpeg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_fanart}}"
+    },
+    {
+      "id": "look_avatar_1",
+      "group": "2D cel",
+      "image": "images/avatar_1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_avatar_1",
+      "group": "2D cel",
+      "image": "images/avatar_1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_avatar_1}}"
+    },
+    {
+      "id": "look_avatar_2",
+      "group": "2D cel",
+      "image": "images/avatar_2.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_avatar_2",
+      "group": "2D cel",
+      "image": "images/avatar_2.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_avatar_2}}"
+    },
+    {
       "id": "look_ayanami_oil",
       "group": "painting",
       "image": "images/ayanami_oil.jpg",
@@ -292,6 +461,34 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_azumanga_toon}}"
     },
     {
+      "id": "look_baby_middle_aged",
+      "group": "photograph",
+      "image": "images/baby_middle_aged.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_baby_middle_aged",
+      "group": "photograph",
+      "image": "images/baby_middle_aged.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_baby_middle_aged}}"
+    },
+    {
+      "id": "look_beauty_beast",
+      "group": "2D cel",
+      "image": "images/beauty_beast.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_beauty_beast",
+      "group": "2D cel",
+      "image": "images/beauty_beast.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_beauty_beast}}"
+    },
+    {
       "id": "look_bird_vector",
       "group": "vector",
       "image": "images/bird_vector.jpg",
@@ -332,6 +529,20 @@
       "image": "images/bookshop.png",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_bookshop}}"
+    },
+    {
+      "id": "look_boondocks",
+      "group": "2D cel",
+      "image": "images/boondocks.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_boondocks",
+      "group": "2D cel",
+      "image": "images/boondocks.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_boondocks}}"
     },
     {
       "id": "look_cannon",
@@ -430,6 +641,20 @@
       "image": "images/car_interior_sketch.png",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_car_interior_sketch}}"
+    },
+    {
+      "id": "look_car_interior_toon",
+      "group": "2D cel",
+      "image": "images/car_interior_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_car_interior_toon",
+      "group": "2D cel",
+      "image": "images/car_interior_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_car_interior_toon}}"
     },
     {
       "id": "look_castle",
@@ -684,6 +909,20 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_door_last}}"
     },
     {
+      "id": "look_fern_gully",
+      "group": "2D cel",
+      "image": "images/fern_gully.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fern_gully",
+      "group": "2D cel",
+      "image": "images/fern_gully.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fern_gully}}"
+    },
+    {
       "id": "look_fish_pixel",
       "group": "pixel art",
       "image": "images/fish_pixel.png",
@@ -808,6 +1047,104 @@
       "image": "images/girl_painting_reference.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_girl_painting_reference}}"
+    },
+    {
+      "id": "look_gordon_1996",
+      "group": "2D cel",
+      "image": "images/gordon_1996.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_1996",
+      "group": "2D cel",
+      "image": "images/gordon_1996.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_1996}}"
+    },
+    {
+      "id": "look_gordon_2004",
+      "group": "2D cel",
+      "image": "images/gordon_2004.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_2004",
+      "group": "2D cel",
+      "image": "images/gordon_2004.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_2004}}"
+    },
+    {
+      "id": "look_gordon_comic",
+      "group": "comic",
+      "image": "images/gordon_comic.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_comic",
+      "group": "comic",
+      "image": "images/gordon_comic.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_comic}}"
+    },
+    {
+      "id": "look_gromit",
+      "group": "stop-motion",
+      "image": "images/gromit.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gromit",
+      "group": "stop-motion",
+      "image": "images/gromit.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gromit}}"
+    },
+    {
+      "id": "look_gumby",
+      "group": "stop-motion",
+      "image": "images/gumby.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gumby",
+      "group": "stop-motion",
+      "image": "images/gumby.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gumby}}"
+    },
+    {
+      "id": "look_gwen",
+      "group": "2D cel",
+      "image": "images/gwen.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gwen",
+      "group": "2D cel",
+      "image": "images/gwen.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gwen}}"
+    },
+    {
+      "id": "look_gwen_cg",
+      "group": "3D CG",
+      "image": "images/gwen_cg.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gwen_cg",
+      "group": "3D CG",
+      "image": "images/gwen_cg.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gwen_cg}}"
     },
     {
       "id": "look_ivy_toon",
@@ -979,14 +1316,14 @@
     },
     {
       "id": "look_kiki",
-      "group": "2D cel",
+      "group": "drawing",
       "image": "images/kiki.png",
       "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "id": "sw_kiki",
-      "group": "2D cel",
+      "group": "drawing",
       "image": "images/kiki.png",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kiki}}"
@@ -1018,6 +1355,20 @@
       "image": "images/lincoln_money.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_money}}"
+    },
+    {
+      "id": "look_maggie_grandpa_cat",
+      "group": "2D cel",
+      "image": "images/maggie_grandpa_cat.jpeg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_maggie_grandpa_cat",
+      "group": "2D cel",
+      "image": "images/maggie_grandpa_cat.jpeg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_maggie_grandpa_cat}}"
     },
     {
       "id": "look_marker",
@@ -1062,6 +1413,20 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_miyu}}"
     },
     {
+      "id": "look_molly",
+      "group": "2D cel",
+      "image": "images/molly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_molly",
+      "group": "2D cel",
+      "image": "images/molly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_molly}}"
+    },
+    {
       "id": "look_mountain_rain",
       "group": "painting",
       "image": "images/mountain_rain.jpg",
@@ -1074,6 +1439,20 @@
       "image": "images/mountain_rain.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_mountain_rain}}"
+    },
+    {
+      "id": "look_nadia",
+      "group": "2D cel",
+      "image": "images/nadia.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_nadia",
+      "group": "2D cel",
+      "image": "images/nadia.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_nadia}}"
     },
     {
       "id": "look_newspaper",
@@ -1314,6 +1693,34 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_phone}}"
     },
     {
+      "id": "look_pjs",
+      "group": "stop-motion",
+      "image": "images/pjs.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pjs",
+      "group": "stop-motion",
+      "image": "images/pjs.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pjs}}"
+    },
+    {
+      "id": "look_pocahontas",
+      "group": "2D cel",
+      "image": "images/pocahontas.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pocahontas",
+      "group": "2D cel",
+      "image": "images/pocahontas.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pocahontas}}"
+    },
+    {
       "id": "look_ramen_pixel",
       "group": "pixel art",
       "image": "images/ramen_pixel.jpg",
@@ -1326,6 +1733,20 @@
       "image": "images/ramen_pixel.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ramen_pixel}}"
+    },
+    {
+      "id": "look_rudolf",
+      "group": "stop-motion",
+      "image": "images/rudolf.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_rudolf",
+      "group": "stop-motion",
+      "image": "images/rudolf.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_rudolf}}"
     },
     {
       "id": "look_san_fransisco_day_evening_night",
@@ -1382,6 +1803,62 @@
       "image": "images/sanfran_night.png",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_sanfran_night}}"
+    },
+    {
+      "id": "look_scooby",
+      "group": "2D cel",
+      "image": "images/scooby.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_scooby",
+      "group": "2D cel",
+      "image": "images/scooby.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_scooby}}"
+    },
+    {
+      "id": "look_shed_day",
+      "group": "photograph",
+      "image": "images/shed_day.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_day",
+      "group": "photograph",
+      "image": "images/shed_day.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_day}}"
+    },
+    {
+      "id": "look_shed_dusk",
+      "group": "photograph",
+      "image": "images/shed_dusk.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_dusk",
+      "group": "photograph",
+      "image": "images/shed_dusk.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_dusk}}"
+    },
+    {
+      "id": "look_shed_night",
+      "group": "photograph",
+      "image": "images/shed_night.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_night",
+      "group": "photograph",
+      "image": "images/shed_night.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_night}}"
     },
     {
       "id": "look_shrek_cg",
@@ -1496,6 +1973,34 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_temple_night}}"
     },
     {
+      "id": "look_titans1",
+      "group": "2D cel",
+      "image": "images/titans1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_titans1",
+      "group": "2D cel",
+      "image": "images/titans1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_titans1}}"
+    },
+    {
+      "id": "look_titans_go",
+      "group": "2D cel",
+      "image": "images/titans_go.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_titans_go",
+      "group": "2D cel",
+      "image": "images/titans_go.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_titans_go}}"
+    },
+    {
       "id": "look_tv",
       "group": "photograph",
       "image": "images/tv.png",
@@ -1579,5 +2084,7 @@
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woody_cg}}"
     }
-  ]
+  ],
+  "_supersedes": "tests/describer_style_sweep.json (100 images) and tests/describer_style_added_s15.json (30, enriched). Merged in session 17 because the vocabulary merge already broke comparability with both, so folding the corpus extension into the SAME boundary crossing costs nothing and avoids a second one. Merging also FIXED TWO CONTROL GAPS that the split created: sw_ivy_toon read \"not in this test\" for the avatar accept-sets, and sw_april_comic had no unambiguous `drawing` control. Both resolve here.",
+  "_hand_edited": "Carries USER RULINGS the master table does not encode -- accept-sets (object-valued _expected with expect/why/control). gen_style_sweep.py emits only the `amb` ones; the rest must be carried forward by hand on any regeneration. See L-ADJUDICATION-DEFEATS-REGENERATION."
 }
