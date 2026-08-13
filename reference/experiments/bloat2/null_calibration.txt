@@ -1,0 +1,85 @@
+NULL CALIBRATION of the item-count metric, from ROUND 1's stored runs (read-only).
+
+Round 1 held live-rule tokens CONSTANT at 2,239 and varied only INERT length,
+2,939 -> 4,982 total tokens, across 24 padded cells plus 2 unpadded baselines.
+Every cell below is therefore a NULL for round 2's manipulation: whatever the
+item metric does here, it does with no change in live instruction at all. This
+is what 'no effect' looks like on this instrument.
+
+(primary__v3v4.txt is excluded: it is round 1's fl2va v3-vs-v4 comparison and
+holds no setting records at all.)
+
+cell            items  delta   chars  new-none
+a_end_3800        203     -7  0.9805  2
+a_end_3900        205     -5  0.9816  2
+a_end_4000        211     +1  0.9749  3
+a_end_4200        208     -2  0.9991  3
+a_end_4500        210     +0  0.9694  3
+a_end_5000        207     -3  0.9982  2
+a_mid_3800        213     +3  1.0014  3
+a_mid_3900        216     +6  1.0183  2
+a_mid_4000        208     -2  0.9821  1
+a_mid_4200        215     +5  0.9959  2
+a_mid_4500        217     +7  1.0395  2
+a_mid_5000        203     -7   0.986  2
+b_end_3800        205     -5  0.9966  2
+b_end_3900        211     +1   0.985  2
+b_end_4000        204     -6  1.0032  2
+b_end_4200        208     -2  0.9839  2
+b_end_4500        205     -5  0.9721  2
+b_end_5000        202     -8  0.9719  3
+b_mid_3800        210     +0  1.0126  2
+b_mid_3900        209     -1  0.9882  2
+b_mid_4000        212     +2  1.0037  2
+b_mid_4200        200    -10  0.9636  2
+b_mid_4500        206     -4  0.9819  3
+b_mid_5000        203     -7  0.9938  2
+base_1            210     +0     1.0  0
+base_2            210     +0     1.0  0
+
+24 padded cells:  min 200   max 217   mean 208.0   sd 4.6   spread 17
+baseline = 210, so the NULL DELTA BAND is -10 .. +7 items (-4.8% .. +3.3%)
+total output length vs baseline: min x0.9636  max x1.0395  mean x0.9910
+
+READING
+  - A total-item change smaller than about +/-10 items (~5%) is INSIDE the range this
+    metric already produces under a manipulation that changes no rule whatsoever.
+    Only a larger movement, or a MONOTONE trend across the live-rule ladder, is evidence.
+  - Every padded cell shows 1-3 fields reading 'none' where the unpadded baseline
+    itemised, and both unpadded baselines show 0. That is round 1's effect, already
+    reported there (set_p6_outside), and it is present at every level including the
+    lowest. It is a property of padding at all, not of this round's live rules.
+  - Round 2's own L0 control is the direct comparator: it is the same prompt as round 1's
+    a_end_5000 cell, which scored 207 items here.
+
+==============================================================================
+NULL CALIBRATION of the ACTION-COVERAGE metric, from ROUND 1's stored fl2va runs.
+
+Same logic: round 1 held fl2va's live-rule tokens constant at 2,698 and varied only
+inert length, 3,561 -> 4,980 total. Eight cells, image-bearing arm.
+
+cell        coverage   missing
+c_base_        10/12   p1:lamp, p6:rabbit
+c_base2_       10/12   p1:lamp, p6:rabbit
+c_3800_        10/12   p1:lamp, p6:rabbit
+c_3900_        10/12   p1:lamp, p6:rabbit
+c_4000_        11/12   p1:lamp
+c_4200_        10/12   p1:lamp, p6:rabbit
+c_4500_        10/12   p3:line, p6:rabbit
+c_5000_        10/12   p1:lamp, p6:rabbit
+
+READING
+  - The null band is 10-11 out of 12. Coverage does not move with inert length.
+  - p1:lamp is the NEGATIVE CONTROL and is missing in 6 of 8 cells. It is lost
+    UPSTREAM -- nothing in the composer's input corroborates the user's 'turns on
+    the lamp' -- so it should stay missing. It did appear in two cells, which is
+    itself worth knowing: the control is marginal, not stably absent, so 'the lamp
+    appeared' on its own is NOT signal. Treat a lamp flip the way round 1 treated a
+    single format flip (L-DETERMINISM-IS-NOT-STABILITY).
+  - p6:rabbit is missing in 7 of 8 cells, and that is a SECOND live content bug for
+    the main project, distinct from the lamp. fl2va.txt contains an explicit rule for
+    exactly this case -- "A 'stuffed rabbit' in the user's words is a stuffed rabbit,
+    not a teddy bear" -- and the composer drops the word anyway. Round 1 logged the
+    lamp; this one is not on .claude/TODO.md as far as this session can see.
+  - So on this probe only p2, p4 and p5 are reliably fully covered, and the metric's
+    usable dynamic range is narrow. Said plainly rather than discovered later.

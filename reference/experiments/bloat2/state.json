@@ -1,0 +1,142 @@
+{
+  "t0": 1786573682.6777227,
+  "baseline_mean": {
+    "setting": 4.961538461538462,
+    "fl2va": 5.4375
+  },
+  "runs": {
+    "s_L0": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 129.3,
+      "mean_s": 4.96,
+      "max_s": 6.9,
+      "min_s": 4.0,
+      "mean_chars": 836,
+      "run": "setting__s_L0.txt",
+      "at": "2026-08-12 18:30:12"
+    },
+    "s_L0b": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 128.6,
+      "mean_s": 4.93,
+      "max_s": 5.8,
+      "min_s": 4.0,
+      "mean_chars": 836,
+      "run": "setting__s_L0b.txt",
+      "at": "2026-08-12 18:32:20"
+    },
+    "s_R2700": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 126.9,
+      "mean_s": 4.87,
+      "max_s": 6.9,
+      "min_s": 4.1,
+      "mean_chars": 800,
+      "run": "setting__s_R2700.txt",
+      "at": "2026-08-12 18:36:48"
+    },
+    "s_R3100": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 126.7,
+      "mean_s": 4.87,
+      "max_s": 6.5,
+      "min_s": 4.0,
+      "mean_chars": 806,
+      "run": "setting__s_R3100.txt",
+      "at": "2026-08-12 18:38:54"
+    },
+    "s_R3400": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 125.5,
+      "mean_s": 4.82,
+      "max_s": 6.4,
+      "min_s": 4.0,
+      "mean_chars": 784,
+      "run": "setting__s_R3400.txt",
+      "at": "2026-08-12 18:41:00"
+    },
+    "s_R3800": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 127.6,
+      "mean_s": 4.9,
+      "max_s": 7.0,
+      "min_s": 4.0,
+      "mean_chars": 815,
+      "run": "setting__s_R3800.txt",
+      "at": "2026-08-12 18:43:08"
+    },
+    "s_N2700": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 127.3,
+      "mean_s": 4.89,
+      "max_s": 6.9,
+      "min_s": 4.0,
+      "mean_chars": 827,
+      "run": "setting__s_N2700.txt",
+      "at": "2026-08-12 18:45:15"
+    },
+    "s_N3100": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 127.8,
+      "mean_s": 4.9,
+      "max_s": 6.6,
+      "min_s": 4.0,
+      "mean_chars": 855,
+      "run": "setting__s_N3100.txt",
+      "at": "2026-08-12 18:47:23"
+    },
+    "s_N3400": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 127.9,
+      "mean_s": 4.92,
+      "max_s": 6.5,
+      "min_s": 4.1,
+      "mean_chars": 846,
+      "run": "setting__s_N3400.txt",
+      "at": "2026-08-12 18:49:31"
+    },
+    "s_N3800": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 128.3,
+      "mean_s": 4.92,
+      "max_s": 6.7,
+      "min_s": 4.0,
+      "mean_chars": 851,
+      "run": "setting__s_N3800.txt",
+      "at": "2026-08-12 18:51:39"
+    },
+    "s_NF3400": {
+      "family": "setting",
+      "cases": 26,
+      "wall_s": 127.9,
+      "mean_s": 4.9,
+      "max_s": 6.5,
+      "min_s": 4.0,
+      "mean_chars": 840,
+      "run": "setting__s_NF3400.txt",
+      "at": "2026-08-12 18:53:47"
+    },
+    "f_img": {
+      "family": "fl2va",
+      "cases": 72,
+      "wall_s": 391.7,
+      "mean_s": 5.44,
+      "max_s": 9.2,
+      "min_s": 4.5,
+      "mean_chars": 919,
+      "run": "fl2va__f_img.txt",
+      "at": "2026-08-12 19:00:19"
+    }
+  },
+  "stopped": null
+}
