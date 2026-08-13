@@ -93,11 +93,35 @@ being the sink it was in session 9: it now has to win on marks, because traditio
 
 Terms defined by material rather than by origin, so they stay decidable from pixels:
 
+- `clay` — **hand-remodelled deformable clay**: fingerprints and tool marks, irregular or
+  asymmetric surfaces, contours that squash and bulge rather than holding a fabricated edge. The
+  tell is **evidence of remodelling**, and it is present in a single frame — it does not require
+  motion. Wallace & Gromit's Newplast and Gumby's plasticine are both non-drying and stay soft, so
+  both show it.
 - `puppet` — fabricated character figures: fabric, fibre hair, sculpted and painted matte surfaces,
-  visible replacement-face seams.
+  visible replacement-face seams. **Rigid set clay (Fimo and similar) belongs here, not in `clay`**
+  — once baked it is a fabricated rigid sculpt that does not deform, and it reads as a puppet
+  because functionally it is one.
 - `figure` — rigid moulded plastic toys: glossy injection-moulded surfaces, mould seams,
   articulated joints, printed or fixed facial features.
 - `model` — built miniature objects and sets with no character figure at all.
+
+> **Why `clay` got a definition in session 15, and what it cost to notice.** It was the *only*
+> sub-term in this list that never had one. Its siblings were each given a visual tell; `clay`
+> silently fell back to "made of clay" — a **provenance** claim, which is precisely what this axis
+> exists to avoid, and what tie-break 4 forbids everywhere else.
+>
+> It surfaced through `pjs` (foam) and `gromit` (Newplast). The describer inverted them: it reported
+> *"painted foam and fabric… fibrous textures"* for the real clay and *"physically constructed clay
+> figures… visible clay texture"* for the foam. That inversion first looked like image ambiguity,
+> and `pjs` was nearly ruled `UNSCORABLE` on the theory that only motion can separate clay from
+> foam. **That would have been wrong, and permanently so** — the ruling never expires. The user's
+> observation is what saved it: deformation is the discriminator, rigid clay does not deform, and
+> a rigid clay figure therefore is not `clay` at all.
+>
+> **The general trap:** an undefined term does not read as undefined. It reads as obvious, and it
+> quietly answers a different question than the axis is asking. Check that every term in a closed
+> vocabulary carries its own tell — a missing one is invisible until an image lands on it.
 
 ### `[[IDIOM]]` — which tradition the stylisation descends from
 
@@ -108,9 +132,23 @@ Terms defined by material rather than by origin, so they stay decidable from pix
   connects `coraline1`/`coraline2` to `shrek_cg`/`woody_cg`: the same tradition, one built as a
   puppet and one rendered digitally. That it survives a change of medium is precisely what makes
   it an idiom rather than a medium.
+
+  > **Clarified session 15, after four images lost to this term in one round.** Flat two-tone
+  > highlight-and-shadow shading is **not** dimension, however carefully it is placed. The user's
+  > ruling on `boondocks`: *"it's the typical flat highlight and shadow shading common to 2D art,
+  > no dimensionality at all."* The test is whether form is carried by **material and light** —
+  > a surface that could be photographed — not whether the drawing has more than one tone.
+  > `boondocks`, `car_interior_toon`, `beauty_beast` and `april_fanart` were all wrongly given
+  > `dimensional toon` in the s15 round; all four are flat-shaded 2D.
 - `realist` is the default and will be roughly half the corpus. That is a large bucket but a
   *correct* one, unlike the old `painting / digital`, which was large because it was the only
   available answer.
+
+  > **Session 15:** `realist` extends to drawn and printed work that is *drawn realistically* —
+  > it is not a synonym for photographic capture. The user's ruling on `gordon_comic`: *"it is
+  > fairly realistic, and I'm not sure traditional comic book style is `toon`."* Mainstream
+  > comic-book rendering with naturalistic proportion and anatomy is `realist`, not
+  > `western toon`.
 
 ### `[[TREATMENT]]` — which colour system
 
@@ -291,6 +329,46 @@ these is `CONTESTED` today — they are live, scored answers.
 
 **These four anime-idiom cases are also the motivating example for a harness feature we do not
 have** — see "Multiple acceptable answers" below.
+
+#### Outcome of the first round against them (s15, `runs/run-20260812-232352.txt`)
+
+One round is not the reversal condition for any of these. Recorded so the second round has
+something to compare against.
+
+| ruling | result | note |
+|---|---|---|
+| `avatar_1`, `avatar_2` | **failed → `anime`** | exactly the predicted failure |
+| `boondocks` | **failed → `dimensional toon`** | **not** the predicted failure. Its own look record says "the modern western animated series style" in plain text, so the anime idiom is not what cost it — the flat-shading confusion above is. The reversal condition was written for the wrong failure mode |
+| `titans1` | **passed** | |
+| `scooby` | **passed** | the `2D cel` vs `vector` worry did not materialise |
+| `april_1987_figure` | **now `CONTESTED`** — see below | the user conceded the model's `photograph` reading |
+
+**The most damaging single result is not in this table.** `april_1987` — cited two paragraphs below
+as an image on which `western toon` is *unambiguous*, and used as the strict control for the whole
+accept-set argument — was also classified `anime`, despite a look record explicitly naming 1980s
+television cel animation. The user's ruling: *"Definitely no, it's a very western style."* **The
+discrimination this vocabulary asks for is not currently working even where we were confident it
+was**, which is a stronger finding than any of the provisional cases.
+
+### Contested from session 15
+
+Both are cases where the vocabulary **has no legal way to state the true answer** — not model
+defects, and not image ambiguity. Recorded as per-field `CONTESTED` on `[[MEDIUM]]` and
+`[[SUB_MEDIUM]]` in `tests/describer_style_added_s15.json`; `[[IDIOM]]` and `[[TREATMENT]]` still
+score, and both images pass there.
+
+- **`april_1987_figure`** — the model answered `photograph / none`. The user: *"I can't argue with
+  it, it's a `photograph` of a `figure`, which is an invalid pairing."* `figure` is a sub-term of
+  `stop-motion`; `photograph` takes `none`. Both halves of the truth are sayable, but not together.
+  **The user named this as the best motivating case for the accept-set mechanism.**
+- **`april_comic`** — the model answered `comic / digital` against an expected `drawing / marker`.
+  Notably it *did* look through the photograph as tie-break 2 now requires; it then had to choose
+  between the artwork's instrument and its publication form. The user: *"a marker drawing as a
+  comic cover… again two things at once."*
+
+**These expire when the vocabulary changes**, per `.claude/CLAUDE.md`. If the accept-set mechanism
+lands, re-examine both — an accept-set may be the wrong tool here, since the issue is that two
+*different fields* each hold half a true answer rather than one field having two acceptable values.
 
 ### Multiple acceptable answers — a gap in the scoring mechanics
 
@@ -650,7 +728,7 @@ you are running before scoring anything.
 | bag-angle | `kasia_bag` / `kasia_bag_2` | one object, two angles, two renders | object | harder than `car-angle` — an AI re-render, strap arranged differently |
 | peter-griffin | `peter_griffin_painting` / `peter_griffin_toon` | one character: canonical flat toon vs painterly | style | tests franchise recognition **without a label** |
 | oil-idiom | `ayanami_oil` / `woman_oil` | oil idiom, **digital vs traditional** | style | fine `[[MEDIUM]]` discrimination |
-| stopmo-sub | `gromit`/`gumby` (clay) · `rudolf`/`pjs`/`coraline1`/`coraline2` (puppet) · `april_1987_figure` (figure) | one coarse medium, **three sub-terms** | style | the `[[SUB_MEDIUM]]` discrimination set. Clay vs puppet is unmistakable; `figure` has one atypical sample |
+| stopmo-sub | `gromit`/`gumby` (clay) · `rudolf`/`pjs`/`coraline1`/`coraline2` (puppet) · `april_1987_figure` (figure) | one coarse medium, **three sub-terms** | style | the `[[SUB_MEDIUM]]` discrimination set. **Clay vs puppet is NOT unmistakable** — s15 disproved the earlier claim that it was: the describer inverted `gromit` and `pjs`, and the user misread `pjs` too. It is decidable, but only via the deformation tell now written into the `clay` definition. `figure` has one atypical sample |
 | toon-era | `ivy_toon` / `peter_griffin_toon` | `2D cel / western toon`, **90s cel vs modern flat digital** | style | fine discrimination *below* the sub-term — nothing in the vocabulary separates these two. **Superseded by `gordon-era`**, which the vocabulary can express |
 | azumanga | `azumanga_anime` / `azumanga_toon` | same 3 characters, same uniforms; flat anime cel vs western TV-toon | style | loose, and a **fine** discrimination — both are flat 2D |
 | anime-toon | `avatar_1` / `avatar_2` / `boondocks` / `titans1` | **western production, anime idiom** — the convergence cases | style | not a control but a **test set**: these carry the provisional `western toon` ruling. Read "Rulings that may need revisiting" before scoring |
