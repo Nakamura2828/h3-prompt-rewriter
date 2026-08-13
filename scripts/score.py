@@ -29,10 +29,42 @@ Two markers drop a case out of the denominator, and they mean different things:
 A marker may appear on the whole value or on one field, e.g.
 "2D cel / (sub CONTESTED)" scores the coarse term and excludes the sub-term only.
 
+ACCEPT-SETS (session 16)
+------------------------
+An `_expected` value may instead be an OBJECT, which is how a case records that more
+than one answer is genuinely acceptable:
+
+    "sw_avatar_1": {
+      "expect":  "2D cel / digital / western toon | anime / colour",
+      "why":     "western production in an anime idiom; the traditions are converging",
+      "control": ["sw_ivy_toon", "sw_april_1987"]
+    }
+
+  expect   the same "a / b / c" grammar as the string form, except that a field may
+           offer `|`-separated ALTERNATIVES. The first is the PRIMARY -- what we would
+           write if forced to pick one. Anything outside the set is still a miss.
+  why      free prose: why this case admits more than one answer. Also legal on a
+           case with no accept-set, purely to tag it -- misses are grouped by `why`
+           at the end of the report, which is what fills the six-case adjudication
+           cap with one exemplar per pattern instead of a guess.
+  control  case ids where this SAME distinction is NOT ambiguous and must still be
+           got right. This is the point of the field: an accept-set removes selection
+           pressure on a distinction, so the model may collapse it everywhere. If an
+           accept-set fires while its controls miss, the change bought nothing, and
+           this report says so.
+
+DELIBERATELY OUT OF SCOPE: an accept-set is per-FIELD, so it cannot express "two
+fields each holding half a true answer" (`april_1987_figure` -- a photograph OF a
+figure, an illegal pairing where neither half is wrong). Those stay CONTESTED. They
+are a hole in the vocabulary, and letting the scorer absorb them would remove the
+pressure to fix it -- the same error as drawing an accept-set loosely enough to hide
+the `digital` over-attractor.
+
 Usage:
   python scripts/score.py tests/describer_style.json runs/run-*.txt
   python scripts/score.py tests/describer_style_sweep.json <run> --fields MEDIUM SUB_MEDIUM
   python scripts/score.py <test> <run> --misses-only
+  python scripts/score.py <test> <run> --strict     # ignore accept-sets: primary only
 """
 
 import argparse
@@ -45,6 +77,30 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from validate import parse_records, head_parts          # noqa: E402
 
 MARKERS = ('UNSCORABLE', 'CONTESTED')
+ACCEPT_SEP = '|'
+OBJ_KEYS = {'expect', 'why', 'control'}
+
+
+def normalise(raw, cid):
+    """An `_expected` value -> (expect string, why, [control ids]).
+
+    Accepts both legal forms: the plain string that every pre-session-16 entry uses,
+    and the accept-set object. Validating here rather than at the point of use means a
+    typo in a hand-edited key fails loudly on the spot instead of silently scoring the
+    case against a missing expectation."""
+    if isinstance(raw, str):
+        return raw, None, []
+    if not isinstance(raw, dict):
+        raise SystemExit(f'ERROR: _expected["{cid}"] must be a string or an object, '
+                         f'got {type(raw).__name__}.')
+    unknown = set(raw) - OBJ_KEYS
+    if unknown:
+        raise SystemExit(f'ERROR: _expected["{cid}"] has unknown key(s) '
+                         f'{sorted(unknown)}; legal keys are {sorted(OBJ_KEYS)}.')
+    if 'expect' not in raw:
+        raise SystemExit(f'ERROR: _expected["{cid}"] is an object with no "expect" key.')
+    control = raw.get('control') or []
+    return raw['expect'], raw.get('why'), [control] if isinstance(control, str) else list(control)
 
 
 def field(output, name):
@@ -85,6 +141,14 @@ def clean(expectation):
     return re.sub(r'\s*\([^()]*\)\s*$', '', expectation).strip()
 
 
+def alternatives(expectation):
+    """A field expectation -> its accepted values, PRIMARY FIRST.
+
+    A field with no `|` yields a one-element list, so the caller has a single path
+    for both forms and the string entries cannot behave differently by accident."""
+    return [p.strip() for p in clean(expectation).split(ACCEPT_SEP) if p.strip()]
+
+
 def read_run(path, fields):
     """{case id: tuple of emitted field values} for one concatenated run file."""
     got = {}
@@ -95,36 +159,176 @@ def read_run(path, fields):
     return got
 
 
-def case_verdict(raw, emitted, nfields):
+def case_verdict(expect, emitted, nfields, fields=(), strict=False):
     """Score ONE case.
 
-    Returns (state, why, n_field_excluded, field_contested):
+    Returns (state, why, n_field_excluded, field_contested, fired, verdicts):
       state True  = pass, False = miss, None = dropped from the denominator
       why          the exclusion marker when state is None, else None
+      verdicts     per-field True/False/None, aligned to `fields`. Needed because a
+                   CONTROL guards one AXIS, not the whole record: sw_nadia's idiom can
+                   be right while its sub-medium misses for unrelated reasons, and
+                   reporting that as a collapsing idiom distinction is a false alarm.
+      fired        [(field name, matched value, primary value), ...] for accept-sets
+                   that were LOAD-BEARING -- the emitted value matched a non-primary
+                   alternative, so without the set this case would have missed. An
+                   accept-set that matched its own primary did nothing and is not
+                   reported, which keeps the count honest about what was bought.
+
+    `expect` is the normalised expectation STRING; callers pass normalise()'s first
+    element. `strict` ignores every alternative but the primary, which is what makes
+    the old and new scoring semantics comparable on identical model output.
 
     Factored out so the baseline run in --baseline is scored by exactly the same
     logic as the run being reported -- a second implementation would drift and
     silently mis-report regressions.
     """
-    marker, want = split_expected(raw, nfields)
+    marker, want = split_expected(expect, nfields)
     if marker:
-        return None, marker, 0, False
+        return None, marker, 0, False, [], [None] * nfields
 
-    verdicts, per_field, contested = [], 0, False
-    for w, g in zip(want, emitted):
+    verdicts, per_field, contested, fired = [], 0, False, []
+    for i, (w, g) in enumerate(zip(want, emitted)):
         mk = marker_in(w)
         if mk or w == '(unspecified)':
             verdicts.append(None)                        # field excluded
             per_field += 1
             if mk == 'CONTESTED':
                 contested = True
-        else:
-            verdicts.append(g.strip().lower() == clean(w).lower())
+            continue
+        alts = alternatives(w)
+        if strict:
+            alts = alts[:1]
+        hit = next((a for a in alts if g.strip().lower() == a.lower()), None)
+        verdicts.append(hit is not None)
+        if hit is not None and hit != alts[0]:
+            fired.append((fields[i] if i < len(fields) else f'field {i}', hit, alts[0]))
 
     scored = [v for v in verdicts if v is not None]
     if not scored:
-        return None, 'CONTESTED', per_field, contested
-    return all(scored), None, per_field, contested
+        return None, 'CONTESTED', per_field, contested, [], verdicts
+    return all(scored), None, per_field, contested, fired, verdicts
+
+
+def wrap(text, label):
+    """Fold prose to the report's width, labelling the first line only.
+
+    Continuation lines are indented to the label's width rather than repeating it --
+    a `why` string runs several lines and a repeated label reads as several `why`s."""
+    cont = ' ' * len(label)
+    out, line = [], label
+    for word in text.split():
+        if len(line) + len(word) + 1 > 96 and line.strip() != label.strip():
+            out.append(line.rstrip())
+            line = cont
+        line += word + ' '
+    out.append(line.rstrip())
+    return '\n'.join(out)
+
+
+def accept_axes(expect, fields):
+    """Indices of the fields on which `expect` declares alternatives."""
+    _mk, want = split_expected(expect, len(fields))
+    return [i for i, f in enumerate(want)
+            if f != '(unspecified)' and not marker_in(f) and len(alternatives(f)) > 1]
+
+
+def report_accept_sets(key, fired_of, perfield, got, w, fields, strict):
+    """Report which accept-sets were load-bearing, and how their controls did.
+
+    The controls are the point. An accept-set removes selection pressure on the very
+    distinction it forgives, so the model may collapse it everywhere -- including
+    where the distinction is required. A fired set whose controls are missing is the
+    signal that the change bought nothing, and it is worth more than the score.
+
+    A control is judged ONLY on the axes the accept-set covers, never on whole-case
+    pass/fail. sw_nadia controls the western-toon/anime IDIOM call and gets it right,
+    while missing SUB_MEDIUM to the unrelated `digital` over-attractor; scoring it
+    whole-case would raise a collapse warning about a distinction that is fine, and a
+    warning that cries wolf is worse than no warning."""
+    declared = [cid for cid, (expect, _, _) in key.items()
+                if ACCEPT_SEP in expect and not split_expected(expect, 1)[0]]
+    if not declared:
+        return
+
+    print()
+    if strict:
+        print(f'accept-sets  {len(declared)} declared, ALL IGNORED (--strict: primary only)')
+        return
+
+    print(f'accept-sets  {len(declared)} declared · {len(fired_of)} fired '
+          f'(matched a non-primary value, so the set is what made the case pass)')
+
+    collapsing = []
+    for cid in declared:
+        expect, why, control = key[cid]
+        axes = accept_axes(expect, fields)
+        axis_names = ', '.join(fields[i] for i in axes) or '(none)'
+        marks = fired_of.get(cid)
+        if marks:
+            shown = ' · '.join(f"{f} = '{hit}' (primary '{prim}')" for f, hit, prim in marks)
+            print(f'  FIRED  {cid:{w}}  {shown}')
+        else:
+            print(f'  --     {cid:{w}}  not load-bearing this round  [{axis_names}]')
+        if why:
+            print(wrap(why, ' ' * 9 + 'why      '))
+        if control:
+            _mk, want = split_expected(expect, len(fields))
+            states = []
+            for c in control:
+                v = perfield.get(c)
+                if v is None:
+                    states.append((c, 'not in this test'))
+                    continue
+                on_axis = [v[i] for i in axes if i < len(v)]
+                scored = [x for x in on_axis if x is not None]
+                if not scored:
+                    states.append((c, 'excluded'))
+                elif all(scored):
+                    states.append((c, 'ok'))
+                else:
+                    # A control that missed ON the axis has still only COLLAPSED if it
+                    # drifted to a value this accept-set forgives. sw_marker misses
+                    # SUB_MEDIUM to `digital` -- the over-attractor, nothing to do with
+                    # marker-vs-pencil -- and calling that a collapse would blame the
+                    # accept-set for a defect it neither caused nor hides.
+                    drift = [got[c][i].strip().lower() for i in axes
+                             if i < len(v) and v[i] is False
+                             and any(got[c][i].strip().lower() == alt.lower()
+                                     for alt in alternatives(want[i]))]
+                    states.append((c, f"COLLAPSED to '{drift[0]}'" if drift
+                                   else 'miss (off-distinction)'))
+            print(' ' * 9 + f'controls on {axis_names}: '
+                  + ' · '.join(f'{c} {s}' for c, s in states))
+            if marks and any(s.startswith('COLLAPSED') for _, s in states):
+                collapsing.append(cid)
+
+    if collapsing:
+        print()
+        print(wrap('WARNING: ' + ', '.join(sorted(collapsing)) + ' had an accept-set fire '
+                   'while a STRICT CONTROL COLLAPSED -- drifted, on the same axis, to a '
+                   'value this very accept-set forgives. That is the failure mode the '
+                   'control field exists to catch: the model is not resolving a genuinely '
+                   'ambiguous case, it is losing the distinction everywhere. Read this '
+                   'before crediting the accept-set with the pass.', '  '))
+
+
+def report_why_groups(key, label):
+    """Group the misses by their `why` tag, so the six-case cap can be filled with one
+    exemplar per pattern rather than by hand-triaging the list every round."""
+    groups = {}
+    for cid, (_expect, why, _ctl) in key.items():
+        if label.get(cid) == 'MISS':
+            groups.setdefault(why, []).append(cid)
+    if not any(k for k in groups):          # no miss carries a tag: nothing to group by
+        return
+
+    print()
+    print('misses grouped by `why`:')
+    for why in sorted(groups, key=lambda k: (k is None, k or '')):
+        head = why or '(untagged)'
+        print(wrap(head, '  '))
+        print(wrap(', '.join(sorted(groups[why])), '      '))
 
 
 def main():
@@ -142,6 +346,10 @@ def main():
                          'is on movement, not level, so this is what makes it meaningful: it '
                          'reports regressions (passed then, missing now) and cases that '
                          'changed to a DIFFERENT wrong answer.')
+    ap.add_argument('--strict', action='store_true',
+                    help='honour only the PRIMARY value of every accept-set, i.e. score '
+                         'under the pre-session-16 semantics. Run a file both ways to get a '
+                         'controlled A/B of the scoring change on identical model output.')
     a = ap.parse_args()
 
     spec = json.loads(pathlib.Path(a.test).read_text(encoding='utf-8'))
@@ -152,28 +360,39 @@ def main():
 
     got = read_run(a.run, a.fields)
 
+    # Normalise every entry up front so a malformed object fails before any scoring
+    # happens, rather than half way down a report the reader might already trust.
+    key = {cid: normalise(raw, cid) for cid, raw in expected.items()}
+
     rows, excluded = [], []
     field_contested = set()
     n_pass = n_miss = 0
     per_field_excluded = 0
-    state = {}
+    state, fired_of, label, perfield = {}, {}, {}, {}
 
-    for cid, raw in expected.items():
+    for cid, (expect, _why, _ctl) in key.items():
         if cid not in got:
-            excluded.append((cid, 'NOT RUN', raw))
+            excluded.append((cid, 'NOT RUN', expect))
+            label[cid] = 'not run'
             continue
-        ok, why, per_field, contested = case_verdict(raw, got[cid], len(a.fields))
+        ok, why, per_field, contested, fired, verdicts = case_verdict(
+            expect, got[cid], len(a.fields), a.fields, a.strict)
+        perfield[cid] = verdicts
         per_field_excluded += per_field
         if contested:
             field_contested.add(cid)
         state[cid] = ok
+        if fired:
+            fired_of[cid] = fired
         if ok is None:
             excluded.append((cid, why, ' / '.join(got[cid])))
+            label[cid] = f'skip ({why})'
             continue
         n_pass += ok
         n_miss += not ok
+        label[cid] = 'pass' if ok else 'MISS'
         if not ok or not a.misses_only:
-            rows.append((cid, ' / '.join(got[cid]), raw, ok))
+            rows.append((cid, ' / '.join(got[cid]), expect, ok))
 
     w = max((len(c) for c, *_ in rows + excluded), default=10)
     for cid, g, e, ok in rows:
@@ -210,6 +429,9 @@ def main():
         print('  NOTE: contested rulings are PROVISIONAL -- they expire when the '
               'vocabulary changes.')
 
+    report_accept_sets(key, fired_of, perfield, got, w, a.fields, a.strict)
+    report_why_groups(key, label)
+
     # The gate infers "high failure rate -> structural problem", and that inference needs a
     # REPRESENTATIVE sample. An enriched test (one deliberately stocked with known failures
     # so a fix is measurable) has a high rate BY CONSTRUCTION, so its level says nothing --
@@ -232,7 +454,8 @@ def main():
         for cid, now in state.items():
             if cid not in base or now is None:
                 continue
-            then, *_ = case_verdict(expected[cid], base[cid], len(a.fields))
+            then, *_ = case_verdict(key[cid][0], base[cid], len(a.fields),
+                                    a.fields, a.strict)
             if then is None:
                 continue
             if then and not now:

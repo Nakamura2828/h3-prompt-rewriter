@@ -514,7 +514,7 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `kasia_swimsuit_render` | 3D CG | none | anime | colour | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
 | `kasia_swimsuit_worn` | 2D cel | digital | anime | colour | the original commission | none | 1 girl (same character) | kasia | s7b | text |
 | `kaypro_ii` | photograph | none | realist | colour | — | none | none | — | s7a | text |
-| `kiki` | 2D cel | digital | anime | colour | — | none | 1 girl + 1 black cat | — | s6 | franchise |
+| `kiki` | drawing | digital | anime | colour | a signed digital illustration, **not an animation still** — soft airbrushed shading, gradient blush, tapered stroke-weight in the hair. Corrected s16, see corrections | none | 1 girl + 1 black cat | — | s6 | franchise, corr |
 | `lincoln_photo` | photograph | none | realist | monochrome | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
 | `lincoln_money` | print | engraving | realist | monochrome | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
 | `maggie_grandpa_cat` | 2D cel | digital | western toon | colour | flat, heavy stylisation | int | 1 older-adult man + 1 infant + 1 cat | age-family | s15 | text, franchise |
@@ -830,6 +830,7 @@ well-formed and passes every structural check.
 
 | claim | what we first recorded | what is actually true | how it surfaced | why it matters |
 |---|---|---|---|---|
+| `kiki` medium | `2D cel / digital`, read as an animation still | a **signed digital illustration** in an anime idiom, not animation artwork: soft airbrushed shading and gradient blush rather than flat cel separations, tapered stroke-weight in the hair, floating props on no ground. **Tie-break 5** ("visible drawing process beats flat colour") decides it, and the colour was never flat to begin with — `drawing / digital` | user ruling, session 16, while auditing accept-set candidates | the model had been answering `drawing / digital` and scoring a miss for it. It was **right**, and the answer key was wrong — so this was about to be forgiven by an accept-set, which would have preserved the error permanently instead of fixing it. `[[IDIOM]] anime` already carries "in the style of", which is what made `2D cel` look necessary |
 | `window` is its own location | catalogued as an unrelated room; `p6` described as showing a *doorway* | `p6` shows a **window**, and it is the **same window** as `window.png` | user correction, session 6 | turns two unrelated images into the corpus's largest same-place set (three framings) |
 | `annie1` / `annie3` cast | "1 girl, drawn twice — as herself and as a masked hero" | the masked figure is a **separate recurring character**; `annie3` has **four** distinct people | user correction, session 7a | **would have inverted a test verdict** — a describer correctly keeping them as two people would have scored as a failure |
 | `kasia_swimsuit` set membership | "not part of the kasia set — nothing visual ties it to the character, only the filename" | it **is** — `kasia_swimsuit_worn` is the original commission the flat-lay derives from | second batch arrived, session 7b | closes the second-flat-to-worn-garment gap; also the source of the general lesson below |
@@ -1216,8 +1217,8 @@ change to the master table.
 | | clay | 2 | gromit, gumby |
 | | figure | 1 | april_1987_figure |
 | | *model* | *0* | *no sample* |
-| `2D cel` | | **26** | |
-| | digital | 19 | avatar_1, avatar_2, azumanga_anime, azumanga_toon, boondocks, car_interior_mecha_driver, car_interior_toon, gordon_2004, gwen, kasia, kasia_swimsuit_worn, kiki, maggie_grandpa_cat, miya, molly, peter_griffin_toon, scooby, titans1, titans_go |
+| `2D cel` | | **25** | |
+| | digital | 18 | avatar_1, avatar_2, azumanga_anime, azumanga_toon, boondocks, car_interior_mecha_driver, car_interior_toon, gordon_2004, gwen, kasia, kasia_swimsuit_worn, maggie_grandpa_cat, miya, molly, peter_griffin_toon, scooby, titans1, titans_go |
 | | traditional cel | 7 | april_1987, beauty_beast, fern_gully, gordon_1996, ivy_toon, nadia, pocahontas |
 | `comic` | | **7** | |
 | | ink | 4 | comic, comic_panel2, comic_panel3, comic_panel4 |
@@ -1227,9 +1228,9 @@ change to the master table.
 | | digital | 7 | ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
 | | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
 | | watercolour | 2 | annie2_cropped, bird_watercolor |
-| `drawing` | | **7** | |
+| `drawing` | | **8** | |
 | | marker | 5 | april_comic, april_fanart, marker, supergirl1, supergirl2 |
-| | digital | 1 | car_interior_sketch |
+| | digital | 2 | car_interior_sketch, kiki |
 | | ink | 1 | annie1 |
 | | *pencil* | *0* | *no sample* |
 | `vector` | — | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |

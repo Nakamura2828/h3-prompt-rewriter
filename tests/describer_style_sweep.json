@@ -1,12 +1,18 @@
 {
   "_role": "describer_style FULL CORPUS SWEEP, three-axis vocabulary (session 10). Every active image in images/, scored against the master table in docs/image_inventory.md.",
-  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
-  "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; st_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the st_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix st_. NOTE this is now 2x the calls -- budget ~20 minutes.",
+  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. NOTE: the old 'DO NOT HAND-EDIT -- regenerate' instruction here is RETIRED as of session 16 -- see _hand_edited. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
+  "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
+  "_hand_edited": "NO LONGER SAFE TO REGENERATE. As of session 16 this file carries USER RULINGS the master table does not encode: accept-sets (an _expected value that is an OBJECT with expect/why/control, where a field offers `|` alternatives). gen_style_sweep.py would overwrite every one of them with the plain master-table string and silently re-accumulate settled cases against the thresholds -- with no error raised. If you must regenerate, diff the new _expected against this one and carry every object-valued entry forward by hand. Same hazard as L-DONT-REGENERATE-A-BASELINED-TEST, by a different route.",
+  "_accept_sets": "Five cases carry accept-sets, ruled by the user in session 16: sw_window, sw_kasia_render, sw_kasia_swimsuit_render, sw_supergirl2, sw_annie2_cropped. Each names strict CONTROLS -- cases where the same distinction is NOT ambiguous and must still be got right. score.py warns when an accept-set fires while its control misses, which is the model collapsing the distinction rather than resolving an ambiguous case. Read that warning before crediting any of these with a pass.",
   "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
   "_expected": {
     "sw_annie1": "drawing / ink / anime / colour",
     "sw_annie2": "photograph / none / realist / colour",
-    "sw_annie2_cropped": "painting / watercolour / western toon / colour",
+    "sw_annie2_cropped": {
+      "expect": "painting | drawing / watercolour | ink / western toon / colour",
+      "why": "a painting colouring over a drawing's lineart (user, session 16) -- pen line with watercolour wash over it, so both coherent readings are true: painting / watercolour and drawing / ink. KNOWN LIMITATION: accept-sets are per-FIELD, so the cross terms drawing / watercolour and painting / ink also pass even though neither is a legal pairing in the vocabulary. Accepted deliberately rather than stretching the mechanism to cross-field constraints, which is the shape ruled out of scope in session 16. If the cross terms start turning up, that is the signal to reconsider -- probably by adding watercolour to drawing's sub-list, not by changing score.py.",
+      "control": ["sw_bird_watercolor", "sw_annie1"]
+    },
     "sw_annie3": "comic / digital / western toon / colour",
     "sw_annie3_panel1": "comic / digital / western toon / colour",
     "sw_ayanami_oil": "painting / digital / anime / colour",
@@ -56,12 +62,20 @@
     "sw_kasia_bag": "photograph / none / realist / colour",
     "sw_kasia_bag_2": "photograph / none / realist / colour",
     "sw_kasia_outfit": "photograph / none / realist / colour",
-    "sw_kasia_render": "3D CG / none / anime / colour",
+    "sw_kasia_render": {
+      "expect": "3D CG / none / anime | dimensional toon / colour",
+      "why": "an AI render in a semi-realistic anime style. Both halves are true at once -- it IS a dimensional render and it IS anime-styled -- and the two idiom terms are not competing readings of one property here, they name different properties of the same image (user, session 16). Controls cover BOTH directions deliberately: sw_kasia / sw_kasia_swimsuit_worn are the same character rendered flat and unambiguously anime (the direction this accept-set actually risks -- it forgives dimensional toon, so anime is the side that can erode), while sw_shrek_cg / sw_woody_cg are unambiguously dimensional toon.",
+      "control": ["sw_kasia", "sw_kasia_swimsuit_worn", "sw_shrek_cg", "sw_woody_cg"]
+    },
     "sw_kasia_swimsuit": "photograph / none / realist / colour",
-    "sw_kasia_swimsuit_render": "3D CG / none / anime / colour",
+    "sw_kasia_swimsuit_render": {
+      "expect": "3D CG / none / anime | dimensional toon / colour",
+      "why": "an AI render in a semi-realistic anime style. Both halves are true at once -- it IS a dimensional render and it IS anime-styled -- and the two idiom terms are not competing readings of one property here, they name different properties of the same image (user, session 16). Controls cover BOTH directions deliberately: sw_kasia / sw_kasia_swimsuit_worn are the same character rendered flat and unambiguously anime (the direction this accept-set actually risks -- it forgives dimensional toon, so anime is the side that can erode), while sw_shrek_cg / sw_woody_cg are unambiguously dimensional toon.",
+      "control": ["sw_kasia", "sw_kasia_swimsuit_worn", "sw_shrek_cg", "sw_woody_cg"]
+    },
     "sw_kasia_swimsuit_worn": "2D cel / digital / anime / colour",
     "sw_kaypro_ii": "photograph / none / realist / colour",
-    "sw_kiki": "2D cel / digital / anime / colour",
+    "sw_kiki": "drawing / digital / anime / colour",
     "sw_lincoln_photo": "photograph / none / realist / monochrome",
     "sw_lincoln_money": "print / engraving / (CONTESTED -- flat guilloche border and ground dominate; the engraved portrait is a small share of the frame) / monochrome",
     "sw_marker": "drawing / marker / anime / colour",
@@ -94,14 +108,22 @@
     "sw_sleeping": "photograph / none / realist / colour",
     "sw_stage": "photograph / none / realist / colour",
     "sw_supergirl1": "drawing / marker / western toon / colour",
-    "sw_supergirl2": "drawing / marker / western toon / colour",
+    "sw_supergirl2": {
+      "expect": "drawing / marker | pencil / western toon / colour",
+      "why": "marker colouring over a pencil sketch, so both instruments are literally present (user, session 16). This retires the session-9 CONTESTED ruling on the sub-term, which said the pair differs in finish rather than instrument -- true of the PAIR, but the un-inked pencil under-drawing is visible in this image on its own merits. NOTE: `drawing / pencil` has NO unambiguous sample in the corpus, so only the marker side of this distinction can be controlled.",
+      "control": ["sw_marker", "sw_supergirl1"]
+    },
     "sw_teddy_taft": "photograph / none / realist / monochrome",
     "sw_temple_day": "painting / digital / anime / colour",
     "sw_temple_night": "painting / digital / anime / colour",
     "sw_tv": "photograph / none / realist / colour",
     "sw_van_pixel": "pixel art / none / anime / colour",
     "sw_vector_city": "vector / none / flat graphic / colour",
-    "sw_window": "live-action film / none / realist / colour",
+    "sw_window": {
+      "expect": "live-action film | photograph / none / realist / colour",
+      "why": "a live-action film clip cropped to a photograph's aspect ratio, so the framing genuinely reads as a still (user, session 16). NOTE the asymmetry: `castle` is NOT an accept-set. The pair looked like a swap -- the model called castle film and window photo, the reverse of the key -- but only window is ambiguous; castle is a plain miss and is the control here.",
+      "control": ["sw_castle", "sw_p6_first"]
+    },
     "sw_woman_oil": "painting / oil / realist / colour",
     "sw_woody_cg": "3D CG / none / dimensional toon / colour"
   },

@@ -4,6 +4,7 @@
   "_hand_edited": "NO LONGER SAFE TO REGENERATE. The generator's old instruction here said 'DO NOT HAND-EDIT -- regenerate'; that was correct until the round was adjudicated. As of s15 this file carries USER RULINGS that the master table does not encode, marked '(CONTESTED s15: ...)' in _expected. Re-running gen_style_sweep.py --added s15 would overwrite them with the plain master-table answer and silently re-accumulate settled cases against the thresholds. If you must regenerate, diff the new _expected against this one and carry every CONTESTED marker forward by hand. See L-DONT-REGENERATE-A-BASELINED-TEST for the same hazard in its other form.",
   "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
   "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
+  "_accept_sets": "Four cases carry accept-sets, ruled by the user in session 16: sw_avatar_1, sw_avatar_2, sw_boondocks, sw_titans1 -- the anime-idiom western cartoons. Each names strict CONTROLS on the same axis. score.py warns when an accept-set fires while a control COLLAPSES (drifts, on that axis, to a value the set forgives); a control missing for an unrelated reason is reported as \"off-distinction\" and raises nothing. Read that warning before crediting any of these with a pass.",
   "_gate": "enriched",
   "_gate_note": "Enriched, per .claude/CLAUDE.md: gate on MOVEMENT (regressions vs the previous round), never on the failure level. On the FIRST run there is no delta at all, so there is nothing to gate -- adjudicate, cap 6. Three of these images carry provisional rulings the user expects may need reversing; read docs/image_inventory.md section \"Rulings that may need revisiting\" BEFORE scoring them, or you will file a deliberate decision as a model defect.",
   "_expected": {
@@ -11,11 +12,23 @@
     "sw_april_1987_figure": "(CONTESTED s15: a photograph of a figure, and the vocabulary has no legal pairing for that) / (CONTESTED s15: entangled with the medium above) / dimensional toon / colour",
     "sw_april_comic": "(CONTESTED s15: marker art AND a comic cover at once; the single slot cannot hold both) / (CONTESTED s15: entangled with the medium above) / western toon / colour",
     "sw_april_fanart": "drawing / marker / realist / colour",
-    "sw_avatar_1": "2D cel / digital / western toon / colour",
-    "sw_avatar_2": "2D cel / digital / western toon / colour",
+    "sw_avatar_1": {
+      "expect": "2D cel / digital / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987 and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": ["sw_april_1987", "sw_nadia", "sw_ivy_toon"]
+    },
+    "sw_avatar_2": {
+      "expect": "2D cel / digital / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987 and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": ["sw_april_1987", "sw_nadia", "sw_ivy_toon"]
+    },
     "sw_baby_middle_aged": "photograph / none / realist / colour",
     "sw_beauty_beast": "2D cel / traditional cel / western toon / colour",
-    "sw_boondocks": "2D cel / digital / western toon / colour",
+    "sw_boondocks": {
+      "expect": "2D cel / digital / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987 and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": ["sw_april_1987", "sw_nadia", "sw_ivy_toon"]
+    },
     "sw_car_interior_toon": "2D cel / digital / western toon / colour",
     "sw_fern_gully": "2D cel / traditional cel / western toon / colour",
     "sw_gordon_1996": "2D cel / traditional cel / western toon / colour",
@@ -35,7 +48,11 @@
     "sw_shed_day": "photograph / none / realist / colour",
     "sw_shed_dusk": "photograph / none / realist / colour",
     "sw_shed_night": "photograph / none / realist / colour",
-    "sw_titans1": "2D cel / digital / western toon / colour",
+    "sw_titans1": {
+      "expect": "2D cel / digital / western toon | anime / colour",
+      "why": "a western toon with an anime-inspired style; the two traditions are genuinely converging (user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not only the two that failed this way in the s15 round -- the accept-set records a property of the IMAGE, and keying it to one run's output would be fitting the answer key to a sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to dimensional toon, outside the set, and titans1 passed on the primary. Controls guard both directions -- sw_april_1987 and sw_ivy_toon are unambiguously western, sw_nadia unambiguously anime. sw_ivy_toon lives in describer_style_sweep.json and will report 'not in this test' here; run the sweep to exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which is exactly what the control field exists to make visible -- it is not a reason to widen the set.",
+      "control": ["sw_april_1987", "sw_nadia", "sw_ivy_toon"]
+    },
     "sw_titans_go": "2D cel / digital / western toon / colour"
   },
   "defaults": {
