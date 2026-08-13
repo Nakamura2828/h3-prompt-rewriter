@@ -332,7 +332,7 @@ DESCRIBER_ROLES = {
     #
     # One run file holds both kinds of record, so each half is validated separately:
     #   validate.py describer <run> --role style_look  --id-prefix look_
-    #   validate.py describer <run> --role style_class --id-prefix st_
+    #   validate.py describer <run> --role style_class --id-prefix sw_
     'style_look': {
         'fields': ['EXECUTION', 'PALETTE', 'LIGHTING', 'DISTINGUISHING', 'LABEL', 'DEFINITION'],
         'closed': {},
@@ -578,7 +578,7 @@ def main():
     p_d.add_argument('--id-prefix', metavar='PREFIX',
                      help='validate only records whose case id starts with PREFIX. A chained '
                           'test writes two roles into one run file, and each has to be checked '
-                          "against its own rules -- e.g. --role style_class --id-prefix st_")
+                          "against its own rules -- e.g. --role style_class --id-prefix sw_")
 
     for p in (p_h3, p_d):
         p.add_argument('-v', '--verbose', action='store_true',

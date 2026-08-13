@@ -1,0 +1,470 @@
+{
+  "_role": "describer_style ENRICHED ROUND -- only the images added in s15, scored against the master table in docs/image_inventory.md. NOT a representative sample of the corpus: collected to fill named gaps, so it is deliberately skewed and a failure RATE over it says nothing about the corpus as a whole.",
+  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
+  "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
+  "_gate": "enriched",
+  "_gate_note": "Enriched, per .claude/CLAUDE.md: gate on MOVEMENT (regressions vs the previous round), never on the failure level. On the FIRST run there is no delta at all, so there is nothing to gate -- adjudicate, cap 6. Three of these images carry provisional rulings the user expects may need reversing; read docs/image_inventory.md section \"Rulings that may need revisiting\" BEFORE scoring them, or you will file a deliberate decision as a model defect.",
+  "_expected": {
+    "sw_april_1987": "2D cel / traditional cel / western toon / colour",
+    "sw_april_1987_figure": "stop-motion / figure / dimensional toon / colour",
+    "sw_april_comic": "drawing / marker / western toon / colour",
+    "sw_april_fanart": "painting / digital / realist / colour",
+    "sw_avatar_1": "2D cel / digital / western toon / colour",
+    "sw_avatar_2": "2D cel / digital / western toon / colour",
+    "sw_baby_middle_aged": "photograph / none / realist / colour",
+    "sw_beauty_beast": "2D cel / traditional cel / western toon / colour",
+    "sw_boondocks": "2D cel / digital / western toon / colour",
+    "sw_car_interior_toon": "2D cel / digital / western toon / colour",
+    "sw_fern_gully": "2D cel / traditional cel / western toon / colour",
+    "sw_gordon_1996": "2D cel / traditional cel / western toon / colour",
+    "sw_gordon_2004": "2D cel / digital / western toon / colour",
+    "sw_gordon_comic": "comic / digital / realist / colour",
+    "sw_gromit": "stop-motion / clay / dimensional toon / colour",
+    "sw_gumby": "stop-motion / clay / dimensional toon / colour",
+    "sw_gwen": "2D cel / digital / western toon / colour",
+    "sw_gwen_cg": "3D CG / none / dimensional toon / colour",
+    "sw_maggie_grandpa_cat": "2D cel / digital / western toon / colour",
+    "sw_molly": "2D cel / digital / western toon / colour",
+    "sw_nadia": "2D cel / traditional cel / anime / colour",
+    "sw_pjs": "stop-motion / puppet / dimensional toon / colour",
+    "sw_pocahontas": "2D cel / traditional cel / western toon / colour",
+    "sw_rudolf": "stop-motion / puppet / dimensional toon / colour",
+    "sw_scooby": "2D cel / digital / western toon / colour",
+    "sw_shed_day": "photograph / none / realist / colour",
+    "sw_shed_dusk": "photograph / none / realist / colour",
+    "sw_shed_night": "photograph / none / realist / colour",
+    "sw_titans1": "2D cel / digital / western toon / colour",
+    "sw_titans_go": "2D cel / digital / western toon / colour"
+  },
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "id": "look_april_1987",
+      "group": "2D cel",
+      "image": "images/april_1987.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_1987",
+      "group": "2D cel",
+      "image": "images/april_1987.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_1987}}"
+    },
+    {
+      "id": "look_april_1987_figure",
+      "group": "stop-motion",
+      "image": "images/april_1987_figure.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_1987_figure",
+      "group": "stop-motion",
+      "image": "images/april_1987_figure.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_1987_figure}}"
+    },
+    {
+      "id": "look_april_comic",
+      "group": "drawing",
+      "image": "images/april_comic.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_comic",
+      "group": "drawing",
+      "image": "images/april_comic.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_comic}}"
+    },
+    {
+      "id": "look_april_fanart",
+      "group": "painting",
+      "image": "images/april_fanart.jpeg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_april_fanart",
+      "group": "painting",
+      "image": "images/april_fanart.jpeg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_april_fanart}}"
+    },
+    {
+      "id": "look_avatar_1",
+      "group": "2D cel",
+      "image": "images/avatar_1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_avatar_1",
+      "group": "2D cel",
+      "image": "images/avatar_1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_avatar_1}}"
+    },
+    {
+      "id": "look_avatar_2",
+      "group": "2D cel",
+      "image": "images/avatar_2.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_avatar_2",
+      "group": "2D cel",
+      "image": "images/avatar_2.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_avatar_2}}"
+    },
+    {
+      "id": "look_baby_middle_aged",
+      "group": "photograph",
+      "image": "images/baby_middle_aged.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_baby_middle_aged",
+      "group": "photograph",
+      "image": "images/baby_middle_aged.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_baby_middle_aged}}"
+    },
+    {
+      "id": "look_beauty_beast",
+      "group": "2D cel",
+      "image": "images/beauty_beast.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_beauty_beast",
+      "group": "2D cel",
+      "image": "images/beauty_beast.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_beauty_beast}}"
+    },
+    {
+      "id": "look_boondocks",
+      "group": "2D cel",
+      "image": "images/boondocks.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_boondocks",
+      "group": "2D cel",
+      "image": "images/boondocks.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_boondocks}}"
+    },
+    {
+      "id": "look_car_interior_toon",
+      "group": "2D cel",
+      "image": "images/car_interior_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_car_interior_toon",
+      "group": "2D cel",
+      "image": "images/car_interior_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_car_interior_toon}}"
+    },
+    {
+      "id": "look_fern_gully",
+      "group": "2D cel",
+      "image": "images/fern_gully.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fern_gully",
+      "group": "2D cel",
+      "image": "images/fern_gully.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fern_gully}}"
+    },
+    {
+      "id": "look_gordon_1996",
+      "group": "2D cel",
+      "image": "images/gordon_1996.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_1996",
+      "group": "2D cel",
+      "image": "images/gordon_1996.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_1996}}"
+    },
+    {
+      "id": "look_gordon_2004",
+      "group": "2D cel",
+      "image": "images/gordon_2004.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_2004",
+      "group": "2D cel",
+      "image": "images/gordon_2004.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_2004}}"
+    },
+    {
+      "id": "look_gordon_comic",
+      "group": "comic",
+      "image": "images/gordon_comic.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gordon_comic",
+      "group": "comic",
+      "image": "images/gordon_comic.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gordon_comic}}"
+    },
+    {
+      "id": "look_gromit",
+      "group": "stop-motion",
+      "image": "images/gromit.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gromit",
+      "group": "stop-motion",
+      "image": "images/gromit.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gromit}}"
+    },
+    {
+      "id": "look_gumby",
+      "group": "stop-motion",
+      "image": "images/gumby.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gumby",
+      "group": "stop-motion",
+      "image": "images/gumby.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gumby}}"
+    },
+    {
+      "id": "look_gwen",
+      "group": "2D cel",
+      "image": "images/gwen.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gwen",
+      "group": "2D cel",
+      "image": "images/gwen.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gwen}}"
+    },
+    {
+      "id": "look_gwen_cg",
+      "group": "3D CG",
+      "image": "images/gwen_cg.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_gwen_cg",
+      "group": "3D CG",
+      "image": "images/gwen_cg.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_gwen_cg}}"
+    },
+    {
+      "id": "look_maggie_grandpa_cat",
+      "group": "2D cel",
+      "image": "images/maggie_grandpa_cat.jpeg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_maggie_grandpa_cat",
+      "group": "2D cel",
+      "image": "images/maggie_grandpa_cat.jpeg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_maggie_grandpa_cat}}"
+    },
+    {
+      "id": "look_molly",
+      "group": "2D cel",
+      "image": "images/molly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_molly",
+      "group": "2D cel",
+      "image": "images/molly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_molly}}"
+    },
+    {
+      "id": "look_nadia",
+      "group": "2D cel",
+      "image": "images/nadia.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_nadia",
+      "group": "2D cel",
+      "image": "images/nadia.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_nadia}}"
+    },
+    {
+      "id": "look_pjs",
+      "group": "stop-motion",
+      "image": "images/pjs.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pjs",
+      "group": "stop-motion",
+      "image": "images/pjs.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pjs}}"
+    },
+    {
+      "id": "look_pocahontas",
+      "group": "2D cel",
+      "image": "images/pocahontas.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pocahontas",
+      "group": "2D cel",
+      "image": "images/pocahontas.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pocahontas}}"
+    },
+    {
+      "id": "look_rudolf",
+      "group": "stop-motion",
+      "image": "images/rudolf.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_rudolf",
+      "group": "stop-motion",
+      "image": "images/rudolf.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_rudolf}}"
+    },
+    {
+      "id": "look_scooby",
+      "group": "2D cel",
+      "image": "images/scooby.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_scooby",
+      "group": "2D cel",
+      "image": "images/scooby.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_scooby}}"
+    },
+    {
+      "id": "look_shed_day",
+      "group": "photograph",
+      "image": "images/shed_day.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_day",
+      "group": "photograph",
+      "image": "images/shed_day.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_day}}"
+    },
+    {
+      "id": "look_shed_dusk",
+      "group": "photograph",
+      "image": "images/shed_dusk.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_dusk",
+      "group": "photograph",
+      "image": "images/shed_dusk.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_dusk}}"
+    },
+    {
+      "id": "look_shed_night",
+      "group": "photograph",
+      "image": "images/shed_night.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shed_night",
+      "group": "photograph",
+      "image": "images/shed_night.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shed_night}}"
+    },
+    {
+      "id": "look_titans1",
+      "group": "2D cel",
+      "image": "images/titans1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_titans1",
+      "group": "2D cel",
+      "image": "images/titans1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_titans1}}"
+    },
+    {
+      "id": "look_titans_go",
+      "group": "2D cel",
+      "image": "images/titans_go.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_titans_go",
+      "group": "2D cel",
+      "image": "images/titans_go.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_titans_go}}"
+    }
+  ]
+}
