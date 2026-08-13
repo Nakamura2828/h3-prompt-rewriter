@@ -1,0 +1,48 @@
+{
+  "primary_tags": [
+    "base_1",
+    "base_2",
+    "a_end_3800",
+    "a_end_3900",
+    "a_end_4000",
+    "a_end_4200",
+    "a_end_4500",
+    "a_end_5000",
+    "b_end_3800",
+    "b_end_3900",
+    "b_end_4000",
+    "b_end_4200",
+    "b_end_4500",
+    "b_end_5000",
+    "a_mid_3800",
+    "a_mid_3900",
+    "a_mid_4000",
+    "a_mid_4200",
+    "a_mid_4500",
+    "a_mid_5000",
+    "b_mid_3800",
+    "b_mid_3900",
+    "b_mid_4000",
+    "b_mid_4200",
+    "b_mid_4500",
+    "b_mid_5000"
+  ],
+  "secondary_arms": [
+    "img",
+    "noimg"
+  ],
+  "levels": [
+    3800,
+    3900,
+    4000,
+    4200,
+    4500,
+    5000
+  ],
+  "primary_arms": [
+    "a_end",
+    "b_end",
+    "a_mid",
+    "b_mid"
+  ]
+}

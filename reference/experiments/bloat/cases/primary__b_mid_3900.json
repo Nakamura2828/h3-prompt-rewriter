@@ -1,0 +1,177 @@
+{
+  "_note": "Groups named 'same: ...' mark cases describing the SAME place; validate.py's describer checker compares their [[SETTING_KIND]] across the group. Other group names are plain banners.",
+  "_weak_drift_check": "IMPORTANT: for the setting role the automated drift field is [[SETTING_KIND]], which is only interior/exterior -- it will pass trivially for almost any same-place group. The real drift signal is whether [[DEFINITION]] stays stable across a group, and NOTHING automated checks that. Read the DEFINITION lines of every 'same:' group by eye.",
+  "_v1_result": "Confirmed in the v1 round (archived REF2VA/Describer-Setting-v1): all six 'same:' groups passed the automated [[SETTING_KIND]] check while the city day/night pair's [[DEFINITION]] lines shared only one of four items. The automated check is near-worthless for this role on its own. v1's failure mode was that the model described FORMS by day and LIGHTS by night; v2 added a name-the-form rule and an explicit day-and-night test to fix it.",
+  "_no_subject_not_found": "The setting role has NO [[SUBJECT NOT FOUND]] line, unlike character -- emitting one is an error. Across v1/v2/v3 that single optional line caused EVERY format failure (1, then 5, then 3 cases, all with confabulated subjects such as 'the girl'), and in v3 it was 0-for-2 on the cases it existed to serve: it fired on set_p6_outside where the named view IS visible, and stayed silent on set_notfound where the beach is absent. A setting image has one place the camera is standing in, so there is nothing to disambiguate. set_p6_outside and set_notfound are retained as cases: both must now simply describe the room, with no tail line at all.",
+  "_atmosphere_quarantine": "The design decision under test: light/time/weather live in [[ATMOSPHERE]] only, and [[DEFINITION]] may never draw on them, so the spliced subject-definition sentence holds by day and by night. 'same: city skyline' is the direct test (one skyline, daylight vs blue hour). CONFOUND: that skyline carries rooftop brand signage which the night frame lights up and the day frame hides, so a DEFINITION disagreement there has two possible causes -- atmosphere leaking, or a sign becoming readable. Separate those before scoring it. 'same: apartment room p1' is a secondary probe (same room, big exposure change, no signage).",
+  "_negative_control": "classroom1 vs classroom2 are DIFFERENT rooms of the same type, deliberately NOT in a 'same:' group. They must not collapse into interchangeable records.",
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "system_file": ".claude/experiments/bloat/prompts/describer_setting__b_mid__3900.txt",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "group": "same: city skyline (day vs night)",
+      "id": "set_city_day",
+      "user": "ROLE: setting",
+      "image": "images/city_day.jpg"
+    },
+    {
+      "group": "same: city skyline (day vs night)",
+      "id": "set_city_night",
+      "user": "ROLE: setting",
+      "image": "images/city_night.jpg"
+    },
+    {
+      "group": "same: kitchen p2 (clean control)",
+      "id": "set_p2_first",
+      "user": "ROLE: setting",
+      "image": "images/p2_first.png"
+    },
+    {
+      "group": "same: kitchen p2 (clean control)",
+      "id": "set_p2_last",
+      "user": "ROLE: setting",
+      "image": "images/p2_last.png"
+    },
+    {
+      "group": "same: dining room p3 (clean control)",
+      "id": "set_p3_first",
+      "user": "ROLE: setting",
+      "image": "images/p3_first.png"
+    },
+    {
+      "group": "same: dining room p3 (clean control)",
+      "id": "set_p3_last",
+      "user": "ROLE: setting",
+      "image": "images/p3_last.png"
+    },
+    {
+      "group": "same: window room (three framings)",
+      "id": "set_p6_first",
+      "user": "ROLE: setting",
+      "image": "images/p6_first.png"
+    },
+    {
+      "group": "same: window room (three framings)",
+      "id": "set_p6_last",
+      "user": "ROLE: setting",
+      "image": "images/p6_last.png"
+    },
+    {
+      "group": "same: window room (three framings)",
+      "id": "set_window",
+      "user": "ROLE: setting",
+      "image": "images/window.png"
+    },
+    {
+      "group": "same: apartment room p1 (exposure change)",
+      "id": "set_p1_first",
+      "user": "ROLE: setting",
+      "image": "images/p1_first.png"
+    },
+    {
+      "group": "same: apartment room p1 (exposure change)",
+      "id": "set_p1_last",
+      "user": "ROLE: setting",
+      "image": "images/p1_last.png"
+    },
+    {
+      "group": "negative control: two different classrooms",
+      "id": "set_classroom1",
+      "user": "ROLE: setting",
+      "image": "images/classroom1.png"
+    },
+    {
+      "group": "negative control: two different classrooms",
+      "id": "set_classroom2",
+      "user": "ROLE: setting",
+      "image": "images/classroom2.png"
+    },
+    {
+      "group": "natural exteriors",
+      "id": "set_forest",
+      "user": "ROLE: setting",
+      "image": "images/forest_autumn.jpg"
+    },
+    {
+      "group": "natural exteriors",
+      "id": "set_mountain_rain",
+      "user": "ROLE: setting",
+      "image": "images/mountain_rain.jpg"
+    },
+    {
+      "group": "natural exteriors",
+      "id": "set_fuji",
+      "user": "ROLE: setting",
+      "image": "images/fuji.jpg"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "set_cloud",
+      "user": "ROLE: setting",
+      "image": "images/cloud.png"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "set_vector_city",
+      "user": "ROLE: setting",
+      "image": "images/vector_city.jpg"
+    },
+    {
+      "group": "stylised rendering",
+      "id": "set_miya",
+      "user": "ROLE: setting",
+      "image": "images/miya.jpg"
+    },
+    {
+      "group": "no environment at all",
+      "id": "set_kasia",
+      "user": "ROLE: setting",
+      "image": "images/kasia.png"
+    },
+    {
+      "group": "no environment at all",
+      "id": "set_phone",
+      "user": "ROLE: setting",
+      "image": "images/phone.png"
+    },
+    {
+      "group": "no environment at all",
+      "id": "set_miyu",
+      "user": "ROLE: setting",
+      "image": "images/miyu.png"
+    },
+    {
+      "group": "interior/exterior boundary",
+      "id": "set_bookshop",
+      "user": "ROLE: setting",
+      "image": "images/bookshop.png"
+    },
+    {
+      "group": "crowded architectural interior",
+      "id": "set_stage",
+      "user": "ROLE: setting",
+      "image": "images/stage.png"
+    },
+    {
+      "group": "subject selection",
+      "id": "set_p6_outside",
+      "user": "SUBJECT: the view through the window | ROLE: setting",
+      "image": "images/p6_first.png"
+    },
+    {
+      "group": "subject selection",
+      "id": "set_notfound",
+      "user": "SUBJECT: the beach | ROLE: setting",
+      "image": "images/classroom1.png"
+    }
+  ],
+  "_bloat_experiment": "GENERATED by .claude/experiments/bloat/gen_cases.py -- do not edit by hand. Identical to tests/describer_setting.json except for defaults.system_file.",
+  "_bloat_tag": "b_mid_3900"
+}
