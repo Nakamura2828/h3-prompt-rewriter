@@ -198,6 +198,20 @@ These exist so that two records of one image cannot legitimately disagree — th
    asymmetry under `[[SUB_MEDIUM]]`: *what we care about is the source of the art depicted.* A
    describer that answers `photograph` for a photographed drawing has told the downstream graph
    nothing it can use.
+
+   **Extended session 15 to composites — layers side by side rather than nested.** `april_fanart`
+   is a marker drawing of the figure laid over a separately-sourced manhole cover on a digital
+   white ground; the layers were made by different means and none of them frames the others. The
+   ruling:
+
+   > **In a composite, classify by the subject** — the layer the image is *of*. Background plates,
+   > cut-out grounds and pasted-in elements do not vote.
+
+   This is the corpus's only acknowledged composite, and it is the reason `april_fanart` was
+   corrected from `painting / digital` to `drawing / marker`. Note the failure mode it creates: a
+   describer that averages the layers will land on `digital`, because a composite's *assembly* is
+   always digital even when nothing in it was drawn digitally. That is the `digital` over-attractor
+   arriving by a new route.
 3. **Flat beats dimensional on `[[IDIOM]]`.** `anime` and `western toon` are for flat,
    outline-bounded, non-dimensional rendering. `dimensional toon` is for caricatured forms carrying
    real dimension and material. This is what keeps `shrek_cg` off `western toon` and
@@ -223,7 +237,15 @@ and added four terms that have none either. The rule that reconciles those:
 
 `clay` vs `puppet` vs `figure`, and `screentone` vs `ink`, are unmistakable on sight — a term we
 cannot test is still one a model can apply correctly, and these are common real-world inputs once
-this reaches ComfyUI. `gouache` vs `watercolour` is not: it is a fine call between similar-looking
+this reaches ComfyUI.
+
+> **Session 15 partly disproved the `clay` half of that.** Once samples arrived, the describer
+> inverted `gromit` and `pjs`, and the user misread `pjs` too. The discrimination is real but it
+> is **not** available on sight from the material — it runs on deformation evidence, which had to
+> be written into the `clay` definition before the term was usable. The rule above survives, with
+> a caveat it should have carried from the start: *"unmistakable on sight"* is a claim about a
+> **stated tell**, not about a term that merely feels obvious. See
+> `L-UNDEFINED-TERMS-READ-AS-OBVIOUS`. `gouache` vs `watercolour` is not: it is a fine call between similar-looking
 media, so an untestable term there is an invitation to guess. `drawing / ink` has no sample either
 and is kept for the same reason `screentone` is.
 
@@ -425,7 +447,7 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `april_1987` | 2D cel | traditional cel | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young-adult woman + 1 humanoid turtle | april | s15 | franchise |
 | `april_1987_figure` | stop-motion | figure | dimensional toon | colour | **a photograph of moulded plastic figures on a shelf**, not an animation frame — classified by the objects, see tie-break 1 | int | 5 figures (1 woman, 4 humanoid turtles) + 1 rat figure behind | april | s15 | text, franchise |
 | `april_comic` | drawing | marker | western toon | colour | original marker art on a blank sketch cover, photographed — **classified by the art, not the capture**, see tie-break 2 | none | 1 young-adult woman | april | s15 | text, franchise |
-| `april_fanart` | painting | digital | realist | colour | cut out on a white ground | none | 1 young-adult woman | april | s15 | franchise |
+| `april_fanart` | drawing | marker | realist | colour | **a composite**: a marker drawing of the figure laid over a separately-sourced manhole cover, on a digital white ground — classified by the figure, which is the subject. Corrected s15, see corrections | none | 1 young-adult woman | april | s15 | franchise |
 | `avatar_1` | 2D cel | digital | western toon | colour | western TV series drawn in an anime idiom — **provisional**, see the convergence note | ext | 2 children | avatar, anime-toon | s15 | franchise |
 | `avatar_2` | 2D cel | digital | western toon | colour | as `avatar_1`; night camp. A foreground pole crosses the lower frame | ext | 5 children and teenagers | avatar, anime-toon | s15 | franchise |
 | `ayanami_oil` | painting | digital | anime | colour | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
@@ -562,7 +584,7 @@ comparison against the 100-image baseline. See `.claude/TODO.md` for the agreed 
 | `april_1987` | night city; dark blue sky, a lit office tower at right | (none) | **woman**: yellow jumpsuit w/ zip front and shoulder yoke · **turtle**: orange eye mask, shell, brown straps |
 | `april_1987_figure` | a wood-veneer shelf in a room; cabinet panelling behind, stacked books at right | **articulated plastic action figures** — a woman and four humanoid turtles, a rat figure behind; shoulder camcorder marked 6, pizza slice, katana, nunchaku, sai, bo staff; belt discs lettered L, M, R, D; lettered book spines | yellow jumpsuit w/ white belt and white boots; coloured eye masks, brown belts |
 | `april_comic` | painted sky and a news truck behind the figure; printed comic trade dress framing the art | **shoulder camcorder marked 6**, wristwatch, news van w/ roof mast; publisher logo, issue number, creator credits, artist signature | yellow jumpsuit, unzipped, w/ white belt |
-| `april_fanart` | no environment, white ground; a manhole cover behind the figure | **four stacked pizza boxes**, a bundle of coloured cloth, a wrist cuff | cropped yellow zip jacket, blue jeans, white belt |
+| `april_fanart` | no environment, white ground; a manhole cover behind the figure, **composited in — it is not drawn in the same medium as the figure** | **four stacked pizza boxes**, a bundle of coloured cloth, a wrist cuff | cropped yellow zip jacket, blue jeans, white belt |
 | `avatar_1` | dry rocky canyon; red-brown stone walls, dirt floor. Pillarboxed | (none) | **boy**: red-orange robe over yellow, shaved head w/ an arrow marking, wrist bands · **girl**: pale green sleeveless tunic over dark green, wide black belt, headband |
 | `avatar_2` | grass headland at night; sea and clouded sky behind, a canvas tent | **campfire**, bowls, cups; a foreground pole crosses the lower frame | green tunic, dark red robes, orange-and-yellow robe, blue-grey wrap |
 | `ayanami_oil` | tiled washroom or pool edge; pale green tiles, dark floor tiles, green ledge | (none) | pale school swimsuit |
@@ -736,7 +758,7 @@ you are running before scoring anything.
 | coraline | `coraline1` / `coraline2` | same character; puppet on white vs film still | style, character | loose; doubles as isolated-subject vs in-scene |
 | bird | `bird_vector` / `bird_watercolor` | a blue-and-orange bird | style | loose — not the same bird, the same *idea* of one |
 | annie | `annie1` / `annie2_cropped` / `annie3_panel1` | one character across **three** media: marker sketch, watercolour, comic | style, character | loose, wide spread. **Requires a `SUBJECT:` line** — see below |
-| april | `april_1987` / `april_1987_figure` / `april_comic` / `april_fanart` | one character across **four** media: traditional cel, photographed plastic figures, marker on a comic cover, digital painting | style, character | loose, **the corpus's widest medium ladder**. **Requires a `SUBJECT:` line** — three of the four have other characters in frame |
+| april | `april_1987` / `april_1987_figure` / `april_comic` / `april_fanart` | one character across **three** media: traditional cel, photographed plastic figures, and marker twice — `april_comic` on a comic cover, `april_fanart` composited over a manhole cover | style, character | loose. **No longer the widest medium ladder** — `april_fanart` was corrected from `painting / digital` to `drawing / marker` in s15, which collapsed the fourth rung. The pair it created is arguably more useful than the rung it lost: **same instrument, different presentation**, which is a discrimination nothing else in the corpus tests. **Requires a `SUBJECT:` line** — three of the four have other characters in frame |
 | gordon | `gordon_1996` / `gordon_2004` / `gordon_comic` | one character across three media: traditional cel, digital cel, comic | style, character | loose; the tight `gordon-era` pair sits inside it |
 | car-interior | `car_interior_photo` / `_sketch` / `_mecha_driver` / `_toon` | one setting *type* across **four** media; `_toon` is the only night one | setting | loosest — different vehicles |
 | age-family | `baby_middle_aged` / `maggie_grandpa_cat` | an infant and an older adult together, **photograph vs flat toon** | character | the age-bracket probe: `infant` and `older adult` in two media, plus an animal in one |
@@ -822,6 +844,7 @@ well-formed and passes every structural check.
 | `destroyer_photo` treatment | `photograph / archival`, carried over as `[[TREATMENT]] archival` | **`monochrome`** — the print is clean, well preserved or restored, and shows essentially no age: neutral grey, no sepia, no foxing, no scratches | model emitted `monochrome` in the session-10 smoke test; user ruled it defensible and the table wrong | `archival` is defined by **visible** age, so an aged-but-undamaged photograph is `monochrome`. Tie-break 5 is unchanged — it only fires when age actually shows. `archival` drops to two samples (`lincoln_photo`, `teddy_taft`) |
 | `car_interior_sketch` sub-medium | `drawing / sketch` under the old vocabulary, re-derived to `drawing / pencil` in session 10 | **`drawing / digital`** — the construction lines are thin and uniform with no graphite tooth or grain; nothing on the surface imitates a physical instrument | model emitted `digital` in the session-10 smoke test; user agreed on re-inspection | the session-10 re-derivation got this one wrong and the model got it right. Tie-break 4 asks whether the *marks* read as digital, and here they do. Leaves `drawing / pencil` as an empty term, kept because graphite tooth is an unmistakable discrimination when it is present |
 | `kasia` sub-term | `flat illustration`, stated flatly | the coarse term `2D cel` is solid; the **sub-term is contested** — an anime-inspired toon idiom leaning slightly western | user, session 9, after style v1 answered `anime` | a sub-term miss here is not clearly a miss. Score the coarse term only |
+| `april_fanart` medium | `painting / digital`, described as "cut out on a white ground" | **`drawing / marker`**, and the image is a **composite**: a marker drawing of the figure laid over a separately-sourced manhole cover on a digital white ground. The user: *"the manhole cover looks like it was probably inserted post facto… The figure looks like a marker drawing, the manhole does not. The clean white background is obviously not a paper scan"* | user, session 15, on being shown the round's `dimensional toon` miss | recorded during the s15 enrichment pass, so it was wrong from the day it was written. It **collapses the april ladder from four media to three** — `april_comic` and `april_fanart` are now both `drawing / marker` — and the ladder's billing as "the corpus's widest" had to be retracted. Also the corpus's first acknowledged **composite**: the classification follows the *subject*, not the assembled whole |
 | `coraline1` ground | "puppet cut out on white" | the file is a **palette PNG with a transparency key, 83.5% fully transparent**. It has no white ground; it has no ground at all. What reaches the model composites to **black** | the session-9 style round reported "pure black background" twice and was scored as a hallucination; the user identified transparency as the cause, confirmed by an alpha scan of the whole corpus | **a wrong ground truth was about to be recorded as a model defect.** It is the only genuinely transparent file in the corpus — six other files carry an alpha channel that is fully opaque, so they are inert |
 
 **The general lesson is `L-CLAIM-ROWS-ARE-UNRELIABLE`, and it is about the inventory rather than
@@ -1200,12 +1223,12 @@ change to the master table.
 | | ink | 4 | comic, comic_panel2, comic_panel3, comic_panel4 |
 | | digital | 3 | annie3, annie3_panel1, gordon_comic |
 | | *screentone* | *0* | *no sample* |
-| `painting` | | **12** | |
-| | digital | 8 | april_fanart, ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
+| `painting` | | **11** | |
+| | digital | 7 | ayanami_oil, cloud, girl_painting, mountain_rain, peter_griffin_painting, temple_day, temple_night |
 | | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
 | | watercolour | 2 | annie2_cropped, bird_watercolor |
-| `drawing` | | **6** | |
-| | marker | 4 | april_comic, marker, supergirl1, supergirl2 |
+| `drawing` | | **7** | |
+| | marker | 5 | april_comic, april_fanart, marker, supergirl1, supergirl2 |
 | | digital | 1 | car_interior_sketch |
 | | ink | 1 | annie1 |
 | | *pencil* | *0* | *no sample* |
