@@ -329,6 +329,12 @@
       "ct": 1786600886,
       "date": "2026-08-13",
       "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+    },
+    {
+      "commit": "bd02c86",
+      "ct": 1786601283,
+      "date": "2026-08-13",
+      "subject": "describer_style_look v4: production method is not a mark"
     }
   ],
   "states": [
@@ -745,6 +751,13 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -757,7 +770,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -1188,6 +1201,13 @@
           "path": "prompts/i2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -1197,7 +1217,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -1628,6 +1648,13 @@
           "path": "prompts/l2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -1637,7 +1664,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -2216,6 +2243,20 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -2225,7 +2266,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -2426,6 +2467,13 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -2437,7 +2485,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -2616,6 +2664,13 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -2627,7 +2682,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -2806,6 +2861,13 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -2817,7 +2879,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -2996,6 +3058,13 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -3007,7 +3076,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -3186,6 +3255,13 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -3197,7 +3273,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -3376,6 +3452,13 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -3387,7 +3470,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -3798,6 +3881,13 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -3809,7 +3899,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -4257,6 +4347,13 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -4266,7 +4363,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786404424,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -4609,6 +4706,13 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -4620,7 +4724,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -4945,6 +5049,13 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -4954,7 +5065,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786416528,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -5265,6 +5376,13 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -5274,7 +5392,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786428480,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -5557,6 +5675,13 @@
           "path": "prompts/describer_style.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -5566,7 +5691,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 1
     },
     {
@@ -5750,6 +5875,13 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -5759,7 +5891,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786536234,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 1
     },
     {
@@ -5767,6 +5899,7 @@
       "bytes": 8471,
       "lines": 68,
       "md5_exact": [
+        "2509ab87ba8500921197786fb70514ca",
         "91808c4a25f8c9886342052bfed13af5"
       ],
       "names": [
@@ -5949,11 +6082,11 @@
         "describer_style_look"
       ],
       "labels": [],
-      "in_worktree": false,
+      "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786600886,
-      "crlf_variants": 1
+      "last_ct": 1786602515,
+      "crlf_variants": 2
     },
     {
       "md5_norm": "f7559d7716b59cb19e3a59028a606d15",
@@ -6125,6 +6258,13 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -6137,7 +6277,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786344981,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -6301,6 +6441,13 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -6310,7 +6457,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -6474,6 +6621,13 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786600886,
           "subject": "score.py: use only the first sentence of `why` as a miss-group header"
+        },
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
         }
       ],
       "families": [
@@ -6483,7 +6637,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786600886,
+      "last_ct": 1786601283,
       "crlf_variants": 2
     },
     {
@@ -6499,15 +6653,23 @@
       "paths": [
         "prompts/describer_style_look.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "bd02c86",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786601283,
+          "subject": "describer_style_look v4: production method is not a mark"
+        }
+      ],
       "families": [
         "describer_style_look"
       ],
       "labels": [],
-      "in_worktree": true,
+      "in_worktree": false,
       "provenance_only": false,
-      "first_ct": 1786600872,
-      "last_ct": 1786600872,
+      "first_ct": 1786601283,
+      "last_ct": 1786601283,
       "crlf_variants": 1
     }
   ]

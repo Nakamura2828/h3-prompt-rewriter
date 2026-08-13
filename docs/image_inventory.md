@@ -349,8 +349,17 @@ these is `CONTESTED` today — they are live, scored answers.
   fills, but gradient shading on the background. The user leaned `2D cel`; a `vector` answer is not
   unreasonable.
 
+- **`car_interior_toon` → `[[IDIOM]] western toon`, and it is now a strict CONTROL.** Ruled
+  session 16 after it answered `dimensional toon` in one round and `anime` in the next — wrong in
+  two directions on one axis. The user's ruling: *"another case of styles converging, but solidly
+  on the western side of it."* That combination is what makes it valuable. It is **itself** a
+  convergence image, so it tests the western/anime call under the conditions that make the call
+  hard, which an easy control cannot — unlike `ivy_toon` and `april_1987`, whose westernness is
+  never in doubt. It is named in the `control` list of all four `avatar`-family accept-sets.
+
 **These four anime-idiom cases are also the motivating example for a harness feature we do not
-have** — see "Multiple acceptable answers" below.
+have** — see "Multiple acceptable answers" below. *(Session 16: we have it now. The section is
+kept because its reasoning is still the design rationale.)*
 
 #### Outcome of the first round against them (s15, `runs/run-20260812-232352.txt`)
 

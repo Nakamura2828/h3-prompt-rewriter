@@ -1,0 +1,876 @@
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_april_1987]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, with a single darker tone applied to the lower half of forms to suggest volume, smooth matte surface texture with no visible brushwork or grain, and clean anti-aliased edges throughout
+[[PALETTE]] saturated primary and secondary hues including deep blues, bright yellows, and vivid greens, set against a dark background, with a limited range of mid-tone values and high contrast between the lightest and darkest areas
+[[LIGHTING]] flat and near-shadowless, with form separation achieved through tonal value shifts rather than rendered gradients or cast shadows
+[[DISTINGUISHING]] the visible scan lines from the video transfer, and the specific two-tone shading technique on the figures
+[[LABEL]] the 1980s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, two-tone shading on the figures, saturated primary hues, and visible video scan lines
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_april_1987]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, with a single darker tone applied to the lower half of forms to suggest volume, smooth matte surface texture with no visible brushwork or grain, and clean anti-aliased edges throughout
+[[PALETTE]] saturated primary and secondary hues including deep blues, bright yellows, and vivid greens, set against a dark background, with a limited range of mid-tone values and high contrast between the lightest and darkest areas
+[[LIGHTING]] flat and near-shadowless, with form separation achieved through tonal value shifts rather than rendered gradients or cast shadows
+[[DISTINGUISHING]] the visible scan lines from the video transfer, and the specific two-tone shading technique on the figures
+[[LABEL]] the 1980s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, two-tone shading on the figures, saturated primary hues, and visible video scan lines
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] traditional cel
+[[IDIOM]] anime
+[[TREATMENT]] colour
+----------
+##### stop-motion #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [stop-motion :: look_april_1987_figure]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of three-dimensional plastic figures, smooth matte surface texture with slight mould-parting lines visible on the limbs, sharp focus across the foreground group with a shallow depth of field blurring the background elements, clean anti-aliased edges on the figure silhouettes, no painted brushwork or grain
+[[PALETTE]] warm and slightly amber overall cast, saturated primary colours for the masks and central outfit set against desaturated earth tones for the shells and background, full colour range with rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder plastic surfaces
+[[DISTINGUISHING]] the visible felt nap and stitched seams on the figure, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible felt nap and stitched seams, shallow real depth of field, a warm saturated russet palette, and soft directional practical light
+----------
+qwen3.6-35b-a3b  describer_style_class  [stop-motion :: sw_april_1987_figure]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture of three-dimensional plastic figures, smooth matte surface texture with slight mould-parting lines visible on the limbs, sharp focus across the foreground group with a shallow depth of field blurring the background elements, clean anti-aliased edges on the figure silhouettes, no painted brushwork or grain
+[[PALETTE]] warm and slightly amber overall cast, saturated primary colours for the masks and central outfit set against desaturated earth tones for the shells and background, full colour range with rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder plastic surfaces
+[[DISTINGUISHING]] the visible felt nap and stitched seams on the figure, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible felt nap and stitched seams, shallow real depth of field, a warm saturated russet palette, and soft directional practical light
+---
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### drawing #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [drawing :: look_april_comic]
+---
+ROLE: style
+---
+[[EXECUTION]] bold black ink outlines of varying weight defining forms, flat colour fills with visible marker or brush texture inside the shapes, cross-hatching used for shading on mechanical elements, smooth airbrushed gradients on skin and hair, sharp clean edges on the figure, soft blended transitions in the background sky
+[[PALETTE]] vibrant primary colours with high saturation, dominant bright yellow and red against cool blues and greys, strong contrast between the warm foreground figure and the cooler background environment
+[[LIGHTING]] dramatic directional lighting from the upper left creating strong highlights on the figure's face and clothing, deep contrasting shadows on the right side of the figure and background elements, high contrast rendering typical of comic book covers
+[[DISTINGUISHING]] the visible marker texture within the colour fills and the specific airbrushed gradient technique on skin tones
+[[LABEL]] the vibrant comic book cover style
+[[DEFINITION]] bold black outlines, flat marker fills with visible texture, airbrushed gradients on skin, high saturation primary colours, and dramatic directional lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [drawing :: sw_april_comic]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] bold black ink outlines of varying weight defining forms, flat colour fills with visible marker or brush texture inside the shapes, cross-hatching used for shading on mechanical elements, smooth airbrushed gradients on skin and hair, sharp clean edges on the figure, soft blended transitions in the background sky
+[[PALETTE]] vibrant primary colours with high saturation, dominant bright yellow and red against cool blues and greys, strong contrast between the warm foreground figure and the cooler background environment
+[[LIGHTING]] dramatic directional lighting from the upper left creating strong highlights on the figure's face and clothing, deep contrasting shadows on the right side of the figure and background elements, high contrast rendering typical of comic book covers
+[[DISTINGUISHING]] the visible marker texture within the colour fills and the specific airbrushed gradient technique on skin tones
+[[LABEL]] the vibrant comic book cover style
+[[DEFINITION]] bold black outlines, flat marker fills with visible texture, airbrushed gradients on skin, high saturation primary colours, and dramatic directional lighting
+---
+[[MEDIUM]] comic
+[[SUB_MEDIUM]] ink
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### painting #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [painting :: look_april_fanart]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth digital rendering with soft airbrushed shading on the figures, clean vector-like outlines of medium weight, flat unmodulated colour fills in the background, detailed texture work on the clothing and props, sharp focus throughout, high level of detail and finish
+[[PALETTE]] vibrant and saturated, warm dominant hues of yellow and red, cool contrasting blues and greens, full colour with high contrast between light and dark areas
+[[LIGHTING]] bright and even key light from the front, soft-edged shadows with gentle falloff, highlights rendered as smooth gradients on the figures, shadow detail retained in the background elements
+[[DISTINGUISHING]] the clean vector-like outlines, and the smooth airbrushed shading on the figures
+[[LABEL]] the vibrant comic-book illustration style
+[[DEFINITION]] smooth airbrushed shading on the figures, clean vector-like outlines, flat unmodulated colour fills, a vibrant saturated palette with warm dominant hues, and bright even lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [painting :: sw_april_fanart]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] smooth digital rendering with soft airbrushed shading on the figures, clean vector-like outlines of medium weight, flat unmodulated colour fills in the background, detailed texture work on the clothing and props, sharp focus throughout, high level of detail and finish
+[[PALETTE]] vibrant and saturated, warm dominant hues of yellow and red, cool contrasting blues and greens, full colour with high contrast between light and dark areas
+[[LIGHTING]] bright and even key light from the front, soft-edged shadows with gentle falloff, highlights rendered as smooth gradients on the figures, shadow detail retained in the background elements
+[[DISTINGUISHING]] the clean vector-like outlines, and the smooth airbrushed shading on the figures
+[[LABEL]] the vibrant comic-book illustration style
+[[DEFINITION]] smooth airbrushed shading on the figures, clean vector-like outlines, flat unmodulated colour fills, a vibrant saturated palette with warm dominant hues, and bright even lighting
+---
+[[MEDIUM]] comic
+[[SUB_MEDIUM]] digital
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_avatar_1]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, cel shading applied to forms with sharp-edged shadow shapes, smooth anti-aliased edges on all curves, high level of detail and finish typical of digital production
+[[PALETTE]] desaturated and earthy, dominated by muted ochres, dusty reds, and olive greens, with a compressed mid-tone contrast range and low overall saturation
+[[LIGHTING]] flat and even illumination with no hard key, soft-edged shadow shapes rendered as distinct colour blocks rather than gradients, highlights shown as simple unmodulated fills
+[[DISTINGUISHING]] the thick uniform black outlines enclosing all forms, and the flat cel-shaded rendering of the figures
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, sharp-edged cel shading, desaturated earthy palette, and even flat illumination
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_avatar_1]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, cel shading applied to forms with sharp-edged shadow shapes, smooth anti-aliased edges on all curves, high level of detail and finish typical of digital production
+[[PALETTE]] desaturated and earthy, dominated by muted ochres, dusty reds, and olive greens, with a compressed mid-tone contrast range and low overall saturation
+[[LIGHTING]] flat and even illumination with no hard key, soft-edged shadow shapes rendered as distinct colour blocks rather than gradients, highlights shown as simple unmodulated fills
+[[DISTINGUISHING]] the thick uniform black outlines enclosing all forms, and the flat cel-shaded rendering of the figures
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, sharp-edged cel shading, desaturated earthy palette, and even flat illumination
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] anime
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_avatar_2]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or brushwork, forms built from distinct geometric shapes and sharp angles, smooth gradients used only for large background areas, edges crisp and well-defined throughout, high level of detail in character design and costume elements
+[[PALETTE]] rich and saturated with a warm overall cast, dominant hues of deep reds, earthy browns, and forest greens, contrasted by the bright yellow-orange of the firelight and the cool blues of the night sky, full colour range with strong value separation
+[[LIGHTING]] dramatic directional lighting from the central fire source, creating strong highlights on the figures facing the light and deep, well-defined shadows on the opposite sides, high contrast between the illuminated foreground and the dark background, shadow detail retained in the darker areas
+[[DISTINGUISHING]] the thick, consistent black outlines around all forms, and the use of flat colour fills with minimal shading gradients
+[[LABEL]] the modern western animated series style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, dramatic directional lighting from a central source, rich saturated warm palette, and sharp geometric character design
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_avatar_2]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or brushwork, forms built from distinct geometric shapes and sharp angles, smooth gradients used only for large background areas, edges crisp and well-defined throughout, high level of detail in character design and costume elements
+[[PALETTE]] rich and saturated with a warm overall cast, dominant hues of deep reds, earthy browns, and forest greens, contrasted by the bright yellow-orange of the firelight and the cool blues of the night sky, full colour range with strong value separation
+[[LIGHTING]] dramatic directional lighting from the central fire source, creating strong highlights on the figures facing the light and deep, well-defined shadows on the opposite sides, high contrast between the illuminated foreground and the dark background, shadow detail retained in the darker areas
+[[DISTINGUISHING]] the thick, consistent black outlines around all forms, and the use of flat colour fills with minimal shading gradients
+[[LABEL]] the modern western animated series style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, dramatic directional lighting from a central source, rich saturated warm palette, and sharp geometric character design
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### photograph #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [photograph :: look_baby_middle_aged]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with a shallow depth of field, sharp focus on the foreground figures with a smooth, creamy background blur, fine skin texture and pore detail visible, soft-edged transitions between focused and out-of-focus areas, high-resolution clarity on the subject
+[[PALETTE]] naturalistic and slightly desaturated, dominated by neutral greys, muted greens, and warm skin tones, low contrast with a gentle tonal range and no oversaturation
+[[LIGHTING]] soft, diffused key light from the front-left, minimal harsh shadows, even illumination across the figures, subtle catchlights in the eyes, and smooth falloff into the background
+[[DISTINGUISHING]] the creamy bokeh quality of the background blur and the naturalistic skin texture rendering
+[[LABEL]] the soft-focus lifestyle photography style
+[[DEFINITION]] shallow depth of field with creamy background blur, naturalistic desaturated palette, soft diffused lighting, and fine skin texture detail
+----------
+qwen3.6-35b-a3b  describer_style_class  [photograph :: sw_baby_middle_aged]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture with a shallow depth of field, sharp focus on the foreground figures with a smooth, creamy background blur, fine skin texture and pore detail visible, soft-edged transitions between focused and out-of-focus areas, high-resolution clarity on the subject
+[[PALETTE]] naturalistic and slightly desaturated, dominated by neutral greys, muted greens, and warm skin tones, low contrast with a gentle tonal range and no oversaturation
+[[LIGHTING]] soft, diffused key light from the front-left, minimal harsh shadows, even illumination across the figures, subtle catchlights in the eyes, and smooth falloff into the background
+[[DISTINGUISHING]] the creamy bokeh quality of the background blur and the naturalistic skin texture rendering
+[[LABEL]] the soft-focus lifestyle photography style
+[[DEFINITION]] shallow depth of field with creamy background blur, naturalistic desaturated palette, soft diffused lighting, and fine skin texture detail
+---
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
+[[IDIOM]] realist
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_beauty_beast]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of medium weight enclosing the figures, flat unmodulated colour fills for the main surfaces with no interior texture or grain, shading achieved through distinct bands of darker tone applied to the clothing and forms rather than through gradient blending, clean anti-aliased edges on the linework, smooth digital finish with no visible brushwork
+[[PALETTE]] cool and nocturnal, dominated by deep saturated blues in the background and shadows, contrasted with a warm, luminous golden yellow on the foreground figure's dress, rich and fully saturated colours with high contrast between the warm foreground tones and the cool background environment
+[[LIGHTING]] flat and stylized, lacking a specific directional light source or cast shadows, form is defined by the application of darker colour bands to suggest volume rather than by rendered lighting effects, highlights are represented as solid lighter tones within the flat fills
+[[DISTINGUISHING]] the use of distinct tonal bands for shading on the clothing and the deep, uniform blue wash of the background environment
+[[LABEL]] the classic 1990s hand-painted cel style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, shading via distinct tonal bands, a cool saturated blue background palette, and stylized flat lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_beauty_beast]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform black outlines of medium weight enclosing the figures, flat unmodulated colour fills for the main surfaces with no interior texture or grain, shading achieved through distinct bands of darker tone applied to the clothing and forms rather than through gradient blending, clean anti-aliased edges on the linework, smooth digital finish with no visible brushwork
+[[PALETTE]] cool and nocturnal, dominated by deep saturated blues in the background and shadows, contrasted with a warm, luminous golden yellow on the foreground figure's dress, rich and fully saturated colours with high contrast between the warm foreground tones and the cool background environment
+[[LIGHTING]] flat and stylized, lacking a specific directional light source or cast shadows, form is defined by the application of darker colour bands to suggest volume rather than by rendered lighting effects, highlights are represented as solid lighter tones within the flat fills
+[[DISTINGUISHING]] the use of distinct tonal bands for shading on the clothing and the deep, uniform blue wash of the background environment
+[[LABEL]] the classic 1990s hand-painted cel style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, shading via distinct tonal bands, a cool saturated blue background palette, and stylized flat lighting
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] traditional cel
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_boondocks]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, forms built from distinct geometric shapes, sharp edges throughout, minimal shading limited to simple solid-tone blocks for volume, high level of detail in the linework and character design
+[[PALETTE]] warm and earthy, dominated by browns, tans, and muted greens, with a few areas of saturated white and deep black, moderate contrast range
+[[LIGHTING]] flat and even, no hard key or directional light source, shadows rendered as simple solid shapes rather than gradients, highlights indicated by unshaded colour areas
+[[DISTINGUISHING]] the clean vector outlines and flat unmodulated colour fills
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, simple geometric forms, a warm earthy palette, and flat even lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_boondocks]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, forms built from distinct geometric shapes, sharp edges throughout, minimal shading limited to simple solid-tone blocks for volume, high level of detail in the linework and character design
+[[PALETTE]] warm and earthy, dominated by browns, tans, and muted greens, with a few areas of saturated white and deep black, moderate contrast range
+[[LIGHTING]] flat and even, no hard key or directional light source, shadows rendered as simple solid shapes rather than gradients, highlights indicated by unshaded colour areas
+[[DISTINGUISHING]] the clean vector outlines and flat unmodulated colour fills
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, simple geometric forms, a warm earthy palette, and flat even lighting
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_car_interior_toon]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, smooth gradient shading applied to the figure's face and hair to suggest form, sharp geometric edges on the background elements, high level of detail in the character design, digital finish
+[[PALETTE]] cool and desaturated overall, dominated by deep blues and dark greys for the environment, contrasted with saturated reds and greens on the figure, low-key lighting palette
+[[LIGHTING]] flat ambient fill with a directional key light from the upper left creating distinct shadow shapes on the figure's face and clothing, no cast shadows in the background, highlights rendered as solid colour patches rather than gradients
+[[DISTINGUISHING]] the specific geometric simplification of the facial features and the use of smooth digital gradients for shading on flat cel surfaces
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, smooth digital gradient shading on the figure, a cool desaturated environment palette, and sharp geometric edges
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_car_interior_toon]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or grain, smooth gradient shading applied to the figure's face and hair to suggest form, sharp geometric edges on the background elements, high level of detail in the character design, digital finish
+[[PALETTE]] cool and desaturated overall, dominated by deep blues and dark greys for the environment, contrasted with saturated reds and greens on the figure, low-key lighting palette
+[[LIGHTING]] flat ambient fill with a directional key light from the upper left creating distinct shadow shapes on the figure's face and clothing, no cast shadows in the background, highlights rendered as solid colour patches rather than gradients
+[[DISTINGUISHING]] the specific geometric simplification of the facial features and the use of smooth digital gradients for shading on flat cel surfaces
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, smooth digital gradient shading on the figure, a cool desaturated environment palette, and sharp geometric edges
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] anime
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_fern_gully]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of medium weight enclosing the figures, flat unmodulated colour fills for skin and clothing with no interior texture or shading, background elements rendered as layered silhouettes with minimal internal detail, clean anti-aliased edges on all forms, no visible brushwork or grain
+[[PALETTE]] rich and saturated primary and secondary hues, deep forest greens in the background contrasting with bright reds, yellows and purples on the figures, high contrast between the dark background and the brightly lit foreground elements
+[[LIGHTING]] flat and even illumination across all figures, no directional key light or cast shadows, highlights rendered as simple unmodulated colour patches rather than gradients
+[[DISTINGUISHING]] the solid black framing bars at the top and bottom of the image, and the specific character design proportions with large heads and expressive eyes
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, rich saturated hues, flat even illumination, and solid black framing bars
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_fern_gully]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform black outlines of medium weight enclosing the figures, flat unmodulated colour fills for skin and clothing with no interior texture or shading, background elements rendered as layered silhouettes with minimal internal detail, clean anti-aliased edges on all forms, no visible brushwork or grain
+[[PALETTE]] rich and saturated primary and secondary hues, deep forest greens in the background contrasting with bright reds, yellows and purples on the figures, high contrast between the dark background and the brightly lit foreground elements
+[[LIGHTING]] flat and even illumination across all figures, no directional key light or cast shadows, highlights rendered as simple unmodulated colour patches rather than gradients
+[[DISTINGUISHING]] the solid black framing bars at the top and bottom of the image, and the specific character design proportions with large heads and expressive eyes
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, rich saturated hues, flat even illumination, and solid black framing bars
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_gordon_1996]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, no interior texture or brushwork within the shapes, clean anti-aliased edges with no visible grain or scan lines, forms built from distinct geometric blocks of tone rather than continuous gradients
+[[PALETTE]] desaturated and cool, dominated by earthy browns, greys, and muted blues, with a few areas of high-contrast black and white, low overall saturation and a compressed mid-tone contrast
+[[LIGHTING]] flat and near-shadowless, no hard key or cast shadows, form separated by tonal value rather than by light, highlights carried as simple unmodulated colour patches
+[[DISTINGUISHING]] the visible aspect-ratio bars at the top and bottom, and the specific geometric simplification of facial features into sharp angles
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, desaturated cool palette, and geometric simplification
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_gordon_1996]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, no interior texture or brushwork within the shapes, clean anti-aliased edges with no visible grain or scan lines, forms built from distinct geometric blocks of tone rather than continuous gradients
+[[PALETTE]] desaturated and cool, dominated by earthy browns, greys, and muted blues, with a few areas of high-contrast black and white, low overall saturation and a compressed mid-tone contrast
+[[LIGHTING]] flat and near-shadowless, no hard key or cast shadows, form separated by tonal value rather than by light, highlights carried as simple unmodulated colour patches
+[[DISTINGUISHING]] the visible aspect-ratio bars at the top and bottom, and the specific geometric simplification of facial features into sharp angles
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, desaturated cool palette, and geometric simplification
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_gordon_2004]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, with a single plane of shading on the figure to suggest form, clean anti-aliased edges and no visible grain or texture
+[[PALETTE]] desaturated and cool, dominated by dark blues and purples in the background, with muted earth tones for the figure's clothing and skin
+[[LIGHTING]] flat and even across the figure with a distinct shadow plane on one side, while the background is rendered as a deep, low-key environment
+[[DISTINGUISHING]] the heavy black outlines and the specific 1990s television cel-animation rendering of form
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, a single plane of shading on the figure, and a desaturated cool palette
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_gordon_2004]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform black outlines of medium weight enclosing flat unmodulated colour fills, with a single plane of shading on the figure to suggest form, clean anti-aliased edges and no visible grain or texture
+[[PALETTE]] desaturated and cool, dominated by dark blues and purples in the background, with muted earth tones for the figure's clothing and skin
+[[LIGHTING]] flat and even across the figure with a distinct shadow plane on one side, while the background is rendered as a deep, low-key environment
+[[DISTINGUISHING]] the heavy black outlines and the specific 1990s television cel-animation rendering of form
+[[LABEL]] the 1990s television cel-animation style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, a single plane of shading on the figure, and a desaturated cool palette
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### comic #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [comic :: look_gordon_comic]
+---
+ROLE: style
+---
+[[EXECUTION]] clean digital linework with uniform medium-weight black outlines, flat unmodulated colour fills for base tones, and hatching used for shading on the figure, sharp edges throughout with no interior texture or grain
+[[PALETTE]] desaturated and cool, dominated by a muddy brown, a pale cyan, and a slate blue-grey, with low overall saturation and a compressed mid-tone contrast
+[[LIGHTING]] flat and near-shadowless, form separated by tonal value rather than by light, with no rendered cast shadows or specular highlights
+[[DISTINGUISHING]] the visible rectangular speech bubble in the upper left corner, and the use of hatching for shading
+[[LABEL]] the modern comic book style
+[[DEFINITION]] clean digital linework, flat unmodulated colour fills, hatching for shading, a desaturated cool palette, and a visible speech bubble
+----------
+qwen3.6-35b-a3b  describer_style_class  [comic :: sw_gordon_comic]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean digital linework with uniform medium-weight black outlines, flat unmodulated colour fills for base tones, and hatching used for shading on the figure, sharp edges throughout with no interior texture or grain
+[[PALETTE]] desaturated and cool, dominated by a muddy brown, a pale cyan, and a slate blue-grey, with low overall saturation and a compressed mid-tone contrast
+[[LIGHTING]] flat and near-shadowless, form separated by tonal value rather than by light, with no rendered cast shadows or specular highlights
+[[DISTINGUISHING]] the visible rectangular speech bubble in the upper left corner, and the use of hatching for shading
+[[LABEL]] the modern comic book style
+[[DEFINITION]] clean digital linework, flat unmodulated colour fills, hatching for shading, a desaturated cool palette, and a visible speech bubble
+---
+[[MEDIUM]] comic
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+##### stop-motion #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [stop-motion :: look_gromit]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of physically constructed miniature objects, surfaces showing fine clay texture and slight tool marks, soft rounded edges on the figures, realistic optical depth of field with background elements gently blurred, high sharpness on foreground details, no drawn outlines or painted textures
+[[PALETTE]] warm and earthy, dominated by ochres, browns, and muted greens, rich saturated reds in the brickwork, full colour range with naturalistic tones and a gentle overall warmth
+[[LIGHTING]] bright directional key light from the upper right, creating distinct cast shadows on the ground and walls, high contrast between illuminated surfaces and shaded areas, soft falloff on the figures, detailed specular highlights on the vehicle's paint and windows
+[[DISTINGUISHING]] the visible fine clay texture on the figure surfaces, and the shallow depth of field characteristic of macro photography of miniatures
+[[LABEL]] the textured clay stop-motion style
+[[DEFINITION]] photographed physical puppets with visible clay texture, shallow real depth of field, a warm earthy palette, and bright directional key light
+----------
+qwen3.6-35b-a3b  describer_style_class  [stop-motion :: sw_gromit]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture of physically constructed miniature objects, surfaces showing fine clay texture and slight tool marks, soft rounded edges on the figures, realistic optical depth of field with background elements gently blurred, high sharpness on foreground details, no drawn outlines or painted textures
+[[PALETTE]] warm and earthy, dominated by ochres, browns, and muted greens, rich saturated reds in the brickwork, full colour range with naturalistic tones and a gentle overall warmth
+[[LIGHTING]] bright directional key light from the upper right, creating distinct cast shadows on the ground and walls, high contrast between illuminated surfaces and shaded areas, soft falloff on the figures, detailed specular highlights on the vehicle's paint and windows
+[[DISTINGUISHING]] the visible fine clay texture on the figure surfaces, and the shallow depth of field characteristic of macro photography of miniatures
+[[LABEL]] the textured clay stop-motion style
+[[DEFINITION]] photographed physical puppets with visible clay texture, shallow real depth of field, a warm earthy palette, and bright directional key light
+---
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] clay
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [stop-motion :: look_gumby]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of physically constructed objects with visible surface texture and slight softness, forms built from smooth matte material with rounded edges and no sharp corners, shallow depth of field blurring the background elements, fine grain structure across the image
+[[PALETTE]] warm and slightly amber, saturated primary colours including reds, greens and yellows against deep browns, full colour with a gentle overall warm cast and rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible matte surface texture of the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible matte surface texture, shallow real depth of field, a warm saturated primary colour palette, and soft directional practical light
+----------
+qwen3.6-35b-a3b  describer_style_class  [stop-motion :: sw_gumby]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture of physically constructed objects with visible surface texture and slight softness, forms built from smooth matte material with rounded edges and no sharp corners, shallow depth of field blurring the background elements, fine grain structure across the image
+[[PALETTE]] warm and slightly amber, saturated primary colours including reds, greens and yellows against deep browns, full colour with a gentle overall warm cast and rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible matte surface texture of the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible matte surface texture, shallow real depth of field, a warm saturated primary colour palette, and soft directional practical light
+---
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] clay
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_gwen]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, forms built from distinct geometric shapes, sharp crisp edges throughout, smooth anti-aliased curves on the figures and objects, no grain or surface noise
+[[PALETTE]] bright and saturated primary and secondary colours, high contrast between light and dark areas, dominant hues of orange, purple, blue and green, full colour range with vivid saturation
+[[LIGHTING]] flat and even illumination across all surfaces, no directional key light, minimal shadow detail with simple solid-tone shadows under objects and figures, highlights rendered as flat unshaded areas
+[[DISTINGUISHING]] the perfectly uniform line weight and completely flat colour fills characteristic of modern digital animation
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, bright saturated palette, sharp crisp edges, and even flat illumination
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_gwen]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, forms built from distinct geometric shapes, sharp crisp edges throughout, smooth anti-aliased curves on the figures and objects, no grain or surface noise
+[[PALETTE]] bright and saturated primary and secondary colours, high contrast between light and dark areas, dominant hues of orange, purple, blue and green, full colour range with vivid saturation
+[[LIGHTING]] flat and even illumination across all surfaces, no directional key light, minimal shadow detail with simple solid-tone shadows under objects and figures, highlights rendered as flat unshaded areas
+[[DISTINGUISHING]] the perfectly uniform line weight and completely flat colour fills characteristic of modern digital animation
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, bright saturated palette, sharp crisp edges, and even flat illumination
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+##### 3D CG #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [3D CG :: look_gwen_cg]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth computer-generated surfaces with soft, continuous shading, no visible texture or grain, forms defined by gentle gradients rather than hard outlines, clean anti-aliased edges, uniform matte finish across all materials
+[[PALETTE]] bright and saturated primary colours, strong contrast between the light blue foreground figure and the warm reddish-brown background, high chroma with no desaturation
+[[LIGHTING]] soft, diffuse global illumination with no distinct key direction, gentle falloff from highlight to shadow, no harsh cast shadows, even lighting across the scene
+[[DISTINGUISHING]] none
+[[LABEL]] the early 2000s 3D cartoon style
+[[DEFINITION]] smooth computer-generated surfaces, soft continuous shading, bright saturated primary colours, and diffuse global illumination
+----------
+qwen3.6-35b-a3b  describer_style_class  [3D CG :: sw_gwen_cg]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] smooth computer-generated surfaces with soft, continuous shading, no visible texture or grain, forms defined by gentle gradients rather than hard outlines, clean anti-aliased edges, uniform matte finish across all materials
+[[PALETTE]] bright and saturated primary colours, strong contrast between the light blue foreground figure and the warm reddish-brown background, high chroma with no desaturation
+[[LIGHTING]] soft, diffuse global illumination with no distinct key direction, gentle falloff from highlight to shadow, no harsh cast shadows, even lighting across the scene
+[[DISTINGUISHING]] none
+[[LABEL]] the early 2000s 3D cartoon style
+[[DEFINITION]] smooth computer-generated surfaces, soft continuous shading, bright saturated primary colours, and diffuse global illumination
+---
+[[MEDIUM]] 3D CG
+[[SUB_MEDIUM]] none
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_maggie_grandpa_cat]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform medium-weight black outlines enclosing all forms, flat unmodulated colour fills with no interior shading or texture, clean vector-like edges, minimal detail rendering on background elements, simplified geometric construction of the figures and props
+[[PALETTE]] high-chroma primary and secondary colours, saturated yellows, pinks, oranges, and teals against neutral greys and browns, bright and cartoonish colour temperature
+[[LIGHTING]] flat and near-shadowless, no directional key or cast shadows, forms separated by solid colour blocks rather than tonal modelling
+[[DISTINGUISHING]] the thick uniform black outlines and the limited high-chroma palette
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, a high-chroma saturated palette, and flat shadowless lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_maggie_grandpa_cat]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform medium-weight black outlines enclosing all forms, flat unmodulated colour fills with no interior shading or texture, clean vector-like edges, minimal detail rendering on background elements, simplified geometric construction of the figures and props
+[[PALETTE]] high-chroma primary and secondary colours, saturated yellows, pinks, oranges, and teals against neutral greys and browns, bright and cartoonish colour temperature
+[[LIGHTING]] flat and near-shadowless, no directional key or cast shadows, forms separated by solid colour blocks rather than tonal modelling
+[[DISTINGUISHING]] the thick uniform black outlines and the limited high-chroma palette
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] uniform black outlines, flat unmodulated colour fills, a high-chroma saturated palette, and flat shadowless lighting
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_molly]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, forms built from solid shapes and smooth gradients, sharp edges throughout, high level of detail in patterned surfaces, digital finish
+[[PALETTE]] saturated and warm, dominant hues of purple, pink, and teal, full colour range with high contrast between light and dark areas, rich and vibrant overall
+[[LIGHTING]] flat and even, no directional key or cast shadows, highlights rendered as solid colour patches rather than gradients, shadow detail minimal and represented by darker flat tones
+[[DISTINGUISHING]] the clean vector outlines and flat unmodulated fills, and the high saturation of the colour palette
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, sharp edges, saturated warm palette, and even flat lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_molly]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, forms built from solid shapes and smooth gradients, sharp edges throughout, high level of detail in patterned surfaces, digital finish
+[[PALETTE]] saturated and warm, dominant hues of purple, pink, and teal, full colour range with high contrast between light and dark areas, rich and vibrant overall
+[[LIGHTING]] flat and even, no directional key or cast shadows, highlights rendered as solid colour patches rather than gradients, shadow detail minimal and represented by darker flat tones
+[[DISTINGUISHING]] the clean vector outlines and flat unmodulated fills, and the high saturation of the colour palette
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills, sharp edges, saturated warm palette, and even flat lighting
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_nadia]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading gradients, forms built from distinct geometric shapes, sharp edges throughout, high level of detail in the background elements, smooth digital finish
+[[PALETTE]] vibrant and saturated primary colours, dominant bright blues and greens, warm skin tones, high contrast between light and dark areas, full colour range
+[[LIGHTING]] flat and even illumination, no directional key light, minimal shadow rendering, highlights indicated by solid white shapes rather than gradients
+[[DISTINGUISHING]] the clean geometric construction of forms and the vibrant saturated primary colour palette
+[[LABEL]] the vibrant geometric anime style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, vibrant saturated primary colours, geometric form construction, and even flat illumination
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_nadia]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading gradients, forms built from distinct geometric shapes, sharp edges throughout, high level of detail in the background elements, smooth digital finish
+[[PALETTE]] vibrant and saturated primary colours, dominant bright blues and greens, warm skin tones, high contrast between light and dark areas, full colour range
+[[LIGHTING]] flat and even illumination, no directional key light, minimal shadow rendering, highlights indicated by solid white shapes rather than gradients
+[[DISTINGUISHING]] the clean geometric construction of forms and the vibrant saturated primary colour palette
+[[LABEL]] the vibrant geometric anime style
+[[DEFINITION]] clean uniform outlines, flat unmodulated colour fills, vibrant saturated primary colours, geometric form construction, and even flat illumination
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] anime
+[[TREATMENT]] colour
+----------
+##### stop-motion #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [stop-motion :: look_pjs]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of physically constructed clay figures with visible surface texture and slight irregularities, real optical depth of field with foreground sharpness and background softness, fine detail on the sculpted facial features and fabric textures, naturalistic lighting rendering on three-dimensional forms
+[[PALETTE]] warm and slightly amber, saturated earth tones and primary colours against desaturated urban backgrounds, rich shadow tone with a gentle overall warm cast
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible clay texture and sculpted seams on the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade clay stop-motion style
+[[DEFINITION]] photographed physical puppets with visible clay texture and sculpted features, shallow real depth of field, a warm saturated palette, and soft directional practical light
+----------
+qwen3.6-35b-a3b  describer_style_class  [stop-motion :: sw_pjs]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture of physically constructed clay figures with visible surface texture and slight irregularities, real optical depth of field with foreground sharpness and background softness, fine detail on the sculpted facial features and fabric textures, naturalistic lighting rendering on three-dimensional forms
+[[PALETTE]] warm and slightly amber, saturated earth tones and primary colours against desaturated urban backgrounds, rich shadow tone with a gentle overall warm cast
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible clay texture and sculpted seams on the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade clay stop-motion style
+[[DEFINITION]] photographed physical puppets with visible clay texture and sculpted features, shallow real depth of field, a warm saturated palette, and soft directional practical light
+---
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] clay
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_pocahontas]
+---
+ROLE: style
+---
+[[EXECUTION]] smooth vector-like linework of medium weight with uniform black outlines, flat unmodulated colour fills for the figures, subtle airbrushed gradients on the background elements, clean anti-aliased edges without visible brush texture or grain, high level of detail in the character design and background patterns
+[[PALETTE]] vibrant and saturated, dominated by cool blues and teals in the background contrasting with warm skin tones and bright primary colours in the foreground figures, rich deep blacks for hair and outlines
+[[LIGHTING]] flat lighting treatment with no distinct key direction, highlights rendered as simple colour shifts rather than gradients on the figures, soft ambient light on the background elements
+[[DISTINGUISHING]] the characteristic smooth airbrushed background texture and the specific clean vector-like outline style
+[[LABEL]] the 1990s hand-painted cel animation style
+[[DEFINITION]] smooth vector-like outlines, flat unmodulated colour fills, subtle airbrushed gradients on the background, vibrant saturated palette, and flat lighting treatment
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_pocahontas]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] smooth vector-like linework of medium weight with uniform black outlines, flat unmodulated colour fills for the figures, subtle airbrushed gradients on the background elements, clean anti-aliased edges without visible brush texture or grain, high level of detail in the character design and background patterns
+[[PALETTE]] vibrant and saturated, dominated by cool blues and teals in the background contrasting with warm skin tones and bright primary colours in the foreground figures, rich deep blacks for hair and outlines
+[[LIGHTING]] flat lighting treatment with no distinct key direction, highlights rendered as simple colour shifts rather than gradients on the figures, soft ambient light on the background elements
+[[DISTINGUISHING]] the characteristic smooth airbrushed background texture and the specific clean vector-like outline style
+[[LABEL]] the 1990s hand-painted cel animation style
+[[DEFINITION]] smooth vector-like outlines, flat unmodulated colour fills, subtle airbrushed gradients on the background, vibrant saturated palette, and flat lighting treatment
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+##### stop-motion #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [stop-motion :: look_rudolf]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture of physically constructed puppets with visible felt nap and stitched seams, shallow real depth of field with background elements falling out of focus, fine fibre texture resolved on the figures, slight surface irregularities and hand-built prop details, faint frame-to-frame texture jitter
+[[PALETTE]] warm and slightly amber, saturated russets and mustards against deep blues and whites, full colour with a gentle overall warm cast and rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible felt nap and stitched seams on the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible felt nap and stitched seams, shallow real depth of field, a warm saturated russet palette, and soft directional practical light
+----------
+qwen3.6-35b-a3b  describer_style_class  [stop-motion :: sw_rudolf]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture of physically constructed puppets with visible felt nap and stitched seams, shallow real depth of field with background elements falling out of focus, fine fibre texture resolved on the figures, slight surface irregularities and hand-built prop details, faint frame-to-frame texture jitter
+[[PALETTE]] warm and slightly amber, saturated russets and mustards against deep blues and whites, full colour with a gentle overall warm cast and rich shadow tone
+[[LIGHTING]] warm practical key from the upper left, soft-edged but directional, gentle falloff into shadow, shadow detail retained rather than crushed, small specular glints on the harder surfaces
+[[DISTINGUISHING]] the visible felt nap and stitched seams on the figures, and the miniature scale betrayed by the shallow depth of field
+[[LABEL]] the handmade felt stop-motion style
+[[DEFINITION]] photographed physical puppets with visible felt nap and stitched seams, shallow real depth of field, a warm saturated russet palette, and soft directional practical light
+---
+[[MEDIUM]] stop-motion
+[[SUB_MEDIUM]] puppet
+[[IDIOM]] dimensional toon
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_scooby]
+---
+ROLE: style
+---
+[[EXECUTION]] uniform medium-weight black outlines of consistent thickness enclosing all forms, flat unmodulated colour fills with no interior texture or shading, clean anti-aliased edges on the curves, no grain or surface noise, hard-edged separation between foreground figures and background elements
+[[PALETTE]] saturated primary and secondary hues including teal, yellow, orange, and purple set against a deep desaturated blue background, high contrast between the bright foreground colours and the dark cool backdrop
+[[LIGHTING]] flat and near-shadowless with no directional key, form defined entirely by line and colour rather than tonal modelling, uniform brightness across all filled areas
+[[DISTINGUISHING]] the thick uniform black outlines enclosing every element, and the flat unmodulated colour fills
+[[LABEL]] the classic television cel-animation style
+[[DEFINITION]] uniform medium-weight black outlines, flat unmodulated colour fills, saturated primary hues against a desaturated blue background, and flat shadowless lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_scooby]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] uniform medium-weight black outlines of consistent thickness enclosing all forms, flat unmodulated colour fills with no interior texture or shading, clean anti-aliased edges on the curves, no grain or surface noise, hard-edged separation between foreground figures and background elements
+[[PALETTE]] saturated primary and secondary hues including teal, yellow, orange, and purple set against a deep desaturated blue background, high contrast between the bright foreground colours and the dark cool backdrop
+[[LIGHTING]] flat and near-shadowless with no directional key, form defined entirely by line and colour rather than tonal modelling, uniform brightness across all filled areas
+[[DISTINGUISHING]] the thick uniform black outlines enclosing every element, and the flat unmodulated colour fills
+[[LABEL]] the classic television cel-animation style
+[[DEFINITION]] uniform medium-weight black outlines, flat unmodulated colour fills, saturated primary hues against a desaturated blue background, and flat shadowless lighting
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+##### photograph #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [photograph :: look_shed_day]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with high sharpness across the entire frame, wide depth of field keeping foreground and background elements equally resolved, naturalistic surface textures including wood grain, foliage detail, and grass blades, clean digital clarity with no visible film grain or optical softness
+[[PALETTE]] cool and desaturated, dominated by muted greens and earthy browns, low contrast range with compressed highlights and shadows, overall slightly greyed colour character
+[[LIGHTING]] diffuse and even illumination from an overcast sky, minimal directional key, soft-edged shadows with low contrast between light and shade, no specular highlights or deep shadow detail
+[[DISTINGUISHING]] the uniform cool desaturation across all tones, and the high sharpness extending to the far background elements
+[[LABEL]] the cool desaturated photographic style
+[[DEFINITION]] high sharpness across the frame, wide depth of field, diffuse even lighting with soft shadows, a cool desaturated palette dominated by muted greens and browns, and low contrast
+----------
+qwen3.6-35b-a3b  describer_style_class  [photograph :: sw_shed_day]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture with high sharpness across the entire frame, wide depth of field keeping foreground and background elements equally resolved, naturalistic surface textures including wood grain, foliage detail, and grass blades, clean digital clarity with no visible film grain or optical softness
+[[PALETTE]] cool and desaturated, dominated by muted greens and earthy browns, low contrast range with compressed highlights and shadows, overall slightly greyed colour character
+[[LIGHTING]] diffuse and even illumination from an overcast sky, minimal directional key, soft-edged shadows with low contrast between light and shade, no specular highlights or deep shadow detail
+[[DISTINGUISHING]] the uniform cool desaturation across all tones, and the high sharpness extending to the far background elements
+[[LABEL]] the cool desaturated photographic style
+[[DEFINITION]] high sharpness across the frame, wide depth of field, diffuse even lighting with soft shadows, a cool desaturated palette dominated by muted greens and browns, and low contrast
+---
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
+[[IDIOM]] realist
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [photograph :: look_shed_dusk]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with high sharpness across the entire frame, deep depth of field keeping foreground and background elements equally resolved, fine surface texture visible on foliage and masonry, naturalistic detail rendering without stylization or compression artifacts
+[[PALETTE]] desaturated and cool-toned, dominated by muted greens and earthy browns, low overall contrast with a compressed dynamic range and a slight blue-grey cast in the shadows
+[[LIGHTING]] diffuse and directionless ambient light, soft-edged shadows with minimal contrast between highlights and shadow areas, even illumination across the scene without a distinct key light source
+[[DISTINGUISHING]] none
+[[LABEL]] the desaturated naturalistic photography style
+[[DEFINITION]] high sharpness across the frame, deep depth of field, desaturated cool palette, low contrast, and diffuse ambient lighting
+----------
+qwen3.6-35b-a3b  describer_style_class  [photograph :: sw_shed_dusk]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture with high sharpness across the entire frame, deep depth of field keeping foreground and background elements equally resolved, fine surface texture visible on foliage and masonry, naturalistic detail rendering without stylization or compression artifacts
+[[PALETTE]] desaturated and cool-toned, dominated by muted greens and earthy browns, low overall contrast with a compressed dynamic range and a slight blue-grey cast in the shadows
+[[LIGHTING]] diffuse and directionless ambient light, soft-edged shadows with minimal contrast between highlights and shadow areas, even illumination across the scene without a distinct key light source
+[[DISTINGUISHING]] none
+[[LABEL]] the desaturated naturalistic photography style
+[[DEFINITION]] high sharpness across the frame, deep depth of field, desaturated cool palette, low contrast, and diffuse ambient lighting
+---
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
+[[IDIOM]] realist
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [photograph :: look_shed_night]
+---
+ROLE: style
+---
+[[EXECUTION]] photographic capture with high dynamic range processing, deep focus extending from foreground to background, visible digital noise in shadow areas, sharp detail on textured surfaces, slight lens distortion at edges, high contrast between illuminated and dark zones
+[[PALETTE]] cool-toned with dominant greens and browns, desaturated mid-tones, high contrast between bright highlights and deep shadows, muted overall saturation with localized brightness
+[[LIGHTING]] artificial key light from above and slightly behind the viewpoint, creating strong directional illumination on foreground objects, deep shadows in background areas, highlights on reflective surfaces, low ambient fill
+[[DISTINGUISHING]] the high-contrast night photography look with visible digital noise in shadows and the characteristic greenish cast of artificial outdoor lighting
+[[LABEL]] the high-contrast night photography style
+[[DEFINITION]] high dynamic range processing, deep focus, visible digital noise in shadows, cool-toned desaturated palette, strong directional artificial light, and high contrast between illuminated and dark areas
+----------
+qwen3.6-35b-a3b  describer_style_class  [photograph :: sw_shed_night]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] photographic capture with high dynamic range processing, deep focus extending from foreground to background, visible digital noise in shadow areas, sharp detail on textured surfaces, slight lens distortion at edges, high contrast between illuminated and dark zones
+[[PALETTE]] cool-toned with dominant greens and browns, desaturated mid-tones, high contrast between bright highlights and deep shadows, muted overall saturation with localized brightness
+[[LIGHTING]] artificial key light from above and slightly behind the viewpoint, creating strong directional illumination on foreground objects, deep shadows in background areas, highlights on reflective surfaces, low ambient fill
+[[DISTINGUISHING]] the high-contrast night photography look with visible digital noise in shadows and the characteristic greenish cast of artificial outdoor lighting
+[[LABEL]] the high-contrast night photography style
+[[DEFINITION]] high dynamic range processing, deep focus, visible digital noise in shadows, cool-toned desaturated palette, strong directional artificial light, and high contrast between illuminated and dark areas
+---
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
+[[IDIOM]] realist
+[[TREATMENT]] colour
+----------
+##### 2D cel #####
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_titans1]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, sharp geometric edges throughout, high-contrast rendering with no gradients or anti-aliasing visible
+[[PALETTE]] saturated primary and secondary hues including bright reds, greens, blues and purples set against neutral greys and blacks, full colour range with high chroma and strong contrast between light and dark areas
+[[LIGHTING]] flat and even illumination across all figures, no directional key or cast shadows, form defined by solid colour blocks rather than tonal modelling, highlights rendered as distinct flat shapes rather than gradients
+[[DISTINGUISHING]] the thick uniform black outlines enclosing every shape, and the complete absence of interior shading or texture within the coloured areas
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, sharp geometric edges, saturated primary hues against neutral backgrounds, and flat even illumination
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_titans1]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or shading, sharp geometric edges throughout, high-contrast rendering with no gradients or anti-aliasing visible
+[[PALETTE]] saturated primary and secondary hues including bright reds, greens, blues and purples set against neutral greys and blacks, full colour range with high chroma and strong contrast between light and dark areas
+[[LIGHTING]] flat and even illumination across all figures, no directional key or cast shadows, form defined by solid colour blocks rather than tonal modelling, highlights rendered as distinct flat shapes rather than gradients
+[[DISTINGUISHING]] the thick uniform black outlines enclosing every shape, and the complete absence of interior shading or texture within the coloured areas
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform black outlines, flat unmodulated colour fills, sharp geometric edges, saturated primary hues against neutral backgrounds, and flat even illumination
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------
+qwen3.6-35b-a3b  describer_style_look  [2D cel :: look_titans_go]
+---
+ROLE: style
+---
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or brushwork, smooth gradient shading applied to specific forms such as the background wall and the figures' torsos, sharp geometric edges throughout, high level of detail in costume segmentation and facial features
+[[PALETTE]] cool and saturated, dominated by deep blues and purples in the background, with vibrant magenta, lime green, and red accents on the figures, high contrast between the bright foreground elements and the darkened lower section
+[[LIGHTING]] flat and even across the figures with no cast shadows, a directional gradient wash on the background creating a moody atmosphere, highlights rendered as solid colour patches rather than specular reflections
+[[DISTINGUISHING]] the heavy vignette effect that crushes the bottom of the frame to black, and the textured brick pattern on the background wall
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills with smooth gradients, a cool saturated palette with vibrant accents, and a heavy vignette crushing the lower frame
+----------
+qwen3.6-35b-a3b  describer_style_class  [2D cel :: sw_titans_go]
+---
+ROLE: style
+
+[[STYLE_RECORD]]
+[[EXECUTION]] clean vector outlines of uniform medium weight, flat unmodulated colour fills with no interior texture or brushwork, smooth gradient shading applied to specific forms such as the background wall and the figures' torsos, sharp geometric edges throughout, high level of detail in costume segmentation and facial features
+[[PALETTE]] cool and saturated, dominated by deep blues and purples in the background, with vibrant magenta, lime green, and red accents on the figures, high contrast between the bright foreground elements and the darkened lower section
+[[LIGHTING]] flat and even across the figures with no cast shadows, a directional gradient wash on the background creating a moody atmosphere, highlights rendered as solid colour patches rather than specular reflections
+[[DISTINGUISHING]] the heavy vignette effect that crushes the bottom of the frame to black, and the textured brick pattern on the background wall
+[[LABEL]] the modern flat digital cartoon style
+[[DEFINITION]] clean uniform vector outlines, flat unmodulated colour fills with smooth gradients, a cool saturated palette with vibrant accents, and a heavy vignette crushing the lower frame
+---
+[[MEDIUM]] 2D cel
+[[SUB_MEDIUM]] digital
+[[IDIOM]] western toon
+[[TREATMENT]] colour
+----------

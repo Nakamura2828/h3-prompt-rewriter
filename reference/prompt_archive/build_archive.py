@@ -121,13 +121,13 @@ CURATED = {
                    'Prose tightened, no rule changed. 3,740 tokens, 45/45 format -- the best '
                    'format score on record. The pre-split baseline; still present in prompts/ '
                    'alongside the v3 split that replaced it.'),
-    '91808c4a25': ('describer_style_look_v3', 'superseded', 'describer_style_v2-compressed',
+    '91808c4a25': ('describer_style_look_v3', 'live', 'describer_style_v2-compressed',
                    'Pass A of the v3 split. look + class sum to 4,460 tokens, well over any '
                    'single-prompt budget -- the split buys headroom PER CALL, not in total. '
-                   'Superseded in s16 by v4; this is the state that produced the s15 enriched '
-                   'round and the v3 split sweep, so it is the comparison point for the '
-                   '`digital` fix.'),
-    'bf48614103': ('describer_style_look_v4', 'live', 'describer_style_look_v3',
+                   'Briefly superseded by v4 in s16 and RESTORED the same session when v4 '
+                   'measured worse (17/30 vs 19/30). Produced the s15 enriched round and the v3 '
+                   'split sweep.'),
+    'bf48614103': ('describer_style_look_v4', 'reverted', 'describer_style_look_v3',
                    'Adds one block, PRODUCTION METHOD IS NOT A MARK (1,876 -> 2,118 tokens). '
                    'Aimed at the `digital` over-attractor, which s15 relocated from the '
                    'classifier to this pass: the describer was emitting "clean digital vector '
@@ -140,7 +140,21 @@ CURATED = {
                    'correctly and a provenance guess was prepended. The rule bans the guess and '
                    'names the artefacts that actually discriminate (grain, scan lines, halation, '
                    'colour bleeding, stroke-to-stroke weight variation), which is exactly how '
-                   'april_1987 earned its answer.'),
+                   'april_1987 earned its answer. '
+                   'REVERTED THE SAME SESSION. 17/30 vs v3\'s 19/30 on the s15 enriched round '
+                   '(format 60/60). The rule WORKED and did not help, which is the useful part: '
+                   'the look pass cut "digital" 50->18 and "vector" 36->24 in [[EXECUTION]], and '
+                   'the classifier answered digital 18 times, then 17. ONE case. So the look pass '
+                   'was never the lever -- describer_style_class.txt defaults to `digital` on its '
+                   'own, whether or not the record claims it. Two ways it backfired: (1) the tell '
+                   'list got recited back as evidence ("anti-alias" 0->24, "grain" 18->34), so '
+                   'the same conclusion arrived laundered through evidence language, and "no '
+                   'grain of any kind" is a WRONG digital tell -- a clean transfer of cel '
+                   'animation has no grain either, grain is about capture not drawing; (2) it '
+                   'banned "hand-drawn"/"traditional" (2->0), the vocabulary april_1987 used '
+                   'and the only route to a correct traditional-cel answer in the whole round. '
+                   'Also pushed IDIOM sideways: removing the flat/vector anchor made shading '
+                   'language relatively salient and `dimensional toon` over-fired.'),
     '0927364a30': ('describer_style_class_v3', 'live', 'describer_style_v2-compressed',
                    'Pass B of the v3 split; receives pass A\'s record.'),
 }
