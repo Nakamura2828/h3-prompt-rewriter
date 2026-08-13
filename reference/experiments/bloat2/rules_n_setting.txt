@@ -1,0 +1,98 @@
+# N POOL -- NOVEL constraints for prompts/describer_setting.txt
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# DESIGN CONSTRAINTS, enforced by hand when writing this file. Every one of them exists to
+# keep this arm measuring RULE LOAD and not RULE SEMANTICS -- the fl2va v4 confound.
+#
+#   1. NOVEL. Every rule here constrains something describer_setting.txt does not mention at
+#      all. Nothing here is a restatement; restatements are the other arm (rules_r_setting.txt).
+#   2. ADDITIVE. No rule contradicts, narrows, or overrides any rule in the source prompt.
+#      Each was checked against the prompt's own text AND against both worked examples' OUTPUT
+#      blocks, because a rule the examples violate is a conflict, not a load.
+#   3. VACUOUSLY SATISFIED. A correct record already obeys every one of these, so the cost is
+#      READING AND CHECKING the rule, never editing the content to comply. This is deliberate:
+#      a rule that forces a content edit would move the item-count metric by construction and
+#      the experiment would be measuring its own manipulation.
+#   4. NOTHING PRIORITISED OR DROPPED. No rule here licenses choosing between outputs, ranking
+#      them, or omitting one when they compete. That is the v4 shape (L-DONT-OVER-CONSTRAIN).
+#
+# Rules DELIBERATELY REJECTED while writing this file, and why -- each would have been a
+# semantics manipulation wearing a load manipulation's clothes:
+#   - banning digits outright        the prompt WANTS counts ("three tall sash windows")
+#   - banning compass directions     "a south-facing window" is plausible; would cut content
+#   - banning "appears"/"seems"      would REMOVE hedging and could improve the score
+#   - banning superlatives           "the largest window" is a plausible [[DISTINGUISHING]]
+#   - banning possessive apostrophes the prompt's own [[PLACE]] example is "a ship's deck"
+#   - "list items largest first"     a real ordering constraint; would rewrite every field
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every record you write, in addition to everything above.
+
+### POOL ###
+- Never use the word "nestled" anywhere in your output. It is banned in every field, including inside a longer phrase such as "nestled against the wall".
+- Never use the words "quaint", "picturesque", or "whimsical". They are banned in every field, on their own or inside any longer phrase.
+- Never use the words "idyllic", "serene", or "tranquil". These are banned in every field, however the phrase around them is worded.
+- Never use the words "breathtaking", "majestic", or "iconic". They are banned everywhere in your output, including inside a hyphenated compound.
+- Never use the words "bespoke", "artisanal", or "curated". They are banned in every field, on their own or as part of a longer description.
+- Never use the words "myriad", "sundry", or "plethora". Write the plain count or the plain plural instead, in every field.
+- Never use the words "various", "assorted", or "miscellaneous". Name the things themselves instead, in whichever field they belong to.
+- Never use the words "aforementioned", "notwithstanding", "henceforth", or "hitherto". These are banned anywhere in your output.
+- Never use the words "very", "quite", or "rather" as intensifiers. This applies in every field, including inside a longer phrase.
+- Never write "etc", "e.g.", or "i.e." anywhere in your output. Finish the list or leave the item out; those three forms are banned in every field.
+- Never abbreviate a word with a full stop inside it. Forms such as "approx.", "ft.", and "st." are banned; write the word out in full instead.
+- Never write an em dash anywhere in your output. Use a comma where you would have used one, in every field without exception.
+- Never write an exclamation mark or a question mark anywhere in your output. Neither belongs in a record of this kind, in any field.
+- Never write an ampersand. Write the word "and" instead, in every field, including inside a name or a compound.
+- Never write an asterisk, a bullet character, or any other list marker inside a field's value. The field token is the only marker used.
+- Never write a colon inside a field's value. The colon has no place after the field token, and none inside the description that follows it.
+- Never write a currency symbol or a percentage sign anywhere in your output. Neither has any place in a record of a place.
+- Never write a URL, a web address, a hashtag, or an at-sign anywhere in your output. All four are banned in every field.
+- Never write a Roman numeral anywhere in your output. Write the ordinary word or the ordinary number instead, in whichever field it falls.
+- Never write an ordinal as a digit followed by letters, such as "1st" or "2nd". Write the ordinal out as a word instead, in every field.
+- Never write a unit of weight or temperature. Kilograms, pounds, degrees, Celsius, and Fahrenheit are all banned anywhere in your output.
+- Never write an emoji or any other pictographic character anywhere in your output. Only ordinary written English belongs in these fields.
+- Write whole numbers below ten as words rather than as digits: "three tall sash windows", never "3 tall sash windows". This applies in every field.
+- Never write a word entirely in capital letters inside a field's value. The field tokens themselves are the only capitalised forms in your output.
+- Never write a full stop inside [[STRUCTURE]], [[CONTENTS]], or [[DISTINGUISHING]]. Those three fields are comma-separated lists and take no sentence punctuation.
+- Never end a field's value with a comma. The last item in a list is followed by nothing at all, in every one of the eight fields.
+- Never leave a blank line between two field lines. The eight fields are written on consecutive lines with nothing between them.
+- Separate items in a list with a comma and a single space. Never write a comma with no space after it, and never write two spaces after one.
+- Write the field token, then a single space, then the value. Never put a line break, a tab, or two spaces between the token and what follows it.
+- Never begin a field's value with a dash, a hyphen, or a bullet. The value starts with the first word of the description itself.
+- Never number or letter the eight fields. The field tokens are the only labels; nothing is prefixed with "1.", "a)", or anything similar.
+- Never write the words "image", "photo", "photograph", "picture", or "frame" inside a field's value. Describe the place, never the thing the place was recorded on.
+- Never write a contraction such as "isn't", "don't", or "it's" anywhere in your output. Write both words out in full in every field.
+- Never write a comparative such as "larger than" or "smaller than". Describe each feature on its own terms instead, in whichever field it falls.
+- Never write the words "also", "additionally", or "furthermore". A comma-separated list needs none of them, in any of the eight fields.
+- Never write a slash between two alternative words, such as "indoor/outdoor" or "wood/metal". Choose one, or write both separated by a comma.
+- Never write a word in quotation marks inside a field's value. Nothing in this record is quoted, in any of the eight fields.
+- Never split a word across two lines with a hyphen. Every word is written whole, in every field, however long the line becomes.
+- Where one short adjective pair gives both a colour and a material, write the colour first: "grey stone", never "stone in grey". This applies in every field.
+- Never write two spaces in a row anywhere in your output. One space separates every pair of words, in every one of the eight fields.
+- Never write a trailing space at the end of any line. Each field line ends with the last character of its own value.
+- Never write the words "perhaps", "maybe", or "possibly" anywhere in your output. Where something cannot be read, the prompt already tells you what to write.
+- Never write an underscore anywhere in a field's value. The underscores inside [[SETTING_KIND]] are part of the field token and are the only ones permitted.
+- Never write a footnote marker, a superscript, or a bracketed reference number anywhere in your output. Nothing in this record is annotated.
+
+### SHORT ###
+- Never write the word "nestled".
+- Never write an em dash.
+- Never write an ampersand.
+- Never write a Roman numeral.
+- Never write an emoji.
+- Never write a hashtag.
+- Never write a currency symbol.
+- Never write "etc" or "e.g.".
+- Never write a word in capital letters.
+- Never end a field's value with a comma.
+- Never write two spaces in a row.
+- Never write a trailing space.
+- Never write an underscore in a value.
+- Never write a footnote marker.
+- Never write a colon inside a value.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.

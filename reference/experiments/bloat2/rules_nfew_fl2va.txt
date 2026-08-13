@@ -1,0 +1,40 @@
+# N-FEW POOL -- the novel-constraint arm for fl2va.txt, as FEW LONG rules instead of MANY SHORT.
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# Used at ONE level only (L3, +702 live-rule tokens for this prompt) and matched in TOKEN WEIGHT
+# to rules_n_fl2va.txt at that same level, where the N arm spends those tokens on roughly a
+# dozen distinct constraints. Here they buy three or four.
+#
+# Each rule is ONE constraint; the extra tokens are rationale and worked right/wrong pairs for
+# that single constraint, never several constraints merged into a paragraph. All are drawn from
+# rules_n_fl2va.txt, so they inherit its verification against fl2va.txt and both of its worked
+# examples' OUTPUT blocks.
+#
+# The SHORT section adds NO new constraint -- every short line is a further example or a
+# restatement of one of the long rules above it, so fine-tuning the token target cannot change
+# the constraint count.
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every prompt you write, in addition to everything above.
+
+### POOL ###
+- Never write an em dash anywhere in your output. The em dash is the long dash, distinct from the hyphen that joins a compound word and from the shorter dash sometimes used for a numeric range. It is banned in all three fields without exception, including inside a phrase you might otherwise set off as an aside, and including at a point where you want to introduce a consequence. Where you would have reached for one, write a comma instead, or begin a new sentence. This applies whether the dash is spaced or unspaced, and wherever in the field it falls. The hyphen inside an ordinary compound word is untouched by this rule and remains correct: "off-screen", "close-up", "medium-wide", "screen-left", and "roller-skates" are all written exactly as they would be otherwise. So is the hyphen inside a compound modifier such as "slow-moving". What is banned is the punctuation dash used as a break in the sentence, never the hyphen used to build a word.
+- Never write the words "image", "photo", or "photograph" anywhere in your output. You are writing the video that will be generated, not describing the still frame you were shown, and naming the still is a description of your own input rather than of the shot. Write "a man in a leather jacket sits alone on a stool in a dim workshop", never "the image shows a man in a leather jacket". Write "the camera pushes in as she lifts a seedling", never "in this photograph, the camera pushes in". The ban covers all three words in every grammatical form and in all three fields, including their plurals and including "imagery". This is separate from, and additional to, the standing rule that your output never refers to "the delta", "the description", or "the report": that rule bars naming the structured inputs, and this one bars naming the picture itself. Ordinary words that merely contain one of the banned words as a fragment are unaffected.
+- Never write a comparative such as "larger than", "smaller than", "taller than", "closer than", or "brighter than" anywhere in your output. Each thing in the shot is described on its own terms, by what it is, what it is made of, where it stands, and how it moves, rather than by being measured against something else that happens to share the frame with it. A comparison of that kind reads as an instruction to the video model to establish a relationship it cannot verify, and it spends words that would otherwise describe the motion path, which is what the middle of the description is for. Write "a tall roller door and a low workbench", never "a roller door taller than the workbench beside it". Write "the lamp throws warm light across his face while the far wall stays dark", never "his face is brighter than the far wall". Superlatives describing one thing on its own, and ordinary size words such as "tall", "wide", or "narrow", are untouched by this rule.
+- Never write the words "also", "additionally", "furthermore", or "moreover" anywhere in your output. Each of the three fields is continuous prose describing what happens in order, and a connective of that kind adds nothing to the order that the sentence structure does not already carry. Where you would have written one, either begin the new sentence without it, or join the two clauses with "and" or with a comma, whichever reads more naturally in the action being described. Write "the roller door rattles upward and daylight spills across the floor", never "the roller door rattles upward; additionally, daylight spills across the floor". Write "loose soil crumbles between her hands over the tick of water from the glass roof", never "loose soil crumbles between her hands, and also water ticks from the glass roof". This applies equally in the soundscape field and in the music field, where a list of instruments or of sounds is joined with "and" or with a comma and never with a connective of this kind.
+
+### SHORT ###
+- The hyphen inside "off-screen" or "close-up" is untouched by the em-dash rule.
+- A comma does the work an em dash would have done.
+- "The camera pushes in as she lifts a seedling" is right; naming the still is not.
+- Barring the picture is separate from the standing rule about the structured inputs.
+- "A tall roller door and a low workbench" is right; comparing the two is not.
+- Ordinary size words such as "tall", "wide", and "narrow" are untouched.
+- Join two clauses with "and" or with a comma instead.
+- The connective ban applies in the soundscape field and in the music field too.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.

@@ -1,0 +1,55 @@
+# N-FEW POOL -- the SAME novel-constraint arm, but FEW LONG rules instead of MANY SHORT ones.
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# THE POINT OF THIS FILE. It is used at ONE level only (L3, +1,161 live-rule tokens) and is
+# matched in TOKEN WEIGHT to rules_n_setting.txt at that same level, where the N arm spends
+# those tokens on roughly two dozen distinct constraints. Here the same tokens buy FIVE.
+#
+#   N-many at L3   ~24 distinct constraints x ~48 tokens
+#   N-few  at L3   ~5  distinct constraints x ~220 tokens
+#
+# If the two cells score the same, the cost is TOKENS OF RULE. If N-many is worse, the cost is
+# the NUMBER OF DISTINCT CONSTRAINTS and no token measure is the right instrument. That is the
+# handoff's count-vs-tokens split, run directly.
+#
+# CONSTRUCTION. Each rule below is ONE constraint -- not several merged into a paragraph, which
+# would smuggle the count back in. The extra tokens are rationale and worked right/wrong pairs
+# for that single constraint, which is how the source prompt itself writes its longer rules
+# (see its NAME THE FORM, NEVER THE GLOW and THE DAY-AND-NIGHT TEST).
+#
+# All five are drawn from rules_n_setting.txt, so they inherit its verification: each is novel
+# to describer_setting.txt, contradicts nothing in it, is satisfied by both worked examples'
+# OUTPUT blocks as written, and forces no content edit.
+#
+# The SHORT section adds NO new constraint. Every short line is a further example or a
+# restatement of one of the five rules above it, so fine-tuning the token target cannot change
+# the constraint count. This is the one place where this file differs in kind from the others.
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every record you write, in addition to everything above.
+
+### POOL ###
+- Never write an em dash anywhere in your output. The em dash is the long dash, distinct from the hyphen that joins a compound word and from the shorter dash sometimes used for a numeric range. It is banned in all eight fields without exception, including inside a phrase you might otherwise set off as an aside, and including at a point where you want to introduce a list. Where you would have reached for one, write a comma instead, or start the item afresh after the comma that already separates the items in these fields. This applies whether the dash is spaced or unspaced, and whether it falls in the middle of a value or at its end. The hyphen inside an ordinary compound word is untouched by this rule: "cast-iron", "single-storey", "cross-shaped", and "whitewashed rubble-stone" are all correct and remain correct. So is the hyphen inside a colour compound such as "blue-grey". What is banned is the punctuation dash used as a break in the sentence, not the hyphen used to build a word.
+- Never write a word entirely in capital letters inside a field's value. The field tokens themselves are written in capitals, because they are the labels the downstream nodes read, and nothing about this rule changes them: [[SETTING_KIND]], [[STRUCTURE]], and the other six stay exactly as they are given to you. The rule governs only what comes after the token, on the same line. Inside a value, a word that you might want to emphasise is written in ordinary lower case like every other word around it, and a word that names something is written the way it is ordinarily written. This holds even where the thing itself carries a capitalised name in the world, and even where you are describing a surface that has capital letters printed on it, since the prompt above already tells you never to repeat printed text in any case. An initial capital at the start of a value is not what this rule is about; a word in which every letter is a capital is.
+- Write whole numbers below ten as words rather than as digits, in every one of the eight fields. "Three tall sash windows" is correct and "3 tall sash windows" is not. "Two rows of pews" is correct and "2 rows of pews" is not. "Six rope holes in the boarded ceiling" is correct and "6 rope holes in the boarded ceiling" is not. The rule covers one through nine, and it covers them wherever they fall in a value, including inside a compound such as "four-panel" or "two-storey". Ten and above may be written either way, so "twelve pews" and "12 pews" are both acceptable, and you should pick whichever reads more naturally in the phrase around it. Nothing here changes the standing instruction that counts are welcome and durable: this rule is about how a count is spelled, never about whether to give one. Where you can count a thing, count it, and then write the number below ten as a word.
+- Never write a full stop inside [[STRUCTURE]], [[CONTENTS]], or [[DISTINGUISHING]]. Those three fields are comma-separated lists of things, not sentences, and a list of things takes no sentence punctuation at any point along it, including at its end. This is consistent with the treatment [[DEFINITION]] already receives, which the prompt above states directly, and it extends the same treatment to the three list fields that feed it. The other four fields are unaffected by this rule and follow whatever the prompt above says about them. A full stop that forms part of an abbreviation is not an exception, because abbreviations of that shape are banned in your output anyway. A decimal point is likewise not an exception, and none is needed, since no measurement is ever written in this record. In short, those three field lines contain letters, spaces, commas, and hyphens, and nothing else that would end a sentence.
+- Never write the words "image", "photo", "photograph", "picture", or "frame" inside a field's value. Your record describes a place, not the thing the place happens to have been recorded on, and naming the recording is a description of the medium rather than of the environment. Write "a rectangular lock chamber walled in coursed grey stone", never "the image shows a rectangular lock chamber". Write "a boarded ceiling pierced by six rope holes", never "in this photo, a boarded ceiling". The ban covers all five words in every field and in every grammatical form, including the plurals and including "framed" used to mean "photographed". One ordinary use survives untouched, because it describes a physical object rather than the recording: "a framed picture hanging on the wall" names a thing that hangs on a wall and belongs in [[CONTENTS]] like any other fixture, and "a window frame" and "a door frame" name parts of a building. What is banned is naming the photograph, not naming a frame made of wood.
+- Never write a comparative such as "larger than", "smaller than", "taller than", or "wider than" inside a field's value. Each feature of the place is described on its own terms, by its material, its colour, its condition, and its count, rather than by measuring it against something else that happens to stand beside it in this particular view. A comparison of that kind depends on what else is in shot, and the whole point of this record is that it has to survive being reused for a different shot of the same place, taken from somewhere else, where the thing being compared against may not appear at all. Write "a tall arched window and a low plank door", never "a window taller than the door beside it". Write "a broad stone hearth", never "a hearth wider than the ones usually found in rooms of this kind". Superlatives describing a single feature on its own are untouched by this rule.
+
+### SHORT ###
+- The hyphen inside "cast-iron" or "single-storey" is untouched by the em-dash rule.
+- A comma does the work an em dash would have done.
+- The eight field tokens stay in capitals; only the value after them is governed.
+- An initial capital at the start of a value is not what the capitals rule is about.
+- "Six rope holes" is correct; "6 rope holes" is not.
+- Ten and above may be written either way, whichever reads more naturally.
+- A comma-separated list of things takes no sentence punctuation at its end.
+- "A framed picture hanging on the wall" is a fixture and stays.
+- "A window frame" and "a door frame" name parts of a building and stay.
+- A comparison depends on what else is in shot, and this record outlives this shot.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.

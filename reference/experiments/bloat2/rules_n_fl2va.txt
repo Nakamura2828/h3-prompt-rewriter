@@ -1,0 +1,86 @@
+# N POOL -- NOVEL constraints for prompts/fl2va.txt
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# Same four design constraints as rules_n_setting.txt: NOVEL to the source prompt, ADDITIVE
+# (contradicting nothing in it), VACUOUSLY SATISFIED by a correct output, and never licensing a
+# choice between competing outputs. Every rule was checked against fl2va.txt's text AND against
+# both of its worked examples' OUTPUT blocks.
+#
+# fl2va's output contract is far busier than describer_setting's, and it rules out most of the
+# bans that were safe there. Rules DELIBERATELY REJECTED while writing this file:
+#
+#   - banning the semicolon        example 2's own OUTPUT uses one ("stops there; the man...")
+#   - banning round brackets       speaker identifiers are "(S1)", "(S1,S2,S3)"
+#   - banning angle brackets       the dialogue block is <d>...</d>
+#   - banning digits               "[Shot 1]" and "At 00:03.500," are required forms
+#   - banning ALL-CAPS words       "[Shot 1]", "N/A" and "(S1)" all carry capitals
+#   - banning a slash              "N/A" is the required empty value for the music field
+#   - banning "?" or "!"           dialogue is preserved from the user VERBATIM
+#   - banning contractions, or "I"/"you"      same reason: verbatim user dialogue
+#   - banning emoji or non-Latin characters   same reason: verbatim user language
+#   - banning quotation marks      on-screen text is required to be in double quotes
+#   - banning a colon in a value   "(S1), says:" is the required attribution form
+#   - banning "cinematic"          both worked examples open with it
+#   - banning "suddenly"/"meanwhile"          plausible words a composer would want
+#
+# What is left is a smaller pool than the setting one, which is itself worth recording: a
+# tightly-specified output contract has less room for a genuinely inert novel rule.
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every prompt you write, in addition to everything above.
+
+### POOL ###
+- Never use the word "nestled" anywhere in your output. It is banned in all three fields, including inside a longer phrase such as "nestled against the wall".
+- Never use the words "quaint", "picturesque", or "whimsical" anywhere in your output. They are banned in all three fields, alone or inside any longer phrase.
+- Never use the words "idyllic", "serene", or "tranquil" anywhere in your output. These are banned in all three fields, however the phrase around them is worded.
+- Never use the words "breathtaking", "majestic", or "iconic" anywhere in your output. They are banned everywhere, including inside a hyphenated compound.
+- Never use the words "bespoke", "artisanal", or "curated" anywhere in your output. They are banned in all three fields, alone or as part of a longer description.
+- Never use the words "myriad", "sundry", or "plethora". Write the plain count or the plain plural instead, in whichever field it falls.
+- Never use the words "various", "assorted", or "miscellaneous". Name the things themselves instead, in whichever field they belong to.
+- Never use the words "aforementioned", "notwithstanding", "henceforth", or "hitherto". All four are banned anywhere in your output.
+- Never use the words "very", "quite", or "rather" as intensifiers. This applies in all three fields, including inside a longer phrase.
+- Never write "etc", "e.g.", or "i.e." anywhere in your output. Finish the list or leave the item out; those three forms are banned in every field.
+- Never abbreviate a WORD with a full stop inside it. Forms such as "approx.", "ft.", and "st." are banned; write the word out in full. This does not touch the timestamp format, which is unchanged.
+- Never write an em dash anywhere in your output. Use a comma where you would have used one. The hyphen inside an ordinary compound word such as "off-screen" is untouched by this rule.
+- Never write an ampersand. Write the word "and" instead, in all three fields, including inside a name or a compound.
+- Never write an asterisk, a bullet character, or any other list marker anywhere in your output. Each field is continuous prose, never a list.
+- Never write a currency symbol or a percentage sign anywhere in your output. Neither has any place in a video prompt of this kind.
+- Never write a URL or a web address anywhere in your output. This holds in all three fields without exception.
+- Never write a Roman numeral anywhere in your output. Write the ordinary word or the ordinary number instead, in whichever field it falls.
+- Never write an ordinal as a digit followed by letters, such as "1st" or "2nd". Write the ordinal out as a word instead, in every field.
+- Never write a unit of weight or of temperature. Kilograms, pounds, degrees, Celsius, and Fahrenheit are all banned anywhere in your output.
+- Never abbreviate "seconds" to "sec" or to "s". Where a length of time is named in prose, the word is written out in full.
+- Write shot numbers as digits, never as words: the marker is "[Shot 2]", never "[Shot Two]". This holds for every shot in the description.
+- Where you name a side of the frame, write it as "screen-left" or "screen-right", never as "the left-hand side" or "the right of the picture".
+- Never write the words "also", "additionally", or "furthermore" anywhere in your output. The sentence that follows needs none of them.
+- Never write the words "perhaps", "maybe", or "possibly" anywhere in your output. Everything in a video prompt is stated, never hedged.
+- Never write the words "image", "photo", or "photograph" anywhere in your output. You are writing the video, not describing a still.
+- Never write a comparative such as "larger than" or "smaller than" anywhere in your output. Describe each thing on its own terms instead.
+- Never write an underscore anywhere in your output, apart from the three field labels themselves, which are copied exactly as they are given to you.
+- Never write two spaces in a row anywhere in your output. One space separates every pair of words, in all three fields.
+- Never write a trailing space at the end of any line. Each line ends with the last character of its own text.
+- Never split a word across two lines with a hyphen. Every word is written whole, however long the line becomes.
+- Never write a round-bracketed aside that is not a speaker identifier. The identifiers "(S1)", "(S2)", and their compound forms are the only bracketed material in your output.
+
+### SHORT ###
+- Never write the word "nestled".
+- Never write an em dash.
+- Never write an ampersand.
+- Never write a Roman numeral.
+- Never write a currency symbol.
+- Never write "etc" or "e.g.".
+- Never write a URL.
+- Never write two spaces in a row.
+- Never write a trailing space.
+- Never write "sec" for "seconds".
+- Never write "[Shot Two]" for "[Shot 2]".
+- Never write the word "photograph".
+- Never write the words "also" or "furthermore".
+- Never write an asterisk.
+- Never write a percentage sign.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.

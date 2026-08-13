@@ -1,0 +1,128 @@
+# R POOL -- RESTATED rules for prompts/describer_setting.txt
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# DESIGN CONSTRAINTS, enforced by hand when writing this file:
+#
+#   1. RESTATEMENT ONLY. Every line here is a near-verbatim paraphrase of a rule the source
+#      prompt ALREADY CONTAINS. Nothing here adds a constraint, narrows one, or widens one.
+#      Each line was written by reading one clause of describer_setting.txt and saying the
+#      same thing in different words.
+#   2. PARAPHRASE, NOT COPY. The user's call in planning. Literal duplication risks being
+#      trivially compressible for the model, and interacting with repeat_penalty 1.05, which
+#      would make this arm accidentally INERT and destroy its whole purpose. So the wording
+#      differs while the constraint does not.
+#   3. NO DRIFT. The risk of paraphrase is that it changes the rule's meaning, which would turn
+#      this arm into a semantics manipulation. Every line is reproduced verbatim in REPORT.md
+#      beside the source clause it paraphrases, so the user can check for drift.
+#   4. SAME SHAPE AS THE N ARM. Same heading, same bullet style, same rough token weight per
+#      line, same insertion point. The ONLY difference between the two arms is whether the
+#      constraint is new.
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every record you write, in addition to everything above.
+
+### POOL ###
+- Each of the eight fields listed under FIELD ORDER is written once and once only; a second copy of any field is an error.
+- Exactly one place is described and exactly one record is produced, however many places the image happens to contain.
+- [[DEFINITION]] is the final field of the record. After it the reply ends: no further turn, no repeated field, no commentary of any kind.
+- Nothing precedes the first field token. There is no preamble, no explanation, and no markdown fence anywhere in the reply.
+- The characters < and > are reserved for downstream use and appear nowhere in your output.
+- The record is written in English, as plain declarative phrases. Continuous prose and storytelling have no place in it.
+- [[SETTING_KIND]] carries one word only, either "interior" or "exterior", with no third value, no hedge, and no qualifier attached.
+- The interior-or-exterior decision follows where the CAMERA stands, not what happens to be visible from there.
+- A camera inside an enclosed space gives "interior", however much of the outdoors shows through a window.
+- A camera standing outdoors gives "exterior", however much of an interior shows through a doorway or a shop window.
+- A shopfront photographed from the pavement is an exterior; a room photographed from inside, with a street beyond its window, is an interior.
+- A view from the air is an exterior, and a vehicle photographed from inside its cabin is an interior.
+- Where the camera position genuinely cannot be read, pick whichever value fits the larger part of the frame and commit to it.
+- [[STRUCTURE]] covers the shell of the place: walls, floor, ceiling, and openings for an interior; ground, terrain, planting, and the enclosing buildings for an exterior.
+- Materials, colours, and condition are named alongside whatever structure you record.
+- [[CONTENTS]] lists the fixed furnishings, fixtures, and permanent objects belonging to the place, together with their colours and materials.
+- Where a place genuinely holds no fixed objects, [[CONTENTS]] takes the word "none" rather than being left out of the record.
+- Open country, woodland, and water frequently have no contents at all, and that is an ordinary answer rather than a failure to look.
+- [[DISTINGUISHING]] names the one or two features that would let someone recognise this exact place rather than another of the same type, or "none".
+- [[PLACE]] states what kind of place this is in a few words, such as a school classroom, a ship's deck, or a hotel corridor.
+- [[ATMOSPHERE]] holds the light sources, the quality of the light, the hour of the day, and the weather.
+- [[ATMOSPHERE]] is the only field permitted to carry anything that passes; everything transient belongs there and nowhere else.
+- [[LABEL]] is a short noun phrase of two to five words beginning with the word "the".
+- [[DEFINITION]] is a single trait clause: a comma-separated list of the place's most identifying durable features, with "and" before the final item.
+- [[DEFINITION]] takes no leading article, no verb, and no closing full stop.
+- [[DEFINITION]] draws only on what [[STRUCTURE]], [[CONTENTS]], and [[DISTINGUISHING]] have already said.
+- Light, shadow, glow, weather, and the hour of the day are all barred from [[DEFINITION]] without exception.
+- The words "lit", "illuminated", "sunlight", "daylight", "shadow", "fog", "rain", and "snowfall" never appear in [[DEFINITION]].
+- [[LABEL]] and [[DEFINITION]] are joined downstream into one sentence, so both are written so that the joined sentence reads correctly.
+- This record is reused in shots the place has never been photographed in, so anything true only of this moment belongs in [[ATMOSPHERE]].
+- A place is the same place by day and by night, and the sentence assembled from [[LABEL]] and [[DEFINITION]] has to hold at both hours.
+- A lamp, a chandelier, a fireplace, a neon sign, and a streetlight are all fixtures: the object goes in [[CONTENTS]] and the light it throws goes in [[ATMOSPHERE]].
+- Whether a fixture is switched on or switched off is not recorded anywhere in this record.
+- Where a feature is distinct only because it is lit, record the physical thing that is lit rather than the light it gives off.
+- "A cross-shaped mast on the roof" is the right record and "a glowing cyan cross" is the wrong one; the same building has that shape at noon.
+- "A row of tall windows" is the right record and "thousands of lit windows" is the wrong one, for the same reason.
+- Before writing [[CONTENTS]], [[DISTINGUISHING]], and [[DEFINITION]], ask of every item whether you would still write it with the sun up, or in the middle of the night.
+- Anything that fails that question is either restated as the physical form underneath it, or moved into [[ATMOSPHERE]] instead.
+- Two records of one place made twelve hours apart have to list the same features as each other.
+- Loose clutter, spilled contents, and anything a person could carry out of the room are all left out of this record.
+- Food packaging, bottles, tools, crockery, papers, books, bags, and anything set down on a surface all fail that test.
+- Fixed shelving belongs in the record and the cereal box on the table does not; built-in appliances belong in it and the pans on the hob do not.
+- A fixture's momentary state is not recorded: a sash window is written as a sash window, never as a sash window standing open.
+- Some images show no environment at all, and that blank ground is itself the environment; say so plainly rather than inventing a room around it.
+- A plain studio backdrop, a flat field of colour, a subject cut out on white, and a black void are all grounds of that kind.
+- Every one of those takes "interior" in [[SETTING_KIND]], which keeps two records of the same blank ground from disagreeing with each other.
+- On a blank ground, [[STRUCTURE]] holds whatever that ground actually is, and [[CONTENTS]] and [[DISTINGUISHING]] both take "none".
+- A blank ground takes a label such as "the plain white studio ground", built the same way as any other label.
+- Nothing beyond the ground itself is described: no cyclorama, no wall, no floor line, and no room that cannot be seen.
+- The figure standing on a blank ground and the shadow it casts are both left out, and a shadow is light, so it belongs in [[ATMOSPHERE]].
+- A SUBJECT line may precede the ROLE line, naming which place in the image is the one to describe.
+- The SUBJECT entry is matched generously, on the single most distinctive attribute it names rather than on the whole of its wording.
+- A match on the kind of place, on a named surface or fixture, on indoors versus outdoors, or on position relative to the camera is a match.
+- Lesser mismatches in the rest of the SUBJECT wording are ignored rather than treated as a failure to match.
+- "The kitchen" matches any room with a hob and counters; "the street outside" matches whatever is visible through the window.
+- With no SUBJECT line at all, the place the camera is standing in is the one described.
+- Where a SUBJECT line names a place the image does not show, describe the place the camera stands in anyway and say nothing about the mismatch.
+- Only what is visible in this image is described, and only in this image.
+- The worked examples are unrelated scenes; their surfaces, fixtures, colours, and wording are never carried into a record.
+- Small factual detail is welcome in this record. Invention is not welcome anywhere in it.
+- Where something is uncertain, "not visible" is written rather than a guess at what is probably there.
+- An occluded, cropped, blurred, or unreadably dark region is recorded as "not visible", because silence reads downstream as absence.
+- Counts such as "three tall sash windows" or "two rows of pews" are durable and welcome in this record.
+- Invented measurements are not welcome: no height, no width, no distance, and no floor area is ever written.
+- No real city, country, landmark, building, brand, franchise, or artist is named anywhere in this record.
+- No text, sign, title, watermark, signature, or logo shown in the image is repeated in this record.
+- A sign on a roof is recorded by its shape and its colour, as "a projecting rooftop sign panel", and never by the words printed on it.
+- Printed packaging is recorded by colour and shape alone, as "an orange cardboard carton", rather than by the product name printed on it.
+- No person and no animal is described here; people are an entirely separate pass with its own record.
+- A room full of seated people is still just a room with rows of seats in it.
+- Shot size, camera height, camera angle, and depth of field are all outside this record.
+- "Screen-left", "foreground", and "background" have no place in this record.
+- The rendering style is never named: "anime", "2D-animated", "pixel art", "photographic", "3D CG", and "illustrated" all belong to another pass.
+- Actions, events, and movement are not recorded. Nothing happens in this record; a place simply is.
+- ROLE: setting means the image is an environment reference, and one place's durable character is what gets written.
+- A parenthetical on the ROLE line is a hint about what matters most, and every field is still filled regardless of it.
+
+### SHORT ###
+- Every field is written exactly once.
+- One place, one record.
+- [[SETTING_KIND]] is a single word.
+- [[DEFINITION]] ends without a full stop.
+- [[ATMOSPHERE]] holds whatever passes.
+- The reply is written in English.
+- No preamble precedes the first field.
+- No markdown fence appears anywhere.
+- No person is described here.
+- Invention is not welcome.
+- Counts are durable and welcome.
+- No brand or franchise is named.
+- Nothing happens in this record.
+- The rendering style is another pass.
+- "Not visible" beats a guess.
+- Loose clutter is left out.
+- No measurement is ever written.
+- The examples are unrelated scenes.
+- The angle brackets are reserved.
+- Camera framing is not recorded.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.

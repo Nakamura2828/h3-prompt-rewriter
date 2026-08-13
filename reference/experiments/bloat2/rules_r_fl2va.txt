@@ -1,0 +1,115 @@
+# R POOL -- RESTATED rules for prompts/fl2va.txt
+#
+# Side experiment: .claude/handoffs/SIDE_HANDOFF_bloat_calibration2.md
+# One rule per line. Blank lines and lines starting with '#' are ignored by pad2.py.
+#
+# Same design constraints as rules_r_setting.txt: every line is a near-verbatim paraphrase of a
+# rule fl2va.txt ALREADY CONTAINS, adding rule-shaped live tokens and ZERO new constraints.
+# Paraphrase rather than literal copy, so the arm cannot be made accidentally inert by trivial
+# compressibility or by repeat_penalty 1.05. Every line is reproduced in REPORT.md beside the
+# clause it paraphrases, so meaning-drift is checkable rather than asserted.
+
+### HEADER ###
+ADDITIONAL RULES
+- The rules in this section apply to every prompt you write, in addition to everything above.
+
+### POOL ###
+- Only the three named fields are output, carrying those exact labels, in that exact order and no other.
+- The three field labels are copied character for character, and are never altered, shortened, or abbreviated.
+- No alignment line, reference line, or "aligns with" line is written; the reply opens directly with the first label.
+- No closing sentence is written stating that the subject settles into, arrives at, or otherwise lands on the final pose, position, or framing of the last frame.
+- The reply ends on the last real action or gesture, because a fixed landing line is appended after your output separately.
+- Exactly one output is produced for the user's input, and each of the three fields appears exactly once in it.
+- After the non_diegetic_music line the reply stops immediately: nothing is added, no field is repeated, and no further turn is begun.
+- There is no preamble, no explanation, no markdown fence, and no extra field anywhere in the reply.
+- Everything is written in English, apart from words preserved verbatim from the user.
+- Inside the dialogue tags and inside on-screen-text quotes, the user's own words, spelling, and language are preserved exactly as given.
+- The image you can see is the EXACT first frame of the video, at zero seconds.
+- The last frame cannot be seen at all, and is known only through what [[DELTA]] reports about it.
+- [[FIRST_FRAME]] is a structured description of the frame you can see, used together with the image to establish the opening state.
+- [[DELTA]] is the authoritative record of what the two images show, and is treated as fact about appearance, position, and state.
+- USER is authoritative about what HAPPENS and about WHY it happens.
+- An action the user describes is written even where [[DELTA]] does not list it, because the describing pass may simply have missed it.
+- A user's action is dropped only where [[DELTA]] directly contradicts it, and never merely because [[DELTA]] is silent.
+- Where the user names an object and [[DELTA]] names it differently, the user's name for it is the one that gets written.
+- A change that neither [[DELTA]] nor the user supplies is never invented.
+- [[CAMERA]] states the camera move, already worked out for you, as one of PUSH IN, PULL OUT, or NO ZOOM.
+- [[LIGHTING_FIRST]] and [[LIGHTING_LAST]] give the lighting at each end of the shot.
+- All speech, all singing, and all sound comes from the user's own description, because the images themselves are silent.
+- Phrases that explain the scene's history to the reader are never written: "from the start", "already present", "still there", "unchanged", "as before", "throughout".
+- A held object is simply held: write that she holds a teddy bear against her chest, not that one is held there from the start.
+- Double-bracket tokens never appear in your output, and neither do the field names FIRST_FRAME, DELTA, CHANGES, NEW, GONE, UNCHANGED, POSE, GAZE, HOLDING, FRAMING, or LIGHTING.
+- Your output never refers to "the delta", "the description", or "the report"; it is the finished video prompt and nothing else.
+- [[CHANGES]] lists what genuinely moves or changes, and each item is written as visible motion or a state change during the shot.
+- A [[NEW]] item tagged as entering the shot genuinely arrives, and that arrival is written.
+- A [[NEW]] item tagged as present but unmentioned was there the whole time, and is never written as appearing, arriving, being picked up, or being brought in.
+- A [[GONE]] item tagged as leaving the shot genuinely departs, and that departure is written.
+- A [[GONE]] item tagged as occluded or out of frame is still there and merely hidden, and is never written as removed, set down, put away, taken, or lowered out of sight.
+- A merely hidden object is never disposed of by the character; the character's own movement may carry it out of view instead.
+- [[UNCHANGED]] names what holds still, and nothing listed there is animated in any way.
+- "none" is a valid value for any of those fields, and where it appears it is simply ignored.
+- [[CAMERA]] has already been worked out by comparing both frames, so it is followed rather than re-judged from the image, and it is never reversed.
+- PUSH IN is written as the camera pushing in across the shot, and PULL OUT as the camera pulling out.
+- NO ZOOM means a static shot, or a small reframing only where the subject's own movement requires following.
+- Amplitude and speed are added to a camera move only where they are meaningful, and are otherwise left out.
+- Where the user's description explicitly asks for different camera work, the user is the one who is followed.
+- [[LIGHTING_FIRST]] and [[LIGHTING_LAST]] are the only authority on lighting anywhere in this task.
+- [[DELTA]] cannot see the first frame and says nothing about lighting, so its silence is never read as evidence that the lighting held steady.
+- A lighting change is written only where the SOURCE, the DIRECTION, or the STATE differs between the two lighting lines.
+- Where the two lighting lines differ and the user describes a cause, the cause is written as the event and the lighting change as its result.
+- Lighting differences that are only a matter of wording are not changes at all.
+- A real lighting change is written as a visible event in the shot, and is given a cause wherever [[CHANGES]] supplies one.
+- The recommended arc is the first-frame state, then the onset of change, then continuous development, then the settle onto the last frame.
+- The first shot opens with the visual style and the first-frame composition, briefly, without restating the whole of the frame you can see.
+- The middle of the description is the motion path: how the subject moves, how poses change, how objects are handled, how composition and lighting evolve.
+- Two static frame descriptions joined together is not what is wanted; what is wanted is the movement between them.
+- The user's dialogue lines and actions are kept in the ORDER the user gives them, and are never reordered to match when a character first appears.
+- Each quoted line is attributed to exactly the character who says it in the user's description, and one character's line is never given to another.
+- Speaker IDs follow the order in which voices are FIRST HEARD, which may differ from the order in which characters first appear on screen.
+- Where the user states a duration in seconds, the pacing of the whole description is scaled to it.
+- A single first shot with no timestamp is used unless the user explicitly asks for cuts, so the model can interpolate continuously between the frames.
+- Where cuts are requested, each later shot begins with a timestamp in minutes, seconds, and milliseconds, strictly increasing and inside the stated duration.
+- Every cut starts a new numbered shot, and a cut phrase is never written inside an existing shot.
+- A cut is used only to introduce a new subject, a new space, a new state, a new viewpoint, or a new time; a small change of distance or angle is camera motion instead.
+- The visual style and the initial composition of the first shot both come from the frame you can see.
+- Camera motion is written as natural English inside the action rather than as a separate technical note.
+- Each voice is given a stable identifier, and keeps that identifier across every shot; characters who never speak are given none.
+- Voices speaking together take ONE compound identifier covering all of them, attached immediately before the verb.
+- A line spoken, shouted, or chanted in unison is still a spoken line, and a group line is never described without an identifier.
+- When a speaker first appears, the voice identity is described OUTSIDE the dialogue tag: type, age, gender, on or off screen, pitch, timbre, rate, and accent.
+- Only the spoken words themselves go inside the dialogue tag, verbatim, with no translation, rewriting, or change of person or tense.
+- A voiceover uses the exact required phrase, and immediately afterwards it is stated that the on-screen character's lips remain closed.
+- Every spoken line is kept whole inside ONE shot, and a dialogue block is never split across a cut and never left empty.
+- Where a line begins in one shot and finishes after a cut, the entire line goes in the first shot's dialogue block and the audio is noted as carrying over the cut.
+- On-screen text such as a sign, a banner, or a subtitle is put in double quotes, verbatim and untranslated.
+- The soundscape field is one to four English sentences in a single paragraph, covering ambient sound, physical action sounds, and non-verbal human sounds.
+- Dialogue, singing, and diegetic music are never repeated in the soundscape field.
+- The music field is one to three English sentences describing only the background score that the audience alone hears.
+- The music field states instrumentation, tempo, rhythm, and dynamics, and states nothing else.
+- Mood and emotion words are not used in the music field, and the music's effect on the viewer is never explained there.
+- Music that a character can hear, from a radio, a phone, or a live instrument, is diegetic and belongs in the description field instead.
+
+### SHORT ###
+- Exactly three fields, once each.
+- The three labels are copied exactly.
+- The reply opens with the first label.
+- No preamble and no markdown fence.
+- The user is authoritative about what happens.
+- The images are silent.
+- Nothing in [[UNCHANGED]] is animated.
+- [[CAMERA]] is followed, never re-judged.
+- Wording differences are not lighting changes.
+- Dialogue order follows the user.
+- Every cut starts a new shot.
+- A silent character gets no identifier.
+- Spoken words go inside the tag, verbatim.
+- On-screen text is quoted verbatim.
+- The music field takes no mood words.
+- Diegetic music belongs in the description.
+- "none" is ignored wherever it appears.
+- A held object is simply held.
+- Nothing is invented that neither input supplies.
+- The last frame cannot be seen.
+
+### FOOTER ###
+- Apply every rule in this section together with all of the rules above it.
