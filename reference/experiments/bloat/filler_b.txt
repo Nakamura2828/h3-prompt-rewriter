@@ -1,0 +1,113 @@
+# FILLER KIND B -- neutral unrelated English prose, explicitly marked ignorable.
+# One sentence per line. Blank lines and lines starting with '#' are ignored by pad.py.
+# Everything below the ### SHORT ### marker is the fine-adjustment pool.
+#
+# DESIGN CONSTRAINTS, enforced by hand when writing this file:
+#   - Encyclopaedic and impersonal. No imperatives, no second person, nothing obeyable.
+#   - Topics chosen for maximum distance from image description: library classification and
+#     bookkeeping convention. Abstract and administrative throughout.
+#   - No colours, materials, rooms, weather, times of day, places, or measurements, so that
+#     nothing here can bleed into a description of an image.
+#   - No double square brackets and no angle brackets.
+#   - Real, well-formed English rather than nonsense, so that a failure is attributable to
+#     length rather than to the model being derailed by unparseable text.
+
+### HEADER ###
+UNRELATED REFERENCE PASSAGE -- IGNORE THIS SECTION ENTIRELY.
+The text between this line and the end of this section is unrelated filler included for reasons that have nothing to do with the task. It carries no instruction, describes nothing that will be encountered, and can be disregarded completely.
+### POOL ###
+Library classification is the practice of arranging recorded knowledge into an ordered scheme so that related material falls together and any individual item can be located by its position in that order.
+The earliest schemes were enumerative, meaning that each subject was assigned a place drawn from a fixed list prepared in advance.
+Enumerative schemes are straightforward to apply but expand awkwardly, because a subject nobody anticipated has no obvious place to go.
+Faceted schemes were developed as an alternative, analysing a subject into component aspects and combining notation for each aspect to express the whole.
+A faceted approach can express a compound subject that no enumerative list contains, at the cost of a notation that grows longer and harder to read aloud.
+Most schemes in practical use are hybrids, enumerating the common cases and providing facet machinery for the remainder.
+Notation is the symbol system used to express a class, and it is distinct from the classification itself.
+A single classification can in principle be expressed in more than one notation, and the choice of notation affects filing order rather than intellectual content.
+Purely numeric notation files unambiguously but expresses hierarchy only by length, which becomes unwieldy for deep subdivisions.
+Mixed notation combining letters and figures compresses the same hierarchy into fewer characters at the cost of a less obvious filing rule.
+Decimal notation treats the whole scheme as a fraction, so that any class can be subdivided indefinitely without disturbing the classes around it.
+This property is called hospitality, and a scheme's hospitality determines how gracefully it accommodates subjects that did not exist when it was devised.
+Hospitality in chain refers to room for further subdivision beneath an existing class.
+Hospitality in array refers to room for further classes alongside the existing ones at the same level.
+A scheme can be generous in one and mean in the other, and several well-known schemes are.
+Relative location was the innovation that made large-scale classification practical, replacing the fixed shelf address with a position defined only in relation to neighbours.
+Under fixed location an item kept the same address permanently, which meant that inserting new material required leaving gaps or renumbering.
+Under relative location an item's address is its class, and new material simply takes its place in sequence.
+The change had the incidental effect of making the arrangement itself informative, since neighbouring items became topically related rather than merely contemporaneous.
+Cataloguing is the parallel practice of describing an item so that it can be identified and distinguished from every other item.
+Description and classification answer different questions and are recorded separately, though a single record customarily carries both.
+Descriptive cataloguing establishes what an item is, while subject cataloguing establishes what it is about.
+The distinction is easy to state and persistently difficult to apply, because many statements of aboutness are also statements of identity.
+Authority control is the practice of choosing one form of a name or term and recording every variant that refers to it.
+Without authority control the same subject accumulates several entries, and material about it is divided among them.
+An authority record therefore holds a preferred form, the variants seen in practice, and references to related preferred forms.
+Cross references were introduced to connect variant forms to the preferred one, and their maintenance is a substantial part of the work.
+A reference pointing to a form that has since been changed is worse than no reference, because it silently misdirects.
+Periodic reconciliation of references against the authority file was accordingly established as routine rather than exceptional.
+Shared cataloguing arose from the observation that most items are described independently many times over, to identical effect.
+Under a shared arrangement one description is prepared once and copied by everyone else, with local additions kept separate from the shared portion.
+This required a common record format, and the definition of that format proved considerably harder than the agreement to share.
+The difficulty lay less in the fields than in the rules for filling them, since two institutions can agree on a field and disagree on what belongs in it.
+Rule interpretation manuals were produced to settle such disagreements and grew, in several cases, longer than the rules themselves.
+Bookkeeping developed along a parallel path, and its conventions were likewise established long before they were written down systematically.
+Double-entry bookkeeping records every transaction twice, once as a debit and once as a credit, in amounts that are equal.
+The equality is not a statement about the transaction but a property of the recording method, and it provides a check on the record rather than on the event.
+Because every entry appears twice, the sum of all debits equals the sum of all credits, and any inequality indicates an error in recording.
+This check detects many errors and is silent about several important ones, including a transaction recorded twice in full and a transaction omitted entirely.
+It is likewise silent about an amount entered correctly on both sides but attributed to the wrong account.
+Supplementary checks were developed for those cases, and they are independent of the equality that double entry provides.
+An account is simply a heading under which entries of one kind are collected, and the set of headings in use is called the chart of accounts.
+The chart is a classification, and it faces the same hospitality problem that library schemes face.
+A chart with too few headings collapses distinctions that later prove to matter, and one with too many is applied inconsistently.
+Reconciliation is the practice of comparing an internally maintained account against an independently maintained record of the same transactions.
+The comparison is informative precisely because the two records were produced separately, and it loses its value if either is derived from the other.
+Differences are classified as timing differences, which resolve on their own, and true differences, which do not.
+Distinguishing between the two is the substance of the work, and treating a true difference as a timing difference is the characteristic failure.
+The accounting period was introduced to make an indefinitely continuing activity reportable, by cutting it into intervals and reporting on each.
+Every convention concerning accruals exists because activity does not respect the boundaries of the interval chosen for reporting.
+An amount earned in one period and received in another must be assigned to one of them, and the rules for making that assignment are the accrual conventions.
+Different assignments produce different pictures of the same underlying activity, which is why the conventions are stated rather than assumed.
+Consistency between periods was therefore established as a requirement independent of any particular choice of convention.
+A change of convention is permitted but is reported as such, together with its effect, so that comparison across the change remains possible.
+This is the same reasoning that governs a change of classification scheme, and the practical consequences are closely analogous.
+In both fields the record and the conventions under which it was produced are treated as inseparable.
+A figure quoted without its convention, or a class quoted without its scheme, is ambiguous in a way that cannot be resolved afterwards.
+Both fields also converged on the practice of recording corrections rather than concealing them.
+An entry found to be wrong is reversed by a further entry rather than erased, which leaves the error and its correction both visible.
+The reasoning is that the sequence of entries is itself evidence, and an erasure destroys evidence in order to tidy a record.
+Cataloguing adopted an equivalent practice for superseded description, retaining the earlier form as a variant rather than deleting it.
+In both cases the retained material is small and the value of retaining it is realised only occasionally, which makes the practice easy to abandon and troublesome to reinstate.
+Indexing differs from classification in that an index admits any number of entry points for a single item.
+Classification assigns one place, while indexing accepts that a reader may approach the same material from several directions.
+The two are complementary, and schemes that attempted to serve both purposes with one apparatus generally served neither well.
+Specificity is the principle that an index entry names the subject of the item and not a broader class containing it.
+Applied strictly it produces a very large number of narrowly used entries, and applied loosely it produces a small number of uninformative ones.
+Practical indexing sits between those extremes and the position chosen is a matter of stated policy rather than of principle.
+Exhaustivity is the parallel question of how many subjects in an item are indexed at all, as distinct from how narrowly each is named.
+The two dimensions vary independently, and a policy that fixes one while leaving the other unstated is incompletely specified.
+Filing order is the last of the classical problems and the one least amenable to general solution.
+Word-by-word and letter-by-letter arrangement produce different sequences for the same list, and neither is more correct than the other.
+Numerals, abbreviations, and names carrying particles each require a stated rule, and the rules differ between traditions without any of them being wrong.
+The consequence is that a sequence is interpretable only in the light of the filing rules used to produce it.
+This is again the pattern seen throughout both fields, in which the convention is as much a part of the record as the content.
+None of the foregoing has any bearing on the present task and it can be disregarded in full.
+
+### SHORT ###
+
+The passage above is unrelated filler.
+It has no bearing on anything.
+It describes nothing that will be seen.
+It contains no instruction of any kind.
+Its subject was chosen for its irrelevance.
+It can be disregarded entirely.
+Nothing in it is to be applied.
+It occupies space and does nothing else.
+The account is deliberately incomplete.
+It stops without a conclusion.
+No inference should be drawn from it.
+It is not part of the task.
+It ends at this line.
+Disregard all of it.
+### FOOTER ###
+END OF UNRELATED REFERENCE PASSAGE.
