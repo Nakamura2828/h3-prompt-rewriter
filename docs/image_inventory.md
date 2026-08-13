@@ -649,197 +649,252 @@ written — the corpus now holds the image to revisit it with if a round shows t
 
 ---
 
+## Age vocabulary — the `age` column
+
+Added session 19. Until then age lived as free prose in `people` and **nothing checked it**,
+which is how the eleven-file mathilda set ended up with a bracket on exactly one member
+(`window`) that disagreed with the other ten. `[[MEDIUM]]`, `[[IDIOM]]` and `[[TREATMENT]]` are
+closed vocabularies `inventory.py` enforces; age now is too.
+
+### The tokens
+
+The nine brackets, spelled **exactly** as `prompts/describer_character.txt` spells them —
+`infant`, `toddler`, `child`, `pre-teen`, `teenager`, `young adult`, `adult`, `middle-aged`,
+`older adult` — plus three non-bracket tokens:
+
+| token | means |
+|---|---|
+| `n/d` | a **human** figure is present but the depiction does not determine an age — a 20px face in a wide shot (`forest_autumn`, `p5_first`), a figure turned away (`room_anime`), a body part only (`boondocks`'s partly-visible adult) |
+| `n/a` | figures are present but **none is human**: animals (`pooh`, `bird_vector`), and humanoids that carry no human age at all (`gumby`'s clay slab, `lego1`, `skellington`, `woody_cg`) |
+| `crowd` | an un-individuated mass. Recorded **alongside** any bracket that is legible: `stage` is `young adult, crowd`, `ghibli_street` is `child, adult, crowd` |
+| `—` | no figure of any kind |
+
+**`—` and `n/a` are not interchangeable.** `—` says the frame is empty of figures; `n/a` says it
+holds figures the age axis does not reach. Collapse them and `pooh` becomes indistinguishable
+from `cannon`.
+
+### Four rules that keep it honest
+
+1. **The vocabulary is IMPORTED, not copied.** `inventory.py` does `from validate import
+   AGE_PERSON`, which is the same list `validate.py` enforces on describer output, which is the
+   list the prompt states. Change the prompt's brackets and the answer key follows automatically
+   — no hand-sync of the kind the `VOCAB` ↔ `MEDIUM_VOCAB` note still warns about.
+2. **It is a multiset, not an ordered list.** The cell claims *these brackets appear*, not which
+   figure is which. Order-matching two free-text columns is unenforceable, and the per-subject
+   claim a character test needs gets built from a `SUBJECT` line instead.
+3. **`age` and `people` must agree about whether a figure is present**, in both directions. This
+   is the check that would have caught the mathilda set.
+4. **Age is a judgement about the DEPICTION, not the person.** `saber_reference_photo` is
+   `young adult`; `saber_reference_anime`, drawn from it, is `teenager`. Both are correct, and
+   the saber triplet is **not** an age-consistency set.
+
+### Deliberate exclusions
+
+**Animals get no bracket.** `describer_character` gives them a different four-term list
+(`young`/`adult`/`old`/`not visible`) whose `adult` would collide with the human bracket inside
+the same cell. `people` already records them; the age axis stays human-only.
+
+### The boundary cases already ruled
+
+- **The five-file Léon set** (`p1_first`, `p1_last`, `p4_first`, `p4_last`, `door_last`) is one
+  man, recorded `adult`. He is **canonically 45–46**, i.e. a hair over the 44/45 line, and reads
+  mid-40s. `adult` was chosen as the better default; it is a boundary call, not a confident one,
+  and re-opening it costs five rows at once — the mathilda failure shape exactly.
+- **`kiki`** is `pre-teen` and uncertain; the round face reads younger than the canonical 13.
+- **`p5_first`/`p5_last`** are `n/d`. Same source film as the Léon set, but the figure is a
+  different, distant man whose face is ~20px.
+
 ## Master table — classification
 
-| image | medium | sub | idiom | treatment | detail | int/ext | people | sets | added | flags |
-|---|---|---|---|---|---|---|---|---|---|---|
-| `annie1` | drawing | ink | anime | colour | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | annie | s7a | text, franchise, corr |
-| `annie2` | photograph | none | realist | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | annie | s7a | franchise, nested |
-| `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | annie | s7a-crop | franchise, derived |
-| `annie3` | comic | digital | western toon | colour | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | annie | s7a | text, franchise, corr |
-| `annie3_panel1` | comic | digital | western toon | colour | leftmost panel | ext | 1 girl + 2 costumed heroes | annie | s7a-crop | text, franchise, derived |
-| `april_1987` | 2D cel | none | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young-adult woman + 1 humanoid turtle | april | s15 | franchise |
-| `april_1987_figure` | stop-motion | figure | dimensional toon | colour | **a photograph of moulded plastic figures on a shelf**, not an animation frame — classified by the objects, see tie-break 1 | int | 5 figures (1 woman, 4 humanoid turtles) + 1 rat figure behind | april | s15 | text, franchise |
-| `april_comic` | drawing | marker | western toon | colour | original marker art on a blank sketch cover, photographed — **classified by the art, not the capture**, see tie-break 2 | none | 1 young-adult woman | april | s15 | text, franchise |
-| `april_fanart` | drawing | marker | realist | colour | **a composite**: a marker drawing of the figure laid over a separately-sourced manhole cover, on a digital white ground — classified by the figure, which is the subject. Corrected s15, see corrections | none | 1 young-adult woman | april | s15 | franchise |
-| `avatar_1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional**, see the convergence note | ext | 2 children | avatar, anime-toon | s15 | franchise |
-| `avatar_2` | 2D cel | none | western toon | colour | as `avatar_1`; night camp. A foreground pole crosses the lower frame | ext | 5 children and teenagers | avatar, anime-toon | s15 | franchise |
-| `ayanami_oil` | painting | digital | anime | colour | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | oil-idiom | s7b | franchise |
-| `azumanga_anime` | 2D cel | none | anime | colour | flat cel, thick outline, sticker border; **naturalistic head-to-body ratio, large irises with a specular glint, iris distinct from pupil** | none | 3 schoolgirls, **two shared with `azumanga_toon`** | azumanga | s7a | franchise, corr |
-| `azumanga_toon` | 2D cel | none | western toon | colour | flat toon over textured paint; **heavily disproportionate bodies -- noodle limbs, oversized heads, hands and feet -- small flat black pupils with no iris, and a stylised non-realistic background** | ext | 3 schoolgirls, **two shared with `azumanga_anime`; the third differs** | azumanga | s7a | franchise, corr |
-| `baby_middle_aged` | photograph | none | realist | colour | — | int | 1 middle-aged man + 1 infant | age-family | s15 | — |
-| `backyard_anime` | 2D cel | none | anime | colour | cel-era TV BG, 4:3, VHS-grade; hard-edged boulders over airbrushed lawn, day | ext | none | garden-daynight | s18 | — |
-| `beauty_beast` | 2D cel | none | western toon | colour | **2D theatrical feature** — deliberately not distinguished from TV cel | ext | 1 young-adult woman + 1 beast | feature-2d | s15 | text, franchise |
-| `bird_vector` | vector | none | flat graphic | colour | — | none | none (1 bird) | bird | s7a | — |
-| `bird_watercolor` | painting | watercolour | realist | colour | on textured paper | none | none (1 bird) | bird | s7a | — |
-| `blonde_reference_painterly` | painting | digital | realist | colour | flat hard-edged shapes, limited palette, brush grain in hair and cloth | int | 1 young-adult woman | blonde-ref | s18 | — |
-| `blonde_reference_photo` | photograph | none | realist | colour | **the source**; studio fashion shot on a pale green sweep | int | 1 young-adult woman | blonde-ref | s18 | text, real |
-| `boo_toddler` | 3D CG | none | dimensional toon | colour | feature CG; oversized head and eyes on a real-material body | int | 1 toddler girl | age-bracket | s18 | franchise |
-| `bookshop` | photograph | none | realist | colour | — | **ext (int visible)** | 1 adult man | setting-boundary | s6 | — |
-| `boondocks` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 2 children + 1 partly visible adult | anime-toon | s15 | franchise |
-| `cannon` | photograph | none | realist | colour | — | ext | none | — | s7a | — |
-| `captain` | photograph | none | realist | colour | — | ext | 1 adult man | — | s6 | — |
-| `car_1` | photograph | none | realist | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | car-angle | s7b | text, amb |
-| `car_2` | photograph | none | realist | colour | as `car_1` | none | none | car-angle | s7b | text, amb |
-| `car_interior_mecha_driver` | 2D cel | none | anime | colour | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | car-interior | s7a | text, franchise |
-| `car_interior_photo` | photograph | none | realist | colour | press/product shot | **int (vehicle)** | none | car-interior | s7a | text |
-| `car_interior_sketch` | drawing | digital | anime | colour | digital, construction lines visible | **int (vehicle)** | 2 young women | car-interior | s7a | — |
-| `car_interior_toon` | 2D cel | none | western toon | colour | night, driver's seat | **int (vehicle)** | 1 adult woman | car-interior | s15 | franchise |
-| `castle` | photograph | none | realist | colour | — | ext | 1 young-adult woman | — | s6 | — |
-| `chair` | photograph | none | realist | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | s7a | amb |
-| `chips_hotdog_dr_pepper_painting` | painting | oil | realist | colour | traditional, alla prima | int-ish | none | — | s7a | text |
-| `city_day` | photograph | none | realist | colour | — | ext | none | city-daynight | s6 | text |
-| `city_night` | photograph | none | realist | colour | blue hour | ext | none | city-daynight | s6 | text |
-| `classroom1` | photograph | none | realist | colour | — | int | 5 children | classroom | s6 | — |
-| `classroom2` | photograph | none | realist | colour | — | int | 6+ children | classroom | s6 | — |
-| `classroom_anime_empty` | 2D cel | none | anime | colour | cel BG, outlined desks; low sun through the left windows | int | none | classroom | s18 | text |
-| `cleo_slingshot` | 2D cel | none | western toon | colour | modern flat digital toon; **darker skin tones** | ext | 1 pre-teen girl + 1 pre-teen boy | — | s18 | franchise |
-| `cloud` | painting | digital | anime | colour | painterly, deckle border | ext | none | — | s6 | text |
-| `comic` | comic | ink | anime | colour | 5 panels | int | 6+ children, 1 adult teacher, 1 costumed figure | comic-page | s7a | text |
-| `comic_panel2` | comic | ink | anime | colour | top-right panel, 335x429 | int | 1 girl (close-up) | comic-page | s7a-crop | text, derived |
-| `comic_panel3` | comic | ink | anime | colour | middle panel, 1161x460 | int | 2 adults | comic-page | s7a-crop | text, derived |
-| `comic_panel4` | comic | ink | anime | colour | bottom panel, 1249x904 | int | 6+ children | comic-page, classroom | s7a-crop | derived |
-| `coraline1` | stop-motion | figure | dimensional toon | colour | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | coraline | s7a | franchise, corr |
-| `coraline2` | stop-motion | figure | dimensional toon | colour | film still | int | 2 puppets (girl + adult woman, button eyes) | coraline | s7a | text, franchise |
-| `couple_middle_aged` | photograph | none | realist | colour | bright high-key stock photography, blown-out window behind | int | 1 middle-aged man + 1 middle-aged woman | age-bracket | s18 | real |
-| `destroyer_drawing` | print | halftone | realist | monochrome | halftone recognition plate, line and wash | none | none | destroyer | s7a | text |
-| `destroyer_photo` | photograph | none | realist | monochrome | — | ext | a few tiny indistinct crew | destroyer | s7a | text |
-| `door_first` | live-action film | none | realist | colour | **first frame** — door shut, corridor empty | int | **none** | door, first-last | s8 | text |
-| `door_last` | live-action film | none | realist | colour | **last frame** — same door open, room and man revealed | int | 1 adult man | door, first-last | s8 | text |
-| `fern_gully` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 6+ | feature-2d | s15 | franchise |
-| `fish_pixel` | pixel art | none | realist | colour | flat sprite | none | none | — | s7a | — |
-| `forest_autumn` | photograph | none | realist | colour | — | ext | **1 tiny distant figure** | — | s6 | — |
-| `forest_day` | vector | none | flat graphic | colour | upper panel, 947x739 | ext | none | forest-daynight | s7b-crop | derived |
-| `forest_day_night` | vector | none | flat graphic | colour | **composite**, 2 stacked panels | ext | none | forest-daynight | s7b | — |
-| `forest_night` | vector | none | flat graphic | colour | lower panel, 947x738 | ext | none | forest-daynight | s7b-crop | derived |
-| `fruit_reference_photo` | photograph | none | realist | colour | **the source**; a studio still life, raking light, no person | int | none | fruit-ref | s18 | — |
-| `fruit_reference_sketch` | drawing | pencil | realist | monochrome | **graphite study of the same arrangement**, full tonal rendering | none | none | fruit-ref | s18 | — |
-| `fruitbowl` | 3D CG | none | realist | colour | synthetic still life | int | none | — | s7a | text |
-| `fuji` | photograph | none | realist | colour | — | ext | none | — | s6 | real |
-| `garden_pond_anime` | 2D cel | none | anime | colour | **the same garden as `backyard_anime`, at night and from another viewpoint**; the stone lantern now right-foreground and lit | ext | none | garden-daynight | s18 | — |
-| `ghibli_grass` | 2D cel | none | anime | colour | painted BG plate, no line work — takes the figureless-plate accept-set | ext | none | — | s18 | — |
-| `ghibli_kitchen` | 2D cel | none | anime | colour | painted BG, light contour only — takes the figureless-plate accept-set | int | none | — | s18 | — |
-| `ghibli_painting_reference_anime` | 2D cel | none | anime | colour | gouache BG plate, no line work; **STRICT — exempt from the accept-set**, it is the source half of the pair | ext | none | ghibli-ref | s18 | — |
-| `ghibli_painting_reference_painterly` | painting | digital | realist | colour | a digital painterly study made **from** the plate opposite — same rock, hillside and cloud bank, looser brushwork | ext | none | ghibli-ref | s18 | text |
-| `ghibli_street` | 2D cel | none | anime | colour | **cel figures over a painted street** — strict `2D cel`; period cars, a crowd | ext | ~25 assorted adults and children, none individuated | — | s18 | text, franchise |
-| `girl_painting` | painting | digital | realist | colour | oil-style, soft edges | none | 1 pre-teen girl | girl-painting | s7a | text |
-| `girl_painting_reference` | live-action film | none | realist | colour | film still | int | 1 pre-teen girl | girl-painting | s7a | real |
-| `gordon_1996` | 2D cel | none | western toon | colour | 90s TV cel | **int (vehicle)** | 1 older-adult man | gordon, toon-era | s15 | franchise |
-| `gordon_2004` | 2D cel | none | western toon | colour | digital ink and paint, angular design | ext | 1 middle-aged man | gordon, toon-era | s15 | franchise |
-| `gordon_comic` | comic | digital | realist | colour | single panel | ext | 1 middle-aged man | gordon | s15 | text, franchise |
-| `grass_anime_girl` | 2D cel | none | anime | colour | **the same shot as `grass_anime_scenery` with characters added**; cel figures over that plate — strict, and its partner's control | ext | 1 child + 1 small animal | grass-anime | s18 | — |
-| `grass_anime_scenery` | 2D cel | none | anime | colour | cel-era painted plate, VHS-grade, **no line work** — takes the figureless-plate accept-set | ext | none | grass-anime | s18 | — |
-| `gromit` | stop-motion | clay | dimensional toon | colour | plasticine, thumbprint surfaces; set and vehicle are built models, but character figures are present so `clay` wins | **int (ext visible)** | 1 man + 1 dog, both clay | stopmo-sub | s15 | text, franchise |
-| `gumby` | stop-motion | clay | dimensional toon | colour | classic clay, VHS-grade | int | 3 clay figures — 1 humanoid, 1 **anthropomorphised horse**, 1 in the background | stopmo-sub | s15 | franchise |
-| `gwen` | 2D cel | none | western toon | colour | — | **int (vehicle)** | 2 girls | gwen | s15 | text, franchise |
-| `gwen_cg` | 3D CG | none | dimensional toon | colour | low-resolution render; same character design as `gwen` | int | 1 young woman | gwen | s15 | text, franchise |
-| `hermione_preteen` | live-action film | none | realist | colour | graded film still, warm key, practical candle | int | 1 pre-teen girl | age-bracket | s18 | text, real, franchise |
-| `ivy_toon` | 2D cel | none | western toon | colour | 90s cel animation still | int | 1 young woman, red bob | toon-era | s7b | franchise |
-| `jacket` | photograph | none | realist | colour | — | ext | 1 young-adult woman | jacket | s6 | — |
-| `jacket2` | photograph | none | realist | colour | — | ext | same woman | jacket | s6 | — |
-| `kasia` | 2D cel | none | anime | colour | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | kasia | s6 | corr |
-| `kasia_bag` | photograph | none | realist | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | kasia, bag-angle | s7a | corr |
-| `kasia_bag_2` | photograph | none | realist | colour | as `kasia_bag`, second angle, re-render | none | none | kasia, bag-angle | s7b | corr |
-| `kasia_outfit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
-| `kasia_render` | 3D CG | none | anime | colour | stylised anime character render | none | 1 girl | kasia | s7a | — |
-| `kasia_swimsuit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | kasia | s7a | corr |
-| `kasia_swimsuit_render` | 3D CG | none | anime | colour | AI render, anime idiom | ext | 1 girl (same character) | kasia | s7b | — |
-| `kasia_swimsuit_worn` | 2D cel | none | anime | colour | the original commission | none | 1 girl (same character) | kasia | s7b | text |
-| `kaypro_ii` | photograph | none | realist | colour | — | none | none | — | s7a | text |
-| `kiki` | drawing | digital | anime | colour | a signed digital illustration, **not an animation still** — soft airbrushed shading, gradient blush, tapered stroke-weight in the hair. Corrected s16, see corrections | none | 1 girl + 1 black cat | — | s6 | franchise, corr |
-| `laika` | stop-motion | figure | dimensional toon | colour | feature stop-motion; resin faces, **real knitted and woven fabric**, visible hair fibre — the term's most typical sample | int | 1 pre-teen boy + 4 figures behind | stopmo-sub | s18 | franchise |
-| `lego1` | stop-motion | figure | dimensional toon | colour | **LEGO brickfilm**; moulded ABS, printed faces, a built facade set | ext | 5 minifigures | lego, stopmo-sub | s18 | text, franchise |
-| `lego2` | stop-motion | figure | dimensional toon | colour | LEGO; a single minifigure on a brick-built street, plate studs visible | ext | 1 minifigure | lego, stopmo-sub | s18 | — |
-| `lincoln_money` | print | engraving | realist | monochrome | banknote | none | a portrait *within an object* | lincoln | s7a | text, real |
-| `lincoln_photo` | photograph | none | realist | monochrome | albumen portrait | none | 1 older adult man | lincoln | s7a | real |
-| `maggie_grandpa_cat` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 1 older-adult man + 1 infant + 1 cat | age-family | s15 | text, franchise |
-| `marker` | drawing | marker | anime | colour | — | int | 1 young woman | — | s7b | text |
-| `misato_car_1` | 2D cel | none | anime | colour | cel car over a painted mountain-road BG, head-on, VHS-grade | ext | none | misato-car | s18 | franchise |
-| `misato_car_2` | 2D cel | none | anime | colour | cel car over a painted tunnel-mouth BG, from behind | ext | none | misato-car | s18 | text, franchise |
-| `misato_car_real` | photograph | none | realist | colour | the real car at a classic-car show, flash-lit, high three-quarter front | int | 2 adult men seated behind, background | misato-car | s18 | text, real |
-| `misato_car_technical_print` | print | halftone | realist | colour | **four orthographic views** — side, front, top, rear — airbrushed, on white; classified as `destroyer_drawing` is | none | none | misato-car | s18 | text |
-| `miya` | 2D cel | none | anime | colour | — | ext | 1 teenage girl | — | s6 | text, franchise |
-| `miyu` | pixel art | none | anime | colour | — | none | 1 girl (heavily occluded) + 1 shadow figure | — | s6 | franchise |
-| `molly` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 3 children | — | s15 | franchise |
-| `mountain_rain` | painting | digital | realist | colour | matte-painting style | ext | none | — | s6 | — |
-| `nadia` | 2D cel | none | anime | colour | promotional card with a title overlay | ext | 1 girl + 1 boy + 1 lion cub | — | s15 | text, franchise |
-| `nerv` | 2D cel | none | anime | colour | painted BG, shaded; aerial — no line work, takes the figureless-plate accept-set | ext | none | — | s18 | franchise |
-| `newspaper` | photograph | none | realist | colour | — | int | 1 adult man | — | s6 | — |
-| `p1_first` | live-action film | none | realist | colour | very dim | int | 1 adult man | p1 | s6 | — |
-| `p1_last` | live-action film | none | realist | colour | far brighter and closer | int | 1 adult man | p1 | s6 | — |
-| `p2_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | p2 | s6 | text |
-| `p2_last` | live-action film | none | realist | colour | near-identical light | int | 1 pre-teen girl | p2 | s6 | text |
-| `p3_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | p3 | s6 | text |
-| `p3_last` | live-action film | none | realist | colour | near-identical | int | 1 pre-teen girl | p3 | s6 | text |
-| `p4_first` | live-action film | none | realist | colour | heavy bokeh | ext | 1 pre-teen girl + 1 adult man | p4 | s6 | — |
-| `p4_last` | live-action film | none | realist | colour | same bokeh | ext | 1 pre-teen girl + 1 adult man | p4 | s6 | — |
-| `p5_first` | live-action film | none | realist | vintage Technicolor | night | ext | 1 adult man | p5 | s6 | — |
-| `p5_last` | live-action film | none | realist | vintage Technicolor | tighter, heavy dissolve | ext | 1 adult man (+1 ghosted) | p5 | s6 | — |
-| `p6_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | p6-window | s6 | corr |
-| `p6_last` | live-action film | none | realist | colour | same window, tighter | int | 1 pre-teen girl | p6-window | s6 | corr |
-| `pancakes` | photograph | none | realist | colour | — | int | 1 adult man + 1 child girl | char-drift | s6 | — |
-| `pavilion_anime` | 2D cel | none | anime | colour | cel-era BG; roofed open-sided pavilion over water, soft airbrushed sky | ext | none | — | s18 | — |
-| `peter_griffin_painting` | painting | digital | dimensional toon | colour | flat-cartoon character rendered painterly | none | 1 adult man | peter-griffin | s7a | franchise |
-| `peter_griffin_toon` | 2D cel | none | western toon | colour | modern flat digital | int | 2 adult men | peter-griffin, toon-era | s7b | franchise |
-| `phone` | photograph | none | realist | colour | cut out on pure white | none | 1 adult woman | — | s6 | — |
-| `pjs` | stop-motion | figure | dimensional toon | colour | foam puppets; cast poster with a logo overlay | ext | 11+, including 1 older-adult woman and 3 children | stopmo-sub | s15 | text, franchise |
-| `pocahontas` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 2 adults + 2 animals + 1 bird | feature-2d | s15 | franchise |
-| `pooh` | 2D cel | none | western toon | colour | **figure present, non-human** — a stylised bear at naturalistic proportion, flat fills over a painted wood | ext | 1 bear (stylised, anthropomorphic) | — | s18 | franchise |
-| `pre-teen1` | photograph | none | realist | colour | outdoor available light, shallow focus | ext | 1 pre-teen girl | age-bracket | s18 | real |
-| `ramen_pixel` | pixel art | none | realist | colour | hi-fi, shaded, anti-aliased | none | none | — | s7a | — |
-| `riley_preteen` | 3D CG | none | dimensional toon | colour | feature CG; large eyes, soft caricature, real hair and cloth | ext | 1 pre-teen girl | age-bracket | s18 | franchise |
-| `river_mountain_anime` | 2D cel | none | anime | colour | painterly, visible brush texture, no line work — takes the figureless-plate accept-set | ext | none | — | s18 | — |
-| `roadway_toon` | 2D cel | none | western toon | colour | painted BG, soft-edged, VHS-grade 4:3, no line work — takes the figureless-plate accept-set | ext | none | — | s18 | — |
-| `room_anime` | 2D cel | none | anime | colour | cel BG; cluttered workshop-bedroom, heavy foreground machinery. **NOT figureless** — a small distant figure lies on the bed, facing away; excluded from the figureless evidence set as a confound | int | 1 distant figure (female, facing away, age not determinable) | — | s18 | — |
-| `rudolf` | stop-motion | figure | dimensional toon | colour | flocked and felt over armature, fibre hair — a very different puppet from `coraline*` | ext | 1 elf figure + 1 reindeer | stopmo-sub | s15 | franchise |
-| `rugrats` | 2D cel | none | western toon | colour | flat cel, VHS-grade; **heavily disproportionate** — huge heads, tiny limbs, flat pupils | int | 5 infants/toddlers + 1 adult's legs | age-bracket | s18 | franchise |
-| `saber_reference_anime` | painting | digital | anime | colour | smooth airbrushed rendering of the same pose; DOF background. **Reads a bracket younger than its own source** — see the saber-ref note | int | 1 teenage girl | saber-ref | s18 | text, franchise |
-| `saber_reference_painterly` | painting | digital | realist | colour | loose brushwork, semi-realistic face, background reduced to wash | int | 1 young-adult woman | saber-ref | s18 | franchise |
-| `saber_reference_photo` | photograph | none | realist | colour | **the source**; cosplay shot in a tatami room, soft window light | int | 1 young-adult woman | saber-ref | s18 | text, real, franchise |
-| `sam_jackson_jurassic_middle_aged` | live-action film | none | realist | colour | graded film still, cool key, CRT glow | int | 1 middle-aged man + 1 partial man at right | jurassic | s18 | text, real, franchise |
-| `san_fransisco_day_evening_night` | vector | none | flat graphic | colour | **composite**, 3 stacked panels | ext | none | sanfran-daynight | s7b | — |
-| `sanfran_day` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
-| `sanfran_evening` | vector | none | flat graphic | colour | 1039x487, golden sky | ext | none | sanfran-daynight | s7b-crop | derived |
-| `sanfran_night` | vector | none | flat graphic | colour | 1039x487 | ext | none | sanfran-daynight | s7b-crop | derived |
-| `scooby` | 2D cel | none | western toon | colour | modern flat promotional art; gradient shading on the background only | ext | 4 adults + 1 dog | — | s15 | text, franchise |
-| `shed_day` | photograph | none | realist | colour | overcast daylight | ext | none | shed-daynight | s15 | — |
-| `shed_dusk` | photograph | none | realist | colour | the intermediate state | ext | none | shed-daynight | s15 | — |
-| `shed_night` | photograph | none | realist | colour | **night-mode composite** — foliage far brighter than a true night exposure, but far detail genuinely lost | ext | none | shed-daynight | s15 | — |
-| `shoes_anime` | 2D cel | none | anime | colour | modern cel; ink outlines and hatching over flat fills — an **object** close-up, not a scene | int | none | — | s18 | — |
-| `shrek_cg` | 3D CG | none | dimensional toon | colour | — | ext | 1 green ogre, close-up | — | s7b | franchise |
-| `simpsons_couch_toon` | 2D cel | none | western toon | colour | **entirely flat, unshaded, hard-outlined digital toon** — the figureless scene where `western toon` is the right answer, mirroring the v4c regressions | int | none | — | s18 | text, franchise |
-| `skellington` | stop-motion | figure | dimensional toon | colour | feature stop-motion; matte moulded surfaces, stitched mouth, shallow focus | ext | 2 figures — 1 skeleton, 1 snowman | stopmo-sub | s18 | franchise |
-| `sketch_boat` | drawing | pencil | realist | monochrome | graphite landscape, fine directional hatching, paper left as light | ext | none | sketch | s18 | — |
-| `sketch_man` | drawing | pencil | realist | monochrome | **loose portrait study**; construction lines left on the surface, blunt soft-pencil hatching | none | 1 middle-aged man | sketch | s18 | — |
-| `sketch_woman` | drawing | pencil | realist | monochrome | portrait study, lightly stylised lashes and lip; hatched shoulder | none | 1 young-adult woman | sketch | s18 | — |
-| `sleeping` | photograph | none | realist | colour | — | int | 1 young-adult woman | — | s6 | — |
-| `spongebob_tree_toon` | 2D cel | none | western toon | colour | painted BG w/ dark contours and visible brush texture; strict | ext | none | — | s18 | franchise |
-| `stage` | photograph | none | realist | colour | — | int | 1 woman + ~100 audience | — | s6 | — |
-| `supergirl1` | drawing | marker | western toon | colour | copic-style on board | ext-ish (drawn panel) | 1 young woman | supergirl | s7a | text, franchise |
-| `supergirl2` | drawing | marker | western toon | colour | **marker colour over an un-inked pencil sketch** — the colour medium is the same as `supergirl1`; only the linework differs. **Sub-term contested**, see the axis note under "Medium vocabulary" | none | same character | supergirl | s7a | text, franchise, corr |
-| `teddy_taft` | photograph | none | realist | monochrome | — | ext | 2 adult men | — | s7a | real |
-| `temple_day` | painting | digital | anime | colour | high-key, painterly | ext | 1 young woman | temple | s7a | text |
-| `temple_grounds_anime` | 2D cel | none | anime | colour | **modern digital** anime BG, near-photographic detail, no line work — takes the figureless-plate accept-set | ext | none | — | s18 | — |
-| `temple_night` | painting | digital | anime | colour | low-key, same hand | ext | 1 young man | temple | s7a | text |
-| `third_rock` | photograph | none | realist | colour | **a posed, flat-lit publicity still**, not a frame from the show — tie-break 4 | ext | 5: 1 middle-aged man, 1 middle-aged woman, 1 young-adult man, 1 young-adult woman, 1 teenage boy | age-bracket | s18 | real, franchise |
-| `titans1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 5 | titans, anime-toon | s15 | franchise |
-| `titans_go` | 2D cel | none | western toon | colour | chibi proportions, heavy stylisation | ext | 5 | titans | s15 | franchise |
-| `toddler` | photograph | none | realist | colour | warm domestic available light, shallow focus | int | 1 toddler girl | age-bracket | s18 | real |
-| `town_tower_anime` | 2D cel | none | anime | colour | modern digital, heavy bloom, no line work — takes the figureless-plate accept-set | ext | none | — | s18 | — |
-| `tv` | photograph | none | realist | colour | — | int | 1 older-adult woman | — | s6 | — |
-| `uniform_reference_anime` | painting | digital | anime | colour | semi-realistic anime face, flat-ish brush, same pose and light | ext | 1 teenage girl | uniform-ref | s18 | — |
-| `uniform_reference_painterly` | painting | digital | realist | colour | very loose slabby brushwork, background broken into strokes | ext | 1 teenage girl | uniform-ref | s18 | — |
-| `uniform_reference_photo` | photograph | none | realist | colour | **the source**; backlit late-afternoon sun, shallow depth of field | ext | 1 teenage girl | uniform-ref | s18 | real |
-| `van_pixel` | pixel art | none | anime | colour | PC-98 style, dithered, 16-colour | ext | 1 girl | — | s7a | text |
-| `vector_city` | vector | none | flat graphic | colour | — | ext | none | — | s6 | — |
-| `wayne_knight_jurassic_adult` | live-action film | none | realist | colour | graded film still, low key, banks of CRTs | int | 1 adult man | jurassic, wayne-age | s18 | text, real, franchise |
-| `wayne_knight_older_adult` | photograph | none | realist | colour | flat event/press lighting on a branded backdrop | int | 1 older-adult man | wayne-age | s18 | text, real |
-| `will_preteen` | live-action film | none | realist | colour | graded night still, low key | ext | 1 pre-teen boy | age-bracket | s18 | real, franchise |
-| `window` | live-action film | none | realist | colour | tighter and blown out | int | 1 pre-teen girl | p6-window | s6 | corr |
-| `woman_oil` | painting | oil | realist | colour | **traditional**, photorealist | int | 1 young woman, asleep | oil-idiom | s7b | — |
-| `woman_reference_photo` | photograph | none | realist | colour | **the source**; close portrait, shallow focus, turned over the shoulder | int | 1 young-adult woman | woman-ref | s18 | real |
-| `woman_reference_sketch` | drawing | pencil | realist | monochrome | **graphite study on toned paper**, dense directional hatching; signed | none | 1 young-adult woman | woman-ref | s18 | text |
-| `woody_cg` | 3D CG | none | dimensional toon | colour | early CG | int | 1 male doll/figure | — | s7b | franchise |
+| image | medium | sub | idiom | treatment | detail | int/ext | people | age | sets | added | flags |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `annie1` | drawing | ink | anime | colour | ink and marker, digital | none | **2 distinct characters**: a girl (full figure) + a masked male hero (head and shoulders) | teenager, young adult | annie | s7a | text, franchise, corr |
+| `annie2` | photograph | none | realist | colour | + ink, photographed in a hand | **nested** — int (photo) / none (drawing) | 1 girl (drawn) + 1 hand (real) | young adult, n/d | annie | s7a | franchise, nested |
+| `annie2_cropped` | painting | watercolour | western toon | colour | clean page, hand and hall removed | none | 1 girl (drawn) | young adult | annie | s7a-crop | franchise, derived |
+| `annie3` | comic | digital | western toon | colour | 4 panels | ext | **4 distinct**: 1 girl, 2 costumed heroes (a boy, a woman), 1 man | teenager, young adult, adult | annie | s7a | text, franchise, corr |
+| `annie3_panel1` | comic | digital | western toon | colour | leftmost panel | ext | 1 girl + 2 costumed heroes | teenager, young adult | annie | s7a-crop | text, franchise, derived |
+| `april_1987` | 2D cel | none | western toon | colour | 80s TV cel, VHS-grade | ext | 1 young adult woman + 1 humanoid turtle | young adult | april | s15 | franchise |
+| `april_1987_figure` | stop-motion | figure | dimensional toon | colour | **a photograph of moulded plastic figures on a shelf**, not an animation frame — classified by the objects, see tie-break 1 | int | 5 figures (1 woman, 4 humanoid turtles) + 1 rat figure behind | n/a | april | s15 | text, franchise |
+| `april_comic` | drawing | marker | western toon | colour | original marker art on a blank sketch cover, photographed — **classified by the art, not the capture**, see tie-break 2 | none | 1 young adult woman | young adult | april | s15 | text, franchise |
+| `april_fanart` | drawing | marker | realist | colour | **a composite**: a marker drawing of the figure laid over a separately-sourced manhole cover, on a digital white ground — classified by the figure, which is the subject. Corrected s15, see corrections | none | 1 young adult woman | young adult | april | s15 | franchise |
+| `avatar_1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional**, see the convergence note | ext | 2 children | child | avatar, anime-toon | s15 | franchise |
+| `avatar_2` | 2D cel | none | western toon | colour | as `avatar_1`; night camp. A foreground pole crosses the lower frame | ext | 5 children and teenagers | child, teenager | avatar, anime-toon | s15 | franchise |
+| `ayanami_oil` | painting | digital | anime | colour | **digital**, oil/gouache idiom | int | 1 girl, blue hair, red eyes | teenager | oil-idiom | s7b | franchise |
+| `azumanga_anime` | 2D cel | none | anime | colour | flat cel, thick outline, sticker border; **naturalistic head-to-body ratio, large irises with a specular glint, iris distinct from pupil** | none | 3 schoolgirls, **two shared with `azumanga_toon`** | teenager | azumanga | s7a | franchise, corr |
+| `azumanga_toon` | 2D cel | none | western toon | colour | flat toon over textured paint; **heavily disproportionate bodies -- noodle limbs, oversized heads, hands and feet -- small flat black pupils with no iris, and a stylised non-realistic background** | ext | 3 schoolgirls, **two shared with `azumanga_anime`; the third differs** | teenager | azumanga | s7a | franchise, corr |
+| `baby_middle_aged` | photograph | none | realist | colour | — | int | 1 middle-aged man + 1 infant | infant, middle-aged | age-family | s15 | — |
+| `backyard_anime` | 2D cel | none | anime | colour | cel-era TV BG, 4:3, VHS-grade; hard-edged boulders over airbrushed lawn, day | ext | none | — | garden-daynight | s18 | — |
+| `beauty_beast` | 2D cel | none | western toon | colour | **2D theatrical feature** — deliberately not distinguished from TV cel | ext | 1 young adult woman + 1 beast | young adult | feature-2d | s15 | text, franchise |
+| `bird_vector` | vector | none | flat graphic | colour | — | none | 1 bird (no people) | n/a | bird | s7a | — |
+| `bird_watercolor` | painting | watercolour | realist | colour | on textured paper | none | 1 bird (no people) | n/a | bird | s7a | — |
+| `blonde_reference_painterly` | painting | digital | realist | colour | flat hard-edged shapes, limited palette, brush grain in hair and cloth | int | 1 young adult woman | young adult | blonde-ref | s18 | — |
+| `blonde_reference_photo` | photograph | none | realist | colour | **the source**; studio fashion shot on a pale green sweep | int | 1 young adult woman | young adult | blonde-ref | s18 | text, real |
+| `boo_toddler` | 3D CG | none | dimensional toon | colour | feature CG; oversized head and eyes on a real-material body | int | 1 toddler girl | toddler | age-bracket | s18 | franchise |
+| `bookshop` | photograph | none | realist | colour | — | **ext (int visible)** | 1 adult man | adult | setting-boundary | s6 | — |
+| `boondocks` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 2 children + 1 partly visible adult | child, n/d | anime-toon | s15 | franchise |
+| `cannon` | photograph | none | realist | colour | — | ext | none | — | — | s7a | — |
+| `captain` | photograph | none | realist | colour | — | ext | 1 adult man | adult | — | s6 | — |
+| `car_1` | photograph | none | realist | colour | user: automaker press shot. Photo vs render **not visually determinable** | none | none | — | car-angle | s7b | text |
+| `car_2` | photograph | none | realist | colour | as `car_1` | none | none | — | car-angle | s7b | text |
+| `car_interior_mecha_driver` | 2D cel | none | anime | colour | painted, desaturated green-grey | **int (vehicle)** | 1 teenage girl + 1 humanoid robot | teenager | car-interior | s7a | text, franchise |
+| `car_interior_photo` | photograph | none | realist | colour | press/product shot | **int (vehicle)** | none | — | car-interior | s7a | text |
+| `car_interior_sketch` | drawing | digital | anime | colour | digital, construction lines visible | **int (vehicle)** | 2 young women | young adult | car-interior | s7a | — |
+| `car_interior_toon` | 2D cel | none | western toon | colour | night, driver's seat | **int (vehicle)** | 1 adult woman | adult | car-interior | s15 | franchise |
+| `castle` | photograph | none | realist | colour | — | ext | 1 young adult woman | young adult | — | s6 | — |
+| `chair` | photograph | none | realist | colour | user: Amazon listing. Photo vs render **not visually determinable** | none | none | — | — | s7a | — |
+| `chips_hotdog_dr_pepper_painting` | painting | oil | realist | colour | traditional, alla prima | int-ish | none | — | — | s7a | text |
+| `city_day` | photograph | none | realist | colour | — | ext | none | — | city-daynight | s6 | text |
+| `city_night` | photograph | none | realist | colour | blue hour | ext | none | — | city-daynight | s6 | text |
+| `classroom1` | photograph | none | realist | colour | — | int | 5 children | child | classroom | s6 | — |
+| `classroom2` | photograph | none | realist | colour | — | int | 6+ children | child | classroom | s6 | — |
+| `classroom_anime_empty` | 2D cel | none | anime | colour | cel BG, outlined desks; low sun through the left windows | int | none | — | classroom | s18 | text |
+| `cleo_slingshot` | 2D cel | none | western toon | colour | modern flat digital toon; **darker skin tones** | ext | 1 pre-teen girl + 1 pre-teen boy | pre-teen | — | s18 | franchise |
+| `cloud` | painting | digital | anime | colour | painterly, deckle border | ext | none | — | — | s6 | text |
+| `comic` | comic | ink | anime | colour | 5 panels | int | 6+ children, 1 adult teacher, 1 costumed figure | teenager, adult, n/d | comic-page | s7a | text |
+| `comic_panel2` | comic | ink | anime | colour | top-right panel, 335x429 | int | 1 girl (close-up) | teenager | comic-page | s7a-crop | text, derived |
+| `comic_panel3` | comic | ink | anime | colour | middle panel, 1161x460 | int | 2 adults | middle-aged, n/d | comic-page | s7a-crop | text, derived |
+| `comic_panel4` | comic | ink | anime | colour | bottom panel, 1249x904 | int | 6+ children | child | comic-page, classroom | s7a-crop | derived |
+| `coraline1` | stop-motion | figure | dimensional toon | colour | puppet on a **transparent** ground — reaches the model as black, see gotchas | none | 1 girl (puppet) | pre-teen | coraline | s7a | franchise, corr |
+| `coraline2` | stop-motion | figure | dimensional toon | colour | film still | int | 2 puppets (girl + adult woman, button eyes) | pre-teen, adult | coraline | s7a | text, franchise |
+| `couple_middle_aged` | photograph | none | realist | colour | bright high-key stock photography, blown-out window behind | int | 1 middle-aged man + 1 middle-aged woman | middle-aged | age-bracket | s18 | real |
+| `destroyer_drawing` | print | halftone | realist | monochrome | halftone recognition plate, line and wash | none | none | — | destroyer | s7a | text |
+| `destroyer_photo` | photograph | none | realist | monochrome | — | ext | a few tiny indistinct crew | n/d | destroyer | s7a | text |
+| `door_first` | live-action film | none | realist | colour | **first frame** — door shut, corridor empty | int | **none** | — | door, first-last | s8 | text |
+| `door_last` | live-action film | none | realist | colour | **last frame** — same door open, room and man revealed | int | 1 adult man | adult | door, first-last | s8 | text |
+| `fern_gully` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 6+ | child, young adult | feature-2d | s15 | franchise |
+| `fish_pixel` | pixel art | none | realist | colour | flat sprite | none | none | — | — | s7a | — |
+| `forest_autumn` | photograph | none | realist | colour | — | ext | **1 tiny distant figure** | n/d | — | s6 | — |
+| `forest_day` | vector | none | flat graphic | colour | upper panel, 947x739 | ext | none | — | forest-daynight | s7b-crop | derived |
+| `forest_day_night` | vector | none | flat graphic | colour | **composite**, 2 stacked panels | ext | none | — | forest-daynight | s7b | — |
+| `forest_night` | vector | none | flat graphic | colour | lower panel, 947x738 | ext | none | — | forest-daynight | s7b-crop | derived |
+| `fruit_reference_photo` | photograph | none | realist | colour | **the source**; a studio still life, raking light, no person | int | none | — | fruit-ref | s18 | — |
+| `fruit_reference_sketch` | drawing | pencil | realist | monochrome | **graphite study of the same arrangement**, full tonal rendering | none | none | — | fruit-ref | s18 | — |
+| `fruitbowl` | 3D CG | none | realist | colour | synthetic still life | int | none | — | — | s7a | text |
+| `fuji` | photograph | none | realist | colour | — | ext | none | — | — | s6 | real |
+| `garden_pond_anime` | 2D cel | none | anime | colour | **the same garden as `backyard_anime`, at night and from another viewpoint**; the stone lantern now right-foreground and lit | ext | none | — | garden-daynight | s18 | — |
+| `ghibli_grass` | 2D cel | none | anime | colour | painted BG plate, no line work — takes the figureless-plate accept-set | ext | none | — | — | s18 | — |
+| `ghibli_kitchen` | 2D cel | none | anime | colour | painted BG, light contour only — takes the figureless-plate accept-set | int | none | — | — | s18 | — |
+| `ghibli_painting_reference_anime` | 2D cel | none | anime | colour | gouache BG plate, no line work; **STRICT — exempt from the accept-set**, it is the source half of the pair | ext | none | — | ghibli-ref | s18 | — |
+| `ghibli_painting_reference_painterly` | painting | digital | realist | colour | a digital painterly study made **from** the plate opposite — same rock, hillside and cloud bank, looser brushwork | ext | none | — | ghibli-ref | s18 | text |
+| `ghibli_street` | 2D cel | none | anime | colour | **cel figures over a painted street** — strict `2D cel`; period cars, a crowd | ext | ~25 assorted adults and children, none individuated | child, adult, crowd | — | s18 | text, franchise |
+| `girl_painting` | painting | digital | realist | colour | oil-style, soft edges | none | 1 pre-teen girl | pre-teen | girl-painting | s7a | text |
+| `girl_painting_reference` | live-action film | none | realist | colour | film still | int | 1 pre-teen girl | pre-teen | girl-painting | s7a | real |
+| `gordon_1996` | 2D cel | none | western toon | colour | 90s TV cel | **int (vehicle)** | 1 older adult man | older adult | gordon, toon-era | s15 | franchise |
+| `gordon_2004` | 2D cel | none | western toon | colour | digital ink and paint, angular design | ext | 1 middle-aged man | middle-aged | gordon, toon-era | s15 | franchise |
+| `gordon_comic` | comic | digital | realist | colour | single panel | ext | 1 middle-aged man | middle-aged | gordon | s15 | text, franchise |
+| `grass_anime_girl` | 2D cel | none | anime | colour | **the same shot as `grass_anime_scenery` with characters added**; cel figures over that plate — strict, and its partner's control | ext | 1 child + 1 small animal | child | grass-anime | s18 | — |
+| `grass_anime_scenery` | 2D cel | none | anime | colour | cel-era painted plate, VHS-grade, **no line work** — takes the figureless-plate accept-set | ext | none | — | grass-anime | s18 | — |
+| `gromit` | stop-motion | clay | dimensional toon | colour | plasticine, thumbprint surfaces; set and vehicle are built models, but character figures are present so `clay` wins | **int (ext visible)** | 1 man + 1 dog, both clay | adult | stopmo-sub | s15 | text, franchise |
+| `gumby` | stop-motion | clay | dimensional toon | colour | classic clay, VHS-grade | int | 3 clay figures — 1 humanoid, 1 **anthropomorphised horse**, 1 in the background | n/a | stopmo-sub | s15 | franchise |
+| `gwen` | 2D cel | none | western toon | colour | — | **int (vehicle)** | 2 girls | teenager | gwen | s15 | text, franchise |
+| `gwen_cg` | 3D CG | none | dimensional toon | colour | low-resolution render; same character design as `gwen` | int | 1 young woman | teenager | gwen | s15 | text, franchise |
+| `hermione_preteen` | live-action film | none | realist | colour | graded film still, warm key, practical candle | int | 1 pre-teen girl | pre-teen | age-bracket | s18 | text, real, franchise |
+| `ivy_toon` | 2D cel | none | western toon | colour | 90s cel animation still | int | 1 young woman, red bob | young adult | toon-era | s7b | franchise |
+| `jacket` | photograph | none | realist | colour | — | ext | 1 young adult woman | young adult | jacket | s6 | — |
+| `jacket2` | photograph | none | realist | colour | — | ext | same woman | young adult | jacket | s6 | — |
+| `kasia` | 2D cel | none | anime | colour | the original drawing; an anime-inspired toon idiom, leaning slightly western — **the sub-term is contested, the coarse term is not** | none | 1 girl | teenager | kasia | s6 | corr |
+| `kasia_bag` | photograph | none | realist | colour | AI-rendered, but **classified by presentation**, which is photographic | none | none | — | kasia, bag-angle | s7a | corr |
+| `kasia_bag_2` | photograph | none | realist | colour | as `kasia_bag`, second angle, re-render | none | none | — | kasia, bag-angle | s7b | corr |
+| `kasia_outfit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia`; AI-rendered, classified by presentation | none | none | — | kasia | s7a | corr |
+| `kasia_render` | 3D CG | none | anime | colour | stylised anime character render | none | 1 girl | teenager | kasia | s7a | — |
+| `kasia_swimsuit` | photograph | none | realist | colour | **flat-lay**, derived from `kasia_swimsuit_worn`; AI-rendered, classified by presentation | none | none | — | kasia | s7a | corr |
+| `kasia_swimsuit_render` | 3D CG | none | anime | colour | AI render, anime idiom | ext | 1 girl (same character) | teenager | kasia | s7b | — |
+| `kasia_swimsuit_worn` | 2D cel | none | anime | colour | the original commission | none | 1 girl (same character) | teenager | kasia | s7b | text |
+| `kaypro_ii` | photograph | none | realist | colour | — | none | none | — | — | s7a | text |
+| `kiki` | drawing | digital | anime | colour | a signed digital illustration, **not an animation still** — soft airbrushed shading, gradient blush, tapered stroke-weight in the hair. Corrected s16, see corrections | none | 1 girl + 1 black cat | pre-teen | — | s6 | franchise, corr |
+| `laika` | stop-motion | figure | dimensional toon | colour | feature stop-motion; resin faces, **real knitted and woven fabric**, visible hair fibre — the term's most typical sample | int | 1 pre-teen boy + 4 figures behind | pre-teen, n/d | stopmo-sub | s18 | franchise |
+| `lego1` | stop-motion | figure | dimensional toon | colour | **LEGO brickfilm**; moulded ABS, printed faces, a built facade set | ext | 5 minifigures | n/a | lego, stopmo-sub | s18 | text, franchise |
+| `lego2` | stop-motion | figure | dimensional toon | colour | LEGO; a single minifigure on a brick-built street, plate studs visible | ext | 1 minifigure | n/a | lego, stopmo-sub | s18 | — |
+| `lincoln_money` | print | engraving | realist | monochrome | banknote | none | a portrait *within an object* | n/a | lincoln | s7a | text, real |
+| `lincoln_photo` | photograph | none | realist | monochrome | albumen portrait | none | 1 older adult man | older adult | lincoln | s7a | real |
+| `maggie_grandpa_cat` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 1 older adult man + 1 infant + 1 cat | infant, older adult | age-family | s15 | text, franchise |
+| `marker` | drawing | marker | anime | colour | — | int | 1 young woman | young adult | — | s7b | text |
+| `misato_car_1` | 2D cel | none | anime | colour | cel car over a painted mountain-road BG, head-on, VHS-grade | ext | none | — | misato-car | s18 | franchise |
+| `misato_car_2` | 2D cel | none | anime | colour | cel car over a painted tunnel-mouth BG, from behind | ext | none | — | misato-car | s18 | text, franchise |
+| `misato_car_real` | photograph | none | realist | colour | the real car at a classic-car show, flash-lit, high three-quarter front | int | 2 adult men seated behind, background | n/d | misato-car | s18 | text, real |
+| `misato_car_technical_print` | print | halftone | realist | colour | **four orthographic views** — side, front, top, rear — airbrushed, on white; classified as `destroyer_drawing` is | none | none | — | misato-car | s18 | text |
+| `miya` | 2D cel | none | anime | colour | — | ext | 1 teenage girl | teenager | — | s6 | text, franchise |
+| `miyu` | pixel art | none | anime | colour | — | none | 1 girl (heavily occluded) + 1 shadow figure | n/d | — | s6 | franchise |
+| `molly` | 2D cel | none | western toon | colour | flat, heavy stylisation | int | 3 children | child | — | s15 | franchise |
+| `mountain_rain` | painting | digital | realist | colour | matte-painting style | ext | none | — | — | s6 | — |
+| `nadia` | 2D cel | none | anime | colour | promotional card with a title overlay | ext | 1 girl + 1 boy + 1 lion cub | child, teenager | — | s15 | text, franchise |
+| `nerv` | 2D cel | none | anime | colour | painted BG, shaded; aerial — no line work, takes the figureless-plate accept-set | ext | none | — | — | s18 | franchise |
+| `newspaper` | photograph | none | realist | colour | — | int | 1 adult man | adult | — | s6 | — |
+| `p1_first` | live-action film | none | realist | colour | very dim | int | 1 adult man | adult | p1 | s6 | — |
+| `p1_last` | live-action film | none | realist | colour | far brighter and closer | int | 1 adult man | adult | p1 | s6 | — |
+| `p2_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | pre-teen | p2 | s6 | text |
+| `p2_last` | live-action film | none | realist | colour | near-identical light | int | 1 pre-teen girl | pre-teen | p2 | s6 | text |
+| `p3_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | pre-teen | p3 | s6 | text |
+| `p3_last` | live-action film | none | realist | colour | near-identical | int | 1 pre-teen girl | pre-teen | p3 | s6 | text |
+| `p4_first` | live-action film | none | realist | colour | heavy bokeh | ext | 1 pre-teen girl + 1 adult man | pre-teen, adult | p4 | s6 | — |
+| `p4_last` | live-action film | none | realist | colour | same bokeh | ext | 1 pre-teen girl + 1 adult man | pre-teen, adult | p4 | s6 | — |
+| `p5_first` | live-action film | none | realist | vintage Technicolor | night | ext | 1 adult man | n/d | p5 | s6 | — |
+| `p5_last` | live-action film | none | realist | vintage Technicolor | tighter, heavy dissolve | ext | 1 adult man (+1 ghosted) | n/d | p5 | s6 | — |
+| `p6_first` | live-action film | none | realist | colour | — | int | 1 pre-teen girl | pre-teen | p6-window | s6 | corr |
+| `p6_last` | live-action film | none | realist | colour | same window, tighter | int | 1 pre-teen girl | pre-teen | p6-window | s6 | corr |
+| `pancakes` | photograph | none | realist | colour | — | int | 1 adult man + 1 child girl | adult, child | char-drift | s6 | — |
+| `pavilion_anime` | 2D cel | none | anime | colour | cel-era BG; roofed open-sided pavilion over water, soft airbrushed sky | ext | none | — | — | s18 | — |
+| `peter_griffin_painting` | painting | digital | dimensional toon | colour | flat-cartoon character rendered painterly | none | 1 adult man | adult | peter-griffin | s7a | franchise |
+| `peter_griffin_toon` | 2D cel | none | western toon | colour | modern flat digital | int | 2 adult men | adult | peter-griffin, toon-era | s7b | franchise |
+| `phone` | photograph | none | realist | colour | cut out on pure white | none | 1 adult woman | middle-aged | — | s6 | — |
+| `pjs` | stop-motion | figure | dimensional toon | colour | foam puppets; cast poster with a logo overlay | ext | 11+, including 1 older adult woman and 3 children | child, older adult, crowd | stopmo-sub | s15 | text, franchise |
+| `pocahontas` | 2D cel | none | western toon | colour | **2D theatrical feature** | ext | 2 adults + 2 animals + 1 bird | young adult | feature-2d | s15 | franchise |
+| `pooh` | 2D cel | none | western toon | colour | **figure present, non-human** — a stylised bear at naturalistic proportion, flat fills over a painted wood | ext | 1 bear (stylised, anthropomorphic) | n/a | — | s18 | franchise |
+| `pre-teen1` | photograph | none | realist | colour | outdoor available light, shallow focus | ext | 1 pre-teen girl | pre-teen | age-bracket | s18 | real |
+| `ramen_pixel` | pixel art | none | realist | colour | hi-fi, shaded, anti-aliased | none | none | — | — | s7a | — |
+| `riley_preteen` | 3D CG | none | dimensional toon | colour | feature CG; large eyes, soft caricature, real hair and cloth | ext | 1 pre-teen girl | pre-teen | age-bracket | s18 | franchise |
+| `river_mountain_anime` | 2D cel | none | anime | colour | painterly, visible brush texture, no line work — takes the figureless-plate accept-set | ext | none | — | — | s18 | — |
+| `roadway_toon` | 2D cel | none | western toon | colour | painted BG, soft-edged, VHS-grade 4:3, no line work — takes the figureless-plate accept-set | ext | none | — | — | s18 | — |
+| `room_anime` | 2D cel | none | anime | colour | cel BG; cluttered workshop-bedroom, heavy foreground machinery. **NOT figureless** — a small distant figure lies on the bed, facing away; excluded from the figureless evidence set as a confound | int | 1 distant figure (female, facing away, age not determinable) | n/d | — | s18 | — |
+| `rudolf` | stop-motion | figure | dimensional toon | colour | flocked and felt over armature, fibre hair — a very different puppet from `coraline*` | ext | 1 elf figure + 1 reindeer | n/a | stopmo-sub | s15 | franchise |
+| `rugrats` | 2D cel | none | western toon | colour | flat cel, VHS-grade; **heavily disproportionate** — huge heads, tiny limbs, flat pupils | int | 5 infants/toddlers + 1 adult's legs | infant, toddler, n/d | age-bracket | s18 | franchise |
+| `saber_reference_anime` | 3D CG | none | anime | colour | **a 3D render, not a painting** — corrected s19: hair reads as rigid geometry, the bow/bowls/table carry render shading, and the background blur is true DOF. **Reads a bracket younger than its own source** — see the saber-ref note | int | 1 teenage girl | teenager | saber-ref | s18 | text, franchise |
+| `saber_reference_painterly` | painting | digital | realist | colour | loose brushwork, semi-realistic face, background reduced to wash | int | 1 young adult woman | young adult | saber-ref | s18 | franchise |
+| `saber_reference_photo` | photograph | none | realist | colour | **the source**; cosplay shot in a tatami room, soft window light | int | 1 young adult woman | young adult | saber-ref | s18 | text, real, franchise |
+| `sam_jackson_jurassic_middle_aged` | live-action film | none | realist | colour | graded film still, cool key, CRT glow | int | 1 middle-aged man + 1 partial man at right | middle-aged, n/d | jurassic | s18 | text, real, franchise |
+| `san_fransisco_day_evening_night` | vector | none | flat graphic | colour | **composite**, 3 stacked panels | ext | none | — | sanfran-daynight | s7b | — |
+| `sanfran_day` | vector | none | flat graphic | colour | 1039x487 | ext | none | — | sanfran-daynight | s7b-crop | derived |
+| `sanfran_evening` | vector | none | flat graphic | colour | 1039x487, golden sky | ext | none | — | sanfran-daynight | s7b-crop | derived |
+| `sanfran_night` | vector | none | flat graphic | colour | 1039x487 | ext | none | — | sanfran-daynight | s7b-crop | derived |
+| `scooby` | 2D cel | none | western toon | colour | modern flat promotional art; gradient shading on the background only | ext | 4 adults + 1 dog | young adult | — | s15 | text, franchise |
+| `shed_day` | photograph | none | realist | colour | overcast daylight | ext | none | — | shed-daynight | s15 | — |
+| `shed_dusk` | photograph | none | realist | colour | the intermediate state | ext | none | — | shed-daynight | s15 | — |
+| `shed_night` | photograph | none | realist | colour | **night-mode composite** — foliage far brighter than a true night exposure, but far detail genuinely lost | ext | none | — | shed-daynight | s15 | — |
+| `shoes_anime` | 2D cel | none | anime | colour | modern cel; ink outlines and hatching over flat fills — an **object** close-up, not a scene | int | none | — | — | s18 | — |
+| `shrek_cg` | 3D CG | none | dimensional toon | colour | — | ext | 1 green ogre, close-up | adult | — | s7b | franchise |
+| `simpsons_couch_toon` | 2D cel | none | western toon | colour | **entirely flat, unshaded, hard-outlined digital toon** — the figureless scene where `western toon` is the right answer, mirroring the v4c regressions | int | none | — | — | s18 | text, franchise |
+| `skellington` | stop-motion | figure | dimensional toon | colour | feature stop-motion; matte moulded surfaces, stitched mouth, shallow focus | ext | 2 figures — 1 skeleton, 1 snowman | n/a | stopmo-sub | s18 | franchise |
+| `sketch_boat` | drawing | pencil | realist | monochrome | graphite landscape, fine directional hatching, paper left as light | ext | none | — | sketch | s18 | — |
+| `sketch_man` | drawing | pencil | realist | monochrome | **loose portrait study**; construction lines left on the surface, blunt soft-pencil hatching | none | 1 middle-aged man | middle-aged | sketch | s18 | — |
+| `sketch_woman` | drawing | pencil | realist | monochrome | portrait study, lightly stylised lashes and lip; hatched shoulder | none | 1 young adult woman | young adult | sketch | s18 | — |
+| `sleeping` | photograph | none | realist | colour | — | int | 1 young adult woman | young adult | — | s6 | — |
+| `spongebob_tree_toon` | 2D cel | none | western toon | colour | painted BG w/ dark contours and visible brush texture; strict | ext | none | — | — | s18 | franchise |
+| `stage` | photograph | none | realist | colour | — | int | 1 woman + ~100 audience | young adult, crowd | — | s6 | — |
+| `supergirl1` | drawing | marker | western toon | colour | copic-style on board | ext-ish (drawn panel) | 1 young woman | young adult | supergirl | s7a | text, franchise |
+| `supergirl2` | drawing | marker | western toon | colour | **marker colour over an un-inked pencil sketch** — the colour medium is the same as `supergirl1`; only the linework differs. **Sub-term contested**, see the axis note under "Medium vocabulary" | none | same character | young adult | supergirl | s7a | text, franchise, corr |
+| `teddy_taft` | photograph | none | realist | monochrome | — | ext | 2 adult men | middle-aged | — | s7a | real |
+| `temple_day` | painting | digital | anime | colour | high-key, painterly | ext | 1 young woman | young adult | temple | s7a | text |
+| `temple_grounds_anime` | 2D cel | none | anime | colour | **modern digital** anime BG, near-photographic detail, no line work — takes the figureless-plate accept-set | ext | none | — | — | s18 | — |
+| `temple_night` | painting | digital | anime | colour | low-key, same hand | ext | 1 young man | young adult | temple | s7a | text |
+| `third_rock` | photograph | none | realist | colour | **a posed, flat-lit publicity still**, not a frame from the show — tie-break 4 | ext | 5: 1 middle-aged man, 1 middle-aged woman, 1 young adult man, 1 young adult woman, 1 teenage boy | teenager, young adult, middle-aged | age-bracket | s18 | real, franchise |
+| `titans1` | 2D cel | none | western toon | colour | western TV series drawn in an anime idiom — **provisional** | int | 5 | teenager | titans, anime-toon | s15 | franchise |
+| `titans_go` | 2D cel | none | western toon | colour | chibi proportions, heavy stylisation | ext | 5 | teenager | titans | s15 | franchise |
+| `toddler` | photograph | none | realist | colour | warm domestic available light, shallow focus | int | 1 toddler girl | toddler | age-bracket | s18 | real |
+| `town_tower_anime` | 2D cel | none | anime | colour | modern digital, heavy bloom, no line work — takes the figureless-plate accept-set | ext | none | — | — | s18 | — |
+| `tv` | photograph | none | realist | colour | — | int | 1 older adult woman | older adult | — | s6 | — |
+| `uniform_reference_anime` | painting | digital | anime | colour | semi-realistic anime face, flat-ish brush, same pose and light | ext | 1 teenage girl | teenager | uniform-ref | s18 | — |
+| `uniform_reference_painterly` | painting | digital | realist | colour | very loose slabby brushwork, background broken into strokes | ext | 1 teenage girl | teenager | uniform-ref | s18 | — |
+| `uniform_reference_photo` | photograph | none | realist | colour | **the source**; backlit late-afternoon sun, shallow depth of field | ext | 1 teenage girl | teenager | uniform-ref | s18 | real |
+| `van_pixel` | pixel art | none | anime | colour | PC-98 style, dithered, 16-colour | ext | 1 girl | teenager | — | s7a | text |
+| `vector_city` | vector | none | flat graphic | colour | — | ext | none | — | — | s6 | — |
+| `wayne_knight_jurassic_adult` | live-action film | none | realist | colour | graded film still, low key, banks of CRTs | int | 1 adult man | adult | jurassic, wayne-age | s18 | text, real, franchise |
+| `wayne_knight_older_adult` | photograph | none | realist | colour | flat event/press lighting on a branded backdrop | int | 1 older adult man | older adult | wayne-age | s18 | text, real |
+| `will_preteen` | live-action film | none | realist | colour | graded night still, low key | ext | 1 pre-teen boy | pre-teen | age-bracket | s18 | real, franchise |
+| `window` | live-action film | none | realist | colour | tighter and blown out | int | 1 pre-teen girl | pre-teen | p6-window | s6 | corr |
+| `woman_oil` | painting | oil | realist | colour | **traditional**, photorealist | int | 1 young woman, asleep | young adult | oil-idiom | s7b | — |
+| `woman_reference_photo` | photograph | none | realist | colour | **the source**; close portrait, shallow focus, turned over the shoulder | int | 1 young adult woman | young adult | woman-ref | s18 | real |
+| `woman_reference_sketch` | drawing | pencil | realist | monochrome | **graphite study on toned paper**, dense directional hatching; signed | none | 1 young adult woman | young adult | woman-ref | s18 | text |
+| `woody_cg` | 3D CG | none | dimensional toon | colour | early CG | int | 1 male doll/figure | n/a | — | s7b | franchise |
 
 ---
 
@@ -1174,6 +1229,7 @@ well-formed and passes every structural check.
 |---|---|---|---|---|
 | `kiki` medium | `2D cel / digital`, read as an animation still | a **signed digital illustration** in an anime idiom, not animation artwork: soft airbrushed shading and gradient blush rather than flat cel separations, tapered stroke-weight in the hair, floating props on no ground. **Tie-break 5** ("visible drawing process beats flat colour") decides it, and the colour was never flat to begin with — `drawing / digital` | user ruling, session 16, while auditing accept-set candidates | the model had been answering `drawing / digital` and scoring a miss for it. It was **right**, and the answer key was wrong — so this was about to be forgiven by an accept-set, which would have preserved the error permanently instead of fixing it. `[[IDIOM]] anime` already carries "in the style of", which is what made `2D cel` look necessary |
 | `window` age bracket, and the mathilda set generally | `window` recorded **1 teenage girl**; the other ten files of the same person recorded only "1 girl", with no bracket at all | **`pre-teen`** across all eleven. They are one person at ~12-13, so the whole set now reads `1 pre-teen girl` | user ruling, session 18, on the age audit set by `SIDE_HANDOFF_images_2.md` | the eleven files span three probe sets (`girl-painting`, `p2`/`p3`/`p4`, `p6-window`). A bracket recorded on one and absent from the rest meant a describer could be scored inconsistently on the same person, and `window` was scored against a bracket the other ten did not share. It also closes `pre-teen`, previously recorded as untested |
+| `saber_reference_anime` medium | `painting / digital`, read as a very polished digital painting | **`3D CG / none`** — a 3D render. Under magnification the hair reads as rigid geometry rather than painted strands, the neck bow, the stacked bowls and the table edge all carry render shading, and the background softening is true depth of field rather than painted blur | the s19 round: the model answered `3D CG` and scored a miss for it; user ruling on adjudication, session 19 | the **third** time the model was right and the key was wrong (after `kiki` and `window`), and the second time an accept-set was the tempting fix. Forgiving it would have frozen the error permanently — the `kiki` shape exactly. It also changes what the `saber-ref` triplet tests: photo → 3D render → painterly, three *different* media, not two paintings and a photo |
 | `window` is its own location | catalogued as an unrelated room; `p6` described as showing a *doorway* | `p6` shows a **window**, and it is the **same window** as `window.png` | user correction, session 6 | turns two unrelated images into the corpus's largest same-place set (three framings) |
 | `annie1` / `annie3` cast | "1 girl, drawn twice — as herself and as a masked hero" | the masked figure is a **separate recurring character**; `annie3` has **four** distinct people | user correction, session 7a | **would have inverted a test verdict** — a describer correctly keeping them as two people would have scored as a failure |
 | `kasia_swimsuit` set membership | "not part of the kasia set — nothing visual ties it to the character, only the filename" | it **is** — `kasia_swimsuit_worn` is the original commission the flat-lay derives from | second batch arrived, session 7b | closes the second-flat-to-worn-garment gap; also the source of the general lesson below |
@@ -1326,74 +1382,46 @@ tie-break rules under "Medium vocabulary":
   `photograph`, with `annie2_cropped` as the clean watercolour sample. The rule generalises to
   `tv`'s CRT and to any poster, phone screen or television in frame, which is ordinary in real use.
 
-### The `amb` images — a category, not a defect
+### The three studio product shots — the `amb` category, retired
 
-**Three members: `chair`, `car_1`, `car_2`** — and the category is **under review**, because
-session 9 nearly doubled it and then reversed course, which is informative in itself.
+**`chair`, `car_1`, `car_2`.** They are studio product shots on a seamless white ground. The
+user knows their provenance — `chair` from an Amazon listing, `car_1`/`car_2` direct from an
+automaker — so they are filed as `photograph`. **The pixels do not settle it.** Contemporary
+automaker press imagery is routinely CGI, and a clean e-commerce shot on white is exactly where
+a photograph and a good product render converge.
 
-The four kasia flat-lay/bag files were flagged `amb` mid-session on the grounds that their AI origin
-made photo-vs-render undeterminable, then reclassified to `photograph / colour` when the user ruled
-on them: **tie-break 4 already says to judge on presentation rather than provenance**, and applying
-that consistently dissolves the ambiguity rather than cataloguing it.
+They are scored as an **accept-set**, `photograph | 3D CG` on `[[MEDIUM]]`. Both readings pass;
+`painting`, `drawing`, `vector` and the rest still fail. Two reasons that beats the
+alternatives that were on the table:
 
-That cuts at the remaining three too. The model called `chair`, `car_1` and `car_2`
-`3D CG / product render` in every round — which *is* the presentation read. If presentation decides,
-the model is right and the master table is wrong; the `amb` flag is preserving a provenance-based
-answer that our own tie-break says not to use.
-
-**RESOLVED session 17, and not in either direction the question was framed in.** The user's ruling
-is that `amb` now emits an **accept-set** — `photograph | 3D CG` on `[[MEDIUM]]` — rather than
-`UNSCORABLE`. Both readings pass; `painting`, `drawing`, `vector` and the rest still fail.
-
-Why that beats both alternatives that had been on the table:
-
-- **Scoring them against `photograph` was never legitimate.** That value came from the user's
-  knowledge of the *source* — an automaker press shot, an Amazon listing — not from the pixels, and
-  `L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS` forbids scoring a describer against information it was never
-  given. This is why "the master table is wrong" is not quite the right diagnosis either: the table
-  is right about the world and wrong about what is *askable*.
+- **Scoring them against `photograph` was never legitimate.** That value comes from knowledge of
+  the *source*, not from the pixels, and `L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS` forbids scoring a
+  describer against information it was never given. The table is right about the world and wrong
+  about what is *askable*.
 - **`UNSCORABLE` threw away too much.** It removed the cases from the denominator entirely, so a
-  gross error on them — `painting`, say — would have registered as nothing at all.
+  gross error — `painting`, say — would have registered as nothing at all.
 
-**It is deliberately a WEAK test, and that must not be forgotten when reading a score.** Both
-plausible answers pass, so a pass here is not evidence the photo-vs-render distinction works. The
-accept-sets name `fruitbowl`, `shrek_cg` and `woody_cg` as controls, guarding the direction they can
-erode: `photograph` is the forgiven side, so unambiguous `3D CG` must still come back `3D CG`.
+**It is deliberately a WEAK test.** Both plausible answers pass, so a pass here is not evidence
+the photo-vs-render distinction works. Controls guard the direction it erodes: `photograph` is
+the forgiven side, so unambiguous `3D CG` (`fruitbowl`, `shrek_cg`, `woody_cg`) must still come
+back `3D CG`.
 
-The mechanism lives in `scripts/gen_style_sweep.py` (`AMB_WHY` / `AMB_CONTROL`), so the flag stays
-the single source of truth and a regenerated sweep keeps the ruling.
+**And one thing survives regardless:** `[[MEDIUM]]` may be undecidable on a file, but **two
+views of one object disagreeing with each other is still a real failure.** They must land in the
+same place, whatever that place is. `car_1`/`car_2` passed that; the kasia bags did not.
 
-Note the one thing that survives regardless. `[[MEDIUM]]` may be unscorable on a file, **but two
-views of one object disagreeing with each other is still a real failure** — they must land in the
-same place whatever that place is. The flag suspends the answer key, not the consistency
-requirement. `car_1`/`car_2` passed that; the kasia bags did not.
+#### What changed, and when
 
-The original three, and the reasoning that built the category:
+| session | change |
+|---|---|
+| 7–9 | category created as a flag; the model answered `3D CG / product render` every round |
+| 9 | the four kasia flat-lay/bag files were flagged `amb`, then **reclassified `photograph`** — tie-break 4 judges on presentation rather than provenance, and applying it consistently *dissolves* the ambiguity rather than cataloguing it |
+| 17 | ruled scorable: the flag emits an **accept-set** rather than `UNSCORABLE` |
+| 18 | user direction: **stop using `amb`**; new ambiguity rulings go straight to `_expected` (the figureless-plate set was the first) |
+| 19 | **flag retired entirely.** These three became ordinary `ACCEPT_MEDIUM` entries in `scripts/gen_style_sweep.py`, `amb` was removed from `inventory.py`'s `FLAGS` and from its tally footnote, and `tests/describer_style_sweep130.json` was verified to regenerate **byte-identically** — which is what proved the migration did not disturb the baseline |
 
-`chair`, `car_1` and `car_2` are studio product shots on white. The user knows their provenance —
-`chair` came from an Amazon listing, `car_1`/`car_2` direct from an automaker — so they are filed
-as `photograph`. **But the pixels do not settle it.** Contemporary automaker press imagery is
-routinely CGI, and a clean e-commerce shot on a seamless white ground is exactly the case where a
-photograph and a good product render converge. The user's own read is "probably photographs, but I
-could be wrong", and that is the correct confidence level.
-
-The consequence for testing is the point: **`[[MEDIUM]]` is unscorable on these three, in either
-direction.** A describer saying `3D CG` is not wrong; a describer saying `photograph` is not right
-for a reason it could have known. Scoring them either way manufactures a signal that isn't there.
-
-That is worth having as a standing category rather than a footnote. Ground truth in this document
-comes from two different places — **what is visible** and **what we happen to know** — and only the
-first is a fair test. The `amb` flag marks where they diverge. `chair` and the two cars are the
-current members; anything whose classification rests on provenance rather than appearance belongs
-there too.
-
-Still genuinely open, and a *prompt* question rather than a vocabulary one: whether
-`describer_style` emits the sub-term unconditionally or only when confident. An optional element
-that fires on judgement is the exact shape that cost `setting` three rounds — so the default
-should be "always emit, with an explicit `not determinable` value available" rather than "omit
-when unsure". The `amb` images are the natural test of that value.
-
----
+The `why`/`control` text was carried across **verbatim**: it is the record of a real session-17
+ruling, and rewording it would have quietly changed what a future reader thinks was decided.
 
 ## Multi-panel images — a trap to know, not to defend against
 
@@ -1598,9 +1626,9 @@ change to the master table.
 
 | medium | sub | count | images |
 |---|---|---|---|
-| `photograph` | — | **46** | annie2\*\*, baby_middle_aged, blonde_reference_photo, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, city_day, city_night, classroom1, classroom2, couple_middle_aged, destroyer_photo, forest_autumn, fruit_reference_photo, fuji, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_photo, misato_car_real, newspaper, pancakes, phone, pre-teen1, saber_reference_photo, shed_day, shed_dusk, shed_night, sleeping, stage, teddy_taft, third_rock, toddler, tv, uniform_reference_photo, wayne_knight_older_adult, woman_reference_photo |
+| `photograph` | — | **46** | annie2\*\*, baby_middle_aged, blonde_reference_photo, bookshop, cannon, captain, car_1, car_2, car_interior_photo, castle, chair, city_day, city_night, classroom1, classroom2, couple_middle_aged, destroyer_photo, forest_autumn, fruit_reference_photo, fuji, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_photo, misato_car_real, newspaper, pancakes, phone, pre-teen1, saber_reference_photo, shed_day, shed_dusk, shed_night, sleeping, stage, teddy_taft, third_rock, toddler, tv, uniform_reference_photo, wayne_knight_older_adult, woman_reference_photo |
 | `live-action film` | — | **20** | door_first, door_last, girl_painting_reference, hermione_preteen, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, sam_jackson_jurassic_middle_aged, wayne_knight_jurassic_adult, will_preteen, window |
-| `3D CG` | — | **8** | boo_toddler, fruitbowl, gwen_cg, kasia_render, kasia_swimsuit_render, riley_preteen, shrek_cg, woody_cg |
+| `3D CG` | — | **9** | boo_toddler, fruitbowl, gwen_cg, kasia_render, kasia_swimsuit_render, riley_preteen, saber_reference_anime, shrek_cg, woody_cg |
 | `stop-motion` | | **11** | |
 | | figure | 9 | april_1987_figure, coraline1, coraline2, laika, lego1, lego2, pjs, rudolf, skellington |
 | | clay | 2 | gromit, gumby |
@@ -1610,8 +1638,8 @@ change to the master table.
 | | ink | 4 | comic, comic_panel2, comic_panel3, comic_panel4 |
 | | digital | 3 | annie3, annie3_panel1, gordon_comic |
 | | *screentone* | *0* | *no sample* |
-| `painting` | | **17** | |
-| | digital | 13 | ayanami_oil, blonde_reference_painterly, cloud, ghibli_painting_reference_painterly, girl_painting, mountain_rain, peter_griffin_painting, saber_reference_anime, saber_reference_painterly, temple_day, temple_night, uniform_reference_anime, uniform_reference_painterly |
+| `painting` | | **16** | |
+| | digital | 12 | ayanami_oil, blonde_reference_painterly, cloud, ghibli_painting_reference_painterly, girl_painting, mountain_rain, peter_griffin_painting, saber_reference_painterly, temple_day, temple_night, uniform_reference_anime, uniform_reference_painterly |
 | | oil | 2 | chips_hotdog_dr_pepper_painting, woman_oil |
 | | watercolour | 2 | annie2_cropped, bird_watercolor |
 | `drawing` | | **13** | |
@@ -1629,7 +1657,7 @@ change to the master table.
 
 | idiom | count | images |
 |---|---|---|
-| `realist` | **88** | annie2\*\*, april_fanart, baby_middle_aged, bird_watercolor, blonde_reference_painterly, blonde_reference_photo, bookshop, cannon, captain, car_1\*, car_2\*, car_interior_photo, castle, chair\*, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, couple_middle_aged, destroyer_drawing, destroyer_photo, door_first, door_last, fish_pixel, forest_autumn, fruit_reference_photo, fruit_reference_sketch, fruitbowl, fuji, ghibli_painting_reference_painterly, girl_painting, girl_painting_reference, gordon_comic, hermione_preteen, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_money, lincoln_photo, misato_car_real, misato_car_technical_print, mountain_rain, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, pancakes, phone, pre-teen1, ramen_pixel, saber_reference_painterly, saber_reference_photo, sam_jackson_jurassic_middle_aged, shed_day, shed_dusk, shed_night, sketch_boat, sketch_man, sketch_woman, sleeping, stage, teddy_taft, third_rock, toddler, tv, uniform_reference_painterly, uniform_reference_photo, wayne_knight_jurassic_adult, wayne_knight_older_adult, will_preteen, window, woman_oil, woman_reference_photo, woman_reference_sketch |
+| `realist` | **88** | annie2\*\*, april_fanart, baby_middle_aged, bird_watercolor, blonde_reference_painterly, blonde_reference_photo, bookshop, cannon, captain, car_1, car_2, car_interior_photo, castle, chair, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, couple_middle_aged, destroyer_drawing, destroyer_photo, door_first, door_last, fish_pixel, forest_autumn, fruit_reference_photo, fruit_reference_sketch, fruitbowl, fuji, ghibli_painting_reference_painterly, girl_painting, girl_painting_reference, gordon_comic, hermione_preteen, jacket, jacket2, kasia_bag, kasia_bag_2, kasia_outfit, kasia_swimsuit, kaypro_ii, lincoln_money, lincoln_photo, misato_car_real, misato_car_technical_print, mountain_rain, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p5_first, p5_last, p6_first, p6_last, pancakes, phone, pre-teen1, ramen_pixel, saber_reference_painterly, saber_reference_photo, sam_jackson_jurassic_middle_aged, shed_day, shed_dusk, shed_night, sketch_boat, sketch_man, sketch_woman, sleeping, stage, teddy_taft, third_rock, toddler, tv, uniform_reference_painterly, uniform_reference_photo, wayne_knight_jurassic_adult, wayne_knight_older_adult, will_preteen, window, woman_oil, woman_reference_photo, woman_reference_sketch |
 | `anime` | **42** | annie1, ayanami_oil, azumanga_anime, backyard_anime, car_interior_mecha_driver, car_interior_sketch, classroom_anime_empty, cloud, comic, comic_panel2, comic_panel3, comic_panel4, garden_pond_anime, ghibli_grass, ghibli_kitchen, ghibli_painting_reference_anime, ghibli_street, grass_anime_girl, grass_anime_scenery, kasia, kasia_render, kasia_swimsuit_render, kasia_swimsuit_worn, kiki, marker, misato_car_1, misato_car_2, miya, miyu, nadia, nerv, pavilion_anime, river_mountain_anime, room_anime, saber_reference_anime, shoes_anime, temple_day, temple_grounds_anime, temple_night, town_tower_anime, uniform_reference_anime, van_pixel |
 | `flat graphic` | **9** | bird_vector, forest_day, forest_day_night, forest_night, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, vector_city |
 | `western toon` | **31** | annie2_cropped, annie3, annie3_panel1, april_1987, april_comic, avatar_1, avatar_2, azumanga_toon, beauty_beast, boondocks, car_interior_toon, cleo_slingshot, fern_gully, gordon_1996, gordon_2004, gwen, ivy_toon, maggie_grandpa_cat, molly, peter_griffin_toon, pocahontas, pooh, roadway_toon, rugrats, scooby, simpsons_couch_toon, spongebob_tree_toon, supergirl1, supergirl2, titans1, titans_go |
@@ -1639,19 +1667,37 @@ change to the master table.
 
 | treatment | count | images |
 |---|---|---|
-| `colour` | **175** | annie1, annie2\*\*, annie2_cropped, annie3, annie3_panel1, april_1987, april_1987_figure, april_comic, april_fanart, avatar_1, avatar_2, ayanami_oil, azumanga_anime, azumanga_toon, baby_middle_aged, backyard_anime, beauty_beast, bird_vector, bird_watercolor, blonde_reference_painterly, blonde_reference_photo, boo_toddler, bookshop, boondocks, cannon, captain, car_1\*, car_2\*, car_interior_mecha_driver, car_interior_photo, car_interior_sketch, car_interior_toon, castle, chair\*, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, classroom_anime_empty, cleo_slingshot, cloud, comic, comic_panel2, comic_panel3, comic_panel4, coraline1, coraline2, couple_middle_aged, door_first, door_last, fern_gully, fish_pixel, forest_autumn, forest_day, forest_day_night, forest_night, fruit_reference_photo, fruitbowl, fuji, garden_pond_anime, ghibli_grass, ghibli_kitchen, ghibli_painting_reference_anime, ghibli_painting_reference_painterly, ghibli_street, girl_painting, girl_painting_reference, gordon_1996, gordon_2004, gordon_comic, grass_anime_girl, grass_anime_scenery, gromit, gumby, gwen, gwen_cg, hermione_preteen, ivy_toon, jacket, jacket2, kasia, kasia_bag, kasia_bag_2, kasia_outfit, kasia_render, kasia_swimsuit, kasia_swimsuit_render, kasia_swimsuit_worn, kaypro_ii, kiki, laika, lego1, lego2, maggie_grandpa_cat, marker, misato_car_1, misato_car_2, misato_car_real, misato_car_technical_print, miya, miyu, molly, mountain_rain, nadia, nerv, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, pancakes, pavilion_anime, peter_griffin_painting, peter_griffin_toon, phone, pjs, pocahontas, pooh, pre-teen1, ramen_pixel, riley_preteen, river_mountain_anime, roadway_toon, room_anime, rudolf, rugrats, saber_reference_anime, saber_reference_painterly, saber_reference_photo, sam_jackson_jurassic_middle_aged, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, scooby, shed_day, shed_dusk, shed_night, shoes_anime, shrek_cg, simpsons_couch_toon, skellington, sleeping, spongebob_tree_toon, stage, supergirl1, supergirl2, temple_day, temple_grounds_anime, temple_night, third_rock, titans1, titans_go, toddler, town_tower_anime, tv, uniform_reference_anime, uniform_reference_painterly, uniform_reference_photo, van_pixel, vector_city, wayne_knight_jurassic_adult, wayne_knight_older_adult, will_preteen, window, woman_oil, woman_reference_photo, woody_cg |
+| `colour` | **175** | annie1, annie2\*\*, annie2_cropped, annie3, annie3_panel1, april_1987, april_1987_figure, april_comic, april_fanart, avatar_1, avatar_2, ayanami_oil, azumanga_anime, azumanga_toon, baby_middle_aged, backyard_anime, beauty_beast, bird_vector, bird_watercolor, blonde_reference_painterly, blonde_reference_photo, boo_toddler, bookshop, boondocks, cannon, captain, car_1, car_2, car_interior_mecha_driver, car_interior_photo, car_interior_sketch, car_interior_toon, castle, chair, chips_hotdog_dr_pepper_painting, city_day, city_night, classroom1, classroom2, classroom_anime_empty, cleo_slingshot, cloud, comic, comic_panel2, comic_panel3, comic_panel4, coraline1, coraline2, couple_middle_aged, door_first, door_last, fern_gully, fish_pixel, forest_autumn, forest_day, forest_day_night, forest_night, fruit_reference_photo, fruitbowl, fuji, garden_pond_anime, ghibli_grass, ghibli_kitchen, ghibli_painting_reference_anime, ghibli_painting_reference_painterly, ghibli_street, girl_painting, girl_painting_reference, gordon_1996, gordon_2004, gordon_comic, grass_anime_girl, grass_anime_scenery, gromit, gumby, gwen, gwen_cg, hermione_preteen, ivy_toon, jacket, jacket2, kasia, kasia_bag, kasia_bag_2, kasia_outfit, kasia_render, kasia_swimsuit, kasia_swimsuit_render, kasia_swimsuit_worn, kaypro_ii, kiki, laika, lego1, lego2, maggie_grandpa_cat, marker, misato_car_1, misato_car_2, misato_car_real, misato_car_technical_print, miya, miyu, molly, mountain_rain, nadia, nerv, newspaper, p1_first, p1_last, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, pancakes, pavilion_anime, peter_griffin_painting, peter_griffin_toon, phone, pjs, pocahontas, pooh, pre-teen1, ramen_pixel, riley_preteen, river_mountain_anime, roadway_toon, room_anime, rudolf, rugrats, saber_reference_anime, saber_reference_painterly, saber_reference_photo, sam_jackson_jurassic_middle_aged, san_fransisco_day_evening_night, sanfran_day, sanfran_evening, sanfran_night, scooby, shed_day, shed_dusk, shed_night, shoes_anime, shrek_cg, simpsons_couch_toon, skellington, sleeping, spongebob_tree_toon, stage, supergirl1, supergirl2, temple_day, temple_grounds_anime, temple_night, third_rock, titans1, titans_go, toddler, town_tower_anime, tv, uniform_reference_anime, uniform_reference_painterly, uniform_reference_photo, van_pixel, vector_city, wayne_knight_jurassic_adult, wayne_knight_older_adult, will_preteen, window, woman_oil, woman_reference_photo, woody_cg |
 | `monochrome` | **10** | destroyer_drawing, destroyer_photo, fruit_reference_sketch, lincoln_money, lincoln_photo, sketch_boat, sketch_man, sketch_woman, teddy_taft, woman_reference_sketch |
 | `vintage Technicolor` | **2** | p5_first, p5_last |
 
-**Total 187.** Live-action (`photograph` + `live-action film`) is **66 of 187, 35%** — down from 29/37, 78% at the start of session 7. 3 of those 66 are `amb`, so the honest range is 63–66.
+### `[[AGE]]` tally
 
-\* The three `amb` files — `chair`, `car_1`, `car_2` — filed as `photograph` on provenance the
-describer cannot see (an Amazon listing and an automaker press shot). The pixels do not settle it:
-all three sit on a seamless white studio ground, the case where photograph, product render and AI
-render converge. Do not score `[[MEDIUM]]` on them; two files of one object must still agree with
-each other. **The category is under review** — the four kasia flat-lay/bag files were briefly
-flagged `amb` and then reclassified `photograph` by presentation, and the same rule arguably moves
-these three the other way. See "Coverage by role → style".
+| bracket | images | which |
+|---|---|---|
+| `infant` | **3** | baby_middle_aged, maggie_grandpa_cat, rugrats |
+| `toddler` | **3** | boo_toddler, rugrats, toddler |
+| `child` | **13** | avatar_1, avatar_2, boondocks, classroom1, classroom2, comic_panel4, fern_gully, ghibli_street, grass_anime_girl, molly, nadia, pancakes, pjs |
+| `pre-teen` | **20** | cleo_slingshot, coraline1, coraline2, girl_painting, girl_painting_reference, hermione_preteen, kiki, laika, p2_first, p2_last, p3_first, p3_last, p4_first, p4_last, p6_first, p6_last, pre-teen1, riley_preteen, will_preteen, window |
+| `teenager` | **26** | annie1, annie3, annie3_panel1, avatar_2, ayanami_oil, azumanga_anime, azumanga_toon, car_interior_mecha_driver, comic, comic_panel2, gwen, gwen_cg, kasia, kasia_render, kasia_swimsuit_render, kasia_swimsuit_worn, miya, nadia, saber_reference_anime, third_rock, titans1, titans_go, uniform_reference_anime, uniform_reference_painterly, uniform_reference_photo, van_pixel |
+| `young adult` | **33** | annie1, annie2\*\*, annie2_cropped, annie3, annie3_panel1, april_1987, april_comic, april_fanart, beauty_beast, blonde_reference_painterly, blonde_reference_photo, car_interior_sketch, castle, fern_gully, ivy_toon, jacket, jacket2, marker, pocahontas, saber_reference_painterly, saber_reference_photo, scooby, sketch_woman, sleeping, stage, supergirl1, supergirl2, temple_day, temple_night, third_rock, woman_oil, woman_reference_photo, woman_reference_sketch |
+| `adult` | **19** | annie3, bookshop, captain, car_interior_toon, comic, coraline2, door_last, ghibli_street, gromit, newspaper, p1_first, p1_last, p4_first, p4_last, pancakes, peter_griffin_painting, peter_griffin_toon, shrek_cg, wayne_knight_jurassic_adult |
+| `middle-aged` | **10** | baby_middle_aged, comic_panel3, couple_middle_aged, gordon_2004, gordon_comic, phone, sam_jackson_jurassic_middle_aged, sketch_man, teddy_taft, third_rock |
+| `older adult` | **6** | gordon_1996, lincoln_photo, maggie_grandpa_cat, pjs, tv, wayne_knight_older_adult |
+| `n/d` | **14** | annie2\*\*, boondocks, comic, comic_panel3, destroyer_photo, forest_autumn, laika, misato_car_real, miyu, p5_first, p5_last, room_anime, rugrats, sam_jackson_jurassic_middle_aged |
+| `n/a` | **11** | april_1987_figure, bird_vector, bird_watercolor, gumby, lego1, lego2, lincoln_money, pooh, rudolf, skellington, woody_cg |
+| `crowd` | **3** | ghibli_street, pjs, stage |
+
+**132 of 187 images hold a human figure.** An image contributes to every bracket it contains, so this column counts IMAGES PER BRACKET and does not sum to the corpus — unlike the medium tally, which partitions it. `n/d` is a figure whose depiction does not determine an age; `crowd` is an un-individuated mass. Animals are deliberately absent: their vocabulary is a different four-term list whose `adult` would collide with the human bracket in the same cell.
+
+**Total 187.** Live-action (`photograph` + `live-action film`) is **66 of 187, 35%** — down from 29/37, 78% at the start of session 7. Three of those (`chair`, `car_1`, `car_2`) are clean studio product shots filed as `photograph` on provenance the pixels do not show, so the honest range is 63–66. They carried an `amb` flag until session 19; the ruling is now an accept-set in `_expected` instead.
+
+\* *(retired session 19)* The `amb` flag is gone. `chair`, `car_1` and `car_2` are still
+filed as `photograph` on provenance the describer cannot see — all three sit on a seamless
+white studio ground, the case where photograph, product render and AI render converge — but
+that ruling is now carried as an accept-set in `_expected` (`photograph | 3D CG`) rather than
+by a flag, so it is applied by the scorer instead of being remembered by a reader. Two files
+of one object must still agree with each other.
 \*\* `annie2` is a photograph *of* a watercolour, filed by the outer medium per tie-break 2. Its
 content is a drawing, so it inflates the live-action share by one.
 

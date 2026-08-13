@@ -20,9 +20,13 @@ tallies did (they disagreed with each other about whether crops counted).
 """
 import argparse
 import io
+import pathlib
 import re
 import sys
 from collections import Counter, defaultdict
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from validate import AGE_PERSON                        # noqa: E402
 
 DOC = "docs/image_inventory.md"
 IMG_DIR = "images"
@@ -54,17 +58,54 @@ VOCAB = {
 IDIOM = {"anime", "western toon", "flat graphic", "dimensional toon", "realist"}
 TREATMENT = {"colour", "monochrome", "vintage Technicolor"}
 
+# The age axis (session 19). Unlike the three above it is a MULTISET -- one image can hold a
+# toddler and an older adult -- so it tallies by "images in which this bracket appears" rather
+# than one row per value.
+#
+# AGE_PERSON is IMPORTED from validate.py rather than restated here, and deliberately: it is the
+# same closed list prompts/describer_character.txt enforces, and a second copy is exactly the
+# hand-sync the VOCAB <-> MEDIUM_VOCAB note above still warns about. If the prompt's brackets
+# change, this file follows automatically.
+AGE_EXTRA = {
+    "n/d":   "a human figure is present but the depiction does not determine an age",
+    "n/a":   "figures are present but none is human -- animals, and humanoids that carry no "
+             "human age at all (a LEGO minifigure, Gumby's clay slab, a skeleton)",
+    "crowd": "an un-individuated mass, no bracket claimed for its members",
+}
+AGE_NONE = "—"                                         # no figure of any kind
+# `—` and `n/a` are NOT interchangeable, and the distinction is the whole reason `n/a` exists:
+# `—` says the frame is empty of figures, `n/a` says it holds figures the age axis does not
+# reach. Collapsing them would make "no sample" and "not applicable" the same reading in the
+# tally, and `pooh` (one anthropomorphic bear) would then be indistinguishable from `cannon`.
+# Youngest-first, which is the only order a reader expects of age brackets.
+AGE_ORDER = ["infant", "toddler", "child", "pre-teen", "teenager",
+             "young adult", "adult", "middle-aged", "older adult"]
+assert set(AGE_ORDER) == set(AGE_PERSON), set(AGE_ORDER) ^ set(AGE_PERSON)
+
+# `people` cells that assert no human. Anything else must carry a non-`—` age, and vice versa:
+# that pairing is the check that would have caught the mathilda set, where ten files recorded no
+# bracket at all and the eleventh (`window`) recorded one that disagreed with them.
+NO_PEOPLE = re.compile(r"^(none|—|-|\*\*none\*\*|none \(1 bird\))$", re.I)
+
 # Tally order: coarse terms largest-first is unstable as the corpus grows, so fix it explicitly.
 ORDER = list(VOCAB)
 IDIOM_ORDER = ["realist", "anime", "flat graphic", "western toon", "dimensional toon"]
 TREATMENT_ORDER = ["colour", "monochrome", "vintage Technicolor"]
 
-FLAGS = {"text", "real", "franchise", "derived", "corr", "amb", "nested"}
+# `amb` was RETIRED in session 19. It marked three studio product shots (chair, car_1, car_2)
+# whose photograph-vs-render reading is not visually determinable; that ruling now lives where
+# every other ambiguity ruling lives -- as an accept-set in `_expected`, written by
+# gen_style_sweep.py. The flag is gone rather than merely unused, so a row cannot quietly
+# reacquire it and mean something the scoring no longer reads.
+FLAGS = {"text", "real", "franchise", "derived", "corr", "nested"}
 LIVE_ACTION = {"photograph", "live-action film"}
 NONE = {"none", "—", "-", ""}
+# Named here only so the tally caption can keep reporting the honest live-action range now that
+# the flag that used to identify them is gone. Not a flag, not a vocabulary -- just three names.
+AMB_LEGACY = ["chair", "car_1", "car_2"]
 
 # Footnote markers in the generated tally, driven by flags rather than hand-annotation.
-MARKERS = [("amb", r"\*"), ("nested", r"\*\*")]
+MARKERS = [("nested", r"\*\*")]
 
 
 def cells(line):
@@ -91,6 +132,39 @@ def parse_table(lines, start_heading, stop_prefix="## "):
 def names_in(cell):
     """`a` / `b` -> ['a', 'b']. Contents rows may legitimately key several near-identical files."""
     return [n.strip().strip("`") for n in cell.split("/") if n.strip()]
+
+
+def age_tokens(cell):
+    """An `age` cell -> its tokens. `—` yields nothing, which is what "no human" means."""
+    cell = cell.strip()
+    if cell in NONE:
+        return []
+    return [t.strip() for t in cell.split(",") if t.strip()]
+
+
+def check_age(name, row, problems):
+    """Validate one row's `age` cell, and its agreement with `people`."""
+    cell = row["age"].strip()
+    tokens = age_tokens(cell)
+    for t in tokens:
+        if t not in AGE_PERSON and t not in AGE_EXTRA:
+            problems.append(
+                f"`{name}`: age {t!r} is not a bracket or one of {sorted(AGE_EXTRA)}")
+    if len(tokens) != len(set(tokens)):
+        problems.append(f"`{name}`: age {cell!r} repeats a token — the cell is a set, not a count")
+    if "n/a" in tokens and len(tokens) > 1:
+        problems.append(f"`{name}`: age {cell!r} — 'n/a' means NO figure is human, so it cannot "
+                        f"sit beside a bracket")
+    # The two columns must agree about whether the frame holds a figure. Either alone can rot
+    # silently; together they cannot -- this is the check that would have caught the mathilda
+    # set, where ten files carried no bracket and the eleventh carried one that disagreed.
+    empty_people = bool(NO_PEOPLE.match(row["people"].strip()))
+    if empty_people and tokens:
+        problems.append(f"`{name}`: age {cell!r} but people says no figure")
+    if not empty_people and not tokens:
+        problems.append(f"`{name}`: people names a figure ({row['people'][:40]!r}) but age is "
+                        f"`—`. Use 'n/a' if the figures are not human, 'n/d' if the age is "
+                        f"unreadable")
 
 
 def build_tally(master):
@@ -143,14 +217,42 @@ def build_tally(master):
             names = sorted(label(r) for r in rows)
             out.append(f"| `{val}` | **{len(names)}** | {', '.join(names)} |")
 
+    # The age axis is a multiset, so it cannot join the flat loop above: an image contributes to
+    # every bracket it contains. The count is therefore "images holding this bracket" and the
+    # column does NOT sum to the corpus size -- said in the caption so nobody reads it as a
+    # partition the way the medium tally is one.
+    by_age = defaultdict(list)
+    for r in master:
+        for t in age_tokens(r["age"]):
+            by_age[t].append(r)
+    out += ["", "### `[[AGE]]` tally", "",
+            "| bracket | images | which |", "|---|---|---|"]
+    for val in AGE_ORDER + list(AGE_EXTRA):
+        rows = by_age.get(val)
+        if not rows:
+            out.append(f"| *{val}* | *0* | *no sample* |")
+            continue
+        names = sorted(label(r) for r in rows)
+        out.append(f"| `{val}` | **{len(names)}** | {', '.join(names)} |")
+    peopled = [r for r in master if age_tokens(r["age"])]
+    out += ["", (
+        f"**{len(peopled)} of {len(master)} images hold a human figure.** An image contributes to "
+        f"every bracket it contains, so this column counts IMAGES PER BRACKET and does not sum to "
+        f"the corpus — unlike the medium tally, which partitions it. `n/d` is a figure whose "
+        f"depiction does not determine an age; `crowd` is an un-individuated mass. Animals are "
+        f"deliberately absent: their vocabulary is a different four-term list whose `adult` would "
+        f"collide with the human bracket in the same cell."
+    )]
+
     n = len(master)
     la = [r for r in master if r["medium"] in LIVE_ACTION]
-    amb = [r for r in la if "amb" in r["flags"]]
     out += ["", (
         f"**Total {n}.** Live-action (`photograph` + `live-action film`) is "
         f"**{len(la)} of {n}, {round(100 * len(la) / n)}%** — down from 29/37, 78% at the start "
-        f"of session 7. {len(amb)} of those {len(la)} are `amb`, so the honest range is "
-        f"{len(la) - len(amb)}–{len(la)}."
+        f"of session 7. Three of those ({', '.join('`%s`' % x for x in AMB_LEGACY)}) are clean "
+        f"studio product shots filed as `photograph` on provenance the pixels do not show, so "
+        f"the honest range is {len(la) - len(AMB_LEGACY)}–{len(la)}. They carried an `amb` flag "
+        f"until session 19; the ruling is now an accept-set in `_expected` instead."
     )]
     return out
 
@@ -204,6 +306,7 @@ def main():
             problems.append(f"`{name}`: idiom {r['idiom']!r} not in the vocabulary")
         if r["treatment"] not in TREATMENT:
             problems.append(f"`{name}`: treatment {r['treatment']!r} not in the vocabulary")
+        check_age(name, r, problems)
         for f in (x.strip() for x in r["flags"].split(",")):
             if f and f not in NONE and f not in FLAGS:
                 problems.append(f"`{name}`: unknown flag {f!r}")

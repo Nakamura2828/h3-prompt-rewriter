@@ -21,7 +21,10 @@
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -33,7 +36,10 @@
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -49,7 +55,10 @@
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -63,13 +72,24 @@
     "sw_misato_car_1": "2D cel / none / anime / colour",
     "sw_misato_car_2": "2D cel / none / anime / colour",
     "sw_misato_car_real": "photograph / none / realist / colour",
-    "sw_misato_car_technical_print": "print / halftone / realist / colour",
+    "sw_misato_car_technical_print": {
+      "expect": "print | drawing / halftone | digital / realist / colour",
+      "why": "a technical brochure plate whose PRINT PROCESS is not visible at the resolution the model receives -- no rosette, no halftone dot, no screen (ruled session 19). `print / halftone` records how the artwork was reproduced, which is provenance rather than pixels, so `drawing / digital` is a correct reading of what is actually there. Control: destroyer_drawing is the halftone case where the screen IS plainly visible, so a print plate that shows its process must still come back `print`.",
+      "control": [
+        "sw_destroyer_drawing",
+        "sw_sketch_boat",
+        "sw_fruit_reference_sketch"
+      ]
+    },
     "sw_nerv": {
       "expect": "2D cel | painting / none / anime / colour",
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -85,7 +105,10 @@
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -93,20 +116,26 @@
       ]
     },
     "sw_roadway_toon": {
-      "expect": "2D cel | painting / none / western toon / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none / western toon | anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: a soft painterly cel background with no figure and no idiom cue -- no line work, no character, nothing that places it in either tradition (ruled session 19). Withheld in session 18 ON PURPOSE while the figureless defect was still hypothetical; released only after the s19 round showed 14 of 15 figureless plates reaching the RIGHT idiom, which means this is one undecidable image and not a systematic failure. Controls are figureless plates that ARE decidable, from both sides: if they start collapsing, the defect is real after all and this set must be withdrawn.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
-        "sw_woman_oil"
+        "sw_woman_oil",
+        "sw_simpsons_couch_toon",
+        "sw_spongebob_tree_toon",
+        "sw_grass_anime_scenery"
       ]
     },
     "sw_room_anime": "2D cel / none / anime / colour",
     "sw_rugrats": "2D cel / none / western toon / colour",
-    "sw_saber_reference_anime": "painting / digital / anime / colour",
+    "sw_saber_reference_anime": "3D CG / none / anime / colour",
     "sw_saber_reference_painterly": "painting / digital / realist / colour",
     "sw_saber_reference_photo": "photograph / none / realist / colour",
     "sw_sam_jackson_jurassic_middle_aged": "live-action film / none / realist / colour",
@@ -122,21 +151,36 @@
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
         "sw_woman_oil"
       ]
     },
-    "sw_third_rock": "photograph / none / realist / colour",
+    "sw_third_rock": {
+      "expect": "photograph | live-action film / none / realist / colour",
+      "why": "a cast publicity still from a filmed production, where photograph vs live-action film is not visually determinable (ruled session 19). The frame is a posed studio shot AND a record of a filmed production, and nothing in the pixels decides which reading the describer should have reached. BOTH pass; every non-live-action medium still fails. Controls guard the axis rather than the case: the wayne_knight pair sits on this exact boundary from both sides and both halves passed, so a collapse there means the distinction has stopped working and this pass is worthless.",
+      "control": [
+        "sw_wayne_knight_older_adult",
+        "sw_wayne_knight_jurassic_adult",
+        "sw_hermione_preteen",
+        "sw_couple_middle_aged"
+      ]
+    },
     "sw_toddler": "photograph / none / realist / colour",
     "sw_town_tower_anime": {
       "expect": "2D cel | painting / none / anime / colour",
       "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
       "control": [
         "sw_grass_anime_girl",
-        "sw_ghibli_painting_reference_anime",
+        "sw_backyard_anime",
+        "sw_classroom_anime_empty",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
         "sw_ivy_toon",
         "sw_april_1987",
         "sw_azumanga_anime",
@@ -639,14 +683,14 @@
     },
     {
       "id": "look_saber_reference_anime",
-      "group": "painting",
+      "group": "3D CG",
       "image": "images/saber_reference_anime.jpg",
       "system_file": "prompts/describer_style_look.txt",
       "user": "ROLE: style"
     },
     {
       "id": "sw_saber_reference_anime",
-      "group": "painting",
+      "group": "3D CG",
       "image": "images/saber_reference_anime.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_saber_reference_anime}}"

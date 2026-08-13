@@ -80,7 +80,13 @@ CONTESTED_IDIOM = {}
 # EMPTY as of session 17. It briefly held `coraline1`: `puppet | figure`, replacing the session-12
 # CONTESTED ruling. The puppet -> figure merge landed later the same session and dissolved the
 # distinction, so `coraline1` is now plainly `figure`. Kept as the place the next one goes.
-ACCEPT_SUB = {}
+ACCEPT_SUB = {
+    # Session 19: the sub half of the unprinted-print ruling. `halftone` names a screen the
+    # model cannot see, so `digital` is a correct reading of the marks that ARE there. Paired
+    # with the MEDIUM set below -- this is the first case to need two axes at once, which is
+    # why the application loop was rewritten to compose them.
+    'misato_car_technical_print': ('halftone | digital', None, None),
+}
 
 # Per-image accept-sets on [[MEDIUM]], ruled by the user in session 18.
 #
@@ -115,19 +121,116 @@ _PLATE_WHY = (
     "works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel "
     "frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored "
     "STRICTLY on these -- see the [[IDIOM]] note in the test's _role.")
-_PLATE_CONTROL = ['sw_grass_anime_girl', 'sw_ghibli_painting_reference_anime',
+# SESSION 19: `sw_ghibli_painting_reference_anime` REMOVED from this list. It is a cel-era
+# painted background -- the SAME ambiguous class this set exists to forgive -- so it can never
+# police the set: a control has to sit on the UNAMBIGUOUS side of the axis being widened. It
+# was made strict for the probe-pair reason (L-AN-ACCEPT-SET-MUST-NOT-COVER-ITS-OWN-PROBE) and
+# then reused as a control, and those are not the same job. Being strict-for-probe-reasons does
+# not qualify an image to be a control. It stays strict; it just no longer claims to guard
+# anything, and its collapse is now read as the finding it is rather than as an alarm on this
+# set. Replaced by the OUTLINED plates session 18 deliberately kept strict -- visible cel line
+# work, so `2D cel` is decidable on them -- which are also in the s18 test and therefore live.
+_PLATE_CONTROL = ['sw_grass_anime_girl', 'sw_backyard_anime', 'sw_classroom_anime_empty',
+                  'sw_pavilion_anime', 'sw_shoes_anime',
                   'sw_ivy_toon', 'sw_april_1987', 'sw_azumanga_anime', 'sw_woman_oil']
 ACCEPT_MEDIUM = {n: ('2D cel | painting', _PLATE_WHY, _PLATE_CONTROL) for n in (
     'temple_grounds_anime', 'town_tower_anime', 'river_mountain_anime', 'nerv',
     'grass_anime_scenery', 'ghibli_grass', 'ghibli_kitchen', 'roadway_toon',
 )}
 
-# The `amb` accept-set, ruled by the user in session 17. Applied to every master row flagged
-# `amb`; see the comment at the point of use for why UNSCORABLE was the wrong verdict.
+# --- Session 19 rulings, from the first s18 round -------------------------------------------
 #
-# SUPERSEDED IN DIRECTION as of session 18: no NEW `amb` rulings should be made -- put them in
-# ACCEPT_MEDIUM above instead. The three legacy files (chair, car_1, car_2) still carry the flag
-# and still get their set from here; migrating them off it is recorded as follow-up work.
+# THE PUBLICITY-STILL SET. A cast still from a filmed production is honestly both a photograph
+# and a frame of live-action film, and nothing in the pixels settles which. What makes this a
+# safe set rather than a hole is that the corpus already contains a deliberate probe pair on
+# exactly this axis -- wayne_knight_older_adult (photograph) against
+# wayne_knight_jurassic_adult (live-action film) -- and BOTH passed the s19 round. The
+# distinction demonstrably works; this is one hard case inside a working axis.
+_STILL_WHY = (
+    "a cast publicity still from a filmed production, where photograph vs live-action film is "
+    "not visually determinable (ruled session 19). The frame is a posed studio shot AND a "
+    "record of a filmed production, and nothing in the pixels decides which reading the "
+    "describer should have reached. BOTH pass; every non-live-action medium still fails. "
+    "Controls guard the axis rather than the case: the wayne_knight pair sits on this exact "
+    "boundary from both sides and both halves passed, so a collapse there means the "
+    "distinction has stopped working and this pass is worthless.")
+_STILL_CONTROL = ['sw_wayne_knight_older_adult', 'sw_wayne_knight_jurassic_adult',
+                  'sw_hermione_preteen', 'sw_couple_middle_aged']
+
+# THE UNPRINTED-PRINT CASE. `print / halftone` on misato_car_technical_print came from knowing
+# the plate came out of a brochure. At the resolution the model is given there is no rosette,
+# no dot, no screen -- just an airbrushed illustration with ink outlines, which is exactly what
+# it answered. Same shape as the chair/car ruling below: the master value rests on provenance
+# the describer cannot see, and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against it.
+_PRINT_WHY = (
+    "a technical brochure plate whose PRINT PROCESS is not visible at the resolution the model "
+    "receives -- no rosette, no halftone dot, no screen (ruled session 19). `print / halftone` "
+    "records how the artwork was reproduced, which is provenance rather than pixels, so "
+    "`drawing / digital` is a correct reading of what is actually there. Control: "
+    "destroyer_drawing is the halftone case where the screen IS plainly visible, so a print "
+    "plate that shows its process must still come back `print`.")
+_PRINT_CONTROL = ['sw_destroyer_drawing', 'sw_sketch_boat', 'sw_fruit_reference_sketch']
+
+# THE FIGURELESS IDIOM CASE, and the ONLY one. Session 18 deliberately withheld an idiom set on
+# the plates because the idiom was the thing being measured. The s19 round settled that: 14 of
+# 15 figureless plates got the idiom RIGHT, so the predicted defect does not exist and
+# roadway_toon is one genuinely undecidable plate rather than a symptom of anything. The
+# controls are the plates that got it right, which is what makes this set narrow.
+_PLATE_IDIOM_WHY = (
+    "a soft painterly cel background with no figure and no idiom cue -- no line work, no "
+    "character, nothing that places it in either tradition (ruled session 19). Withheld in "
+    "session 18 ON PURPOSE while the figureless defect was still hypothetical; released only "
+    "after the s19 round showed 14 of 15 figureless plates reaching the RIGHT idiom, which "
+    "means this is one undecidable image and not a systematic failure. Controls are figureless "
+    "plates that ARE decidable, from both sides: if they start collapsing, the defect is real "
+    "after all and this set must be withdrawn.")
+_PLATE_IDIOM_CONTROL = ['sw_simpsons_couch_toon', 'sw_spongebob_tree_toon',
+                        'sw_grass_anime_scenery', 'sw_backyard_anime']
+
+# THE PAINTERLY-FACE CASE -- WRITTEN, MEASURED, AND WITHDRAWN INSIDE ONE SESSION. Kept here as
+# a comment because the withdrawal is the useful record, not the set.
+#
+# All four *_painterly files missed `realist -> anime` in the s19 round. The set was written for
+# uniform_reference_painterly alone, on the reading that its face carries genuine anime
+# construction while the other three are naturalistic, with those three as strict controls.
+# Re-scoring the SAME run with the set in place answered the question immediately:
+#
+#     FIRED  sw_uniform_reference_painterly  IDIOM = 'anime' (primary 'realist')
+#            controls: saber_reference_painterly COLLAPSED · blonde_reference_painterly
+#                      COLLAPSED · ghibli_painting_reference_painterly COLLAPSED
+#
+# ALL THREE controls collapsed the same way, which is exactly the condition the control field
+# exists to detect: the model is not resolving one anime-faced painting, it is answering `anime`
+# for every painterly image it sees. The set was buying a pass it had not earned. User confirmed
+# on review that blonde and saber both still read `realist` to the eye, so the key is right and
+# the model is wrong. Withdrawn; all four are one honest miss cluster naming an `anime`
+# over-attractor on painterly work -- the same SHAPE as the `digital` over-attractor, on a
+# different axis.
+#
+# The general lesson, and the reason this is worth eighteen lines: AN ACCEPT-SET IS A HYPOTHESIS,
+# AND ITS CONTROLS ARE THE EXPERIMENT THAT TESTS IT. Writing one and re-scoring an existing run
+# costs nothing and can refute it before it ever protects a defect.
+
+ACCEPT_MEDIUM.update({
+    'third_rock':                ('photograph | live-action film', _STILL_WHY, _STILL_CONTROL),
+    'misato_car_technical_print': ('print | drawing', _PRINT_WHY, _PRINT_CONTROL),
+})
+
+# Per-image accept-sets on [[IDIOM]]. New in session 19 -- the axis had never needed one,
+# because until the s18 round every idiom miss had turned out to be a real defect.
+ACCEPT_IDIOM = {
+    'roadway_toon': ('western toon | anime', _PLATE_IDIOM_WHY, _PLATE_IDIOM_CONTROL),
+}
+
+# The studio-product-shot accept-set, ruled by the user in session 17.
+#
+# MIGRATED OFF THE `amb` FLAG IN SESSION 19, on the user's standing direction to stop using the
+# flag altogether and let `_expected` carry these rulings. The three files are now ordinary
+# ACCEPT_MEDIUM entries and the flag branch is gone. The WHY AND CONTROL TEXT BELOW IS
+# UNCHANGED, deliberately: it is the record of a real session-17 ruling, and the migration was
+# only allowed on the condition that it does not disturb the existing answer keys. Because the
+# expectation is assembled from the same strings, `tests/describer_style_sweep130.json`
+# regenerates byte-identically -- which is the check that proves the baseline survived.
 AMB_WHY = (
     "a clean studio product shot on a pure white sweep, where photo vs render is not visually "
     "determinable (the `amb` shape, session 7-9; ruled scorable session 17). The master value "
@@ -140,6 +243,144 @@ AMB_WHY = (
     "the distinction works. Controls guard the direction it can erode: photograph is the "
     "forgiven side, so 3D CG cases that are NOT ambiguous must still come back 3D CG.")
 AMB_CONTROL = ['sw_fruitbowl', 'sw_shrek_cg', 'sw_woody_cg']
+ACCEPT_MEDIUM.update({n: ('photograph | 3D CG', AMB_WHY, AMB_CONTROL)
+                      for n in ('chair', 'car_1', 'car_2')})
+
+# --- Back-ported session 15/16 rulings ------------------------------------------------------
+#
+# These twelve accept-sets were adjudicated straight into tests/describer_style_sweep130.json
+# and never written back here, so from session 16 until session 19 THIS SCRIPT COULD NOT
+# REPRODUCE THAT TEST -- regenerating it would have silently dropped every one of them. That
+# is L-ADJUDICATION-DEFEATS-REGENERATION happening for real rather than in the abstract.
+# Recovered mechanically FROM the committed test file in session 19, so the `why` texts are
+# the originals rather than paraphrases, and verified by regenerating sweep130 and diffing.
+_S16_ANNIE2CROPPED = (
+    "a painting colouring over a drawing's lineart (user, session 16) -- pen line with "
+    "watercolour wash over it, so both coherent readings are true: painting / watercolour and "
+    "drawing / ink. KNOWN LIMITATION: accept-sets are per-FIELD, so the cross terms drawing / "
+    "watercolour and painting / ink also pass even though neither is a legal pairing in the "
+    "vocabulary. Accepted deliberately rather than stretching the mechanism to cross-field "
+    "constraints, which is the shape ruled out of scope in session 16. If the cross terms "
+    "start turning up, that is the signal to reconsider -- probably by adding watercolour to "
+    "drawing's sub-list, not by changing score.py.")
+_S16_ANNIE2CROPPED_CONTROL = ['sw_bird_watercolor', 'sw_annie1']
+
+_S16_APRIL1987FIGUR = (
+    "a photograph of moulded plastic figures on a shelf in a real room (user, s15, reaffirmed "
+    "s17: \"both alternatives should be acceptable\"). Tie-break 1 makes `stop-motion / figure` "
+    "legal -- the objects win -- but these figures were never animated and the room is not a "
+    "set, so the model's `photograph / none` is equally true. This is the SHAPE-2 case "
+    "session 16 ruled out of accept-set scope: two fields each holding half a true answer. "
+    "Session 17 accepts it as a PAIR of per-field sets instead, with the same known "
+    "limitation as sw_annie2_cropped -- the cross terms `stop-motion / none` and `photograph "
+    "/ figure` also pass, and `photograph / figure` is the very pairing the user called "
+    "invalid. Accepted deliberately rather than adding cross-field constraints to score.py. "
+    "Controls guard the erodable direction: `photograph` is forgiven, so real stop-motion is "
+    "what can drift, and all four unambiguous stop-motion cases in this file must still come "
+    "back stop-motion with a real sub-term.")
+_S16_APRIL1987FIGUR_CONTROL = ['sw_gromit', 'sw_gumby', 'sw_rudolf', 'sw_pjs']
+
+_S16_APRILCOMIC = (
+    "original marker art on a blank sketch cover, photographed with the publisher's printed "
+    "trade dress around it (user, s15; MEDIUM opened s17). Tie-break 2's s15 amendment says "
+    "report the artwork when the outer layer is pure capture, which gives `drawing`; but the "
+    "contents row records real printed trade dress -- IDW logo, issue number, creator credits "
+    "-- so the outer layer is NOT pure capture and `comic` is equally defensible. SUB_MEDIUM "
+    "stays STRICT at `marker`, exactly as on sw_april_fanart: the user's session-12 ruling is "
+    "that `marker` -> `digital` specifically is not acceptable, so opening the instrument "
+    "here would forgive the project's largest defect on one of the few images that tests it. "
+    "CONTROL GAP, stated plainly: this file contains NO unambiguous `drawing` case, and "
+    "`drawing` is the side that can erode, so the axis is only half guarded. sw_gordon_comic "
+    "controls the reverse direction (a real comic staying `comic`). Fix by adding an "
+    "unambiguous drawing to this file, not by loosening the set.")
+_S16_APRILCOMIC_CONTROL = ['sw_gordon_comic']
+
+_S16_APRILFANART = (
+    "the user accepts `comic` on the coarse term -- it carries the same style as a comic book "
+    "cover -- while the instrument is still unmistakably marker (user, session 16): \"I can "
+    "see where painting comes from but it still looks marker to me\". So MEDIUM opens and "
+    "SUB_MEDIUM does NOT. Same per-field limitation as sw_annie2_cropped: `comic`'s sub-list "
+    "is ink/screentone/digital, so the accepted pairing comic + marker is not legal in the "
+    "vocabulary, accepted deliberately rather than stretching the mechanism. NOTE this case "
+    "also carries the s15 composite correction (marker figure over a pasted manhole on a "
+    "digital white ground), so a describer that averages the layers lands on `digital` by a "
+    "route the MEDIUM accept-set does not forgive.")
+_S16_APRILFANART_CONTROL = ['sw_gordon_comic']
+
+_S16_AVATAR1 = (
+    "a western toon with an anime-inspired style; the two traditions are genuinely converging "
+    "(user, sessions 15 and 16). Written on ALL FOUR of the s15 anime-idiom cartoons, not "
+    "only the two that failed this way in the s15 round -- the accept-set records a property "
+    "of the IMAGE, and keying it to one run's output would be fitting the answer key to a "
+    "sample (L-ONE-RUN-IS-A-SAMPLE). Score-neutral this round: boondocks missed to "
+    "dimensional toon, outside the set, and titans1 passed on the primary. Controls guard "
+    "both directions -- sw_april_1987, sw_car_interior_toon and sw_ivy_toon are unambiguously "
+    "western, sw_nadia unambiguously anime. sw_car_interior_toon was added in s16 on a user "
+    "ruling that is worth more than its own case: it is ITSELF a converging-styles image, and "
+    "the user placed it \"solidly on the western side\" -- so it tests the distinction under "
+    "the exact conditions that make it hard, which a easy control cannot. sw_ivy_toon lives "
+    "in describer_style_sweep.json and will report 'not in this test' here; run the sweep to "
+    "exercise it. EXPECT THE COLLAPSE WARNING: sw_april_1987 already answers `anime`, which "
+    "is exactly what the control field exists to make visible -- it is not a reason to widen "
+    "the set.")
+_S16_AVATAR1_CONTROL = ['sw_april_1987', 'sw_car_interior_toon', 'sw_nadia', 'sw_ivy_toon']
+
+_S16_KASIARENDER = (
+    "an AI render in a semi-realistic anime style. Both halves are true at once -- it IS a "
+    "dimensional render and it IS anime-styled -- and the two idiom terms are not competing "
+    "readings of one property here, they name different properties of the same image (user, "
+    "session 16). Controls cover BOTH directions deliberately: sw_kasia / "
+    "sw_kasia_swimsuit_worn are the same character rendered flat and unambiguously anime (the "
+    "direction this accept-set actually risks -- it forgives dimensional toon, so anime is "
+    "the side that can erode), while sw_shrek_cg / sw_woody_cg are unambiguously dimensional "
+    "toon.")
+_S16_KASIARENDER_CONTROL = ['sw_kasia', 'sw_kasia_swimsuit_worn', 'sw_shrek_cg', 'sw_woody_cg']
+
+_S16_SUPERGIRL2 = (
+    "marker colouring over a pencil sketch, so both instruments are literally present (user, "
+    "session 16). This retires the session-9 CONTESTED ruling on the sub-term, which said the "
+    "pair differs in finish rather than instrument -- true of the PAIR, but the un-inked "
+    "pencil under-drawing is visible in this image on its own merits. NOTE: `drawing / "
+    "pencil` has NO unambiguous sample in the corpus, so only the marker side of this "
+    "distinction can be controlled.")
+_S16_SUPERGIRL2_CONTROL = ['sw_marker', 'sw_supergirl1']
+
+_S16_WINDOW = (
+    "a live-action film clip cropped to a photograph's aspect ratio, so the framing genuinely "
+    "reads as a still (user, session 16). NOTE the asymmetry: `castle` is NOT an accept-set. "
+    "The pair looked like a swap -- the model called castle film and window photo, the "
+    "reverse of the key -- but only window is ambiguous; castle is a plain miss and is the "
+    "control here.")
+_S16_WINDOW_CONTROL = ['sw_castle', 'sw_p6_first']
+
+ACCEPT_MEDIUM.update({
+    'annie2_cropped':               ('painting | drawing', _S16_ANNIE2CROPPED, _S16_ANNIE2CROPPED_CONTROL),
+    'april_1987_figure':            ('stop-motion | photograph', _S16_APRIL1987FIGUR, _S16_APRIL1987FIGUR_CONTROL),
+    'april_comic':                  ('drawing | comic', _S16_APRILCOMIC, _S16_APRILCOMIC_CONTROL),
+    'april_fanart':                 ('drawing | comic', _S16_APRILFANART, _S16_APRILFANART_CONTROL),
+    'window':                       ('live-action film | photograph', _S16_WINDOW, _S16_WINDOW_CONTROL),
+})
+
+ACCEPT_SUB.update({
+    'annie2_cropped':               ('watercolour | ink', _S16_ANNIE2CROPPED, _S16_ANNIE2CROPPED_CONTROL),
+    'april_1987_figure':            ('figure | none', _S16_APRIL1987FIGUR, _S16_APRIL1987FIGUR_CONTROL),
+    'supergirl2':                   ('marker | pencil', _S16_SUPERGIRL2, _S16_SUPERGIRL2_CONTROL),
+})
+
+ACCEPT_IDIOM.update({
+    'avatar_1':                     ('western toon | anime', _S16_AVATAR1, _S16_AVATAR1_CONTROL),
+    'avatar_2':                     ('western toon | anime', _S16_AVATAR1, _S16_AVATAR1_CONTROL),
+    'boondocks':                    ('western toon | anime', _S16_AVATAR1, _S16_AVATAR1_CONTROL),
+    'kasia_render':                 ('anime | dimensional toon', _S16_KASIARENDER, _S16_KASIARENDER_CONTROL),
+    'kasia_swimsuit_render':        ('anime | dimensional toon', _S16_KASIARENDER, _S16_KASIARENDER_CONTROL),
+    'titans1':                      ('western toon | anime', _S16_AVATAR1, _S16_AVATAR1_CONTROL),
+})
+
+# Every per-axis accept-set table, keyed by the master column it widens. One case may now fire
+# on SEVERAL axes -- misato_car_technical_print is the first, needing both `print | drawing`
+# and `halftone | digital` -- so the application below composes them instead of letting the
+# last one win, which is what the old sequential-overwrite code did.
+ACCEPT_BY_AXIS = [('medium', ACCEPT_MEDIUM), ('sub', ACCEPT_SUB), ('idiom', ACCEPT_IDIOM)]
 
 cases, expected = [], {}
 for r in master:
@@ -157,26 +398,30 @@ for r in master:
     sub = r['sub']
     if name in CONTESTED_SUB:
         sub = f"(CONTESTED -- {CONTESTED_SUB[name]})"
-    if name in ACCEPT_SUB:
-        sub, _why, _ctl = ACCEPT_SUB[name][0], *ACCEPT_SUB[name][1:]
-    key = f"{r['medium']} / {sub} / {idiom} / {r['treatment']}"
-    if name in ACCEPT_SUB:
-        key = {'expect': key, 'why': ACCEPT_SUB[name][1], 'control': ACCEPT_SUB[name][2]}
-    if name in ACCEPT_MEDIUM:
-        # Session 18: the figureless-plate set. Widens [[MEDIUM]] only -- the other three
-        # fields stay strict, which is the whole point on these images (the idiom is what the
-        # v4c figureless defect is measured on, so forgiving it would erase the measurement).
-        alts, why, control = ACCEPT_MEDIUM[name]
-        expect = key['expect'] if isinstance(key, dict) else key
-        key = {'expect': expect.replace(r['medium'], alts, 1), 'why': why, 'control': control}
-    if 'amb' in r['flags']:
-        # Session 17: `amb` no longer means UNSCORABLE. The master value for these three came
-        # from the user's knowledge of the SOURCE (an automaker press shot, an Amazon listing),
-        # not from the pixels, and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against
-        # that. So the case stays in the denominator as an accept-set that forgives both
-        # readings, while painting / drawing / vector still fail. Deliberately a WEAK test.
-        key = {'expect': key.replace(r['medium'], f"{r['medium']} | 3D CG", 1),
-               'why': AMB_WHY, 'control': AMB_CONTROL}
+
+    # Assemble the four fields, then widen whichever axes carry an accept-set for this image.
+    # Assigning the alternatives straight into the field is safer than the old string
+    # .replace(): `2D cel` is a substring of nothing here today, but a medium term that
+    # appeared inside another field's value would have been silently rewritten.
+    fields = {'medium': r['medium'], 'sub': sub, 'idiom': idiom, 'treatment': r['treatment']}
+    whys, controls = [], []
+    for axis, table in ACCEPT_BY_AXIS:
+        if name not in table:
+            continue
+        alts, why, control = table[name]
+        fields[axis] = alts
+        if why and why not in whys:
+            whys.append(why)
+        for c in control or []:
+            if c not in controls:
+                controls.append(c)
+
+    key = ' / '.join(fields[a] for a in ('medium', 'sub', 'idiom', 'treatment'))
+    if whys:
+        # Several axes firing on one case means several rationales. Joining them keeps each
+        # ruling readable in the score report rather than letting the last one overwrite the
+        # rest, which is how the pre-session-19 code lost ACCEPT_SUB's `why`.
+        key = {'expect': key, 'why': '\n\nALSO: '.join(whys), 'control': controls}
     expected[cid] = key
 
 doc = {
