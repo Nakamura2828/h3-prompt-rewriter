@@ -1,0 +1,963 @@
+{
+  "_role": "describer_style ENRICHED ROUND -- only the images added in s18, scored against the master table in docs/image_inventory.md. NOT a representative sample of the corpus: collected to fill named gaps, so it is deliberately skewed and a failure RATE over it says nothing about the corpus as a whole.",
+  "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
+  "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
+  "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
+  "_gate": "enriched",
+  "_gate_note": "Enriched, per .claude/CLAUDE.md: gate on MOVEMENT (regressions vs the previous round), never on the failure level. On the FIRST run there is no delta at all, so there is nothing to gate -- adjudicate, cap 6. Three of these images carry provisional rulings the user expects may need reversing; read docs/image_inventory.md section \"Rulings that may need revisiting\" BEFORE scoring them, or you will file a deliberate decision as a model defect.",
+  "_expected": {
+    "sw_backyard_anime": "2D cel / none / anime / colour",
+    "sw_blonde_reference_painterly": "painting / digital / realist / colour",
+    "sw_blonde_reference_photo": "photograph / none / realist / colour",
+    "sw_boo_toddler": "3D CG / none / dimensional toon / colour",
+    "sw_classroom_anime_empty": "2D cel / none / anime / colour",
+    "sw_cleo_slingshot": "2D cel / none / western toon / colour",
+    "sw_couple_middle_aged": "photograph / none / realist / colour",
+    "sw_fruit_reference_photo": "photograph / none / realist / colour",
+    "sw_fruit_reference_sketch": "drawing / pencil / realist / monochrome",
+    "sw_garden_pond_anime": "2D cel / none / anime / colour",
+    "sw_ghibli_grass": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_ghibli_kitchen": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_ghibli_painting_reference_anime": "2D cel / none / anime / colour",
+    "sw_ghibli_painting_reference_painterly": "painting / digital / realist / colour",
+    "sw_ghibli_street": "2D cel / none / anime / colour",
+    "sw_grass_anime_girl": "2D cel / none / anime / colour",
+    "sw_grass_anime_scenery": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_hermione_preteen": "live-action film / none / realist / colour",
+    "sw_laika": "stop-motion / figure / dimensional toon / colour",
+    "sw_lego1": "stop-motion / figure / dimensional toon / colour",
+    "sw_lego2": "stop-motion / figure / dimensional toon / colour",
+    "sw_misato_car_1": "2D cel / none / anime / colour",
+    "sw_misato_car_2": "2D cel / none / anime / colour",
+    "sw_misato_car_real": "photograph / none / realist / colour",
+    "sw_misato_car_technical_print": "print / halftone / realist / colour",
+    "sw_nerv": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_pavilion_anime": "2D cel / none / anime / colour",
+    "sw_pooh": "2D cel / none / western toon / colour",
+    "sw_pre-teen1": "photograph / none / realist / colour",
+    "sw_riley_preteen": "3D CG / none / dimensional toon / colour",
+    "sw_river_mountain_anime": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_roadway_toon": {
+      "expect": "2D cel | painting / none / western toon / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_room_anime": "2D cel / none / anime / colour",
+    "sw_rugrats": "2D cel / none / western toon / colour",
+    "sw_saber_reference_anime": "painting / digital / anime / colour",
+    "sw_saber_reference_painterly": "painting / digital / realist / colour",
+    "sw_saber_reference_photo": "photograph / none / realist / colour",
+    "sw_sam_jackson_jurassic_middle_aged": "live-action film / none / realist / colour",
+    "sw_shoes_anime": "2D cel / none / anime / colour",
+    "sw_simpsons_couch_toon": "2D cel / none / western toon / colour",
+    "sw_skellington": "stop-motion / figure / dimensional toon / colour",
+    "sw_sketch_boat": "drawing / pencil / realist / monochrome",
+    "sw_sketch_man": "drawing / pencil / realist / monochrome",
+    "sw_sketch_woman": "drawing / pencil / realist / monochrome",
+    "sw_spongebob_tree_toon": "2D cel / none / western toon / colour",
+    "sw_temple_grounds_anime": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_third_rock": "photograph / none / realist / colour",
+    "sw_toddler": "photograph / none / realist / colour",
+    "sw_town_tower_anime": {
+      "expect": "2D cel | painting / none / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "control": [
+        "sw_grass_anime_girl",
+        "sw_ghibli_painting_reference_anime",
+        "sw_ivy_toon",
+        "sw_april_1987",
+        "sw_azumanga_anime",
+        "sw_woman_oil"
+      ]
+    },
+    "sw_uniform_reference_anime": "painting / digital / anime / colour",
+    "sw_uniform_reference_painterly": "painting / digital / realist / colour",
+    "sw_uniform_reference_photo": "photograph / none / realist / colour",
+    "sw_wayne_knight_jurassic_adult": "live-action film / none / realist / colour",
+    "sw_wayne_knight_older_adult": "photograph / none / realist / colour",
+    "sw_will_preteen": "live-action film / none / realist / colour",
+    "sw_woman_reference_photo": "photograph / none / realist / colour",
+    "sw_woman_reference_sketch": "drawing / pencil / realist / monochrome"
+  },
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048
+  },
+  "cases": [
+    {
+      "id": "look_backyard_anime",
+      "group": "2D cel",
+      "image": "images/backyard_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_backyard_anime",
+      "group": "2D cel",
+      "image": "images/backyard_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_backyard_anime}}"
+    },
+    {
+      "id": "look_blonde_reference_painterly",
+      "group": "painting",
+      "image": "images/blonde_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_blonde_reference_painterly",
+      "group": "painting",
+      "image": "images/blonde_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_blonde_reference_painterly}}"
+    },
+    {
+      "id": "look_blonde_reference_photo",
+      "group": "photograph",
+      "image": "images/blonde_reference_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_blonde_reference_photo",
+      "group": "photograph",
+      "image": "images/blonde_reference_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_blonde_reference_photo}}"
+    },
+    {
+      "id": "look_boo_toddler",
+      "group": "3D CG",
+      "image": "images/boo_toddler.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_boo_toddler",
+      "group": "3D CG",
+      "image": "images/boo_toddler.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_boo_toddler}}"
+    },
+    {
+      "id": "look_classroom_anime_empty",
+      "group": "2D cel",
+      "image": "images/classroom_anime_empty.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_classroom_anime_empty",
+      "group": "2D cel",
+      "image": "images/classroom_anime_empty.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_classroom_anime_empty}}"
+    },
+    {
+      "id": "look_cleo_slingshot",
+      "group": "2D cel",
+      "image": "images/cleo_slingshot.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_cleo_slingshot",
+      "group": "2D cel",
+      "image": "images/cleo_slingshot.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_cleo_slingshot}}"
+    },
+    {
+      "id": "look_couple_middle_aged",
+      "group": "photograph",
+      "image": "images/couple_middle_aged.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_couple_middle_aged",
+      "group": "photograph",
+      "image": "images/couple_middle_aged.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_couple_middle_aged}}"
+    },
+    {
+      "id": "look_fruit_reference_photo",
+      "group": "photograph",
+      "image": "images/fruit_reference_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fruit_reference_photo",
+      "group": "photograph",
+      "image": "images/fruit_reference_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fruit_reference_photo}}"
+    },
+    {
+      "id": "look_fruit_reference_sketch",
+      "group": "drawing",
+      "image": "images/fruit_reference_sketch.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_fruit_reference_sketch",
+      "group": "drawing",
+      "image": "images/fruit_reference_sketch.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_fruit_reference_sketch}}"
+    },
+    {
+      "id": "look_garden_pond_anime",
+      "group": "2D cel",
+      "image": "images/garden_pond_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_garden_pond_anime",
+      "group": "2D cel",
+      "image": "images/garden_pond_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_garden_pond_anime}}"
+    },
+    {
+      "id": "look_ghibli_grass",
+      "group": "2D cel",
+      "image": "images/ghibli_grass.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ghibli_grass",
+      "group": "2D cel",
+      "image": "images/ghibli_grass.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ghibli_grass}}"
+    },
+    {
+      "id": "look_ghibli_kitchen",
+      "group": "2D cel",
+      "image": "images/ghibli_kitchen.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ghibli_kitchen",
+      "group": "2D cel",
+      "image": "images/ghibli_kitchen.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ghibli_kitchen}}"
+    },
+    {
+      "id": "look_ghibli_painting_reference_anime",
+      "group": "2D cel",
+      "image": "images/ghibli_painting_reference_anime.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ghibli_painting_reference_anime",
+      "group": "2D cel",
+      "image": "images/ghibli_painting_reference_anime.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ghibli_painting_reference_anime}}"
+    },
+    {
+      "id": "look_ghibli_painting_reference_painterly",
+      "group": "painting",
+      "image": "images/ghibli_painting_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ghibli_painting_reference_painterly",
+      "group": "painting",
+      "image": "images/ghibli_painting_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ghibli_painting_reference_painterly}}"
+    },
+    {
+      "id": "look_ghibli_street",
+      "group": "2D cel",
+      "image": "images/ghibli_street.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_ghibli_street",
+      "group": "2D cel",
+      "image": "images/ghibli_street.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_ghibli_street}}"
+    },
+    {
+      "id": "look_grass_anime_girl",
+      "group": "2D cel",
+      "image": "images/grass_anime_girl.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_grass_anime_girl",
+      "group": "2D cel",
+      "image": "images/grass_anime_girl.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_grass_anime_girl}}"
+    },
+    {
+      "id": "look_grass_anime_scenery",
+      "group": "2D cel",
+      "image": "images/grass_anime_scenery.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_grass_anime_scenery",
+      "group": "2D cel",
+      "image": "images/grass_anime_scenery.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_grass_anime_scenery}}"
+    },
+    {
+      "id": "look_hermione_preteen",
+      "group": "live-action film",
+      "image": "images/hermione_preteen.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_hermione_preteen",
+      "group": "live-action film",
+      "image": "images/hermione_preteen.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_hermione_preteen}}"
+    },
+    {
+      "id": "look_laika",
+      "group": "stop-motion",
+      "image": "images/laika.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_laika",
+      "group": "stop-motion",
+      "image": "images/laika.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_laika}}"
+    },
+    {
+      "id": "look_lego1",
+      "group": "stop-motion",
+      "image": "images/lego1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_lego1",
+      "group": "stop-motion",
+      "image": "images/lego1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lego1}}"
+    },
+    {
+      "id": "look_lego2",
+      "group": "stop-motion",
+      "image": "images/lego2.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_lego2",
+      "group": "stop-motion",
+      "image": "images/lego2.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lego2}}"
+    },
+    {
+      "id": "look_misato_car_1",
+      "group": "2D cel",
+      "image": "images/misato_car_1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_misato_car_1",
+      "group": "2D cel",
+      "image": "images/misato_car_1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_misato_car_1}}"
+    },
+    {
+      "id": "look_misato_car_2",
+      "group": "2D cel",
+      "image": "images/misato_car_2.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_misato_car_2",
+      "group": "2D cel",
+      "image": "images/misato_car_2.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_misato_car_2}}"
+    },
+    {
+      "id": "look_misato_car_real",
+      "group": "photograph",
+      "image": "images/misato_car_real.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_misato_car_real",
+      "group": "photograph",
+      "image": "images/misato_car_real.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_misato_car_real}}"
+    },
+    {
+      "id": "look_misato_car_technical_print",
+      "group": "print",
+      "image": "images/misato_car_technical_print.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_misato_car_technical_print",
+      "group": "print",
+      "image": "images/misato_car_technical_print.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_misato_car_technical_print}}"
+    },
+    {
+      "id": "look_nerv",
+      "group": "2D cel",
+      "image": "images/nerv.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_nerv",
+      "group": "2D cel",
+      "image": "images/nerv.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_nerv}}"
+    },
+    {
+      "id": "look_pavilion_anime",
+      "group": "2D cel",
+      "image": "images/pavilion_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pavilion_anime",
+      "group": "2D cel",
+      "image": "images/pavilion_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pavilion_anime}}"
+    },
+    {
+      "id": "look_pooh",
+      "group": "2D cel",
+      "image": "images/pooh.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pooh",
+      "group": "2D cel",
+      "image": "images/pooh.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pooh}}"
+    },
+    {
+      "id": "look_pre-teen1",
+      "group": "photograph",
+      "image": "images/pre-teen1.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_pre-teen1",
+      "group": "photograph",
+      "image": "images/pre-teen1.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_pre-teen1}}"
+    },
+    {
+      "id": "look_riley_preteen",
+      "group": "3D CG",
+      "image": "images/riley_preteen.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_riley_preteen",
+      "group": "3D CG",
+      "image": "images/riley_preteen.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_riley_preteen}}"
+    },
+    {
+      "id": "look_river_mountain_anime",
+      "group": "2D cel",
+      "image": "images/river_mountain_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_river_mountain_anime",
+      "group": "2D cel",
+      "image": "images/river_mountain_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_river_mountain_anime}}"
+    },
+    {
+      "id": "look_roadway_toon",
+      "group": "2D cel",
+      "image": "images/roadway_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_roadway_toon",
+      "group": "2D cel",
+      "image": "images/roadway_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_roadway_toon}}"
+    },
+    {
+      "id": "look_room_anime",
+      "group": "2D cel",
+      "image": "images/room_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_room_anime",
+      "group": "2D cel",
+      "image": "images/room_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_room_anime}}"
+    },
+    {
+      "id": "look_rugrats",
+      "group": "2D cel",
+      "image": "images/rugrats.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_rugrats",
+      "group": "2D cel",
+      "image": "images/rugrats.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_rugrats}}"
+    },
+    {
+      "id": "look_saber_reference_anime",
+      "group": "painting",
+      "image": "images/saber_reference_anime.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_saber_reference_anime",
+      "group": "painting",
+      "image": "images/saber_reference_anime.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_saber_reference_anime}}"
+    },
+    {
+      "id": "look_saber_reference_painterly",
+      "group": "painting",
+      "image": "images/saber_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_saber_reference_painterly",
+      "group": "painting",
+      "image": "images/saber_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_saber_reference_painterly}}"
+    },
+    {
+      "id": "look_saber_reference_photo",
+      "group": "photograph",
+      "image": "images/saber_reference_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_saber_reference_photo",
+      "group": "photograph",
+      "image": "images/saber_reference_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_saber_reference_photo}}"
+    },
+    {
+      "id": "look_sam_jackson_jurassic_middle_aged",
+      "group": "live-action film",
+      "image": "images/sam_jackson_jurassic_middle_aged.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sam_jackson_jurassic_middle_aged",
+      "group": "live-action film",
+      "image": "images/sam_jackson_jurassic_middle_aged.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_sam_jackson_jurassic_middle_aged}}"
+    },
+    {
+      "id": "look_shoes_anime",
+      "group": "2D cel",
+      "image": "images/shoes_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_shoes_anime",
+      "group": "2D cel",
+      "image": "images/shoes_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_shoes_anime}}"
+    },
+    {
+      "id": "look_simpsons_couch_toon",
+      "group": "2D cel",
+      "image": "images/simpsons_couch_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_simpsons_couch_toon",
+      "group": "2D cel",
+      "image": "images/simpsons_couch_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_simpsons_couch_toon}}"
+    },
+    {
+      "id": "look_skellington",
+      "group": "stop-motion",
+      "image": "images/skellington.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_skellington",
+      "group": "stop-motion",
+      "image": "images/skellington.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_skellington}}"
+    },
+    {
+      "id": "look_sketch_boat",
+      "group": "drawing",
+      "image": "images/sketch_boat.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sketch_boat",
+      "group": "drawing",
+      "image": "images/sketch_boat.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_sketch_boat}}"
+    },
+    {
+      "id": "look_sketch_man",
+      "group": "drawing",
+      "image": "images/sketch_man.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sketch_man",
+      "group": "drawing",
+      "image": "images/sketch_man.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_sketch_man}}"
+    },
+    {
+      "id": "look_sketch_woman",
+      "group": "drawing",
+      "image": "images/sketch_woman.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_sketch_woman",
+      "group": "drawing",
+      "image": "images/sketch_woman.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_sketch_woman}}"
+    },
+    {
+      "id": "look_spongebob_tree_toon",
+      "group": "2D cel",
+      "image": "images/spongebob_tree_toon.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_spongebob_tree_toon",
+      "group": "2D cel",
+      "image": "images/spongebob_tree_toon.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_spongebob_tree_toon}}"
+    },
+    {
+      "id": "look_temple_grounds_anime",
+      "group": "2D cel",
+      "image": "images/temple_grounds_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_temple_grounds_anime",
+      "group": "2D cel",
+      "image": "images/temple_grounds_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_temple_grounds_anime}}"
+    },
+    {
+      "id": "look_third_rock",
+      "group": "photograph",
+      "image": "images/third_rock.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_third_rock",
+      "group": "photograph",
+      "image": "images/third_rock.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_third_rock}}"
+    },
+    {
+      "id": "look_toddler",
+      "group": "photograph",
+      "image": "images/toddler.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_toddler",
+      "group": "photograph",
+      "image": "images/toddler.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_toddler}}"
+    },
+    {
+      "id": "look_town_tower_anime",
+      "group": "2D cel",
+      "image": "images/town_tower_anime.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_town_tower_anime",
+      "group": "2D cel",
+      "image": "images/town_tower_anime.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_town_tower_anime}}"
+    },
+    {
+      "id": "look_uniform_reference_anime",
+      "group": "painting",
+      "image": "images/uniform_reference_anime.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_uniform_reference_anime",
+      "group": "painting",
+      "image": "images/uniform_reference_anime.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_uniform_reference_anime}}"
+    },
+    {
+      "id": "look_uniform_reference_painterly",
+      "group": "painting",
+      "image": "images/uniform_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_uniform_reference_painterly",
+      "group": "painting",
+      "image": "images/uniform_reference_painterly.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_uniform_reference_painterly}}"
+    },
+    {
+      "id": "look_uniform_reference_photo",
+      "group": "photograph",
+      "image": "images/uniform_reference_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_uniform_reference_photo",
+      "group": "photograph",
+      "image": "images/uniform_reference_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_uniform_reference_photo}}"
+    },
+    {
+      "id": "look_wayne_knight_jurassic_adult",
+      "group": "live-action film",
+      "image": "images/wayne_knight_jurassic_adult.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_wayne_knight_jurassic_adult",
+      "group": "live-action film",
+      "image": "images/wayne_knight_jurassic_adult.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_wayne_knight_jurassic_adult}}"
+    },
+    {
+      "id": "look_wayne_knight_older_adult",
+      "group": "photograph",
+      "image": "images/wayne_knight_older_adult.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_wayne_knight_older_adult",
+      "group": "photograph",
+      "image": "images/wayne_knight_older_adult.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_wayne_knight_older_adult}}"
+    },
+    {
+      "id": "look_will_preteen",
+      "group": "live-action film",
+      "image": "images/will_preteen.png",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_will_preteen",
+      "group": "live-action film",
+      "image": "images/will_preteen.png",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_will_preteen}}"
+    },
+    {
+      "id": "look_woman_reference_photo",
+      "group": "photograph",
+      "image": "images/woman_reference_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_woman_reference_photo",
+      "group": "photograph",
+      "image": "images/woman_reference_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woman_reference_photo}}"
+    },
+    {
+      "id": "look_woman_reference_sketch",
+      "group": "drawing",
+      "image": "images/woman_reference_sketch.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_woman_reference_sketch",
+      "group": "drawing",
+      "image": "images/woman_reference_sketch.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woman_reference_sketch}}"
+    }
+  ]
+}

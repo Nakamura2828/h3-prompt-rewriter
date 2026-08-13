@@ -82,8 +82,52 @@ CONTESTED_IDIOM = {}
 # distinction, so `coraline1` is now plainly `figure`. Kept as the place the next one goes.
 ACCEPT_SUB = {}
 
+# Per-image accept-sets on [[MEDIUM]], ruled by the user in session 18.
+#
+# THE FIGURELESS-PLATE SET. A background plate with no figure and no cel line work is a genuine
+# provenance-vs-pixels case: a cel-era background IS a painting, so `2D cel` and `painting` are
+# both defensible and only our knowledge of what the frame was made for separates them. The
+# user's grounds are the same ones that produced the `car`/`chair` ruling -- "if the eye can't
+# differentiate, then we're judging on provenance, not pixels."
+#
+# WHY THIS IS NOT THE `amb` FLAG, which would have been the obvious home for it: the user's
+# direction in session 18 is to STOP USING `amb` altogether and let `_expected` carry these
+# rulings, revisiting the flag only if something turns out genuinely ambiguous. Overloading the
+# flag would also have forced AMB_WHY/AMB_CONTROL from one global pair into a keyed table, and
+# would have silently changed what the `amb` section of docs/image_inventory.md means.
+#
+# THREE THINGS DELIBERATELY NARROW IT, and each one is load-bearing:
+#   * Only plates where line work is genuinely ABSENT. Outlined plates (backyard_anime,
+#     garden_pond_anime, pavilion_anime, classroom_anime_empty, shoes_anime,
+#     simpsons_couch_toon, spongebob_tree_toon) stay STRICT -- the eye can tell, so forgiving
+#     them would absorb a real answer.
+#   * The ghibli-ref PAIR IS EXEMPT, both halves strict. That pair exists to test cel-gouache
+#     against digital painting; an accept-set over its source half would let a model answer
+#     `painting` for both, collapse the discrimination, and still score two passes.
+#   * grass_anime_girl is the control for grass_anime_scenery -- literally the same background
+#     with characters added, so it must still come back `2D cel`.
+_PLATE_WHY = (
+    "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not "
+    "visually determinable (ruled session 18). A cel-era background is itself a painting, so "
+    "only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids "
+    "scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. "
+    "Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction "
+    "works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel "
+    "frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored "
+    "STRICTLY on these -- see the [[IDIOM]] note in the test's _role.")
+_PLATE_CONTROL = ['sw_grass_anime_girl', 'sw_ghibli_painting_reference_anime',
+                  'sw_ivy_toon', 'sw_april_1987', 'sw_azumanga_anime', 'sw_woman_oil']
+ACCEPT_MEDIUM = {n: ('2D cel | painting', _PLATE_WHY, _PLATE_CONTROL) for n in (
+    'temple_grounds_anime', 'town_tower_anime', 'river_mountain_anime', 'nerv',
+    'grass_anime_scenery', 'ghibli_grass', 'ghibli_kitchen', 'roadway_toon',
+)}
+
 # The `amb` accept-set, ruled by the user in session 17. Applied to every master row flagged
 # `amb`; see the comment at the point of use for why UNSCORABLE was the wrong verdict.
+#
+# SUPERSEDED IN DIRECTION as of session 18: no NEW `amb` rulings should be made -- put them in
+# ACCEPT_MEDIUM above instead. The three legacy files (chair, car_1, car_2) still carry the flag
+# and still get their set from here; migrating them off it is recorded as follow-up work.
 AMB_WHY = (
     "a clean studio product shot on a pure white sweep, where photo vs render is not visually "
     "determinable (the `amb` shape, session 7-9; ruled scorable session 17). The master value "
@@ -118,6 +162,13 @@ for r in master:
     key = f"{r['medium']} / {sub} / {idiom} / {r['treatment']}"
     if name in ACCEPT_SUB:
         key = {'expect': key, 'why': ACCEPT_SUB[name][1], 'control': ACCEPT_SUB[name][2]}
+    if name in ACCEPT_MEDIUM:
+        # Session 18: the figureless-plate set. Widens [[MEDIUM]] only -- the other three
+        # fields stay strict, which is the whole point on these images (the idiom is what the
+        # v4c figureless defect is measured on, so forgiving it would erase the measurement).
+        alts, why, control = ACCEPT_MEDIUM[name]
+        expect = key['expect'] if isinstance(key, dict) else key
+        key = {'expect': expect.replace(r['medium'], alts, 1), 'why': why, 'control': control}
     if 'amb' in r['flags']:
         # Session 17: `amb` no longer means UNSCORABLE. The master value for these three came
         # from the user's knowledge of the SOURCE (an automaker press shot, an Amazon listing),
