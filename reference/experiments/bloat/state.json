@@ -1,0 +1,329 @@
+{
+  "t0": 1786546252.5616784,
+  "baseline_mean": {
+    "primary": 4.992307692307692,
+    "secondary": 5.521212121212121
+  },
+  "runs": {
+    "base_1": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.1,
+      "mean_s": 4.99,
+      "max_s": 7.3,
+      "min_s": 4.2,
+      "mean_chars": 838,
+      "run": "primary__base_1.txt",
+      "at": "2026-08-12 10:53:02"
+    },
+    "base_2": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 135.0,
+      "mean_s": 5.19,
+      "max_s": 6.1,
+      "min_s": 4.3,
+      "mean_chars": 838,
+      "run": "primary__base_2.txt",
+      "at": "2026-08-12 10:55:17"
+    },
+    "a_end_3800": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 135.9,
+      "mean_s": 5.21,
+      "max_s": 6.3,
+      "min_s": 4.2,
+      "mean_chars": 821,
+      "run": "primary__a_end_3800.txt",
+      "at": "2026-08-12 10:58:11"
+    },
+    "a_end_3900": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 132.1,
+      "mean_s": 5.07,
+      "max_s": 6.0,
+      "min_s": 4.1,
+      "mean_chars": 822,
+      "run": "primary__a_end_3900.txt",
+      "at": "2026-08-12 11:00:23"
+    },
+    "a_end_4000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 139.8,
+      "mean_s": 5.35,
+      "max_s": 6.8,
+      "min_s": 4.4,
+      "mean_chars": 817,
+      "run": "primary__a_end_4000.txt",
+      "at": "2026-08-12 11:02:43"
+    },
+    "a_end_4200": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 133.1,
+      "mean_s": 5.1,
+      "max_s": 6.4,
+      "min_s": 4.1,
+      "mean_chars": 837,
+      "run": "primary__a_end_4200.txt",
+      "at": "2026-08-12 11:04:56"
+    },
+    "a_end_4500": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 134.1,
+      "mean_s": 5.15,
+      "max_s": 6.3,
+      "min_s": 4.4,
+      "mean_chars": 812,
+      "run": "primary__a_end_4500.txt",
+      "at": "2026-08-12 11:07:10"
+    },
+    "a_end_5000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 133.7,
+      "mean_s": 5.13,
+      "max_s": 6.3,
+      "min_s": 4.2,
+      "mean_chars": 836,
+      "run": "primary__a_end_5000.txt",
+      "at": "2026-08-12 11:09:24"
+    },
+    "b_end_3800": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 133.6,
+      "mean_s": 5.13,
+      "max_s": 8.6,
+      "min_s": 4.0,
+      "mean_chars": 835,
+      "run": "primary__b_end_3800.txt",
+      "at": "2026-08-12 11:12:06"
+    },
+    "b_end_3900": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 129.9,
+      "mean_s": 4.98,
+      "max_s": 5.9,
+      "min_s": 4.1,
+      "mean_chars": 825,
+      "run": "primary__b_end_3900.txt",
+      "at": "2026-08-12 11:14:16"
+    },
+    "b_end_4000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.4,
+      "mean_s": 5.01,
+      "max_s": 6.3,
+      "min_s": 4.1,
+      "mean_chars": 840,
+      "run": "primary__b_end_4000.txt",
+      "at": "2026-08-12 11:16:26"
+    },
+    "b_end_4200": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.1,
+      "mean_s": 4.99,
+      "max_s": 6.3,
+      "min_s": 4.2,
+      "mean_chars": 824,
+      "run": "primary__b_end_4200.txt",
+      "at": "2026-08-12 11:18:36"
+    },
+    "b_end_4500": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.3,
+      "mean_s": 5.0,
+      "max_s": 6.1,
+      "min_s": 4.2,
+      "mean_chars": 814,
+      "run": "primary__b_end_4500.txt",
+      "at": "2026-08-12 11:20:47"
+    },
+    "b_end_5000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 129.6,
+      "mean_s": 4.97,
+      "max_s": 6.2,
+      "min_s": 4.1,
+      "mean_chars": 814,
+      "run": "primary__b_end_5000.txt",
+      "at": "2026-08-12 11:22:56"
+    },
+    "a_mid_3800": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 132.6,
+      "mean_s": 5.1,
+      "max_s": 8.4,
+      "min_s": 4.1,
+      "mean_chars": 839,
+      "run": "primary__a_mid_3800.txt",
+      "at": "2026-08-12 11:25:09"
+    },
+    "a_mid_3900": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 133.4,
+      "mean_s": 5.11,
+      "max_s": 8.4,
+      "min_s": 4.1,
+      "mean_chars": 853,
+      "run": "primary__a_mid_3900.txt",
+      "at": "2026-08-12 11:27:22"
+    },
+    "a_mid_4000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 131.4,
+      "mean_s": 5.05,
+      "max_s": 6.6,
+      "min_s": 4.1,
+      "mean_chars": 823,
+      "run": "primary__a_mid_4000.txt",
+      "at": "2026-08-12 11:29:34"
+    },
+    "a_mid_4200": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.4,
+      "mean_s": 5.01,
+      "max_s": 6.9,
+      "min_s": 4.1,
+      "mean_chars": 834,
+      "run": "primary__a_mid_4200.txt",
+      "at": "2026-08-12 11:31:44"
+    },
+    "a_mid_4500": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.9,
+      "mean_s": 5.03,
+      "max_s": 6.7,
+      "min_s": 4.0,
+      "mean_chars": 871,
+      "run": "primary__a_mid_4500.txt",
+      "at": "2026-08-12 11:33:55"
+    },
+    "a_mid_5000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 130.2,
+      "mean_s": 5.01,
+      "max_s": 6.8,
+      "min_s": 4.1,
+      "mean_chars": 826,
+      "run": "primary__a_mid_5000.txt",
+      "at": "2026-08-12 11:36:05"
+    },
+    "b_mid_3800": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 134.8,
+      "mean_s": 5.18,
+      "max_s": 7.1,
+      "min_s": 4.1,
+      "mean_chars": 848,
+      "run": "primary__b_mid_3800.txt",
+      "at": "2026-08-12 11:38:20"
+    },
+    "b_mid_3900": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 134.0,
+      "mean_s": 5.15,
+      "max_s": 7.0,
+      "min_s": 4.2,
+      "mean_chars": 828,
+      "run": "primary__b_mid_3900.txt",
+      "at": "2026-08-12 11:40:34"
+    },
+    "b_mid_4000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 133.1,
+      "mean_s": 5.11,
+      "max_s": 7.5,
+      "min_s": 4.1,
+      "mean_chars": 841,
+      "run": "primary__b_mid_4000.txt",
+      "at": "2026-08-12 11:42:47"
+    },
+    "b_mid_4200": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 128.1,
+      "mean_s": 4.92,
+      "max_s": 7.2,
+      "min_s": 4.1,
+      "mean_chars": 807,
+      "run": "primary__b_mid_4200.txt",
+      "at": "2026-08-12 11:44:55"
+    },
+    "b_mid_4500": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 128.4,
+      "mean_s": 4.93,
+      "max_s": 6.7,
+      "min_s": 4.2,
+      "mean_chars": 822,
+      "run": "primary__b_mid_4500.txt",
+      "at": "2026-08-12 11:47:03"
+    },
+    "b_mid_5000": {
+      "family": "primary",
+      "cases": 26,
+      "wall_s": 128.8,
+      "mean_s": 4.94,
+      "max_s": 6.6,
+      "min_s": 4.0,
+      "mean_chars": 833,
+      "run": "primary__b_mid_5000.txt",
+      "at": "2026-08-12 11:49:12"
+    },
+    "img": {
+      "family": "secondary",
+      "cases": 66,
+      "wall_s": 364.5,
+      "mean_s": 5.52,
+      "max_s": 9.1,
+      "min_s": 4.5,
+      "mean_chars": 929,
+      "run": "secondary__img.txt",
+      "at": "2026-08-12 11:55:17"
+    },
+    "noimg": {
+      "family": "secondary",
+      "cases": 66,
+      "wall_s": 318.3,
+      "mean_s": 4.82,
+      "max_s": 9.2,
+      "min_s": 3.4,
+      "mean_chars": 929,
+      "run": "secondary__noimg.txt",
+      "at": "2026-08-12 12:00:35"
+    },
+    "v3v4": {
+      "family": "primary",
+      "cases": 30,
+      "wall_s": 194.2,
+      "mean_s": 6.48,
+      "max_s": 9.6,
+      "min_s": 4.7,
+      "mean_chars": 1122,
+      "run": "primary__v3v4.txt",
+      "at": "2026-08-12 14:44:42"
+    }
+  },
+  "stopped": null
+}

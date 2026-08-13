@@ -1,0 +1,1389 @@
+{
+  "primary": [
+    {
+      "tag": "base_1",
+      "arm": "unpadded",
+      "level": 0,
+      "tokens": 2939,
+      "pass": 25,
+      "total": 26,
+      "buckets": {
+        "duplicated field": 1
+      },
+      "drift_fail": [],
+      "fails": [
+        "set_miya"
+      ],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": null,
+        "mean_ratio": null
+      },
+      "flagged": []
+    },
+    {
+      "tag": "base_2",
+      "arm": "unpadded",
+      "level": 0,
+      "tokens": 2939,
+      "pass": 25,
+      "total": 26,
+      "buckets": {
+        "duplicated field": 1
+      },
+      "drift_fail": [],
+      "fails": [
+        "set_miya"
+      ],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 1.0,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "tag": "a_end_3800",
+      "arm": "a_end",
+      "level": 3800,
+      "tokens": 3784,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 1,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.484,
+        "mean_ratio": 0.996
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 432,
+          "baseline_chars": 893,
+          "ratio": 0.484,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_end_3900",
+      "arm": "a_end",
+      "level": 3900,
+      "tokens": 3885,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.548,
+        "mean_ratio": 0.992
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 489,
+          "baseline_chars": 893,
+          "ratio": 0.548,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_end_4000",
+      "arm": "a_end",
+      "level": 4000,
+      "tokens": 3982,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.647,
+        "mean_ratio": 0.989
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 812,
+          "baseline_chars": 1255,
+          "ratio": 0.647,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_end_4200",
+      "arm": "a_end",
+      "level": 4200,
+      "tokens": 4192,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.579,
+        "mean_ratio": 1.019
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 788,
+          "baseline_chars": 1255,
+          "ratio": 0.628,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "set_p6_outside",
+          "chars": 517,
+          "baseline_chars": 893,
+          "ratio": 0.579,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_end_4500",
+      "arm": "a_end",
+      "level": 4500,
+      "tokens": 4483,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.619,
+        "mean_ratio": 0.986
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 777,
+          "baseline_chars": 1255,
+          "ratio": 0.619,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "set_p6_outside",
+          "chars": 590,
+          "baseline_chars": 893,
+          "ratio": 0.661,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_end_5000",
+      "arm": "a_end",
+      "level": 5000,
+      "tokens": 4982,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.667,
+        "mean_ratio": 1.003
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 596,
+          "baseline_chars": 893,
+          "ratio": 0.667,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "b_end_3800",
+      "arm": "b_end",
+      "level": 3800,
+      "tokens": 3792,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.769,
+        "mean_ratio": 1.006
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_end_3900",
+      "arm": "b_end",
+      "level": 3900,
+      "tokens": 3896,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 1,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.499,
+        "mean_ratio": 1.0
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 871,
+          "baseline_chars": 1255,
+          "ratio": 0.694,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "set_p6_outside",
+          "chars": 446,
+          "baseline_chars": 893,
+          "ratio": 0.499,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "b_end_4000",
+      "arm": "b_end",
+      "level": 4000,
+      "tokens": 3984,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.619,
+        "mean_ratio": 1.025
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 553,
+          "baseline_chars": 893,
+          "ratio": 0.619,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "b_end_4200",
+      "arm": "b_end",
+      "level": 4200,
+      "tokens": 4200,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.748,
+        "mean_ratio": 0.996
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_end_4500",
+      "arm": "b_end",
+      "level": 4500,
+      "tokens": 4488,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.561,
+        "mean_ratio": 0.989
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 704,
+          "baseline_chars": 1255,
+          "ratio": 0.561,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "b_end_5000",
+      "arm": "b_end",
+      "level": 5000,
+      "tokens": 4981,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.551,
+        "mean_ratio": 0.992
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 691,
+          "baseline_chars": 1255,
+          "ratio": 0.551,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_mid_3800",
+      "arm": "a_mid",
+      "level": 3800,
+      "tokens": 3784,
+      "pass": 25,
+      "total": 26,
+      "buckets": {
+        "duplicated field": 1
+      },
+      "drift_fail": [],
+      "fails": [
+        "set_cloud"
+      ],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 1,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.474,
+        "mean_ratio": 1.02
+      },
+      "flagged": [
+        {
+          "id": "set_miya",
+          "chars": 731,
+          "baseline_chars": 1255,
+          "ratio": 0.582,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "set_p6_outside",
+          "chars": 423,
+          "baseline_chars": 893,
+          "ratio": 0.474,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_mid_3900",
+      "arm": "a_mid",
+      "level": 3900,
+      "tokens": 3885,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.703,
+        "mean_ratio": 1.037
+      },
+      "flagged": []
+    },
+    {
+      "tag": "a_mid_4000",
+      "arm": "a_mid",
+      "level": 4000,
+      "tokens": 3982,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.658,
+        "mean_ratio": 0.992
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 588,
+          "baseline_chars": 893,
+          "ratio": 0.658,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "a_mid_4200",
+      "arm": "a_mid",
+      "level": 4200,
+      "tokens": 4192,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.718,
+        "mean_ratio": 1.008
+      },
+      "flagged": []
+    },
+    {
+      "tag": "a_mid_4500",
+      "arm": "a_mid",
+      "level": 4500,
+      "tokens": 4483,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.709,
+        "mean_ratio": 1.048
+      },
+      "flagged": []
+    },
+    {
+      "tag": "a_mid_5000",
+      "arm": "a_mid",
+      "level": 5000,
+      "tokens": 4982,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.741,
+        "mean_ratio": 0.997
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_mid_3800",
+      "arm": "b_mid",
+      "level": 3800,
+      "tokens": 3792,
+      "pass": 25,
+      "total": 26,
+      "buckets": {
+        "duplicated field": 1
+      },
+      "drift_fail": [],
+      "fails": [
+        "set_city_night"
+      ],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 1,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 3,
+        "min_ratio": 0.668,
+        "mean_ratio": 1.019
+      },
+      "flagged": [
+        {
+          "id": "set_window",
+          "chars": 371,
+          "baseline_chars": 555,
+          "ratio": 0.668,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "set_stage",
+          "chars": 1111,
+          "baseline_chars": 984,
+          "ratio": 1.129,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": [
+            "CONTINGENCY"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "b_mid_3900",
+      "arm": "b_mid",
+      "level": 3900,
+      "tokens": 3896,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.71,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_mid_4000",
+      "arm": "b_mid",
+      "level": 4000,
+      "tokens": 3984,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.777,
+        "mean_ratio": 1.011
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_mid_4200",
+      "arm": "b_mid",
+      "level": 4200,
+      "tokens": 4200,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.784,
+        "mean_ratio": 0.982
+      },
+      "flagged": []
+    },
+    {
+      "tag": "b_mid_4500",
+      "arm": "b_mid",
+      "level": 4500,
+      "tokens": 4488,
+      "pass": 25,
+      "total": 26,
+      "buckets": {
+        "missing field": 1
+      },
+      "drift_fail": [],
+      "fails": [
+        "set_forest"
+      ],
+      "signature": {
+        "cases": 26,
+        "near_miss": 1,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.73,
+        "mean_ratio": 0.996
+      },
+      "flagged": [
+        {
+          "id": "set_forest",
+          "chars": 731,
+          "baseline_chars": 645,
+          "ratio": 1.133,
+          "near_miss": [
+            "CONTINGENTS (~CONTENTS)"
+          ],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "tag": "b_mid_5000",
+      "arm": "b_mid",
+      "level": 5000,
+      "tokens": 4981,
+      "pass": 26,
+      "total": 26,
+      "buckets": {},
+      "drift_fail": [],
+      "fails": [],
+      "signature": {
+        "cases": 26,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 2,
+        "min_ratio": 0.672,
+        "mean_ratio": 1.002
+      },
+      "flagged": [
+        {
+          "id": "set_p6_outside",
+          "chars": 600,
+          "baseline_chars": 893,
+          "ratio": 0.672,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    }
+  ],
+  "secondary": [
+    {
+      "arm": "img",
+      "level": "base",
+      "tokens": 3561,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "music field": 1
+      },
+      "fails": [
+        "c_base_p6"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 1.0,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "arm": "img",
+      "level": "base2",
+      "tokens": 3561,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "music field": 1
+      },
+      "fails": [
+        "c_base2_p6"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 1.0,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "arm": "img",
+      "level": "3800",
+      "tokens": 3804,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.631,
+        "mean_ratio": 0.933
+      },
+      "flagged": [
+        {
+          "id": "c_3800_p6",
+          "chars": 696,
+          "baseline_chars": 1103,
+          "ratio": 0.631,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "img",
+      "level": "3900",
+      "tokens": 3884,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "music field": 1
+      },
+      "fails": [
+        "c_3900_p6"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.782,
+        "mean_ratio": 0.941
+      },
+      "flagged": []
+    },
+    {
+      "arm": "img",
+      "level": "4000",
+      "tokens": 3982,
+      "pass": 4,
+      "total": 6,
+      "buckets": {
+        "duplicated field": 2,
+        "music field": 1
+      },
+      "fails": [
+        "c_4000_p1",
+        "c_4000_p6"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.723,
+        "mean_ratio": 0.914
+      },
+      "flagged": []
+    },
+    {
+      "arm": "img",
+      "level": "4200",
+      "tokens": 4189,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.633,
+        "mean_ratio": 0.965
+      },
+      "flagged": [
+        {
+          "id": "c_4200_p6",
+          "chars": 698,
+          "baseline_chars": 1103,
+          "ratio": 0.633,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "img",
+      "level": "4500",
+      "tokens": 4478,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.681,
+        "mean_ratio": 0.932
+      },
+      "flagged": [
+        {
+          "id": "c_4500_p1",
+          "chars": 582,
+          "baseline_chars": 855,
+          "ratio": 0.681,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "img",
+      "level": "5000",
+      "tokens": 4980,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.754,
+        "mean_ratio": 0.955
+      },
+      "flagged": []
+    },
+    {
+      "arm": "noimg",
+      "level": "base",
+      "tokens": 3561,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "duplicated field": 2
+      },
+      "fails": [
+        "c_base_p5"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 1.0,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "arm": "noimg",
+      "level": "base2",
+      "tokens": 3561,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "duplicated field": 2
+      },
+      "fails": [
+        "c_base2_p5"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 1.0,
+        "mean_ratio": 1.0
+      },
+      "flagged": []
+    },
+    {
+      "arm": "noimg",
+      "level": "3800",
+      "tokens": 3804,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 0,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.787,
+        "mean_ratio": 0.94
+      },
+      "flagged": []
+    },
+    {
+      "arm": "noimg",
+      "level": "3900",
+      "tokens": 3884,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.625,
+        "mean_ratio": 0.981
+      },
+      "flagged": [
+        {
+          "id": "c_3900_p1",
+          "chars": 696,
+          "baseline_chars": 1097,
+          "ratio": 0.634,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "c_3900_p6",
+          "chars": 622,
+          "baseline_chars": 995,
+          "ratio": 0.625,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "noimg",
+      "level": "4000",
+      "tokens": 3982,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 1,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.666,
+        "mean_ratio": 1.12
+      },
+      "flagged": [
+        {
+          "id": "c_4000_p1",
+          "chars": 731,
+          "baseline_chars": 1097,
+          "ratio": 0.666,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "noimg",
+      "level": "4200",
+      "tokens": 4189,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.62,
+        "mean_ratio": 0.997
+      },
+      "flagged": [
+        {
+          "id": "c_4200_p1",
+          "chars": 681,
+          "baseline_chars": 1097,
+          "ratio": 0.621,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "c_4200_p6",
+          "chars": 617,
+          "baseline_chars": 995,
+          "ratio": 0.62,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "noimg",
+      "level": "4500",
+      "tokens": 4478,
+      "pass": 5,
+      "total": 6,
+      "buckets": {
+        "duplicated field": 2
+      },
+      "fails": [
+        "c_4500_p5"
+      ],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 0,
+        "min_ratio": 0.661,
+        "mean_ratio": 0.954
+      },
+      "flagged": [
+        {
+          "id": "c_4500_p1",
+          "chars": 736,
+          "baseline_chars": 1097,
+          "ratio": 0.671,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "c_4500_p6",
+          "chars": 658,
+          "baseline_chars": 995,
+          "ratio": 0.661,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    },
+    {
+      "arm": "noimg",
+      "level": "5000",
+      "tokens": 4980,
+      "pass": 6,
+      "total": 6,
+      "buckets": {},
+      "fails": [],
+      "signature": {
+        "cases": 6,
+        "near_miss": 0,
+        "foreign": 0,
+        "unknown": 0,
+        "collapsed": 2,
+        "severe": 0,
+        "empty": 0,
+        "runaway": 0,
+        "grew": 1,
+        "min_ratio": 0.617,
+        "mean_ratio": 1.013
+      },
+      "flagged": [
+        {
+          "id": "c_5000_p1",
+          "chars": 677,
+          "baseline_chars": 1097,
+          "ratio": 0.617,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        },
+        {
+          "id": "c_5000_p6",
+          "chars": 667,
+          "baseline_chars": 995,
+          "ratio": 0.67,
+          "near_miss": [],
+          "foreign": [],
+          "unknown": []
+        }
+      ]
+    }
+  ]
+}

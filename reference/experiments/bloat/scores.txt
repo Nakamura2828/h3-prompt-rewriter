@@ -1,0 +1,99 @@
+==============================================================================
+PRIMARY PROBE — describer_setting, 26 images, validate.py describer --role setting
+==============================================================================
+base_1          2939 tok  format 25/26  near-miss 0   unknown 0   collapsed 0   len -
+               errors: duplicated field x1
+base_2          2939 tok  format 25/26  near-miss 0   unknown 0   collapsed 0   len 1.0
+               errors: duplicated field x1
+a_end_3800      3784 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.996
+a_end_3900      3885 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.992
+a_end_4000      3982 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.989
+a_end_4200      4192 tok  format 26/26  near-miss 0   unknown 0   collapsed 2   len 1.019
+a_end_4500      4483 tok  format 26/26  near-miss 0   unknown 0   collapsed 2   len 0.986
+a_end_5000      4982 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 1.003
+b_end_3800      3792 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.006
+b_end_3900      3896 tok  format 26/26  near-miss 0   unknown 0   collapsed 2   len 1.0
+b_end_4000      3984 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 1.025
+b_end_4200      4200 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 0.996
+b_end_4500      4488 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.989
+b_end_5000      4981 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.992
+a_mid_3800      3784 tok  format 25/26  near-miss 0   unknown 0   collapsed 2   len 1.02
+               errors: duplicated field x1
+a_mid_3900      3885 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.037
+a_mid_4000      3982 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 0.992
+a_mid_4200      4192 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.008
+a_mid_4500      4483 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.048
+a_mid_5000      4982 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 0.997
+b_mid_3800      3792 tok  format 25/26  near-miss 0   unknown 1   collapsed 1   len 1.019
+               errors: duplicated field x1
+b_mid_3900      3896 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.0
+b_mid_4000      3984 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 1.011
+b_mid_4200      4200 tok  format 26/26  near-miss 0   unknown 0   collapsed 0   len 0.982
+b_mid_4500      4488 tok  format 25/26  near-miss 1   unknown 0   collapsed 0   len 0.996
+               errors: missing field x1
+b_mid_5000      4981 tok  format 26/26  near-miss 0   unknown 0   collapsed 1   len 1.002
+
+| level | measured tokens | a_end | b_end | a_mid | b_mid |
+|---|---|---|---|---|---|
+| 3800 | 3784–3792 | 26/26 | 26/26 | 25/26 | 25/26 |
+| 3900 | 3885–3896 | 26/26 | 26/26 | 26/26 | 26/26 |
+| 4000 | 3982–3984 | 26/26 | 26/26 | 26/26 | 26/26 |
+| 4200 | 4192–4200 | 26/26 | 26/26 | 26/26 | 26/26 |
+| 4500 | 4483–4488 | 26/26 | 26/26 | 26/26 | 25/26 |
+| 5000 | 4981–4982 | 26/26 | 26/26 | 26/26 | 26/26 |
+
+length-collapse count (cases under 70% of their unpadded baseline):
+| level | measured tokens | a_end | b_end | a_mid | b_mid |
+|---|---|---|---|---|---|
+| 3800 | 3784–3792 | 1     | 0     | 2     | 1     |
+| 3900 | 3885–3896 | 1     | 2     | 0     | 0     |
+| 4000 | 3982–3984 | 1     | 1     | 1     | 0     |
+| 4200 | 4192–4200 | 2     | 0     | 0     | 0     |
+| 4500 | 4483–4488 | 2     | 1     | 0     | 0     |
+| 5000 | 4981–4982 | 1     | 1     | 0     | 1     |
+
+which cases actually failed format, across all primary runs:
+| case | failing runs | token counts where it failed |
+|---|---|---|
+| `set_miya` | 2 / 26 | 2939, 2939 |
+| `set_cloud` | 1 / 26 | 3784 |
+| `set_city_night` | 1 / 26 | 3792 |
+| `set_forest` | 1 / 26 | 4488 |
+
+==============================================================================
+SECONDARY PROBE — fl2va composer, 6 cases, validate.py h3
+==============================================================================
+img    base    3561 tok  format 5/6   near-miss 0   collapsed 0   len 1.0
+                     errors: music field x1
+img    base2   3561 tok  format 5/6   near-miss 0   collapsed 0   len 1.0
+                     errors: music field x1
+img    3800    3804 tok  format 6/6   near-miss 0   collapsed 1   len 0.933
+img    3900    3884 tok  format 5/6   near-miss 0   collapsed 0   len 0.941
+                     errors: music field x1
+img    4000    3982 tok  format 4/6   near-miss 0   collapsed 0   len 0.914
+                     errors: duplicated field x2, music field x1
+img    4200    4189 tok  format 6/6   near-miss 0   collapsed 1   len 0.965
+img    4500    4478 tok  format 6/6   near-miss 0   collapsed 1   len 0.932
+img    5000    4980 tok  format 6/6   near-miss 0   collapsed 0   len 0.955
+noimg  base    3561 tok  format 5/6   near-miss 0   collapsed 0   len 1.0
+                     errors: duplicated field x2
+noimg  base2   3561 tok  format 5/6   near-miss 0   collapsed 0   len 1.0
+                     errors: duplicated field x2
+noimg  3800    3804 tok  format 6/6   near-miss 0   collapsed 0   len 0.94
+noimg  3900    3884 tok  format 6/6   near-miss 0   collapsed 2   len 0.981
+noimg  4000    3982 tok  format 6/6   near-miss 0   collapsed 1   len 1.12
+noimg  4200    4189 tok  format 6/6   near-miss 0   collapsed 2   len 0.997
+noimg  4500    4478 tok  format 5/6   near-miss 0   collapsed 2   len 0.954
+                     errors: duplicated field x2
+noimg  5000    4980 tok  format 6/6   near-miss 0   collapsed 2   len 1.013
+
+| level | measured tokens | img   | noimg |
+|---|---|---|---|
+| 3800 | 3804 | 6/6   | 6/6   |
+| 3900 | 3884 | 5/6   | 6/6   |
+| 4000 | 3982 | 4/6   | 6/6   |
+| 4200 | 4189 | 6/6   | 6/6   |
+| 4500 | 4478 | 6/6   | 5/6   |
+| 5000 | 4980 | 6/6   | 6/6   |
+| base | 3561 | 5/6   | 5/6   |
+| base2 | 3561 | 5/6   | 5/6   |
