@@ -14,12 +14,15 @@ Checks:
   - medium/sub come from the closed vocabulary, and each sub belongs to its own coarse term
   - flags come from the known set
   - no duplicate rows in either table
+  - every `image` and `system_file` path in tests/*.json actually exists (added session 21 —
+    run_tests.py exits hard on these, so a stale path fails months later, not now)
 
 Then regenerates the medium tally in place, so it cannot desync the way the hand-maintained
 tallies did (they disagreed with each other about whether crops counted).
 """
 import argparse
 import io
+import json
 import pathlib
 import re
 import sys
@@ -30,6 +33,7 @@ from validate import AGE_PERSON                        # noqa: E402
 
 DOC = "docs/image_inventory.md"
 IMG_DIR = "images"
+TESTS_DIR = "tests"
 EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp"}
 
 # The closed three-axis vocabulary. Mirrors "Style vocabulary" in the document.
@@ -167,6 +171,31 @@ def check_age(name, row, problems):
                         f"unreadable")
 
 
+def check_test_files(problems):
+    """Every `image` and `system_file` path in tests/*.json must resolve.
+
+    Nothing checked this before session 21. run_tests.py exits hard on a missing image and on
+    an unreadable system_file, so a test can sit broken indefinitely and only fail when
+    someone finally runs it. Three instances were found by accident in one session — a
+    deleted captain.jpg, a renamed p1_light-zoom-gun_*.png, and a retired prompt — which is
+    why this is a mechanism rather than a note. It lives here because inventory.py is already
+    the script that cross-checks recorded paths against what is actually on disk.
+    """
+    for path in sorted(pathlib.Path(TESTS_DIR).glob("*.json")):
+        try:
+            spec = json.loads(path.read_text(encoding="utf-8"))
+        except ValueError as e:
+            problems.append(f"{path.as_posix()}: not valid JSON — {e}")
+            continue
+        cases = [c for c in spec.get("cases", []) if isinstance(c, dict)]
+        default_sys = spec.get("defaults", {}).get("system_file")
+        wanted = {c["image"] for c in cases if c.get("image")}
+        wanted |= {c.get("system_file", default_sys) for c in cases} - {None}
+        for p in sorted(wanted):
+            if not pathlib.Path(p).exists():
+                problems.append(f"{path.as_posix()}: path does not exist: {p}")
+
+
 def build_tally(master):
     by_coarse = defaultdict(lambda: defaultdict(list))
     for r in master:
@@ -290,6 +319,8 @@ def main():
         problems.append(f"no contents row: `{name}`")
     for name in sorted(covered - set(in_master)):
         problems.append(f"contents row for unknown image: `{name}`")
+
+    check_test_files(problems)
 
     for r in master:
         name, coarse, sub = r["image"].strip("`"), r["medium"], r["sub"]

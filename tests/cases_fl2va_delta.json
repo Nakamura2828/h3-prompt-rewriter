@@ -13,13 +13,13 @@
       "group": "1 light-zoom-gun",
       "id": "p1_first",
       "user": "CAST: the man | ROLE: frame",
-      "image": "images/p1_light-zoom-gun_first.png"
+      "image": "images/p1_first.png"
     },
     {
       "group": "1 light-zoom-gun",
       "id": "p1_delta",
       "system_file": "prompts/fl2va_delta.txt",
-      "image": "images/p1_light-zoom-gun_last.png",
+      "image": "images/p1_last.png",
       "user": "[[FIRST_FRAME]]\n{{p1_first}}"
     },
     {

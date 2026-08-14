@@ -8,6 +8,21 @@ adjudication effort. **None of these should be run.** Each names what replaced i
 The original `describer_style` test, 39 cases. Probes distinctions the three-axis rebuild dropped
 and covers none of the terms it added.
 
+## `describer_style_smoke.json` — retired session 21
+
+A 4-case session-10 format check, run before committing to a full round. **Unrepairable rather
+than merely superseded**, which is why it was retired instead of repointed: its `system_file` was
+`prompts/describer_style.txt`, the monolithic style prompt that no longer exists in any form
+(session 20 split style into `look` + `class`, and a two-pass test cannot be made by editing one
+path). Its `_expected` is dead too — `stop-motion / puppet` names a sub-term merged into `figure`
+in session 17.
+
+Found by the `tests/*.json` path check added to `scripts/inventory.py` in session 21, along with
+two frame tests pointing at a promoted candidate prompt. Those two were repointed at
+`prompts/describer_frame.txt`, which is byte-identical to the archived v8 they were written
+against; this one had no such target. Nothing replaces it — `scripts/validate.py describer` is the
+format check now, and `scripts/gen_sweep.py style --limit N` produces a smoke sweep on demand.
+
 ## `describer_style_targeted.json` (+ `gen_style_targeted.py`, `-BASELINE-s12.txt`) — retired session 17
 
 45 images / 90 cases, enriched, gating on movement. Replaced by

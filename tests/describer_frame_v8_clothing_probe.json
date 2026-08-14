@@ -18,7 +18,7 @@
     {
       "group": "candidate_v8",
       "id": "cand_p1",
-      "system_file": "prompts/describer_frame_v8_candidate.txt",
+      "system_file": "prompts/describer_frame.txt",
       "user": "ROLE: frame",
       "image": "images/classroom1.png"
     }
