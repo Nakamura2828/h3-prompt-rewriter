@@ -51,7 +51,7 @@ ROLE: style
 [[DEFINITION]] variable ink outlines, granulating watercolour washes, flat even illumination, and visible paper texture
 ---
 [[MEDIUM]] drawing
-[[SUB_MEDIUM]] watercolour
+[[SUB_MEDIUM]] ink
 [[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
@@ -162,7 +162,7 @@ ROLE: style
 ---
 [[MEDIUM]] painting
 [[SUB_MEDIUM]] digital
-[[IDIOM]] dimensional toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### 2D cel #####
@@ -782,7 +782,7 @@ ROLE: style
 ---
 [[MEDIUM]] print
 [[SUB_MEDIUM]] halftone
-[[IDIOM]] realist
+[[IDIOM]] flat graphic
 [[TREATMENT]] monochrome
 ----------
 ##### photograph #####
@@ -913,7 +913,7 @@ ROLE: style
 ---
 [[MEDIUM]] vector
 [[SUB_MEDIUM]] none
-[[IDIOM]] flat graphic
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 qwen3.6-35b-a3b  describer_style_class  [vector :: sw_forest_day_night]
@@ -947,7 +947,7 @@ ROLE: style
 ---
 [[MEDIUM]] vector
 [[SUB_MEDIUM]] none
-[[IDIOM]] flat graphic
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 ##### 3D CG #####
@@ -1133,7 +1133,7 @@ ROLE: style
 ---
 [[MEDIUM]] 2D cel
 [[SUB_MEDIUM]] none
-[[IDIOM]] anime
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 ##### 3D CG #####
@@ -1171,7 +1171,7 @@ ROLE: style
 ---
 [[MEDIUM]] 2D cel
 [[SUB_MEDIUM]] none
-[[IDIOM]] western toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### photograph #####
@@ -1336,7 +1336,7 @@ ROLE: style
 ---
 [[MEDIUM]] 3D CG
 [[SUB_MEDIUM]] none
-[[IDIOM]] dimensional toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### 2D cel #####
@@ -1883,7 +1883,7 @@ ROLE: style
 [[DEFINITION]] photographed physical clay puppets with visible surface texture and sculpted features, shallow real depth of field, a warm saturated earth-tone palette, and soft directional practical light
 ---
 [[MEDIUM]] stop-motion
-[[SUB_MEDIUM]] clay
+[[SUB_MEDIUM]] figure
 [[IDIOM]] dimensional toon
 [[TREATMENT]] colour
 ----------
@@ -1994,7 +1994,7 @@ ROLE: style
 ---
 [[MEDIUM]] vector
 [[SUB_MEDIUM]] none
-[[IDIOM]] flat graphic
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 qwen3.6-35b-a3b  describer_style_class  [vector :: sw_sanfran_night]
@@ -2011,7 +2011,7 @@ ROLE: style
 ---
 [[MEDIUM]] vector
 [[SUB_MEDIUM]] none
-[[IDIOM]] flat graphic
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 ##### 2D cel #####
@@ -2173,7 +2173,7 @@ ROLE: style
 [[DEFINITION]] visible sketchy underdrawing, soft blended colour fills with directional strokes, rough unfinished edges, a warm vibrant saturated palette, and flat even illumination
 ---
 [[MEDIUM]] drawing
-[[SUB_MEDIUM]] marker
+[[SUB_MEDIUM]] digital
 [[IDIOM]] anime
 [[TREATMENT]] colour
 ----------

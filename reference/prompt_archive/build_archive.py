@@ -231,7 +231,7 @@ CURATED = {
                    'it. western -> anime was running at 3 cases in v4a and the standing defect '
                    'since s15; v4b took it to 12. An enumeration inside a rule is a ranking, not '
                    'a set.'),
-    '4839880444': ('describer_style_class_v4c', 'live', 'describer_style_class_v4b',
+    '4839880444': ('describer_style_class_v4c', 'superseded', 'describer_style_class_v4b',
                    'THE PROPORTION LICENCE -- the fix the v3 split was BUILT to make possible '
                    'and which was never written (3,050 -> 3,432 tokens). docs/describers.md:250 '
                    'records the intent from session 12: "pass B emits four closed-vocabulary '
@@ -263,6 +263,86 @@ CURATED = {
                    'and small flat pupils. L-CLAIM-ROWS-ARE-UNRELIABLE, caught mid-design; the '
                    'inventory carries a corrections row and the pair is promoted from a "loose" '
                    'probe to the sharpest anime-vs-western-toon probe in the corpus.'),
+
+    # --- v4d: THE ENTRY GATE, run as a 2x2 factorial (session 20) ----------------------------
+    # Three states from one session because the two edits were run as SEPARATE ARMS and only the
+    # combination shipped. Both losers are kept: arm A is the only direct evidence that gating
+    # the ladder in isolation REGRESSES it, and that fact is what makes the interaction below
+    # readable rather than a lucky guess.
+    'a18a0bffa0': ('describer_style_class_v4d-flat', 'reverted', 'describer_style_class_v4c',
+                   'ARM A -- THE FLAT DOOR ALONE. DEAD BRANCH, and instructive. Gives the '
+                   'anime-vs-western-toon ladder an admission test ("are the THINGS IN THE SCENE '
+                   'shaded, however hard-edged and flat that shading is?") and stops the '
+                   'flat-two-tone clause pointing unconditionally at a two-option ladder that '
+                   'contains neither `flat graphic` nor `realist`. '
+                   'RESULT sweep130 104 -> 107, s18 51 -> 52. It fixed its four targets '
+                   '(forest_day, forest_night, sanfran_evening, sanfran_night) plus '
+                   'ghibli_painting_reference_painterly -- AND COST april_1987, gwen, molly and '
+                   'ivy_toon, all western toon -> anime, i.e. v4c\'s signature win partly undone. '
+                   'THE REAL COST IS WORSE THAN THE COUNT: april_1987 and ivy_toon are STRICT '
+                   'CONTROLS for the `western toon | anime` accept-set, and both COLLAPSED while '
+                   'avatar_1 and avatar_2 fired it -- so two of the three "gained" cases were '
+                   'unearned passes. Under v4c all four controls read ok. Net credible movement '
+                   '~+1 for the loss of an archetypal western cartoon. '
+                   'DIAGNOSIS: a long admission paragraph inserted between the ladder header and '
+                   'step 1, ending on a licence to ENTER, cost step 1 ("proportions pushed away '
+                   'from life -> western toon, stop") its salience. A positional effect, the same '
+                   'family as L-AN-ENUMERATION-IS-A-RANKING, arriving from a new direction.'),
+    'fbd600f8ee': ('describer_style_class_v4d-stroke', 'reverted', 'describer_style_class_v4c',
+                   'ARM B -- THE EYE GUARD ALONE. DEAD BRANCH. Rewrites ladder step 2, whose '
+                   'anime tell ("a large eye with a defined iris standing as its own shape apart '
+                   'from the pupil, usually with a specular glint") DESCRIBES A REAL HUMAN EYE -- '
+                   'so any naturalistically painted person reaching the ladder resolved to '
+                   '`anime`. The guard asks whether the eye is DRAWN (flat shapes bounded by a '
+                   'line, enlarged beyond life) or RENDERED (continuous tone, wet surface, light '
+                   'falling across it), and sends the rendered case out to `realist`. '
+                   'RESULT sweep130 104 -> 106, s18 51 -> 51. Flat on its own and it did NOT fix '
+                   'the painterly cluster it was aimed at -- blonde/saber/uniform _painterly all '
+                   'still answer `anime`. It fixed girl_painting and, jointly, is what makes arm '
+                   'C work. Format 130/130, the only state ever to clear annie2_cropped. '
+                   'AN ADMISSION TEST ON VISIBLE BRUSHWORK WAS DRAFTED AND REJECTED BEFORE '
+                   'RUNNING: ghibli_painting_reference_anime reads "soft-edged forms without hard '
+                   'outlines", exactly like the painterly four, so excluding on stroke would have '
+                   'evicted genuine painted anime. The eye guard cannot touch a figureless plate '
+                   'at all, which is why it was chosen.'),
+    'e4ac4b22b1': ('describer_style_class_v4e', 'live', 'describer_style_class_v4d',
+                   'v4d WITH `vintage Technicolor` REMOVED from [[TREATMENT]] (3,740 -> 3,732 '
+                   'tokens). A separate state rather than a v4d edit because the three v4d arms '
+                   'were measured with the term still present, and this is the text the '
+                   'full-corpus two-pass confirmation actually ran on -- collapsing them would '
+                   'attribute that run to a prompt it never saw. '
+                   'THE REMOVAL was agreed in session 12, reaffirmed in 17 and executed in 20. '
+                   '`vintage Technicolor` named a PROCESS on an axis that otherwise answers '
+                   '"which colour system", the same category error that removed `archival`, and '
+                   'reading a dye-transfer process off pixels is a provenance call that '
+                   'tie-break 4 forbids everywhere else in the same vocabulary. It had exactly '
+                   'two samples and the model never held it: session 11 had p5_first and p5_last '
+                   'SWAPPING it between rounds, and the session-12 split lost it on both at '
+                   'once. [[TREATMENT]] is now a two-term axis. '
+                   'CONFIRMED BY THE ROUND: under v4d both p5 frames still answered `vintage '
+                   'Technicolor` and were scored as misses against the new key -- an artifact of '
+                   'scoring an old run across a vocabulary boundary. Under v4e both come back '
+                   '`colour` and PASS, which is what the removal predicted.'),
+    'e7972414f1': ('describer_style_class_v4d', 'superseded', 'describer_style_class_v4c',
+                   'ARM C -- BOTH DOORS. SHIPPED (3,432 -> 3,740 tokens; arm A alone was 3,629 '
+                   'and arm B alone 3,543). sweep130 104 -> 110, '
+                   's18 51 -> 52; 155 -> 162 over the whole 187-image corpus. '
+                   'THE FINDING, and the reason the factorial was worth three arms: THE TWO DOORS '
+                   'REPAIR EACH OTHER. april_1987 and molly go PASS -> miss (A) -> PASS (B) -> '
+                   'PASS (C) -- the eye guard restores exactly the western/anime discrimination '
+                   'that the flat door\'s placement weakened. C beats max(A, B) by 3 cases, so '
+                   'this is a positive INTERACTION, not addition. Shipping "both" without running '
+                   'the arms would have shown 110 and never revealed that A alone regresses an '
+                   'archetypal western cartoon and collapses two strict controls. '
+                   'CONTROLS: all four IDIOM controls read ok, identical to v4c; the 3 remaining '
+                   'collapses are the pre-existing MEDIUM ones (gromit, castle) v4c already had. '
+                   'IDIOM net +5 (7 fixed, 2 lost: gwen, supergirl2), which is exactly the '
+                   'pre-agreed ship threshold. Third loss pjs is SUB_MEDIUM, off-axis. '
+                   'ALL FIVE REMAINING MISSES WERE RULED FORGIVABLE BY THE USER and none was '
+                   'given an accept-set -- forest_day_night explicitly so ("doing an accept would '
+                   'be harmful"). The user\'s summary: "we went from having a nominally better '
+                   'prompt that broke what was important, to having one whose only mistakes are '
+                   'forgivable."'),
 }
 
 # ---------------------------------------------------------------------------------------------

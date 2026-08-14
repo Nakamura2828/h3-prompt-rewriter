@@ -17,8 +17,8 @@
     "sw_fruit_reference_sketch": "drawing / pencil / realist / monochrome",
     "sw_garden_pond_anime": "2D cel / none / anime / colour",
     "sw_ghibli_grass": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -32,8 +32,8 @@
       ]
     },
     "sw_ghibli_kitchen": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -51,8 +51,8 @@
     "sw_ghibli_street": "2D cel / none / anime / colour",
     "sw_grass_anime_girl": "2D cel / none / anime / colour",
     "sw_grass_anime_scenery": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -82,8 +82,8 @@
       ]
     },
     "sw_nerv": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -101,8 +101,8 @@
     "sw_pre-teen1": "photograph / none / realist / colour",
     "sw_riley_preteen": "3D CG / none / dimensional toon / colour",
     "sw_river_mountain_anime": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -116,8 +116,8 @@
       ]
     },
     "sw_roadway_toon": {
-      "expect": "2D cel | painting / none / western toon | anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: a soft painterly cel background with no figure and no idiom cue -- no line work, no character, nothing that places it in either tradition (ruled session 19). Withheld in session 18 ON PURPOSE while the figureless defect was still hypothetical; released only after the s19 round showed 14 of 15 figureless plates reaching the RIGHT idiom, which means this is one undecidable image and not a systematic failure. Controls are figureless plates that ARE decidable, from both sides: if they start collapsing, the defect is real after all and this set must be withdrawn.",
+      "expect": "2D cel | painting / none | digital / western toon | anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.\n\nALSO: a soft painterly cel background with no figure and no idiom cue -- no line work, no character, nothing that places it in either tradition (ruled session 19). Withheld in session 18 ON PURPOSE while the figureless defect was still hypothetical; released only after the s19 round showed 14 of 15 figureless plates reaching the RIGHT idiom, which means this is one undecidable image and not a systematic failure. Controls are figureless plates that ARE decidable, from both sides: if they start collapsing, the defect is real after all and this set must be withdrawn.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -128,8 +128,6 @@
         "sw_april_1987",
         "sw_azumanga_anime",
         "sw_woman_oil",
-        "sw_simpsons_couch_toon",
-        "sw_spongebob_tree_toon",
         "sw_grass_anime_scenery"
       ]
     },
@@ -140,15 +138,39 @@
     "sw_saber_reference_photo": "photograph / none / realist / colour",
     "sw_sam_jackson_jurassic_middle_aged": "live-action film / none / realist / colour",
     "sw_shoes_anime": "2D cel / none / anime / colour",
-    "sw_simpsons_couch_toon": "2D cel / none / western toon / colour",
+    "sw_simpsons_couch_toon": {
+      "expect": "2D cel / none / western toon | flat graphic / colour",
+      "why": "a figureless cartoon backdrop with NO shading anywhere -- flat and shadowless, forms separated purely by colour boundaries and outlines (user ruling, session 20). Its RENDERING is genuinely a flat graphic one, forms simplified into clean flat planes with form never rendered, while its TRADITION is genuinely `western toon`. Both are true of the same pixels, on the same grounds that make a painted cel background both `2D cel` and `painting`. Withheld in session 18 on purpose, released in session 20. BOTH pass; `anime`, `realist` and `dimensional toon` still fail, so the set does not forgive the anime-over-attraction it sits next to. Controls guard the erodable direction: `flat graphic` is the forgiven side, so figureless plates that DO carry shading must still come back with a real cartoon idiom.",
+      "control": [
+        "sw_backyard_anime",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
+        "sw_classroom_anime_empty",
+        "sw_grass_anime_scenery",
+        "sw_temple_grounds_anime",
+        "sw_nerv"
+      ]
+    },
     "sw_skellington": "stop-motion / figure / dimensional toon / colour",
     "sw_sketch_boat": "drawing / pencil / realist / monochrome",
     "sw_sketch_man": "drawing / pencil / realist / monochrome",
     "sw_sketch_woman": "drawing / pencil / realist / monochrome",
-    "sw_spongebob_tree_toon": "2D cel / none / western toon / colour",
+    "sw_spongebob_tree_toon": {
+      "expect": "2D cel / none / western toon | flat graphic / colour",
+      "why": "a figureless cartoon backdrop with NO shading anywhere -- flat and shadowless, forms separated purely by colour boundaries and outlines (user ruling, session 20). Its RENDERING is genuinely a flat graphic one, forms simplified into clean flat planes with form never rendered, while its TRADITION is genuinely `western toon`. Both are true of the same pixels, on the same grounds that make a painted cel background both `2D cel` and `painting`. Withheld in session 18 on purpose, released in session 20. BOTH pass; `anime`, `realist` and `dimensional toon` still fail, so the set does not forgive the anime-over-attraction it sits next to. Controls guard the erodable direction: `flat graphic` is the forgiven side, so figureless plates that DO carry shading must still come back with a real cartoon idiom.",
+      "control": [
+        "sw_backyard_anime",
+        "sw_pavilion_anime",
+        "sw_shoes_anime",
+        "sw_classroom_anime_empty",
+        "sw_grass_anime_scenery",
+        "sw_temple_grounds_anime",
+        "sw_nerv"
+      ]
+    },
     "sw_temple_grounds_anime": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",
@@ -173,8 +195,8 @@
     },
     "sw_toddler": "photograph / none / realist / colour",
     "sw_town_tower_anime": {
-      "expect": "2D cel | painting / none / anime / colour",
-      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.",
+      "expect": "2D cel | painting / none | digital / anime / colour",
+      "why": "a background plate with NO FIGURE and NO CEL LINE WORK, where 2D cel vs painting is not visually determinable (ruled session 18). A cel-era background is itself a painting, so only provenance separates the two readings and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS forbids scoring against that. BOTH pass; drawing / vector / 3D CG / photograph still fail. Deliberately a WEAK test on this axis -- a pass here is NOT evidence the distinction works. Controls guard the direction it erodes: `painting` is the forgiven side, so cel frames that are NOT ambiguous must still come back `2D cel`. NOTE the idiom is scored STRICTLY on these -- see the [[IDIOM]] note in the test's _role.\n\nALSO: paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` is the reading that goes with `painting`, under which `none` is not a legal pairing at all. Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT failure, so validate.py still catches it on the pipeline that can see it. Controls are the same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must still come back `2D cel / none`.",
       "control": [
         "sw_grass_anime_girl",
         "sw_backyard_anime",

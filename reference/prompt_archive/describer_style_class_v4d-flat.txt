@@ -68,14 +68,15 @@ THE STYLE VOCABULARY — THREE INDEPENDENT AXES
 - ANIME vs WESTERN TOON — FIRST, DOES THIS LADDER APPLY? It chooses between two cartoon traditions, so it is only for artwork drawn or animated in one of them. Ask whether the THINGS IN THE SCENE are shaded: does an object carry a shadow side, a cast shadow, or a block of darker tone standing in for one — however hard-edged and flat that shading is? If yes, enter the ladder. If the objects are filled with single uniform colours and the only graded areas are sky, water or distance, the image is "flat graphic"; do not enter. If the scene is rendered the way things actually look, it is "realist"; do not enter. This is about the RENDERING, not about whether a character is present: a background plate from an animated film with no figure in it still enters the ladder.
 - THEN DECIDE IN THIS ORDER, and do not fall back on which country you suppose made it.
   1. Are the body proportions pushed away from life — noodle limbs, an oversized head, oversized hands or feet, a tiny torso? If yes, "western toon". Stop.
-  2. Otherwise the figure is naturally proportioned, and BOTH traditions live here, so THE EYE DECIDES — but first ask whether the eye is DRAWN or RENDERED. A real eye also has an iris, a pupil and a glint, so those three alone decide nothing. The anime tell is that the eye is built from FLAT SHAPES bounded by a line and enlarged beyond life: an oversized iris filled with flat colour, a hard-edged highlight sitting on top of it. Where the eye is instead modelled with continuous tone, a wet surface and light falling across it, it is a rendered eye and the figure is rendered rather than drawn — the image is "realist", and this ladder does not apply. Otherwise: a large flat-filled iris standing as its own shape apart from the pupil is "anime"; a small flat pupil with little or no iris is "western toon".
+  2. Otherwise the figure is naturally proportioned, and BOTH traditions live here, so THE EYE DECIDES. A large eye with a defined iris standing as its own shape apart from the pupil, usually with a specular glint, is "anime". A naturalistic eye, or a small flat pupil with little or no iris, is "western toon".
   Naturalistic proportion is NOT by itself evidence of anime — most of the Western tradition draws that way too. A big eye alone is not either; ask whether the IRIS is drawn.
 - JUDGE [[IDIOM]] ON THE SUBJECT, NOT ON THE GROUND BEHIND IT. A plain white studio sweep, an empty colour backdrop, a blank margin, a printed border and an undecorated background are all just empty area. None of them is evidence of a flat graphic design approach. A subject rendered with real form and real material sitting on a perfectly flat ground is "realist". Ask how the SUBJECT is drawn, built or photographed, and ignore what is behind it.
 
-- [[TREATMENT]] MUST be exactly one of these two terms:
+- [[TREATMENT]] MUST be exactly one of these three terms:
 
-  colour — ordinary full colour, whatever the era, process or saturation
+  colour — ordinary full colour
   monochrome — black-and-white, greyscale, sepia, or any single-hue image, whether modern or aged
+  vintage Technicolor — the saturated dye-transfer look of mid-century colour film
 
 - ALWAYS emit [[TREATMENT]]. Spot colour on an otherwise black-and-white image is still "monochrome". An aged, faded or damaged photographic surface is still "monochrome" -- the record's account of grain, fading and damage is not evidence here.
 

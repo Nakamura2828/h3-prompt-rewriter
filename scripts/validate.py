@@ -246,7 +246,11 @@ MEDIUM_VOCAB = {
 # That is the point of the rebuild, so these are deliberately not nested under MEDIUM_VOCAB
 # and must never be validated against the coarse term.
 IDIOM_VOCAB = ('anime', 'western toon', 'flat graphic', 'dimensional toon', 'realist')
-TREATMENT_VOCAB = ('colour', 'monochrome', 'vintage technicolor')
+# 'vintage technicolor' was dropped in session 20 (agreed s12, reaffirmed s17). It was a PROCESS
+# term on an axis that otherwise answers "which colour system", it had exactly two samples
+# (p5_first, p5_last), and the model never reliably reached it -- s11 had the two frames swapping
+# it between rounds, and the s12 split lost it on both. Both images are now `colour`.
+TREATMENT_VOCAB = ('colour', 'monochrome')
 
 
 def _medium_vocab(out):
@@ -308,28 +312,11 @@ DESCRIBER_ROLES = {
         'atmos_field': 'ATMOSPHERE',
         'coarse_sub': None,
     },
-    'style': {
-        'fields': ['EXECUTION', 'PALETTE', 'LIGHTING', 'DISTINGUISHING',
-                   'MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT', 'LABEL', 'DEFINITION'],
-        'closed': {'MEDIUM': tuple(MEDIUM_VOCAB),
-                   'IDIOM': IDIOM_VOCAB,
-                   'TREATMENT': TREATMENT_VOCAB},
-        # 11 coarse terms, so unlike setting's two-value [[SETTING_KIND]] this drift check
-        # can actually fail. 'same:' groups here are same-medium groups, NOT the
-        # cross-media probe pairs -- those are supposed to differ.
-        'drift': ('MEDIUM', _medium_vocab),
-        'no_digits': (),          # '16-colour', '1990s' and 'four-panel' are all legitimate
-        # Same reasoning as setting: one image has one look, so there is nothing to
-        # disambiguate and no judgement worth risking (L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY).
-        'not_found': False,
-        # This is the one role whose whole job is naming the rendering style.
-        'style_warn': False,
-        'style_allow': (),
-        # [[LIGHTING]] here is the lighting TREATMENT, which is durable, so there is no
-        # transient field to quarantine. The prompt bans time-of-day wording instead.
-        'atmos_field': None,
-        'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
-    },
+    # NOTE: the monolithic 'style' role was REMOVED in session 20, when the split locked at
+    # describer_style_class v4d and prompts/describer_style.txt was retired to
+    # reference/retired/prompts/. It described a ten-field record that nothing emits any
+    # more. The prompt text and the role's full field list survive in
+    # reference/prompt_archive/ (describer_style_v2-compressed) if it is ever needed.
     # ---- the two halves of the split style describer (session 12).
     #
     # 'style' above ran out of room: at 3,740 tokens it sat over this model's ~3,700 adherence

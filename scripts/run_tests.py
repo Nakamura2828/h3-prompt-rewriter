@@ -152,6 +152,14 @@ def insert_fl2va_landing(text):
 
 TOKEN = re.compile(r'\{\{([^{}]+)\}\}')
 
+# A case id inside a token. `\w` was used here until session 20 and does NOT match a
+# hyphen, so `{{look_pre-teen1}}` matched none of the three substitution patterns below,
+# fell through every branch INCLUDING the error branch, and was sent to the model as
+# literal text for a whole archived round. Every token body is split on ':', so an id is
+# "anything that is not a brace or a colon". Keep this in step with TOKEN above --
+# refs_in() already accepted hyphens, which is why dependency ordering looked fine.
+ID = r'([^{}:]+)'
+
 
 def refs_in(user):
     """Case ids a user prompt substitutes from: {{id}}, {{id:FIELD}}, {{CAMERA:idA:idB}}."""
@@ -265,7 +273,7 @@ def main():
         user = c['user']
         # {{CAMERA:idA:idB}} decides push in / pull out from two FRAMING lines, so the
         # model never has to reason about shot-size ordering
-        for ida, idb in re.findall(r'\{\{CAMERA:(\w+):(\w+)\}\}', user):
+        for ida, idb in re.findall(r'\{\{CAMERA:' + ID + ':' + ID + r'\}\}', user):
             token = '{{CAMERA:' + ida + ':' + idb + '}}'
             if ida in results and idb in results:
                 user = user.replace(token, camera_move(results[ida], results[idb]))
@@ -275,7 +283,7 @@ def main():
                 raise SystemExit(f'ERROR: case {c["id"]!r} references {token} '
                                  f'which has not run yet in this invocation.')
         # {{id:FIELD}} pulls a single [[FIELD]] line out of a previous case's output
-        for ref, fld in re.findall(r'\{\{(\w+):(\w+)\}\}', user):
+        for ref, fld in re.findall(r'\{\{' + ID + ':' + ID + r'\}\}', user):
             token = '{{' + ref + ':' + fld + '}}'
             if ref in results:
                 m = re.search(r'\[\[' + fld + r'\]\] (.*)', results[ref])
@@ -285,7 +293,7 @@ def main():
             else:
                 raise SystemExit(f'ERROR: case {c["id"]!r} references {token} '
                                  f'which has not run yet in this invocation.')
-        for ref in re.findall(r'\{\{(\w+)\}\}', user):
+        for ref in re.findall(r'\{\{' + ID + r'\}\}', user):
             if ref in results:
                 user = user.replace('{{' + ref + '}}', results[ref])
             elif a.dry_run:
@@ -294,6 +302,16 @@ def main():
                 raise SystemExit(f'ERROR: case {c["id"]!r} references {{{{{ref}}}}} '
                                  f'which has not run yet in this invocation. '
                                  f'Run it in the same invocation, or drop --only.')
+        # Nothing above may leave a token behind. A token matching none of the three forms
+        # used to fall through every branch -- error branch included -- and reach the model
+        # as literal text, which is how a whole archived round classified pre-teen1 from a
+        # prompt containing `{{look_pre-teen1}}` (session 20). Fail loudly instead: a silent
+        # wrong prompt is worse than a crash.
+        left = TOKEN.search(user)
+        if left:
+            raise SystemExit(f'ERROR: case {c["id"]!r} still contains the unsubstituted '
+                             f'token {left.group(0)!r} after substitution. It matches none '
+                             f'of {{id}}, {{id:FIELD}}, {{CAMERA:idA:idB}}.')
 
         align = cfg.get('align')
         if align and align in ('l2va', 'fl2va') and cfg.get('duration') is None:

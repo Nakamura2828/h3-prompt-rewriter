@@ -56,7 +56,7 @@ VOCAB = {
     "print":            {"engraving", "halftone"},
 }
 IDIOM = {"anime", "western toon", "flat graphic", "dimensional toon", "realist"}
-TREATMENT = {"colour", "monochrome", "vintage Technicolor"}
+TREATMENT = {"colour", "monochrome"}
 
 # The age axis (session 19). Unlike the three above it is a MULTISET -- one image can hold a
 # toddler and an older adult -- so it tallies by "images in which this bracket appears" rather
@@ -90,7 +90,7 @@ NO_PEOPLE = re.compile(r"^(none|—|-|\*\*none\*\*|none \(1 bird\))$", re.I)
 # Tally order: coarse terms largest-first is unstable as the corpus grows, so fix it explicitly.
 ORDER = list(VOCAB)
 IDIOM_ORDER = ["realist", "anime", "flat graphic", "western toon", "dimensional toon"]
-TREATMENT_ORDER = ["colour", "monochrome", "vintage Technicolor"]
+TREATMENT_ORDER = ["colour", "monochrome"]
 
 # `amb` was RETIRED in session 19. It marked three studio product shots (chair, car_1, car_2)
 # whose photograph-vs-render reading is not visually determinable; that ruling now lives where

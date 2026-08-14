@@ -37,6 +37,15 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--added', metavar='TAG',
                 help="restrict to master rows whose `added` column is TAG (e.g. s15). "
                      "Writes tests/describer_style_added_TAG.json and marks it enriched.")
+ap.add_argument('--exclude-added', metavar='TAG', action='append', default=[],
+                help="drop master rows whose `added` column is TAG. Repeatable. This is what "
+                     "keeps tests/describer_style_sweep130.json REGENERABLE: it was built in "
+                     "session 17 over the whole corpus as it stood, and session 18 then added 57 "
+                     "images, so a plain regeneration silently produced 187 cases instead of its "
+                     "130 and could not be diffed against it. `--exclude-added s18` reproduces "
+                     "the original case list exactly. Without this the file had to be hand-edited "
+                     "against its own DO-NOT-HAND-EDIT header, which is how an answer key drifts "
+                     "away from the corpus it is supposed to be derived from.")
 ap.add_argument('--out', help='override the output path')
 args = ap.parse_args()
 
@@ -47,6 +56,11 @@ if args.added:
     master = [r for r in master if r['added'].strip() == args.added]
     if not master:
         raise SystemExit(f'ERROR: no master rows with added == {args.added!r}')
+for tag in args.exclude_added:
+    kept = [r for r in master if r['added'].strip() != tag]
+    if len(kept) == len(master):
+        raise SystemExit(f'ERROR: --exclude-added {tag!r} matched no master rows')
+    master = kept
 OUT = args.out or (f'tests/describer_style_added_{args.added}.json' if args.added else OUT)
 
 ext = {os.path.splitext(f)[0]: f for f in os.listdir(IMG_DIR)
@@ -133,10 +147,41 @@ _PLATE_WHY = (
 _PLATE_CONTROL = ['sw_grass_anime_girl', 'sw_backyard_anime', 'sw_classroom_anime_empty',
                   'sw_pavilion_anime', 'sw_shoes_anime',
                   'sw_ivy_toon', 'sw_april_1987', 'sw_azumanga_anime', 'sw_woman_oil']
-ACCEPT_MEDIUM = {n: ('2D cel | painting', _PLATE_WHY, _PLATE_CONTROL) for n in (
-    'temple_grounds_anime', 'town_tower_anime', 'river_mountain_anime', 'nerv',
-    'grass_anime_scenery', 'ghibli_grass', 'ghibli_kitchen', 'roadway_toon',
-)}
+_PLATES = ('temple_grounds_anime', 'town_tower_anime', 'river_mountain_anime', 'nerv',
+           'grass_anime_scenery', 'ghibli_grass', 'ghibli_kitchen', 'roadway_toon')
+ACCEPT_MEDIUM = {n: ('2D cel | painting', _PLATE_WHY, _PLATE_CONTROL) for n in _PLATES}
+
+# THE MEDIUM SET ABOVE WAS INOPERATIVE UNTIL SESSION 20, and the reason is worth stating because
+# it is a general trap in per-field accept-sets rather than a typo.
+#
+# The set forgives `painting` on MEDIUM, but SUB_MEDIUM stayed keyed to `none` -- and `none` is
+# ILLEGAL under `painting`, whose sub-list is oil / watercolour / digital. validate.py rejects
+# `painting / none` outright. So taking the forgiven branch forced an automatic SUB miss, and the
+# only way to pass all four fields was to answer `2D cel / none` exactly -- which is precisely
+# the strictness the set was written to remove. It cost `ghibli_kitchen` a case in the s18 and
+# v4d rounds; the other seven happened to answer `2D cel` anyway, which is why nobody saw it.
+#
+# THIS IS THE MIRROR OF THE KNOWN CROSS-FIELD LIMITATION. On annie2_cropped and
+# april_1987_figure the cross terms wrongly PASS (documented, accepted deliberately). Here the
+# forgiven branch wrongly FAILS. Same root cause -- accept-sets are per-field and cannot express
+# "if MEDIUM took this branch then SUB must follow it" -- but the failing direction is the one
+# that silently destroys a ruling instead of loosening it.
+#
+# THE RULE THAT FOLLOWS, worth applying to any future set: WHEN AN ACCEPT-SET SPANS TWO COARSE
+# TERMS WITH DIFFERENT SUB-LISTS, THE SUB FIELD MUST BE WIDENED TO MATCH, or the set does
+# nothing. Here `none` (for 2D cel) and `digital` (for painting) are the two coherent readings.
+_PLATE_SUB_WHY = (
+    "paired with the `2D cel | painting` MEDIUM set on the same image, and REQUIRED for it to "
+    "function at all (session 20). `none` is the only legal sub-term under `2D cel`; `digital` "
+    "is the reading that goes with `painting`, under which `none` is not a legal pairing at all. "
+    "Without this the MEDIUM set was inoperative -- choosing the forgiven branch guaranteed a "
+    "SUB miss, so the case was scored strict `2D cel / none` despite carrying an accept-set. "
+    "The cross terms `2D cel / digital` and `painting / none` also pass, which is the same known "
+    "per-field limitation recorded on annie2_cropped; `painting / none` is additionally a FORMAT "
+    "failure, so validate.py still catches it on the pipeline that can see it. Controls are the "
+    "same plates that guard the MEDIUM set: outlined cel frames that are NOT ambiguous must "
+    "still come back `2D cel / none`.")
+ACCEPT_SUB.update({n: ('none | digital', _PLATE_SUB_WHY, _PLATE_CONTROL) for n in _PLATES})
 
 # --- Session 19 rulings, from the first s18 round -------------------------------------------
 #
@@ -184,8 +229,55 @@ _PLATE_IDIOM_WHY = (
     "means this is one undecidable image and not a systematic failure. Controls are figureless "
     "plates that ARE decidable, from both sides: if they start collapsing, the defect is real "
     "after all and this set must be withdrawn.")
-_PLATE_IDIOM_CONTROL = ['sw_simpsons_couch_toon', 'sw_spongebob_tree_toon',
-                        'sw_grass_anime_scenery', 'sw_backyard_anime']
+_PLATE_IDIOM_CONTROL = ['sw_grass_anime_scenery', 'sw_backyard_anime',
+                        'sw_pavilion_anime', 'sw_classroom_anime_empty']
+# sw_simpsons_couch_toon and sw_spongebob_tree_toon were the western-toon half of this control
+# set until session 20, when they were given an accept-set of their own (below). A case cannot
+# police an axis it is itself forgiven on -- L-A-CONTROL-MUST-SIT-OUTSIDE-THE-AMBIGUITY, the
+# lesson session 19 paid for with ghibli_painting_reference_anime. Replaced with two SHADED
+# figureless plates, which stay strict and still guard the same anime-vs-western-toon axis.
+
+# THE FLAT FIGURELESS CARTOON BACKDROP -- ruled by the user, session 20.
+#
+# simpsons_couch_toon and spongebob_tree_toon are figureless cartoon backdrops with NO shading at
+# all: "flat and shadowless, no directional key or cast shadows, forms separated purely by colour
+# boundaries and outlines" and "no cast shadows, uniform brightness throughout the scene". Their
+# rendering genuinely IS a flat graphic one -- forms simplified into clean flat planes with form
+# never rendered -- while their tradition is just as genuinely `western toon`. Both readings are
+# true of the same pixels.
+#
+# The user's argument, and it is the same one that settled the painted cel backgrounds: "accepting
+# either flat or western for flat 2D western backdrops does seem right (just as we decided a
+# painted cel anime backdrop is also a painting)". A cel background IS a painting; a flat cartoon
+# backdrop IS flat graphic design. Neither is a concession to the model -- both are rulings about
+# what the vocabulary means when two axes describe the same surface truthfully.
+#
+# Session 18 withheld this set deliberately, recording that "the corpus now holds the image to
+# revisit it with if a round shows the model splitting". Session 20 is that revisit.
+#
+# ATTRIBUTION NOTE. This lands BEFORE the v4d arms run, and the v4c baseline is re-scored under
+# it, so it sits on BOTH sides of every arm comparison and contributes zero to the measured
+# movement of any of them. That is only possible because score.py is a pure function of
+# (run, key) -- verified session 16.
+#
+# Controls guard the direction it can erode: `flat graphic` is the forgiven side, so figureless
+# plates that DO carry shading must still come back with a real cartoon idiom. If those start
+# answering `flat graphic`, the set is protecting an over-exclusion rather than resolving a true
+# ambiguity, and it must be withdrawn -- L-AN-ACCEPT-SET-IS-A-HYPOTHESIS.
+_FLAT_PLATE_WHY = (
+    "a figureless cartoon backdrop with NO shading anywhere -- flat and shadowless, forms "
+    "separated purely by colour boundaries and outlines (user ruling, session 20). Its "
+    "RENDERING is genuinely a flat graphic one, forms simplified into clean flat planes with "
+    "form never rendered, while its TRADITION is genuinely `western toon`. Both are true of the "
+    "same pixels, on the same grounds that make a painted cel background both `2D cel` and "
+    "`painting`. Withheld in session 18 on purpose, released in session 20. BOTH pass; `anime`, "
+    "`realist` and `dimensional toon` still fail, so the set does not forgive the "
+    "anime-over-attraction it sits next to. Controls guard the erodable direction: `flat "
+    "graphic` is the forgiven side, so figureless plates that DO carry shading must still come "
+    "back with a real cartoon idiom.")
+_FLAT_PLATE_CONTROL = ['sw_backyard_anime', 'sw_pavilion_anime', 'sw_shoes_anime',
+                       'sw_classroom_anime_empty', 'sw_grass_anime_scenery',
+                       'sw_temple_grounds_anime', 'sw_nerv']
 
 # THE PAINTERLY-FACE CASE -- WRITTEN, MEASURED, AND WITHDRAWN INSIDE ONE SESSION. Kept here as
 # a comment because the withdrawal is the useful record, not the set.
@@ -220,6 +312,8 @@ ACCEPT_MEDIUM.update({
 # because until the s18 round every idiom miss had turned out to be a real defect.
 ACCEPT_IDIOM = {
     'roadway_toon': ('western toon | anime', _PLATE_IDIOM_WHY, _PLATE_IDIOM_CONTROL),
+    'simpsons_couch_toon': ('western toon | flat graphic', _FLAT_PLATE_WHY, _FLAT_PLATE_CONTROL),
+    'spongebob_tree_toon': ('western toon | flat graphic', _FLAT_PLATE_WHY, _FLAT_PLATE_CONTROL),
 }
 
 # The studio-product-shot accept-set, ruled by the user in session 17.

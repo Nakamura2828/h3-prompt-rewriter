@@ -347,6 +347,36 @@
       "ct": 1786603299,
       "date": "2026-08-13",
       "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+    },
+    {
+      "commit": "80e3f2e",
+      "ct": 1786630509,
+      "date": "2026-08-13",
+      "subject": "describer_style v4c: the proportion licence, and two negative results"
+    },
+    {
+      "commit": "7d963cd",
+      "ct": 1786649148,
+      "date": "2026-08-13",
+      "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+    },
+    {
+      "commit": "05a3599",
+      "ct": 1786649681,
+      "date": "2026-08-13",
+      "subject": "removed stale reference from image inventory"
+    },
+    {
+      "commit": "854c791",
+      "ct": 1786655893,
+      "date": "2026-08-13",
+      "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+    },
+    {
+      "commit": "aad77bb",
+      "ct": 1786657866,
+      "date": "2026-08-13",
+      "subject": "corrected image inventory"
     }
   ],
   "states": [
@@ -784,6 +814,41 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -796,7 +861,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -1248,6 +1313,41 @@
           "path": "prompts/i2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -1257,7 +1357,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -1709,6 +1809,41 @@
           "path": "prompts/l2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -1718,7 +1853,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -2339,6 +2474,76 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -2348,7 +2553,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -2570,6 +2775,41 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -2581,7 +2821,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -2781,6 +3021,41 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -2792,7 +3067,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -2992,6 +3267,41 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -3003,7 +3313,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -3203,6 +3513,41 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -3214,7 +3559,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -3414,6 +3759,41 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -3425,7 +3805,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -3625,6 +4005,41 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -3636,7 +4051,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -4068,6 +4483,41 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -4079,7 +4529,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -4548,6 +4998,41 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -4557,7 +5042,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786404424,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -4921,6 +5406,41 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -4932,7 +5452,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -5278,6 +5798,41 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -5287,7 +5842,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786416528,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -5619,6 +6174,41 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -5628,7 +6218,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786428480,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -5724,10 +6314,12 @@
         "ee43018093d89c57606367d1547032c3"
       ],
       "names": [
-        "describer_style"
+        "describer_style",
+        "describer_style_v2-compressed"
       ],
       "paths": [
-        "prompts/describer_style.txt"
+        "prompts/describer_style.txt",
+        "reference/retired/prompts/describer_style_v2-compressed.txt"
       ],
       "commits": [
         {
@@ -5932,16 +6524,52 @@
           "path": "prompts/describer_style.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
-        "describer_style"
+        "describer_style",
+        "describer_style_v2-compressed"
       ],
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 1
     },
     {
@@ -6354,6 +6982,41 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -6363,7 +7026,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -6557,6 +7220,41 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -6569,7 +7267,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786344981,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -6754,6 +7452,41 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -6763,7 +7496,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -6948,6 +7681,41 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786603299,
           "subject": "revert describer_style_look to v3; record v4 as a measured regression"
+        },
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
         }
       ],
       "families": [
@@ -6957,7 +7725,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786603299,
+      "last_ct": 1786657866,
       "crlf_variants": 2
     },
     {
@@ -7005,15 +7773,51 @@
       "paths": [
         "prompts/describer_style_class.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
+        }
+      ],
       "families": [
         "describer_style_class"
       ],
       "labels": [],
-      "in_worktree": true,
+      "in_worktree": false,
       "provenance_only": false,
-      "first_ct": 1786627177,
-      "last_ct": 1786627177,
+      "first_ct": 1786630509,
+      "last_ct": 1786657866,
       "crlf_variants": 1
     },
     {
@@ -7029,7 +7833,43 @@
       "paths": [
         "reference/retired/prompts/describer_style_class_v4a.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
+        }
+      ],
       "families": [
         "describer_style_class_v4a"
       ],
@@ -7037,7 +7877,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786625176,
-      "last_ct": 1786625176,
+      "last_ct": 1786657866,
       "crlf_variants": 1
     },
     {
@@ -7053,7 +7893,43 @@
       "paths": [
         "reference/retired/prompts/describer_style_class_v4b.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "80e3f2e",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786630509,
+          "subject": "describer_style v4c: the proportion licence, and two negative results"
+        },
+        {
+          "commit": "7d963cd",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786649148,
+          "subject": "corpus 130 -> 187: figureless frames, pencil, and the last two age brackets"
+        },
+        {
+          "commit": "05a3599",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786649681,
+          "subject": "removed stale reference from image inventory"
+        },
+        {
+          "commit": "854c791",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786655893,
+          "subject": "s18 round disproves the figureless defect; age becomes a checked column"
+        },
+        {
+          "commit": "aad77bb",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786657866,
+          "subject": "corrected image inventory"
+        }
+      ],
       "families": [
         "describer_style_class_v4b"
       ],
@@ -7061,7 +7937,103 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786627317,
-      "last_ct": 1786627317,
+      "last_ct": 1786657866,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "e4ac4b22b117ea784ebcbf2cc87694f0",
+      "bytes": 16778,
+      "lines": 125,
+      "md5_exact": [
+        "e4ac4b22b117ea784ebcbf2cc87694f0"
+      ],
+      "names": [
+        "describer_style_class"
+      ],
+      "paths": [
+        "prompts/describer_style_class.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786665641,
+      "last_ct": 1786665641,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "a18a0bffa071b21c0579da0832926cdf",
+      "bytes": 16320,
+      "lines": 126,
+      "md5_exact": [
+        "a18a0bffa071b21c0579da0832926cdf"
+      ],
+      "names": [
+        "describer_style_class_v4d-flat"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_style_class_v4d-flat.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class_v4d-flat"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786664781,
+      "last_ct": 1786664781,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "fbd600f8ee28d9f39cdc37d9915e79e3",
+      "bytes": 15950,
+      "lines": 125,
+      "md5_exact": [
+        "fbd600f8ee28d9f39cdc37d9915e79e3"
+      ],
+      "names": [
+        "describer_style_class_v4d-stroke"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_style_class_v4d-stroke.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class_v4d-stroke"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786664781,
+      "last_ct": 1786664781,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "e7972414f15aadadce51c7e06b9515c4",
+      "bytes": 16824,
+      "lines": 126,
+      "md5_exact": [
+        "e7972414f15aadadce51c7e06b9515c4"
+      ],
+      "names": [
+        "describer_style_class_v4d"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_style_class_v4d.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_style_class_v4d"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786668659,
+      "last_ct": 1786668659,
       "crlf_variants": 1
     }
   ]

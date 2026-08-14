@@ -4,8 +4,9 @@ Design and version history for the standalone describer prompts — the per-imag
 produce structured `[[FIELD]]` records for FL2VA and REF2VA composition.
 
 Roles built so far: **frame** (v8), **character** (v1), **setting** (v5, locked), and **style**
-(v3, split into look + class, **not** locked). `object` is not built yet, and is deliberately
-blocked behind `style` so it does not harden conventions that are still moving. See
+(split into look v3 + class **v4e**, **locked session 20**). `object` is not built yet; it was
+deliberately blocked behind `style` so it would not harden conventions that were still moving, and
+that block is now **lifted**. See
 `.claude/TODO.md`. Lessons cited by slug (`L-...`) are defined in
 `.claude/lessons_learned.md`. The test corpus these were validated against is documented in
 `docs/image_inventory.md`.
@@ -210,7 +211,80 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Style describer (v3, session 12 — split into two passes)
+## Style describer — LOCKED session 20 at look v3 + class v4e
+
+**Final state:** `describer_style_look.txt` v3 (1,876 tokens, untouched since session 12) feeding
+`describer_style_class.txt` **v4e** (3,732 tokens). Full-corpus two-pass confirmation:
+**159/187 content**, format **186/187** on pass A and **186/187** on pass B.
+
+### What session 20 changed, and how it was measured
+
+The classifier's `ANIME vs WESTERN TOON` ladder had **no entry condition** — a two-way choice that
+contains neither `flat graphic` nor `realist`, with nothing saying when an image is eligible for
+it. Two doors led in, and each explains a miss cluster:
+
+- **The flat door.** The flat-two-tone clause ended *"decide between the flat idioms on their own
+  evidence below"*, routing every flat image into that ladder. Vector landscapes with no figure
+  landed on `western toon`.
+- **The stroke door.** Step 2's anime tell — *"a large eye with a defined iris standing as its own
+  shape apart from the pupil, usually with a specular glint"* — **describes a real human eye**, so
+  naturalistically painted people resolved to `anime`.
+
+**Both were run as separate arms, and that is the durable finding.** On frozen pass A over the
+130-image sweep: v4c 104, flat-only 107, stroke-only 106, **both 110**.
+
+**The doors repair each other.** `april_1987` and `molly` go PASS → miss (flat alone) → PASS
+(stroke alone) → PASS (both): the eye guard restores exactly the western/anime discrimination the
+flat door's placement weakened. Arm C beats `max(A, B)` by three cases, so this is a positive
+*interaction*, not addition. Shipping "both" without the arms would have shown 110 and concealed
+that the flat door alone regresses an archetypal western cartoon **and collapses two strict
+controls** (`april_1987`, `ivy_toon`), which would have made two accept-set passes unearned.
+
+IDIOM net +5 (7 fixed, 2 lost). All four IDIOM controls hold, identical to v4c. The user ruled all
+five surviving misses **forgivable** and declined an accept-set for each — explicitly so for
+`forest_day_night` ("doing an accept would be harmful").
+
+`vintage Technicolor` was then removed from `[[TREATMENT]]`, which is the only difference between
+v4d and the shipped v4e.
+
+### The noise floor is wider than session 17 measured — read small movements accordingly
+
+The confirmation run re-ran pass A live for the first time since session 17 Round 0, against the
+identical classifier. **12 of 187 cases moved (6.4%)**, net −2, and several movers
+(`car_interior_toon`, `girl_painting`, `city_day`) are *not* in the five documented-marginal cases
+Round 0 identified at 3.8%. `look_rugrats` also produced a spontaneous format failure from an
+**unchanged** prompt.
+
+So a 1–2 case swing on a two-pass round is noise. The v4d evidence survives this because it was
+measured on **frozen** pass A, where the evidence set is held byte-identical across arms — which is
+precisely what that harness exists for.
+
+### `digital` — recorded as a capability ceiling, not an open task
+
+Three attempts have now failed to move it: `look` v4 (reverted), `class` v4b (inert), and the
+structural option below (declined on evidence). It remains the largest cluster — about 11 of the
+remaining misses (`ink→digital` ×4, `marker→digital` ×4, `oil→digital`, plus MEDIUM cascades).
+
+**Do not re-open it without new evidence, and know that two standing rationales are dead:**
+
+- *"`digital` appears in 5 of the 6 sub-lists, so it is the highest-prior term by construction"* is
+  **stale**. After session 17 dropped `2D cel`'s sub-list and merged `puppet` into `figure`, it is
+  **3 of 5**.
+- *"Remove `digital` from `drawing`'s sub-list"* — the one untried structural lever — would
+  **re-break `kiki`**. `drawing / digital` has exactly two samples, `kiki` and
+  `car_interior_sketch`, and `kiki` is the session-16 correction where the model was right and the
+  answer key was wrong. Breaking it to fix four marker cases trades a known-correct call for a
+  guess.
+
+Session 20 declined the third attempt deliberately, on `L-KNOW-WHEN-TO-STOP`.
+
+### Other surviving misses, all previously ruled
+
+`annie2` (nesting is never perceived — a capability ceiling), `castle`, `gromit` (clay/figure),
+`lincoln_money` (treatment), `kasia_swimsuit`, and the painterly cluster
+(`blonde_`/`saber_`/`uniform_reference_painterly`), which the eye guard did **not** fix.
+
+## History — the v3 split (session 12)
 
 The third REF2VA describer role, and **the inverse of the other three**: it records how an image is
 rendered and never what it depicts. The other roles all ban style words; this one bans everything
@@ -340,6 +414,11 @@ failing toward `digital` is not. Before writing anything, note that **tie-break 
 exactly that** — so this is an unfollowed rule, not a missing one, and restating it is the
 `L-KNOW-WHEN-TO-STOP` treadmill. `digital` also appears in 5 of the 6 sub-lists, which makes it
 the highest-prior term by construction.
+
+> **Superseded, session 20.** The "5 of the 6 sub-lists" figure above was true when written and is
+> **no longer** — session 17 dropped `2D cel`'s sub-list and merged `puppet` into `figure`, leaving
+> `digital` in **3 of 5**. See "`digital` — recorded as a capability ceiling" near the top of this
+> section for the current position and for why the remaining structural option was declined.
 
 ### v2 — the three-axis rebuild (session 10)
 

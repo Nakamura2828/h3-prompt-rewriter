@@ -72,10 +72,11 @@ THE STYLE VOCABULARY — THREE INDEPENDENT AXES
   Naturalistic proportion is NOT by itself evidence of anime — most of the Western tradition draws that way too. A big eye alone is not either; ask whether the IRIS is drawn.
 - JUDGE [[IDIOM]] ON THE SUBJECT, NOT ON THE GROUND BEHIND IT. A plain white studio sweep, an empty colour backdrop, a blank margin, a printed border and an undecorated background are all just empty area. None of them is evidence of a flat graphic design approach. A subject rendered with real form and real material sitting on a perfectly flat ground is "realist". Ask how the SUBJECT is drawn, built or photographed, and ignore what is behind it.
 
-- [[TREATMENT]] MUST be exactly one of these two terms:
+- [[TREATMENT]] MUST be exactly one of these three terms:
 
-  colour — ordinary full colour, whatever the era, process or saturation
+  colour — ordinary full colour
   monochrome — black-and-white, greyscale, sepia, or any single-hue image, whether modern or aged
+  vintage Technicolor — the saturated dye-transfer look of mid-century colour film
 
 - ALWAYS emit [[TREATMENT]]. Spot colour on an otherwise black-and-white image is still "monochrome". An aged, faded or damaged photographic surface is still "monochrome" -- the record's account of grain, fading and damage is not evidence here.
 

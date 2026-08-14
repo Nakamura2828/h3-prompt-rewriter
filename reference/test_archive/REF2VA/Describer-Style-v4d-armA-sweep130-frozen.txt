@@ -107,7 +107,7 @@ ROLE: style
 ---
 [[MEDIUM]] 2D cel
 [[SUB_MEDIUM]] none
-[[IDIOM]] western toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### stop-motion #####
@@ -124,8 +124,8 @@ ROLE: style
 [[LABEL]] the glossy plastic action-figure style
 [[DEFINITION]] smooth glossy plastic surface with visible seam lines, painted details sitting on top of the form, saturated primary colours against desaturated earth tones, soft-edged shadows, and shallow depth of field
 ---
-[[MEDIUM]] stop-motion
-[[SUB_MEDIUM]] figure
+[[MEDIUM]] photograph
+[[SUB_MEDIUM]] none
 [[IDIOM]] dimensional toon
 [[TREATMENT]] colour
 ----------
@@ -162,7 +162,7 @@ ROLE: style
 ---
 [[MEDIUM]] painting
 [[SUB_MEDIUM]] digital
-[[IDIOM]] dimensional toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### 2D cel #####
@@ -310,7 +310,7 @@ ROLE: style
 ---
 [[MEDIUM]] vector
 [[SUB_MEDIUM]] none
-[[IDIOM]] western toon
+[[IDIOM]] dimensional toon
 [[TREATMENT]] colour
 ----------
 ##### painting #####
@@ -782,7 +782,7 @@ ROLE: style
 ---
 [[MEDIUM]] print
 [[SUB_MEDIUM]] halftone
-[[IDIOM]] realist
+[[IDIOM]] flat graphic
 [[TREATMENT]] monochrome
 ----------
 ##### photograph #####
@@ -1004,7 +1004,7 @@ ROLE: style
 ---
 [[MEDIUM]] painting
 [[SUB_MEDIUM]] digital
-[[IDIOM]] realist
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### live-action film #####
@@ -1171,7 +1171,7 @@ ROLE: style
 ---
 [[MEDIUM]] 2D cel
 [[SUB_MEDIUM]] none
-[[IDIOM]] western toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### photograph #####
@@ -1526,7 +1526,7 @@ ROLE: style
 ---
 [[MEDIUM]] 2D cel
 [[SUB_MEDIUM]] none
-[[IDIOM]] western toon
+[[IDIOM]] anime
 [[TREATMENT]] colour
 ----------
 ##### painting #####
@@ -1883,7 +1883,7 @@ ROLE: style
 [[DEFINITION]] photographed physical clay puppets with visible surface texture and sculpted features, shallow real depth of field, a warm saturated earth-tone palette, and soft directional practical light
 ---
 [[MEDIUM]] stop-motion
-[[SUB_MEDIUM]] clay
+[[SUB_MEDIUM]] figure
 [[IDIOM]] dimensional toon
 [[TREATMENT]] colour
 ----------
@@ -2174,7 +2174,7 @@ ROLE: style
 ---
 [[MEDIUM]] drawing
 [[SUB_MEDIUM]] marker
-[[IDIOM]] anime
+[[IDIOM]] western toon
 [[TREATMENT]] colour
 ----------
 ##### photograph #####

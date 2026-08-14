@@ -1,5 +1,5 @@
 {
-  "_role": "describer_style FULL CORPUS SWEEP over all 130 images, three-axis vocabulary with the session-17 merges (stop-motion puppet -> figure; 2D cel has no sub-terms). Supersedes the 100-image sweep and the s15 enriched round, which are now history: this is the representative test and the baseline.",
+  "_role": "describer_style FULL CORPUS SWEEP, three-axis vocabulary (session 10). Every active image in images/, scored against the master table in docs/image_inventory.md.",
   "_generated": "Built by scripts/gen_style_sweep.py, which parses the master table, so the answer key cannot drift from the corpus. DO NOT HAND-EDIT -- regenerate. Groups are the expected coarse medium, which makes a miss visible in the run file itself. NOTE: these are NOT drift groups -- validate.py only cross-checks groups named 'same: ...', and none here are.",
   "_passes": "TWO PASSES PER IMAGE (session 12). look_<name> runs prompts/describer_style_look.txt and emits the six descriptive fields; sw_<name> runs prompts/describer_style_class.txt, receives that record as its user prompt, and emits the four closed-vocabulary fields. The CLASSIFIER keeps the sw_ ids on purpose, so _expected is unchanged by the split. Validate each half separately: --role style_look --id-prefix look_ , then --role style_class --id-prefix sw_. NOTE this is now 2x the calls -- budget ~20 minutes.",
   "_scoring": "Four fields: MEDIUM / SUB_MEDIUM / IDIOM / TREATMENT, which is score.py's default, all emitted by the classifier pass; look_ records are not in _expected and are ignored by score.py. The session-9 instruction to treat drawing and painting sub-term misses as CONTESTED is RETIRED -- those sub-lists no longer mix axes, so score all four fields. Only the amb files stay excluded.",
@@ -177,8 +177,8 @@
     "sw_kasia_swimsuit_worn": "2D cel / none / anime / colour",
     "sw_kaypro_ii": "photograph / none / realist / colour",
     "sw_kiki": "drawing / digital / anime / colour",
-    "sw_lincoln_photo": "photograph / none / realist / monochrome",
     "sw_lincoln_money": "print / engraving / realist / monochrome",
+    "sw_lincoln_photo": "photograph / none / realist / monochrome",
     "sw_maggie_grandpa_cat": "2D cel / none / western toon / colour",
     "sw_marker": "drawing / marker / anime / colour",
     "sw_miya": "2D cel / none / anime / colour",
@@ -195,8 +195,8 @@
     "sw_p3_last": "live-action film / none / realist / colour",
     "sw_p4_first": "live-action film / none / realist / colour",
     "sw_p4_last": "live-action film / none / realist / colour",
-    "sw_p5_first": "live-action film / none / realist / vintage Technicolor",
-    "sw_p5_last": "live-action film / none / realist / vintage Technicolor",
+    "sw_p5_first": "live-action film / none / realist / colour",
+    "sw_p5_last": "live-action film / none / realist / colour",
     "sw_p6_first": "live-action film / none / realist / colour",
     "sw_p6_last": "live-action film / none / realist / colour",
     "sw_pancakes": "photograph / none / realist / colour",
@@ -1329,20 +1329,6 @@
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_kiki}}"
     },
     {
-      "id": "look_lincoln_photo",
-      "group": "photograph",
-      "image": "images/lincoln_photo.jpg",
-      "system_file": "prompts/describer_style_look.txt",
-      "user": "ROLE: style"
-    },
-    {
-      "id": "sw_lincoln_photo",
-      "group": "photograph",
-      "image": "images/lincoln_photo.jpg",
-      "system_file": "prompts/describer_style_class.txt",
-      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_photo}}"
-    },
-    {
       "id": "look_lincoln_money",
       "group": "print",
       "image": "images/lincoln_money.jpg",
@@ -1355,6 +1341,20 @@
       "image": "images/lincoln_money.jpg",
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_money}}"
+    },
+    {
+      "id": "look_lincoln_photo",
+      "group": "photograph",
+      "image": "images/lincoln_photo.jpg",
+      "system_file": "prompts/describer_style_look.txt",
+      "user": "ROLE: style"
+    },
+    {
+      "id": "sw_lincoln_photo",
+      "group": "photograph",
+      "image": "images/lincoln_photo.jpg",
+      "system_file": "prompts/describer_style_class.txt",
+      "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_lincoln_photo}}"
     },
     {
       "id": "look_maggie_grandpa_cat",
@@ -2084,7 +2084,5 @@
       "system_file": "prompts/describer_style_class.txt",
       "user": "ROLE: style\n\n[[STYLE_RECORD]]\n{{look_woody_cg}}"
     }
-  ],
-  "_supersedes": "tests/describer_style_sweep.json (100 images) and tests/describer_style_added_s15.json (30, enriched). Merged in session 17 because the vocabulary merge already broke comparability with both, so folding the corpus extension into the SAME boundary crossing costs nothing and avoids a second one. Merging also FIXED TWO CONTROL GAPS that the split created: sw_ivy_toon read \"not in this test\" for the avatar accept-sets, and sw_april_comic had no unambiguous `drawing` control. Both resolve here.",
-  "_hand_edited": "Carries USER RULINGS the master table does not encode -- accept-sets (object-valued _expected with expect/why/control). gen_style_sweep.py emits only the `amb` ones; the rest must be carried forward by hand on any regeneration. See L-ADJUDICATION-DEFEATS-REGENERATION."
+  ]
 }
