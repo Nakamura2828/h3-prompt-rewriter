@@ -493,8 +493,10 @@ def main():
         'generated_from': ['census.py', 'measure.py', 'build_archive.py'],
         'tokenizer': 'llama-server /tokenize, the model in CLAUDE.md > Model Parameters',
         'line_endings': 'every archived file is LF; md5_lf is over those exact bytes. '
-                        'core.autocrlf=true in this repo, so a FRESH CHECKOUT will hand you '
-                        'CRLF copies whose md5 differs. Normalise to LF before comparing.',
+                        'The repo is LF everywhere as of session 23 (.gitattributes, '
+                        '`* text=auto eol=lf`), so a fresh checkout now matches these hashes '
+                        'directly -- no normalisation step needed. Before that it did not, '
+                        'because core.autocrlf=true handed out CRLF copies.',
         'counts': {'archived': len([r for r in records if r.get('file')]),
                    'missing': len(MISSING)},
         'records': records,
