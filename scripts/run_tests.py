@@ -150,6 +150,32 @@ def insert_fl2va_landing(text):
     return f'{before} {FL2VA_LANDING}\n\n{after}'
 
 
+NOT_FOUND_TAIL = re.compile(r'^\[\[SUBJECT NOT FOUND\]\].*$', re.M)
+
+
+def strip_unsolicited_not_found(text, user):
+    """Delete any [[SUBJECT NOT FOUND]] line when the input carried no SUBJECT: line.
+
+    A deterministic mechanic, offloaded from the model on L-OFFLOAD-BOOKKEEPING (user ruling,
+    session 22). "Was a SUBJECT line supplied?" is something the CALLER knows for certain, so
+    asking the model to judge it buys nothing and costs format failures: describer_object v1/v2/v3
+    emitted the line on SUBJECT-less cases in every round, each time copying whichever
+    SUBJECT-shaped phrase sat nearest in the prompt -- empty, then "the yellow jumpsuit" (from a
+    rule), then "the red kettle" (from a worked example). Removing the quoted phrase only moved
+    the theft to the next one; the line cannot be talked out of existence, so code deletes it.
+
+    Scope is deliberately narrow. When a SUBJECT line IS present the model's judgement is real and
+    is left completely alone -- that case works (describer_object answers the true positive
+    correctly). validate.py still treats an unsolicited line as an error, which is what catches a
+    consumer that forgets to do this.
+
+    The consuming ComfyUI graph MUST do the same; see docs/graph_mechanics.md."""
+    if re.search(r'^\s*SUBJECT\s*:', user, re.M):
+        return text, False
+    stripped = NOT_FOUND_TAIL.sub('', text).rstrip()
+    return stripped, stripped != text.rstrip()
+
+
 TOKEN = re.compile(r'\{\{([^{}]+)\}\}')
 
 # A case id inside a token. `\w` was used here until session 20 and does NOT match a
@@ -263,6 +289,7 @@ def main():
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     results, records = {}, []
+    n_stripped = 0
     for n, c in enumerate(cases, 1):
         cfg = {**defaults, **c}
         sys_path = cfg.get('system_file')
@@ -330,7 +357,11 @@ def main():
         print(f'{time.time() - t0:.1f}s  {len(text)} chars')
 
         results[c['id']] = text
-        output_text = text
+        output_text, stripped = strip_unsolicited_not_found(text, user)
+        if stripped:
+            n_stripped += 1
+            print('    (graph mechanic) removed an unsolicited [[SUBJECT NOT FOUND]] line '
+                  '-- no SUBJECT: was supplied')
         if align == 'fl2va':
             output_text = insert_fl2va_landing(output_text)
         if align:
@@ -360,6 +391,10 @@ def main():
                             encoding='utf-8')
         print(f'\nwrote {out_path}  ({len(records)} cases)')
         print(f'per-case files in {outdir}/')
+        if n_stripped:
+            print(f'{n_stripped} unsolicited [[SUBJECT NOT FOUND]] line(s) removed by the graph '
+                  f'mechanic (see docs/graph_mechanics.md). The RAW model output still had them; '
+                  f'that rate is the thing to watch, not the cleaned format score.')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,553 @@
+##### same: swimsuit (flat / worn 2D / worn 3D) #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: swimsuit (flat / worn 2D / worn 3D) :: ob_swimsuit_flat]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece leotard with a high mock neck collar, sleeveless cut with wide shoulder straps, and a deep leg opening
+[[MATERIAL]] black stretch fabric with a smooth matte finish, featuring a bright yellow mock neck collar and a broad yellow chevron stripe across the chest
+[[TEXT]] none
+[[DISTINGUISHING]] the bright yellow chevron stripe across the chest and the matching yellow mock neck collar
+[[SCALE]] worn on the body
+[[KIND]] a leotard
+[[LABEL]] the black and yellow leotard
+[[DEFINITION]] a black one-piece garment with a high mock neck, wide shoulder straps, a deep leg opening, a bright yellow chevron stripe across the chest, and a matching yellow collar
+----------
+qwen3.6-35b-a3b  describer_object  [same: swimsuit (flat / worn 2D / worn 3D) :: ob_swimsuit_worn]
+---
+SUBJECT: the swimsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece swimsuit with a high neck collar, sleeveless cut, and a wide V-shaped panel running down the front from the collar to the waist, with a straight hemline at the hips
+[[MATERIAL]] black synthetic fabric with a smooth surface, featuring a bright yellow high collar and a matching wide yellow V-shaped panel on the front
+[[TEXT]] none
+[[DISTINGUISHING]] the wide yellow V-shaped panel on the front and the matching yellow high collar
+[[SCALE]] worn on the body
+[[KIND]] a one-piece swimsuit
+[[LABEL]] the black and yellow one-piece swimsuit
+[[DEFINITION]] a black one-piece swimsuit with a wide yellow V-shaped panel on the front, a yellow high collar, and a sleeveless cut
+----------
+qwen3.6-35b-a3b  describer_object  [same: swimsuit (flat / worn 2D / worn 3D) :: ob_swimsuit_render]
+---
+SUBJECT: the swimsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece swimsuit with a high neck collar, sleeveless cut, and a deep V-shaped panel across the torso extending from the waist to the upper chest
+[[MATERIAL]] smooth black synthetic fabric with a slight sheen, accented with bright yellow panels at the collar and forming a large V-shape on the front, with matching yellow trim along the leg openings
+[[TEXT]] none
+[[DISTINGUISHING]] the wide yellow V-shaped panel across the torso and the contrasting yellow high neck collar
+[[SCALE]] worn on the body
+[[KIND]] a one-piece swimsuit
+[[LABEL]] the black and yellow swimsuit
+[[DEFINITION]] a black one-piece swimsuit with a high yellow collar, a large yellow V-shaped panel across the front, and yellow trim at the leg openings
+----------
+##### same: everyday outfit (flat / worn) #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: everyday outfit (flat / worn) :: ob_outfit_flat]
+---
+SUBJECT: the black top
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a sleeveless tank top with a wide scoop neckline and straight-cut armholes, finished with a narrow hem at the bottom edge
+[[MATERIAL]] solid black knit fabric with a smooth surface finish
+[[TEXT]] none
+[[DISTINGUISHING]] none
+[[SCALE]] worn on the body
+[[KIND]] a sleeveless tank top
+[[LABEL]] the black tank top
+[[DEFINITION]] a sleeveless cut, a wide scoop neckline, and solid black knit fabric
+----------
+qwen3.6-35b-a3b  describer_object  [same: everyday outfit (flat / worn) :: ob_outfit_render]
+---
+SUBJECT: the black top
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a sleeveless tank top with a rounded scoop neckline and a straight hemline, cut close to the torso
+[[MATERIAL]] solid black fabric with a smooth matte finish
+[[TEXT]] none
+[[DISTINGUISHING]] none
+[[SCALE]] worn on the body
+[[KIND]] a sleeveless tank top
+[[LABEL]] the black tank top
+[[DEFINITION]] a sleeveless garment in solid black with a rounded scoop neckline and a straight hemline
+----------
+qwen3.6-35b-a3b  describer_object  [same: everyday outfit (flat / worn) :: ob_outfit_worn]
+---
+SUBJECT: the black top
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a sleeveless tank top with a rounded neckline and a straight hem that ends above the waistline
+[[MATERIAL]] solid black fabric, smooth surface finish
+[[TEXT]] none
+[[DISTINGUISHING]] none
+[[SCALE]] worn on the body
+[[KIND]] a sleeveless tank top
+[[LABEL]] the black sleeveless top
+[[DEFINITION]] a sleeveless garment with a rounded neckline and straight hem in solid black fabric
+----------
+##### same: one vehicle across four media #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: one vehicle across four media :: ob_misato_real]
+---
+SUBJECT: the blue coupe
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a low-slung two-door coupe with a sharply raked windshield, a long flat hood featuring two rectangular recessed air scoops, pop-up headlight housings behind a black mesh grille, flared wheel arches, and a row of three vertical louvres on the rear quarter panel
+[[MATERIAL]] glossy metallic blue painted steel bodywork, chrome trim around the windows and along the lower front bumper, silver five-spoke alloy wheels with black tires, and a black rubber front spoiler
+[[TEXT]] "ALPINE RENAULT A310 1600VE"
+[[DISTINGUISHING]] the pair of rectangular air scoops on the hood and the three vertical louvres on the rear quarter panel
+[[SCALE]] larger than a person
+[[KIND]] a two-door sports coupe
+[[LABEL]] the blue Alpine coupe
+[[DEFINITION]] a glossy metallic blue two-door coupe with a long hood, two rectangular air scoops, pop-up headlights behind a black grille, flared wheel arches, and three vertical rear quarter louvres
+----------
+qwen3.6-35b-a3b  describer_object  [same: one vehicle across four media :: ob_misato_cel_1]
+---
+SUBJECT: the blue coupe
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a two-door coupe with a low, wide stance and a long hood, featuring pop-up headlights in the raised position, a thin black antenna mounted near the windshield, and rectangular amber turn signals integrated into the lower front bumper area.
+[[MATERIAL]] solid blue painted metal body with a glossy finish, contrasting with a black front grille and black side mirrors.
+[[TEXT]] none
+[[DISTINGUISHING]] the distinctive pop-up headlight design and the specific shade of blue paint.
+[[SCALE]] larger than a person
+[[KIND]] a two-door sports coupe
+[[LABEL]] the blue two-door coupe
+[[DEFINITION]] a solid blue two-door coupe with a low wide stance, raised pop-up headlights, a black front grille, and an antenna mounted near the windshield
+----------
+qwen3.6-35b-a3b  describer_object  [same: one vehicle across four media :: ob_misato_cel_2]
+---
+SUBJECT: the blue coupe
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a two-door coupe with a wide rear spoiler mounted on the trunk lid, rectangular taillights at the outer edges of the rear bumper, and a flat rear window
+[[MATERIAL]] glossy blue painted bodywork with scuffs and dirt marks on the rear bumper, black plastic trim around the windows and along the lower body, and a white license plate mounted in the centre of the bumper
+[[TEXT]] "SOLO - SOLO"
+[[DISTINGUISHING]] the wide black rear spoiler and the white license plate reading "SOLO - SOLO"
+[[SCALE]] larger than a person
+[[KIND]] a two-door sports coupe
+[[LABEL]] the blue two-door coupe
+[[DEFINITION]] a glossy blue two-door coupe with a wide black rear spoiler, rectangular taillights, and a white license plate reading "SOLO - SOLO"
+----------
+qwen3.6-35b-a3b  describer_object  [same: one vehicle across four media :: ob_misato_print]
+---
+SUBJECT: the blue coupe
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a two-door sports car with a wedge-shaped profile, sharply raked windshield, and a long rear deck housing an engine cover; features pop-up headlights, a retractable antenna, and a rear window with a wiper
+[[MATERIAL]] blue painted metal body with chrome trim around the windows and bumpers, black rubber tires on silver five-spoke alloy wheels, and clear glass windows
+[[TEXT]] "ALPINE A 310 V6", "1979"
+[[DISTINGUISHING]] the distinctive wedge-shaped silhouette with a long rear deck and pop-up headlights, and the specific blue paint colour
+[[SCALE]] larger than a person
+[[KIND]] a two-door sports coupe
+[[LABEL]] the blue Alpine coupe
+[[DEFINITION]] a blue two-door sports coupe with a wedge-shaped profile, pop-up headlights, a long rear deck, and chrome trim around the windows
+----------
+##### same: the yellow jumpsuit across three media #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: the yellow jumpsuit across three media :: ob_april_1987]
+---
+SUBJECT: the yellow jumpsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece suit with long sleeves and a high collar, featuring a large circular patch pocket on the chest and a wide belt at the waist
+[[MATERIAL]] bright yellow fabric with darker yellow shading lines indicating folds and seams
+[[TEXT]] none
+[[DISTINGUISHING]] the large circular chest pocket and the bright yellow colour
+[[SCALE]] worn on the body
+[[KIND]] a one-piece suit
+[[LABEL]] the yellow jumpsuit
+[[DEFINITION]] a bright yellow one-piece suit with long sleeves, a high collar, a large circular chest pocket, and a wide waist belt
+----------
+qwen3.6-35b-a3b  describer_object  [same: the yellow jumpsuit across three media :: ob_april_figure]
+---
+SUBJECT: the yellow jumpsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece full-body suit with a high stand collar, long sleeves ending in integrated cuffs, and straight legs ending in integrated boots, featuring a front closure line from collar to waist, two flap pockets on the upper chest, and angled side pockets at the hips
+[[MATERIAL]] rigid yellow plastic with black painted panel lines and seam details, white painted boots, and a small grey rectangular pouch attached to the left hip
+[[TEXT]] none
+[[DISTINGUISHING]] the bright yellow colour of the entire suit, and the integrated white boots
+[[SCALE]] worn on the body
+[[KIND]] a one-piece jumpsuit
+[[LABEL]] the yellow jumpsuit
+[[DEFINITION]] a rigid yellow one-piece suit with black panel lines, a high stand collar, long sleeves, straight legs, integrated white boots, two chest flap pockets, and a grey hip pouch
+----------
+qwen3.6-35b-a3b  describer_object  [same: the yellow jumpsuit across three media :: ob_april_comic]
+---
+SUBJECT: the yellow jumpsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece full-length suit with long sleeves rolled to the forearm, a high stand-up collar, a front zipper closure extending from the collar to the waist, two flap pockets on the chest, and a wide belt with a rectangular buckle at the natural waist
+[[MATERIAL]] bright yellow fabric with a smooth surface finish, creased along the seams and folds, with darker yellow shading indicating volume and form
+[[TEXT]] "TEENAGE MUTANT NINJA TURTLES", "IDW", "ISSUE 1", "CONVENTION EXCLUSIVE COVER", "EASTMAN", "WALTZ", "DUNCAN", "PATTISON", "CONVENTION IDW EDITION"
+[[DISTINGUISHING]] the bright yellow colour of the entire suit, and the wide belt with a rectangular buckle at the waist
+[[SCALE]] worn on the body
+[[KIND]] a one-piece jumpsuit
+[[LABEL]] the yellow jumpsuit
+[[DEFINITION]] a bright yellow one-piece suit with long sleeves rolled to the forearm, a high stand-up collar, a front zipper closure, two chest flap pockets, and a wide belt with a rectangular buckle at the waist
+----------
+##### negative control: same character, DIFFERENT outfit #####
+----------
+qwen3.6-35b-a3b  describer_object  [negative control: same character, DIFFERENT outfit :: ob_april_fanart]
+---
+SUBJECT: the yellow jumpsuit
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a one-piece garment with a fitted torso, a high collar, long sleeves ending at the wrists, and full-length legs, featuring a central front zipper extending from the neckline to the waist
+[[MATERIAL]] smooth yellow fabric with a slight sheen, black trim along the collar edges and the zipper track, and a silver-toned metal zipper pull
+[[TEXT]] none
+[[DISTINGUISHING]] the bright yellow colour of the main body and the contrasting black trim on the collar and zipper
+[[SCALE]] worn on the body
+[[KIND]] a one-piece coverall
+[[LABEL]] the yellow jumpsuit
+[[DEFINITION]] a fitted one-piece garment in smooth yellow fabric, a high collar with black trim, long sleeves, a central front zipper, and full-length legs
+----------
+##### same: the trench coat across three media #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: the trench coat across three media :: ob_gordon_1996]
+---
+SUBJECT: the trench coat
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a long outer coat with wide notched lapels and a structured shoulder line, worn open over a collared shirt and tie
+[[MATERIAL]] solid brown fabric with a matte finish, showing no visible texture or pattern
+[[TEXT]] none
+[[DISTINGUISHING]] the wide notched lapels and the solid brown colour
+[[SCALE]] worn on the body
+[[KIND]] a long brown coat
+[[LABEL]] the brown trench coat
+[[DEFINITION]] a long brown coat with wide notched lapels, worn open over a collared shirt and tie
+----------
+qwen3.6-35b-a3b  describer_object  [same: the trench coat across three media :: ob_gordon_2004]
+---
+SUBJECT: the trench coat
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a long outer coat with a wide, stiff stand-up collar that frames the neck and shoulders, worn open over a collared shirt and tie, with a structured shoulder line and a straight cut extending past the hips
+[[MATERIAL]] a heavy, matte-finish fabric in a solid mustard-yellow or tan colour, showing no visible texture, pattern, or wear
+[[TEXT]] none
+[[DISTINGUISHING]] the wide, stiff stand-up collar, and the solid mustard-yellow colour
+[[SCALE]] worn on the body
+[[KIND]] a long outer coat with a wide stand-up collar
+[[LABEL]] the mustard-yellow trench coat
+[[DEFINITION]] a long mustard-yellow outer coat with a wide stiff stand-up collar, worn open over a collared shirt and tie
+----------
+qwen3.6-35b-a3b  describer_object  [same: the trench coat across three media :: ob_gordon_comic]
+---
+SUBJECT: the trench coat
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a long outer coat with wide notched lapels and a loose, unstructured drape over the shoulders and torso
+[[MATERIAL]] a matte brown fabric, likely wool or heavy cotton, with a solid neutral tone and no visible pattern or sheen
+[[TEXT]] none
+[[DISTINGUISHING]] the wide notched lapels and the solid brown colour
+[[SCALE]] worn on the body
+[[KIND]] a long brown outer coat
+[[LABEL]] the brown trench coat
+[[DEFINITION]] a long loose-fitting outer garment in solid brown with wide notched lapels
+----------
+##### same: one car, two angles (viewpoint control) #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: one car, two angles (viewpoint control) :: ob_car_1]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a mid-size crossover SUV with a two-tone body, featuring a white lower body and black upper section including the roof and A-pillars, black plastic cladding around the wheel arches and lower sides, black multi-spoke alloy wheels, black side mirrors, silver door handles, roof rails on top, and a front fascia with a closed grille area and slim horizontal headlights
+[[MATERIAL]] glossy white painted metal for the main body panels, matte black painted or plastic trim for the roof, wheel arches, and lower cladding, tinted glass for the windows, and black rubber tires
+[[TEXT]] "none"
+[[DISTINGUISHING]] the two-tone white and black paint scheme with a black roof, and the black plastic cladding extending over the wheel arches
+[[SCALE]] larger than a person
+[[KIND]] a two-tone crossover SUV
+[[LABEL]] the white and black crossover SUV
+[[DEFINITION]] a mid-size crossover SUV in white and black two-tone paint, black wheel arch cladding, black roof, and silver door handles
+[[SUBJECT NOT FOUND]] the red kettle
+----------
+qwen3.6-35b-a3b  describer_object  [same: one car, two angles (viewpoint control) :: ob_car_2]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a mid-size crossover SUV with a two-box silhouette, featuring a high beltline, a short hood, and a steeply raked rear window; the body includes four doors with flush-mounted door handles, a black roof rack system, and prominent black plastic cladding covering the wheel arches and lower side sills; a rectangular charging port cover is visible on the front fender behind the front wheel.
+[[MATERIAL]] white painted metal body panels contrasted with matte black plastic trim, black multi-spoke alloy wheels, and dark tinted windows; the door handles are body-colored with a chrome accent strip.
+[[TEXT]] none
+[[DISTINGUISHING]] the flush-mounted door handles, the black plastic wheel arch cladding, and the charging port on the front fender.
+[[SCALE]] larger than a person
+[[KIND]] a white electric crossover SUV
+[[LABEL]] the white electric crossover SUV
+[[DEFINITION]] a white crossover SUV with black wheel arch cladding, flush door handles, a roof rack, and a charging port on the front fender
+----------
+##### same: shoulder bag, two angles #####
+----------
+qwen3.6-35b-a3b  describer_object  [same: shoulder bag, two angles :: ob_bag_1]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular shoulder bag with a curved bottom edge and a flap closure covering the top half of the front face, featuring a long adjustable strap attached to the upper corners and a zippered pocket on the side
+[[MATERIAL]] yellow fabric body, blue fabric flap, light blue printed graphic on the flap, gold-tone metal buckle on the strap
+[[TEXT]] none
+[[DISTINGUISHING]] the large circular graphic on the front flap composed of a light blue upper semicircle and a dark blue lower band with a central circle
+[[SCALE]] forearm-length
+[[KIND]] a shoulder bag
+[[LABEL]] the yellow and blue shoulder bag
+[[DEFINITION]] a yellow fabric shoulder bag with a curved bottom, a blue flap featuring a light blue and dark blue circular graphic, an adjustable strap with a gold buckle, and a side zippered pocket
+----------
+qwen3.6-35b-a3b  describer_object  [same: shoulder bag, two angles :: ob_bag_2]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular shoulder bag with a wide flap covering the upper half of the front face, a single wide carrying strap attached at the top corners, and an external slip pocket on the right side
+[[MATERIAL]] yellow fabric body, dark blue fabric flap, light grey fabric appliqué in the shape of a circle bisected by a horizontal band with a central button, all pieces stitched together with visible thread
+[[TEXT]] none
+[[DISTINGUISHING]] the large circular emblem on the flap composed of a light grey upper and lower section separated by a dark blue horizontal band and central button
+[[SCALE]] hand-sized
+[[KIND]] a shoulder bag
+[[LABEL]] the yellow shoulder bag
+[[DEFINITION]] a yellow fabric shoulder bag with a wide flap, a dark blue strap, an external side pocket, and a large circular emblem on the front
+----------
+##### same image, different SUBJECT (object vs garment) #####
+----------
+qwen3.6-35b-a3b  describer_object  [same image, different SUBJECT (object vs garment) :: ob_captain_wheel]
+---
+SUBJECT: the ship's wheel
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a large circular wooden steering wheel with a thick rim and a light-coloured inlay band around its circumference, featuring two prominent curved wooden spokes rising from the lower half of the rim
+[[MATERIAL]] polished brown wood for the rim and spokes, with a lighter cream or white material forming the inner band of the rim
+[[TEXT]] none
+[[DISTINGUISHING]] the thick wooden rim with a contrasting light-coloured inlay band, and the two large curved wooden spokes
+[[SCALE]] waist-high
+[[KIND]] a ship's steering wheel
+[[LABEL]] the wooden ship's wheel
+[[DEFINITION]] a large circular wooden steering wheel with a light-coloured inlay band on the rim and two prominent curved wooden spokes
+----------
+qwen3.6-35b-a3b  describer_object  [same image, different SUBJECT (object vs garment) :: ob_captain_uniform]
+---
+SUBJECT: the captain's uniform
+ROLE: object
+---
+[[OBJECT_KIND]] garment
+[[FORM]] a double-breasted navy blue jacket with peaked lapels, two rows of gold buttons, and four gold stripes on each cuff; worn over a white collared shirt and dark tie
+[[MATERIAL]] navy blue wool or wool-blend fabric for the jacket, white cotton for the shirt, dark fabric for the tie, gold metal for the buttons and cuff stripes, white fabric for the hat with a black visor and gold emblem
+[[TEXT]] none
+[[DISTINGUISHING]] the four gold stripes on each cuff and the peaked cap with a gold emblem
+[[SCALE]] worn on the body
+[[KIND]] a captain's uniform
+[[LABEL]] the navy captain's uniform
+[[DEFINITION]] a double-breasted navy blue jacket with gold buttons, four gold stripes on each cuff, worn with a white collared shirt, dark tie, and a peaked cap with a gold emblem
+----------
+##### isolated shots (no SUBJECT line) #####
+----------
+qwen3.6-35b-a3b  describer_object  [isolated shots (no SUBJECT line) :: ob_phone]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular handheld device with rounded corners and a flat front face dominated by a dark screen, framed by a thin metallic bezel
+[[MATERIAL]] a bright cyan metallic casing with a brushed finish, surrounding a black glass screen
+[[TEXT]] none
+[[DISTINGUISHING]] the bright cyan metallic frame and the slim profile
+[[SCALE]] hand-sized
+[[KIND]] a smartphone
+[[LABEL]] the cyan smartphone
+[[DEFINITION]] a rectangular handheld device with a bright cyan metallic frame, a flat front face dominated by a dark screen, and rounded corners
+----------
+qwen3.6-35b-a3b  describer_object  [isolated shots (no SUBJECT line) :: ob_chair]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a high-back office chair with a contoured seat and backrest, two curved armrests with rectangular pads, a central pneumatic column, a five-star base with splayed legs, and a lever under the left side of the seat
+[[MATERIAL]] black faux leather upholstery with horizontal stitching on the backrest, polished gold-tone metal for the armrest frame and base, black plastic for the casters and adjustment knob, and a black central column
+[[TEXT]] none
+[[DISTINGUISHING]] the polished gold-tone five-star base and matching armrest frames contrasting with the black upholstery
+[[SCALE]] waist-high
+[[KIND]] a high-back executive office chair
+[[LABEL]] the black and gold executive chair
+[[DEFINITION]] black faux leather upholstery with horizontal stitching, a polished gold-tone five-star base, curved armrests with rectangular pads, a central pneumatic column, and a seat adjustment lever
+[[SUBJECT NOT FOUND]] the red kettle
+----------
+qwen3.6-35b-a3b  describer_object  [isolated shots (no SUBJECT line) :: ob_kaypro]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a portable computer with a clamshell design, consisting of a lower base housing a keyboard and numeric keypad, and an upper lid that folds back to reveal a built-in CRT screen on the left and two stacked horizontal drive bays on the right; the unit has a flat top surface when closed and ventilation slots along the side panel.
+[[MATERIAL]] beige plastic casing with a bright blue lower front bezel and matching blue function keys, a dark grey inner faceplate surrounding the screen and drives, black keyboard keys, and a green phosphor CRT screen displaying text.
+[[TEXT]] "HEATH"
+[[DISTINGUISHING]] the distinctive two-tone beige and blue colour scheme with horizontal blue stripes on the side panel, and the integrated dual floppy drive bays positioned to the right of the screen.
+[[SCALE]] larger than a person
+[[KIND]] a portable desktop computer
+[[LABEL]] the beige and blue Heathkit computer
+[[DEFINITION]] a beige and blue clamshell portable computer with an integrated CRT screen, a black keyboard, a blue numeric keypad, two side-mounted drive bays, and "HEATH" branding on the faceplate
+[[SUBJECT NOT FOUND]] the red kettle
+----------
+##### in-scene selection (MATCH GENEROUSLY) #####
+----------
+qwen3.6-35b-a3b  describer_object  [in-scene selection (MATCH GENEROUSLY) :: ob_tv]
+---
+SUBJECT: the television
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a large rectangular cabinet with a deep front housing and a wide bezel surrounding the screen, featuring a horizontal control panel below the screen with a row of circular buttons and a small indicator light, and integrated speaker grilles on the upper left and right sides of the front face.
+[[MATERIAL]] matte black plastic casing, with a dark grey screen surface, white printed text and symbols on the control panel, and a slightly dusty finish across the top surface.
+[[TEXT]] "SONY"
+[[DISTINGUISHING]] the brand name printed in white above the control panel, and the wide vertical speaker housings flanking the screen.
+[[SCALE]] larger than a person's torso
+[[KIND]] a CRT television set
+[[LABEL]] the black CRT television
+[[DEFINITION]] a large rectangular black plastic cabinet with a deep front housing, a horizontal control panel with circular buttons, integrated side speakers, and white brand lettering above the controls
+[[SUBJECT NOT FOUND]] the television
+----------
+qwen3.6-35b-a3b  describer_object  [in-scene selection (MATCH GENEROUSLY) :: ob_radio]
+---
+SUBJECT: the transistor radio
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular portable unit with a dark casing, featuring a speaker grille on the front face, a tuning dial and control knobs to the right of the grille, and a telescoping metal antenna extending from the top rear corner.
+[[MATERIAL]] black plastic housing with a grey mesh speaker grille, silver-toned metal for the antenna and control knobs, showing signs of age and use consistent with a vintage consumer electronic device.
+[[TEXT]] none
+[[DISTINGUISHING]] the extended telescoping metal antenna and the front-mounted speaker grille with adjacent tuning controls.
+[[SCALE]] hand-sized
+[[KIND]] a portable transistor radio
+[[LABEL]] the black portable transistor radio
+[[DEFINITION]] a rectangular black plastic portable radio, an extended telescoping metal antenna, a grey mesh speaker grille, and silver-toned tuning knobs
+[[SUBJECT NOT FOUND]] the transistor radio
+----------
+qwen3.6-35b-a3b  describer_object  [in-scene selection (MATCH GENEROUSLY) :: ob_pan]
+---
+SUBJECT: the frying pan
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a round shallow cooking pan with sloping sides and a long straight handle extending from one side, featuring a riveted attachment point where the handle joins the pan body
+[[MATERIAL]] dark grey or black metal interior with a non-stick coating, showing some discoloration and residue from use on the bottom surface, with a lighter grey or stainless steel exterior rim and handle
+[[TEXT]] none
+[[DISTINGUISHING]] the long straight handle riveted to the side, and the presence of multiple round golden-brown pancakes cooking inside
+[[SCALE]] forearm-length
+[[KIND]] a non-stick frying pan
+[[LABEL]] the black non-stick frying pan
+[[DEFINITION]] a round dark metal pan with a long riveted handle, containing several cooked round pancakes
+----------
+qwen3.6-35b-a3b  describer_object  [in-scene selection (MATCH GENEROUSLY) :: ob_cannon]
+---
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a long cylindrical barrel mounted on a four-wheeled wooden carriage, with two large spoked wheels at the front and two smaller solid wheels at the rear, featuring a trunnion mounting area and a flat wooden platform extending to the rear
+[[MATERIAL]] black cast iron for the barrel, weathered brown wood for the carriage frame and wheels, with black metal fittings including rings and bolts
+[[TEXT]] none
+[[DISTINGUISHING]] the contrast between the glossy black barrel and the weathered wooden carriage, and the presence of two large spoked front wheels
+[[SCALE]] larger than a person
+[[KIND]] a historical field cannon on a wooden carriage
+[[LABEL]] the black iron cannon on wooden carriage
+[[DEFINITION]] a long black cast-iron barrel mounted on a four-wheeled weathered wooden carriage with two large spoked front wheels and two smaller rear wheels, featuring black metal fittings and rings
+[[SUBJECT NOT FOUND]] the red kettle
+----------
+qwen3.6-35b-a3b  describer_object  [in-scene selection (MATCH GENEROUSLY) :: ob_wheelie_bin]
+---
+SUBJECT: the wheelie bin
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a tall rectangular container with a hinged lid that opens from the top, a wide front face for signage, and a flat base
+[[MATERIAL]] grey plastic body with a blue lid and a blue front panel, featuring white printed recycling symbols including a chasing arrows triangle and four smaller icons in a grid
+[[TEXT]] none
+[[DISTINGUISHING]] the blue lid and front panel contrasting with the grey body, and the white recycling symbol grid on the front face
+[[SCALE]] waist-high
+[[KIND]] a recycling bin
+[[LABEL]] the grey and blue recycling bin
+[[DEFINITION]] a tall rectangular grey plastic container with a blue hinged lid, a blue front panel, and white printed recycling symbols including a chasing arrows triangle and four smaller icons
+----------
+##### [[TEXT]] probes #####
+----------
+qwen3.6-35b-a3b  describer_object  [[[TEXT]] probes :: ob_cereal_box]
+---
+SUBJECT: the cereal box
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a tall rectangular prism carton with a folded top and an open front panel revealing the interior
+[[MATERIAL]] printed cardboard with a glossy finish, featuring a large orange background, a wide green horizontal band across the middle, and a yellow stripe separating the green band from the orange field; images of red strawberries and golden flakes are visible on the lower portion
+[[TEXT]] "CORN FLAKES"
+[[DISTINGUISHING]] the prominent green band with white lettering reading "CORN FLAKES", and the open front panel exposing the interior
+[[SCALE]] forearm-length
+[[KIND]] a cereal carton
+[[LABEL]] the orange corn flakes carton
+[[DEFINITION]] a tall rectangular cardboard carton in orange with a wide green band, printed with the words "CORN FLAKES" in white, and an open front panel
+[[SUBJECT NOT FOUND]] the cereal box
+----------
+qwen3.6-35b-a3b  describer_object  [[[TEXT]] probes :: ob_van]
+---
+SUBJECT: the van
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a small panel van with a rounded cab and a boxy rear cargo area, featuring a single side door on the visible side, a curved front windshield, and a flat roofline
+[[MATERIAL]] beige painted metal body with visible dents along the lower side panels and wheel arches, showing signs of wear and dirt accumulation, black rubber tires with simple steel rims, and a green painted sign panel on the side
+[[TEXT]] "GNOME IMPROVEMENTS", "No job too small"
+[[DISTINGUISHING]] the green painted sign panel on the side door reading "GNOME IMPROVEMENTS", and the dented beige bodywork
+[[SCALE]] larger than a person
+[[KIND]] a vintage panel van
+[[LABEL]] the beige gnome improvements van
+[[DEFINITION]] a beige panel van with a rounded cab, a green painted sign panel on the side door reading "GNOME IMPROVEMENTS", visible dents along the lower body panels, and black rubber tires
+[[SUBJECT NOT FOUND]] the van
+----------
+##### nesting: describe the object, not the picture on it #####
+----------
+qwen3.6-35b-a3b  describer_object  [nesting: describe the object, not the picture on it :: ob_banknote]
+---
+SUBJECT: the banknote
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular sheet of paper with an ornate border design featuring large numerals in each corner and along the top and bottom edges, a central oval portrait medallion flanked by laurel branches, and various printed text blocks and signatures distributed across the face.
+[[MATERIAL]] off-white cotton-linen paper stock, showing signs of age including slight yellowing, minor surface creasing, and light tonal staining; printed primarily in black ink with a distinct blue seal on the right side.
+[[TEXT]] "THE UNITED STATES OF AMERICA", "FIVE DOLLARS", "THIS CERTIFICATE IS LEGAL TENDER FOR ALL DEBTS PUBLIC AND PRIVATE", "LINCOLN", "SERIES 1953", "A 0000001 A"
+[[DISTINGUISHING]] the large stylized numeral five in each corner, and the blue Treasury seal on the right side.
+[[SCALE]] not determinable
+[[KIND]] a United States silver certificate banknote
+[[LABEL]] the five dollar silver certificate
+[[DEFINITION]] a rectangular paper banknote printed in black and blue ink, featuring large corner numerals, a central portrait medallion of Abraham Lincoln, and a blue Treasury seal.
+----------
+##### [[SUBJECT NOT FOUND]] probe #####
+----------
+qwen3.6-35b-a3b  describer_object  [[[SUBJECT NOT FOUND]] probe :: ob_notfound_bicycle]
+---
+SUBJECT: the bicycle
+ROLE: object
+---
+[[OBJECT_KIND]] object
+[[FORM]] a rectangular cardboard box with a flat top and vertical sides, featuring printed text and graphics on its visible face
+[[MATERIAL]] brown corrugated cardboard with printed yellow and black lettering and graphics
+[[TEXT]] "NYNE"
+[[DISTINGUISHING]] the bold yellow "NYNE" lettering on the side
+[[SCALE]] not determinable
+[[KIND]] a cardboard box
+[[LABEL]] the NYNE cardboard box
+[[DEFINITION]] a brown corrugated cardboard box with printed yellow and black graphics, and bold yellow lettering reading "NYNE"
+[[SUBJECT NOT FOUND]] the bicycle
+----------

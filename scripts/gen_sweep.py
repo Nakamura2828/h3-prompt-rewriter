@@ -45,6 +45,8 @@ ROLES = {
                   'user': 'ROLE: character'},
     'setting':   {'prefix': 'set', 'prompt': 'prompts/describer_setting.txt',
                   'user': 'ROLE: setting'},
+    'object':    {'prefix': 'ob',  'prompt': 'prompts/describer_object.txt',
+                  'user': 'ROLE: object'},
     'style':     {'prefix': 'sw',  'prompt': 'prompts/describer_style_class.txt',
                   'user': 'ROLE: style',
                   'look_prompt': 'prompts/describer_style_look.txt'},

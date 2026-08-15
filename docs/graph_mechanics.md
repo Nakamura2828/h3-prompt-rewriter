@@ -37,3 +37,34 @@ folded into the block/manifest build system alongside t2va/i2va/l2va (`manifests
 `fl2va_delta.txt` stay standalone: different prompt shape (structured image-description, not
 the three-field H3 contract), no shared sub-components to factor out. See the REF2VA roadmap
 in the current handoff (`.claude/handoffs/`) for the full reasoning.
+
+## What the graph must REMOVE — `[[SUBJECT NOT FOUND]]` on a SUBJECT-less call
+
+Added session 22, user ruling. Everything above is something the graph **injects**; this is the
+first thing it must **delete**.
+
+**The rule: if the call supplied no `SUBJECT:` line, strip any `[[SUBJECT NOT FOUND]]` line from
+the describer's output before anything downstream sees it.** Implemented as
+`strip_unsolicited_not_found()` in `scripts/run_tests.py`, beside `alignment_line()` and
+`insert_fl2va_landing()`, and it needs porting into the ComfyUI graph with them.
+
+**Why it is code and not a rule.** `describer_object` emitted the line on SUBJECT-less cases in
+three consecutive rounds, each time copying whichever SUBJECT-shaped phrase sat nearest in the
+prompt — first an empty value, then `"the yellow jumpsuit"` (lifted from a rule that had just been
+added to fix something else), then `"the red kettle"` (lifted from a worked example). Deleting the
+stolen phrase only moved the theft to the next candidate. `setting` lost the same fight across
+v1/v2/v3 and answered it by removing the line from that role entirely.
+
+`object` cannot take that answer, because it genuinely needs the judgement — an image holds many
+discrete things, so "nothing here matches what you asked for" is real information, and the model
+gets it **right** when a `SUBJECT:` line is actually present. What it cannot do is decide whether
+one was present. That is `L-OFFLOAD-BOOKKEEPING` exactly: the caller knows for certain, so the
+model should never have been asked.
+
+**Scope is deliberately narrow.** When a `SUBJECT:` line IS present, the output is left completely
+untouched — including a tail line, including a wrong one. Only the unsolicited case is deleted.
+
+**`validate.py` still treats an unsolicited line as an ERROR, and that is intentional.** The check
+now guards the *consumer*: a graph that forgets this step will trip it. Read a format score for
+this role knowing the harness has already applied the strip — `run_tests.py` prints how many lines
+it removed, and that raw rate is the number worth watching.

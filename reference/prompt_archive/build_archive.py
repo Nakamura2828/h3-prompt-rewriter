@@ -112,6 +112,30 @@ CURATED = {
                    'The post-calibration state. The pre-calibration one is MISSING.'),
     '047eb3d74a': ('describer_setting_v5', 'live', None,
                    'The ONLY setting state ever committed. v1-v4 are MISSING.'),
+    # ---- describer_object, session 22. THREE states, FOUR rounds: v3 produced two, because
+    # round 4 changed the harness and the test file rather than the prompt.
+    # RECONSTRUCTED: v1 and v2 were edited in place and rebuilt afterwards by reversing the
+    # exact edits. The scores were measured against the originals, but these are the only two
+    # states in this archive not captured live -- weigh them accordingly.
+    'e2e87a1ac8': ('describer_object_v1', 'superseded', None,
+                   'First object describer. 3,325 tokens, 9 fields. Format 29/35. Three '
+                   'defects: the SUBJECT line overrode the image (a jumpsuit described onto a '
+                   'jacket), printed names laundered out of [[TEXT]] into [[LABEL]], and the '
+                   '[[SUBJECT NOT FOUND]] tail line fired empty on 6 cases.'),
+    '2dc9a9ee62': ('describer_object_v2', 'superseded', 'describer_object_v1',
+                   '3,886 tokens. Added THE SUBJECT LINE SELECTS; IT NEVER SUPPLIES, the '
+                   'name-laundering ban, and [[SCALE]] fixed to "worn on the body" for '
+                   'garments. Format 32/35 -- subject-override and SCALE both FIXED, laundering '
+                   'unmoved at 4. Its own new rule quoted a SUBJECT-shaped phrase, which the '
+                   'tail line then stole on SUBJECT-less cases: L-NAME-THE-CASE at its '
+                   'documented limit.'),
+    '8e8de06ccc': ('describer_object_v3', 'live', 'describer_object_v2',
+                   '3,943 tokens. Removed the stolen phrase and banned the tail line from '
+                   'copying the rules. The theft simply MOVED to the next SUBJECT-shaped string '
+                   'in the prompt -- three rounds, three different stolen phrases. Format 31/35 '
+                   'raw. The line was then offloaded to code (strip_unsolicited_not_found in '
+                   'run_tests.py, docs/graph_mechanics.md); with that mechanic and 4 added '
+                   'cases the SAME prompt scores 38/39.'),
     'b9bd35c4b3': ('describer_style_v1', 'superseded', None,
                    'Validated, never locked. 2,861 tokens.'),
     '310c10ab09': ('describer_style_v2', 'superseded', 'describer_style_v1',

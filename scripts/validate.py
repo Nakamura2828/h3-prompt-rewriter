@@ -312,6 +312,30 @@ DESCRIBER_ROLES = {
         'atmos_field': 'ATMOSPHERE',
         'coarse_sub': None,
     },
+    'object': {
+        'fields': ['OBJECT_KIND', 'FORM', 'MATERIAL', 'TEXT', 'DISTINGUISHING', 'SCALE',
+                   'KIND', 'LABEL', 'DEFINITION'],
+        'closed': {'OBJECT_KIND': ('object', 'garment')},
+        # Deliberately NOT drift-checked. [[OBJECT_KIND]] has two values, and docs/describers.md
+        # records what that buys: setting's two-value [[SETTING_KIND]] passed every same: group
+        # in every round while [[DEFINITION]] drifted badly in v1. The real signal here is
+        # [[DEFINITION]] and [[MATERIAL]] agreeing across a same: group, and nothing automates
+        # that -- tests/describer_object.json says so in its own _weak_drift_check note.
+        'drift': None,
+        # [[SCALE]] is relative to a hand or a body ('hand-sized', 'waist-high'), never measured.
+        # A numeral there is an invented measurement, which is the failure this field is most
+        # prone to. Counts elsewhere ('four brass buttons') are durable and stay legal.
+        'no_digits': ('SCALE',),
+        # Unlike setting, this role DOES need the tail line: an image holds many discrete things,
+        # so 'the cannon' against a kitchen is a real miss. That is the test in
+        # L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY -- setting had one place the camera stood in and
+        # nothing to disambiguate, which is why the same line was pure liability there.
+        'not_found': True,
+        'style_warn': True,
+        'style_allow': (),
+        'atmos_field': None,
+        'coarse_sub': None,
+    },
     # NOTE: the monolithic 'style' role was REMOVED in session 20, when the split locked at
     # describer_style_class v4d and prompts/describer_style.txt was retired to
     # reference/retired/prompts/. It described a ten-field record that nothing emits any

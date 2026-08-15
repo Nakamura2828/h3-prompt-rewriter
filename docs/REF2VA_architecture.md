@@ -66,7 +66,7 @@ through `<Picture 4>` all appear only inside `<Subject N>` lines.
 |---|---|---|---|
 | character / person | `describer_character.txt` | `<Subject N>` | no — cited in the subject line |
 | setting / environment | `describer_setting.txt` (v2) | `<Subject N>` | no |
-| object / prop / clothing | `describer_object.txt` *(later)* | `<Subject N>` | no |
+| object / prop / clothing | `describer_object.txt` (v3) | `<Subject N>` | no |
 | style | `describer_style_look.txt` **+** `describer_style_class.txt` | `<Subject N>` | no |
 | first frame / keyframe / last frame | `describer_frame.txt` (v8) | `<Picture N>` | **yes** |
 | storyboard | `describer_frame.txt` (v8) | `<Picture N>` | **yes** |
@@ -173,7 +173,12 @@ REF2VA cases.
    sees both the image and the record. **The graph must concatenate the two outputs** into one
    ten-field record before the composer sees it — that is one extra LLM node plus a string join per
    style slot, and it is the only role whose slot is not one node. Rationale in `docs/describers.md`.
-   `describer_object.txt` remains.
+   **`describer_object.txt` — session 22, v3.** Nine fields covering object, prop and clothing in
+   one prompt, discriminated by a closed `[[OBJECT_KIND]]`. Presentation (worn / laid flat / held /
+   open / full) is **excluded outright**, following `character`'s treatment of pose rather than
+   `setting`'s atmosphere quarantine. It **reproduces visible text verbatim** like `describer_frame`
+   and unlike `setting`/`character` — official guide § 4.5 requires it downstream. Not locked; see
+   `docs/describers.md` for the residuals. **All four describer roles now exist.**
 3. Composer pass A as a fifth build-system mode; pass B standalone.
 4. Roster / task-type / assembly code, and a `ref2va` validator subcommand.
 5. Port the whole thing into the ComfyUI graph, along with the FL2VA alignment/landing logic

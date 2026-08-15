@@ -377,6 +377,30 @@
       "ct": 1786657866,
       "date": "2026-08-13",
       "subject": "corrected image inventory"
+    },
+    {
+      "commit": "b147728",
+      "ct": 1786670509,
+      "date": "2026-08-13",
+      "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+    },
+    {
+      "commit": "37e9803",
+      "ct": 1786670605,
+      "date": "2026-08-13",
+      "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+    },
+    {
+      "commit": "d2c27f4",
+      "ct": 1786678098,
+      "date": "2026-08-13",
+      "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+    },
+    {
+      "commit": "89921d1",
+      "ct": 1786678672,
+      "date": "2026-08-13",
+      "subject": "inventory.py: check every test file's image and system_file path"
     }
   ],
   "states": [
@@ -849,6 +873,34 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -861,7 +913,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -1348,6 +1400,34 @@
           "path": "prompts/i2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/i2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -1357,7 +1437,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -1844,6 +1924,34 @@
           "path": "prompts/l2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/l2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -1853,7 +1961,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -2544,6 +2652,62 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/t2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -2553,7 +2717,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -2810,6 +2974,34 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -2821,7 +3013,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -3056,6 +3248,34 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -3067,7 +3287,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -3302,6 +3522,34 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -3313,7 +3561,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -3548,6 +3796,34 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -3559,7 +3835,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -3794,6 +4070,34 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -3805,7 +4109,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -4040,6 +4344,34 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -4051,7 +4383,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -4518,6 +4850,34 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -4529,7 +4889,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -5033,6 +5393,34 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -5042,7 +5430,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786404424,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -5441,6 +5829,34 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -5452,7 +5868,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -5833,6 +6249,34 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -5842,7 +6286,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786416528,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -6209,6 +6653,34 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -6218,7 +6690,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786428480,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -6559,6 +7031,34 @@
           "path": "prompts/describer_style.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -6569,7 +7069,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -7017,6 +7517,34 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7026,7 +7554,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -7255,6 +7783,34 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7267,7 +7823,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786344981,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -7487,6 +8043,34 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7496,7 +8080,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -7716,6 +8300,34 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7725,7 +8337,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786346263,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 2
     },
     {
@@ -7808,6 +8420,13 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
         }
       ],
       "families": [
@@ -7817,7 +8436,7 @@
       "in_worktree": false,
       "provenance_only": false,
       "first_ct": 1786630509,
-      "last_ct": 1786657866,
+      "last_ct": 1786670509,
       "crlf_variants": 1
     },
     {
@@ -7868,6 +8487,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4a.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7877,7 +8524,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786625176,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -7928,6 +8575,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4b.txt",
           "ct": 1786657866,
           "subject": "corrected image inventory"
+        },
+        {
+          "commit": "b147728",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786670509,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
         }
       ],
       "families": [
@@ -7937,7 +8612,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786627317,
-      "last_ct": 1786657866,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -7953,7 +8628,29 @@
       "paths": [
         "prompts/describer_style_class.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
+        }
+      ],
       "families": [
         "describer_style_class"
       ],
@@ -7961,7 +8658,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786665641,
-      "last_ct": 1786665641,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -7977,7 +8674,29 @@
       "paths": [
         "reference/retired/prompts/describer_style_class_v4d-flat.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
+        }
+      ],
       "families": [
         "describer_style_class_v4d-flat"
       ],
@@ -7985,7 +8704,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786664781,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -8001,7 +8720,29 @@
       "paths": [
         "reference/retired/prompts/describer_style_class_v4d-stroke.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
+        }
+      ],
       "families": [
         "describer_style_class_v4d-stroke"
       ],
@@ -8009,7 +8750,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786664781,
+      "last_ct": 1786678672,
       "crlf_variants": 1
     },
     {
@@ -8025,7 +8766,29 @@
       "paths": [
         "reference/retired/prompts/describer_style_class_v4d.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "37e9803",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786670605,
+          "subject": "describer_style LOCKED at look v3 + class v4e; the idiom ladder gets an entry gate"
+        },
+        {
+          "commit": "d2c27f4",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786678098,
+          "subject": "gen_sweep.py: a bare corpus sweep generator for any describer role"
+        },
+        {
+          "commit": "89921d1",
+          "date": "2026-08-13",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786678672,
+          "subject": "inventory.py: check every test file's image and system_file path"
+        }
+      ],
       "families": [
         "describer_style_class_v4d"
       ],
@@ -8033,7 +8796,83 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786668659,
-      "last_ct": 1786668659,
+      "last_ct": 1786678672,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "8e8de06ccc9ee0b9f5cb8ea287bf0133",
+      "bytes": 16415,
+      "lines": 131,
+      "md5_exact": [
+        "8e8de06ccc9ee0b9f5cb8ea287bf0133"
+      ],
+      "names": [
+        "describer_object"
+      ],
+      "paths": [
+        "prompts/describer_object.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_object"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786761645,
+      "last_ct": 1786761645,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "e2e87a1ac80eb73840e9633cd2b61f63",
+      "bytes": 14034,
+      "lines": 121,
+      "md5_exact": [
+        "77b49c799810ac3cb415454d9cdb4a66"
+      ],
+      "names": [
+        "describer_object_v1"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_object_v1.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_object"
+      ],
+      "labels": [
+        "describer_object v1"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786762689,
+      "last_ct": 1786762689,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "2dc9a9ee62e5a414c0e91323260c6888",
+      "bytes": 16286,
+      "lines": 130,
+      "md5_exact": [
+        "44116b64ee954002bd51e966bbf14633"
+      ],
+      "names": [
+        "describer_object_v2"
+      ],
+      "paths": [
+        "reference/retired/prompts/describer_object_v2.txt"
+      ],
+      "commits": [],
+      "families": [
+        "describer_object"
+      ],
+      "labels": [
+        "describer_object v2"
+      ],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786762689,
+      "last_ct": 1786762689,
       "crlf_variants": 1
     }
   ]

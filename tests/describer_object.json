@@ -1,0 +1,284 @@
+{
+  "_note": "First round for describer_object (v1, session 22). Groups named 'same: ...' mark cases describing the SAME thing. NOTE the object role has drift DISABLED in validate.py, so nothing automated compares them -- see _weak_drift_check.",
+
+  "_no_answer_key": "There is deliberately NO _expected map. score.py compares whole field values and seven of this role's nine fields are free text, so exact-match content scoring is impossible for them. The scorable surface is [[OBJECT_KIND]] (and [[SCALE]] only if its vocabulary is ever closed), and BOTH depend on which thing the SUBJECT: line picked -- so object ground truth is per-CASE and belongs here, not as a column in docs/image_inventory.md. A fill-in framework is in HANDOFF_session22.md; the task is on .claude/TODO.md. Until it is filled, this round is scored on FORMAT plus an eye-read of the same: groups.",
+
+  "_weak_drift_check": "IMPORTANT: this role has NO automated drift field. [[OBJECT_KIND]] has only two values, and docs/describers.md records what that buys -- setting's two-value [[SETTING_KIND]] passed every same: group in every round while [[DEFINITION]] drifted badly in v1. So the check was not wired up at all rather than wired up uselessly. The real signal is whether [[DEFINITION]] and [[MATERIAL]] stay stable across a 'same:' group. READ THOSE LINES BY EYE. Nothing else will.",
+
+  "_design_under_test": "PRESENTATION IS EXCLUDED, NOT QUARANTINED. setting kept transient conditions and quarantined them in [[ATMOSPHERE]]; character excluded pose outright. object follows character: how a thing is shown -- worn, laid flat, folded, held, hung, open, full, switched on -- is banned with no field to hold it. The two kasia garment groups are the direct test, the exact analogue of city_day/city_night for setting: one swimsuit flat / worn in 2D / worn in 3D, and one outfit flat / worn twice. If those groups' [[DEFINITION]] lines disagree, the fix is the setting v1->v2 treatment (a positive rule saying what to write instead), not a louder ban.",
+
+  "_outfit_group_was_repaired_after_v1": "The 'everyday outfit' group originally asked for 'the outfit', and ob_outfit_flat asked for nothing at all. That is a TEST defect, not a prompt defect: 'the outfit' has no fixed extent, so v1 answered with the top alone, then top+shorts, then top+shorts+headband+gloves+socks+shoes -- three different questions, not three answers to one. All three now name 'the black top', which is present and single in every image of the group. CONSEQUENCE: this group's v1 -> v2 comparison is void by construction. Every other group is unchanged and comparable.",
+
+  "_flat_lay_caveat": "docs/image_inventory.md records that the kasia flat-lay images are DERIVED from the 2D worn image rather than independently photographed. So the flat-to-worn groups are a floor on difficulty, not a ceiling -- agreement there is necessary but not sufficient.",
+
+  "_text_is_reproduced_here": "Unlike setting and character, this role REPRODUCES visible text verbatim in double quotes, on describer_frame's pattern and its exact wording. Official guide 4.5 (On-Screen Text) requires it downstream, and for an object the lettering is often constitutive of what the thing is. The seam being tested: reproducing printed words is legal, NAMING a real brand/franchise/person/place as your own identification is not. ob_misato_real is the sharpest case -- it carries number plates and a placard reading ALPINE RENAULT A310 1600VE. Expect the text in [[TEXT]]; a make and model asserted anywhere else is a leak.",
+
+  "_watched_scale_case": "ob_april_figure. [[SCALE]] is defined as the physical thing in front of the camera, so the answer the prompt asks for is hand-sized (moulded figures on a shelf), consistent with style tie-break 4 and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS. The user has flagged the depicted-scale reading (person-sized, because she is a character) as genuinely defensible and likely to be a STUBBORN alternative. Bring this line to the user as an open ruling; do not score it. The wider family is stop-motion/figure -- lego1, lego2, coraline1, coraline2, skellington, rudolf, laika, pjs -- none of which is in this round.",
+
+  "_negative_control": "ob_april_fanart carries SUBJECT: the yellow jumpsuit, and that character is in a DIFFERENT outfit there (a cropped yellow zip jacket and jeans, per docs/image_inventory.md, which says explicitly that a record carrying the jumpsuit into april_fanart is wrong). It is the one case where [[SUBJECT NOT FOUND]] should plausibly fire, and the one case where a jumpsuit in the record is a definite failure rather than a judgement call.",
+
+  "_simpsons_minimal_pair": "ADDED session 22, user's observation mid-round. simpsons_couch_toon and maggie_grandpa_cat are the SAME ROOM in two framings -- same brown couch, purple side table with books beneath it, purple lamp, sailboat picture, pleated wall lamp, concentric-oval rug -- and they are near-minimal on OBJECT PRESENCE. The empty frame has a teal telephone and a television and NO people; the occupied frame has a litter tray, chips and a dip jar, two figures with garments, and NO telephone. That yields two things nothing else in the corpus does. (1) A HARD [[SUBJECT NOT FOUND]] probe: ob_notfound_telephone names a thing that genuinely is not in that frame but sits on a table the model can see, in a room where it does belong -- so confabulation is actually tempting, unlike ob_notfound_bicycle-against-a-kitchen, which is a strawman. ob_notfound_slippers is the same trick pointed the other way, at a garment in a room with no people in it at all. 'the slippers' rather than 'the cardigan' because the sibling's knitwear has no visible opening and naming it a cardigan would mis-describe the very thing the probe depends on being unmistakable. (2) An occlusion drift pair: ob_couch_clear vs ob_couch_occluded is one couch, once in the open and once with two figures and a cat sitting on it -- which tests describing an object through occlusion AND the ban on describing the people on it. Also recorded in docs/image_inventory.md's probe-pairs table so other roles can find it.",
+
+  "_not_found_watch": "ob_notfound_bicycle is the direct probe. Watch this line across the WHOLE round, not just there: the same optional line caused EVERY format failure in setting v1/v2/v3 (1, then 5, then 3 cases) by confabulating subjects. It is included here because object genuinely needs the judgement -- an image holds many discrete things -- which is the test in L-OPTIONAL-JUDGEMENT-IS-A-LIABILITY.",
+
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048,
+    "system_file": "prompts/describer_object.txt"
+  },
+
+  "cases": [
+    {
+      "group": "same: swimsuit (flat / worn 2D / worn 3D)",
+      "id": "ob_swimsuit_flat",
+      "user": "ROLE: object",
+      "image": "images/kasia_swimsuit.png"
+    },
+    {
+      "group": "same: swimsuit (flat / worn 2D / worn 3D)",
+      "id": "ob_swimsuit_worn",
+      "user": "SUBJECT: the swimsuit\nROLE: object",
+      "image": "images/kasia_swimsuit_worn.png"
+    },
+    {
+      "group": "same: swimsuit (flat / worn 2D / worn 3D)",
+      "id": "ob_swimsuit_render",
+      "user": "SUBJECT: the swimsuit\nROLE: object",
+      "image": "images/kasia_swimsuit_render.jpg"
+    },
+
+    {
+      "group": "same: everyday outfit (flat / worn)",
+      "id": "ob_outfit_flat",
+      "user": "SUBJECT: the black top\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+    {
+      "group": "same: everyday outfit (flat / worn)",
+      "id": "ob_outfit_render",
+      "user": "SUBJECT: the black top\nROLE: object",
+      "image": "images/kasia_render.png"
+    },
+    {
+      "group": "same: everyday outfit (flat / worn)",
+      "id": "ob_outfit_worn",
+      "user": "SUBJECT: the black top\nROLE: object",
+      "image": "images/kasia.png"
+    },
+
+    {
+      "group": "same: one vehicle across four media",
+      "id": "ob_misato_real",
+      "user": "SUBJECT: the blue coupe\nROLE: object",
+      "image": "images/misato_car_real.jpg"
+    },
+    {
+      "group": "same: one vehicle across four media",
+      "id": "ob_misato_cel_1",
+      "user": "SUBJECT: the blue coupe\nROLE: object",
+      "image": "images/misato_car_1.jpg"
+    },
+    {
+      "group": "same: one vehicle across four media",
+      "id": "ob_misato_cel_2",
+      "user": "SUBJECT: the blue coupe\nROLE: object",
+      "image": "images/misato_car_2.png"
+    },
+    {
+      "group": "same: one vehicle across four media",
+      "id": "ob_misato_print",
+      "user": "SUBJECT: the blue coupe\nROLE: object",
+      "image": "images/misato_car_technical_print.jpg"
+    },
+
+    {
+      "group": "same: the yellow jumpsuit across three media",
+      "id": "ob_april_1987",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_1987.jpg"
+    },
+    {
+      "group": "same: the yellow jumpsuit across three media",
+      "id": "ob_april_figure",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_1987_figure.jpg"
+    },
+    {
+      "group": "same: the yellow jumpsuit across three media",
+      "id": "ob_april_comic",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_comic.jpg"
+    },
+    {
+      "group": "negative control: same character, DIFFERENT outfit",
+      "id": "ob_april_fanart",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_fanart.jpeg"
+    },
+
+    {
+      "group": "same: the trench coat across three media",
+      "id": "ob_gordon_1996",
+      "user": "SUBJECT: the trench coat\nROLE: object",
+      "image": "images/gordon_1996.jpg"
+    },
+    {
+      "group": "same: the trench coat across three media",
+      "id": "ob_gordon_2004",
+      "user": "SUBJECT: the trench coat\nROLE: object",
+      "image": "images/gordon_2004.jpg"
+    },
+    {
+      "group": "same: the trench coat across three media",
+      "id": "ob_gordon_comic",
+      "user": "SUBJECT: the trench coat\nROLE: object",
+      "image": "images/gordon_comic.jpg"
+    },
+
+    {
+      "group": "same: one car, two angles (viewpoint control)",
+      "id": "ob_car_1",
+      "user": "ROLE: object",
+      "image": "images/car_1.png"
+    },
+    {
+      "group": "same: one car, two angles (viewpoint control)",
+      "id": "ob_car_2",
+      "user": "ROLE: object",
+      "image": "images/car_2.png"
+    },
+
+    {
+      "group": "same: shoulder bag, two angles",
+      "id": "ob_bag_1",
+      "user": "ROLE: object",
+      "image": "images/kasia_bag.png"
+    },
+    {
+      "group": "same: shoulder bag, two angles",
+      "id": "ob_bag_2",
+      "user": "ROLE: object",
+      "image": "images/kasia_bag_2.png"
+    },
+
+    {
+      "group": "same image, different SUBJECT (object vs garment)",
+      "id": "ob_captain_wheel",
+      "user": "SUBJECT: the ship's wheel\nROLE: object",
+      "image": "images/captain.png"
+    },
+    {
+      "group": "same image, different SUBJECT (object vs garment)",
+      "id": "ob_captain_uniform",
+      "user": "SUBJECT: the captain's uniform\nROLE: object",
+      "image": "images/captain.png"
+    },
+
+    {
+      "group": "isolated shots (no SUBJECT line)",
+      "id": "ob_phone",
+      "user": "ROLE: object",
+      "image": "images/phone.png"
+    },
+    {
+      "group": "isolated shots (no SUBJECT line)",
+      "id": "ob_chair",
+      "user": "ROLE: object",
+      "image": "images/chair.jpg"
+    },
+    {
+      "group": "isolated shots (no SUBJECT line)",
+      "id": "ob_kaypro",
+      "user": "ROLE: object",
+      "image": "images/kaypro_ii.jpg"
+    },
+
+    {
+      "group": "in-scene selection (MATCH GENEROUSLY)",
+      "id": "ob_tv",
+      "user": "SUBJECT: the television\nROLE: object",
+      "image": "images/tv.png"
+    },
+    {
+      "group": "in-scene selection (MATCH GENEROUSLY)",
+      "id": "ob_radio",
+      "user": "SUBJECT: the transistor radio\nROLE: object",
+      "image": "images/p1_first.png"
+    },
+    {
+      "group": "in-scene selection (MATCH GENEROUSLY)",
+      "id": "ob_pan",
+      "user": "SUBJECT: the frying pan\nROLE: object",
+      "image": "images/pancakes.png"
+    },
+    {
+      "group": "in-scene selection (MATCH GENEROUSLY)",
+      "id": "ob_cannon",
+      "user": "ROLE: object",
+      "image": "images/cannon.jpg"
+    },
+    {
+      "group": "in-scene selection (MATCH GENEROUSLY)",
+      "id": "ob_wheelie_bin",
+      "user": "SUBJECT: the wheelie bin\nROLE: object",
+      "image": "images/miyu.png"
+    },
+
+    {
+      "group": "[[TEXT]] probes",
+      "id": "ob_cereal_box",
+      "user": "SUBJECT: the cereal box\nROLE: object",
+      "image": "images/p3_first.png"
+    },
+    {
+      "group": "[[TEXT]] probes",
+      "id": "ob_van",
+      "user": "SUBJECT: the van\nROLE: object",
+      "image": "images/gromit.jpg"
+    },
+
+    {
+      "group": "nesting: describe the object, not the picture on it",
+      "id": "ob_banknote",
+      "user": "SUBJECT: the banknote\nROLE: object",
+      "image": "images/lincoln_money.jpg"
+    },
+
+    {
+      "group": "[[SUBJECT NOT FOUND]] probe (easy: nothing like it in frame)",
+      "id": "ob_notfound_bicycle",
+      "user": "SUBJECT: the bicycle\nROLE: object",
+      "image": "images/p2_first.png"
+    },
+
+    {
+      "group": "[[SUBJECT NOT FOUND]] probe (HARD: same room, named thing present in the sibling frame)",
+      "id": "ob_notfound_telephone",
+      "user": "SUBJECT: the telephone\nROLE: object",
+      "image": "images/maggie_grandpa_cat.jpeg"
+    },
+    {
+      "group": "[[SUBJECT NOT FOUND]] probe (HARD: same room, named thing present in the sibling frame)",
+      "id": "ob_notfound_slippers",
+      "user": "SUBJECT: the slippers\nROLE: object",
+      "image": "images/simpsons_couch_toon.jpg"
+    },
+
+    {
+      "group": "same: the couch, clear vs occluded",
+      "id": "ob_couch_clear",
+      "user": "SUBJECT: the couch\nROLE: object",
+      "image": "images/simpsons_couch_toon.jpg"
+    },
+    {
+      "group": "same: the couch, clear vs occluded",
+      "id": "ob_couch_occluded",
+      "user": "SUBJECT: the couch\nROLE: object",
+      "image": "images/maggie_grandpa_cat.jpeg"
+    }
+  ]
+}

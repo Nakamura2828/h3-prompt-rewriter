@@ -211,6 +211,113 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
+## Object describer (v3, session 22) — the last describer before the composer
+
+`prompts/describer_object.txt` — the fourth REF2VA describer role, covering **object / prop /
+clothing** in one prompt. **One thing, durably**: what it permanently is, never how this picture
+happens to present it. Nine fields, condensations last:
+
+```
+[[OBJECT_KIND]] [[FORM]] [[MATERIAL]] [[TEXT]] [[DISTINGUISHING]] [[SCALE]] [[KIND]] [[LABEL]] [[DEFINITION]]
+```
+
+`[[LABEL]]` + `[[DEFINITION]]` splice downstream exactly as `character`'s and `setting`'s do.
+`[[OBJECT_KIND]]` leads because it is a closed two-value discriminator; `[[KIND]]` sits eighth
+because it is a *condensation* and `L-JUDGMENTS-LAST` applies to it just as it does to
+`setting`'s `[[PLACE]]`.
+
+### Presentation is EXCLUDED, not quarantined — the design decision
+
+`setting` kept transient conditions and quarantined them in `[[ATMOSPHERE]]`. `character` excluded
+pose outright. **`object` follows `character`.** An object's transient axis is presentation and
+state — worn, laid flat, folded, held, hung, open, full, switched on, and what is inside it — and
+none of that has a downstream use, so there is no `[[STATE]]` field to hold it. The positive twin,
+per `L-SAY-WHAT-TO-WRITE`, is **NAME THE THING, NEVER ITS ARRANGEMENT** ("a wide woven shoulder
+strap", never "a strap slung over the shoulder") plus **THE FLAT-AND-WORN TEST**.
+
+**It works.** The `kasia_swimsuit` group (flat lay → worn in 2D → worn in 3D) agrees across all
+three on *black one-piece, high neck collar, sleeveless, deep yellow V-panel*, with no arrangement
+language anywhere. That group is the direct analogue of `city_day`/`city_night` for `setting`.
+Caveat recorded in `docs/image_inventory.md`: the flat-lays are **derived** from the 2D image, so
+this is a floor on difficulty rather than a ceiling.
+
+### This role REPRODUCES text — a deliberate divergence from `setting` and `character`
+
+`[[TEXT]]` carries visible lettering verbatim in double quotes, on `describer_frame`'s exact
+wording. Official guide § 4.5 requires it downstream, and an object's lettering is frequently
+constitutive of its identity. **So the four roles split two-and-two**: `frame` and `object`
+reproduce text; `setting` and `character` suppress it, because a room record has no business
+carrying a cereal brand.
+
+It is the strongest result of the first rounds — `lincoln_money` returned seven quoted strings,
+`gromit`'s van `"GNOME IMPROVEMENTS"` / `"No job too small"`.
+
+### Version history
+
+| round | result |
+|---|---|
+| v1 | **29/35 format.** Three defects diagnosed, one mechanism each: the SUBJECT line overrode the image; printed names laundered out of `[[TEXT]]`; the tail line fired empty ×6 |
+| v2 | **32/35.** Subject-override **fixed**, `[[SCALE]]`-on-garments **fixed**, laundering unmoved at 4 |
+| v3 | **31/35 raw.** Removing the phrase the tail line was stealing only moved the theft; inside noise vs v2 |
+| v3 + graph mechanic, +4 cases | **38/39.** Same prompt; the tail line is now stripped in code |
+
+### Three findings worth carrying forward
+
+**1. The SUBJECT line was supplying content, not just selecting it.** v1 answered
+`SUBJECT: the yellow jumpsuit` against `april_fanart` — a *different* outfit — with a full jumpsuit
+record, "one-piece … full-length legs", against an image of a cropped jacket over jeans. The fix
+was a positive rule (`THE SUBJECT LINE SELECTS; IT NEVER SUPPLIES`) plus the instruction that
+`[[KIND]]`/`[[LABEL]]` name what was *actually described*. Confirmed on the hardest available case:
+`SUBJECT: the telephone` against `maggie_grandpa_cat` — same room, phone genuinely present in the
+sibling frame — correctly described the litter box and emitted the tail line.
+
+**2. `L-NAME-THE-CASE` bit, twice, in its documented form.** v2's new rule quoted
+`"the yellow jumpsuit"`; the tail line then emitted exactly that on cases with no SUBJECT at all.
+v3 removed the phrase, and the theft **moved to `"the red kettle"`** — the MATCH GENEROUSLY worked
+example. Three rounds, three different stolen phrases, all on SUBJECT-less cases. A banned quote is
+still an example, and so is an unbanned one.
+
+**3. That is what forced the tail line into code.** See `docs/graph_mechanics.md`. The judgement
+is only real when a SUBJECT line exists, and whether one exists is something the *caller* knows for
+certain — `L-OFFLOAD-BOOKKEEPING`. `validate.py` still errors on an unsolicited line, which is what
+catches a consumer that forgets.
+
+### Known limitations, not chased (`L-KNOW-WHEN-TO-STOP` — four rounds in one session)
+
+- **Printed names launder into identification. UNMOVED across three rounds, 4 cases.** The model
+  reads `"HEATH"` and writes `[[LABEL]] the beige and blue Heathkit computer`; `"ALPINE A 310 V6"`
+  becomes "the blue Alpine coupe"; `"LINCOLN"` becomes "a portrait of Abraham Lincoln". The rule
+  exists, names the banned outputs verbatim, and is not followed — the same *unfollowed-rule* shape
+  as the `digital` over-attractor. **This is the top open defect.**
+- **Colour drifts between renderings of one thing**, twice and in the same direction: the gordon
+  trench coat (`brown` vs `mustard-yellow`) and the Simpsons couch (`mustard-yellow` vs `brown`).
+  The user ruled the coat *defensible* — it is a night scene — but two instances on one axis is a
+  pattern. **The cheap fix to try first is `setting`'s, transposed**: name the colour of the
+  material, not the colour the light makes it, which is `NAME THE FORM, NEVER THE GLOW` for hue. A
+  closed colour vocabulary was considered and deferred: colour is genuinely multi-axis
+  (`L-ONE-AXIS-PER-VOCABULARY`), it would mean re-adding a `[[COLOUR]]` field to be enforceable,
+  and there is no colour ground truth to measure it against.
+- **`[[OBJECT_KIND]]` called a sofa a `garment`** on `ob_couch_clear` while its sibling got it
+  right. One case, split within a pair, so read as marginal until it repeats
+  (`L-MOVING-FAILURE-IS-NOISE`).
+- **The tail line still contradicts itself on a plausible absent garment.** `ob_notfound_slippers`
+  emitted `[[KIND]] a pair of slippers` *and* `[[SUBJECT NOT FOUND]] the slippers`, and dropped
+  `[[DEFINITION]]`. The telephone probe next to it passed, so the garment direction is the harder
+  one.
+- **`[[SCALE]]` may not survive.** Fixed to `"worn on the body"` for garments (15/15 consistent
+  after v2), but the user's view is that the object side has little to test it on beyond the
+  figures, and dropping it later is live.
+
+### The watched depiction case
+
+`[[SCALE]]` describes the physical thing photographed, never what it depicts — a toy is toy-sized.
+`april_1987_figure` answered `forearm-length` in v2, the intended answer. **The user flagged the
+depicted-scale reading (person-sized) as a stubborn alternative likely to return**; it is currently
+moot on that fixture because the jumpsuit classifies as a `garment` either way and takes the fixed
+garment value. The family where it can genuinely arise is `stop-motion / figure` — `lego1`,
+`lego2`, `coraline1`, `coraline2`, `skellington`, `rudolf`, `laika`, `pjs` — none of them in this
+test yet.
+
 ## Style describer — LOCKED session 20 at look v3 + class v4e
 
 **Final state:** `describer_style_look.txt` v3 (1,876 tokens, untouched since session 12) feeding
