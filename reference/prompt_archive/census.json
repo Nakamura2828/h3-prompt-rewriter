@@ -401,6 +401,12 @@
       "ct": 1786678672,
       "date": "2026-08-13",
       "subject": "inventory.py: check every test file's image and system_file path"
+    },
+    {
+      "commit": "a6ab74e",
+      "ct": 1786764672,
+      "date": "2026-08-14",
+      "subject": "describer_object v1-v3: the last describer before the composer"
     }
   ],
   "states": [
@@ -586,7 +592,6 @@
       "bytes": 15537,
       "lines": 169,
       "md5_exact": [
-        "89fec94e7d13ace88f8c416a5a1f0950",
         "8e9b2e991b83f2942c65bef2f0f7c0e8"
       ],
       "names": [
@@ -901,6 +906,13 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -912,16 +924,15 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "d5b3cdb21004b26cec0411afb48a29ad",
       "bytes": 12359,
       "lines": 96,
       "md5_exact": [
-        "4b8108723ecf876f808c357eb6179cfc",
         "d5b3cdb21004b26cec0411afb48a29ad"
       ],
       "names": [
@@ -1428,6 +1439,13 @@
           "path": "prompts/i2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/i2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -1437,16 +1455,15 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "last_ct": 1786765671,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "622aa43837ead303507d32c024e86d03",
       "bytes": 11003,
       "lines": 87,
       "md5_exact": [
-        "622aa43837ead303507d32c024e86d03",
-        "96d6fc420c06e9601ca524d527e3b2c1"
+        "622aa43837ead303507d32c024e86d03"
       ],
       "names": [
         "l2va"
@@ -1952,6 +1969,13 @@
           "path": "prompts/l2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/l2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -1961,15 +1985,14 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "last_ct": 1786765671,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "cc48c247216227c14a23447587b1e230",
       "bytes": 8687,
       "lines": 82,
       "md5_exact": [
-        "9a78f393d24b16664be9398178c6d53a",
         "cc48c247216227c14a23447587b1e230"
       ],
       "names": [
@@ -2708,6 +2731,20 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/t2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -2716,16 +2753,15 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765671,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "900b383fa14c5259cf8a80ed8b76fd8d",
       "bytes": 8763,
       "lines": 121,
       "md5_exact": [
-        "70b7f5e1c480252ae5b4fa521b5debec",
         "900b383fa14c5259cf8a80ed8b76fd8d"
       ],
       "names": [
@@ -3002,6 +3038,13 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -3012,16 +3055,15 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "af06ee66c3e361f7eccf918206bd09cd",
       "bytes": 10867,
       "lines": 131,
       "md5_exact": [
-        "71c365f340b1893896b305b74bac4708",
         "af06ee66c3e361f7eccf918206bd09cd"
       ],
       "names": [
@@ -3276,6 +3318,13 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -3286,17 +3335,16 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "684acc768be80473970e77ab26d71a60",
       "bytes": 11968,
       "lines": 137,
       "md5_exact": [
-        "684acc768be80473970e77ab26d71a60",
-        "eb59d91fd19c47080bf0f4faff0c8fb8"
+        "684acc768be80473970e77ab26d71a60"
       ],
       "names": [
         "describer_frame_v3"
@@ -3550,6 +3598,13 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -3560,16 +3615,15 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "ee78489105e3cf468c7769b06d9dec99",
       "bytes": 13327,
       "lines": 152,
       "md5_exact": [
-        "100b15d6f56ac739c6b0f184f1434b84",
         "ee78489105e3cf468c7769b06d9dec99"
       ],
       "names": [
@@ -3824,6 +3878,13 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -3834,17 +3895,16 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "87ab10504f8829ed0f8569fe52af14a5",
       "bytes": 13071,
       "lines": 152,
       "md5_exact": [
-        "87ab10504f8829ed0f8569fe52af14a5",
-        "a876810611346960649e55b8df32d38f"
+        "87ab10504f8829ed0f8569fe52af14a5"
       ],
       "names": [
         "describer_frame_v5"
@@ -4098,6 +4158,13 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -4108,16 +4175,15 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "95a4c7ab1830a1b1b7691af6fd53d502",
       "bytes": 15217,
       "lines": 167,
       "md5_exact": [
-        "44b838fa460ac46a14b931ea82d7ec4d",
         "95a4c7ab1830a1b1b7691af6fd53d502"
       ],
       "names": [
@@ -4372,6 +4438,13 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -4382,16 +4455,15 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "dc458d9a46d5d2b5a9f8120cf265fe67",
       "bytes": 8416,
       "lines": 96,
       "md5_exact": [
-        "94ad601efbfd3bdc67e8d0029dfca392",
         "dc458d9a46d5d2b5a9f8120cf265fe67"
       ],
       "names": [
@@ -4878,6 +4950,13 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -4888,9 +4967,9 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786389313,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "cfd0a5572a63fcdb42e5a47c256c4de0",
@@ -4999,7 +5078,6 @@
       "bytes": 15547,
       "lines": 169,
       "md5_exact": [
-        "633d3f6a5f466473792599256bba450e",
         "a9613d8d0addc35a442b476fb6449c52"
       ],
       "names": [
@@ -5421,6 +5499,13 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -5429,16 +5514,15 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786404424,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786409308,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "54eaecfd473c5479ab11a6289e7e9d6b",
       "bytes": 14735,
       "lines": 131,
       "md5_exact": [
-        "12fb25491799281cae65924518bebb41",
         "54eaecfd473c5479ab11a6289e7e9d6b"
       ],
       "names": [
@@ -5857,6 +5941,13 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -5868,15 +5959,14 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "last_ct": 1786765671,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "99206cb96cad12553d3efc76b62ecc22",
       "bytes": 10074,
       "lines": 98,
       "md5_exact": [
-        "8e48f1cbd7199429ebe085ccea2d7900",
         "99206cb96cad12553d3efc76b62ecc22"
       ],
       "names": [
@@ -6277,6 +6367,13 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -6285,17 +6382,16 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786416528,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786417832,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "047eb3d74a238cab4d5249a6835cfd27",
       "bytes": 12565,
       "lines": 101,
       "md5_exact": [
-        "047eb3d74a238cab4d5249a6835cfd27",
-        "e99cdf73f19a819564beeb6d3e8e8a37"
+        "047eb3d74a238cab4d5249a6835cfd27"
       ],
       "names": [
         "describer_setting"
@@ -6681,6 +6777,13 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -6689,9 +6792,9 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786428480,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786429502,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "b9bd35c4b33f06fbdb8892347a4045f9",
@@ -7059,6 +7162,13 @@
           "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -7069,7 +7179,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -7291,7 +7401,6 @@
       "bytes": 8471,
       "lines": 68,
       "md5_exact": [
-        "2509ab87ba8500921197786fb70514ca",
         "91808c4a25f8c9886342052bfed13af5"
       ],
       "names": [
@@ -7545,6 +7654,13 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -7554,15 +7670,14 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "f7559d7716b59cb19e3a59028a606d15",
       "bytes": 14864,
       "lines": 131,
       "md5_exact": [
-        "1405734caa969635bb38f5ce06f39c2b",
         "f7559d7716b59cb19e3a59028a606d15"
       ],
       "names": [
@@ -7811,6 +7926,13 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -7822,17 +7944,16 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786344981,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786558178,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "d0fa731f45c2d06cc4576edc7ebc7cea",
       "bytes": 12360,
       "lines": 97,
       "md5_exact": [
-        "d0fa731f45c2d06cc4576edc7ebc7cea",
-        "fb01354c563b6d297e23e3d869fe2284"
+        "d0fa731f45c2d06cc4576edc7ebc7cea"
       ],
       "names": [
         "i2va"
@@ -8071,6 +8192,13 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8079,16 +8207,15 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786563094,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "b3c8f88991a723b53ec424ae12a08306",
       "bytes": 10598,
       "lines": 82,
       "md5_exact": [
-        "3a60083d1fa71303e8209ddc3feb7591",
         "b3c8f88991a723b53ec424ae12a08306"
       ],
       "names": [
@@ -8328,6 +8455,13 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8336,9 +8470,9 @@
       "labels": [],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786346263,
-      "last_ct": 1786678672,
-      "crlf_variants": 2
+      "first_ct": 1786563094,
+      "last_ct": 1786765313,
+      "crlf_variants": 1
     },
     {
       "md5_norm": "bf48614103008a47b1975e0c02ce9e90",
@@ -8515,6 +8649,13 @@
           "path": "reference/retired/prompts/describer_style_class_v4a.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8524,7 +8665,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786625176,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8603,6 +8744,13 @@
           "path": "reference/retired/prompts/describer_style_class_v4b.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8612,7 +8760,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786627317,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8649,6 +8797,13 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8658,7 +8813,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786665641,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8695,6 +8850,13 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8704,7 +8866,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8741,6 +8903,13 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8750,7 +8919,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8787,6 +8956,13 @@
           "path": "reference/retired/prompts/describer_style_class_v4d.txt",
           "ct": 1786678672,
           "subject": "inventory.py: check every test file's image and system_file path"
+        },
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
         }
       ],
       "families": [
@@ -8796,7 +8972,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786668659,
-      "last_ct": 1786678672,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
@@ -8812,7 +8988,15 @@
       "paths": [
         "prompts/describer_object.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
+        }
+      ],
       "families": [
         "describer_object"
       ],
@@ -8820,15 +9004,15 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786761645,
-      "last_ct": 1786761645,
+      "last_ct": 1786764672,
       "crlf_variants": 1
     },
     {
       "md5_norm": "e2e87a1ac80eb73840e9633cd2b61f63",
-      "bytes": 14034,
+      "bytes": 13914,
       "lines": 121,
       "md5_exact": [
-        "77b49c799810ac3cb415454d9cdb4a66"
+        "e2e87a1ac80eb73840e9633cd2b61f63"
       ],
       "names": [
         "describer_object_v1"
@@ -8836,7 +9020,15 @@
       "paths": [
         "reference/retired/prompts/describer_object_v1.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
+        }
+      ],
       "families": [
         "describer_object"
       ],
@@ -8845,16 +9037,16 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786762689,
-      "last_ct": 1786762689,
+      "first_ct": 1786764672,
+      "last_ct": 1786765313,
       "crlf_variants": 1
     },
     {
       "md5_norm": "2dc9a9ee62e5a414c0e91323260c6888",
-      "bytes": 16286,
+      "bytes": 16157,
       "lines": 130,
       "md5_exact": [
-        "44116b64ee954002bd51e966bbf14633"
+        "2dc9a9ee62e5a414c0e91323260c6888"
       ],
       "names": [
         "describer_object_v2"
@@ -8862,7 +9054,15 @@
       "paths": [
         "reference/retired/prompts/describer_object_v2.txt"
       ],
-      "commits": [],
+      "commits": [
+        {
+          "commit": "a6ab74e",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786764672,
+          "subject": "describer_object v1-v3: the last describer before the composer"
+        }
+      ],
       "families": [
         "describer_object"
       ],
@@ -8871,8 +9071,8 @@
       ],
       "in_worktree": true,
       "provenance_only": false,
-      "first_ct": 1786762689,
-      "last_ct": 1786762689,
+      "first_ct": 1786764672,
+      "last_ct": 1786765313,
       "crlf_variants": 1
     }
   ]

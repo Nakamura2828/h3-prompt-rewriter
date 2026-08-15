@@ -500,7 +500,8 @@ def main():
         'records': records,
     }
     if not a.dry_run:
-        (OUT / 'MANIFEST.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+        (OUT / 'MANIFEST.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8',
+                                           newline='\n')
 
     print(f'{manifest["counts"]["archived"]} files + {manifest["counts"]["missing"]} '
           f'missing-state records'

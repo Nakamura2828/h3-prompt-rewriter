@@ -46,7 +46,13 @@ def build(mode):
             item = f"blocks/40_duration_shots__{man['duration']}.txt"
         parts.append(render_block(item.format(m=mode), slots))
     body = '\n\n'.join(p for p in parts if p)
-    return body.replace('\n', '\r\n')
+    # LF, deliberately. This line used to convert the assembled prompt to CRLF -- an early
+    # Windows-native assumption. Session 23 normalised the repo to LF (.gitattributes), and this
+    # was the one thing that put CRLF back into prompts/ on EVERY build, so the tree could never
+    # stay normalised. Nothing downstream cares: the prompts are pasted into ComfyUI node widgets,
+    # and --verify compares via read_text() (universal newlines), so it is blind to the ending on
+    # both sides -- its three verdicts are identical before and after this change.
+    return body
 
 
 def main():

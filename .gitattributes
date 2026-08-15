@@ -1,0 +1,25 @@
+# Line endings, normalised session 23.
+#
+# WHY: this repo ran with core.autocrlf=true and no attributes file, which stores LF in the
+# index but hands you CRLF in the working tree. Three costs, all of them real here:
+#
+#   1. A one-line change once showed up as a 261-line rewrite in a diff.
+#   2. reference/prompt_archive/MANIFEST.json records md5_lf -- hashes over LF bytes -- so a
+#      fresh checkout's actual files did NOT match their own manifest. That file's line_endings
+#      note had to warn about it. With eol=lf they match, and the warning is now just true.
+#   3. Mixed endings broke exact-string edits against CRLF files (scripts/*.py) while the
+#      identical edit worked against LF files (docs/*.md). 218 of ~400 tracked files were CRLF.
+#
+# `text=auto` lets git decide what is text; `eol=lf` pins the working-tree ending for everything
+# it decides IS text. An explicit eol= overrides core.autocrlf, so that setting no longer
+# matters and does not need changing.
+#
+# No binary carve-outs are listed because at the time of writing NOTHING binary is tracked --
+# the repo is .txt/.json/.py/.md plus .gitignore and LICENSE, and images/ is gitignored.
+# `text=auto` detects binary content on its own, so adding one later is safe; add an explicit
+# `*.ext binary` line anyway if you ever track images, to skip the detection entirely.
+#
+# Applied with `git add --renormalize .` as its own commit, verified with
+# `git diff --cached --ignore-cr-at-eol` returning empty (i.e. ONLY endings changed).
+
+* text=auto eol=lf

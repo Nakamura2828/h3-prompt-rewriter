@@ -367,7 +367,7 @@ def main():
         if align:
             output_text = alignment_line(align, text, cfg.get('duration')) + '\n\n' + output_text
 
-        (outdir / f'{c["id"]}.txt').write_text(output_text, encoding='utf-8')
+        (outdir / f'{c["id"]}.txt').write_text(output_text, encoding='utf-8', newline='\n')
         # The system prompt's basename goes in the header because a chained test writes two
         # kinds of record into one file and nothing else says which prompt made which. It sits
         # BEFORE the bracket deliberately: validate.py's HEAD, score.py (which imports it) and
@@ -388,7 +388,7 @@ def main():
                 last_group = g
             body.append(rec)
         out_path.write_text('\n----------\n'.join(body) + '\n----------\n',
-                            encoding='utf-8')
+                            encoding='utf-8', newline='\n')
         print(f'\nwrote {out_path}  ({len(records)} cases)')
         print(f'per-case files in {outdir}/')
         if n_stripped:

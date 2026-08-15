@@ -63,7 +63,8 @@ def main():
         lbl = ', '.join(r['labels']) or ', '.join(r['names'])
         print(f'{r["md5"]:<11} {r["tokens"]:>6}  {r["bytes"]:>6}  {r["first"]:<18} '
               f'{marker} {lbl}{tag}')
-    (HERE / 'tokens.json').write_text(json.dumps(rows, indent=2), encoding='utf-8')
+    (HERE / 'tokens.json').write_text(json.dumps(rows, indent=2), encoding='utf-8',
+                                      newline='\n')
     return 0
 
 

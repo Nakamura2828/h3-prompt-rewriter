@@ -168,6 +168,13 @@ def main():
 
     # ---- report -------------------------------------------------------------------------
     if a.json:
+        # Force LF on stdout. On Windows, text-mode stdout translates LF to CRLF, so
+        # `census.py --json > census.json` silently produced a CRLF file even with the repo
+        # normalised to LF (.gitattributes, session 23). The redirect added them, not the code.
+        try:
+            sys.stdout.reconfigure(newline='\n')
+        except AttributeError:                     # pragma: no cover - Python < 3.7
+            pass
         print(json.dumps({'commits': [{'commit': s[:7], 'ct': c, 'date': d, 'subject': j}
                                       for s, c, d, j in log],
                           'states': list(states.values())}, indent=2))
