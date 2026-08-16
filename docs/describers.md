@@ -211,7 +211,7 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Object describer (v3, session 22; `[[SCALE]]` vocabulary settled session 24) — the last describer before the composer
+## Object describer (v3, session 22; `[[SCALE]]` vocabulary settled sessions 24–25) — the last describer before the composer
 
 `prompts/describer_object.txt` — the fourth REF2VA describer role, covering **object / prop /
 clothing** in one prompt. **One thing, durably**: what it permanently is, never how this picture
@@ -314,6 +314,19 @@ catches a consumer that forgets.
 **Status: the vocabulary, the answer key and the corpus exist; `describer_object.txt` does not yet
 implement it.** v3 still emits free text. Writing it in is v4, deliberately sequenced alone.
 
+Three things v4 must do besides writing the rungs in, each easy to miss:
+
+1. **The gauntlet example changes.** `describer_object.txt`'s second example emits
+   `[[SCALE]] worn on the body`. Under the rule it becomes **`small`** (a hand and most of a forearm).
+   Left as-is the model copies the literal, and the example doubles as a free demonstration of the
+   garment rule inside the prompt.
+2. **`validate.py` gains `'SCALE': (<the nine rungs>)`** in the `object` role's `closed` dict. The
+   field is now fully closed — there is no tenth legal value, because the garment carve-out is gone.
+   `no_digits` on `SCALE` then becomes redundant but harmless.
+3. **Grep the finished prompt** for `a person`, `a human`, `someone` and `a child` in rung *bounds* —
+   and then, because that grep is exactly what missed the garment defect, check the property by laying
+   cases against the text rather than trusting the grep. See `L-VERIFY-THE-PROPERTY-NOT-THE-WORDING`.
+
 **Why close it at all.** A paper pre-test mapped the v3 round's 24 free-text answers onto candidate
 buckets at zero model cost, and the result decided it: **`"larger than a person"` alone carried 10
 of 24** — a Kaypro, a CRT TV, a cannon, four cars, a sofa and a van. Four distinct sizes collapsed
@@ -371,9 +384,80 @@ Rules 1–3 are one lesson, `L-A-RUNG-BOUND-MUST-BE-A-FIXED-SIZE`.
 above one. The rejected alternative was coupe-`large` / SUV-`huge`, a **fine and confusable**
 discrimination of the kind that forced the `puppet`/`figure` merge.
 
-**Garments now take their WEARER's size**, superseding v3's fixed `"worn on the body"`. That value
-was 15/15 consistent, so it is traded for informativeness **deliberately** — watch it for the drift
-the fixed value removed.
+#### Garments — the region rule (settled session 25)
+
+Session 24 replaced v3's fixed `"worn on the body"` with *"garments take their **wearer's** size"*.
+**That is not a size — it is a pointer to a different object.** A sock's wearer is an adult; the sock
+is not adult-sized. The clause silently assumed every garment covers a whole adult, so it keyed all 15
+garment rows `medium` and discarded variation that is real, visible and permanent.
+
+It was the **fourth instance of the same defect class** in this one vocabulary, and the worst-caught:
+session 24 hunted for exactly this and reported the ladder CLEAN, because the check was a grep for
+*"a person" / "a human" / "someone" / "a child"* — and the clause said **`WEARER`**, a word the grep
+did not know. That is `L-VERIFY-THE-PROPERTY-NOT-THE-WORDING`.
+
+**The settled rule: a garment is sized by the part of the body it is cut to cover, on the body it is
+cut for** — not by the fabric's bulk, and not by whoever happens to wear it in this picture.
+
+This is **not a carve-out.** It adds no term, no tenth value and no second axis: a covered body region
+*is* a fraction of an adult body, so garments and objects ride the same ruler. It is a *pointing* rule,
+the same shape as the one `[[SCALE]]` already carries (*"describes the physical thing photographed,
+never what it depicts"*).
+
+| covers, on an adult body | rung | examples |
+|---|---|---|
+| a hand or a foot | `tiny` | a glove, an ankle sock |
+| a foot and calf, a head, or a forearm's worth | `small` | a knee sock, a shoe, a hat |
+| the upper torso, the lower torso, and/or the legs — **but not the whole body** | `modest` | a t-shirt, a vest top, a polo, a one-piece swimsuit, shorts, trousers, a skirt, a jacket |
+| **essentially the whole body** | `medium` | a jumpsuit, a full-length coat, a uniform, a suit of armour |
+
+**The seam is whole-body vs not, and it is deliberately coarse.** A t-shirt covers the upper torso, a
+swimsuit covers upper *and* lower, trousers cover the lower torso *and* the legs — all three are
+`modest`. Only torso **and** legs together reaches `medium`. **Fabric quantity never enters**, which is
+why the swimsuit is `modest` alongside the t-shirt despite far less cloth. The rejected alternative —
+sizing the article itself, laid flat — needs a convention the model must apply by imagination to every
+*worn* garment, and it mis-sizes voluminous cuts (a ballgown is not `large`).
+
+**Rung bounds apply by the letter at the bottom.** A fingerless glove is hand-sized → `tiny`; a knee
+sock is a foot-and-calf tube and a sneaker is longer than an open hand → both `small`. The rejected
+reading, *"a foot is about a hand, so all footwear is `tiny`"*, would have keyed a thigh boot the same
+as an ankle sock — the fabric-vs-region tension reappearing at the bottom of the ladder instead of the
+middle.
+
+**And on whose body.** This reuses the **existing closed age vocabulary** (`docs/image_inventory.md`
+§ *The tokens*; `validate.py`'s `AGE_PERSON`, which `inventory.py` asserts against), split at one
+boundary:
+
+- `teenager` · `young adult` · `adult` · `middle-aged` · `older adult` → **one adult size.** Age above
+  the teenage line never changes the rung. This is load-bearing, not theoretical: **6 of the 15 garment
+  rows are Kasia, whom the corpus records as `teenager`.**
+- `pre-teen` · `child` · `toddler` · `infant` → **judged on that smaller body, against the same rungs.**
+  Sub-teen bodies *compress* the region distinctions — a whole-body garment lands `small` and a top
+  lands `small` too. That compression is a real property of the rule, not a defect.
+
+> **This clause must use the word "child", which rung definitions ban.** The ban applies to rung
+> *bounds*, where "smaller than a person" silently admits "smaller than a toddler" and inverts
+> `modest`/`medium`. Here "child" names a body bracket **explicitly**, which is the opposite failure
+> mode. Do not "fix" it back.
+
+What the two halves buy together:
+
+| garment | region | adult / teen body | sub-teen body |
+|---|---|---|---|
+| a top | upper torso | `modest` — Kasia's vest, the man's polo | `small` — the toddler's floral top |
+| whole-body | everything | `medium` — jumpsuit, trench coat, uniform | `small` — the infant's bodysuit |
+
+**`baby_middle_aged` is the sharpest case in the corpus for this**: one photograph, an infant and a
+middle-aged man, a describable garment on each, with medium, lighting and presentation held constant so
+the *only* variable is whose body. Note the inversion it tests — the infant garment covers **more** of
+its body yet keys **lower** than the adult garment covering less. A model reading region while ignoring
+body size gets it exactly backwards.
+
+**Cost of the change:** 8 of the 15 garment rows in the main object test's ground truth moved `medium`
+→ `modest` (swimsuit ×3, black top ×3, grey t-shirt, and the `april_fanart` cropped jacket). The scale
+test needed **no key edits at all** — its two garments, `obsc_jumpsuit_real` (whole body, adult) and
+`obsc_april_figure` (`{tiny | medium}`), survive the repair unchanged, which is the strongest evidence
+that this is the correct statement of what session 24 already meant rather than a new design.
 
 #### The depiction case — resolved, and no longer moot
 
@@ -382,9 +466,10 @@ the fixed value removed.
 depicted-scale reading (person-sized) as a stubborn alternative likely to return.
 
 Under v3 that fixture was **moot** — the jumpsuit classified as a `garment` either way and took the
-fixed garment value, so the disagreement had nowhere to show. **Making garments take their wearer's
-size removes the escape hatch**, and the case becomes live and scorable, which is an argument for
-the change rather than against it.
+fixed garment value, so the disagreement had nowhere to show. **Putting garments on the ladder removes
+the escape hatch**, and the case becomes live and scorable, which is an argument for the change rather
+than against it. Under the region rule it resolves the same way and slightly more crisply: the physical
+reading measures a moulded figure's tiny body, the depiction reading an adult's.
 
 It is now an **accept-set `{tiny | medium}`** in `tests/describer_object_scale.json`, `tiny` primary
 — `docs/image_inventory.md` classifies that file `stop-motion / figure` *"classified by the
@@ -415,10 +500,29 @@ share of frame.
 
 #### Where the key lives
 
-`tests/describer_object_scale.json` — 27 cases, `"_gate": "enriched"`, full `_expected` on
+`tests/describer_object_scale.json` — **43 cases**, `"_gate": "enriched"`, full `_expected` on
 `[[SCALE]]`. Score with `--fields SCALE`. Eleven cases are imported from the main object test and
 were keyed **independently twice** (the user's session-22 ground-truth fill-in, and the ladder's rung
-definitions); **all eleven agree**.
+definitions); **all eleven agree**. Sixteen more were added in session 25 to exercise the garment rule
+— ids prefixed `obsc_g_`, keyed strictly, `tiny ×3 · small ×8 · modest ×5`, all on corpus files that
+already existed.
+
+Two **presentation-drift blocks** sit inside it, in different media families, each keyed identically
+across its members so drift scores as a *miss* rather than needing an eye: Kasia's gloves and vest top
+as flat-lay photograph / 2D cel / 3D CG, and the sailor-uniform knee socks as photograph / anime
+painting / painterly. They are what catch a model sizing the **fabric as presented** rather than the
+region. Read them as blocks — one garment moving is noise, a whole block moving is the fabric reading
+asserting itself.
+
+**No `SUBJECT:` line in a garment case may name who wears the thing** — `the white bodysuit`, never
+`the infant's bodysuit`. Naming the wearer hands the model the body-size answer, which is the whole
+thing under test, and it is the same leak as the v2 subject-supplies defect.
+
+Deliberately **not** used, and why: the eleven-file **`mathilda`** set sits on exactly the
+`pre-teen`/`teenager` cutoff this rule turns on, so a failure there could not be told apart from a
+disputed age ruling — revisit once the rule has a clean round behind it, when it becomes the sharpest
+boundary probe available. **`coraline1`** is a stop-motion puppet and would confound the depiction rule
+with the body-size one. **`annie1`** is `teenager` (redundant with Kasia) and franchise-flagged.
 
 ## Style describer — LOCKED session 20 at look v3 + class v4e
 

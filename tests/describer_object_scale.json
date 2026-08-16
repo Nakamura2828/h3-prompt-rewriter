@@ -22,15 +22,27 @@
 
   "_watched_seam": "modest/medium, via obsc_modest_1 and obsc_modest_2. TODO.md named small/modest/medium as the ladder's weakest seam before any of these images existed: in ordinary English 'modest' and 'medium' both mean middling, and the model has a strong D&D prior for every term EXCEPT modest. Both cases have a CHILD sitting in the vehicle, which is the nearest human reference in frame and invites 'fits a child -> person-sized -> medium'. They are keyed STRICTLY, with no accept-set, deliberately: pre-forgiving a failure not yet observed would violate L-AN-ACCEPT-SET-IS-A-HYPOTHESIS and would leave `modest` with only obsc_kaypro as a strict sample. IF BOTH MISS TO `medium`, that is the vocabulary failing and it is one finding, not two bad cases.",
 
-  "_vehicle_bias": "16 of the 27 cases are the session-24 batch, and they are almost all red vehicles. That uniformity is the point -- it holds subject family and colour constant so that size is the only variable -- but it means a pass on them evidences nothing about a microwave, a suitcase or a banknote. The eleven imported cases (obsc_phone, obsc_banknote, obsc_cereal_box, obsc_kaypro, obsc_chair, obsc_wheelie_bin, obsc_cannon, obsc_car_1, obsc_car_2, obsc_jumpsuit_real, obsc_april_figure) are the ONLY non-vehicle evidence in the file. Read them as the generalisation check.",
+  "_vehicle_bias": "16 of the 43 cases are the session-24 batch, and they are almost all red vehicles. That uniformity is the point -- it holds subject family and colour constant so that size is the only variable -- but it means a pass on them evidences nothing about a microwave, a suitcase or a banknote. The non-vehicle evidence is the eleven session-24 imports (obsc_phone, obsc_banknote, obsc_cereal_box, obsc_kaypro, obsc_chair, obsc_wheelie_bin, obsc_cannon, obsc_car_1, obsc_car_2, obsc_jumpsuit_real, obsc_april_figure) plus the sixteen session-25 garment cases (obsc_g_*). Read those as the generalisation check. Note the two halves check different things: the imports spread across the OBJECT rungs, while the garment block is the only GARMENT evidence below `medium` -- before session 25 this file's only garments were obsc_jumpsuit_real and obsc_april_figure, both at the top of the garment range. `minuscule` still has exactly one case in the file and no garment at all.",
 
-  "_large_is_oversampled_on_purpose": "Seven of 27 cases key `large`. That is deliberate: `large` is the pivot the whole ladder is defined against, since `huge` means 'bigger than a car'. obsc_car_1 and obsc_car_2 are strict controls and are ALSO an existing same-object angle pair (the corpus's `car-angle` probe), so they double as a drift check -- one object, two viewpoints, and [[SCALE]] must not move. obsc_cannon is WATCHED rather than a control: the user places it on the small side of `large`, and it is the rung's only non-vehicle sample.",
+  "_large_is_oversampled_on_purpose": "Seven of 43 cases key `large` -- 26 percent of the file before session 25, 16 percent after the sixteen garment cases diluted it. The oversampling is therefore weaker than it was, and if `large` ever needs to be the dominant rung again that is a reason to split the garment block into its own file rather than to add more cars. The oversampling is deliberate: `large` is the pivot the whole ladder is defined against, since `huge` means 'bigger than a car'. obsc_car_1 and obsc_car_2 are strict controls and are ALSO an existing same-object angle pair (the corpus's `car-angle` probe), so they double as a drift check -- one object, two viewpoints, and [[SCALE]] must not move. obsc_cannon is WATCHED rather than a control: the user places it on the small side of `large`, and it is the rung's only non-vehicle sample.",
 
   "_world_knowledge_ruling": "obsc_banknote and obsc_phone are isolated shots with little in frame to judge size against. Under a closed ladder they are `tiny` because we know what banknotes and phones ARE, not because the pixels show it. That is a deliberate ruling: [[SCALE]] is a TYPE judgement where the frame offers no reference, which is what stops 'not determinable' absorbing every isolated shot (it took 4 of 24 in the v3 round). It does NOT license depiction-over-physical -- see _depiction_vs_physical, which is a separate rule.",
 
   "_depiction_vs_physical": "The open question, and the ONLY place it arises in the corpus. obsc_april_figure is a photograph of moulded figures; obsc_jumpsuit_real is the same garment on a full-size adult. The standing rule (describe the thing actually photographed) and the corpus both favour `tiny`, so `tiny` is primary and `medium` is forgiven. obsc_jumpsuit_real is the strict control that keeps the set honest: it is the SAME SUBJECT LINE on an unambiguously adult-worn garment, so if the accept-set is quietly collapsing the distinction it will show up there.",
 
-  "_garments_take_their_wearer": "Under the ladder a garment takes its WEARER's size, superseding v3's fixed 'worn on the body'. That fixed value was 15/15 consistent in the v3 round, so it is being traded for informativeness DELIBERATELY -- watch obsc_jumpsuit_real for the drift the fixed value used to remove.",
+  "_garment_rule": "A garment is sized by the PART OF THE BODY IT IS CUT TO COVER, on the body it is cut for -- not by the fabric's bulk, and not by whoever happens to wear it in this picture. This is not a carve-out: a covered body region is a fraction of an adult body, which is the ladder's existing axis, so garments and objects ride the same ruler and no tenth value exists. It is a POINTING rule, the same shape as the one [[SCALE]] already carries ('describes the physical thing photographed, never what it depicts'). On an adult body: a hand or a foot -> tiny (a glove, an ankle sock); a foot and calf, a head, or a forearm's worth -> small (a knee sock, a shoe, a hat); the upper torso, the lower torso and/or the legs but NOT the whole body -> modest (a t-shirt, a vest top, a polo, a one-piece swimsuit, shorts, trousers, a skirt, a jacket); essentially the WHOLE body -> medium (a jumpsuit, a full-length coat, a uniform, a suit of armour). THE SEAM IS WHOLE-BODY VS NOT, AND IT IS DELIBERATELY COARSE: a t-shirt covers the upper torso, a swimsuit covers upper AND lower, trousers cover the lower torso AND the legs -- all three are modest. Only torso and legs together reaches medium. Fabric quantity never enters, which is why the swimsuit is modest alongside the t-shirt despite far less cloth.",
+
+  "_garment_body_size": "The rung is taken on THE BODY THE GARMENT IS CUT FOR, using the existing closed age vocabulary (docs/image_inventory.md 'The tokens', nine brackets, imported by inventory.py from validate.py's AGE_PERSON). `teenager` / `young adult` / `adult` / `middle-aged` / `older adult` are ONE adult size -- age above the teenage line never changes the rung. That clause is load-bearing rather than theoretical: six of the main object test's fifteen garment rows are Kasia, whom the corpus records as `teenager`. `pre-teen` / `child` / `toddler` / `infant` are judged on that smaller body, against the same rungs. Sub-teen bodies COMPRESS the region distinctions -- a whole-body garment lands `small` and a top lands `small` too. That compression is a real property of the rule, not a defect, and it is why the toddler image's value is the CROSS-image pair with obsc_g_top_flat rather than an internal one. NOTE THAT THIS RULE MUST USE THE WORD 'child', WHICH RUNG DEFINITIONS BAN: the ban recorded in _every_comparison_is_to_an_adult applies to rung BOUNDS, where 'smaller than a person' silently admits 'smaller than a toddler' and inverts modest/medium. Here 'child' names a body bracket explicitly, which is the opposite failure mode. Do not 'fix' it.",
+
+  "_garment_rule_replaced_a_defect": "Session 25. The session-24 ladder said 'garments take their WEARER's size (medium for an adult)'. THAT IS NOT A SIZE -- it is a pointer to a different object. A sock's wearer is an adult; the sock is not adult-sized; an adult's t-shirt is roughly half an adult's bulk. The clause silently assumed every garment covers a whole adult, throwing away variation that is real, visible and permanent. THE DAMAGE WAS IN THE OTHER TEST, NOT THIS ONE: the fifteen garment rows it keyed uniformly `medium` are the ground truth for tests/describer_object.json, staged in the session-22 handoff table, and eight of those fifteen moved to `modest` in session 25. It is the FOURTH instance of the L-A-RUNG-BOUND-MUST-BE-A-FIXED-SIZE defect class in this one vocabulary, and the worst-caught of the four: session 24 hunted for exactly this defect and declared the ladder CLEAN, because the check was a grep for 'a person' / 'a human' / 'someone' / 'a child' and the garment clause said WEARER -- the same failure in a word the grep did not know. See L-VERIFY-THE-PROPERTY-NOT-THE-WORDING. The two pre-existing garment cases (obsc_jumpsuit_real, obsc_april_figure) survive the repair UNCHANGED, so only the prose was ever wrong, not the key.",
+
+  "_garment_minimal_pairs": "Three pairs carry the rule, and they are what to read first. (1) BODY SIZE, SAME IMAGE -- obsc_g_infant_bodysuit `small` against obsc_g_adult_polo `modest`: ONE photograph, two garments, one rung apart, with medium, lighting and presentation all held constant so the only variable is whose body. Note the inversion it tests: the infant garment covers MORE of its body yet keys LOWER than the adult garment covering less, so a model reading region while ignoring body size gets this exactly backwards. (2) BODY SIZE, CROSS-IMAGE -- obsc_g_toddler_top `small` against obsc_g_top_flat `modest`: the same garment type (a top, upper torso) on a toddler and on a teenager. (3) REGION, SAME IMAGE -- obsc_g_gloves_flat `tiny` through obsc_g_shorts_flat `modest`: five garments off ONE flat-lay spanning three rungs, holding wearer, medium and presentation constant so that only the covered region varies.",
+
+  "_garment_presentation_drift": "Two blocks, deliberately in different media families, both keyed identically to their flat or photographic partner so that drift scores as a MISS rather than needing an eye. KASIA: obsc_g_{gloves,top}_{flat,cel,render} -- the same two garments as flat-lay photograph, 2D cel and 3D CG. UNIFORM: obsc_g_usocks_{photo,anime,painterly} -- knee socks as photograph, anime painting and painterly painting. These are what catch a model sizing the FABRIC AS PRESENTED rather than the region, which is the failure the fabric-bulk reading of the garment rule was rejected for, and nothing else in this file tests it. READ THEM AS BLOCKS: one garment moving between presentations is noise; a whole block moving is that reading asserting itself.",
+
+  "_subject_lines_must_not_name_the_wearer": "NO `SUBJECT:` LINE IN A GARMENT CASE MAY NAME WHO WEARS THE THING. It is `the white bodysuit`, never `the infant's bodysuit`; `the corduroy dungarees`, never `the toddler's dungarees`. Naming the wearer hands the model the body-size answer, which is the whole thing under test. It is also the same leak as the v2 subject-supplies defect that describer_object.txt's 'THE SUBJECT LINE SELECTS; IT NEVER SUPPLIES' section was written to fix. Select by colour or material only, and check this before adding any further garment case here.",
+
+  "_garment_watched_seams": "For the first scored round. (1) THE FLAT-LAY HAS NO BODY IN FRAME -- kasia_outfit is a flat-lay, so the model must infer the body from the garment's own cut alone. That is the honest hard case for the body-size clause, and where it should fail first if it fails at all. (2) obsc_g_shoes_flat SITS ON THE tiny/small BOUND -- a teen sneaker is only a little past an open adult hand. Missing to `tiny` alone is one case; missing together with obsc_g_socks_flat makes the bottom BOUND the finding rather than the two cases. (3) The reading rejected at the bottom was 'a foot is about a hand, so all footwear is tiny', which would have keyed a thigh boot the same as an ankle sock -- the fabric-vs-region tension reappearing at the bottom of the ladder instead of the middle.",
 
   "defaults": {
     "server": "http://localhost:8080/v1/chat/completions",
@@ -89,7 +101,27 @@
       "expect": "tiny | medium",
       "why": "depiction vs physical. `tiny` under the standing rule (the moulded figures actually photographed) and per docs/image_inventory.md, which classifies this file stop-motion / figure 'classified by the objects'. `medium` is forgiven for the reading that treats it as an in-scale diorama element depicting an adult. Anything else -- small, modest, large -- is still a miss.",
       "control": ["obsc_phone", "obsc_jumpsuit_real"]
-    }
+    },
+
+    "obsc_g_gloves_flat": "tiny",
+    "obsc_g_socks_flat": "small",
+    "obsc_g_shoes_flat": "small",
+    "obsc_g_top_flat": "modest",
+    "obsc_g_shorts_flat": "modest",
+
+    "obsc_g_gloves_cel": "tiny",
+    "obsc_g_top_cel": "modest",
+    "obsc_g_gloves_render": "tiny",
+    "obsc_g_top_render": "modest",
+
+    "obsc_g_infant_bodysuit": "small",
+    "obsc_g_adult_polo": "modest",
+    "obsc_g_toddler_top": "small",
+    "obsc_g_toddler_dungarees": "small",
+
+    "obsc_g_usocks_photo": "small",
+    "obsc_g_usocks_anime": "small",
+    "obsc_g_usocks_painterly": "small"
   },
 
   "cases": [
@@ -262,6 +294,106 @@
       "id": "obsc_april_figure",
       "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
       "image": "images/april_1987_figure.jpg"
+    },
+
+    {
+      "group": "garment region, adult-scale (flat-lay, no body in frame)",
+      "id": "obsc_g_gloves_flat",
+      "user": "SUBJECT: the fingerless gloves\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+    {
+      "group": "garment region, adult-scale (flat-lay, no body in frame)",
+      "id": "obsc_g_socks_flat",
+      "user": "SUBJECT: the striped knee socks\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+    {
+      "group": "garment region, adult-scale (flat-lay, WATCHED tiny/small bound)",
+      "id": "obsc_g_shoes_flat",
+      "user": "SUBJECT: the lace-up sneakers\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+    {
+      "group": "garment region, adult-scale (flat-lay, no body in frame)",
+      "id": "obsc_g_top_flat",
+      "user": "SUBJECT: the black vest top\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+    {
+      "group": "garment region, adult-scale (flat-lay, no body in frame)",
+      "id": "obsc_g_shorts_flat",
+      "user": "SUBJECT: the denim shorts\nROLE: object",
+      "image": "images/kasia_outfit.png"
+    },
+
+    {
+      "group": "garment presentation drift: same two garments, flat-lay / 2D cel / 3D CG",
+      "id": "obsc_g_gloves_cel",
+      "user": "SUBJECT: the fingerless gloves\nROLE: object",
+      "image": "images/kasia.png"
+    },
+    {
+      "group": "garment presentation drift: same two garments, flat-lay / 2D cel / 3D CG",
+      "id": "obsc_g_top_cel",
+      "user": "SUBJECT: the black vest top\nROLE: object",
+      "image": "images/kasia.png"
+    },
+    {
+      "group": "garment presentation drift: same two garments, flat-lay / 2D cel / 3D CG",
+      "id": "obsc_g_gloves_render",
+      "user": "SUBJECT: the fingerless gloves\nROLE: object",
+      "image": "images/kasia_render.png"
+    },
+    {
+      "group": "garment presentation drift: same two garments, flat-lay / 2D cel / 3D CG",
+      "id": "obsc_g_top_render",
+      "user": "SUBJECT: the black vest top\nROLE: object",
+      "image": "images/kasia_render.png"
+    },
+
+    {
+      "group": "garment body size: ONE photograph, two garments, one rung apart",
+      "id": "obsc_g_infant_bodysuit",
+      "user": "SUBJECT: the white bodysuit\nROLE: object",
+      "image": "images/baby_middle_aged.jpg"
+    },
+    {
+      "group": "garment body size: ONE photograph, two garments, one rung apart",
+      "id": "obsc_g_adult_polo",
+      "user": "SUBJECT: the grey polo shirt\nROLE: object",
+      "image": "images/baby_middle_aged.jpg"
+    },
+    {
+      "group": "garment body size: sub-teen body",
+      "id": "obsc_g_toddler_top",
+      "user": "SUBJECT: the floral long-sleeved top\nROLE: object",
+      "image": "images/toddler.jpg"
+    },
+    {
+      "group": "garment body size: sub-teen body",
+      "id": "obsc_g_toddler_dungarees",
+      "user": "SUBJECT: the corduroy dungarees\nROLE: object",
+      "image": "images/toddler.jpg"
+    },
+
+    {
+      "group": "garment presentation drift: knee socks, photograph / anime painting / painterly",
+      "id": "obsc_g_usocks_photo",
+      "user": "SUBJECT: the knee socks\nROLE: object",
+      "image": "images/uniform_reference_photo.jpg"
+    },
+    {
+      "group": "garment presentation drift: knee socks, photograph / anime painting / painterly",
+      "id": "obsc_g_usocks_anime",
+      "user": "SUBJECT: the knee socks\nROLE: object",
+      "image": "images/uniform_reference_anime.jpg"
+    },
+    {
+      "group": "garment presentation drift: knee socks, photograph / anime painting / painterly",
+      "id": "obsc_g_usocks_painterly",
+      "user": "SUBJECT: the knee socks\nROLE: object",
+      "image": "images/uniform_reference_painterly.jpg"
     }
   ]
 }
