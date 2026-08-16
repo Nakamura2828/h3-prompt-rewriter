@@ -211,7 +211,7 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Object describer (v3, session 22) — the last describer before the composer
+## Object describer (v3, session 22; `[[SCALE]]` vocabulary settled session 24) — the last describer before the composer
 
 `prompts/describer_object.txt` — the fourth REF2VA describer role, covering **object / prop /
 clothing** in one prompt. **One thing, durably**: what it permanently is, never how this picture
@@ -304,19 +304,121 @@ catches a consumer that forgets.
   emitted `[[KIND]] a pair of slippers` *and* `[[SUBJECT NOT FOUND]] the slippers`, and dropped
   `[[DEFINITION]]`. The telephone probe next to it passed, so the garment direction is the harder
   one.
-- **`[[SCALE]]` may not survive.** Fixed to `"worn on the body"` for garments (15/15 consistent
-  after v2), but the user's view is that the object side has little to test it on beyond the
-  figures, and dropping it later is live.
+- **`[[SCALE]]` was in doubt at v3.** Fixed to `"worn on the body"` for garments (15/15 consistent
+  after v2), but the object side had little to test it on beyond the figures, and dropping it was
+  live. **Resolved the other way in session 24** — the field is saved by *closing* its vocabulary.
+  See the next section.
 
-### The watched depiction case
+### `[[SCALE]]` — the nine-term size ladder (settled session 24, not yet in the prompt)
 
-`[[SCALE]]` describes the physical thing photographed, never what it depicts — a toy is toy-sized.
-`april_1987_figure` answered `forearm-length` in v2, the intended answer. **The user flagged the
-depicted-scale reading (person-sized) as a stubborn alternative likely to return**; it is currently
-moot on that fixture because the jumpsuit classifies as a `garment` either way and takes the fixed
-garment value. The family where it can genuinely arise is `stop-motion / figure` — `lego1`,
-`lego2`, `coraline1`, `coraline2`, `skellington`, `rudolf`, `laika`, `pjs` — none of them in this
-test yet.
+**Status: the vocabulary, the answer key and the corpus exist; `describer_object.txt` does not yet
+implement it.** v3 still emits free text. Writing it in is v4, deliberately sequenced alone.
+
+**Why close it at all.** A paper pre-test mapped the v3 round's 24 free-text answers onto candidate
+buckets at zero model cost, and the result decided it: **`"larger than a person"` alone carried 10
+of 24** — a Kaypro, a CRT TV, a cannon, four cars, a sofa and a van. Four distinct sizes collapsed
+into one phrase, so the field could not be wrong *legibly*. The same pass found `ob_bag_1` and
+`ob_bag_2` answering `forearm-length` and `hand-sized` for one object at two angles.
+
+**One axis: bulk compared to an adult body.** The bottom four rungs use the hand and forearm as
+**rulers**; the top five use the whole adult body.
+
+| rung | from | to | exemplars |
+|---|---|---|---|
+| `minuscule` | — | fits inside a **closed adult fist** | a coin, a key, a ring |
+| `tiny` | — | no bigger than an **open adult hand** | a phone, a banknote |
+| `small` | bigger than a hand | about a **forearm** | a cereal box, a frying pan, a shoulder bag, a portable radio |
+| `modest` | bigger than a forearm | **plainly less bulk than an adult body** | a suitcase, a tower computer, a microwave, an end table, a small dining chair, a child's ride-on car |
+| `medium` | **comparable to an adult body** — ~¾ adult height or more, or big enough to enclose or seat one adult | | an adult human, an executive office chair, a wheelie bin, a bumper car |
+| `large` | clearly more than one adult | **up to a car** | any car, a sofa, a horse |
+| `huge` | **bigger than a car** | **smaller than a house** | a van, a lorry, a bus |
+| `gargantuan` | **a house** | up to a large building | an apartment block, a ship, an airliner |
+| `colossal` | **bigger than any ordinary building** | — | a skyscraper, a mountain |
+
+Four rules carry the design, and **every one of them comes from a defect found only when real
+images were mapped onto the draft.** None was visible while the ladder was a list of words. That is
+the transferable finding here, and it is why the key was built before the prompt.
+
+**1. No rung is defined by how a thing is HELD.** The draft read `small` as *"needs two adult
+hands"* and `modest` as *"carried with both arms"*. That is an **affordance, not a size**: a frying
+pan spans about two hands but has a handle and is held with one; a cereal box likewise; a suitcase
+needs both arms without a handle and one with. Worse, it **contradicts this role's own headline
+rule** — the prompt bans recording how a thing is shown and names *"held, carried"* explicitly, so
+the model would have been told never to note how a thing is held and then asked to size it by
+exactly that. The bottom rungs use the hand and forearm as **rulers**, never as grips.
+
+**2. Every comparison is to an ADULT.** The words *"a person"*, *"a human"* (unqualified),
+*"someone"* and *"a child"* must never appear in a rung definition. A child **is** a person, so
+"plainly smaller than a person" silently admits "smaller than a toddler" — which **inverts** the
+`modest`/`medium` boundary. The two cases that force that boundary are the ones with a child sitting
+in the vehicle, so the failure would have landed exactly where it was hardest to see.
+
+**3. Every boundary is named from both sides, by the same object.** *A car* closes `large` and opens
+`huge`; *a house* closes `huge` and opens `gargantuan`. The draft defined the bottom rungs by
+physical reference and the top rungs by **occupancy count**, leaving `huge` with a floor and no
+ceiling at all, and making `gargantuan`'s "holds hundreds of adults" contradict its own "a house"
+exemplar — where hundreds would be a crush. **Occupancy is a tell, never a definition.**
+
+**4. Occupancy is the tell, bulk is the axis.** *"Could an adult be enclosed or seated by it"*
+decides hollow things; solid things go on comparable bulk. This separates a **small dining chair**
+(seats an adult, nowhere near their bulk → `modest`) from an **executive office chair** (≈ ¾ adult
+height and encloses one → `medium`). A pure occupancy test fails that pair; a pure *height* test
+fails the bumper car, which is adult-**length** but low.
+
+Rules 1–3 are one lesson, `L-A-RUNG-BOUND-MUST-BE-A-FIXED-SIZE`.
+
+**`large`/`huge` keeps a statable test** — `large` tops out at a car, any body style; `huge` begins
+above one. The rejected alternative was coupe-`large` / SUV-`huge`, a **fine and confusable**
+discrimination of the kind that forced the `puppet`/`figure` merge.
+
+**Garments now take their WEARER's size**, superseding v3's fixed `"worn on the body"`. That value
+was 15/15 consistent, so it is traded for informativeness **deliberately** — watch it for the drift
+the fixed value removed.
+
+#### The depiction case — resolved, and no longer moot
+
+`[[SCALE]]` describes the physical thing photographed, never what it depicts: a toy is toy-sized.
+`april_1987_figure` answered `forearm-length` in v2, the intended reading, and the user flagged the
+depicted-scale reading (person-sized) as a stubborn alternative likely to return.
+
+Under v3 that fixture was **moot** — the jumpsuit classified as a `garment` either way and took the
+fixed garment value, so the disagreement had nowhere to show. **Making garments take their wearer's
+size removes the escape hatch**, and the case becomes live and scorable, which is an argument for
+the change rather than against it.
+
+It is now an **accept-set `{tiny | medium}`** in `tests/describer_object_scale.json`, `tiny` primary
+— `docs/image_inventory.md` classifies that file `stop-motion / figure` *"classified by the
+objects"* — with `medium` forgiven for the in-scale-diorama reading. Its strict controls, required by
+`L-AN-ACCEPT-SET-IS-A-HYPOTHESIS`, are `obsc_phone` (unambiguously `tiny`, no depiction reading
+available) and `obsc_jumpsuit_real` (**the same garment and the same `SUBJECT:` line** on a
+full-size adult). The wider family where the split can arise is `stop-motion / figure` — `lego1`,
+`lego2`, `coraline1`, `coraline2`, `skellington`, `rudolf`, `laika`, `pjs` — none in either test yet.
+
+**Keep two rules apart here.** *World knowledge may determine physical size* when the frame offers
+no reference — a banknote is `tiny` because banknotes are hand-sized, and that is what stops
+`not determinable` absorbing every isolated shot (it took 4 of 24 in the v3 round). *Depiction vs
+physical* is a different question and applies only to miniatures, models and figures. Conflating
+them was a live error during the session-23 design and is corrected on the record.
+
+#### `colossal` has no sample, deliberately
+
+Everything colossal is terrain or architecture, which `describer_setting` owns; the only conceivable
+filler is a sci-fi spaceship, with no real-world example — even the ISS reads `gargantuan`.
+Admissible under `docs/image_inventory.md` § "Adding a term the corpus cannot exercise", whose
+precondition is a **statable** tell, and here it is: "bigger than any ordinary building".
+
+The same reasoning is why `car_building_gargantuan` and `car_mountain_colossal` are keyed **`large`**
+rather than by their filenames: a palace is a place and a mountain is terrain, so asking this role to
+describe either contradicts its own `WHAT YOU LEAVE OUT` rule. They probe instead that an enormous
+backdrop does not drag `[[SCALE]]` up a ladder anchored on absolute adult comparison rather than on
+share of frame.
+
+#### Where the key lives
+
+`tests/describer_object_scale.json` — 27 cases, `"_gate": "enriched"`, full `_expected` on
+`[[SCALE]]`. Score with `--fields SCALE`. Eleven cases are imported from the main object test and
+were keyed **independently twice** (the user's session-22 ground-truth fill-in, and the ladder's rung
+definitions); **all eleven agree**.
 
 ## Style describer — LOCKED session 20 at look v3 + class v4e
 
