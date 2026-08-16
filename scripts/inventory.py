@@ -105,8 +105,16 @@ FLAGS = {"text", "real", "franchise", "derived", "corr", "nested"}
 LIVE_ACTION = {"photograph", "live-action film"}
 NONE = {"none", "—", "-", ""}
 # Named here only so the tally caption can keep reporting the honest live-action range now that
-# the flag that used to identify them is gone. Not a flag, not a vocabulary -- just three names.
-AMB_LEGACY = ["chair", "car_1", "car_2"]
+# the flag that used to identify them is gone. Not a flag, not a vocabulary -- just a list of
+# names whose `photograph` classification rests on provenance the pixels do not show.
+#
+# Session 24 added the last two and renamed the list off `AMB_LEGACY`: the first three are the
+# retired flag's legacy, but the set itself is not legacy and grows whenever such an image
+# arrives. `car_building_gargantuan` and `car_mountain_colossal` are photoreal AI, which is the
+# same epistemic situation as a studio product shot -- two careful readers disagreed about
+# `car_building_gargantuan` in the session it was added, which is the definition of the case.
+PROVENANCE_ONLY = ["chair", "car_1", "car_2",
+                   "car_building_gargantuan", "car_mountain_colossal"]
 
 # Footnote markers in the generated tally, driven by flags rather than hand-annotation.
 MARKERS = [("nested", r"\*\*")]
@@ -278,10 +286,13 @@ def build_tally(master):
     out += ["", (
         f"**Total {n}.** Live-action (`photograph` + `live-action film`) is "
         f"**{len(la)} of {n}, {round(100 * len(la) / n)}%** — down from 29/37, 78% at the start "
-        f"of session 7. Three of those ({', '.join('`%s`' % x for x in AMB_LEGACY)}) are clean "
-        f"studio product shots filed as `photograph` on provenance the pixels do not show, so "
-        f"the honest range is {len(la) - len(AMB_LEGACY)}–{len(la)}. They carried an `amb` flag "
-        f"until session 19; the ruling is now an accept-set in `_expected` instead."
+        f"of session 7. {len(PROVENANCE_ONLY)} of those "
+        f"({', '.join('`%s`' % x for x in PROVENANCE_ONLY)}) are filed as `photograph` on "
+        f"provenance the pixels do not show — clean studio product shots, and photoreal AI "
+        f"images that read as photographs — so the honest range is "
+        f"{len(la) - len(PROVENANCE_ONLY)}–{len(la)}. The first three carried an `amb` flag "
+        f"until session 19; that flag is retired and every such ruling is now an accept-set "
+        f"in `_expected` instead."
     )]
     return out
 

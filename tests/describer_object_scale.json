@@ -1,0 +1,265 @@
+{
+  "_note": "The [[SCALE]] size-ladder test for describer_object. Built session 24, BEFORE the ladder reaches the prompt -- describer_object v3 still has free-text [[SCALE]] and the fixed 'worn on the body' for garments, so running this against v3 measures the field being replaced and every case will 'miss'. That is expected and is not a signal. The key exists first on purpose: .claude/TODO.md requires the key and the vocabulary be built together rather than the key being retro-fitted to whatever the prompt turned out to say. Score with: python scripts/score.py tests/describer_object_scale.json runs/run-*.txt --fields SCALE",
+
+  "_the_ladder": "Nine terms, ONE axis: human bulk. Hands for the bottom four, adult bodies for the top five. minuscule (lost in a closed adult fist: a coin, a key, a ring) < tiny (fills ONE adult hand: a phone, a banknote) < small (needs TWO adult hands: a cereal box, a frying pan, a shoulder bag) < modest (carried with both arms, DISTINCTLY SMALLER THAN AN ADULT: a suitcase, a tower computer, a microwave, an end table, a small dining chair, a child's ride-on car) < medium (comparable to an adult -- about three-quarters of adult height or more, and bulky enough to enclose or seat one adult: an adult human, an executive office chair, a wheelie bin, a bumper car) < large (bigger than an adult, up to A CAR: any car, a sofa, a horse) < huge (bigger than a car, smaller than A HOUSE: a van, a lorry, a bus) < gargantuan (a house up to a large building: a house, an apartment block, a ship, an airliner) < colossal (bigger than any ordinary building: a skyscraper, a mountain).",
+
+  "_every_comparison_is_to_an_adult": "THE RULE MOST LIKELY TO BE QUIETLY VIOLATED when the ladder is written into the prompt. The words 'a person', 'a human' (unqualified), 'someone' and 'a child' must NEVER appear in a rung definition. A child IS a person, so 'smaller than a person' silently admits 'smaller than a toddler' -- which inverts the modest/medium boundary, and the cases that force that boundary (obsc_modest_1, obsc_modest_2) are precisely the ones with a child in frame. This is L-UNDEFINED-TERMS-READ-AS-OBVIOUS.",
+
+  "_boundaries_are_named_from_both_sides": "Every interior boundary is closed by the same object from below and opened by it from above: A CAR closes large and opens huge; A HOUSE closes huge and opens gargantuan. That is what removes the gap the earlier draft had, where huge had no ceiling at all and gargantuan was defined by an occupancy count ('holds hundreds') that contradicted its own 'a house' exemplar. Occupancy is a TELL, never a definition.",
+
+  "_occupancy_is_a_tell_bulk_is_the_axis": "'Could an adult be enclosed or seated by it' decides hollow things; solid things go on comparable bulk. This is what separates a small dining chair (seats an adult, nowhere near their bulk -> modest) from an executive office chair (about three-quarters of adult height and encloses one -> medium). A pure occupancy test fails that pair. A pure HEIGHT test fails obsc_bumper_car, which is adult-LENGTH but low.",
+
+  "_gate": "enriched",
+  "_gate_why": "Stocked to hit every rung by construction, so the failure rate carries no information about the corpus and the level gate would be meaningless. Gate on MOVEMENT: pass --baseline <previous round of THIS test>. Note there is no baseline yet -- the first scored round establishes one, and its own verdict is 'adjudicate, cap 6' per CLAUDE.md's enriched-first-run rule.",
+
+  "_flagship_pair": "obsc_minuscule and obsc_smart_car are THE SAME CAR MODEL -- a red-over-black two-seat city car -- once as a die-cast toy pinched between finger and thumb, once full size at a kerb. Five rungs apart on visually near-identical subjects. If one pair is worth reading first, it is this one: it isolates physical size from every other cue, and it is the direct test of the standing rule that [[SCALE]] describes the thing actually photographed, never the thing it depicts.",
+
+  "_distractor_pair": "obsc_car_palace and obsc_car_mountain are keyed `large` DELIBERATELY, and this is not a mistake in the filenames. Both images were supplied to exercise gargantuan and colossal, but a palace is a place and a mountain is terrain -- describer_object.txt forbids describing the environment ('Do NOT describe the ENVIRONMENT, background, setting'), and REF2VA's role selector routes both to describer_setting. Asking this role for SUBJECT: the mountain would ask it to break its own rule. So the RED CAR is the subject in each, and what these two now test is that an enormous backdrop does not drag [[SCALE]] up a ladder anchored on absolute adult comparison rather than on share of frame.",
+
+  "_colossal_is_unexercised": "No case keys `colossal`, and probably none ever can in this role: everything colossal is terrain or architecture, which describer_setting owns. The user notes the only conceivable filler is a sci-fi spaceship, with no real-world example -- even the ISS reads gargantuan. This is admissible under docs/image_inventory.md 'Adding a term the corpus cannot exercise', whose precondition is that the tell be STATABLE, and here it is: 'bigger than any ordinary building'. Recorded as a deliberate decision, not an oversight.",
+
+  "_watched_seam": "modest/medium, via obsc_modest_1 and obsc_modest_2. TODO.md named small/modest/medium as the ladder's weakest seam before any of these images existed: in ordinary English 'modest' and 'medium' both mean middling, and the model has a strong D&D prior for every term EXCEPT modest. Both cases have a CHILD sitting in the vehicle, which is the nearest human reference in frame and invites 'fits a child -> person-sized -> medium'. They are keyed STRICTLY, with no accept-set, deliberately: pre-forgiving a failure not yet observed would violate L-AN-ACCEPT-SET-IS-A-HYPOTHESIS and would leave `modest` with only obsc_kaypro as a strict sample. IF BOTH MISS TO `medium`, that is the vocabulary failing and it is one finding, not two bad cases.",
+
+  "_vehicle_bias": "16 of the 27 cases are the session-24 batch, and they are almost all red vehicles. That uniformity is the point -- it holds subject family and colour constant so that size is the only variable -- but it means a pass on them evidences nothing about a microwave, a suitcase or a banknote. The eleven imported cases (obsc_phone, obsc_banknote, obsc_cereal_box, obsc_kaypro, obsc_chair, obsc_wheelie_bin, obsc_cannon, obsc_car_1, obsc_car_2, obsc_jumpsuit_real, obsc_april_figure) are the ONLY non-vehicle evidence in the file. Read them as the generalisation check.",
+
+  "_large_is_oversampled_on_purpose": "Seven of 27 cases key `large`. That is deliberate: `large` is the pivot the whole ladder is defined against, since `huge` means 'bigger than a car'. obsc_car_1 and obsc_car_2 are strict controls and are ALSO an existing same-object angle pair (the corpus's `car-angle` probe), so they double as a drift check -- one object, two viewpoints, and [[SCALE]] must not move. obsc_cannon is WATCHED rather than a control: the user places it on the small side of `large`, and it is the rung's only non-vehicle sample.",
+
+  "_world_knowledge_ruling": "obsc_banknote and obsc_phone are isolated shots with little in frame to judge size against. Under a closed ladder they are `tiny` because we know what banknotes and phones ARE, not because the pixels show it. That is a deliberate ruling: [[SCALE]] is a TYPE judgement where the frame offers no reference, which is what stops 'not determinable' absorbing every isolated shot (it took 4 of 24 in the v3 round). It does NOT license depiction-over-physical -- see _depiction_vs_physical, which is a separate rule.",
+
+  "_depiction_vs_physical": "The open question, and the ONLY place it arises in the corpus. obsc_april_figure is a photograph of moulded figures; obsc_jumpsuit_real is the same garment on a full-size adult. The standing rule (describe the thing actually photographed) and the corpus both favour `tiny`, so `tiny` is primary and `medium` is forgiven. obsc_jumpsuit_real is the strict control that keeps the set honest: it is the SAME SUBJECT LINE on an unambiguously adult-worn garment, so if the accept-set is quietly collapsing the distinction it will show up there.",
+
+  "_garments_take_their_wearer": "Under the ladder a garment takes its WEARER's size, superseding v3's fixed 'worn on the body'. That fixed value was 15/15 consistent in the v3 round, so it is being traded for informativeness DELIBERATELY -- watch obsc_jumpsuit_real for the drift the fixed value used to remove.",
+
+  "defaults": {
+    "server": "http://localhost:8080/v1/chat/completions",
+    "model": "qwen3.6-35b-a3b",
+    "temperature": 0,
+    "top_p": 0.9,
+    "top_k": 40,
+    "max_tokens": 2048,
+    "system_file": "prompts/describer_object.txt"
+  },
+
+  "_expected": {
+    "obsc_minuscule": "minuscule",
+
+    "obsc_tiny_1": "tiny",
+    "obsc_tiny_2": "tiny",
+    "obsc_phone": {
+      "expect": "tiny",
+      "why": "strict control for the obsc_april_figure accept-set: unambiguously one-hand sized, with no depiction reading available at all",
+      "control": []
+    },
+    "obsc_banknote": "tiny",
+
+    "obsc_small_1": "small",
+    "obsc_small_2": "small",
+    "obsc_cereal_box": "small",
+
+    "obsc_modest_1": "modest",
+    "obsc_modest_2": "modest",
+    "obsc_kaypro": "modest",
+
+    "obsc_bumper_car": "medium",
+    "obsc_chair": "medium",
+    "obsc_wheelie_bin": "medium",
+    "obsc_jumpsuit_real": {
+      "expect": "medium",
+      "why": "strict control for the obsc_april_figure accept-set: the SAME garment and the SAME subject line, worn by a full-size adult, where no depiction reading is available",
+      "control": []
+    },
+
+    "obsc_smart_car": "large",
+    "obsc_suv": "large",
+    "obsc_car_palace": "large",
+    "obsc_car_mountain": "large",
+    "obsc_car_1": "large",
+    "obsc_car_2": "large",
+    "obsc_cannon": "large",
+
+    "obsc_van": "huge",
+    "obsc_truck": "huge",
+
+    "obsc_airliner": "gargantuan",
+    "obsc_ship": "gargantuan",
+
+    "obsc_april_figure": {
+      "expect": "tiny | medium",
+      "why": "depiction vs physical. `tiny` under the standing rule (the moulded figures actually photographed) and per docs/image_inventory.md, which classifies this file stop-motion / figure 'classified by the objects'. `medium` is forgiven for the reading that treats it as an in-scale diorama element depicting an adult. Anything else -- small, modest, large -- is still a miss.",
+      "control": ["obsc_phone", "obsc_jumpsuit_real"]
+    }
+  },
+
+  "cases": [
+    {
+      "group": "minuscule",
+      "id": "obsc_minuscule",
+      "user": "ROLE: object",
+      "image": "images/toy_car_minuscule.jpg"
+    },
+
+    {
+      "group": "tiny",
+      "id": "obsc_tiny_1",
+      "user": "ROLE: object",
+      "image": "images/toy_car_tiny_1.jpg"
+    },
+    {
+      "group": "tiny",
+      "id": "obsc_tiny_2",
+      "user": "ROLE: object",
+      "image": "images/toy_car_tiny_2.jpg"
+    },
+    {
+      "group": "tiny (strict control)",
+      "id": "obsc_phone",
+      "user": "ROLE: object",
+      "image": "images/phone.png"
+    },
+    {
+      "group": "tiny (world knowledge)",
+      "id": "obsc_banknote",
+      "user": "SUBJECT: the banknote\nROLE: object",
+      "image": "images/lincoln_money.jpg"
+    },
+
+    {
+      "group": "small",
+      "id": "obsc_small_1",
+      "user": "ROLE: object",
+      "image": "images/toy_car_small_1.jpg"
+    },
+    {
+      "group": "small",
+      "id": "obsc_small_2",
+      "user": "SUBJECT: the toy car\nROLE: object",
+      "image": "images/toy_car_small_2.jpg"
+    },
+    {
+      "group": "small (non-vehicle)",
+      "id": "obsc_cereal_box",
+      "user": "SUBJECT: the cereal box\nROLE: object",
+      "image": "images/p3_first.png"
+    },
+
+    {
+      "group": "modest (WATCHED SEAM)",
+      "id": "obsc_modest_1",
+      "user": "SUBJECT: the ride-on car\nROLE: object",
+      "image": "images/toy_car_modest_1.jpg"
+    },
+    {
+      "group": "modest (WATCHED SEAM)",
+      "id": "obsc_modest_2",
+      "user": "SUBJECT: the go-kart\nROLE: object",
+      "image": "images/toy_car_modest_2.jpg"
+    },
+    {
+      "group": "modest (non-vehicle)",
+      "id": "obsc_kaypro",
+      "user": "ROLE: object",
+      "image": "images/kaypro_ii.jpg"
+    },
+
+    {
+      "group": "medium",
+      "id": "obsc_bumper_car",
+      "user": "SUBJECT: the bumper car\nROLE: object",
+      "image": "images/bumper_car_medium.jpg"
+    },
+    {
+      "group": "medium (non-vehicle)",
+      "id": "obsc_chair",
+      "user": "ROLE: object",
+      "image": "images/chair.jpg"
+    },
+    {
+      "group": "medium (non-vehicle)",
+      "id": "obsc_wheelie_bin",
+      "user": "SUBJECT: the wheelie bin\nROLE: object",
+      "image": "images/miyu.png"
+    },
+    {
+      "group": "medium (strict control, garment)",
+      "id": "obsc_jumpsuit_real",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_1987.jpg"
+    },
+
+    {
+      "group": "large (flagship pair with obsc_minuscule)",
+      "id": "obsc_smart_car",
+      "user": "SUBJECT: the red car\nROLE: object",
+      "image": "images/smart_car_large.jpg"
+    },
+    {
+      "group": "large",
+      "id": "obsc_suv",
+      "user": "SUBJECT: the red car\nROLE: object",
+      "image": "images/suv_large.jpg"
+    },
+    {
+      "group": "large (distractor: enormous backdrop)",
+      "id": "obsc_car_palace",
+      "user": "SUBJECT: the red car\nROLE: object",
+      "image": "images/car_building_gargantuan.png"
+    },
+    {
+      "group": "large (distractor: enormous backdrop)",
+      "id": "obsc_car_mountain",
+      "user": "SUBJECT: the red car\nROLE: object",
+      "image": "images/car_mountain_colossal.jpg"
+    },
+    {
+      "group": "large (strict control, angle pair)",
+      "id": "obsc_car_1",
+      "user": "ROLE: object",
+      "image": "images/car_1.png"
+    },
+    {
+      "group": "large (strict control, angle pair)",
+      "id": "obsc_car_2",
+      "user": "ROLE: object",
+      "image": "images/car_2.png"
+    },
+    {
+      "group": "large (WATCHED, non-vehicle)",
+      "id": "obsc_cannon",
+      "user": "ROLE: object",
+      "image": "images/cannon.jpg"
+    },
+
+    {
+      "group": "huge",
+      "id": "obsc_van",
+      "user": "SUBJECT: the van\nROLE: object",
+      "image": "images/van_huge.jpg"
+    },
+    {
+      "group": "huge",
+      "id": "obsc_truck",
+      "user": "SUBJECT: the truck\nROLE: object",
+      "image": "images/truck_huge.jpg"
+    },
+
+    {
+      "group": "gargantuan",
+      "id": "obsc_airliner",
+      "user": "SUBJECT: the airliner\nROLE: object",
+      "image": "images/airliner_gargantuan.jpg"
+    },
+    {
+      "group": "gargantuan",
+      "id": "obsc_ship",
+      "user": "SUBJECT: the red ship\nROLE: object",
+      "image": "images/ship_gargantuan.jpg"
+    },
+
+    {
+      "group": "accept-set: depiction vs physical",
+      "id": "obsc_april_figure",
+      "user": "SUBJECT: the yellow jumpsuit\nROLE: object",
+      "image": "images/april_1987_figure.jpg"
+    }
+  ]
+}

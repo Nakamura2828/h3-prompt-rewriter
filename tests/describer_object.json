@@ -15,6 +15,7 @@
 
   "_watched_scale_case": "ob_april_figure. [[SCALE]] is defined as the physical thing in front of the camera, so the answer the prompt asks for is hand-sized (moulded figures on a shelf), consistent with style tie-break 4 and L-SCORE-ONLY-WHAT-THE-INPUT-SHOWS. The user has flagged the depicted-scale reading (person-sized, because she is a character) as genuinely defensible and likely to be a STUBBORN alternative. Bring this line to the user as an open ruling; do not score it. The wider family is stop-motion/figure -- lego1, lego2, coraline1, coraline2, skellington, rudolf, laika, pjs -- none of which is in this round.",
 
+  "_text_probes_added_s24": "Five cases appended session 24 from the scale batch, each adding a probe SHAPE the original 39 did not have. Name-laundering is the top open defect (unmoved across three rounds) and the file carried only four cases of it.  (1) ob_text_split_object / ob_text_split_garment are a MINIMAL PAIR on one image -- the corpus's only frame with text BOTH on an object and off it. The toy car carries a franchise name on its trunk; the man holding it wears a large printed t-shirt. As the car, the trunk name must be reproduced and the shirt lettering must NOT appear at all. As the t-shirt, the shirt lettering must be reproduced and the trunk name must not. Same image, same two strings, opposite verdicts -- this is the captain trick applied to [[TEXT]] ownership, and it tests the words 'on the thing' in the field definition, which nothing else does. The car case is additionally a laundering probe: the trunk name is a FRANCHISE, so it belongs in [[TEXT]] and nowhere else.  (2) ob_text_brand_model: a marque AND a model designation on the object itself, large and central, plus a competitor marque on background signage. ob_misato_real has plates and a placard, but nothing else in the corpus puts the marque on the object where it is the easiest possible thing to launder into [[LABEL]].  (3) ob_text_bare_brand: the minimal case -- one strongly-known brand word on the object and nothing else competing. Isolates whether laundering is driven by the NAME alone.  (4) ob_text_real_person: printed text that is simultaneously reproducible AND an identification of a real living person (a channel URL carrying their name). The sharpest form of the seam: [[TEXT]] must carry it, [[KIND]] and [[LABEL]] must not.",
   "_negative_control": "ob_april_fanart carries SUBJECT: the yellow jumpsuit, and that character is in a DIFFERENT outfit there (a cropped yellow zip jacket and jeans, per docs/image_inventory.md, which says explicitly that a record carrying the jumpsuit into april_fanart is wrong). It is the one case where [[SUBJECT NOT FOUND]] should plausibly fire, and the one case where a jumpsuit in the record is a definite failure rather than a judgement call.",
 
   "_simpsons_minimal_pair": "ADDED session 22, user's observation mid-round. simpsons_couch_toon and maggie_grandpa_cat are the SAME ROOM in two framings -- same brown couch, purple side table with books beneath it, purple lamp, sailboat picture, pleated wall lamp, concentric-oval rug -- and they are near-minimal on OBJECT PRESENCE. The empty frame has a teal telephone and a television and NO people; the occupied frame has a litter tray, chips and a dip jar, two figures with garments, and NO telephone. That yields two things nothing else in the corpus does. (1) A HARD [[SUBJECT NOT FOUND]] probe: ob_notfound_telephone names a thing that genuinely is not in that frame but sits on a table the model can see, in a room where it does belong -- so confabulation is actually tempting, unlike ob_notfound_bicycle-against-a-kitchen, which is a strawman. ob_notfound_slippers is the same trick pointed the other way, at a garment in a room with no people in it at all. 'the slippers' rather than 'the cardigan' because the sibling's knitwear has no visible opening and naming it a cardigan would mis-describe the very thing the probe depends on being unmistakable. (2) An occlusion drift pair: ob_couch_clear vs ob_couch_occluded is one couch, once in the open and once with two figures and a cat sitting on it -- which tests describing an object through occlusion AND the ban on describing the people on it. Also recorded in docs/image_inventory.md's probe-pairs table so other roles can find it.",
@@ -279,6 +280,37 @@
       "id": "ob_couch_occluded",
       "user": "SUBJECT: the couch\nROLE: object",
       "image": "images/maggie_grandpa_cat.jpeg"
+    },
+
+    {
+      "group": "[[TEXT]] ownership: same image, two subjects, one string each way (added s24)",
+      "id": "ob_text_split_object",
+      "user": "SUBJECT: the toy car\nROLE: object",
+      "image": "images/toy_car_small_2.jpg"
+    },
+    {
+      "group": "[[TEXT]] ownership: same image, two subjects, one string each way (added s24)",
+      "id": "ob_text_split_garment",
+      "user": "SUBJECT: the grey t-shirt\nROLE: object",
+      "image": "images/toy_car_small_2.jpg"
+    },
+    {
+      "group": "[[TEXT]] vs laundering (added s24)",
+      "id": "ob_text_brand_model",
+      "user": "SUBJECT: the red car\nROLE: object",
+      "image": "images/suv_large.jpg"
+    },
+    {
+      "group": "[[TEXT]] vs laundering (added s24)",
+      "id": "ob_text_bare_brand",
+      "user": "SUBJECT: the truck\nROLE: object",
+      "image": "images/truck_huge.jpg"
+    },
+    {
+      "group": "[[TEXT]] vs laundering (added s24)",
+      "id": "ob_text_real_person",
+      "user": "SUBJECT: the bumper car\nROLE: object",
+      "image": "images/bumper_car_medium.jpg"
     }
   ]
 }
