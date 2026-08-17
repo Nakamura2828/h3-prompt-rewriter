@@ -211,7 +211,7 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Object describer (v4, session 29; `[[SCALE]]` vocabulary settled sessions 24–25, not pursued — see below) — the last describer before the composer
+## Object describer (v4, session 29; COLOUR content-scored session 30; `[[SCALE]]` vocabulary settled sessions 24–25, not pursued — see below) — the last describer before the composer
 
 `prompts/describer_object.txt` — the fourth REF2VA describer role, covering **object / prop /
 clothing** in one prompt. **One thing, durably**: what it permanently is, never how this picture
@@ -303,14 +303,12 @@ catches a consumer that forgets.
   (`ob_kaypro`/Heathkit, `ob_misato_real`/Alpine, `ob_banknote`/Lincoln) plus one session-24 probe
   (`ob_text_bare_brand`/Kenworth) still launder. No longer chased further this session — the
   mechanical check means it can no longer ship silently, which was the actual blocker.
-- **Colour drifts between renderings of one thing**, twice and in the same direction: the gordon
-  trench coat (`brown` vs `mustard-yellow`) and the Simpsons couch (`mustard-yellow` vs `brown`).
-  The user ruled the coat *defensible* — it is a night scene — but two instances on one axis is a
-  pattern. **The cheap fix to try first is `setting`'s, transposed**: name the colour of the
-  material, not the colour the light makes it, which is `NAME THE FORM, NEVER THE GLOW` for hue.
-  **The deferral below is stale** — a closed colour vocabulary was adopted in session 23 (the
-  Danbooru convention, `.claude/TODO.md`) and is the planned next round on this prompt, extracted
-  as a derived field off `[[MATERIAL]]` rather than a new `[[COLOUR]]` field.
+- **Colour drifts between renderings of one thing.** MEASURED session 30, not just observed —
+  see the COLOUR section below. Of 44 content-scored cases, this is now down to exactly two,
+  both the same root cause (a warm-lit brown object reading `mustard-yellow`): `ob_gordon_2004`
+  and `ob_couch_clear`. The candidate fix (`setting`'s "name the form, not the glow," transposed
+  for hue) was not tried this round — with the defect this narrow and everything else either
+  fixed or genuinely defensible, there wasn't evidence yet to justify a prompt change.
 - **`[[OBJECT_KIND]]` called a sofa a `garment`** on `ob_couch_clear` while its sibling got it
   right. One case, split within a pair, so read as marginal until it repeats
   (`L-MOVING-FAILURE-IS-NOISE`). **It repeated, session 28** — see below.
@@ -381,6 +379,91 @@ settled for, rather than a third wording iteration chasing the last cases — th
 here likely reflects a strong prior toward naming a recognised thing once it recognises it, not a
 wording gap, and the pattern now matches `digital`'s: closed as a bounded, monitored residual
 rather than an open task.
+
+### COLOUR — first content score, extraction generalised from `age_terms()` (session 30)
+
+**The design settled sessions 22–23 held with no change**: COLOUR is a *derived* field, pulled out
+of the existing free-text `[[MATERIAL]]` the same way character's age bracket is pulled out of
+`[[APPEARANCE]]`, against the closed 12-term Danbooru hue vocabulary (`red, brown, orange, yellow,
+green, aqua, blue, purple, pink, white, grey, black`, with `light`/`dark` as a separate modifier).
+No `[[COLOUR]]` field was added, and — after measuring — no prompt edit was needed either.
+
+**The extraction primitive was generalised, not duplicated.** `validate.py`'s `age_terms()` became
+`vocab_terms(line, vocab, *, hyphen_boundary=True, order='length')`, with the AGE call sites
+passing the old behaviour explicitly (regression-gated byte-identical against five archived
+character/setting/style rounds). Two real bugs, long diagnosed but never fixed, were closed as
+part of the same change rather than in place: the hyphen-boundary guard made every *compound*
+colour term invisible (`mustard-yellow` extracted as nothing) — `hyphen_boundary=False` fixes it,
+so `yellow` is now pulled out of `mustard-yellow` correctly; and results yielded in vocabulary-
+*length* order rather than text-*position* order, a systematic bias toward whichever colour has
+the longest name — `order='position'` fixes it, verified on the TODO-recorded example ("black
+nylon … yellow chevron stripe … white piping" now yields `['black', 'yellow', 'white']`, not
+`['yellow', 'white', 'black']`).
+
+**Scoring is new territory for `score.py`**: a `derived` key in `DESCRIBER_ROLES` (mirroring the
+session-29 `no_launder` key's shape) declares `COLOUR` as extracted from `[[MATERIAL]]`, and
+`read_run()` computes it via `vocab_terms()` instead of literal `[[FIELD]]` lookup — the first
+field this project has ever content-scored without the model writing it out literally. Rank 1
+(the first extracted term) is what scores; the full ranked extraction is diagnostic only, printed
+alongside any miss so a near-tie or a rank-2 match is visible without inventing accept-set
+machinery to chase it prematurely — this round's deliberate choice (start simple, watch the rest).
+
+**Ground truth already existed in full.** `HANDOFF_session22.md` § 5 turned out to carry a
+complete, ordered-by-prominence colour set for every one of the 44 main-test cases and all 43
+shelved-scale-test cases, authored alongside `[[OBJECT_KIND]]`'s ground truth in session 22 and
+never transcribed. Session 30 transcribed both (rank-1 primary into `_expected` for the scored
+main file; the full ordered sets preserved separately as `_colour_full_ranking`, documentary
+only). The scale file's colour ground truth is recorded but **not scored** — no archived run
+exists for it, since the SCALE ladder was never written into the prompt and it was consequently
+never run live.
+
+**First measurement, against the already-archived session-29 run (zero new model calls): 33/44
+rank-1 (75%)**, tripping the standard `DIAGNOSIS` gate. Adjudicating the eleven misses by hand
+against the model's own `[[MATERIAL]]` text found the gate was misleading on a first-ever,
+harder-than-`OBJECT_KIND` measurement: nine of the eleven were genuinely defensible —
+
+- **Two fixed outright and rescored**, not just excluded. A synonym-alias map
+  (`COLOUR_ALIASES` in `validate.py`: `beige`/`tan` → `light brown`, `cream`/`off-white` → `white`,
+  `navy` → `dark blue`) turned `ob_van`'s miss into an exact match — the model's real dominant
+  colour (`"a faded beige or cream colour"`) had been off-vocabulary, so extraction was falling
+  through to a secondary mention (`black`, from the tyres). A directional modifier-equivalence rule
+  in `score.py`'s new `_field_match` (a modifier-qualified extraction satisfies its bare-hue
+  expectation — `dark grey` credits against `grey`, never the reverse, never across two *different*
+  modifiers) fixed `ob_wheelie_bin` the same way. `mustard`/`mustard-yellow` was deliberately left
+  **unmapped** — it was ruled a genuine miss against `brown`, not a defensible synonym, and mapping
+  it would have quietly laundered the one real defect this round found.
+- **One case got sharper rather than fixed**: `ob_kaypro` now correctly extracts `light brown`
+  (the beige casing) instead of falling through to the wrong term, but that still disagrees with
+  the ground truth's `grey` — a real dominant-colour question (the beige plastic casing vs. the
+  machine's other grey parts) that the user, who has seen the actual machine, still calls `grey`.
+  Left `CONTESTED`.
+- **Six more `CONTESTED`** on individual review of the model's own material text against each
+  ground-truth cell: `ob_car_1`/`ob_car_2` (the model reads `"glossy white painted metal"` quite
+  explicitly — a light-grey/white call is genuinely defensible), `ob_captain_uniform` (the source
+  ground-truth table had already hedged this cell "maybe dark blue, but it reads black to me"),
+  `ob_phone` (a genuine two-way split between the case's colour and the screen's), `ob_radio` and
+  `ob_pan` (both trace to source images the ground-truth table itself flagged as poorly lit or
+  ambiguous, and in both cases the *model's* reading looks at least as defensible as the key's).
+
+**Final: 42/44 (95%), 7 `CONTESTED`, 2 real misses** — `ob_gordon_2004` and `ob_couch_clear`, both
+the *same* already-known drift defect (a warm-lit brown object reading `mustard-yellow`), now
+finally measurable rather than merely observed. `ob_couch_clear` also carries the separate,
+already-known `[[OBJECT_KIND]]` miss (unchanged, unaffected by any of this round's work).
+
+**Why brown specifically, and not some other hue** — the user's own framing, worth keeping: brown
+is not a distinct point on the hue wheel the way the other eleven terms are. It is a low-
+saturation, low-value member of *orange* that gets a separate cultural name, so unlike most of
+this vocabulary it does not split cleanly on hue and is unusually sensitive to lighting. That is
+very likely why this vocabulary's one measured, uncontested defect is a brown/yellow confusion and
+not, say, a blue/green one — see `L-A-CULTURAL-COLOUR-NAME-NEED-NOT-BE-A-CLEAN-HUE` in
+`.claude/lessons_learned.md`.
+
+**No prompt edit shipped this round, deliberately.** The plan going in was to measure against
+already-archived output before deciding whether the drift fix (`setting`'s "name the form, not
+the glow," transposed for hue) or a vocabulary-nudge hint was warranted. With the real defect now
+down to two cases sharing one root cause, and everything else either fixed by the alias/modifier
+work or genuinely defensible, there wasn't evidence to justify a prompt change this round — the
+extraction and scoring machinery, not the prompt, was what needed the work.
 
 ### `[[SCALE]]` — the nine-term size ladder (settled session 24, NOT PURSUED — session 29)
 

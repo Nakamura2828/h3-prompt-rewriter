@@ -182,6 +182,33 @@ AGE_PERSON = ['infant', 'toddler', 'child', 'pre-teen', 'teenager', 'young adult
               'adult', 'middle-aged', 'older adult']
 AGE_ANIMAL = ['young', 'adult', 'old', 'not visible']
 
+# The closed COLOUR vocabulary (Danbooru convention, adopted session 23; extraction built
+# session 30). Hue-only -- L-ONE-AXIS-PER-VOCABULARY -- with 'light'/'dark' as a SEPARATE
+# modifier rather than fused into the term. object.txt is never told about this list: it is
+# extracted from the existing free-text [[MATERIAL]] the same way AGE is extracted from
+# [[APPEARANCE]], via the 'derived' entry in DESCRIBER_ROLES below. No synonym mapping
+# (beige/tan/navy/mustard, etc.) yet -- deliberately, session 30 -- so an off-vocabulary word
+# the model uses simply fails to extract rather than being silently forgiven.
+COLOUR_HUES = ('red', 'brown', 'orange', 'yellow', 'green', 'aqua', 'blue', 'purple', 'pink',
+               'white', 'grey', 'black')
+COLOUR_MODIFIERS = ('light', 'dark')
+# Modifier+hue compounds ('light brown') must be tried before the bare hue so they claim their
+# span first -- the same subsumption 'young adult' already relies on beating bare 'adult'.
+COLOUR_VOCAB = [f'{m} {h}' for h in COLOUR_HUES for m in COLOUR_MODIFIERS] + list(COLOUR_HUES)
+
+# Session 30, added once empirically confirmed rather than pre-emptively: ob_kaypro and
+# ob_van both have a model-described dominant colour ('beige plastic casing', 'a faded
+# beige or cream colour') that is genuinely off the 12-term vocabulary, so extraction fell
+# through to a secondary mention instead. A synonym maps to a CANONICAL VOCAB TERM (not a
+# new term), so it participates in the SAME subsumption/ranking machinery as everything
+# else -- extraction still returns only vocabulary words. 'mustard'/'mustard-yellow'
+# (the gordon coat / Simpsons couch drift defect) is deliberately NOT here: that word was
+# ruled a genuine miss against 'brown', not a defensible synonym, and mapping it would
+# quietly launder the one confirmed content defect this round found.
+COLOUR_ALIASES = {'beige': 'light brown', 'tan': 'light brown', 'cream': 'white',
+                   'off-white': 'white', 'navy': 'dark blue'}
+COLOUR_VOCAB_WITH_ALIASES = COLOUR_VOCAB + list(COLOUR_ALIASES)
+
 # Rendering-style words a describer record is not supposed to name (describer_style, when
 # it exists, will be the exception). A warn, not an error: 'a T-shirt with a cartoon print'
 # is a legitimate garment description.
@@ -283,6 +310,14 @@ def _character_age_vocab(out):
 #   atmos_field  the field holding transient conditions, which [[DEFINITION]] must not reuse
 #   no_launder   (source field, target fields) -- a capitalised word in a target field must
 #                not trace back to a word printed in the source field; None disables the check
+#   derived      field name -> (source field, vocab, vocab_terms() kwargs, aliases). A
+#                CONTENT-scoring concept (score.py, not this file) declaring a field
+#                extracted from another field's free text rather than written literally by
+#                the model -- COLOUR off [[MATERIAL]], the same shape AGE already is off
+#                [[APPEARANCE]] for character. `aliases` maps a defensible synonym to a
+#                CANONICAL vocab term (e.g. 'beige' -> 'light brown'), applied to each
+#                extracted term after matching so the result is always a vocabulary word;
+#                {} where nothing is derived, {} where a derived field has no aliases.
 DESCRIBER_ROLES = {
     'character': {
         'fields': ['SUBJECT_KIND', 'APPEARANCE', 'CLOTHING', 'DISTINGUISHING',
@@ -296,6 +331,7 @@ DESCRIBER_ROLES = {
         'atmos_field': None,
         'coarse_sub': None,
         'no_launder': None,
+        'derived': {},
     },
     'setting': {
         'fields': ['SETTING_KIND', 'STRUCTURE', 'CONTENTS', 'DISTINGUISHING', 'PLACE',
@@ -315,6 +351,7 @@ DESCRIBER_ROLES = {
         'atmos_field': 'ATMOSPHERE',
         'coarse_sub': None,
         'no_launder': None,
+        'derived': {},
     },
     'object': {
         'fields': ['OBJECT_KIND', 'FORM', 'MATERIAL', 'TEXT', 'DISTINGUISHING', 'SCALE',
@@ -347,6 +384,13 @@ DESCRIBER_ROLES = {
         # isn't followed, per L-KNOW-WHEN-TO-STOP -- a fourth wording attempt was rejected in
         # favour of detecting the violation instead of re-asking for compliance.
         'no_launder': ('TEXT', ('KIND', 'LABEL', 'DISTINGUISHING', 'DEFINITION')),
+        # COLOUR (session 30): the dominant hue, extracted off [[MATERIAL]]'s free-text prose.
+        # hyphen_boundary=False so a compound term like 'mustard-yellow' still yields 'yellow'
+        # rather than nothing; order='position' so rank 1 is whichever colour is named first in
+        # the prose, not whichever colour word happens to be longest.
+        'derived': {'COLOUR': ('MATERIAL', COLOUR_VOCAB_WITH_ALIASES,
+                                dict(hyphen_boundary=False, order='position'),
+                                COLOUR_ALIASES)},
     },
     # NOTE: the monolithic 'style' role was REMOVED in session 20, when the split locked at
     # describer_style_class v4d and prompts/describer_style.txt was retired to
@@ -380,6 +424,7 @@ DESCRIBER_ROLES = {
         'atmos_field': None,
         'coarse_sub': None,
         'no_launder': None,
+        'derived': {},
     },
     'style_class': {
         'fields': ['MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT'],
@@ -395,19 +440,43 @@ DESCRIBER_ROLES = {
         'atmos_field': None,
         'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
         'no_launder': None,
+        'derived': {},
     },
 }
 
 
-def age_terms(line, vocab):
+def vocab_terms(line, vocab, *, hyphen_boundary=True, order='length'):
     """Every vocabulary term present in a line, dropping any that is merely a substring
-    of a longer term already matched ('adult' inside 'young adult')."""
+    of a longer term already matched ('adult' inside 'young adult'). Generalised from the
+    AGE-only `age_terms()` (session 30) to also serve COLOUR extraction, which needs two
+    behaviours AGE does not and must not gain by default -- so both are parameters, not a
+    change in place, and the AGE call sites pass the old behaviour explicitly.
+
+    hyphen_boundary  True (AGE's need): a hyphen counts as a word boundary, so 'middle-aged'
+                     cannot match a bare 'aged'. False (COLOUR's need): a hyphen is not a
+                     boundary, so 'yellow' can be pulled out of 'mustard-yellow' -- the
+                     silent-fallthrough bug that made every compound colour term invisible.
+    order            'length' (AGE's need, and the default): yield in longest-term-first
+                     order, which is also the order subsumption is computed in. 'position':
+                     yield in the order terms actually appear in the line -- COLOUR's rank
+                     depends on this, since 'length' order is a systematic bias toward
+                     whichever colour has the longest name ('yellow' always beating 'black').
+
+    Subsumption itself (the span bookkeeping) always tries the longest term first regardless
+    of `order`, since that is what makes it correct; `order` only controls the sequence
+    results are handed back in.
+    """
+    boundary = r'(?<![\w-])' if hyphen_boundary else r'(?<!\w)'
+    end_boundary = r'(?![\w-])' if hyphen_boundary else r'(?!\w)'
     spans = []
     for t in sorted(vocab, key=len, reverse=True):
-        for m in re.finditer(r'(?<![\w-])' + re.escape(t) + r'(?![\w-])', line):
-            if not any(s <= m.start() and m.end() <= e for s, e in spans):
-                spans.append((m.start(), m.end()))
-                yield t
+        for m in re.finditer(boundary + re.escape(t) + end_boundary, line):
+            if not any(s <= m.start() and m.end() <= e for s, e, _ in spans):
+                spans.append((m.start(), m.end(), t))
+    if order == 'position':
+        spans.sort(key=lambda s: s[0])
+    for _, _, t in spans:
+        yield t
 
 
 # For the 'no_launder' check: a fixed vocabulary won't do here, since what counts as a banned
@@ -552,7 +621,7 @@ def check_describer(out, inp, role):
         kind = field_text('SUBJECT_KIND').lower()
         app = field_text('APPEARANCE')
         vocab = AGE_ANIMAL if kind == 'animal' else AGE_PERSON
-        found = list(age_terms(app.lower(), vocab))
+        found = list(vocab_terms(app.lower(), vocab, hyphen_boundary=True, order='length'))
         if not found:
             errs.append(f'[[APPEARANCE]] states no age bracket from the {kind or "person"} '
                         f'list ({", ".join(vocab)})')
@@ -699,7 +768,8 @@ def main():
             if drift and group and group.startswith('same:'):
                 dfield, vocab_of = drift
                 m = re.search(r'\[\[' + re.escape(dfield) + r'\]\](.*)', r['output'])
-                terms = list(age_terms(m.group(1).lower(), vocab_of(r['output']))) if m else []
+                terms = list(vocab_terms(m.group(1).lower(), vocab_of(r['output']),
+                                          hyphen_boundary=True, order='length')) if m else []
                 brackets.setdefault(group, []).append((case_id, terms[0] if terms else None))
         label = case_id or (r['input'].strip().split('\n')[0])[:64] or f'record {i}'
         results.append((label, errs, warns))

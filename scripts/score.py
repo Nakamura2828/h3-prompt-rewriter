@@ -74,7 +74,17 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from validate import parse_records, head_parts          # noqa: E402
+from validate import (parse_records, head_parts, vocab_terms, DESCRIBER_ROLES,  # noqa: E402
+                      COLOUR_MODIFIERS)
+
+# Field name -> (source field, vocab, vocab_terms() kwargs), merged from every role's
+# 'derived' entry in DESCRIBER_ROLES (validate.py). Flat rather than keyed by role because
+# score.py's --fields is role-agnostic and a derived field name is unique across roles today
+# (COLOUR belongs only to 'object') -- the first content-scored field this project has ever
+# pulled out of another field's free text instead of matching it literally (session 30).
+DERIVED = {}
+for _role in DESCRIBER_ROLES.values():
+    DERIVED.update(_role.get('derived') or {})
 
 MARKERS = ('UNSCORABLE', 'CONTESTED')
 ACCEPT_SEP = '|'
@@ -149,14 +159,57 @@ def alternatives(expectation):
     return [p.strip() for p in clean(expectation).split(ACCEPT_SEP) if p.strip()]
 
 
+def _derived_value(output, name):
+    """A DERIVED field's scored value (rank 1 only) plus its full ranked extraction, for a
+    field name declared in DESCRIBER_ROLES -- e.g. COLOUR, pulled out of [[MATERIAL]] rather
+    than written literally by the model. Rank 1 is what scores; the full list is diagnostic
+    only, so a near-tie or a rank-2 match is visible without any new ground-truth machinery
+    (.claude/CLAUDE.md's decision this round: start at strict rank 1, watch the rest).
+    A matched synonym (e.g. 'beige') is mapped to its canonical vocab term ('light brown')
+    before being returned, so every value this function hands back is a vocabulary word."""
+    source, vocab, kwargs, aliases = DERIVED[name]
+    raw = vocab_terms(field(output, source).lower(), vocab, **kwargs)
+    terms = [aliases.get(t, t) for t in raw]
+    return (terms[0] if terms else '(none extracted)'), terms
+
+
 def read_run(path, fields):
-    """{case id: tuple of emitted field values} for one concatenated run file."""
-    got = {}
+    """({case id: tuple of emitted field values}, {case id: {derived field: full ranked
+    extraction}}) for one concatenated run file. The second dict is empty wherever no
+    requested field is DERIVED, and is diagnostic-only -- it never affects scoring."""
+    got, detail = {}, {}
     for r in parse_records(pathlib.Path(path).read_text(encoding='utf-8')):
         _, cid = head_parts(r['model'])
-        if cid:
-            got[cid] = tuple(field(r['output'], f) for f in fields)
-    return got
+        if not cid:
+            continue
+        values, ranked = [], {}
+        for f in fields:
+            if f in DERIVED:
+                v, full = _derived_value(r['output'], f)
+                values.append(v)
+                ranked[f] = full
+            else:
+                values.append(field(r['output'], f))
+        got[cid] = tuple(values)
+        if ranked:
+            detail[cid] = ranked
+    return got, detail
+
+
+def _field_match(field_name, got, alt):
+    """Exact match, plus -- for a DERIVED field only (session 30) -- one directional
+    loosening: a MODIFIER+hue extraction satisfies its bare-hue expectation ('dark grey'
+    credits against expected 'grey'), because the model was right about the hue and only
+    added information the ground truth's rank-1 pick happened not to carry. NOT the
+    reverse (a bare hue never satisfies a modified expectation), and never across two
+    different modifiers -- ob_van's expected 'light brown' still needs that modifier to
+    mean something, or the mapping that produced it would be pointless."""
+    g, a = got.strip().lower(), alt.strip().lower()
+    if g == a:
+        return True
+    if field_name in DERIVED:
+        return any(g == f'{m} {a}' for m in COLOUR_MODIFIERS)
+    return False
 
 
 def case_verdict(expect, emitted, nfields, fields=(), strict=False):
@@ -199,7 +252,8 @@ def case_verdict(expect, emitted, nfields, fields=(), strict=False):
         alts = alternatives(w)
         if strict:
             alts = alts[:1]
-        hit = next((a for a in alts if g.strip().lower() == a.lower()), None)
+        fname = fields[i] if i < len(fields) else None
+        hit = next((a for a in alts if _field_match(fname, g, a)), None)
         verdicts.append(hit is not None)
         if hit is not None and hit != alts[0]:
             fired.append((fields[i] if i < len(fields) else f'field {i}', hit, alts[0]))
@@ -294,7 +348,7 @@ def report_accept_sets(key, fired_of, perfield, got, w, fields, strict):
                     # accept-set for a defect it neither caused nor hides.
                     drift = [got[c][i].strip().lower() for i in axes
                              if i < len(v) and v[i] is False
-                             and any(got[c][i].strip().lower() == alt.lower()
+                             and any(_field_match(fields[i], got[c][i], alt)
                                      for alt in alternatives(want[i]))]
                     states.append((c, f"COLLAPSED to '{drift[0]}'" if drift
                                    else 'miss (off-distinction)'))
@@ -424,7 +478,7 @@ def main():
         raise SystemExit(f'ERROR: {a.test} has no top-level "_expected" map -- '
                          f'nothing to score against.')
 
-    got = read_run(a.run, a.fields)
+    got, derived_detail = read_run(a.run, a.fields)
 
     # Normalise every entry up front so a malformed object fails before any scoring
     # happens, rather than half way down a report the reader might already trust.
@@ -463,6 +517,17 @@ def main():
     w = max((len(c) for c, *_ in rows + excluded), default=10)
     for cid, g, e, ok in rows:
         print(f'{"ok " if ok else "MISS"}  {cid:{w}}  {g:34}  expected {e}')
+        if not ok:
+            # Diagnostic only -- never scored. A DERIVED field (COLOUR) that missed on rank 1
+            # may still have matched further down its own ranked extraction; showing the full
+            # list is how a near-tie or a rank-2 match gets watched (this round's decision)
+            # without inventing accept-set machinery to chase it prematurely.
+            for i, fname in enumerate(a.fields):
+                if fname in DERIVED and i < len(perfield.get(cid) or []) \
+                        and perfield[cid][i] is False:
+                    full = derived_detail.get(cid, {}).get(fname)
+                    if full and len(full) > 1:
+                        print(f'      {fname} full ranked extraction: {full}')
 
     if excluded:
         print()
@@ -515,7 +580,7 @@ def main():
               f'on its own.')
         print('      pass --baseline <previous run of this test> to gate on movement.')
     else:
-        base = read_run(a.baseline, a.fields)
+        base, _base_detail = read_run(a.baseline, a.fields)
         regressed, fixed, changed = [], [], []
         for cid, now in state.items():
             if cid not in base or now is None:

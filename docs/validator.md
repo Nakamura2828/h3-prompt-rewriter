@@ -38,8 +38,8 @@ python scripts/validate.py ref2va    runs/run-*.txt        # not built yet
 ```
 
 **Roles are data, not branches (session 6).** `DESCRIBER_ROLES` maps a role to
-`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field, no_launder}`,
-and what
+`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field, no_launder,
+derived}`, and what
 counts as a wrong field is **derived** from that table rather than hardcoded. That matters for the
 roles still to come: the old hardcoded list contained `PALETTE` and `LIGHTING`, both of which
 `describer_style` legitimately owns, so it would have rejected that role's own fields. Refactor
@@ -105,6 +105,56 @@ designed in advance:
 Verified against a live 44-case round, all four archived historical `describer_object` rounds, and
 the session-28 archive: the six known laundering cases all still catch, and nothing else in any of
 those six files does.
+
+### `vocab_terms()` — the AGE extractor generalised for COLOUR, plus `score.py`'s first derived field (session 30)
+
+`age_terms(line, vocab)` became `vocab_terms(line, vocab, *, hyphen_boundary=True, order='length')`
+— a rename plus two real bug fixes shipped together (per `.claude/TODO.md`'s explicit instruction:
+"not a bare rename"), each a **parameter** rather than a behaviour change in place, since both
+`score.py` and the character-age format check already depend on the old behaviour:
+
+- `hyphen_boundary=True` (the AGE default, unchanged) treats a hyphen as a word boundary, so
+  `middle-aged` cannot match a bare `aged`. `hyphen_boundary=False` (COLOUR's need) does not — so
+  `yellow` is now correctly pulled out of `mustard-yellow`, where the old unconditional guard made
+  every compound colour term extract as nothing (`L-A-SILENT-FALLTHROUGH-IS-WORSE-THAN-A-CRASH`).
+- `order='length'` (the AGE default, unchanged) yields matches in longest-term-first order — the
+  same order subsumption is computed in, so `young adult` still correctly beats bare `adult`.
+  `order='position'` (COLOUR's need) yields in the order terms actually appear in the line instead
+  — `order='length'` is a systematic bias toward whichever colour has the longest name, which would
+  have made COLOUR's "rank 1" mean "longest name" rather than "mentioned first."
+
+Both AGE call sites (the character `[[APPEARANCE]]` bracket check; the `same:`-group drift
+cross-check) now pass `hyphen_boundary=True, order='length'` explicitly. Regression-gated
+byte-identical against the two archived AgeDrift rounds, `Describer-Character-v1.txt`, and
+`Describer-Setting-v5.txt`/`Describer-Style-v4c-s18-enriched.txt` (drift check, non-AGE vocab).
+
+**`DESCRIBER_ROLES` gained a `derived` key**, `{field name: (source field, vocab, vocab_terms()
+kwargs, aliases)}` — declares a field extracted from another field's free text rather than written
+literally, the same shape `no_launder` gave cross-field checking. `object`'s only entry: `COLOUR`
+off `[[MATERIAL]]`. `score.py` imports `DESCRIBER_ROLES` for the first time (previously only
+`validate.py`'s own format checks read it) and merges every role's `derived` dict into one flat
+lookup, since a derived field name is unique across roles today. `read_run()` computes a derived
+field's value via `vocab_terms()` instead of literal `[[FIELD]]` lookup — **the first field this
+project has ever content-scored without the model writing it out literally.** Only rank 1 (the
+first extracted, alias-mapped term) is scored; the full ranked extraction is diagnostic-only,
+printed next to any miss on a derived field so a rank-2 match is visible without new ground-truth
+machinery.
+
+**`aliases`** maps a defensible synonym to a canonical vocabulary term (`COLOUR_ALIASES` in
+`validate.py`: `beige`/`tan` → `light brown`, `cream`/`off-white` → `white`, `navy` → `dark blue`),
+applied after extraction so every derived value handed to the scorer is always a vocabulary word.
+Added only once empirically confirmed necessary (`ob_van`'s real dominant colour, `"a faded beige
+or cream colour"`, was invisible to extraction and fell through to a secondary mention) — not
+pre-emptively. `mustard`/`mustard-yellow` is deliberately **not** an alias: it was ruled a genuine
+miss against `brown`, not a defensible synonym, and mapping it would silently launder the one real
+content defect this round found.
+
+**`score.py`'s comparison gained one directional loosening**, `_field_match(field_name, got, alt)`:
+for a derived field only, a modifier-qualified extraction satisfies its bare-hue expectation
+(`dark grey` credits against expected `grey`) — never the reverse, and never across two *different*
+modifiers, so `light brown` still does not satisfy plain `brown`. Applied consistently everywhere
+a field value is compared against an expectation (the main per-field verdict, and the
+accept-set-control collapse check), so the two paths cannot silently diverge.
 
 `h3` — the three-field contract (t2va/i2va/l2va/fl2va). Field labels exact / ordered / once
 each · reply begins with the first field · no fences, `User:`, or `<think>` · `[Shot 1]`
