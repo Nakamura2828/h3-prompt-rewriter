@@ -281,6 +281,8 @@ def _character_age_vocab(out):
 #   style_warn   whether naming a rendering style is worth flagging
 #   style_allow  style words that are legitimate for this role anyway
 #   atmos_field  the field holding transient conditions, which [[DEFINITION]] must not reuse
+#   no_launder   (source field, target fields) -- a capitalised word in a target field must
+#                not trace back to a word printed in the source field; None disables the check
 DESCRIBER_ROLES = {
     'character': {
         'fields': ['SUBJECT_KIND', 'APPEARANCE', 'CLOTHING', 'DISTINGUISHING',
@@ -293,6 +295,7 @@ DESCRIBER_ROLES = {
         'style_allow': (),
         'atmos_field': None,
         'coarse_sub': None,
+        'no_launder': None,
     },
     'setting': {
         'fields': ['SETTING_KIND', 'STRUCTURE', 'CONTENTS', 'DISTINGUISHING', 'PLACE',
@@ -311,6 +314,7 @@ DESCRIBER_ROLES = {
         'style_allow': ('rendered',),
         'atmos_field': 'ATMOSPHERE',
         'coarse_sub': None,
+        'no_launder': None,
     },
     'object': {
         'fields': ['OBJECT_KIND', 'FORM', 'MATERIAL', 'TEXT', 'DISTINGUISHING', 'SCALE',
@@ -335,6 +339,14 @@ DESCRIBER_ROLES = {
         'style_allow': (),
         'atmos_field': None,
         'coarse_sub': None,
+        # The top open defect (session 22-28, unmoved across three prompt-wording rounds):
+        # printed text read into [[TEXT]] gets laundered into the model's own identification
+        # of the thing elsewhere -- "HEATH" -> "[[LABEL]] the beige and blue Heathkit
+        # computer". The prompt already bans this by name (describer_object.txt:52-54,
+        # naming exactly these four target fields); this is the mechanical catch for when it
+        # isn't followed, per L-KNOW-WHEN-TO-STOP -- a fourth wording attempt was rejected in
+        # favour of detecting the violation instead of re-asking for compliance.
+        'no_launder': ('TEXT', ('KIND', 'LABEL', 'DISTINGUISHING', 'DEFINITION')),
     },
     # NOTE: the monolithic 'style' role was REMOVED in session 20, when the split locked at
     # describer_style_class v4d and prompts/describer_style.txt was retired to
@@ -367,6 +379,7 @@ DESCRIBER_ROLES = {
         'style_allow': (),
         'atmos_field': None,
         'coarse_sub': None,
+        'no_launder': None,
     },
     'style_class': {
         'fields': ['MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT'],
@@ -381,6 +394,7 @@ DESCRIBER_ROLES = {
         # No [[DEFINITION]] here, so the full-stop and atmosphere checks simply never fire.
         'atmos_field': None,
         'coarse_sub': ('MEDIUM', 'SUB_MEDIUM', MEDIUM_VOCAB),
+        'no_launder': None,
     },
 }
 
@@ -394,6 +408,52 @@ def age_terms(line, vocab):
             if not any(s <= m.start() and m.end() <= e for s, e in spans):
                 spans.append((m.start(), m.end()))
                 yield t
+
+
+# For the 'no_launder' check: a fixed vocabulary won't do here, since what counts as a banned
+# name is derived per-record from that record's own [[TEXT]] field, not a closed list.
+LAUNDER_MIN_LEN = 4  # a shorter substring match is coincidence, not a signal
+
+
+def _quoted_words(text):
+    """Alphabetic words (lowercased, >=LAUNDER_MIN_LEN) inside every double-quoted span --
+    the printed words a [[TEXT]] field actually reproduced."""
+    words = set()
+    for q in re.findall(r'"([^"]*)"', text):
+        for w in re.findall(r"[A-Za-z']+", q):
+            if len(w) >= LAUNDER_MIN_LEN:
+                words.add(w.lower())
+    return words
+
+
+def _capitalized_words(text):
+    """Proper-noun-looking words, skipping sentence-initial position (including the very
+    start of the field) so ordinary sentence capitalisation in prose fields isn't mistaken
+    for a name -- and skipping anything inside a quoted span, since [[DEFINITION]] and
+    [[DISTINGUISHING]] are allowed to quote [[TEXT]] content verbatim (that is reproduction,
+    not identification, and the prompt's own worked example does exactly this)."""
+    text = re.sub(r'"[^"]*"', '', text)
+    out = []
+    for m in re.finditer(r'\b[A-Z][a-z]+\b', text):
+        if m.start() == 0 or re.search(r'[.!?]\s+$', text[:m.start()]):
+            continue
+        out.append(m.group(0))
+    return out
+
+
+def _launder_hit(word, text_words):
+    """word traces to a printed word -- exact match, or a substring relation either way
+    (needed for 'Heathkit' <- 'HEATH'). Both sides of a substring match must clear
+    LAUNDER_MIN_LEN -- text_words already does (_quoted_words filters on the way in), but
+    word does not, and an unguarded short word (e.g. 'No') can sit inside an unrelated
+    longer printed word ('gnome') by coincidence."""
+    lw = word.lower()
+    if len(lw) < LAUNDER_MIN_LEN:
+        return None
+    for t in text_words:
+        if lw == t or t in lw or lw in t:
+            return t
+    return None
 
 
 # Any [[...]] token, however wrong. The length cap keeps a runaway '[[' in prose from
@@ -516,6 +576,20 @@ def check_describer(out, inp, role):
     for fname in spec['no_digits']:
         if re.search(r'\d', field_text(fname)):
             errs.append(f'[[{fname}]] contains a digit -- numerals are banned there')
+
+    # --- printed text laundered into the model's own identification of the thing
+    if spec.get('no_launder'):
+        source_field, target_fields = spec['no_launder']
+        text_words = _quoted_words(field_text(source_field))
+        if text_words:
+            for tf in target_fields:
+                if tf not in fields:
+                    continue
+                for cw in _capitalized_words(field_text(tf)):
+                    hit = _launder_hit(cw, text_words)
+                    if hit:
+                        errs.append(f'[[{tf}]] launders printed text into identification: '
+                                    f'{cw!r} traces to {hit!r} in [[{source_field}]]')
 
     if 'DEFINITION' in fields:
         definition = field_text('DEFINITION')

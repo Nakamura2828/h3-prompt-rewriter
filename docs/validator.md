@@ -38,7 +38,8 @@ python scripts/validate.py ref2va    runs/run-*.txt        # not built yet
 ```
 
 **Roles are data, not branches (session 6).** `DESCRIBER_ROLES` maps a role to
-`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field}`, and what
+`{fields, closed, drift, no_digits, not_found, style_warn, style_allow, atmos_field, no_launder}`,
+and what
 counts as a wrong field is **derived** from that table rather than hardcoded. That matters for the
 roles still to come: the old hardcoded list contained `PALETTE` and `LIGHTING`, both of which
 `describer_style` legitimately owns, so it would have rejected that role's own fields. Refactor
@@ -72,6 +73,39 @@ archived run are unchanged — the new errors land on records that were already 
 `[[SUBJECT NOT FOUND]]` is exempt here and validated by its own rules below, so a role that may not
 emit it still reports that once rather than twice.
 
+### Printed-name laundering: a cross-field check with no fixed vocabulary (session 29)
+
+`object` is the only role that reproduces on-thing lettering (`[[TEXT]]`), and it has a
+persistent defect where a printed name gets carried into the model's own identification of the
+thing elsewhere — `"HEATH"` on a computer case becoming `[[LABEL]] the beige and blue Heathkit
+computer`. The prompt has banned this by name since session 22 and it kept happening anyway, so
+`no_launder` gives it a mechanical FAIL rather than leaving it to be judged by eye every round: a
+`(source field, target fields)` pair on a role's spec — `('TEXT', ('KIND', 'LABEL',
+'DISTINGUISHING', 'DEFINITION'))` for `object`, `None` for every other role.
+
+Unlike every other closed-vocabulary check here, there is no fixed list to check against — what
+counts as a banned word is *derived per record* from that record's own `[[TEXT]]` field, so it
+gets its own small helpers (`_quoted_words`, `_capitalized_words`, `_launder_hit`) rather than
+reusing `age_terms()`. Two things they specifically guard against, both found live rather than
+designed in advance:
+
+- **A capitalised word that is itself a legitimate quoted reproduction of `[[TEXT]]`.**
+  `[[DEFINITION]]` and `[[DISTINGUISHING]]` are allowed to quote `[[TEXT]]` content verbatim (it's
+  in their own field rules, and the prompt's own worked example does it), so `_capitalized_words`
+  strips quoted spans before scanning. Found on a real record: a TV in `ob_notfound_slippers`
+  legitimately quoted a channel watermark it had (separately, and outside this check's scope)
+  mis-attributed to its own casing — `[[DEFINITION]] ... the words "Global HD" printed on the
+  casing` should not fail just because `[[TEXT]]` also says `"Global"`.
+- **A short word that coincidentally sits inside a longer, unrelated printed word.** The
+  substring match needed for `'Heathkit'` ⟵ `'HEATH'` cuts both ways unless both sides clear a
+  length floor (`LAUNDER_MIN_LEN = 4`) — found via regression against the archived
+  `Describer-Object-v2.txt`, where `'No'` (from the legitimate quote `"No job too small"`)
+  matched inside `'gnome'`.
+
+Verified against a live 44-case round, all four archived historical `describer_object` rounds, and
+the session-28 archive: the six known laundering cases all still catch, and nothing else in any of
+those six files does.
+
 `h3` — the three-field contract (t2va/i2va/l2va/fl2va). Field labels exact / ordered / once
 each · reply begins with the first field · no fences, `User:`, or `<think>` · `[Shot 1]`
 untimestamped · sequential shot numbers · `At MM:SS.mmm,` present · timestamps strictly
@@ -84,7 +118,8 @@ with the first field · no `<` or `>` · no fences or `User:` · no foreign, cor
 `[[...]]` tokens ·
 closed-vocabulary fields hold a permitted value (`SUBJECT_KIND`, `SETTING_KIND`) · exactly one
 term from the closed age vocabulary, human or animal per `[[SUBJECT_KIND]]` · no digits where
-the role bans them · `[[SUBJECT NOT FOUND]]` only with a SUBJECT line, never `none`/`N/A`,
+the role bans them · (`object`) no printed name laundered from `[[TEXT]]` into an identification
+field · `[[SUBJECT NOT FOUND]]` only with a SUBJECT line, never `none`/`N/A`,
 always last · (warn) rendering-style words · (warn, setting) a transient condition in
 `[[DEFINITION]]`. `--role` selects everything; add a role by adding a row to `DESCRIBER_ROLES`.
 

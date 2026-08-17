@@ -211,7 +211,7 @@ choosing the drift field for `object` and `style` — a two-value field buys not
 **`style` is the payoff of that warning** — its drift field has 11 values and it caught two real
 failures on its first round. See below.
 
-## Object describer (v3, session 22; `[[SCALE]]` vocabulary settled sessions 24–25) — the last describer before the composer
+## Object describer (v4, session 29; `[[SCALE]]` vocabulary settled sessions 24–25, not pursued — see below) — the last describer before the composer
 
 `prompts/describer_object.txt` — the fourth REF2VA describer role, covering **object / prop /
 clothing** in one prompt. **One thing, durably**: what it permanently is, never how this picture
@@ -272,6 +272,7 @@ vocabulary, not an inconsistency.
 | v2 | **32/35.** Subject-override **fixed**, `[[SCALE]]`-on-garments **fixed**, laundering unmoved at 4 |
 | v3 | **31/35 raw.** Removing the phrase the tail line was stealing only moved the theft; inside noise vs v2 |
 | v3 + graph mechanic, +4 cases | **38/39.** Same prompt; the tail line is now stripped in code |
+| v3 → v4 laundering re-attempt | **37/44 → 39/44** (`validate.py`'s new `no_launder` check). One of the four headline cases (`ob_misato_print`) cleared for the first time; see below |
 
 ### Three findings worth carrying forward
 
@@ -296,19 +297,20 @@ catches a consumer that forgets.
 
 ### Known limitations, not chased (`L-KNOW-WHEN-TO-STOP` — four rounds in one session)
 
-- **Printed names launder into identification. UNMOVED across three rounds, 4 cases.** The model
-  reads `"HEATH"` and writes `[[LABEL]] the beige and blue Heathkit computer`; `"ALPINE A 310 V6"`
-  becomes "the blue Alpine coupe"; `"LINCOLN"` becomes "a portrait of Abraham Lincoln". The rule
-  exists, names the banned outputs verbatim, and is not followed — the same *unfollowed-rule* shape
-  as the `digital` over-attractor. **This is the top open defect.**
+- **Printed names launder into identification. IMPROVED session 29, not eliminated.** See the
+  session-29 section below — a mechanical `validate.py` check now catches every instance, and a
+  reworded rule cleared one of the four original cases for the first time. Three of the four
+  (`ob_kaypro`/Heathkit, `ob_misato_real`/Alpine, `ob_banknote`/Lincoln) plus one session-24 probe
+  (`ob_text_bare_brand`/Kenworth) still launder. No longer chased further this session — the
+  mechanical check means it can no longer ship silently, which was the actual blocker.
 - **Colour drifts between renderings of one thing**, twice and in the same direction: the gordon
   trench coat (`brown` vs `mustard-yellow`) and the Simpsons couch (`mustard-yellow` vs `brown`).
   The user ruled the coat *defensible* — it is a night scene — but two instances on one axis is a
   pattern. **The cheap fix to try first is `setting`'s, transposed**: name the colour of the
-  material, not the colour the light makes it, which is `NAME THE FORM, NEVER THE GLOW` for hue. A
-  closed colour vocabulary was considered and deferred: colour is genuinely multi-axis
-  (`L-ONE-AXIS-PER-VOCABULARY`), it would mean re-adding a `[[COLOUR]]` field to be enforceable,
-  and there is no colour ground truth to measure it against.
+  material, not the colour the light makes it, which is `NAME THE FORM, NEVER THE GLOW` for hue.
+  **The deferral below is stale** — a closed colour vocabulary was adopted in session 23 (the
+  Danbooru convention, `.claude/TODO.md`) and is the planned next round on this prompt, extracted
+  as a derived field off `[[MATERIAL]]` rather than a new `[[COLOUR]]` field.
 - **`[[OBJECT_KIND]]` called a sofa a `garment`** on `ob_couch_clear` while its sibling got it
   right. One case, split within a pair, so read as marginal until it repeats
   (`L-MOVING-FAILURE-IS-NOISE`). **It repeated, session 28** — see below.
@@ -339,10 +341,66 @@ self-contradiction (hallucinated slippers plus an unsolicited `[[SUBJECT NOT FOU
 `[[DEFINITION]]`) — its `[[OBJECT_KIND]]` answer (`object`) was still correct, confirming the
 session-22 finding that this field does not detect the confabulation.
 
-### `[[SCALE]]` — the nine-term size ladder (settled session 24, not yet in the prompt)
+### Printed-name laundering — mechanical detection plus a second wording attempt (session 29)
 
-**Status: the vocabulary, the answer key and the corpus exist; `describer_object.txt` does not yet
-implement it.** v3 still emits free text. Writing it in is v4, deliberately sequenced alone.
+Checking the actual archived prompt text (`reference/prompt_archive/describer_object_v{1,2,3}.txt`)
+rather than the round-count summary found the history was thinner than it read: the anti-laundering
+rule was written **once**, in the v1→v2 transition, and was byte-identical through v3 — "unmoved
+across three rounds" was a true measurement but an overstated description of effort. That reopened
+the question of whether prompt wording was really exhausted.
+
+**Part 1 — a mechanical `validate.py` check**, the untried structural option already named on
+`.claude/TODO.md`: any capitalised word in `[[KIND]]`, `[[LABEL]]`, `[[DISTINGUISHING]]`, or
+`[[DEFINITION]]` that traces back to a word printed in `[[TEXT]]` is now a hard format FAIL
+(`no_launder` spec key, `scripts/validate.py`). It correctly excludes a capitalised word that is
+itself a quoted, legitimate reproduction of `[[TEXT]]` content — `[[DEFINITION]]` and
+`[[DISTINGUISHING]]` are allowed to draw on `[[TEXT]]` per their own field rules, and the prompt's
+own worked example does exactly this. Verified against a live 44-case round, all four archived
+historical rounds, and the session-28 archive: zero false positives after fixing one found during
+that regression sweep (a 2-letter word, `'No'`, coincidentally sitting inside `'gnome'` — fixed by
+requiring both sides of a substring match to clear a 4-letter floor).
+
+**Part 2 — a second wording attempt**, informed by why the first one may have failed: it enumerates
+three real names as banned-output examples (`"Heathkit computer"`, `"Alpine Renault coupe"`,
+`"Abraham Lincoln"`), which is exactly the shape `L-AN-ENUMERATION-IS-A-RANKING` and
+`L-KNOW-WHEN-TO-STOP` warn can backfire — naming specific content makes it more salient, not less.
+The rewrite (`describer_object.txt`'s `VISIBLE TEXT` section) replaces the named list with THE
+BLACKOUT TEST, a procedure rather than an exemplar list: imagine on-object lettering blacked out,
+and don't write into the four target fields anything that only occurs to you because of what you
+read. Measured live, same 44-case file, no other change: **37/44 → 39/44**, laundering cases
+**6 → 5**. `ob_misato_print` — one of the four original headline cases — cleared for the first
+time; `ob_text_split_object`'s leak also shrank from three fields to one. No regression anywhere
+in the 44-case file; `[[OBJECT_KIND]]` accuracy unaffected (43/44, same single known miss).
+
+**Net result: real, partial progress, not a fix.** Three of the four original cases
+(`ob_kaypro`/Heathkit, `ob_misato_real`/Alpine, `ob_banknote`/Lincoln) and one session-24 probe
+(`ob_text_bare_brand`/Kenworth) still launder under v4. What changed is that this no longer ships
+silently — every remaining instance is now a mechanical FAIL, not a by-eye-only judgement call. The
+combination (an improved rule plus a hard backstop for what it still misses) is what session 29
+settled for, rather than a third wording iteration chasing the last cases — the model's failure
+here likely reflects a strong prior toward naming a recognised thing once it recognises it, not a
+wording gap, and the pattern now matches `digital`'s: closed as a bounded, monitored residual
+rather than an open task.
+
+### `[[SCALE]]` — the nine-term size ladder (settled session 24, NOT PURSUED — session 29)
+
+**Status, revised session 29: the vocabulary, the answer key and the corpus below all still
+exist and are left as a design record, but the plan to write the ladder into the prompt is
+shelved, on a reconsideration of the whole approach rather than a scheduling decision.**
+`describer_object.txt` still emits free-text `[[SCALE]]` (`"larger than a person"`, etc.) and
+that is now expected to stay that way.
+
+**The reason: an absolute size vocabulary may be the wrong shape of answer for a natural-language
+prompt engine, whatever its merits for scoring.** "A small car" is larger than "a large key", and
+that relative reading is exactly what H3's downstream consumer needs — a ladder that answers
+`large` for any car and `tiny` for any key throws that away in favour of a value that is easy to
+grade but reads oddly stitched into a sentence with everything else the record says. The ladder
+work (below) already had to reject several draft rules for smuggling in something other than
+physical bulk (occupancy counts, grip affordance, an unqualified "a person" that silently admitted
+a toddler) — the surviving version is the tightest circle drawable around "one absolute term per
+thing," and the user's point is that the circle itself may be drawn around the wrong shape.
+Nothing here is retired: if a comparative or relative framing is designed later, this vocabulary
+and corpus are the reference to build it from, not a redo.
 
 Three things v4 must do besides writing the rungs in, each easy to miss:
 
