@@ -7,7 +7,7 @@
   "tokenizer": "llama-server /tokenize, the model in CLAUDE.md > Model Parameters",
   "line_endings": "every archived file is LF; md5_lf is over those exact bytes. The repo is LF everywhere as of session 23 (.gitattributes, `* text=auto eol=lf`), so a fresh checkout now matches these hashes directly -- no normalisation step needed. Before that it did not, because core.autocrlf=true handed out CRLF copies.",
   "counts": {
-    "archived": 41,
+    "archived": 42,
     "missing": 6
   },
   "records": [
@@ -22,7 +22,7 @@
       "lines": 98,
       "md5_lf": "99206cb96cad12553d3efc76b62ecc22",
       "first_seen": "2026-08-10 c6c1c73",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_character.txt"
       ],
@@ -40,7 +40,7 @@
       "lines": 121,
       "md5_lf": "900b383fa14c5259cf8a80ed8b76fd8d",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame.txt",
         "reference/retired/prompts/describer_frame_v1.txt"
@@ -59,7 +59,7 @@
       "lines": 131,
       "md5_lf": "af06ee66c3e361f7eccf918206bd09cd",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame_v2.txt",
         "reference/retired/prompts/describer_frame_v2.txt"
@@ -78,7 +78,7 @@
       "lines": 137,
       "md5_lf": "684acc768be80473970e77ab26d71a60",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame_v3.txt",
         "reference/retired/prompts/describer_frame_v3.txt"
@@ -97,7 +97,7 @@
       "lines": 152,
       "md5_lf": "ee78489105e3cf468c7769b06d9dec99",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame_v4.txt",
         "reference/retired/prompts/describer_frame_v4.txt"
@@ -116,7 +116,7 @@
       "lines": 152,
       "md5_lf": "87ab10504f8829ed0f8569fe52af14a5",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame_v5.txt",
         "reference/retired/prompts/describer_frame_v5.txt"
@@ -135,7 +135,7 @@
       "lines": 167,
       "md5_lf": "95a4c7ab1830a1b1b7691af6fd53d502",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame_v6.txt",
         "reference/retired/prompts/describer_frame_v6.txt"
@@ -154,7 +154,7 @@
       "lines": 169,
       "md5_lf": "8e9b2e991b83f2942c65bef2f0f7c0e8",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "dist/frame_describer.txt",
         "prompts/describer_frame.txt",
@@ -175,7 +175,7 @@
       "lines": 169,
       "md5_lf": "a9613d8d0addc35a442b476fb6449c52",
       "first_seen": "2026-08-10 c843e49",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_frame.txt"
       ],
@@ -193,7 +193,7 @@
       "lines": 121,
       "md5_lf": "e2e87a1ac80eb73840e9633cd2b61f63",
       "first_seen": "2026-08-14 a6ab74e",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_object_v1.txt"
       ],
@@ -211,7 +211,7 @@
       "lines": 130,
       "md5_lf": "2dc9a9ee62e5a414c0e91323260c6888",
       "first_seen": "2026-08-14 a6ab74e",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_object_v2.txt"
       ],
@@ -247,7 +247,7 @@
       "lines": 131,
       "md5_lf": "504408d564d5a6b37a15146d913ee8c1",
       "first_seen": "2026-08-17 d68f31c",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_object.txt"
       ],
@@ -265,7 +265,7 @@
       "lines": 101,
       "md5_lf": "047eb3d74a238cab4d5249a6835cfd27",
       "first_seen": "2026-08-11 24a5eb7",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_setting.txt"
       ],
@@ -319,7 +319,7 @@
       "lines": 138,
       "md5_lf": "ee43018093d89c57606367d1547032c3",
       "first_seen": "2026-08-11 4166902",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_style.txt",
         "reference/retired/prompts/describer_style_v2-compressed.txt"
@@ -356,7 +356,7 @@
       "lines": 106,
       "md5_lf": "d7e49714aa1a9ae1338b349d95fa69f0",
       "first_seen": "2026-08-13 80e3f2e",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_style_class_v4a.txt"
       ],
@@ -374,7 +374,7 @@
       "lines": 121,
       "md5_lf": "e7aa542f835898bc3d2d4fd803dcadcb",
       "first_seen": "2026-08-13 80e3f2e",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_style_class_v4b.txt"
       ],
@@ -410,7 +410,7 @@
       "lines": 126,
       "md5_lf": "e7972414f15aadadce51c7e06b9515c4",
       "first_seen": "2026-08-13 37e9803",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_style_class_v4d.txt"
       ],
@@ -428,7 +428,7 @@
       "lines": 126,
       "md5_lf": "a18a0bffa071b21c0579da0832926cdf",
       "first_seen": "2026-08-13 37e9803",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_style_class_v4d-flat.txt"
       ],
@@ -446,7 +446,7 @@
       "lines": 125,
       "md5_lf": "fbd600f8ee28d9f39cdc37d9915e79e3",
       "first_seen": "2026-08-13 37e9803",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/retired/prompts/describer_style_class_v4d-stroke.txt"
       ],
@@ -464,7 +464,7 @@
       "lines": 125,
       "md5_lf": "e4ac4b22b117ea784ebcbf2cc87694f0",
       "first_seen": "2026-08-13 37e9803",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_style_class.txt"
       ],
@@ -482,7 +482,7 @@
       "lines": 68,
       "md5_lf": "91808c4a25f8c9886342052bfed13af5",
       "first_seen": "2026-08-12 e68be08",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/describer_style_look.txt"
       ],
@@ -579,7 +579,7 @@
       "lines": 131,
       "md5_lf": "f7559d7716b59cb19e3a59028a606d15",
       "first_seen": "2026-08-12 7b68815",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/experiments/bloat/logs/v4n.txt",
         "reference/retired/prompts/fl2va_v4.txt"
@@ -598,7 +598,7 @@
       "lines": 131,
       "md5_lf": "54eaecfd473c5479ab11a6289e7e9d6b",
       "first_seen": "2026-08-10 68909d9",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/fl2va.txt",
         "reference/experiments/bloat/logs/curn.txt",
@@ -618,7 +618,7 @@
       "lines": 96,
       "md5_lf": "dc458d9a46d5d2b5a9f8120cf265fe67",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "prompts/fl2va_delta.txt",
         "prompts/fl2va_delta_v1.txt"
@@ -691,7 +691,7 @@
       "lines": 96,
       "md5_lf": "d5b3cdb21004b26cec0411afb48a29ad",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "dist/i2va.txt",
         "prompts/i2va.txt"
@@ -710,7 +710,7 @@
       "lines": 97,
       "md5_lf": "d0fa731f45c2d06cc4576edc7ebc7cea",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/i2va.txt"
       ],
@@ -728,7 +728,7 @@
       "lines": 87,
       "md5_lf": "622aa43837ead303507d32c024e86d03",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "dist/l2va.txt",
         "prompts/l2va.txt"
@@ -747,12 +747,30 @@
       "lines": 82,
       "md5_lf": "b3c8f88991a723b53ec424ae12a08306",
       "first_seen": "2026-08-12 b4191f4",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "reference/pre_build_env_canonical_prompts/l2va.txt"
       ],
       "committed": true,
       "note": "Untracked on every ref until 2026-08-12 (b4191f4). Read by scripts/build.py --verify."
+    },
+    {
+      "label": "ref2va_v1",
+      "file": "ref2va_v1.txt",
+      "family": "ref2va",
+      "status": "live",
+      "parent": null,
+      "tokens": 3029,
+      "bytes": 12413,
+      "lines": 90,
+      "md5_lf": "2eda7d4cfaeea2a8c329b0c072b48eb4",
+      "first_seen": "2026-08-17 2dc6f5e",
+      "last_seen": "2026-08-17 2dc6f5e",
+      "git_paths": [
+        "prompts/ref2va.txt"
+      ],
+      "committed": true,
+      "note": "Session 32: FIRST DRAFT of the REF2VA composer Pass A, the fifth blocks/modes/manifests mode (3,029 tokens). No pre-build ancestor -- REF2VA postdates the build system entirely, unlike t2va/i2va/l2va which were hand-locked first and reproduced by it. Roster records (<Subject N>/<Picture N>/<Audio N>) are passed through verbatim rather than reformatted, mirroring describer_style's two-pass handoff. Required converting blocks/10_output_contract.txt and blocks/80_music.txt from a hardcoded \"integrated_multimodal_description\" to a {{MAIN_FIELD}} slot -- build.py --verify confirmed zero regression on t2va/i2va/l2va. Draft only: no live model call against it yet, no tests/ref2va*.json, deliberately excludes subject_definitions/summary/retention_analysis (Pass B + code's job per docs/REF2VA_architecture.md)."
     },
     {
       "label": "t2va_v1",
@@ -765,7 +783,7 @@
       "lines": 82,
       "md5_lf": "cc48c247216227c14a23447587b1e230",
       "first_seen": "2026-08-10 4dce882",
-      "last_seen": "2026-08-17 d68f31c",
+      "last_seen": "2026-08-17 2dc6f5e",
       "git_paths": [
         "dist/t2va.txt",
         "prompts/t2va.txt",

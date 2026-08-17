@@ -455,6 +455,30 @@
       "ct": 1786956171,
       "date": "2026-08-17",
       "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+    },
+    {
+      "commit": "271ab22",
+      "ct": 1786957044,
+      "date": "2026-08-17",
+      "subject": "prompt_archive: add describer_object_v4"
+    },
+    {
+      "commit": "4b4b32f",
+      "ct": 1786995926,
+      "date": "2026-08-17",
+      "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+    },
+    {
+      "commit": "acf7c16",
+      "ct": 1787000674,
+      "date": "2026-08-17",
+      "subject": "score.py: require --fields explicitly, no cross-role default"
+    },
+    {
+      "commit": "2dc6f5e",
+      "ct": 1787006671,
+      "date": "2026-08-17",
+      "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
     }
   ],
   "states": [
@@ -1017,6 +1041,34 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -1029,7 +1081,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -1606,6 +1658,34 @@
           "path": "prompts/i2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -1615,7 +1695,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -2192,6 +2272,34 @@
           "path": "prompts/l2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -2201,7 +2309,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -3073,6 +3181,62 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -3082,7 +3246,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -3429,6 +3593,34 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -3440,7 +3632,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -3765,6 +3957,34 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -3776,7 +3996,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -4101,6 +4321,34 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -4112,7 +4360,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -4437,6 +4685,34 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -4448,7 +4724,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -4773,6 +5049,34 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -4784,7 +5088,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -5109,6 +5413,34 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -5120,7 +5452,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -5677,6 +6009,34 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -5688,7 +6048,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -6282,6 +6642,34 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -6291,7 +6679,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409308,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -6780,6 +7168,34 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -6791,7 +7207,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -7262,6 +7678,34 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -7271,7 +7715,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786417832,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -7728,6 +8172,34 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -7737,7 +8209,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786429502,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -8169,6 +8641,34 @@
           "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -8179,7 +8679,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -8717,6 +9217,34 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -8726,7 +9254,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -9045,6 +9573,34 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -9057,7 +9613,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786558178,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -9367,6 +9923,34 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -9376,7 +9960,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786563094,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -9686,6 +10270,34 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -9695,7 +10307,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786563094,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -9936,6 +10548,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4a.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -9945,7 +10585,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786625176,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10087,6 +10727,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4b.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10096,7 +10764,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786627317,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10196,6 +10864,34 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10205,7 +10901,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786665641,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10305,6 +11001,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10314,7 +11038,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10414,6 +11138,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10423,7 +11175,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10523,6 +11275,34 @@
           "path": "reference/retired/prompts/describer_style_class_v4d.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10532,7 +11312,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786668659,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10692,6 +11472,34 @@
           "path": "reference/retired/prompts/describer_object_v1.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10703,7 +11511,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786764672,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10782,6 +11590,34 @@
           "path": "reference/retired/prompts/describer_object_v2.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10793,7 +11629,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786764672,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     },
     {
@@ -10816,6 +11652,34 @@
           "path": "prompts/describer_object.txt",
           "ct": 1786956171,
           "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "271ab22",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786957044,
+          "subject": "prompt_archive: add describer_object_v4"
+        },
+        {
+          "commit": "4b4b32f",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786995926,
+          "subject": "describer_object: COLOUR content-scored, extraction generalised from age_terms()"
+        },
+        {
+          "commit": "acf7c16",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1787000674,
+          "subject": "score.py: require --fields explicitly, no cross-role default"
+        },
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
         }
       ],
       "families": [
@@ -10825,7 +11689,39 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786953468,
-      "last_ct": 1786956171,
+      "last_ct": 1787006671,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "2eda7d4cfaeea2a8c329b0c072b48eb4",
+      "bytes": 12413,
+      "lines": 90,
+      "md5_exact": [
+        "2eda7d4cfaeea2a8c329b0c072b48eb4"
+      ],
+      "names": [
+        "ref2va"
+      ],
+      "paths": [
+        "prompts/ref2va.txt"
+      ],
+      "commits": [
+        {
+          "commit": "2dc6f5e",
+          "date": "2026-08-17",
+          "path": "prompts/ref2va.txt",
+          "ct": 1787006671,
+          "subject": " blocks/10_output_contract.txt, blocks/80_music.txt, manifests/{t2va,i2va,l2va,fl2va,ref2va}.json, scripts/build.py, modes/ref2va/, prompts/ref2va.txt:"
+        }
+      ],
+      "families": [
+        "ref2va"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1787004840,
+      "last_ct": 1787006671,
       "crlf_variants": 1
     }
   ]

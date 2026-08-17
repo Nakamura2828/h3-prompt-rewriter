@@ -59,6 +59,19 @@ CURATED = {
                    'Untracked on every ref until 2026-08-12 (b4191f4). Read by '
                    'scripts/build.py --verify.'),
     '622aa43837': ('l2va_v1', 'live', 'l2va_pre-build', ''),
+    '2eda7d4cfa': ('ref2va_v1', 'live', None,
+                   'Session 32: FIRST DRAFT of the REF2VA composer Pass A, the fifth '
+                   'blocks/modes/manifests mode (3,029 tokens). No pre-build ancestor -- REF2VA '
+                   'postdates the build system entirely, unlike t2va/i2va/l2va which were '
+                   'hand-locked first and reproduced by it. Roster records (<Subject N>/'
+                   '<Picture N>/<Audio N>) are passed through verbatim rather than reformatted, '
+                   'mirroring describer_style\'s two-pass handoff. Required converting '
+                   'blocks/10_output_contract.txt and blocks/80_music.txt from a hardcoded '
+                   '"integrated_multimodal_description" to a {{MAIN_FIELD}} slot -- '
+                   'build.py --verify confirmed zero regression on t2va/i2va/l2va. Draft only: '
+                   'no live model call against it yet, no tests/ref2va*.json, deliberately '
+                   'excludes subject_definitions/summary/retention_analysis (Pass B + code\'s '
+                   'job per docs/REF2VA_architecture.md).'),
 
     # --- fl2va: a tree, not a line ----------------------------------------------------------
     '1bbc4fac1a': ('fl2va_v1', 'superseded', None, 'Pre-repo; survived only as dist/fl2va_v1.txt.'),
