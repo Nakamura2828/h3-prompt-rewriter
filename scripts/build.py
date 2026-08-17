@@ -11,7 +11,7 @@ Output convention matches the locked prompts: LF line endings, no trailing newli
 import argparse, json, pathlib, sys, difflib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-MODES = ['t2va', 'i2va', 'l2va', 'fl2va']
+MODES = ['t2va', 'i2va', 'l2va', 'fl2va', 'ref2va']
 SLOT = '{{%s}}'
 
 

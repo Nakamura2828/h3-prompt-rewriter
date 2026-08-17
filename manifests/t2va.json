@@ -13,6 +13,7 @@
   ],
   "duration": "standard",
   "slots": {
+    "MAIN_FIELD": "integrated_multimodal_description",
     "NO_ALIGNMENT_LINE": null,
     "NO_LANDING_CLAUSE": null,
     "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields. Begin your reply with \"integrated_multimodal_description:\".",

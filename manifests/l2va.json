@@ -14,6 +14,7 @@
   ],
   "duration": "land_on_last_frame",
   "slots": {
+    "MAIN_FIELD": "integrated_multimodal_description",
     "NO_ALIGNMENT_LINE": "- Do NOT output any alignment, reference, or \"aligns with\" line. Begin your reply directly with \"integrated_multimodal_description:\".",
     "NO_LANDING_CLAUSE": null,
     "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields.",

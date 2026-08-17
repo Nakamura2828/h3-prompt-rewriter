@@ -1,0 +1,32 @@
+{
+  "order": [
+    "modes/{m}/00_preamble.txt",
+    "blocks/10_output_contract.txt",
+    "modes/{m}/20_roster.txt",
+    "blocks/30_fidelity.txt",
+    "@duration",
+    "blocks/50_style_camera.txt",
+    "blocks/60_speakers_dialogue.txt",
+    "blocks/70_soundscape.txt",
+    "blocks/80_music.txt",
+    "modes/{m}/90_examples.txt",
+    "modes/{m}/99_closing.txt"
+  ],
+  "duration": "standard",
+  "slots": {
+    "MAIN_FIELD": "detailed_description",
+    "NO_ALIGNMENT_LINE": null,
+    "NO_LANDING_CLAUSE": null,
+    "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields. Begin your reply with \"detailed_description:\".",
+    "APPEAR_CLAUSE": "first appear",
+    "SPEAKER_ORDER_LINE": "- Speaker IDs follow the order voices are FIRST HEARD, which may differ from the order subjects or pictures first appear in the roster or the shot sequence. The first character to speak is (S1) even if another character was cited first.",
+    "STYLE_SOURCE_LINE": "- The visual style is established before [Shot 1] from the roster (see ROSTER). Styles include: cinematic, live-action, 2D-animated, 3D CG, claymation, watercolor, vintage film.",
+    "WHOLE_LINE_RULE": "- Keep every spoken line whole inside ONE shot; never split a <d> block across a cut and never write an empty or nearly-empty <d> block. If the user describes a line beginning in one shot and finishing after a cut, place the ENTIRE line in the first shot's <d> block, then describe the next shot's visuals and note that the line's audio continues over the cut (e.g. \"her voice carries over the cut\"). Reserve <cutoff> only for a line truncated by the video's end."
+  },
+  "notes": {
+    "duration": "standard reused as-is -- shot/timestamp mechanics are generic and REF2VA's target video has the same [Shot N] structure as every other mode; confirmed against the guide this session (DURATION AND SHOTS in blocks/40_duration_shots__standard.txt has nothing T2VA-specific). No REF2VA variant needed.",
+    "NO_ALIGNMENT_LINE": "REF2VA has no graph-injected alignment line (confirmed against both guides in docs/REF2VA_architecture.md) -- anchoring happens naturally inside detailed_description via <Picture N> citations, taught in 20_roster.txt. Modeled on t2va's null (no single reference image to suppress an alignment preamble for); the 'begin your reply' instruction is folded into NO_PREAMBLE_LINE instead, same as t2va does.",
+    "MAIN_FIELD": "Session 32: blocks/10_output_contract.txt and blocks/80_music.txt hardcoded integrated_multimodal_description; both converted to a {{MAIN_FIELD}} slot (t2va/i2va/l2va/fl2va all pinned to the old literal value, zero content change) so ref2va can supply detailed_description instead. See docs/REF2VA_architecture.md."
+  },
+  "restorations_applied": []
+}

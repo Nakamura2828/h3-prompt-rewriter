@@ -15,6 +15,7 @@
   ],
   "duration": "fl2va",
   "slots": {
+    "MAIN_FIELD": "integrated_multimodal_description",
     "NO_ALIGNMENT_LINE": "- Do NOT output any alignment, reference, or \"aligns with\" line. Begin your reply directly with \"integrated_multimodal_description:\".",
     "NO_LANDING_CLAUSE": "- Do NOT write your own closing sentence stating that the subject \"settles into\", \"arrives at\", or otherwise lands on the final pose, position, or framing of <Picture 2>. End on the last real action or gesture instead; a fixed landing line is appended after your output separately.",
     "NO_PREAMBLE_LINE": "- No preamble, no explanation, no markdown fences, no extra fields.",
