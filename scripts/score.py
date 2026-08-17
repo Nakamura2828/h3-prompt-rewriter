@@ -61,10 +61,14 @@ pressure to fix it -- the same error as drawing an accept-set loosely enough to 
 the `digital` over-attractor.
 
 Usage:
-  python scripts/score.py tests/describer_style.json runs/run-*.txt
+  python scripts/score.py tests/describer_style.json runs/run-*.txt --fields MEDIUM SUB_MEDIUM IDIOM TREATMENT
   python scripts/score.py tests/describer_style_sweep.json <run> --fields MEDIUM SUB_MEDIUM
-  python scripts/score.py <test> <run> --misses-only
-  python scripts/score.py <test> <run> --strict     # ignore accept-sets: primary only
+  python scripts/score.py <test> <run> --fields <...> --misses-only
+  python scripts/score.py <test> <run> --fields <...> --strict     # ignore accept-sets: primary only
+
+--fields is required -- no default, since a field list from one role silently mis-scores
+every other role as all-"(missing)" rather than erroring. Check a sample _expected entry
+in the test file to see the field count and "/" order.
 """
 
 import argparse
@@ -451,9 +455,10 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('test', help='test JSON carrying the _expected map')
     ap.add_argument('run', help='a concatenated runs/run-*.txt')
-    ap.add_argument('--fields', nargs='+',
-                    default=['MEDIUM', 'SUB_MEDIUM', 'IDIOM', 'TREATMENT'],
-                    help='fields the _expected value describes, in "a / b" order')
+    ap.add_argument('--fields', nargs='+', default=None,
+                    help='fields the _expected value describes, in "a / b" order -- '
+                         'required, no default (session 31: a hardcoded style-role default '
+                         'used to silently mis-score every other role as all-"(missing)")')
     ap.add_argument('--misses-only', action='store_true',
                     help='omit the passing rows')
     ap.add_argument('--baseline', metavar='RUN',
@@ -477,6 +482,16 @@ def main():
     if not expected:
         raise SystemExit(f'ERROR: {a.test} has no top-level "_expected" map -- '
                          f'nothing to score against.')
+
+    if not a.fields:
+        sample_cid, sample_val = next(iter(expected.items()))
+        raise SystemExit(
+            f'ERROR: --fields is required -- there is no safe default across roles.\n'
+            f'  A sample _expected entry from {a.test}:\n'
+            f'    "{sample_cid}": {sample_val!r}\n'
+            f'  Count the "/"-separated segments and name each field, in that order '
+            f'(cross-check against the role\'s field list in DESCRIBER_ROLES, scripts/validate.py).\n'
+            f'  Example: --fields OBJECT_KIND COLOUR')
 
     got, derived_detail = read_run(a.run, a.fields)
 

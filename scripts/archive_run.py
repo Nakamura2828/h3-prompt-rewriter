@@ -23,6 +23,7 @@ gives it one that doesn't:
 
   python scripts/archive_run.py baseline describer_style_sweep130_frozen
   python scripts/score.py tests/describer_style_sweep130_frozen.json runs/run-<new>.txt \
+      --fields MEDIUM SUB_MEDIUM IDIOM TREATMENT \
       --baseline reference/baselines/describer_style_sweep130_frozen.txt
 
 Overwriting is the point here, so unlike rename there is no -2/-3 suffixing. Run

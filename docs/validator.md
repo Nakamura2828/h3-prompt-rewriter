@@ -19,9 +19,11 @@
 > provisional and expire when the vocabulary changes; `UNSCORABLE` ones don't.**
 >
 > ```bash
-> python scripts/score.py tests/describer_style.json runs/run-*.txt
+> python scripts/score.py tests/describer_style.json runs/run-*.txt --fields MEDIUM SUB_MEDIUM IDIOM TREATMENT
 > python scripts/score.py tests/describer_style_sweep.json <run> --fields MEDIUM   # coarse only
 > ```
+> `--fields` is required — no cross-role default (session 31: a hardcoded default silently
+> mis-scored any non-`style` role as all-"(missing)" rather than erroring).
 
 Format subcommands and what each one checks. Moved out of `.claude/CLAUDE.md` in session 8.
 
