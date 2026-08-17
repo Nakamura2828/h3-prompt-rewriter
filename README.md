@@ -28,7 +28,7 @@ python3 scripts/build.py --verify   # build + diff against reference/
 python3 scripts/build.py l2va       # one mode
 ```
 
-Output convention: **CRLF line endings, no trailing newline.** A slot set to `null`
+Output convention: **LF line endings, no trailing newline.** A slot set to `null`
 deletes its whole line, which is how mode-inapplicable rules (e.g. T2VA has no
 alignment-suppression bullet) drop out cleanly.
 

@@ -6,7 +6,7 @@ Usage:
   python3 scripts/build.py --verify     # build, then diff against reference/pre_build_env_canonical_prompts
   python3 scripts/build.py t2va i2va    # build selected modes
 
-Output convention matches the locked prompts: CRLF line endings, no trailing newline.
+Output convention matches the locked prompts: LF line endings, no trailing newline.
 """
 import argparse, json, pathlib, sys, difflib
 
