@@ -252,6 +252,18 @@ carrying a cereal brand.
 It is the strongest result of the first rounds — `lincoln_money` returned seven quoted strings,
 `gromit`'s van `"GNOME IMPROVEMENTS"` / `"No job too small"`.
 
+### The bag divergence with `character` — not a conflict
+
+`describer_character.txt` says *"a bag worn on the shoulder is `[[CLOTHING]]`"*; this prompt says a
+bag *"is an 'object', not a garment."* Found while filling in the `[[OBJECT_KIND]]` ground truth
+(session 22). **Both are correct, because they answer different questions.** `character` decides
+which of *its own* fields a bag lands in when describing a person — the alternative there is
+dropping a carried bag entirely, not filing it as a garment. `object` decides what kind of thing a
+bag *is* when it is itself the subject, and the practical stakes are `[[SCALE]]`: as an object a bag
+reports a physical size (`small`, forearm-length); read as a garment it would report `"worn on the
+body"` and lose that fact. Do not "fix" the two prompts into agreement — the overlap is coincidental
+vocabulary, not an inconsistency.
+
 ### Version history
 
 | round | result |
@@ -299,7 +311,7 @@ catches a consumer that forgets.
   and there is no colour ground truth to measure it against.
 - **`[[OBJECT_KIND]]` called a sofa a `garment`** on `ob_couch_clear` while its sibling got it
   right. One case, split within a pair, so read as marginal until it repeats
-  (`L-MOVING-FAILURE-IS-NOISE`).
+  (`L-MOVING-FAILURE-IS-NOISE`). **It repeated, session 28** — see below.
 - **The tail line still contradicts itself on a plausible absent garment.** `ob_notfound_slippers`
   emitted `[[KIND]] a pair of slippers` *and* `[[SUBJECT NOT FOUND]] the slippers`, and dropped
   `[[DEFINITION]]`. The telephone probe next to it passed, so the garment direction is the harder
@@ -308,6 +320,24 @@ catches a consumer that forgets.
   after v2), but the object side had little to test it on beyond the figures, and dropping it was
   live. **Resolved the other way in session 24** — the field is saved by *closing* its vocabulary.
   See the next section.
+
+### `[[OBJECT_KIND]]` content-scored for the first time (session 28)
+
+The 44-row ground truth built across sessions 22–25 (`HANDOFF_session22.md` § 5) was transcribed
+into `tests/describer_object.json`'s `_expected` map and scored against a fresh 44-case round —
+same v3 prompt, unchanged since session 22, now exercising the 5 `ob_text_*` cases added in session
+24 for the first time. **43/44 exact.** One accept-set (`ob_notfound_telephone`, `object | garment`)
+declared but not load-bearing — the model answered the primary value anyway, and its strict control
+(`ob_notfound_slippers`) held. The one miss is `ob_couch_clear` — see above, now confirmed a repeat
+rather than noise, and confirmed **deterministic** by three further replays of that one case in
+isolation, byte-identical each time (`[[OBJECT_KIND]] garment` on an otherwise flawlessly-described
+mustard sofa). Not GPU jitter; genuinely this input, this prompt. Still a single case against 15
+correctly-classified garments and 28 correctly-classified objects, below the bar for a prompt
+change (`L-MOVING-FAILURE-IS-NOISE` is about a pattern *across* cases) — recorded and deliberately
+not chased this session. Format: 43/44, the one failure being the already-known `ob_notfound_slippers`
+self-contradiction (hallucinated slippers plus an unsolicited `[[SUBJECT NOT FOUND]]` line, dropping
+`[[DEFINITION]]`) — its `[[OBJECT_KIND]]` answer (`object`) was still correct, confirming the
+session-22 finding that this field does not detect the confabulation.
 
 ### `[[SCALE]]` — the nine-term size ladder (settled session 24, not yet in the prompt)
 
