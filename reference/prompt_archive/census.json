@@ -407,6 +407,54 @@
       "ct": 1786764672,
       "date": "2026-08-14",
       "subject": "describer_object v1-v3: the last describer before the composer"
+    },
+    {
+      "commit": "d4786e4",
+      "ct": 1786766002,
+      "date": "2026-08-14",
+      "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+    },
+    {
+      "commit": "b611f3b",
+      "ct": 1786766289,
+      "date": "2026-08-14",
+      "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+    },
+    {
+      "commit": "b190d58",
+      "ct": 1786870511,
+      "date": "2026-08-16",
+      "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+    },
+    {
+      "commit": "84c7da9",
+      "ct": 1786871654,
+      "date": "2026-08-16",
+      "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+    },
+    {
+      "commit": "322bfee",
+      "ct": 1786888077,
+      "date": "2026-08-16",
+      "subject": "describer_object: garments go on the size ladder by the region they cover"
+    },
+    {
+      "commit": "5480741",
+      "ct": 1786937215,
+      "date": "2026-08-16",
+      "subject": "removed two legacy references to CRLF line endings being current when they are not"
+    },
+    {
+      "commit": "5fad3a7",
+      "ct": 1786950793,
+      "date": "2026-08-17",
+      "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+    },
+    {
+      "commit": "d68f31c",
+      "ct": 1786956171,
+      "date": "2026-08-17",
+      "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
     }
   ],
   "states": [
@@ -913,6 +961,62 @@
           "path": "reference/retired/prompts/describer_frame_v7.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v7.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -925,7 +1029,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -1446,6 +1550,62 @@
           "path": "prompts/i2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/i2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/i2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/i2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/i2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/i2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/i2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/i2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -1455,7 +1615,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765671,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -1976,6 +2136,62 @@
           "path": "prompts/l2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/l2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/l2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/l2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/l2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/l2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/l2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/l2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -1985,7 +2201,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765671,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -2745,6 +2961,118 @@
           "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/t2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/t2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/t2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/t2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/t2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/t2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/t2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/t2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -2754,7 +3082,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765671,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -3045,6 +3373,62 @@
           "path": "reference/retired/prompts/describer_frame_v1.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v1.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -3056,7 +3440,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -3325,6 +3709,62 @@
           "path": "reference/retired/prompts/describer_frame_v2.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v2.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -3336,7 +3776,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -3605,6 +4045,62 @@
           "path": "reference/retired/prompts/describer_frame_v3.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v3.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -3616,7 +4112,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -3885,6 +4381,62 @@
           "path": "reference/retired/prompts/describer_frame_v4.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v4.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -3896,7 +4448,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -4165,6 +4717,62 @@
           "path": "reference/retired/prompts/describer_frame_v5.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v5.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -4176,7 +4784,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -4445,6 +5053,62 @@
           "path": "reference/retired/prompts/describer_frame_v6.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_frame_v6.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -4456,7 +5120,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -4957,6 +5621,62 @@
           "path": "prompts/fl2va_delta.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va_delta.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -4968,7 +5688,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786389313,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -5506,6 +6226,62 @@
           "path": "prompts/describer_frame.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_frame.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -5515,7 +6291,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409308,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -5948,6 +6724,62 @@
           "path": "prompts/fl2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/fl2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -5959,7 +6791,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786409320,
-      "last_ct": 1786765671,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -6374,6 +7206,62 @@
           "path": "prompts/describer_character.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_character.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -6383,7 +7271,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786417832,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -6784,6 +7672,62 @@
           "path": "prompts/describer_setting.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_setting.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -6793,7 +7737,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786429502,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -7169,6 +8113,62 @@
           "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_v2-compressed.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -7179,7 +8179,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786504572,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -7661,6 +8661,62 @@
           "path": "prompts/describer_style_look.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_look.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -7670,7 +8726,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786543782,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -7933,6 +8989,62 @@
           "path": "reference/retired/prompts/fl2va_v4.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/fl2va_v4.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -7945,7 +9057,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786558178,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8199,6 +9311,62 @@
           "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/i2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8208,7 +9376,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786563094,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8462,6 +9630,62 @@
           "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/pre_build_env_canonical_prompts/l2va.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8471,7 +9695,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786563094,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8656,6 +9880,62 @@
           "path": "reference/retired/prompts/describer_style_class_v4a.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4a.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8665,7 +9945,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786625176,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8751,6 +10031,62 @@
           "path": "reference/retired/prompts/describer_style_class_v4b.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4b.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8760,7 +10096,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786627317,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8804,6 +10140,62 @@
           "path": "prompts/describer_style_class.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_style_class.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8813,7 +10205,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786665641,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8857,6 +10249,62 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-flat.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8866,7 +10314,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8910,6 +10358,62 @@
           "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d-stroke.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8919,7 +10423,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786664781,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8963,6 +10467,62 @@
           "path": "reference/retired/prompts/describer_style_class_v4d.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_style_class_v4d.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -8972,7 +10532,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786668659,
-      "last_ct": 1786764672,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -8995,16 +10555,65 @@
           "path": "prompts/describer_object.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
         "describer_object"
       ],
       "labels": [],
-      "in_worktree": true,
+      "in_worktree": false,
       "provenance_only": false,
-      "first_ct": 1786761645,
-      "last_ct": 1786764672,
+      "first_ct": 1786764672,
+      "last_ct": 1786950793,
       "crlf_variants": 1
     },
     {
@@ -9027,6 +10636,62 @@
           "path": "reference/retired/prompts/describer_object_v1.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v1.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -9038,7 +10703,7 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786764672,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     },
     {
@@ -9061,6 +10726,62 @@
           "path": "reference/retired/prompts/describer_object_v2.txt",
           "ct": 1786764672,
           "subject": "describer_object v1-v3: the last describer before the composer"
+        },
+        {
+          "commit": "d4786e4",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786766002,
+          "subject": "normalise the repo to LF, and stop the scripts putting CRLF back"
+        },
+        {
+          "commit": "b611f3b",
+          "date": "2026-08-14",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786766289,
+          "subject": "prompt_archive: retire the CRLF caveat now that it is false"
+        },
+        {
+          "commit": "b190d58",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786870511,
+          "subject": "the size ladder, settled \u2014 plus the scale corpus and both answer keys"
+        },
+        {
+          "commit": "84c7da9",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786871654,
+          "subject": "docs: give the size ladder a tracked home, and fix three bounds that weren't sizes"
+        },
+        {
+          "commit": "322bfee",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786888077,
+          "subject": "describer_object: garments go on the size ladder by the region they cover"
+        },
+        {
+          "commit": "5480741",
+          "date": "2026-08-16",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786937215,
+          "subject": "removed two legacy references to CRLF line endings being current when they are not"
+        },
+        {
+          "commit": "5fad3a7",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786950793,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        },
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "reference/retired/prompts/describer_object_v2.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
         }
       ],
       "families": [
@@ -9072,7 +10793,39 @@
       "in_worktree": true,
       "provenance_only": false,
       "first_ct": 1786764672,
-      "last_ct": 1786765313,
+      "last_ct": 1786956171,
+      "crlf_variants": 1
+    },
+    {
+      "md5_norm": "504408d564d5a6b37a15146d913ee8c1",
+      "bytes": 16528,
+      "lines": 131,
+      "md5_exact": [
+        "504408d564d5a6b37a15146d913ee8c1"
+      ],
+      "names": [
+        "describer_object"
+      ],
+      "paths": [
+        "prompts/describer_object.txt"
+      ],
+      "commits": [
+        {
+          "commit": "d68f31c",
+          "date": "2026-08-17",
+          "path": "prompts/describer_object.txt",
+          "ct": 1786956171,
+          "subject": "describer_object: OBJECT_KIND content-scored for the first time, 43/44"
+        }
+      ],
+      "families": [
+        "describer_object"
+      ],
+      "labels": [],
+      "in_worktree": true,
+      "provenance_only": false,
+      "first_ct": 1786953468,
+      "last_ct": 1786956171,
       "crlf_variants": 1
     }
   ]

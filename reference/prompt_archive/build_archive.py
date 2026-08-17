@@ -129,13 +129,23 @@ CURATED = {
                    'unmoved at 4. Its own new rule quoted a SUBJECT-shaped phrase, which the '
                    'tail line then stole on SUBJECT-less cases: L-NAME-THE-CASE at its '
                    'documented limit.'),
-    '8e8de06ccc': ('describer_object_v3', 'live', 'describer_object_v2',
+    '8e8de06ccc': ('describer_object_v3', 'superseded', 'describer_object_v2',
                    '3,943 tokens. Removed the stolen phrase and banned the tail line from '
                    'copying the rules. The theft simply MOVED to the next SUBJECT-shaped string '
                    'in the prompt -- three rounds, three different stolen phrases. Format 31/35 '
                    'raw. The line was then offloaded to code (strip_unsolicited_not_found in '
                    'run_tests.py, docs/graph_mechanics.md); with that mechanic and 4 added '
-                   'cases the SAME prompt scores 38/39.'),
+                   'cases the SAME prompt scores 38/39. Session 28 content-scored '
+                   '[[OBJECT_KIND]] for the first time on this state: 43/44 exact.'),
+    '504408d564': ('describer_object_v4', 'live', 'describer_object_v3',
+                   '3,951 tokens. Session 29: rewrote the VISIBLE TEXT anti-laundering rule as '
+                   '"THE BLACKOUT TEST", a procedure, replacing the one banned-output list '
+                   '(three real brand/person names) that had stood unchanged since v2 -- '
+                   'checking the archive found that rule had only ever been written once, not '
+                   'revised across three rounds as the round-count summary implied. Format '
+                   '37/44 -> 39/44 on the same 44-case file (validate.py\'s new no_launder '
+                   'check); one of the four original laundering cases (ob_misato_print) cleared '
+                   'for the first time, no regressions, [[OBJECT_KIND]] unaffected (43/44).'),
     'b9bd35c4b3': ('describer_style_v1', 'superseded', None,
                    'Validated, never locked. 2,861 tokens.'),
     '310c10ab09': ('describer_style_v2', 'superseded', 'describer_style_v1',
